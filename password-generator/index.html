@@ -3,165 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Password Generator - Free Online security Tool</title>
-  <meta name="description" content="Generate strong passwords for free with our online tool. Random and secure password generator.">
-  <meta property="og:title" content="Password Generator - Free Online Tool">
-  <meta property="og:description" content="Generate strong passwords for free with our online tool. Random and secure password generator.">
+  <title>Password Generator — Toolhub</title>
+  <meta name="description" content="Free secure password generator. Custom character rules, passphrase mode, and batch generation. Runs entirely in your browser.">
+  <meta property="og:title" content="Password Generator — Toolhub">
+  <meta property="og:description" content="Free secure password generator. Custom character rules, passphrase mode, and batch generation. Runs entirely in your browser.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/password-generator">
+  <meta property="og:url" content="https://toolhub.software/password-generator/">
+  <link rel="canonical" href="https://toolhub.software/password-generator/">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Password Generator",
-    "description": "Generate strong passwords for free with our online tool. Random and secure password generator.",
+    "description": "Free secure password generator. Custom character rules, passphrase mode, and batch generation. Runs entirely in your browser.",
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "Any",
-    "offers": {"@type": "Offer", "price": "0"}
+    "offers": {"@type": "Offer", "price": "0"},
+    "url": "https://toolhub.software/password-generator/"
   }
   </script>
   <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f7fa;
-      padding: 20px;
-    }
-    .container { 
-      max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    }
-    h1 { color: #2c3e50; margin-bottom: 20px; font-size: 28px; }
-    .description { color: #7f8c8d; margin-bottom: 40px; }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    input[type="number"], select, button {
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #dfe6e9;
-      border-radius: 4px;
-      background-color: white;
-      color: #333;
-    }
-    input[type="number"] { width: 50%; }
-    select { width: 200px; }
-    button {
-      cursor: pointer;
-      background-color: #3498db;
-      color: white;
-      border: none;
-    }
-    .output { 
-      margin-top: 20px; 
-      padding: 16px;
-      border-radius: 4px;
-      overflow-x: auto;
-      font-size: 18px;
-      background-color: #ecf0f1;
-      color: #333;
-    }
-    ol, ul { margin-left: 20px; }
-    li { list-style-type: none; }
-    .usage h2, .features h2 {
-      font-size: 24px;
-      color: #2c3e50;
-      margin-bottom: 16px;
-    }
-    .usage ol, .features ul {
-      margin-left: 20px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Password Generator</h1>
-    <p class="description">Generate strong passwords for free with our online tool. Random and secure password generator.</p>
-    
-    <form id="passwordForm">
-      <label for="length">Password Length:</label>
-      <input type="number" id="length" name="length" min="8" max="128" value="16">
-      
-      <div>
-        <label for="uppercase">Include Uppercase Letters?</label>
-        <select id="uppercase" name="uppercase">
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select>
-        
-        <label for="lowercase">Include Lowercase Letters?</label>
-        <select id="lowercase" name="lowercase">
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select>
-        
-        <label for="numbers">Include Numbers?</label>
-        <select id="numbers" name="numbers">
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select>
-        
-        <label for="symbols">Include Symbols?</label>
-        <select id="symbols" name="symbols">
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select>
-      </div>
-      
-      <button type="submit">Generate Password</button>
-    </form>
-    
-    <div class="output" id="passwordOutput"></div>
-    
-    <div class="usage">
-      <h2>How to Use</h2>
-      <ol>
-        <li>Select the desired password length.</li>
-        <li>Choose whether to include uppercase, lowercase letters, numbers, and symbols.</li>
-        <li>Click "Generate Password" to create a strong password.</li>
-      </ol>
+  <header class="header">
+    <a href="/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/password-generator/'; else location.href='/password-generator/'">
+        <option value="" selected="selected">🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
     </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/">All Tools</a> / Password Generator</div>
+    <h1>Password Generator</h1>
+    <p class="tagline">Strong random passwords or memorable passphrases. Generated locally — never sent anywhere.</p>
     
-    <div class="features">
-      <h2>Features</h2>
-      <ul>
-        <li>✓ Customizeable length from 8 to 128 characters.</li>
-        <li>✓ Include uppercase, lowercase letters, numbers, and symbols.</li>
-        <li>✓ Secure random password generation.</li>
-      </ul>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Type</label>
+      <select id="pw-mode" onchange="pwToggleMode()">
+        <option value="chars">Random characters</option>
+        <option value="phrase">Passphrase (words)</option>
+      </select>
+    </div>
+    <div>
+      <label>Count (1-50)</label>
+      <input type="number" id="pw-count" value="1" min="1" max="50">
     </div>
   </div>
-  
-  <script>
-    document.getElementById('passwordForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      const length = parseInt(document.getElementById('length').value);
-      const includeUppercase = document.getElementById('uppercase').value === 'true';
-      const includeLowercase = document.getElementById('lowercase').value === 'true';
-      const includeNumbers = document.getElementById('numbers').value === 'true';
-      const includeSymbols = document.getElementById('symbols').value === 'true';
-      
-      let characters = '';
-      if (includeUppercase) characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      if (includeLowercase) characters += 'abcdefghijklmnopqrstuvwxyz';
-      if (includeNumbers) characters += '0123456789';
-      if (includeSymbols) characters += '!@#$%^&*()_+-=[]{}|;:,.<>?~`';
+  <div id="pw-chars-opts">
+    <div class="row-2col" style="margin-top:1rem">
+      <div>
+        <label>Length: <span id="pw-len-display">20</span></label>
+        <input type="range" id="pw-length" min="6" max="128" value="20" oninput="document.getElementById('pw-len-display').textContent=this.value">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.9rem">
+        <label><input type="checkbox" id="pw-lower" checked> a-z lowercase</label>
+        <label><input type="checkbox" id="pw-upper" checked> A-Z uppercase</label>
+        <label><input type="checkbox" id="pw-digit" checked> 0-9 digits</label>
+        <label><input type="checkbox" id="pw-symbol" checked> Symbols !@#$…</label>
+        <label><input type="checkbox" id="pw-noambig"> Exclude ambiguous (0/O/1/l/I)</label>
+      </div>
+    </div>
+  </div>
+  <div id="pw-phrase-opts" style="display:none;margin-top:1rem">
+    <div class="row-2col">
+      <div>
+        <label>Words per phrase</label>
+        <input type="number" id="pw-words" value="4" min="2" max="12">
+      </div>
+      <div>
+        <label>Separator</label>
+        <select id="pw-sep">
+          <option value="-">- (hyphen)</option>
+          <option value=".">. (period)</option>
+          <option value="_">_ (underscore)</option>
+          <option value=" ">space</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="button-row">
+    <button onclick="pwGenerate()">Generate</button>
+    <button class="secondary" onclick="pwCopy()">Copy</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Output</label>
+  <pre class="output" id="pw-out">Enter input above to see the result.</pre>
+  <div class="meta" id="pw-meta"></div>
+</div>
 
-      let password = '';
-      
-      for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        password += characters[randomIndex];
-      }
-      
-      document.getElementById('passwordOutput').textContent = password;
-    });
+    <div class="help">
+<h2>How it works</h2>
+<p>This generator uses your browser's <code>crypto.getRandomValues</code> API — a cryptographically secure random source. Nothing is transmitted; the password never leaves your device.</p>
+<h3>Random characters vs passphrases</h3>
+<ul>
+  <li><strong>Random characters</strong> give the most entropy per length — 20 mixed characters ≈ 130 bits.</li>
+  <li><strong>Passphrases</strong> are easier to remember and type — four words ≈ 40 bits, six words ≈ 60 bits. Increase word count for higher-stakes accounts.</li>
+  <li>"Exclude ambiguous" removes <code>0/O/1/l/I</code> for safer reading from screens.</li>
+</ul>
+<h3>How much entropy do I need?</h3>
+<ul>
+  <li>≥ 60 bits — fine for low-value accounts</li>
+  <li>≥ 80 bits — good for most accounts</li>
+  <li>≥ 100 bits — high-value (financial, master password, root credential)</li>
+</ul>
+<div class="related"><span class="meta">Related tools:</span> <a href="/uuid-generator/">UUID Generator</a></div></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
   </script>
+  
+<script>
+const PW_WORDS = ["able","acid","aged","also","area","army","away","baby","back","ball","band","bank","base","bath","bear","beat","been","beer","bell","belt","best","bike","bird","blow","blue","boat","body","bomb","bond","bone","book","boom","born","boss","both","bowl","bulk","burn","bush","busy","call","calm","came","camp","card","care","case","cash","cast","cell","chat","chip","city","club","coal","coat","code","cold","come","cook","cool","cope","copy","core","cost","crew","crop","dark","data","date","dawn","days","dead","deal","dean","dear","debt","deep","deny","desk","dial","dice","diet","disc","disk","does","done","door","dose","down","draw","drew","drop","drug","dual","duke","dust","duty","each","earn","ease","east","easy","edge","else","even","ever","evil","exit","face","fact","fail","fair","fall","farm","fast","fate","fear","feed","feel","feet","fell","felt","file","fill","film","find","fine","fire","firm","fish","five","flag","flat","flow","food","foot","fork","form","fort","four","free","from","fuel","full","fund","gain","game","gate","gave","gear","gene","gift","girl","give","glad","goal","goes","gold","golf","gone","good","gray","grew","grey","grow","gulf","hair","half","hall","hand","hang","hard","harm","hate","have","head","hear","heat","held","hell","help","here","hero","high","hill","hint","hire","hold","hole","holy","home","hope","host","hour","huge","hunt","hurt","idea","into","iron","item","jack","jane","java","jean","jess","jest","jets","john","join","jose","jude","jump","june","jury","just","keen","keep","kept","kick","kind","king","knee","knew","know","lack","lady","laid","lake","land","lane","last","late","lava","lawn","laws","lead","leaf","lean","leap","left","lend","less","life","lift","like","line","link","lion","list","live","load","loan","lock","lost","loud","love","luck","made","mail","main","make","male","many","mark","mass","matt","mean","meat","meet","menu","mere","mike","mile","milk","mill","mind","mine","miss","mode","mood","moon","more","most","move","much","must","name","navy","near","neck","need","news","next","nice","nine","none","nose","note","ohio","once","only","onto","open","oral","over","pace","pack","page","paid","pain","pair","palm","park","part","pass","past","path","peak","pick","pink","pipe","plan","play","plot","plug","plus","poll","pool","poor","port","post","pull","pure","push","race","rage","rail","rain","rank","rare","rate","read","real","rear","rely","rent","rest","rice","rich","ride","ring","rise","risk","road","rock","role","roll","roof","room","root","rose","rule","rush","ruth","safe","said","sake","sale","salt","same","sand","save","seal","seat","seed","seek","seem","seen","self","sell","send","sent","sept","sets","sext","shed","ship","shoe","shop","shot","show","shut","sick","side","sign","silk","sing","sink","site","size","skin","slip","slow","snap","snow","soft","soil","sold","sole","some","song","soon","sort","soul","soup","spot","star","stay","step","stir","stop","such","suit","sure","take","tale","talk","tall","tank","tape","task","team","tech","tell","tend","term","test","text","than","that","them","then","they","thin","this","thus","tide","tied","time","tiny","told","toll","tone","tony","took","tool","tops","tore","torn","tour","town","tree","trip","true","tube","tune","turn","twin","type","ugly","unit","upon","used","user","uses","vary","vast","very","vice","view","vote","wage","wait","wake","walk","wall","want","ward","warm","warn","wash","wave","ways","weak","wear","week","well","went","were","west","what","when","whom","wide","wife","wild","will","wind","wine","wing","wire","wise","wish","with","wood","word","wore","work","worn","yard","yeah","year","your","zero","zone"];
+
+function pwToggleMode(){
+  const m = document.getElementById('pw-mode').value;
+  document.getElementById('pw-chars-opts').style.display = m === 'chars' ? 'block' : 'none';
+  document.getElementById('pw-phrase-opts').style.display = m === 'phrase' ? 'block' : 'none';
+}
+
+function pwRandInt(max){
+  const u = new Uint32Array(1);
+  crypto.getRandomValues(u);
+  return u[0] % max;
+}
+
+function pwGenChars(){
+  let pool = '';
+  if (document.getElementById('pw-lower').checked) pool += 'abcdefghijklmnopqrstuvwxyz';
+  if (document.getElementById('pw-upper').checked) pool += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (document.getElementById('pw-digit').checked) pool += '0123456789';
+  if (document.getElementById('pw-symbol').checked) pool += '!@#$%^&*()-_=+[]{};:,.<>?/~';
+  if (document.getElementById('pw-noambig').checked) pool = pool.replace(/[0O1lI]/g, '');
+  if (!pool) return 'Pick at least one character set.';
+  const len = parseInt(document.getElementById('pw-length').value, 10);
+  const out = new Array(len);
+  const rand = new Uint32Array(len);
+  crypto.getRandomValues(rand);
+  for (let i = 0; i < len; i++) out[i] = pool[rand[i] % pool.length];
+  return out.join('');
+}
+
+function pwGenPhrase(){
+  const n = parseInt(document.getElementById('pw-words').value, 10);
+  const sep = document.getElementById('pw-sep').value;
+  const words = [];
+  for (let i = 0; i < n; i++) words.push(PW_WORDS[pwRandInt(PW_WORDS.length)]);
+  return words.join(sep);
+}
+
+function pwEntropy(s, mode){
+  if (mode === 'phrase'){
+    const n = parseInt(document.getElementById('pw-words').value, 10);
+    return Math.round(n * Math.log2(PW_WORDS.length));
+  }
+  let pool = 0;
+  if (document.getElementById('pw-lower').checked) pool += 26;
+  if (document.getElementById('pw-upper').checked) pool += 26;
+  if (document.getElementById('pw-digit').checked) pool += 10;
+  if (document.getElementById('pw-symbol').checked) pool += 27;
+  if (!pool) return 0;
+  return Math.round(s.length * Math.log2(pool));
+}
+
+function pwGenerate(){
+  const mode = document.getElementById('pw-mode').value;
+  const count = parseInt(document.getElementById('pw-count').value, 10) || 1;
+  const lines = [];
+  let example = '';
+  for (let i = 0; i < count; i++){
+    const p = mode === 'phrase' ? pwGenPhrase() : pwGenChars();
+    if (i === 0) example = p;
+    lines.push(p);
+  }
+  document.getElementById('pw-out').textContent = lines.join('\n');
+  const bits = pwEntropy(example, mode);
+  let strength = 'weak';
+  if (bits >= 60) strength = 'fair';
+  if (bits >= 80) strength = 'strong';
+  if (bits >= 100) strength = 'very strong';
+  document.getElementById('pw-meta').textContent = '~' + bits + ' bits of entropy · ' + strength;
+}
+
+function pwCopy(){
+  const text = document.getElementById('pw-out').textContent;
+  if (!text || text === 'Enter input above to see the result.') return;
+  navigator.clipboard.writeText(text);
+}
+
+document.addEventListener('DOMContentLoaded', pwGenerate);
+</script>
+
 </body>
 </html>
-

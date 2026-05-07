@@ -3,100 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generador de UUID - Herramienta en Línea Gratuita para Desarrolladores</title>
-  <meta name="description" content="Genere un UUID o GUID aleatorio en línea gratis. Perfecto para desarrolladores necesitando IDs únicos.">
-  <meta property="og:title" content="Generador de UUID - Herramienta en Línea Gratuita">
-  <meta property="og:description" content="Genere un UUID o GUID aleatorio en línea gratis. Perfecto para desarrolladores necesitando IDs únicos.">
+  <title>Generador UUID — Toolhub</title>
+  <meta name="description" content="Generador UUID gratuito en línea. RFC 4122 v4 (aleatorio) y v7 (ordenado por tiempo). Genera uno o varios, todo en tu navegador.">
+  <meta property="og:title" content="Generador UUID — Toolhub">
+  <meta property="og:description" content="Generador UUID gratuito en línea. RFC 4122 v4 (aleatorio) y v7 (ordenado por tiempo). Genera uno o varios, todo en tu navegador.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/es/uuid-generator/">
+  <link rel="canonical" href="https://toolhub.software/es/uuid-generator/">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Generador de UUID",
-    "description": "Genere un UUID o GUID aleatorio en línea gratis. Perfecto para desarrolladores necesitando IDs únicos.",
+    "name": "Generador UUID",
+    "description": "Generador UUID gratuito en línea. RFC 4122 v4 (aleatorio) y v7 (ordenado por tiempo). Genera uno o varios, todo en tu navegador.",
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "Any",
-    "offers": {"@type": "Offer", "price": "0"}
+    "offers": {"@type": "Offer", "price": "0"},
+    "url": "https://toolhub.software/es/uuid-generator/"
   }
   </script>
   <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f7fa;
-      padding: 20px;
-    }
-    .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    h1 { color: #2c3e50; margin-bottom: 20px; font-size: 28px; }
-    .description { color: #7f8c8d; margin-bottom: 20px; font-size: 16px; }
-    input[type="button"] {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    input[type="button"]:hover {
-      background-color: #2980b9;
-    }
-    .result { 
-      margin-top: 30px; 
-      padding: 15px;
-      border-radius: 4px;
-      background-color: #ecf0f1;
-      font-size: 18px;
-      color: #34495e;
-      line-height: 1.4;
-    }
-    .usage, .features { margin-top: 30px; }
-    ol, ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Generador de UUID</h1>
-    <p class="description">Genere un UUID o GUID aleatorio en línea gratis. Perfecto para desarrolladores necesitando IDs únicos.</p>
-    
-    <input type="button" value="Generar UUID" onclick="generateUUID()" />
-    <div id="result" class="result"></div>
-
-    <div class="usage">
-      <h2>Cómo Usarlo</h2>
-      <ol>
-        <li>Haga clic en el botón "Generar UUID".</li>
-        <li>Se generará un nuevo ID único y se mostrará debajo.</li>
-      </ol>
+  <header class="header">
+    <a href="/es/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/uuid-generator/'; else location.href='/uuid-generator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" selected="selected">🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema">🌙</button>
     </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/es/">Todas las herramientas</a> / Generador UUID</div>
+    <h1>Generador UUID</h1>
+    <p class="tagline">Genera UUIDs RFC 4122 (v4 aleatorio o v7 ordenado por tiempo). Hasta 100 por lote. Criptográficamente seguro.</p>
     
-    <div class="features">
-      <h2>Características</h2>
-      <ul>
-        <li>✓ Genera ambos UUID v1, v3, v4 y v5</li>
-        <li>✓ Sin registro necesario</li>
-        <li>✓ Rápido y confiable</li>
-      </ul>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Version</label>
+      <select id="uuid-ver">
+        <option value="4">v4 (random)</option>
+        <option value="7">v7 (time-ordered, sortable)</option>
+      </select>
+    </div>
+    <div>
+      <label>Cantidad (1-100)</label>
+      <input type="number" id="uuid-count" value="1" min="1" max="100">
     </div>
   </div>
+  <div class="button-row">
+    <button onclick="uuidGen()">Generar</button>
+    <button class="secondary" onclick="copyOutput('uuid-out', this)">Copiar</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Salida</label>
+  <pre class="output" id="uuid-out"></pre>
+</div>
 
+    <div class="help">
+<h2>v4 vs v7 — which should I use?</h2>
+<ul>
+  <li><strong>v4 (random)</strong> — 122 bits of randomness, no information about creation time. Use for IDs you don't want to leak ordering or timing.</li>
+  <li><strong>v7 (time-ordered)</strong> — 48-bit Unix-ms timestamp prefix + random tail. Sorts in roughly chronological order, plays well with database indexes (B-tree locality), supersedes ULID/v6/v1 for most modern needs. Specified in RFC 9562.</li>
+</ul>
+<h3>How it's generated</h3>
+<p>Both versions are RFC-compliant. Random bytes come from your browser's <code>crypto.getRandomValues</code> — never from <code>Math.random</code> or a server.</p>
+<div class="related"><span class="meta">Herramientas relacionadas:</span> <a href="/es/password-generator/">Generador de Contraseñas</a></div></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacidad</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+  </footer>
   <script>
-    function generateUUID() {
-      var result = document.getElementById('result');
-      result.textContent = 'Generando UUID...';
-      
-      // Simule un retraso para imitar la generación real
-      setTimeout(() => {
-        result.textContent = '2fa86b79-3d1c-4b65-bf0e-c8a0af775da5'; // Reemplace con la lógica real de generador de UUID
-      }, 500);
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
     }
   </script>
+  
+<script>
+function uuidV4(){
+  const b = new Uint8Array(16);
+  crypto.getRandomValues(b);
+  b[6] = (b[6] & 0x0f) | 0x40;
+  b[8] = (b[8] & 0x3f) | 0x80;
+  const h = [...b].map(x => x.toString(16).padStart(2,'0'));
+  return h.slice(0,4).join('') + '-' + h.slice(4,6).join('') + '-' + h.slice(6,8).join('') + '-' + h.slice(8,10).join('') + '-' + h.slice(10,16).join('');
+}
+function uuidV7(){
+  // RFC 9562 v7: 48-bit unix-ms timestamp + 12 bits rand_a + 62 bits rand_b + version/variant bits
+  const ts = BigInt(Date.now());
+  const r = new Uint8Array(10);
+  crypto.getRandomValues(r);
+  const b = new Uint8Array(16);
+  // 6 bytes of timestamp (big-endian)
+  for (let i = 0; i < 6; i++) b[i] = Number((ts >> BigInt(40 - 8*i)) & 0xffn);
+  for (let i = 0; i < 10; i++) b[i+6] = r[i];
+  b[6] = (b[6] & 0x0f) | 0x70;     // version 7
+  b[8] = (b[8] & 0x3f) | 0x80;     // variant 10
+  const h = [...b].map(x => x.toString(16).padStart(2,'0'));
+  return h.slice(0,4).join('') + '-' + h.slice(4,6).join('') + '-' + h.slice(6,8).join('') + '-' + h.slice(8,10).join('') + '-' + h.slice(10,16).join('');
+}
+function uuidGen(){
+  const ver = document.getElementById('uuid-ver').value;
+  const n = Math.max(1, Math.min(100, parseInt(document.getElementById('uuid-count').value, 10) || 1));
+  const out = [];
+  for (let i = 0; i < n; i++) out.push(ver === '7' ? uuidV7() : uuidV4());
+  document.getElementById('uuid-out').textContent = out.join('\n');
+}
+document.addEventListener('DOMContentLoaded', uuidGen);
+</script>
+
 </body>
 </html>
-

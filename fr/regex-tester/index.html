@@ -3,133 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testeur Regex - Outil en Ligne Gratuit</title>
-  <meta name="description" content="Testez vos expressions régulières avec notre outil en ligne gratuit Testeur Regex. Validez et testez facilement des modèles d'expressions régulières.">
-  <meta property="og:title" content="Testeur Regex - Outil en Ligne Gratuit">
-  <meta property="og:description" content="Testez vos expressions régulières avec notre outil en ligne gratuit Testeur Regex. Validez et testez facilement des modèles d'expressions régulières.">
+  <title>Testeur Regex — Toolhub</title>
+  <meta name="description" content="Testeur regex JavaScript gratuit avec coloration en direct, groupes de capture et mode remplacement. Drapeaux compatibles PCRE.">
+  <meta property="og:title" content="Testeur Regex — Toolhub">
+  <meta property="og:description" content="Testeur regex JavaScript gratuit avec coloration en direct, groupes de capture et mode remplacement. Drapeaux compatibles PCRE.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/fr/regex-tester/">
+  <link rel="canonical" href="https://toolhub.software/fr/regex-tester/">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Testeur Regex",
-    "description": "Un outil en ligne gratuit pour tester et valider des expressions régulières.",
+    "description": "Testeur regex JavaScript gratuit avec coloration en direct, groupes de capture et mode remplacement. Drapeaux compatibles PCRE.",
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "Any",
-    "offers": {"@type": "Offer", "price": "0"}
+    "offers": {"@type": "Offer", "price": "0"},
+    "url": "https://toolhub.software/fr/regex-tester/"
   }
   </script>
   <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f7fa;
-      padding: 20px;
-    }
-    .container { 
-      max-width: 800px; 
-      margin: 0 auto; 
-      background: white; 
-      padding: 30px; 
-      border-radius: 8px; 
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    }
-    h1 { color: #2c3e50; margin-bottom: 20px; font-size: 28px; }
-    .description { color: #7f8c8d; font-size: 16px; line-height: 1.4; }
-    form {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-    label, textarea, input[type="text"], button { 
-      width: 100%; 
-      padding: 15px; 
-      border-radius: 4px; 
-      background-color: #f8f9fa; 
-      border: 1px solid #dfe6e9;
-    }
-    textarea, input[type="text"] { 
-      resize: vertical; 
-      min-height: 70px; 
-      font-size: 16px; 
-    }
-    button {
-      background-color: #2c3e50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    .results { 
-      margin-top: 40px;
-      padding: 20px; 
-      border-radius: 8px; 
-      background-color: #ecf0f1; 
-      font-family: monospace; 
-      overflow-x: auto;
-    }
-    @media (max-width: 768px) {
-      .container { max-width: 95%; padding: 20px; }
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-  <div class="container">
+  <header class="header">
+    <a href="/fr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/regex-tester/'; else location.href='/regex-tester/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" selected="selected">🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Changer de thème">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/fr/">Tous les outils</a> / Testeur Regex</div>
     <h1>Testeur Regex</h1>
-    <p class="description">Testez et validez vos expressions régulières en ligne. Obtenez des retours instantanés sur les correspondances de modèles.</p>
+    <p class="tagline">Testez les expressions régulières JavaScript en direct. Correspondances, groupes de capture et remplacement instantanés.</p>
     
-    <form id="regexForm">
-      <label for="regexPattern">Expression Régulière:</label>
-      <textarea id="regexPattern" placeholder="Entrez votre expression régulière ici"></textarea>
-      
-      <label for="testString">Chaîne à Tester:</label>
-      <input type="text" id="testString" placeholder="Entrez la chaîne à tester contre cette expression régulière">
-      
-      <button onclick="runRegex()">Exécuter l'Expression Régulière</button>
-    </form>
-
-    <div class="results" id="results"></div>
-    
-    <div class="usage">
-      <h2>Comment Utiliser</h2>
-      <ol>
-        <li>Entrez votre expression régulière dans la première boîte.</li>
-        <li>Entrez une chaîne que vous voulez tester contre cette expression régulière dans la deuxième boîte.</li>
-        <li>Cliquez sur "Exécuter l'Expression Régulière" et vérifiez si elle correspond !</li>
-      </ol>
-    </div>
-    
-    <div class="features">
-      <h2>Fonctionnalités</h2>
-      <ul>
-        <li>✓ Interface d'utilisation facile pour tester des modèles d'expressions régulières</li>
-        <li>✓ Résultats de validation instantanés</li>
-        <li>✓ Prise en charge de diverses expressions régulières (PCRE, JavaScript, etc.)</li>
-      </ul>
-    </div>
+<div class="tool-card">
+  <label>Pattern</label>
+  <div style="display:flex;gap:0.5rem;align-items:center">
+    <span style="color:var(--text-muted);font-family:ui-monospace,monospace">/</span>
+    <input type="text" id="re-pattern" placeholder="\b(\w+)@(\w+\.\w+)\b" oninput="reRun()" style="flex:1">
+    <span style="color:var(--text-muted);font-family:ui-monospace,monospace">/</span>
+    <input type="text" id="re-flags" value="g" oninput="reRun()" style="width:90px" placeholder="gimsuy">
   </div>
+  <div class="meta" style="margin-top:0.5rem">Flags: <code>g</code> global · <code>i</code> case-insensitive · <code>m</code> multi-line · <code>s</code> dotAll · <code>u</code> unicode · <code>y</code> sticky</div>
+</div>
+<div class="tool-card">
+  <label>Test string</label>
+  <textarea id="re-input" oninput="reRun()" placeholder="Reach me at hello@example.com or admin@toolhub.software" spellcheck="false">Reach me at hello@example.com or admin@toolhub.software</textarea>
+</div>
+<div class="tool-card">
+  <label>Highlighted matches</label>
+  <pre class="output" id="re-highlight" style="word-break:break-word;white-space:pre-wrap"></pre>
+  <div class="meta" id="re-meta"></div>
+</div>
+<div class="tool-card">
+  <label>Capture groups</label>
+  <div id="re-groups" class="output" style="font-size:0.88rem">Saisissez une entrée ci-dessus pour voir le résultat.</div>
+</div>
+<div class="tool-card">
+  <label>Replace</label>
+  <input type="text" id="re-replace" placeholder="<a href=&quot;mailto:$&amp;&quot;>$&amp;</a>" oninput="reRun()">
+  <div class="meta" style="margin-top:0.5rem">Use <code>$1</code>, <code>$2</code> for groups · <code>$&amp;</code> for the whole match · <code>$$</code> for literal $</div>
+  <pre class="output" id="re-replaced" style="margin-top:0.75rem;word-break:break-word;white-space:pre-wrap">Saisissez une entrée ci-dessus pour voir le résultat.</pre>
+</div>
 
+    <div class="help">
+<h2>How it works</h2>
+<p>Uses the JavaScript engine's native <code>RegExp</code> — same flavour as Node.js and the browser. Patterns and inputs never leave your device.</p>
+<h3>Common patterns</h3>
+<ul>
+  <li><code>\b\w+@\w+\.\w+\b</code> — email-ish</li>
+  <li><code>^\s*$</code> — empty/whitespace-only line (with <code>m</code> flag)</li>
+  <li><code>(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})</code> — named capture groups</li>
+  <li><code>(?:.*)</code> — non-capturing group</li>
+  <li><code>(?=foo)</code> / <code>(?!foo)</code> — lookahead / negative lookahead</li>
+</ul>
+<h3>JavaScript regex gotchas</h3>
+<ul>
+  <li>JavaScript regex differs from PCRE — no <code>\K</code>, no recursive patterns, lookbehind only since ES2018.</li>
+  <li>Without <code>g</code> flag you get the first match only.</li>
+  <li><code>$&amp;</code> is the whole match; <code>$1</code>, <code>$2</code>, ... are groups; <code>$$</code> is a literal $.</li>
+</ul>
+<div class="related"><span class="meta">Outils similaires:</span> <a href="/fr/json-formatter/">Formateur JSON</a></div></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Confidentialité</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+  </footer>
   <script>
-    function runRegex() {
-      const pattern = document.getElementById('regexPattern').value;
-      const string = document.getElementById('testString').value;
-
-      if (!pattern || !string) {
-        alert("Veuillez remplir les deux champs.");
-        return;
-      }
-
-      try {
-        new RegExp(pattern);
-        const result = pattern.test(string);
-        document.getElementById('results').innerText = `Résultat: ${result}`;
-      } catch (e) {
-        document.getElementById('results').innerText = `Erreur: Expression régulière non valide`;
-      }
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
     }
   </script>
+  
+<script>
+function reEsc(s){ return s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function reRun(){
+  const pat = document.getElementById('re-pattern').value;
+  const flags = document.getElementById('re-flags').value;
+  const input = document.getElementById('re-input').value;
+  const replaceWith = document.getElementById('re-replace').value;
+  const hi = document.getElementById('re-highlight');
+  const groupsEl = document.getElementById('re-groups');
+  const meta = document.getElementById('re-meta');
+  const repl = document.getElementById('re-replaced');
+  if (!pat){ hi.textContent = ''; meta.textContent = ''; groupsEl.textContent = 'Saisissez une entrée ci-dessus pour voir le résultat.'; repl.textContent = ''; return; }
+  let regex;
+  try { regex = new RegExp(pat, flags); }
+  catch(e){ hi.classList.add('error'); hi.textContent = '✗ ' + e.message; meta.textContent = ''; groupsEl.textContent = ''; repl.textContent = ''; return; }
+  hi.classList.remove('error');
+  // Highlight matches
+  let out = '';
+  let last = 0;
+  let count = 0;
+  const groups = [];
+  const useGlobal = regex.global;
+  if (useGlobal){
+    let m;
+    while ((m = regex.exec(input)) !== null){
+      out += reEsc(input.slice(last, m.index));
+      out += '<mark style="background:var(--accent);color:#fff;padding:0 2px;border-radius:2px">' + reEsc(m[0] || '') + '</mark>';
+      last = m.index + (m[0]?.length || 0);
+      count++;
+      groups.push({index: m.index, match: m[0], groups: m.slice(1)});
+      if (m[0] === '') { regex.lastIndex++; if (regex.lastIndex > input.length) break; }
+      if (count > 10000) break;
+    }
+    out += reEsc(input.slice(last));
+  } else {
+    const m = regex.exec(input);
+    if (m){
+      out = reEsc(input.slice(0, m.index)) + '<mark style="background:var(--accent);color:#fff;padding:0 2px;border-radius:2px">' + reEsc(m[0]) + '</mark>' + reEsc(input.slice(m.index + m[0].length));
+      count = 1;
+      groups.push({index: m.index, match: m[0], groups: m.slice(1)});
+    } else {
+      out = reEsc(input);
+    }
+  }
+  hi.innerHTML = out || '<span style="color:var(--text-muted)">(no matches)</span>';
+  meta.textContent = count + ' match' + (count === 1 ? '' : 'es');
+  // Capture groups
+  if (groups.length === 0){
+    groupsEl.textContent = '(no matches)';
+  } else {
+    groupsEl.innerHTML = groups.slice(0, 50).map((g, i) =>
+      'Match ' + (i+1) + ' at index ' + g.index + ':\n' +
+      '  full: ' + reEsc(g.match) +
+      (g.groups.length ? '\n' + g.groups.map((cg, j) => '  $' + (j+1) + ': ' + reEsc(cg ?? '<undefined>')).join('\n') : '')
+    ).join('\n\n');
+  }
+  // Replace
+  if (replaceWith !== ''){
+    try {
+      const replaced = input.replace(new RegExp(pat, flags), replaceWith);
+      repl.textContent = replaced;
+    } catch(e){ repl.textContent = '✗ ' + e.message; }
+  } else {
+    repl.textContent = '(enter a replacement above)';
+  }
+}
+document.addEventListener('DOMContentLoaded', reRun);
+</script>
+
 </body>
 </html>
-

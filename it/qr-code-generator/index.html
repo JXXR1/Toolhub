@@ -3,105 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generatore di QR Code - Strumento Online gratuito</title>
-  <meta name="description" content="Crea facilmente e gratuitamente codici QR con il nostro strumento online. Crea il tuo proprio codice QR facendo solo pochi clic!">
-  <meta property="og:title" content="Generatore di QR Code - Strumento Online gratuito">
-  <meta property="og:description" content="Crea facilmente e gratuitamente codici QR con il nostro strumento online. Crea il tuo proprio codice QR facendo solo pochi clic!">
+  <title>Generatore di Codici QR — Toolhub</title>
+  <meta name="description" content="Generatore di codici QR gratuito online. Dimensione, colori e livelli di correzione errori personalizzabili. PNG o SVG senza filigrane.">
+  <meta property="og:title" content="Generatore di Codici QR — Toolhub">
+  <meta property="og:description" content="Generatore di codici QR gratuito online. Dimensione, colori e livelli di correzione errori personalizzabili. PNG o SVG senza filigrane.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com/qr-code-generator">
+  <meta property="og:url" content="https://toolhub.software/it/qr-code-generator/">
+  <link rel="canonical" href="https://toolhub.software/it/qr-code-generator/">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Generatore di QR Code",
-      "description": "Crea facilmente e gratuitamente codici QR con il nostro strumento online. Crea il tuo proprio codice QR facendo solo pochi clic!",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Any",
-      "offers": {"@type": "Offer", "price": "0"}
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Generatore di Codici QR",
+    "description": "Generatore di codici QR gratuito online. Dimensione, colori e livelli di correzione errori personalizzabili. PNG o SVG senza filigrane.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0"},
+    "url": "https://toolhub.software/it/qr-code-generator/"
+  }
   </script>
   <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f7fa;
-      padding: 20px;
-    }
-    .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    h1 { color: #2c3e50; margin-bottom: 20px; font-size: 28px; }
-    .form-group { margin-bottom: 20px; }
-    input[type="text"] { width: calc(100% - 22px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-    button { background: #2c3e50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
-    .result { margin-top: 20px; text-align: center; }
-    @media (max-width: 768px) {
-      .container { max-width: 100%; padding: 20px; }
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Generatore di QR Code</h1>
-    <p class="description">Crea facilmente e gratuitamente codici QR con il nostro strumento online. Crea il tuo proprio codice QR facendo solo pochi clic!</p>
-    
-    <form id="qrForm" action="#" method="post">
-      <div class="form-group">
-        <label for="qrText">Inserisci URL o testo:</label>
-        <input type="text" id="qrText" name="qrText" required placeholder="https://example.com">
-      </div>
-      <button type="submit">Genera codice QR</button>
-    </form>
-
-    <div class="result" id="qrResult"></div>
-    
-    <div class="usage">
-      <h2>Come Usare</h2>
-      <ol>
-        <li>Inserisci l'URL o il testo che vuoi codificare nel campo di input.</li>
-        <li>Fai clic su "Genera codice QR".</li>
-        <li>Il tuo codice QR verrà visualizzato sotto.</li>
-      </ol>
+  <header class="header">
+    <a href="/it/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/qr-code-generator/'; else location.href='/qr-code-generator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" selected="selected">🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambia tema">🌙</button>
     </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/it/">Tutti gli strumenti</a> / Generatore di Codici QR</div>
+    <h1>Generatore di Codici QR</h1>
+    <p class="tagline">Genera codici QR per testo, URL, Wi-Fi o vCard. Dimensione, colori e correzione errori personalizzabili. Esporta PNG o SVG.</p>
     
-    <div class="features">
-      <h2>Caratteristiche</h2>
-      <ul>
-        <li>✓ Interfaccia semplice e intuitiva.</li>
-        <li>✓ Gratuito da utilizzare senza limitazioni.</li>
-        <li>✓ Compatibile su tutti i dispositivi.</li>
-      </ul>
+<div class="tool-card">
+  <label>Input</label>
+  <textarea id="qr-input" placeholder="https://example.com" oninput="qrRender()">https://toolhub.software</textarea>
+  <div class="row-2col" style="margin-top:1rem">
+    <div>
+      <label>Size (px)</label>
+      <input type="number" id="qr-size" value="320" min="64" max="1024" step="32" oninput="qrRender()">
+    </div>
+    <div>
+      <label>Error correction</label>
+      <select id="qr-ec" onchange="qrRender()">
+        <option value="L">L — 7%</option>
+        <option value="M" selected>M — 15%</option>
+        <option value="Q">Q — 25%</option>
+        <option value="H">H — 30%</option>
+      </select>
     </div>
   </div>
-  
+  <div class="row-2col" style="margin-top:1rem">
+    <div>
+      <label>Foreground</label>
+      <input type="color" id="qr-fg" value="#000000" oninput="qrRender()" style="height:42px;padding:4px">
+    </div>
+    <div>
+      <label>Background</label>
+      <input type="color" id="qr-bg" value="#ffffff" oninput="qrRender()" style="height:42px;padding:4px">
+    </div>
+  </div>
+  <div class="button-row">
+    <button onclick="qrDownloadPng()">PNG</button>
+    <button onclick="qrDownloadSvg()">SVG</button>
+    <button class="secondary" onclick="qrPreset('wifi')">Wi-Fi preset</button>
+    <button class="secondary" onclick="qrPreset('mailto')">Email preset</button>
+    <button class="secondary" onclick="qrPreset('tel')">Phone preset</button>
+  </div>
+</div>
+<div class="tool-card" style="text-align:center">
+  <div id="qr-canvas" style="display:inline-block"></div>
+  <div class="meta" id="qr-meta"></div>
+</div>
+
+    <div class="help">
+<h2>How it works</h2>
+<p>Generated entirely in your browser using the open-source <a href="https://github.com/soldair/node-qrcode" rel="noopener">qrcode</a> library. Your input text never leaves the page.</p>
+<h3>Tips</h3>
+<ul>
+  <li><strong>Error correction</strong>: higher levels survive more damage but make the code denser. Use <strong>H</strong> if you plan to overlay a logo.</li>
+  <li><strong>Wi-Fi preset</strong>: format is <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;password&gt;;;</code> — most modern phones scan and join automatically.</li>
+  <li><strong>Contrast matters</strong>: if scanners struggle, increase contrast between foreground and background.</li>
+  <li><strong>SVG</strong> scales to any size without quality loss — best for print or large displays.</li>
+</ul>
+</div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+  </footer>
   <script>
-    document.getElementById('qrForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const qrText = document.getElementById('qrText').value;
-      if (!qrText) {
-        alert('Inserisci un URL o testo.');
-        return;
-      }
-      
-      fetch('/generate-qr-code', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ qrText })
-      })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('qrResult').innerHTML = `<img src="${data.qrCodeUrl}" alt="Codice QR generato">`;
-      })
-      .catch(error => {
-        console.error('Errore durante la generazione del codice QR:', error);
-        alert('Si è verificato un errore durante la generazione del tuo codice QR.');
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
       });
-    });
+    }
   </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+<script>
+function qrRender(){
+  const text = document.getElementById('qr-input').value || ' ';
+  const size = parseInt(document.getElementById('qr-size').value, 10) || 320;
+  const ec = document.getElementById('qr-ec').value;
+  const fg = document.getElementById('qr-fg').value;
+  const bg = document.getElementById('qr-bg').value;
+  const wrap = document.getElementById('qr-canvas');
+  wrap.innerHTML = '<canvas></canvas>';
+  const canvas = wrap.querySelector('canvas');
+  QRCode.toCanvas(canvas, text, {
+    width: size,
+    errorCorrectionLevel: ec,
+    color: { dark: fg, light: bg },
+    margin: 2,
+  }, function(err){
+    if (err){ document.getElementById('qr-meta').textContent = 'Error: ' + err.message; return; }
+    document.getElementById('qr-meta').textContent = size + '×' + size + 'px · EC ' + ec + ' · ' + text.length + ' chars';
+  });
+}
+function qrDownloadPng(){
+  const canvas = document.querySelector('#qr-canvas canvas');
+  if (!canvas) return;
+  const a = document.createElement('a');
+  a.download = 'qrcode.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+function qrDownloadSvg(){
+  const text = document.getElementById('qr-input').value || ' ';
+  const ec = document.getElementById('qr-ec').value;
+  const fg = document.getElementById('qr-fg').value;
+  const bg = document.getElementById('qr-bg').value;
+  QRCode.toString(text, { type: 'svg', errorCorrectionLevel: ec, color: { dark: fg, light: bg }, margin: 2 }, function(err, svg){
+    if (err) return;
+    const blob = new Blob([svg], {type: 'image/svg+xml'});
+    const a = document.createElement('a');
+    a.download = 'qrcode.svg';
+    a.href = URL.createObjectURL(blob);
+    a.click();
+  });
+}
+function qrPreset(kind){
+  const inp = document.getElementById('qr-input');
+  if (kind === 'wifi') inp.value = 'WIFI:T:WPA;S:NetworkName;P:password;;';
+  if (kind === 'mailto') inp.value = 'mailto:hello@example.com?subject=Hello';
+  if (kind === 'tel') inp.value = 'tel:+421900000000';
+  qrRender();
+}
+document.addEventListener('DOMContentLoaded', () => { setTimeout(qrRender, 100); });
+</script>
+
 </body>
 </html>
-
