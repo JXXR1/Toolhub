@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Einheitenrechner — Toolhub</title>
+  <meta name="description" content="Kostenloser Einheitenrechner. Konvertiere Länge, Gewicht, Temperatur, Volumen und Fläche zwischen metrischen und imperialen Einheiten.">
+  <meta property="og:title" content="Einheitenrechner — Toolhub">
+  <meta property="og:description" content="Kostenloser Einheitenrechner. Konvertiere Länge, Gewicht, Temperatur, Volumen und Fläche zwischen metrischen und imperialen Einheiten.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/de/unit-converter/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/de/unit-converter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/unit-converter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/unit-converter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/unit-converter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/unit-converter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/unit-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/unit-converter/">
+  <meta property="og:locale" content="de_DE">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/de/unit-converter/#tool",
+        "name": "Einheitenrechner",
+        "description": "Kostenloser Einheitenrechner. Konvertiere Länge, Gewicht, Temperatur, Volumen und Fläche zwischen metrischen und imperialen Einheiten.",
+        "url": "https://toolhub.software/de/unit-converter/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Math Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "de",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["unit", "convert", "length", "weight", "temperature", "volume", "area", "metric", "imperial"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Alle Tools", "item": "https://toolhub.software/de/"},
+          {"@type": "ListItem", "position": 2, "name": "Einheitenrechner", "item": "https://toolhub.software/de/unit-converter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/de/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/unit-converter/'; else location.href='/unit-converter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" selected="selected">🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Theme wechseln">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/de/">Alle Tools</a> / Einheitenrechner</div>
+    <h1>Einheitenrechner</h1>
+    <p class="tagline">Konvertiere zwischen metrischen und imperialen Einheiten für Länge, Gewicht, Temperatur, Volumen und Fläche.</p>
+    
+<div class="tool-card">
+  <label>Category</label>
+  <select id="uc-cat" onchange="ucCatChanged(); ucRun()">
+    <option value="length">Length</option>
+    <option value="weight">Weight</option>
+    <option value="temperature">Temperature</option>
+    <option value="volume">Volume</option>
+    <option value="area">Area</option>
+    <option value="time">Time</option>
+    <option value="speed">Speed</option>
+  </select>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Von</label>
+      <div class="uc-row">
+        <input type="number" id="uc-in" value="1" oninput="ucRun()" step="any" style="font-family:ui-monospace,monospace">
+        <select id="uc-from" onchange="ucRun()"></select>
+      </div>
+    </div>
+    <div>
+      <label>Zu</label>
+      <div class="uc-row">
+        <input type="text" id="uc-out" readonly style="font-family:ui-monospace,monospace;background:var(--bg-elev)">
+        <select id="uc-to" onchange="ucRun()"></select>
+      </div>
+    </div>
+  </div>
+  <div class="button-row" style="margin-top:0.6rem">
+    <button class="secondary" onclick="ucSwap()">⇄ Swap</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Ergebnis</label>
+  <pre class="output" id="uc-summary">Geben Sie oben eine Eingabe ein, um das Ergebnis zu sehen.</pre>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>What is this for?</h2>
+<p>Most of the world is metric, the US is imperial, the UK is half-and-half, recipes are in cups when they should be in grams, and somewhere in the middle a kid's school project asks for "5 yards in centimetres". This tool runs the conversions for length, weight, temperature, volume, area, time, and speed using high-precision definitions — and spreads the result across every unit in the category at once, so you don't have to convert twice.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Reading a recipe in cups when you cook in grams (or vice versa).</li>
+  <li>Translating a flight distance in nautical miles into kilometres.</li>
+  <li>Converting an outdoor-temperature forecast from °C to °F before travel.</li>
+  <li>Sizing a piece of furniture: 72 inches wide → will it fit through a 1.9 m doorway?</li>
+  <li>Reading scientific paper measurements in SI when you think in imperial.</li>
+</ul>
+
+<h3>What's accurate, and what isn't</h3>
+<ul>
+  <li><strong>Length, weight, temperature, area, speed</strong> use the SI definitions and the international yard-and-pound agreement (1959), so they're precise to the precision your input has.</li>
+  <li><strong>Volume</strong> can be fiddly: a US "gallon" (3.785 L) and a UK "imperial gallon" (4.546 L) are different. The tool labels which is which.</li>
+  <li><strong>Cup / tablespoon / teaspoon</strong> default to US measure here. UK and Australian cups are slightly different (250 mL in AU, 240 mL in US).</li>
+  <li><strong>"Month" and "year"</strong> in the time category use averages (30.44 days / 365.25 days). Don't use this for legal or accounting calculations where exact months matter — use a date calculator instead.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Temperature is not a ratio.</strong> 0°C is not "no temperature" — it's a reference point. Doubling Celsius doesn't double the heat. The conversion uses the additive offsets (273.15 to/from Kelvin, 32 between C and F) which is why the tool uses functions for temperature, not multipliers.</li>
+  <li><strong>US vs UK fluid ounces are different.</strong> 1 US fl oz = 29.57 mL, 1 UK fl oz = 28.41 mL. Always check which standard a recipe uses.</li>
+  <li><strong>"Tonne" vs "ton".</strong> Metric tonne = 1000 kg. US short ton = 907 kg. UK long ton = 1016 kg. The tool's "t" is the metric tonne.</li>
+  <li><strong>Mass vs weight.</strong> Strictly, kg is mass and pounds are mass too (despite the colloquial "I weigh 70 kg"). The tool treats them as a mass-to-mass conversion. For force (newtons, pound-force), you need a different category.</li>
+  <li><strong>Round at the end, not the middle.</strong> Don't convert m → ft, round, then ft → in — accumulate errors. Go straight to the target unit.</li>
+  <li><strong>Stones &amp; pounds.</strong> A British weight: 1 stone = 14 lb. The tool has stone (st) but you'll need to do the lb portion separately for "11 st 4 lb"-style entries.</li>
+</ul>
+<div class="related"><span class="meta">Ähnliche Tools:</span> <a href="/de/timestamp-converter/">Unix-Zeitstempel-Konverter</a> <a href="/de/timezone-converter/">Zeitzonen-Konverter</a> <a href="/de/percentage-calculator/">Prozentrechner</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Datenschutz</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.uc-row{display:flex;gap:0.5rem;align-items:center}
+.uc-row input{flex:1}
+.uc-row select{flex:0 0 130px}
+</style>
+<script>
+// All units defined as a factor relative to a base. For temperature, use functions.
+const UC = {
+  length: {
+    base: 'm',
+    units: {
+      mm:0.001, cm:0.01, m:1, km:1000,
+      in:0.0254, ft:0.3048, yd:0.9144, mi:1609.344,
+      'nautical mi':1852
+    }
+  },
+  weight: {
+    base: 'kg',
+    units: {
+      mg:0.000001, g:0.001, kg:1, t:1000,
+      oz:0.028349523125, lb:0.45359237, st:6.35029318
+    }
+  },
+  temperature: {
+    base: 'K',
+    fns: {
+      C: { to: c => c + 273.15, from: k => k - 273.15 },
+      F: { to: f => (f - 32) * 5/9 + 273.15, from: k => (k - 273.15) * 9/5 + 32 },
+      K: { to: k => k, from: k => k }
+    }
+  },
+  volume: {
+    base: 'L',
+    units: {
+      mL:0.001, L:1, m3:1000,
+      'tsp (US)':0.00492892, 'tbsp (US)':0.0147868, 'fl oz (US)':0.0295735,
+      cup:0.236588, 'pint (US)':0.473176, 'quart (US)':0.946353, 'gal (US)':3.78541,
+      'gal (UK)':4.54609, 'pint (UK)':0.568261
+    }
+  },
+  area: {
+    base: 'm2',
+    units: {
+      mm2:0.000001, cm2:0.0001, m2:1, ha:10000, km2:1000000,
+      in2:0.00064516, ft2:0.092903, yd2:0.836127, acre:4046.8564, mi2:2589988.11
+    }
+  },
+  time: {
+    base: 's',
+    units: {
+      ms:0.001, s:1, min:60, h:3600, day:86400, week:604800,
+      month:2629800,  // average
+      year:31557600
+    }
+  },
+  speed: {
+    base: 'm/s',
+    units: {
+      'm/s':1, 'km/h':1/3.6, 'mph':0.44704, 'ft/s':0.3048, 'knot':0.514444
+    }
+  }
+};
+function ucPopulate(){
+  const cat = document.getElementById('uc-cat').value;
+  const def = UC[cat];
+  const labels = def.units ? Object.keys(def.units) : Object.keys(def.fns);
+  for(const id of ['uc-from','uc-to']){
+    const sel = document.getElementById(id);
+    sel.innerHTML = labels.map(l => `<option value="${l}">${l}</option>`).join('');
+  }
+}
+function ucCatChanged(){
+  const cat = document.getElementById('uc-cat').value;
+  ucPopulate();
+  if(cat === 'temperature'){
+    document.getElementById('uc-from').value = 'C';
+    document.getElementById('uc-to').value = 'F';
+  } else if(cat === 'length'){
+    document.getElementById('uc-from').value = 'm';
+    document.getElementById('uc-to').value = 'ft';
+  } else if(cat === 'weight'){
+    document.getElementById('uc-from').value = 'kg';
+    document.getElementById('uc-to').value = 'lb';
+  } else if(cat === 'volume'){
+    document.getElementById('uc-from').value = 'L';
+    document.getElementById('uc-to').value = 'gal (US)';
+  } else if(cat === 'area'){
+    document.getElementById('uc-from').value = 'm2';
+    document.getElementById('uc-to').value = 'ft2';
+  } else if(cat === 'time'){
+    document.getElementById('uc-from').value = 'h';
+    document.getElementById('uc-to').value = 'min';
+  } else if(cat === 'speed'){
+    document.getElementById('uc-from').value = 'km/h';
+    document.getElementById('uc-to').value = 'mph';
+  }
+}
+function ucConvert(val, from, to){
+  const cat = document.getElementById('uc-cat').value;
+  const def = UC[cat];
+  if(def.fns){
+    const baseVal = def.fns[from].to(val);
+    return def.fns[to].from(baseVal);
+  } else {
+    return val * def.units[from] / def.units[to];
+  }
+}
+function ucFmt(n){
+  if(!isFinite(n)) return '—';
+  const a = Math.abs(n);
+  if(a !== 0 && (a >= 1e6 || a < 1e-3)) return n.toExponential(4);
+  return Number(n.toFixed(6)).toString();
+}
+function ucSwap(){
+  const f = document.getElementById('uc-from'), t = document.getElementById('uc-to');
+  [f.value, t.value] = [t.value, f.value];
+  ucRun();
+}
+function ucRun(){
+  const v = parseFloat(document.getElementById('uc-in').value);
+  if(isNaN(v)){ document.getElementById('uc-out').value = ''; document.getElementById('uc-summary').textContent = 'Geben Sie oben eine Eingabe ein, um das Ergebnis zu sehen.'; return; }
+  const f = document.getElementById('uc-from').value;
+  const t = document.getElementById('uc-to').value;
+  const r = ucConvert(v, f, t);
+  document.getElementById('uc-out').value = ucFmt(r);
+  // Show a few common targets too
+  const cat = document.getElementById('uc-cat').value;
+  const def = UC[cat];
+  const labels = def.units ? Object.keys(def.units) : Object.keys(def.fns);
+  const lines = labels.map(l => `  ${ucFmt(ucConvert(v, f, l)).padStart(15)} ${l}`);
+  document.getElementById('uc-summary').textContent = `${ucFmt(v)} ${f} =\n${lines.join('\n')}`;
+}
+document.addEventListener('DOMContentLoaded', () => { ucCatChanged(); ucRun(); });
+</script>
+
+</body>
+</html>

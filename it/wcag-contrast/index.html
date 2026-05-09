@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificatore Contrasto WCAG — Toolhub</title>
+  <meta name="description" content="Verificatore gratuito di contrasto WCAG. Scegli colori di primo piano e sfondo, ottieni il rapporto (1:1 a 21:1) e verdetto pass/fail secondo WCAG 2.1 AA e AAA.">
+  <meta property="og:title" content="Verificatore Contrasto WCAG — Toolhub">
+  <meta property="og:description" content="Verificatore gratuito di contrasto WCAG. Scegli colori di primo piano e sfondo, ottieni il rapporto (1:1 a 21:1) e verdetto pass/fail secondo WCAG 2.1 AA e AAA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/it/wcag-contrast/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/it/wcag-contrast/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/wcag-contrast/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/wcag-contrast/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/wcag-contrast/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/wcag-contrast/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/wcag-contrast/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/wcag-contrast/">
+  <meta property="og:locale" content="it_IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/it/wcag-contrast/#tool",
+        "name": "Verificatore Contrasto WCAG",
+        "description": "Verificatore gratuito di contrasto WCAG. Scegli colori di primo piano e sfondo, ottieni il rapporto (1:1 a 21:1) e verdetto pass/fail secondo WCAG 2.1 AA e AAA.",
+        "url": "https://toolhub.software/it/wcag-contrast/",
+        "applicationCategory": "DesignApplication",
+        "applicationSubCategory": "Design Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "it",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["wcag", "contrast", "accessibility", "a11y", "color", "ratio"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tutti gli strumenti", "item": "https://toolhub.software/it/"},
+          {"@type": "ListItem", "position": 2, "name": "Verificatore Contrasto WCAG", "item": "https://toolhub.software/it/wcag-contrast/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/it/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/wcag-contrast/'; else location.href='/wcag-contrast/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" selected="selected">🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambia tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/it/">Tutti gli strumenti</a> / Verificatore Contrasto WCAG</div>
+    <h1>Verificatore Contrasto WCAG</h1>
+    <p class="tagline">Controlla il rapporto di contrasto tra due colori. Verdetto pass/fail per WCAG AA e AAA a ogni dimensione.</p>
+    
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Foreground</label>
+      <div class="wc-row">
+        <input type="color" id="wc-fg-pick" value="#222222" oninput="wcSync('fg', this.value); wcRun()">
+        <input type="text" id="wc-fg-hex" value="#222222" oninput="wcSync('fg-from-hex', this.value); wcRun()" style="font-family:ui-monospace,monospace">
+      </div>
+    </div>
+    <div>
+      <label>Background</label>
+      <div class="wc-row">
+        <input type="color" id="wc-bg-pick" value="#ffffff" oninput="wcSync('bg', this.value); wcRun()">
+        <input type="text" id="wc-bg-hex" value="#ffffff" oninput="wcSync('bg-from-hex', this.value); wcRun()" style="font-family:ui-monospace,monospace">
+      </div>
+    </div>
+  </div>
+  <div class="button-row" style="margin-top:0.6rem">
+    <button class="secondary" onclick="wcSwap()">Swap</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Risultato</label>
+  <div id="wc-preview" class="wc-preview">
+    <div class="wc-sample wc-large">Aa — Large text 24px / 18px bold</div>
+    <div class="wc-sample wc-normal">Aa — Normal text 16px</div>
+    <div class="wc-sample wc-small">Aa — Small text 12px</div>
+  </div>
+  <div id="wc-meta" class="wc-meta"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>What is this for?</h2>
+<p>WCAG (Web Content Accessibility Guidelines) defines a minimum contrast ratio between text and its background so people with low vision, colour-blindness, or in glare conditions can still read it. This tool computes that ratio (1:1 = identical, 21:1 = pure black on pure white) and tells you whether your colour pair passes WCAG 2.1 Level AA or AAA, separately for normal text, large text, and UI components. The maths follows the W3C luminance formula exactly.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Checking whether your brand colour on a white card meets accessibility standards.</li>
+  <li>Picking a button text colour that passes AA against a brand-coloured background.</li>
+  <li>Auditing a design system token by token before shipping.</li>
+  <li>Justifying a colour-change request to a stakeholder with a concrete pass/fail verdict.</li>
+  <li>Testing what your users with reduced contrast preferences will actually see.</li>
+</ul>
+
+<h3>The thresholds</h3>
+<ul>
+  <li><strong>Normal text</strong> (under 18pt / 14pt bold): <strong>4.5:1</strong> for AA, <strong>7:1</strong> for AAA.</li>
+  <li><strong>Large text</strong> (≥18pt or ≥14pt bold): <strong>3:1</strong> for AA, <strong>4.5:1</strong> for AAA.</li>
+  <li><strong>UI components &amp; graphics</strong> (icons, focus rings, form borders, chart elements that convey info): <strong>3:1</strong> for AA (WCAG 2.1 §1.4.11). No AAA tier.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>"Large text" is bigger than you think.</strong> 18pt is roughly 24px. 14pt bold is roughly 19px bold. Body copy at 16px is <em>not</em> large text — it needs the 4.5:1 threshold.</li>
+  <li><strong>Light text on a busy photo will fail.</strong> The contrast ratio is between specific pixels — overlay a dark gradient or use a solid panel to give the text a controlled background.</li>
+  <li><strong>Anti-aliasing softens contrast.</strong> 4.5:1 is the floor, not a goal. Comfortable reading usually wants 7:1 or better, especially for body copy.</li>
+  <li><strong>Hover and focus states count.</strong> If your button passes AA at rest but fails on hover, that's a real accessibility bug.</li>
+  <li><strong>WCAG 2.1 vs APCA.</strong> The new APCA (Accessible Perceptual Contrast Algorithm), proposed for WCAG 3, gives different and arguably better numbers — but WCAG 2.1 is the legal standard most jurisdictions still reference. Use this tool's numbers when meeting EN 301 549, ADA, or AA-conformance claims.</li>
+  <li><strong>Don't pad with transparency.</strong> A 50% alpha foreground over a known background has a different effective contrast — compute against the actual rendered colour, not the original.</li>
+</ul>
+<div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/color-picker/">Selettore Colore</a> <a href="/it/color-converter/">Convertitore di Colori</a> <a href="/it/css-gradient/">Generatore di Gradienti CSS</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.wc-row{display:flex;gap:0.5rem;align-items:center}
+.wc-row input[type=color]{width:48px;height:42px;padding:2px;flex:0 0 auto}
+.wc-row input[type=text]{flex:1}
+.wc-preview{border:1px solid var(--border);border-radius:8px;padding:1rem;display:flex;flex-direction:column;gap:0.6rem;background:#fff;color:#222}
+.wc-sample{padding:0.5rem 0.75rem;border-radius:4px}
+.wc-large{font-size:1.5rem;font-weight:600}
+.wc-normal{font-size:1rem}
+.wc-small{font-size:0.78rem}
+.wc-meta{margin-top:0.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.6rem;font-size:0.9rem}
+.wc-card{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.85rem}
+.wc-ratio{font-family:ui-monospace,monospace;font-size:1.6rem;font-weight:600;color:var(--accent)}
+.wc-row-result{display:flex;justify-content:space-between;font-size:0.85rem;margin-top:0.25rem}
+.wc-pass{color:#10b981;font-weight:600}
+.wc-fail{color:#ef4444;font-weight:600}
+</style>
+<script>
+function wcHexToRgb(h){
+  h = (h||'').trim().replace(/^#/,'');
+  if(h.length===3) h = h.split('').map(c=>c+c).join('');
+  if(!/^[0-9a-fA-F]{6}$/.test(h)) return null;
+  return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+}
+function wcLum(r,g,b){
+  const lin = c => { c/=255; return c<=0.03928 ? c/12.92 : Math.pow((c+0.055)/1.055, 2.4) };
+  return 0.2126*lin(r) + 0.7152*lin(g) + 0.0722*lin(b);
+}
+function wcRatio(fg, bg){
+  const L1 = wcLum(...fg), L2 = wcLum(...bg);
+  const hi = Math.max(L1,L2), lo = Math.min(L1,L2);
+  return (hi + 0.05) / (lo + 0.05);
+}
+function wcSync(which, val){
+  if(which==='fg'){ document.getElementById('wc-fg-hex').value = val }
+  else if(which==='bg'){ document.getElementById('wc-bg-hex').value = val }
+  else if(which==='fg-from-hex'){
+    const rgb = wcHexToRgb(val);
+    if(rgb) document.getElementById('wc-fg-pick').value = '#' + rgb.map(x=>x.toString(16).padStart(2,'0')).join('');
+  } else if(which==='bg-from-hex'){
+    const rgb = wcHexToRgb(val);
+    if(rgb) document.getElementById('wc-bg-pick').value = '#' + rgb.map(x=>x.toString(16).padStart(2,'0')).join('');
+  }
+}
+function wcSwap(){
+  const a = document.getElementById('wc-fg-hex').value;
+  const b = document.getElementById('wc-bg-hex').value;
+  document.getElementById('wc-fg-hex').value = b; wcSync('fg-from-hex', b);
+  document.getElementById('wc-bg-hex').value = a; wcSync('bg-from-hex', a);
+  wcRun();
+}
+function wcVerdict(ratio, threshold){
+  return ratio >= threshold ? `<span class="wc-pass">✓ Pass</span>` : `<span class="wc-fail">✗ Fail</span>`;
+}
+function wcRun(){
+  const fg = wcHexToRgb(document.getElementById('wc-fg-hex').value);
+  const bg = wcHexToRgb(document.getElementById('wc-bg-hex').value);
+  const meta = document.getElementById('wc-meta');
+  const preview = document.getElementById('wc-preview');
+  if(!fg || !bg){ meta.innerHTML = '<div class="wc-card">Enter valid hex colors above.</div>'; return; }
+  const fgHex = '#' + fg.map(x=>x.toString(16).padStart(2,'0')).join('');
+  const bgHex = '#' + bg.map(x=>x.toString(16).padStart(2,'0')).join('');
+  preview.style.background = bgHex;
+  preview.style.color = fgHex;
+  const r = wcRatio(fg, bg);
+  meta.innerHTML = `
+    <div class="wc-card"><div class="wc-ratio">${r.toFixed(2)}:1</div><div class="meta">Contrast ratio (1:1 to 21:1)</div></div>
+    <div class="wc-card">
+      <div><strong>Normal text</strong> (≥4.5 AA · ≥7 AAA)</div>
+      <div class="wc-row-result"><span>AA</span>${wcVerdict(r, 4.5)}</div>
+      <div class="wc-row-result"><span>AAA</span>${wcVerdict(r, 7.0)}</div>
+    </div>
+    <div class="wc-card">
+      <div><strong>Large text</strong> (≥3 AA · ≥4.5 AAA)</div>
+      <div class="wc-row-result"><span>AA</span>${wcVerdict(r, 3.0)}</div>
+      <div class="wc-row-result"><span>AAA</span>${wcVerdict(r, 4.5)}</div>
+    </div>
+    <div class="wc-card">
+      <div><strong>UI components</strong> (≥3 AA — WCAG 1.4.11)</div>
+      <div class="wc-row-result"><span>AA</span>${wcVerdict(r, 3.0)}</div>
+    </div>
+  `;
+}
+document.addEventListener('DOMContentLoaded', wcRun);
+</script>
+
+</body>
+</html>
