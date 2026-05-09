@@ -116,8 +116,17 @@ document.addEventListener('DOMContentLoaded', jwtDecode);
 """,
     "help": {
         "en": """
-<h2>How it works</h2>
-<p>A JWT is three base64url-encoded parts joined by dots: <code>header.payload.signature</code>. This tool decodes the first two — the signature is shown raw because verification needs the original signing key.</p>
+<h2>What is this for?</h2>
+<p>A JWT (JSON Web Token) is three base64url-encoded parts joined by dots: <code>header.payload.signature</code>. The header and payload are JSON objects you can inspect; the signature proves the token wasn't tampered with after issuance. This tool decodes the first two parts so you can see what's inside without the noise of base64 — useful when debugging auth flows, expired sessions, or "which user is this token for, exactly?".</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Debugging an OAuth / OpenID Connect login that's failing — paste the access or ID token, see what the IdP actually issued.</li>
+  <li>Confirming token expiry: the tool decodes <code>exp</code> as a real date and flags it if it's in the past.</li>
+  <li>Sanity-checking custom claims a backend is asserting (roles, permissions, tenant IDs).</li>
+  <li>Reading a token your library "rejected as invalid" to see whether the issue is structural, expiry, or signature.</li>
+</ul>
+
 <h3>Common claims</h3>
 <ul>
   <li><code>iss</code> — issuer (who created the token)</li>
@@ -127,8 +136,14 @@ document.addEventListener('DOMContentLoaded', jwtDecode);
   <li><code>iat</code> — issued-at (Unix timestamp)</li>
   <li><code>nbf</code> — not-valid-before (Unix timestamp)</li>
 </ul>
-<h3>Security note</h3>
-<p>A decoded JWT is <strong>not trustworthy</strong> until you verify the signature with the issuer's public key (RSA/EC) or shared secret (HMAC). Treat anything you decode here as an opaque blob until that step.</p>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>A decoded JWT is NOT a verified JWT.</strong> The signature isn't checked here — that requires the issuer's public key (RSA/EC) or shared secret (HMAC). Decoded contents tell you what the token <em>says</em>, not whether you should trust it. Always verify on the server before honouring claims.</li>
+  <li><strong>Don't paste production tokens into anywhere.</strong> Anyone with a live JWT can impersonate the user until <code>exp</code>. The browser doesn't transmit it from this tool, but extensions, screen-recordings, and dev tools can. Use a fresh token from a test environment if you need to share.</li>
+  <li><strong><code>alg: none</code> tokens are a known attack class.</strong> If a header has <code>alg: none</code> and your library accepts it, attackers can forge tokens. Reject this on the server.</li>
+  <li><strong>Time skew matters.</strong> A token's <code>exp</code> is checked against the verifier's clock. Servers with drift fail tokens that look valid here.</li>
+</ul>
 """,
     },
     "related": ["base64-encoder", "json-formatter", "hash-generator"],

@@ -222,12 +222,24 @@ document.addEventListener('DOMContentLoaded', dcMode);
 """,
     "help": {
         "en": """
-<h2>Notes</h2>
+<h2>What is this for?</h2>
+<p>Three things people actually want from a date calculator: the gap between two dates ("how many days until launch?"), shifting a date by a span ("90 days after invoice date"), and a precise age ("years, months, and days from a date of birth"). This tool does all three, in your browser, anchored to UTC noon so DST and timezone shifts don't quietly wrong the answer when you travel.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li>All calculations are in <strong>UTC at noon</strong> — that dodges DST and timezone weirdness so results don't shift when you move between regions.</li>
-  <li>The <strong>add/subtract</strong> mode applies years and months first, then weeks and days. Adding 1 month to 31 January gives 28/29 February (calendar-safe).</li>
-  <li><strong>Workdays</strong> counts Mon–Fri inclusive; it doesn't know about public holidays.</li>
-  <li><strong>Total months</strong> in the age view is an approximation (years × 12 + months) — it ignores the trailing days.</li>
+  <li>Calculating contract durations, project timelines, and deadlines.</li>
+  <li>Working out exactly how many workdays (Mon–Fri) fall between two dates for invoicing or project estimation.</li>
+  <li>Verifying age cut-offs (visa eligibility, school years, milestone birthdays).</li>
+  <li>Adding "30 days net" or "90 day cooling-off" periods to a baseline date in a way that handles month-end correctly.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Inclusive vs exclusive end dates.</strong> "Days from Mon to Fri" is 4 if you count gaps, 5 if you count days. The toggle controls which convention; both are right depending on the question.</li>
+  <li><strong>Add/subtract order matters.</strong> Years and months apply first, then weeks and days. Adding "1 month + 1 day" to Jan 30 gives Mar 1 (Feb 30 → Feb 28/29 → +1), not Mar 2 — which is the calendar-safe convention almost every datetime library uses.</li>
+  <li><strong>Workdays don't include holidays.</strong> The calculation knows weekends but not bank holidays — adjust manually if it matters.</li>
+  <li><strong>"Total months" is approximate</strong> in the age view (years × 12 + months) — it ignores the trailing days. The Y/M/D figure is exact.</li>
+  <li><strong>UTC anchoring trades off with locale.</strong> A date in your local timezone might map to a slightly different UTC day. For most uses (deadlines, ages) UTC noon is the safer anchor; for to-the-minute timezone work use the timezone converter.</li>
 </ul>
 """,
     },

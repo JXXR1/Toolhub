@@ -198,16 +198,32 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>Uses JavaScript <code>BigInt</code> internally so values aren't capped at 2<sup>53</sup>. Negative numbers carry through. Underscore digit grouping is accepted (<code>1_000_000</code>).</p>
+<h2>What is this for?</h2>
+<p>Numbers are the same number regardless of base — <code>255</code>, <code>0xff</code>, <code>0b11111111</code>, and <code>0o377</code> are identical. But which base you read or write in matters when you're translating between memory layouts, parsing colour codes, decoding bit fields, or just reading hex from a debugger. This tool converts between binary, octal, decimal, hexadecimal, and any base from 2 to 36, using BigInt under the hood so you don't lose precision on large numbers.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Reading a hex value from a stack trace and figuring out what it is in decimal.</li>
+  <li>Converting CSS colour <code>0xff8800</code> into an RGB triple, or vice versa.</li>
+  <li>Inspecting a bitmask or flags integer in binary to see which bits are set.</li>
+  <li>Translating between base-36 short IDs and decimal counters.</li>
+</ul>
+
 <h3>Recognised prefixes</h3>
 <ul>
   <li>Hex: <code>0x</code>, <code>0X</code>, <code>#</code></li>
   <li>Binary: <code>0b</code>, <code>0B</code></li>
   <li>Octal: <code>0o</code>, <code>0O</code></li>
+  <li>Underscore digit grouping: <code>1_000_000</code></li>
 </ul>
-<h3>Bit width</h3>
-<p>The "bits" indicator shows the minimum number of bits needed to represent the absolute value (plus one sign bit for negatives in two's complement).</p>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Negative numbers are sign-prefixed, not two's complement.</strong> <code>-128</code> is shown as <code>-10000000</code> in binary, not <code>10000000</code>. Most languages display the same way for arbitrary-precision integers.</li>
+  <li><strong>Big numbers don't lose precision here.</strong> JavaScript <code>Number</code> caps at 2<sup>53</sup>; this tool uses <code>BigInt</code>, so 64-bit integers, large hashes, and crypto values all round-trip exactly.</li>
+  <li><strong>Don't confuse base with case.</strong> Base-16 letters can be upper or lower; the tool accepts both and emits uppercase. Base-32 / base-36 outputs are lowercase by convention.</li>
+  <li><strong>Leading zeros are dropped.</strong> <code>0x000F</code> becomes <code>F</code>. If you need a fixed-width hex (e.g. for byte representations), pad in your code afterward.</li>
+</ul>
 <div class="related"><span class="meta">Related tools:</span> <a href="/base64-encoder/">Base64 Encoder / Decoder</a> <a href="/hash-generator/">Hash Generator</a> <a href="/uuid-generator/">UUID Generator</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

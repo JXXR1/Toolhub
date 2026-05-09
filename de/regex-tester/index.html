@@ -194,8 +194,17 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>Uses the JavaScript engine's native <code>RegExp</code> — same flavour as Node.js and the browser. Patterns and inputs never leave your device.</p>
+<h2>What is this for?</h2>
+<p>Regular expressions are dense and unforgiving. The way to write one that actually works is iteratively — pattern, sample text, see what matches, adjust. This tool gives you that loop in your browser using the JavaScript engine's native <code>RegExp</code>, plus capture-group inspection and a replacement preview. Patterns and inputs never leave the page.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Validating user input (email-shaped, phone-shaped, postcode-shaped) and seeing exactly which inputs pass and fail.</li>
+  <li>Parsing log lines, extracting fields, building log filters.</li>
+  <li>Designing find-and-replace patterns before running them across a real codebase.</li>
+  <li>Debugging a regex you copied from Stack Overflow that doesn't work — paste it here, see what it actually matches.</li>
+</ul>
+
 <h3>Common patterns</h3>
 <ul>
   <li><code>\b\w+@\w+\.\w+\b</code> — email-ish</li>
@@ -204,11 +213,15 @@
   <li><code>(?:.*)</code> — non-capturing group</li>
   <li><code>(?=foo)</code> / <code>(?!foo)</code> — lookahead / negative lookahead</li>
 </ul>
-<h3>JavaScript regex gotchas</h3>
+
+<h3>Common gotchas</h3>
 <ul>
-  <li>JavaScript regex differs from PCRE — no <code>\K</code>, no recursive patterns, lookbehind only since ES2018.</li>
-  <li>Without <code>g</code> flag you get the first match only.</li>
-  <li><code>$&amp;</code> is the whole match; <code>$1</code>, <code>$2</code>, ... are groups; <code>$$</code> is a literal $.</li>
+  <li><strong>JavaScript ≠ PCRE.</strong> No <code>\K</code>, no recursive patterns, lookbehind only since ES2018. Patterns from Perl, PHP, or Python often need adjustment.</li>
+  <li><strong>Without <code>g</code> flag you get the first match only.</strong> Add <code>g</code> for "find all"; combine with <code>m</code> if anchors should match per-line.</li>
+  <li><strong>Greedy vs lazy.</strong> <code>.*</code> grabs as much as possible; <code>.*?</code> grabs as little. The difference between matching <code>&lt;b&gt;hi&lt;/b&gt; and &lt;i&gt;there&lt;/i&gt;</code> as one block vs two.</li>
+  <li><strong>Anchors at line vs string boundaries.</strong> <code>^</code> and <code>$</code> match string ends by default; with <code>m</code> flag they match each line.</li>
+  <li><strong>Replacement specials.</strong> <code>$&amp;</code> is the whole match; <code>$1</code>, <code>$2</code>, … are capture groups; <code>$$</code> is a literal <code>$</code>. Forgetting that is a common source of "why is my regex eating my dollars".</li>
+  <li><strong>Don't parse HTML with regex</strong> for anything serious. The classic warning is true: nested tags, comments, and CDATA need a real parser. Regex is fine for one-off log scraping or controlled inputs.</li>
 </ul>
 <div class="related"><span class="meta">Ähnliche Tools:</span> <a href="/de/json-formatter/">JSON-Formatter</a> <a href="/de/text-diff/">Text-Diff</a> <a href="/de/email-validator/">E-Mail-Validator</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

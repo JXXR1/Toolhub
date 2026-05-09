@@ -205,14 +205,24 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>Generated entirely in your browser using the open-source <a href="https://github.com/soldair/node-qrcode" rel="noopener">qrcode</a> library. Your input text never leaves the page.</p>
-<h3>Tips</h3>
+<h2>What is this for?</h2>
+<p>QR codes are tiny URLs that a phone camera can read in a fraction of a second. Encode a URL, a Wi-Fi network, an email draft, a phone number, or any short text — print it on a poster, a business card, or a menu, and anyone with a phone can act on it without typing. This generator runs entirely in your browser using the open-source <a href="https://github.com/soldair/node-qrcode" rel="noopener">qrcode</a> library. Your input text never leaves the page.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li><strong>Error correction</strong>: higher levels survive more damage but make the code denser. Use <strong>H</strong> if you plan to overlay a logo.</li>
-  <li><strong>Wi-Fi preset</strong>: format is <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;password&gt;;;</code> — most modern phones scan and join automatically.</li>
-  <li><strong>Contrast matters</strong>: if scanners struggle, increase contrast between foreground and background.</li>
-  <li><strong>SVG</strong> scales to any size without quality loss — best for print or large displays.</li>
+  <li>Sharing a URL on a slide, a poster, a business card, or a packaging insert.</li>
+  <li>Letting guests join your Wi-Fi without typing the password (use the Wi-Fi preset).</li>
+  <li>Putting "scan to pay / book / order" on signage in physical spaces.</li>
+  <li>Encoding a vCard for instant contact-card import on the receiver's phone.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Error correction trades off with density.</strong> Higher levels (Q, H) survive scratches and overlaid logos; lower levels (L, M) keep the code small and faster to scan. Use <strong>H</strong> if you plan to overlay a logo, otherwise <strong>M</strong> is the sane default.</li>
+  <li><strong>Contrast matters.</strong> Stylised QR codes with low foreground/background contrast often look pretty but scan poorly under bad light. Test by scanning from the printed/screen output before shipping.</li>
+  <li><strong>Long content forces a denser code.</strong> If you must encode a 200-character URL, the resulting code is dense and harder to scan from far away. Shorten via a redirect first if size matters.</li>
+  <li><strong>SVG vs PNG.</strong> SVG scales without quality loss — best for print or large displays. PNG is universally accepted but pixelates if scaled up; export at the size you'll use.</li>
+  <li><strong>Wi-Fi preset format.</strong> <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;password&gt;;;</code> — modern iOS/Android scan and join automatically; very old phones may not support it.</li>
 </ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/url-encoder/">Encoder / Decoder URL</a> <a href="/it/image-to-base64/">Immagine a Base64</a> <a href="/it/youtube-thumbnail/">Download Miniature YouTube</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

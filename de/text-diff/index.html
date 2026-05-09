@@ -202,14 +202,32 @@ A new line at the end.</textarea>
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>The diff is computed line-by-line using the Longest Common Subsequence algorithm — the same approach <code>diff</code> and Git use. Lines that match drop into the "unchanged" stream; everything else becomes an addition or removal.</p>
-<h3>Whitespace and case</h3>
-<p>The toggles affect comparison only — display still shows the original text. Useful when the only difference is reformatting or trailing spaces.</p>
+<h2>What is this for?</h2>
+<p>Comparing two versions of a piece of text — a paragraph, a config file, a SQL query, a list — and seeing exactly which lines were added, removed, or left alone. Even when you don't have <code>git diff</code> handy or the text isn't in version control. The output is the same line-level diff you'd see in a code review: green for additions, red for removals, plain for unchanged context.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Spotting what's different between two emails, contracts, or pasted blobs that "look the same".</li>
+  <li>Comparing config files or environment variables across two environments (staging vs prod).</li>
+  <li>Reviewing changes to a piece of copy that was edited in Word/Docs by someone else.</li>
+  <li>Diffing two query results, log snippets, or JSON blobs (use the JSON Formatter first to canonicalize).</li>
+  <li>Quick sanity check on a search-and-replace before committing it.</li>
+</ul>
+
 <h3>Side-by-side vs unified</h3>
 <ul>
-  <li><strong>Side-by-side</strong> — easier to scan small changes per line.</li>
-  <li><strong>Unified</strong> — closer to <code>git diff</code> output; better for sharing or printing.</li>
+  <li><strong>Side-by-side</strong> — easier to scan small changes line-by-line; the original is on the left, the new version on the right.</li>
+  <li><strong>Unified</strong> — closer to <code>git diff</code> output; better for sharing or printing, and easier to follow when changes are sparse.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>This is a line diff, not a word diff.</strong> One character changed in the middle of a long line marks the entire line as changed. For prose-level diffing of paragraphs, you may want a tool that tokenises into words.</li>
+  <li><strong>"Ignore whitespace" affects comparison only, not display.</strong> Lines that differ only in trailing spaces or indentation collapse into the unchanged column, but the original whitespace is still shown.</li>
+  <li><strong>"Ignore case" likewise.</strong> "TODO" and "todo" compare equal, but the original casing is rendered.</li>
+  <li><strong>Order matters.</strong> If you swap two lines, the diff shows both as removed-and-re-added, not as a "moved" pair. There's no move detection.</li>
+  <li><strong>Big inputs (10k+ lines) can be slow.</strong> The LCS algorithm is O(m·n) — fine for typical files, sluggish for very large ones. Diff small chunks at a time.</li>
+  <li><strong>Trailing newlines</strong> count as a line. Two inputs that differ only in whether they end with a newline will show one trailing addition or removal.</li>
 </ul>
 <div class="related"><span class="meta">Ähnliche Tools:</span> <a href="/de/json-formatter/">JSON-Formatter</a> <a href="/de/case-converter/">Schreibweisen-Konverter</a> <a href="/de/regex-tester/">Regex-Tester</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

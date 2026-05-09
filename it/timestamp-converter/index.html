@@ -187,12 +187,33 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What's a Unix timestamp?</h2>
-<p>The number of seconds since 1970-01-01 00:00:00 UTC. Stored as 32-bit signed in older systems (overflow at 03:14:08 UTC on 2038-01-19) or 64-bit signed everywhere modern.</p>
-<h3>Seconds vs milliseconds</h3>
-<p>Unix tradition stores seconds. JavaScript and most modern web APIs use milliseconds. This tool auto-detects: 10-digit numbers are read as seconds, 13-digit as milliseconds.</p>
-<h3>ISO 8601</h3>
-<p>The recommended format for storing/exchanging dates as text: <code>2025-01-01T00:00:00.000Z</code>. Unambiguous, sortable as a string, supported by every database.</p>
+<h2>What is this for?</h2>
+<p>A Unix timestamp is a single integer — the number of seconds (or milliseconds) since 1970-01-01 00:00:00 UTC. They're everywhere: log files, API responses, JWT <code>iat</code>/<code>exp</code> claims, database <code>created_at</code> columns, cache headers. They're unambiguous and timezone-free, but not human-readable, so when something breaks at <code>1735689600</code>, you need to know whether that's 2pm or 4am, today or last year. This tool flips between the integer form and the readable form in both directions, with seconds/ms auto-detection and a relative-time hint.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Decoding a <code>"timestamp": 1735689600</code> field from a log entry or API response.</li>
+  <li>Checking when a JWT was issued or when it expires (<code>iat</code> / <code>exp</code> claims are seconds-since-epoch).</li>
+  <li>Calculating a future timestamp for a <code>retry-after</code> header, scheduled job, or cache TTL.</li>
+  <li>Sanity-checking whether a date stored in a database is in seconds, milliseconds, or microseconds.</li>
+  <li>Converting "now" into the format your tool of the moment wants.</li>
+</ul>
+
+<h3>Seconds, milliseconds, microseconds</h3>
+<ul>
+  <li><strong>Seconds</strong> — the original Unix convention; ~10 digits today (e.g. <code>1735689600</code>). Used in C, Linux, JWT, most APIs, most database <code>integer</code> columns.</li>
+  <li><strong>Milliseconds</strong> — JavaScript's <code>Date.now()</code>, Java <code>System.currentTimeMillis()</code>, Kafka, many JSON APIs. ~13 digits.</li>
+  <li><strong>Microseconds (16 digits) / nanoseconds (19 digits)</strong> — Python <code>time.time_ns()</code>, Go <code>time.Now().UnixNano()</code>, some metrics systems. This tool doesn't auto-handle them — divide by 1,000 or 1,000,000 first.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>The Year 2038 problem.</strong> Signed 32-bit timestamps overflow at <code>2147483647</code> = <strong>03:14:07 UTC, 19 January 2038</strong>. Old C code, MySQL <code>TIMESTAMP</code> columns, and embedded systems can wrap to 1901. Modern systems use 64-bit and are fine until ~year 292,277,026,596.</li>
+  <li><strong>Unix time skips leap seconds.</strong> A Unix day is exactly 86,400 seconds, even when UTC has 86,401. This is by design (it keeps arithmetic simple) but means you can't use Unix timestamps for sub-second-accurate astronomy or GPS.</li>
+  <li><strong>Negative timestamps</strong> are valid and represent dates before 1970. Some libraries reject them — test before relying on it.</li>
+  <li><strong>Auto-detection isn't foolproof.</strong> A 10-digit value <em>could</em> be a millisecond timestamp from 1970 — vanishingly unlikely in practice, but if you know which unit you have, don't rely on the heuristic.</li>
+  <li><strong>Always store UTC.</strong> Timestamps are timezone-free; "local time" is for display only. The "Local" line in the output uses your browser's zone, but the underlying integer is always UTC.</li>
+</ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/timezone-converter/">Convertitore Fusi Orari</a> <a href="/it/cron-parser/">Analizzatore Cron</a> <a href="/it/date-calculator/">Calcolatore di Date</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

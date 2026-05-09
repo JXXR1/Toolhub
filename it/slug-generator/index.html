@@ -204,16 +204,34 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What it does</h2>
+<h2>What is this for?</h2>
+<p>A URL slug is the human-readable last segment of a URL — <code>/blog/the-quick-brown-fox</code> rather than <code>/blog/post-4827</code>. Good slugs are lowercase, hyphenated, ASCII-only, and short enough to read at a glance, but generating them from real titles full of accents, punctuation, and emoji is fiddly to get right. This tool transliterates accents, strips junk, joins with your chosen separator, and truncates at a clean boundary so the output is safe to drop straight into a route or filename.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Generating <code>/blog/&lt;slug&gt;</code> URLs from article titles — especially when titles contain accented characters (à, ñ, ø) or punctuation (colons, parentheses, em dashes).</li>
+  <li>Producing safe filenames from user-supplied names — uploads, exports, generated reports.</li>
+  <li>Building stable identifiers for tags, categories, or anchors (<code>#getting-started</code>) from human labels.</li>
+  <li>Bulk-converting a list of headings to kebab-case for a static-site build step.</li>
+</ul>
+
+<h3>How the conversion works</h3>
 <ol>
-  <li>NFD-normalizes Unicode then strips combining diacritics (so <code>café</code> → <code>cafe</code>).</li>
-  <li>Maps a handful of European ligatures and special letters (<code>ß → ss</code>, <code>æ → ae</code>, <code>ø → o</code>, <code>Ł → L</code>, …).</li>
-  <li>Replaces any non-alphanumeric run with a single space.</li>
-  <li>Optionally strips a small set of common English stop words.</li>
-  <li>Lowercases (or your chosen case), joins with the separator, and truncates to your limit at a clean boundary.</li>
+  <li>NFD-normalizes Unicode and strips combining diacritics (<code>café → cafe</code>).</li>
+  <li>Maps common European ligatures and special letters: <code>ß → ss</code>, <code>æ → ae</code>, <code>ø → o</code>, <code>Ł → L</code>, plus a few currency/math symbols (<code>€ → eur</code>, <code>& → and</code>).</li>
+  <li>Replaces every non-alphanumeric run with a single space.</li>
+  <li>Optionally drops common English stop words (<em>a, an, and, the, of, to, …</em>).</li>
+  <li>Lowercases (or preserves case), joins with your separator, and truncates at the limit without leaving a dangling separator.</li>
 </ol>
-<h3>What it doesn't do</h3>
-<p>It doesn't romanize CJK, Cyrillic, Arabic, or other non-Latin scripts character-by-character — those need language-specific tables this tool deliberately keeps out of scope. Such characters are dropped after diacritic stripping.</p>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Non-Latin scripts get dropped.</strong> Diacritic stripping handles à/ñ/ø, but it can't romanize Chinese, Japanese, Cyrillic, Arabic, or Hebrew character-by-character — those need language-specific tables (Hanyu Pinyin, ICU transliteration) which are deliberately out of scope here. Such characters disappear after the strip step.</li>
+  <li><strong>Stop-word removal is English-only.</strong> "El gato negro" doesn't lose <em>el</em>; "Le chat noir" doesn't lose <em>le</em>. Leave the toggle off for non-English titles.</li>
+  <li><strong>Truncation can change meaning.</strong> "introduction-to-rust-programming" cut to 20 chars becomes "introduction-to-rust" — fine; cut to 16 becomes "introduction-to" — clearly worse. Set the limit by hand for content where the tail matters.</li>
+  <li><strong>Slugs aren't unique.</strong> Two different titles can collapse to the same slug ("Café" and "Cafe" both → <code>cafe</code>). If you're using slugs as URL keys, append a short ID or a suffix on collision.</li>
+  <li><strong>Don't change shipped slugs.</strong> Once a URL is live and indexed, regenerating its slug breaks links and SEO. If a title changes, keep the old slug or set up a 301 redirect.</li>
+</ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/case-converter/">Convertitore di Maiuscole/Minuscole</a> <a href="/it/url-encoder/">Encoder / Decoder URL</a> <a href="/it/lorem-ipsum/">Generatore di Lorem Ipsum</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

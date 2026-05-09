@@ -193,13 +193,24 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What each mode does</h2>
+<h2>What is this for?</h2>
+<p>Six different "percentage" calculations come up daily and are easy to mix up: how much is X% of Y? What percent is X out of Y? What's the change between two values? Apply a markup or discount? Tip or tax? Each is a slightly different formula, and getting them confused leads to wrong invoices, wrong discounts, and embarrassing reviews. This tool runs all six side by side with the formula spelled out, so you can pick the right one and double-check the maths.</p>
+
+<h3>What each mode does</h3>
 <ul>
   <li><strong>What is X% of Y</strong> — for discounts, commissions, percentage of a total. <em>20% of 150 → 30</em>.</li>
   <li><strong>X is what % of Y</strong> — for "score / max" style ratios. <em>30 of 150 → 20%</em>.</li>
   <li><strong>% change</strong> — signed: positive is an increase, negative is a decrease. <em>100 → 125 = +25%</em>.</li>
   <li><strong>Increase / Decrease</strong> — applies a percentage adjustment to a starting value.</li>
   <li><strong>Tip / Tax</strong> — convenience for adding a percentage on top of a bill.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Percentage change isn't symmetric.</strong> Going 100 → 125 is +25%; going 125 → 100 is −20%, not −25%. The denominator is the starting value, which differs in each direction.</li>
+  <li><strong>Stacking percentages compounds.</strong> A 20% increase followed by a 20% decrease doesn't return you to the start (1.20 × 0.80 = 0.96, a net 4% loss). For sequential markups/discounts, calculate each step.</li>
+  <li><strong>Tip on pre-tax vs post-tax.</strong> Convention varies by country and venue. The tool computes the percentage of the value you enter — pick which value you actually want as the base.</li>
+  <li><strong>Rounding.</strong> Output is rounded to 6 decimals then trimmed; if you need legal/accounting precision (banker's rounding, currency-specific rules), do that step in your domain layer, not here.</li>
 </ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/number-base-converter/">Convertitore Basi Numeriche</a> <a href="/it/timestamp-converter/">Convertitore Timestamp Unix</a> <a href="/it/json-formatter/">Formattatore JSON</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

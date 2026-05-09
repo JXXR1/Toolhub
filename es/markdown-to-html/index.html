@@ -201,19 +201,26 @@ console.log("hi");
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>Supported syntax</h2>
+<h2>What is this for?</h2>
+<p>Markdown is the most-written authoring format on the planet — README files, blog posts, GitHub issues, chat messages, doc sites. HTML is what browsers render. This tool converts Markdown into clean HTML with a live preview so you can see what the rendered output will look like before pasting it into a CMS, generating a static page, or shipping it as part of an email template.</p>
+
+<h3>Supported syntax</h3>
 <ul>
-  <li>Headings <code>#</code> through <code>######</code></li>
-  <li>Bold <code>**text**</code>, italic <code>*text*</code>, strike <code>~~text~~</code></li>
+  <li>Headings <code>#</code> through <code>######</code>; bold, italic, strike</li>
   <li>Inline <code>`code`</code> and fenced <code>```lang</code> blocks</li>
-  <li>Bullet, numbered, and nested lists</li>
+  <li>Bullet / numbered / nested lists</li>
   <li>Links <code>[text](url)</code> and images <code>![alt](url)</code></li>
-  <li>Blockquotes <code>&gt;</code></li>
-  <li>Pipe tables with column alignment via <code>:---:</code></li>
-  <li>Horizontal rules <code>---</code></li>
+  <li>Blockquotes, pipe tables with alignment, horizontal rules</li>
 </ul>
-<h3>Caveat</h3>
-<p>This is a fast in-browser parser, not a CommonMark-spec conformance suite. For HTML embedded in Markdown, more exotic edge cases, or strict reference compliance, use <code>marked</code>, <code>markdown-it</code>, or <code>remark</code>.</p>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>This is a fast in-browser parser, not a spec suite.</strong> CommonMark and GFM have edge cases (nested emphasis, link reference definitions, autolink expansion) that diverge between implementations. For strict conformance, use <code>marked</code>, <code>markdown-it</code>, or <code>remark</code> in a build step.</li>
+  <li><strong>HTML embedded inside Markdown</strong> mostly passes through as-is, but some implementations sanitise it. Don't rely on this for security; treat untrusted markdown as untrusted HTML.</li>
+  <li><strong>Tables vs alignment.</strong> Pipe tables need a separator row (<code>|---|</code>) and use <code>:---:</code> / <code>:---</code> / <code>---:</code> for centre/left/right alignment. Forgetting the separator is the most common reason a "table" renders as one paragraph.</li>
+  <li><strong>Smart punctuation.</strong> Some renderers convert <code>--</code> to en-dashes and straight quotes to curly. This tool doesn't — pass through a typography pass if you need that.</li>
+  <li><strong>Round-tripping isn't lossless.</strong> Markdown → HTML → Markdown will normalise heading style, list spacing, and link form. The semantics survive; the exact bytes don't.</li>
+</ul>
 <div class="related"><span class="meta">Herramientas relacionadas:</span> <a href="/es/html-encoder/">Codificador / Decodificador HTML</a> <a href="/es/lorem-ipsum/">Generador Lorem Ipsum</a> <a href="/es/json-formatter/">Formateador JSON</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

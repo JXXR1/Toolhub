@@ -199,18 +199,23 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What it computes</h2>
-<p>A structural diff: walks both JSON trees and reports each path where they differ. Output paths use <a href="https://datatracker.ietf.org/doc/html/rfc6901" target="_blank" rel="noopener noreferrer">RFC 6901 JSON Pointer</a> syntax (<code>/users/0/name</code>).</p>
-<h3>Modes</h3>
+<h2>What is this for?</h2>
+<p>A plain-text diff on JSON tells you which lines changed; a structural diff tells you which <em>data points</em> changed. They're often very different — a re-formatted document with no semantic change is "every line different" to a text diff but "no changes" here. This tool walks both JSON trees and reports each path where they differ, using <a href="https://datatracker.ietf.org/doc/html/rfc6901" target="_blank" rel="noopener noreferrer">RFC 6901 JSON Pointer</a> syntax (<code>/users/0/name</code>) so the output is unambiguous regardless of formatting.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li><strong>Changes only</strong> — list of add/remove/change operations.</li>
-  <li><strong>Full side-by-side</strong> — same data, easier scanning.</li>
-  <li><strong>JSON Patch (RFC 6902)</strong> — emits a valid patch document you can apply with any RFC 6902 implementation.</li>
+  <li>Comparing two API responses to see what actually changed in a release, ignoring whitespace/key-order noise.</li>
+  <li>Diffing config files before/after a migration to confirm only the intended fields moved.</li>
+  <li>Generating an RFC 6902 JSON Patch document to ship to a system that supports it (PATCH endpoints, JSON-Merge-Patch fallbacks).</li>
+  <li>Eyeballing two test fixtures to see what makes one fail when the other passes.</li>
 </ul>
-<h3>Array comparison</h3>
+
+<h3>Common gotchas</h3>
 <ul>
-  <li><strong>By index</strong> — strict positional comparison, like <code>diff</code>. Item moves show as remove + add.</li>
-  <li><strong>By value</strong> — treats arrays as multisets; ignores order. Useful for tag lists, IDs, etc.</li>
+  <li><strong>Array compare mode matters.</strong> "By index" reports an inserted element as remove+add for everything after it. "By value" treats arrays as sets, missing genuine reorderings. Pick the one that matches how your data is meant to be ordered.</li>
+  <li><strong>Number-vs-string isn't structural.</strong> <code>{"id": 1}</code> and <code>{"id": "1"}</code> show as a change because the types differ. Normalise types before diffing if that matters.</li>
+  <li><strong>RFC 6902 is a one-way patch, not a merge.</strong> Apply it with a real RFC 6902 implementation, not by string-replacement.</li>
+  <li><strong>Big trees get noisy.</strong> If the diff is hundreds of operations long, you're probably comparing two unrelated documents — re-check the inputs.</li>
 </ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/json-formatter/">Formattatore JSON</a> <a href="/it/text-diff/">Confronto Testo</a> <a href="/it/yaml-json/">Convertitore YAML ↔ JSON</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

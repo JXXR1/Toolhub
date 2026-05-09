@@ -195,16 +195,32 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What gets removed</h2>
+<h2>What is this for?</h2>
+<p>CSS that's readable in source — with comments, indentation, and meaningful whitespace — bloats the file your users download. A structural minifier strips all the cosmetic bytes (comments, runs of whitespace, redundant zeros, equivalent shorter hex codes) without changing the rules' meaning. This tool runs that pass in your browser and shows the size before/after so you can see the saving.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li>Block comments (<code>/* … */</code>) — single-line <code>//</code> isn't valid in plain CSS.</li>
-  <li>Whitespace around <code>{</code>, <code>}</code>, <code>:</code>, <code>;</code>, <code>,</code>, and combinators (<code>&gt; ~ +</code>).</li>
-  <li>Trailing semicolons before <code>}</code>.</li>
-  <li>Leading zeros (<code>0.5</code> → <code>.5</code>) and zero units (<code>0px</code> → <code>0</code>).</li>
-  <li>Long hex (<code>#aabbcc</code> → <code>#abc</code>) where it's exact.</li>
+  <li>One-off shipping a CSS snippet inline in an HTML email or a blog post template, where you want the bytes shrunk but don't have a build chain.</li>
+  <li>Quickly checking how much "fat" is in a stylesheet before deciding whether a real optimiser is worth wiring up.</li>
+  <li>Pasting a vendor's pretty-printed CSS to slim it down for inclusion in a third-party widget.</li>
 </ul>
-<h3>What it doesn't do</h3>
-<p>This is a fast structural minify, not a full optimiser. It won't merge selectors, reorder rules, or rewrite shorthand — for that, use <code>cssnano</code> or <code>esbuild</code> in your build chain.</p>
+
+<h3>What it does</h3>
+<ul>
+  <li>Strips block comments (<code>/* … */</code>) — single-line <code>//</code> isn't valid plain CSS anyway.</li>
+  <li>Collapses whitespace around <code>{ } : ; ,</code> and combinators (<code>&gt; ~ +</code>).</li>
+  <li>Drops trailing semicolons before <code>}</code>.</li>
+  <li>Trims leading zeros (<code>0.5</code> → <code>.5</code>) and removes units from zero (<code>0px</code> → <code>0</code>).</li>
+  <li>Shortens hex colours where exact (<code>#aabbcc</code> → <code>#abc</code>).</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>This is a structural minify, not a full optimiser.</strong> It won't merge duplicate selectors, reorder rules, or rewrite shorthand. For that, run <code>cssnano</code> or <code>esbuild</code> in your build pipeline.</li>
+  <li><strong>Source maps aren't generated.</strong> If you debug minified CSS in production, ship them separately.</li>
+  <li><strong>Don't minify the CSS you commit.</strong> Commit pretty source; minify at build/deploy. Mixing the two makes diff review miserable.</li>
+  <li><strong>Modern compression dominates.</strong> Brotli/gzip on the wire does much of what minification does. The biggest savings come from removing unused rules — a job for tree-shaking, not minification.</li>
+</ul>
 <div class="related"><span class="meta">Outils similaires:</span> <a href="/fr/js-minifier/">Minifieur JavaScript</a> <a href="/fr/html-encoder/">Encodeur / Décodeur HTML</a> <a href="/fr/color-picker/">Sélecteur de Couleur</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

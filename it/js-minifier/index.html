@@ -185,15 +185,24 @@ greet('World');</textarea>
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What this minifier does</h2>
+<h2>What is this for?</h2>
+<p>A structural JavaScript minifier strips comments and unnecessary whitespace without changing what the code does. The output is functionally identical to the input — same identifiers, same logic — just shorter. This tool runs that pass in your browser, including the tricky bits: it preserves string contents and regex literals untouched, and keeps newlines where ASI (Automatic Semicolon Insertion) would otherwise change behaviour.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li>Strips <code>//</code> line comments and <code>/* … */</code> block comments.</li>
-  <li>Collapses runs of whitespace; preserves a single space between adjacent identifiers.</li>
-  <li>Drops blank lines, but keeps a newline where ASI (Automatic Semicolon Insertion) would change behaviour.</li>
-  <li>Preserves string contents (single, double, template) and regex literals untouched.</li>
+  <li>Quickly trimming a snippet for inclusion in an HTML bookmarklet or a single-file demo, where you don't have a build chain.</li>
+  <li>Sanity-checking how much "fat" is in a hand-written script before deciding whether a real optimiser is worth setting up.</li>
+  <li>Inlining a small library into a static site without dragging in a bundler.</li>
 </ul>
-<h3>What it doesn't do</h3>
-<p>This isn't a full optimiser. It won't rename variables, dead-code eliminate, or tree-shake. For production builds use <code>terser</code>, <code>esbuild</code>, or <code>swc</code> in your pipeline.</p>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>This is a structural minify, not a compressor.</strong> It won't rename variables, dead-code eliminate, mangle properties, or tree-shake. For production builds, use <code>terser</code>, <code>esbuild</code>, or <code>swc</code> in your pipeline — they cut another 30–60% on top of structural minify.</li>
+  <li><strong>ASI traps.</strong> JavaScript inserts semicolons in surprising places. The minifier preserves a newline where removing it would change meaning (e.g. <code>return\n{}</code> ≠ <code>return {}</code>). Stick to explicit semicolons in source if you can — it makes minification safer for everyone.</li>
+  <li><strong>Source maps aren't generated.</strong> If you ship minified JS to production, generate source maps with a real toolchain so debugging is sane.</li>
+  <li><strong>Modern compression dominates.</strong> Brotli/gzip on the wire does most of what minify does. The biggest wins come from removing unused code — that needs static analysis a structural minifier can't do.</li>
+  <li><strong>Don't minify what you commit.</strong> Source goes in pretty; minify at build/deploy.</li>
+</ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/css-minifier/">Minificatore CSS</a> <a href="/it/json-formatter/">Formattatore JSON</a> <a href="/it/regex-tester/">Tester Regex</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

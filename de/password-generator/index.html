@@ -221,19 +221,37 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>This generator uses your browser's <code>crypto.getRandomValues</code> API — a cryptographically secure random source. Nothing is transmitted; the password never leaves your device.</p>
+<h2>What is this for?</h2>
+<p>A good password is one an attacker can't guess and you don't have to remember (because it's stored in your password manager). This generator produces strong random passwords or memorable passphrases entirely in your browser, using <code>crypto.getRandomValues</code> — the same cryptographically secure random source TLS uses. Nothing is transmitted; the password never leaves your device.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Creating a unique password for any new account that goes into a password manager.</li>
+  <li>Generating a master password or a recovery passphrase you'll commit to memory — passphrase mode is easier to type and remember.</li>
+  <li>Producing a non-human secret for a CI variable, API token, or Wi-Fi network.</li>
+  <li>Bulk-generating passwords for a fresh user batch (set count up to 50).</li>
+</ul>
+
 <h3>Random characters vs passphrases</h3>
 <ul>
-  <li><strong>Random characters</strong> give the most entropy per length — 20 mixed characters ≈ 130 bits.</li>
-  <li><strong>Passphrases</strong> are easier to remember and type — four words ≈ 40 bits, six words ≈ 60 bits. Increase word count for higher-stakes accounts.</li>
-  <li>"Exclude ambiguous" removes <code>0/O/1/l/I</code> for safer reading from screens.</li>
+  <li><strong>Random characters</strong> — most entropy per length. 20 mixed characters ≈ 130 bits. Right for things you paste, not type.</li>
+  <li><strong>Passphrases</strong> — easier to type and remember. Four words ≈ 40 bits, six words ≈ 60 bits. Right for master passwords, device unlock, and anything you'll enter manually often.</li>
+  <li>"Exclude ambiguous" drops <code>0/O/1/l/I</code> for safer reading from screens or hand-written notes.</li>
 </ul>
+
 <h3>How much entropy do I need?</h3>
 <ul>
   <li>≥ 60 bits — fine for low-value accounts</li>
   <li>≥ 80 bits — good for most accounts</li>
   <li>≥ 100 bits — high-value (financial, master password, root credential)</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Don't reuse passwords.</strong> The single biggest security upgrade you can make is one unique password per site, stored in a manager. Generator strength is wasted if the same password lives on five sites.</li>
+  <li><strong>Don't write generated passwords down without protection.</strong> Use a password manager (1Password, Bitwarden, KeePass) — not a Notes app, not a text file, not an email draft.</li>
+  <li><strong>Long &gt; complex.</strong> A 24-character password using only lowercase letters has more entropy than a 10-character one with every symbol class. Length wins.</li>
+  <li><strong>Site-specific rules can break copy-paste.</strong> Some sites ban specific symbols or cap length at 16. Annoying but real — generate, then trim/swap to fit if needed (and then store the actual stored password in your manager).</li>
 </ul>
 <div class="related"><span class="meta">Ähnliche Tools:</span> <a href="/de/uuid-generator/">UUID-Generator</a> <a href="/de/hash-generator/">Hash-Generator</a> <a href="/de/jwt-decoder/">JWT-Decoder</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

@@ -90,13 +90,36 @@ document.addEventListener('DOMContentLoaded', wcRun);
 """,
     "help": {
         "en": """
-<h2>Notes</h2>
+<h2>What is this for?</h2>
+<p>Counting words and characters by hand is tedious and error-prone, but the numbers matter all the time: tweet limits, SMS segments, essay word counts, SEO meta descriptions, journal submission lengths. This tool gives you live counts as you type — words, characters (with and without spaces), sentences, paragraphs, lines — plus reading and speaking time estimates and a quick word-frequency pass for the top five recurring words.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li><strong>Words</strong> — runs of non-whitespace characters separated by whitespace.</li>
-  <li><strong>Sentences</strong> — segments ending in <code>.</code>, <code>!</code> or <code>?</code> (or end-of-text). Heuristic — abbreviations like "Mr." may inflate the count.</li>
-  <li><strong>Reading time</strong> — assumes 250 words / minute (silent reading).</li>
-  <li><strong>Speaking time</strong> — assumes 130 words / minute (typical speech).</li>
-  <li><strong>Most frequent</strong> — case-insensitive, includes letters / digits / apostrophes; no stop-word filtering.</li>
+  <li>Hitting a 280-character X/Twitter limit, a 160-char SMS, a 155-char SEO meta description, or a 100-word LinkedIn intro.</li>
+  <li>Word-budgeting an essay, blog post, abstract, or grant application against a hard limit.</li>
+  <li>Estimating how long a script will take to read aloud (podcasts, presentations, voice-overs).</li>
+  <li>Spotting overused words by looking at the "most frequent" list before submitting.</li>
+  <li>Checking whether a translation came in roughly the same length as the source.</li>
+</ul>
+
+<h3>What each number means</h3>
+<ul>
+  <li><strong>Words</strong> — runs of non-whitespace characters separated by whitespace. "Twenty-one" counts as one word; "twenty one" counts as two.</li>
+  <li><strong>Characters</strong> vs <strong>characters (no spaces)</strong> — both count Unicode code points, not bytes. An emoji can be 1–2 "characters" here but more bytes when stored.</li>
+  <li><strong>Sentences</strong> — segments ending in <code>.</code>, <code>!</code> or <code>?</code> (or end-of-text). Heuristic, see gotchas.</li>
+  <li><strong>Paragraphs</strong> — separated by blank lines.</li>
+  <li><strong>Reading time</strong> assumes 250 wpm (silent adult reading).</li>
+  <li><strong>Speaking time</strong> assumes 130 wpm (typical conversational pace; news readers run faster, audiobooks slower).</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Sentence detection is naïve.</strong> "Mr.", "U.S.", "e.g.", "3.14", and ellipses can inflate the sentence count. The figure is a useful estimate, not a guarantee.</li>
+  <li><strong>Twitter/X counts code points, not characters.</strong> A flag emoji (🇸🇰) is 2 code points but renders as one symbol — Twitter treats it as 2 characters. This tool matches that.</li>
+  <li><strong>SMS character limits depend on encoding.</strong> Plain ASCII fits 160 chars per segment; once you include a non-GSM character (em dash, smart quote, accented letter), the whole message switches to UCS-2 and the limit drops to 70. The tool reports the GSM limit; check your provider's behaviour for the actual cost.</li>
+  <li><strong>Word counts vary by tool.</strong> Word, Google Docs, and journal-submission systems can disagree by a few percent — they handle hyphens, em dashes, and numbers differently. If a hard limit matters, count in the same tool the gatekeeper uses.</li>
+  <li><strong>"Most frequent" doesn't filter stop words.</strong> "the" and "a" almost always top the list. Look at the longer entries for actual signal.</li>
+  <li><strong>Reading-time estimates are personal.</strong> 250 wpm is the median; technical content runs slower, fiction faster. Treat the number as a planning guide, not a prediction.</li>
 </ul>
 """,
     },

@@ -201,19 +201,23 @@ data:
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>YAML parsing uses <a href="https://github.com/nodeca/js-yaml" rel="noopener">js-yaml</a> (YAML 1.2 compliant). JSON uses the native <code>JSON</code> API. All conversion happens in your browser.</p>
-<h3>What it handles</h3>
+<h2>What is this for?</h2>
+<p>YAML and JSON describe the same things — nested maps, lists, primitives — but trade off readability vs strictness. YAML is friendlier for humans (Kubernetes manifests, GitHub Actions, OpenAPI, most CI configs); JSON is what APIs and machine-readable formats ship. This converter flips between them losslessly for the structures both can express. YAML uses <a href="https://github.com/nodeca/js-yaml" rel="noopener">js-yaml</a> (YAML 1.2); JSON uses the native API. Both directions run in your browser.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li>Anchors and aliases (<code>&amp;ref</code>, <code>*ref</code>) — resolved on YAML→JSON</li>
-  <li>Block-style and flow-style YAML</li>
-  <li>Numbers, booleans, null, dates auto-typed per YAML 1.2</li>
-  <li>Order is preserved on JSON→YAML</li>
+  <li>Pasting an OpenAPI / k8s / docker-compose YAML into a tool that needs JSON.</li>
+  <li>Converting an API response (JSON) into YAML for a config file.</li>
+  <li>Auditing a YAML file's actual structure when ambiguous indentation makes parentage unclear.</li>
 </ul>
-<h3>What it doesn't handle</h3>
+
+<h3>Common gotchas</h3>
 <ul>
-  <li>Custom YAML tags (<code>!!python/object</code>, etc.) — strict YAML 1.2 only, no language-specific tags</li>
-  <li>Multi-document YAML (<code>---</code> separators) is parsed as the first document only</li>
+  <li><strong>The "Norway problem".</strong> YAML 1.1 coerced <code>NO</code>, <code>YES</code>, <code>ON</code>, <code>OFF</code> into booleans. YAML 1.2 doesn't, but downstream parsers may. Quote ambiguous strings to be safe.</li>
+  <li><strong>Multi-document YAML</strong> (<code>---</code> separators) — only the first document is converted.</li>
+  <li><strong>Custom tags</strong> (<code>!!python/object</code>, <code>!Ref</code>, etc.) violate strict YAML 1.2. CloudFormation YAML and PyYAML pickle dumps will fail; clean tags first.</li>
+  <li><strong>Anchors and aliases get expanded</strong> on YAML→JSON. JSON has no references, so <code>*ref</code> nodes inline. Round-tripping gives a value-equivalent but textually-larger YAML.</li>
+  <li><strong>Numbers vs strings.</strong> Unquoted YAML <code>3.14</code> is a float; <code>"3.14"</code> is a string.</li>
 </ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/json-formatter/">Formattatore JSON</a> <a href="/it/json-diff/">Diff JSON</a> <a href="/it/csv-to-json/">CSV a JSON</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

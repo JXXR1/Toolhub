@@ -182,14 +182,23 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>Use the native picker, or paste a HEX, <code>rgb()</code>, or <code>hsl()</code> value. The opacity slider applies an alpha channel that's reflected in <code>RGBA</code>, <code>HSLA</code>, and the 8-digit <code>HEX8</code> form.</p>
+<h2>What is this for?</h2>
+<p>Pick a colour — or paste any HEX / <code>rgb()</code> / <code>hsl()</code> value — and instantly see it in every common notation: HEX (3- and 8-digit with alpha), RGB(A), HSL(A), HSV, and CMYK. Useful when you've got a value in one space and need it in another, when matching a brand colour across CSS / design tools / print, or when adjusting opacity without re-eyeballing the result.</p>
+
 <h3>When to use each space</h3>
 <ul>
-  <li><strong>HEX / RGB</strong> — CSS, design tools, email templates.</li>
-  <li><strong>HSL</strong> — readable palettes; tweak hue, saturation, or lightness without changing the others.</li>
-  <li><strong>HSV</strong> — design software (Photoshop, Figma) for shading.</li>
-  <li><strong>CMYK</strong> — print-ready output. Note: screens are RGB, so CMYK here is an approximate conversion.</li>
+  <li><strong>HEX / RGB</strong> — CSS, design tools, email templates. Universally supported.</li>
+  <li><strong>HSL</strong> — readable palettes. Tweak hue, saturation, or lightness independently without the colour drifting on the other axes.</li>
+  <li><strong>HSV</strong> — design software (Photoshop, Figma) for shading; matches the way most colour pickers think about "this colour, lighter".</li>
+  <li><strong>CMYK</strong> — print-ready output. Approximate only: screens are RGB and printers don't all share one colour profile.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Alpha encoding differs by space.</strong> CSS supports <code>rgba()</code>, <code>hsla()</code>, and 8-digit HEX (<code>#RRGGBBAA</code>). Older email templates and some design tools don't grok <code>#RRGGBBAA</code> — fall back to <code>rgba()</code>.</li>
+  <li><strong>HSL hue is in degrees.</strong> 0 = red, 120 = green, 240 = blue. CSS accepts <code>turn</code>, <code>rad</code>, <code>grad</code> too but the output here is degrees.</li>
+  <li><strong>CMYK conversion is naive.</strong> Real print needs an ICC profile (sRGB → CMYK with rendering intent). This tool's output is fine for brand-deck mockups, not for press-ready files.</li>
+  <li><strong>OKLCH and OKLAB</strong> (modern perceptually-uniform spaces) aren't shown here — they're newer and not yet broadly supported. Stick to HSL/HSV for design system tooling for now.</li>
 </ul>
 <div class="related"><span class="meta">Herramientas relacionadas:</span> <a href="/es/css-minifier/">Minificador CSS</a> <a href="/es/image-to-base64/">Imagen a Base64</a> <a href="/es/qr-code-generator/">Generador de Códigos QR</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

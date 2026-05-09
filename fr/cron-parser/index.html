@@ -181,7 +181,18 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>Cron field reference</h2>
+<h2>What is this for?</h2>
+<p>Cron expressions are powerful and easy to mis-write. <code>0 0 * * 1-5</code> looks like a weekday-at-midnight schedule and is. <code>*/15 0-9 * * *</code> looks like every fifteen minutes during business hours and is. <code>0 0 1 */3 *</code> looks like quarterly... if you remembered <code>*/3</code> means "every third month". This tool lets you paste an expression, see what it actually means in plain English, and preview the next 10 fire times so you can confirm before deploying.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Sanity-checking a cron line in <code>crontab -e</code> before saving.</li>
+  <li>Translating a Kubernetes <code>CronJob</code> schedule string into "what time will this actually run?".</li>
+  <li>Designing a new schedule — start with English ("every weekday morning") and iterate the expression until the preview matches.</li>
+  <li>Debugging a job that "didn't run when I expected" — paste the schedule, look at the next 10 times, see whether reality is the surprise or the expression is.</li>
+</ul>
+
+<h3>Cron field reference</h3>
 <table>
   <tr><th>Field</th><th>Range</th><th>Wildcards</th></tr>
   <tr><td>Minute</td><td>0-59</td><td><code>*</code> · <code>*/5</code> · <code>0,30</code> · <code>0-29</code></td></tr>
@@ -190,12 +201,14 @@
   <tr><td>Month</td><td>1-12</td><td>same</td></tr>
   <tr><td>Day of week</td><td>0-6 (0 = Sunday, 7 also = Sunday)</td><td>same</td></tr>
 </table>
+
 <h3>Common gotchas</h3>
 <ul>
-  <li>If both day-of-month and day-of-week are restricted, most cron implementations OR them — this tool follows that convention.</li>
-  <li><code>*/N</code> means "every N", starting from the lower bound.</li>
-  <li>Step values can combine with ranges: <code>0-30/5</code> = 0,5,10,…,30.</li>
-  <li>The next-fire calculation is in your browser's local timezone.</li>
+  <li><strong>Day-of-month + day-of-week interact.</strong> If both are restricted (e.g. <code>15 * * * 1</code> meaning "the 15th OR a Monday"), most cron implementations OR them. This tool follows that convention.</li>
+  <li><strong><code>*/N</code> isn't quite "every N".</strong> It's "every N starting from the lower bound", so <code>*/15</code> in minute = 0,15,30,45 (not 12,27,42,57). To start later, use a list: <code>5,20,35,50</code>.</li>
+  <li><strong>Step + range combos.</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30. The step applies inside the range only.</li>
+  <li><strong>Timezone is browser-local here.</strong> Real cron daemons run in server time (often UTC). A schedule that looks fine in your browser may fire at a different wall-clock time on the server. Confirm timezone before pasting.</li>
+  <li><strong>Some cron flavours add fields.</strong> Quartz cron has 6 or 7 fields (with seconds and year). systemd timers use a different format entirely. This tool parses standard 5-field crontab.</li>
 </ul>
 <div class="related"><span class="meta">Outils similaires:</span> <a href="/fr/timestamp-converter/">Convertisseur Timestamp Unix</a> <a href="/fr/timezone-converter/">Convertisseur de Fuseaux</a> <a href="/fr/date-calculator/">Calculatrice de Dates</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

@@ -149,13 +149,28 @@ document.addEventListener('DOMContentLoaded', () => { tzPopulate(); tzNow(); });
 """,
     "help": {
         "en": """
-<h2>How it works</h2>
-<p>Uses the browser's <code>Intl.DateTimeFormat</code> with IANA time-zone IDs (e.g. <code>Europe/Bratislava</code>, <code>America/New_York</code>). DST transitions and historical offsets are handled by the underlying ICU/CLDR data the browser ships with.</p>
-<h3>Tips</h3>
+<h2>What is this for?</h2>
+<p>Time zones are deceptively annoying. A meeting at "9am" means different absolute moments in London, Bratislava, and New York — and the offset between any two of them changes twice a year because of daylight saving, on different dates. This tool takes a wall-clock time in one IANA zone and tells you the exact equivalent in another, with current offsets, the UTC instant, and the day-of-week for both ends.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li>Pick the zone where the time was recorded as the source — DST is resolved automatically.</li>
-  <li>"Now" snaps the input to current local time and source to your browser's zone.</li>
-  <li>Output shows local-format date, the timezone abbreviation, and UTC for unambiguous storage.</li>
+  <li>Scheduling a call across continents — confirming what "3pm CET" is in your colleague's zone.</li>
+  <li>Reading a log timestamp recorded in UTC and translating it to local time for a user-facing report.</li>
+  <li>Checking whether a deploy window or maintenance slot crosses a DST boundary.</li>
+  <li>Sanity-checking that a cron expression in <code>America/New_York</code> fires at the moment you expect from your own zone.</li>
+  <li>Working out the day-of-week change when crossing the international date line.</li>
+</ul>
+
+<h3>Why IANA zones (not "GMT+2")</h3>
+<p>An IANA zone like <code>Europe/Bratislava</code> or <code>America/New_York</code> encodes the historical and ongoing rules for that location — DST start and end dates, time-zone changes (Russia abolished DST in 2014; Türkiye dropped DST in 2016), even Samoa skipping a whole day in 2011. A bare offset like "GMT+2" tells you nothing about whether DST applies, what the rule was last year, or what it'll be next year. Browsers ship the IANA database (via ICU/CLDR) and update it automatically, so the conversion stays correct over time.</p>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>DST transitions create ambiguous and missing times.</strong> When a clock falls back, 02:30 happens twice; when it springs forward, 02:30 doesn't exist at all. The tool picks the standard-time interpretation by default; if you need the other side, shift by an hour either way.</li>
+  <li><strong>Offsets aren't constants.</strong> "CET" is UTC+1 in winter and UTC+2 in summer (CEST). The output always shows the actual offset for the date you entered, so trust the displayed offset over the abbreviation.</li>
+  <li><strong>Country abbreviations are not zones.</strong> "EST" is ambiguous (US vs Australian); "IST" can mean Indian, Irish, or Israeli. Always pick the IANA zone, not the abbreviation.</li>
+  <li><strong>Historical accuracy</strong> is good for the modern era but breaks down for very old dates. Pre-1970 timestamps may use approximated offsets in some browsers.</li>
+  <li><strong>Storing dates: always use UTC.</strong> Convert at display time. The UTC line in the output gives you the canonical value to write to your database.</li>
 </ul>
 """,
     },

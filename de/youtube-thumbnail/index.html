@@ -174,23 +174,34 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>YouTube exposes thumbnails on a predictable URL pattern: <code>https://i.ytimg.com/vi/&lt;VIDEO_ID&gt;/&lt;variant&gt;.jpg</code>. This tool just extracts the video ID and shows every variant. The browser fetches the images directly from YouTube — nothing routes through this site.</p>
-<h3>Variants</h3>
+<h2>What is this for?</h2>
+<p>Every YouTube video has a small set of pre-generated thumbnail images at predictable URLs — YouTube uses them itself in search results, embeds, and previews. This tool extracts the 11-character video ID from any YouTube URL form (watch, youtu.be, Shorts, embed, /v/) and lays out every available size with direct download links and copy-URL buttons. Useful when you need an offline preview, a hero image for a blog post, a Discord/Slack rich link, or a fallback poster for a custom video player.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li><strong>maxresdefault</strong> (1280×720) — only exists for videos uploaded in HD; otherwise 404.</li>
-  <li><strong>sddefault</strong> (640×480) — generated for most videos.</li>
-  <li><strong>hqdefault</strong> (480×360) — always exists; the safe fallback.</li>
-  <li><strong>mqdefault</strong> (320×180), <strong>default</strong> (120×90) — small previews.</li>
+  <li>Embedding a YouTube video in a blog post and wanting the same thumbnail YouTube shows, hosted locally.</li>
+  <li>Making a clickable "watch this video" tile in a Notion / Slack / email where you need a still image.</li>
+  <li>Building a custom video player and needing a poster image before the iframe loads.</li>
+  <li>Saving a thumbnail for offline use as reference, content, or moodboard material.</li>
+  <li>Getting the highest-resolution thumbnail without faffing about with the YouTube Data API.</li>
 </ul>
-<h3>Supported URL forms</h3>
+
+<h3>The variants explained</h3>
 <ul>
-  <li><code>https://www.youtube.com/watch?v=ID</code></li>
-  <li><code>https://youtu.be/ID</code></li>
-  <li><code>https://www.youtube.com/shorts/ID</code></li>
-  <li><code>https://www.youtube.com/embed/ID</code></li>
-  <li><code>https://www.youtube.com/v/ID</code></li>
-  <li>Or just the 11-character video ID on its own.</li>
+  <li><strong>maxresdefault</strong> (1280×720) — the original full-HD thumbnail. Only exists for videos uploaded in HD; otherwise the URL returns 404 and the preview goes blank.</li>
+  <li><strong>sddefault</strong> (640×480) — generated for most videos in the modern era.</li>
+  <li><strong>hqdefault</strong> (480×360) — <strong>always exists</strong>, going back to the earliest YouTube videos. Use this as your fallback.</li>
+  <li><strong>mqdefault</strong> (320×180) and <strong>default</strong> (120×90) — small previews; useful for in-list rendering.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>maxresdefault often 404s.</strong> Older or lower-resolution uploads don't have it. Build your fallback chain: <code>maxresdefault → sddefault → hqdefault</code>.</li>
+  <li><strong>Black bars on hqdefault.</strong> The 480×360 thumbnail is letterboxed for non-4:3 sources — there are bars top and bottom. <code>mqdefault</code> (320×180) has the correct 16:9 aspect for modern uploads.</li>
+  <li><strong>Frames 1/2/3.</strong> YouTube also exposes <code>1.jpg</code>, <code>2.jpg</code>, <code>3.jpg</code> at the same path — three auto-extracted frames from the video. Sometimes one of those is what you actually want for a custom poster, and they're not in the default variant list.</li>
+  <li><strong>It's still YouTube's image.</strong> Hot-linking is fine; rehosting on your own CDN is fine technically but check the licensing if you're using it commercially. The video creator may have copyright on the visual content of the frame.</li>
+  <li><strong>WebP not supported here.</strong> YouTube also serves <code>.webp</code> versions (smaller files), but they're served from a different CDN path and not exposed by this tool.</li>
+  <li><strong>Live streams and Shorts</strong> work fine — the URL parser handles all the modern forms — but live-stream thumbnails change while the stream is on air.</li>
 </ul>
 <div class="related"><span class="meta">Ähnliche Tools:</span> <a href="/de/qr-code-generator/">QR-Code-Generator</a> <a href="/de/image-to-base64/">Bild zu Base64</a> <a href="/de/url-encoder/">URL Encoder / Decoder</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

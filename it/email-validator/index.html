@@ -175,16 +175,25 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What this checks</h2>
+<h2>What is this for?</h2>
+<p>Most "email validators" are a one-line regex that approves <code>not@an.email</code> and rejects <code>edge@case.io</code>. This tool runs the structural checks RFC 5321 / 5322 actually require — local part charset, dot rules, label lengths, TLD shape, hard length limits — plus a disposable-domain hint. It tells you whether an address is <em>well-formed</em>; it doesn't tell you whether the mailbox exists (that needs a server-side MX/SMTP probe).</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li>Presence of exactly one <code>@</code> separating local part and domain.</li>
-  <li>RFC 5322-friendly local part (alphanumeric plus <code>!#$%&amp;'*+-/=?^_`{|}~</code> and dots, never leading/trailing or consecutive).</li>
-  <li>Domain length, label length (≤63), and label charset (LDH only).</li>
-  <li>TLD must exist and not be all-numeric.</li>
-  <li>RFC 5321 hard limits: 64 chars for local, 254 chars total.</li>
+  <li>Pre-flighting a list of email addresses before piping it into a paid validation API or mass-mailer (catches typos for free, saves credits).</li>
+  <li>Building a signup form that rejects obvious garbage at the field level.</li>
+  <li>Auditing a CSV of contacts to find typos before importing.</li>
+  <li>Checking whether an address that "looks weird" (international TLD, plus-addressing, sub-addressing) is actually allowed.</li>
 </ul>
-<h3>What it doesn't check</h3>
-<p>No DNS / MX lookup — that requires a server. The address can be syntactically valid but have no mailbox at the other end. Our disposable-domain list flags some common throwaway hosts.</p>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Syntactically valid ≠ deliverable.</strong> <code>does-not-exist@gmail.com</code> passes every structural check. Real verification needs the MX server's response. Use this as a first-line filter, not a confidence signal.</li>
+  <li><strong>Plus addressing is allowed.</strong> <code>name+tag@gmail.com</code> is valid and routes to <code>name@gmail.com</code> — don't strip it; it's a feature.</li>
+  <li><strong>Internationalised email (IDN).</strong> <code>用户@例.中国</code> is technically valid per RFC 6530 but not yet broadly supported by SMTP servers. This tool follows the conservative ASCII rules; loosen if you genuinely need IDN.</li>
+  <li><strong>Disposable-domain detection is hint-only.</strong> The list is necessarily incomplete and any flagged domain might still be a real user.</li>
+  <li><strong>Don't reject case differences.</strong> Local parts are technically case-sensitive per RFC 5321; in practice every modern provider treats them as case-insensitive. Don't lowercase in storage.</li>
+</ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/regex-tester/">Tester Regex</a> <a href="/it/credit-card-validator/">Validatore Carta di Credito</a> <a href="/it/url-encoder/">Encoder / Decoder URL</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

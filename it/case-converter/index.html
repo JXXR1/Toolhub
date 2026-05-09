@@ -173,15 +173,23 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>How it works</h2>
-<p>The text is split into words by detecting case transitions, separators (<code>_</code>, <code>-</code>, <code>.</code>, <code>/</code>), and whitespace. The split words are then re-joined according to each target style.</p>
-<h3>Where each form fits</h3>
+<h2>What is this for?</h2>
+<p>Every language and platform has its own conventions for naming things — JavaScript wants <code>camelCase</code>, Python wants <code>snake_case</code>, CSS wants <code>kebab-case</code>, environment variables want <code>CONSTANT_CASE</code>. Translating between them by hand is fiddly, especially with edge cases (acronyms, numbers, existing separators). This tool splits any input into words by detecting case transitions, separators (<code>_ - . /</code>), and whitespace, then re-joins them in 14 different styles.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li><strong>camelCase</strong> — JavaScript variables, JSON keys.</li>
-  <li><strong>PascalCase</strong> — class names in most C-family languages, React components.</li>
-  <li><strong>snake_case</strong> — Python identifiers, SQL columns, Ruby methods.</li>
-  <li><strong>kebab-case</strong> — URL slugs, CSS class names, file names.</li>
-  <li><strong>CONSTANT_CASE</strong> — environment variables, language constants.</li>
+  <li>Renaming a field from API JSON (camelCase) to a Python ORM column (snake_case).</li>
+  <li>Generating CSS class names from design-system token names that arrive in PascalCase.</li>
+  <li>Converting a list of headings into kebab-case slugs, or environment-variable names into CONSTANT_CASE.</li>
+  <li>Quickly converting "The Quick Brown Fox" into Title Case, Sentence case, or Train-Case for a headline / button label.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Acronyms are tricky.</strong> Should "XMLHttpRequest" become "XML_Http_Request" or "Xml_Http_Request"? This tool treats consecutive capitals as one word boundary (<code>xml http request</code>), then re-cases — which matches Java/JS conventions but not all style guides.</li>
+  <li><strong>Numbers attach to the previous word.</strong> "Item2" becomes one word "item2", not two. Add a separator if you want them split.</li>
+  <li><strong>"camelCase first letter"</strong> is always lowercase even if the input started with a capital. PascalCase preserves the capital.</li>
+  <li><strong>Round-tripping isn't always lossless.</strong> Going camelCase → kebab-case → camelCase loses the original capitalisation hint at word boundaries; the case-detection heuristic does its best but can't recover what wasn't preserved.</li>
 </ul>
 <div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/slug-generator/">Generatore di Slug</a> <a href="/it/word-counter/">Contatore Parole</a> <a href="/it/text-diff/">Confronto Testo</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>

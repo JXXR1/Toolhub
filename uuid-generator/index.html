@@ -188,13 +188,33 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>v4 vs v7 — which should I use?</h2>
+<h2>What is this for?</h2>
+<p>A UUID (or GUID) is a 128-bit identifier — written as 32 hex digits in 5 groups, like <code>550e8400-e29b-41d4-a716-446655440000</code>. They're collision-free across systems without coordination: any process anywhere can mint one and the chance of two ever colliding is effectively zero. Useful when you need an ID before talking to a database, when you want to avoid leaking row counts, or when an ID has to be generated client-side and synced later. This tool emits RFC 4122 / RFC 9562 compliant UUIDs in v4 (random) or v7 (time-ordered) form, generated with cryptographically-secure randomness in your browser.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li><strong>v4 (random)</strong> — 122 bits of randomness, no information about creation time. Use for IDs you don't want to leak ordering or timing.</li>
-  <li><strong>v7 (time-ordered)</strong> — 48-bit Unix-ms timestamp prefix + random tail. Sorts in roughly chronological order, plays well with database indexes (B-tree locality), supersedes ULID/v6/v1 for most modern needs. Specified in RFC 9562.</li>
+  <li>Primary keys for distributed systems where you don't want to round-trip to the database for an ID.</li>
+  <li>Idempotency keys for API requests (stripe, payment providers, queue messages).</li>
+  <li>File-upload identifiers, session tokens, correlation IDs in logs.</li>
+  <li>Anywhere you'd otherwise expose an auto-incrementing ID and leak how many records you have.</li>
+  <li>Test data — seed a hundred records with realistic identifiers in one click.</li>
 </ul>
-<h3>How it's generated</h3>
-<p>Both versions are RFC-compliant. Random bytes come from your browser's <code>crypto.getRandomValues</code> — never from <code>Math.random</code> or a server.</p>
+
+<h3>v4 vs v7 — which should I use?</h3>
+<ul>
+  <li><strong>v4 (random)</strong> — 122 bits of randomness, no embedded creation time. Use when you want zero correlation between IDs and creation order, or when the ID will live in a hash-map / non-clustered index where ordering doesn't matter.</li>
+  <li><strong>v7 (time-ordered)</strong> — 48-bit Unix-ms timestamp prefix + random tail. <strong>Default to this for new database primary keys.</strong> The timestamp prefix gives B-tree indexes locality (recent inserts go to the same pages, much better cache behaviour than v4), and IDs sort in roughly chronological order. Defined in RFC 9562 (May 2024) — supersedes ULID and v1/v6 for most use cases.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>UUIDs are not secrets.</strong> v4 has 122 bits of entropy and is unguessable, but the format itself doesn't authorize anything. Don't use a UUID as a session token or password-reset token unless you're treating it as a secret (HTTPS-only, time-limited, single-use).</li>
+  <li><strong>v7 leaks creation time.</strong> The first 48 bits encode the millisecond it was minted. Fine for internal IDs; bad if you don't want users to learn when records were created. Use v4 in that case.</li>
+  <li><strong>Index size matters.</strong> A UUID is 16 bytes vs 8 for a bigint — your B-tree indexes get bigger. Worth it for distributed/no-coordination, often not worth it for single-server apps with a sequential ID.</li>
+  <li><strong>v4 fragments database indexes.</strong> Random IDs scatter writes across the index, hurting page cache hit rate and write throughput. This is the original argument for v7.</li>
+  <li><strong>Don't use v1.</strong> The old time-and-MAC variant leaks the generating machine's MAC address. v7 is the modern replacement.</li>
+  <li><strong>Use crypto-secure randomness.</strong> This tool uses <code>crypto.getRandomValues</code>; never roll your own with <code>Math.random</code> — it's not random enough and IDs become predictable.</li>
+</ul>
 <div class="related"><span class="meta">Related tools:</span> <a href="/password-generator/">Password Generator</a> <a href="/hash-generator/">Hash Generator</a> <a href="/timestamp-converter/">Unix Timestamp Converter</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
   </main>

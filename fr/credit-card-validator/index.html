@@ -174,15 +174,25 @@
 
     <div class="ad-slot" data-slot="content"></div>
     <div class="help">
-<h2>What this checks</h2>
+<h2>What is this for?</h2>
+<p>Card numbers carry a built-in checksum (the Luhn / mod-10 algorithm) and start with prefixes that identify the issuing brand. Together those let you catch typos and identify the brand before sending a number to a payment processor. This tool runs both checks 100% in your browser — the number you paste never leaves the page. It's developer-grade structural validation, not a fraud-check or live-card lookup.</p>
+
+<h3>When to use it</h3>
 <ul>
-  <li><strong>Brand</strong> — matched against issuer prefix ranges.</li>
-  <li><strong>Length</strong> — most issuers fix card numbers at a known length (13/15/16/19).</li>
-  <li><strong>Luhn (mod-10)</strong> — the checksum every issued card number satisfies. Catches typos but not whether the card is real or active.</li>
+  <li>Validating that a test card number you've copied is well-formed (test cards from <a href="https://docs.stripe.com/testing" rel="noopener">Stripe's docs</a> or similar all pass Luhn).</li>
+  <li>Sanity-checking input fields in a form — does the number satisfy the basic structure before round-tripping to a payments API that'd otherwise charge for the lookup?</li>
+  <li>Auditing a card number that "looks wrong" to see whether it's a typo (Luhn fails) or a brand mismatch (length wrong for the prefix).</li>
 </ul>
-<h3>Important</h3>
-<p>"Structurally valid" means the number could have been issued — not that it is. Card networks need a payment processor for live verification, which would charge or place a hold.</p>
-<h3>Test numbers</h3>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>"Structurally valid" doesn't mean "issued" or "active".</strong> Real validation requires a payment processor — which costs money or places a hold. This tool catches typos, not closed accounts.</li>
+  <li><strong>Don't paste real card numbers anywhere</strong> — including this tool. The browser doesn't transmit them, but a screen-recorder, browser extension, or open dev-tools panel can. Use a known test number instead.</li>
+  <li><strong>Some 16-digit numbers aren't cards.</strong> Loyalty cards, gift cards, and some prepaid SKUs reuse the format; Luhn pass + brand match doesn't guarantee a payment instrument.</li>
+  <li><strong>Co-branded cards.</strong> Cards issued under one brand may show another's logo. The brand detection here uses the canonical issuer prefix, not the printed logo.</li>
+</ul>
+
+<h3>Test numbers (safe to paste)</h3>
 <p>Visa <code>4242 4242 4242 4242</code> · Mastercard <code>5555 5555 5555 4444</code> · Amex <code>3782 822463 10005</code> · Discover <code>6011 1111 1111 1117</code></p>
 <div class="related"><span class="meta">Outils similaires:</span> <a href="/fr/email-validator/">Validateur d'Email</a> <a href="/fr/hash-generator/">Générateur de Hash</a> <a href="/fr/regex-tester/">Testeur Regex</a></div></div>
     <div class="ad-slot" data-slot="footer"></div>
