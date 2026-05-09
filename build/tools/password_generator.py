@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Senhas aleatórias fortes ou passphrases memorizáveis. Geradas localmente — nunca enviadas para lugar nenhum.",
             "description": "Gerador de senhas seguro e gratuito. Regras de caracteres personalizadas, modo passphrase e geração em lote. Roda inteiramente no seu navegador.",
         },
+        "pl": {
+            "name": "Generator Haseł",
+            "tagline": "Mocne losowe hasła albo łatwe do zapamiętania passphrase'y. Generowane lokalnie — nigdzie nie wysyłane.",
+            "description": "Darmowy bezpieczny generator haseł. Konfigurowalne reguły znaków, tryb passphrase i generowanie batch. Działa w całości w przeglądarce.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -242,6 +247,40 @@ document.addEventListener('DOMContentLoaded', pwGenerate);
   <li><strong>Não anote senhas geradas sem proteção.</strong> Use um password manager (1Password, Bitwarden, KeePass) — não um app de Notas, não um arquivo de texto, não um rascunho de e-mail.</li>
   <li><strong>Longa &gt; complexa.</strong> Uma senha de 24 caracteres só com letras minúsculas tem mais entropia que uma de 10 com todas as classes de símbolos. Comprimento ganha.</li>
   <li><strong>Regras específicas do site podem quebrar copy-paste.</strong> Alguns sites proíbem símbolos específicos ou limitam o tamanho em 16. Chato mas real — gere, depois corte/troque para encaixar se precisar (e aí guarde a senha real no seu manager).</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Dobre hasło to takie, którego atakujący nie zgadnie i którego ty nie musisz pamiętać (bo jest w menedżerze haseł). Ten generator produkuje mocne losowe hasła albo łatwe do zapamiętania passphrase'y w całości w twojej przeglądarce, używając <code>crypto.getRandomValues</code> — tego samego kryptograficznie bezpiecznego źródła losowości, którego używa TLS. Nic nie jest wysyłane; hasło nigdy nie opuszcza twojego urządzenia.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Tworzenie unikalnego hasła do każdego nowego konta, które wpada do menedżera haseł.</li>
+  <li>Generowanie master password albo recovery passphrase, którą zapamiętasz — tryb passphrase jest łatwiejszy do wpisania i zapamiętania.</li>
+  <li>Produkowanie nieludzkiego sekretu do zmiennej CI, tokenu API albo sieci Wi-Fi.</li>
+  <li>Hurtowe generowanie haseł dla nowej paczki użytkowników (count do 50).</li>
+</ul>
+
+<h3>Losowe znaki vs passphrase</h3>
+<ul>
+  <li><strong>Losowe znaki</strong> — najwięcej entropii na długość. 20 mieszanych znaków ≈ 130 bitów. Dobre do rzeczy, które wklejasz, nie wpisujesz.</li>
+  <li><strong>Passphrase'y</strong> — łatwiejsze do wpisania i zapamiętania. Cztery słowa ≈ 40 bitów, sześć słów ≈ 60 bitów. Dobre do master password, odblokowania urządzenia i wszystkiego, co wpisujesz ręcznie często.</li>
+  <li>"Wyklucz dwuznaczne" wycina <code>0/O/1/l/I</code> dla bezpieczniejszego czytania z ekranu albo odręcznych notatek.</li>
+</ul>
+
+<h3>Ile entropii potrzebuję?</h3>
+<ul>
+  <li>≥ 60 bitów — OK do kont o niskiej wartości</li>
+  <li>≥ 80 bitów — dobre do większości kont</li>
+  <li>≥ 100 bitów — wysoka wartość (finanse, master password, root credential)</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Nie używaj tych samych haseł.</strong> Największy upgrade bezpieczeństwa to jedno unikalne hasło na stronę, trzymane w menedżerze. Siła generatora idzie w piach, jeśli to samo hasło żyje na pięciu stronach.</li>
+  <li><strong>Nie zapisuj wygenerowanych haseł bez ochrony.</strong> Używaj menedżera haseł (1Password, Bitwarden, KeePass) — nie aplikacji Notatki, nie pliku tekstowego, nie kopii roboczej maila.</li>
+  <li><strong>Długie &gt; skomplikowane.</strong> 24-znakowe hasło tylko z małych liter ma więcej entropii niż 10-znakowe ze wszystkimi klasami symboli. Długość wygrywa.</li>
+  <li><strong>Reguły konkretnych stron potrafią zepsuć copy-paste.</strong> Niektóre serwisy zakazują konkretnych symboli albo ograniczają długość do 16. Upierdliwe, ale realne — wygeneruj, potem przytnij/podmień, żeby zmieścić (a faktyczne zapisane hasło wrzuć do menedżera).</li>
 </ul>
 """,
     },

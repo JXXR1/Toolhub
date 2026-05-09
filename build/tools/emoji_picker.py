@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Sélecteur d'Emojis", "tagline": "Palette d'emojis avec recherche par nom et mot-clé. Cliquez pour copier. Catégories : sourires, animaux, nourriture, voyage, objets, symboles, drapeaux.", "description": "Sélecteur gratuit d'emojis avec recherche par mot-clé. Clic pour copier. Ensemble curaté : sourires, personnes, animaux, nourriture, voyage, objets, symboles, drapeaux. Unicode pur."},
         "it": {"name": "Selettore di Emoji", "tagline": "Tavolozza di emoji con ricerca per nome e parola chiave. Clicca per copiare. Categorie: faccine, animali, cibo, viaggi, oggetti, simboli, bandiere.", "description": "Selettore gratuito di emoji con ricerca per parole chiave. Clicca per copiare. Set curato: faccine, persone, animali, cibo, viaggi, oggetti, simboli, bandiere. Unicode puro."},
         "pt": {"name": "Seletor de Emoji", "tagline": "Paleta de emojis pesquisável por nome e palavra-chave. Clique em qualquer emoji para copiar. Categorias: smileys, animais, comida, viagem, objetos, símbolos, bandeiras.", "description": "Seletor gratuito de emojis com busca por palavra-chave. Clique para copiar qualquer emoji. Conjunto curado cobrindo smileys, pessoas, animais, comida, viagem, objetos, símbolos e bandeiras. Unicode puro — funciona em qualquer lugar."},
+        "pl": {"name": "Picker Emoji", "tagline": "Paleta emoji z wyszukiwaniem po nazwie i słowach kluczowych. Kliknij dowolne emoji, aby skopiować. Kategorie: smileys, zwierzęta, jedzenie, podróże, obiekty, symbole, flagi.", "description": "Darmowy picker emoji z wyszukiwaniem po słowach kluczowych. Kliknij, aby skopiować dowolne emoji. Wyselekcjonowany zestaw: smileys, ludzie, zwierzęta, jedzenie, podróże, obiekty, symbole i flagi. Czysty Unicode — działa wszędzie."},
     },
     "body": """
 <div class="tool-card">
@@ -401,6 +402,30 @@ document.addEventListener('DOMContentLoaded', () => { epRenderCats(); epRenderRe
 <li><strong>Curato, non esaustivo.</strong> Unicode 15 ha 3664 emoji; qui ~600.</li>
 <li><strong>Variation Selector (U+FE0F)</strong> forza lo stile emoji.</li>
 <li><strong>L'API clipboard richiede un gesto</strong> (il clic basta).</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Wszystkie systemy operacyjne mają pickery emoji (Win+. na Windowsie, Cmd+Ctrl+Spacja na macOS, klawiatura na telefonach), ale są niespójne, czasem ukryte i często powolne. To narzędzie daje wyselekcjonowaną siatkę najczęściej używanych emoji posortowanych po kategoriach i przeszukiwalnych po słowach kluczowych. Kliknij kafelek, żeby skopiować emoji do schowka. Ostatnio kopiowane emoji są zapamiętywane między wizytami w localStorage przeglądarki — nic nie idzie na serwer.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Jesteś na desktopie bez szybkiego skrótu emoji na poziomie OS.</li>
+  <li>Chcesz wyszukiwania po słowach kluczowych szerszego niż oferuje picker OS.</li>
+  <li>Używasz remote desktopa albo starszego systemu, który nie ma natywnego pickera.</li>
+  <li>Potrzebujesz emoji do wklejenia w pole tekstowe, które nie akceptuje twojego IME.</li>
+</ul>
+
+<h3>Jak działa renderowanie</h3>
+<p>Emoji to po prostu jeden albo więcej code pointów Unicode. <em>Jak</em> wygląda, zależy od fontu, który wybierze twoja przeglądarka/OS: emoji od Apple są inne niż Google Noto, Microsoft Segoe UI Emoji albo Twemoji od Twittera. Bajty są identyczne — obrazek jest lokalny. Jeśli emoji pokazuje się jako kwadrat albo "nieobsługiwane", twój systemowy font nie ma dla niego glifu; aktualizacja OS albo zainstalowanie fontu typu Noto Color Emoji to naprawia.</p>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Tony skóry i warianty rodzin/zawodów to sekwencje.</strong> 👨‍🍳 to "mężczyzna" + ZWJ + "gotowanie" — pięć code pointów. Niektóre systemy wyświetlają komponenty osobno, jeśli nie wspierają sekwencji.</li>
+  <li><strong>Flagi to regional indicators.</strong> 🇵🇱 to "🇵" + "🇱" — dwie litery regional indicator. Sekwencje dla terytoriów (Szkocja, Teksas) wymagają dodatkowych tag characters i mogą nie renderować się na każdym systemie.</li>
+  <li><strong>To narzędzie jest wyselekcjonowane, nie wyczerpujące.</strong> Unicode 15 ma 3664 emoji wliczając setki wariantów tonów skóry i płci. Picker skupia się na ~600, których prawdopodobnie chcesz; po pełną listę zerknij w dane emoji Unicode albo picker OS.</li>
+  <li><strong>Niektóre znaki wyglądają jak emoji, ale renderują się jako tekst.</strong> "Variation selector" (U+FE0F) mówi rendererowi "narysuj to jako emoji". Bez tego ☂ może wyświetlić się jako zwykły tekst zamiast 🌂. Narzędzie dodaje selektory tam, gdzie trzeba.</li>
+  <li><strong>Wsparcie schowka się różni.</strong> Clipboard API niektórych przeglądarek wymaga gestu użytkownika (kliknięcie to robi), ale odmowa uprawnień zawodzi po cichu. Jeśli kopiowanie nie działa, użyj skrótu klawiaturowego z paska adresu.</li>
 </ul>
 """,
     },

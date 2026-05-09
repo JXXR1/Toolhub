@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Teste regex de JavaScript ao vivo. Veja matches, grupos de captura e aplique substituições enquanto digita.",
             "description": "Testador de regex JavaScript gratuito com destaque ao vivo, grupos de captura e modo replace. Flags compatíveis com PCRE (g/i/m/s/u/y).",
         },
+        "pl": {
+            "name": "Tester Regex",
+            "tagline": "Testuj regex JavaScript na żywo. Zobacz matche, grupy przechwytujące i aplikuj zamiany w trakcie pisania.",
+            "description": "Darmowy online tester regex JavaScript z podświetlaniem na żywo, grupami przechwytującymi i trybem replace. Flagi zgodne z PCRE (g/i/m/s/u/y).",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -197,6 +202,37 @@ document.addEventListener('DOMContentLoaded', reRun);
   <li><strong>Anchors em limites de linha vs string.</strong> <code>^</code> e <code>$</code> casam fim de string por padrão; com a flag <code>m</code> casam cada linha.</li>
   <li><strong>Especiais de replacement.</strong> <code>$&amp;</code> é o match inteiro; <code>$1</code>, <code>$2</code>, … são grupos de captura; <code>$$</code> é um <code>$</code> literal. Esquecer disso é fonte clássica de "por que minha regex está comendo meus dólares".</li>
   <li><strong>Não faça parsing de HTML com regex</strong> para nada sério. O aviso clássico é verdadeiro: tags aninhadas, comentários e CDATA precisam de um parser de verdade. Regex serve para scraping pontual ou entradas controladas.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Wyrażenia regularne są gęste i bezlitosne. Sposób na napisanie takiego, który faktycznie działa, jest iteracyjny — pattern, przykładowy tekst, zobacz, co się matchuje, popraw. To narzędzie daje ci tę pętlę w przeglądarce, używając natywnego <code>RegExp</code> silnika JavaScriptu, plus podgląd grup przechwytujących i podgląd zamiany. Patterny i input nigdy nie opuszczają strony.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Walidacja inputu użytkownika (kształt maila, telefonu, kodu pocztowego) i widzenie dokładnie, które inputy przechodzą, a które padają.</li>
+  <li>Parsowanie linii loga, wyciąganie pól, budowa filtrów logów.</li>
+  <li>Projektowanie patternów find-and-replace przed odpaleniem ich na realnym codebasie.</li>
+  <li>Debug regexa skopiowanego ze Stack Overflow, który nie działa — wklej tu, zobacz, co faktycznie matchuje.</li>
+</ul>
+
+<h3>Typowe patterny</h3>
+<ul>
+  <li><code>\\b\\w+@\\w+\\.\\w+\\b</code> — w stylu maila</li>
+  <li><code>^\\s*$</code> — pusta linia / sama whitespace (z flagą <code>m</code>)</li>
+  <li><code>(?&lt;year&gt;\\d{4})-(?&lt;month&gt;\\d{2})</code> — nazwane grupy przechwytujące</li>
+  <li><code>(?:.*)</code> — grupa nieprzechwytująca</li>
+  <li><code>(?=foo)</code> / <code>(?!foo)</code> — lookahead / negative lookahead</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>JavaScript ≠ PCRE.</strong> Brak <code>\\K</code>, brak rekurencyjnych patternów, lookbehind dopiero od ES2018. Patterny z Perla, PHP albo Pythona często wymagają poprawki.</li>
+  <li><strong>Bez flagi <code>g</code> dostajesz tylko pierwszy match.</strong> Dodaj <code>g</code> dla "znajdź wszystkie"; połącz z <code>m</code>, jeśli anchory mają matchować per linia.</li>
+  <li><strong>Greedy vs lazy.</strong> <code>.*</code> zżera maksimum; <code>.*?</code> zżera minimum. Różnica między matchowaniem <code>&lt;b&gt;hi&lt;/b&gt; i &lt;i&gt;there&lt;/i&gt;</code> jako jeden blok vs dwa.</li>
+  <li><strong>Anchory na granicach linii vs stringa.</strong> <code>^</code> i <code>$</code> matchują końce stringa domyślnie; z flagą <code>m</code> matchują każdą linię.</li>
+  <li><strong>Specjalne znaki w replacement.</strong> <code>$&amp;</code> to cały match; <code>$1</code>, <code>$2</code>, … to grupy przechwytujące; <code>$$</code> to literalny <code>$</code>. Zapomnienie tego to klasyczne źródło "dlaczego mój regex zżera moje dolary".</li>
+  <li><strong>Nie parsuj HTML-a regexem</strong> w niczym poważnym. Klasyczne ostrzeżenie jest prawdziwe: zagnieżdżone tagi, komentarze i CDATA wymagają prawdziwego parsera. Regex jest OK do jednorazowego scrapingu logów albo kontrolowanych inputów.</li>
 </ul>
 """,
     },

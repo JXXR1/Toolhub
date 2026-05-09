@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Converta uma data e hora entre fusos horários IANA. Veja offsets, status de horário de verão e dia da semana dos dois lados.",
             "description": "Conversor gratuito de fuso horário. Converta entre quaisquer fusos IANA com suporte a horário de verão. Escolha entre fusos comuns ou qualquer um dos 400+ suportados pelo seu navegador.",
         },
+        "pl": {
+            "name": "Konwerter Stref Czasowych",
+            "tagline": "Konwertuj datę i godzinę między strefami czasowymi IANA. Zobacz offsety, status DST i dzień tygodnia po obu stronach.",
+            "description": "Darmowy online konwerter stref czasowych. Konwertuj między dowolnymi strefami IANA ze świadomością DST. Wybierz spośród typowych stref albo dowolnej z 400+ obsługiwanych przez przeglądarkę.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -201,6 +206,31 @@ document.addEventListener('DOMContentLoaded', () => { tzPopulate(); tzNow(); });
   <li><strong>Abreviações de país não são fusos.</strong> "EST" é ambíguo (EUA vs Austrália); "IST" pode ser indiano, irlandês ou israelense. Sempre escolha o fuso IANA, não a abreviação.</li>
   <li><strong>A precisão histórica</strong> é boa para a era moderna, mas começa a falhar em datas muito antigas. Timestamps anteriores a 1970 podem usar offsets aproximados em alguns navegadores.</li>
   <li><strong>Armazenando datas: sempre use UTC.</strong> Converta na hora de exibir. A linha UTC na saída te dá o valor canônico para gravar no seu banco.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Strefy czasowe są zwodniczo upierdliwe. Spotkanie o "9:00" znaczy różne absolutne momenty w Warszawie, Londynie i Nowym Jorku — a offset między dowolną parą zmienia się dwa razy w roku przez DST, w różnych terminach. To narzędzie bierze czas ścienny w jednej strefie IANA i mówi ci dokładny ekwiwalent w innej, z aktualnymi offsetami, instantem UTC i dniem tygodnia po obu stronach.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Planowanie calla między kontynentami — potwierdzenie, czym jest "15:00 CET" w strefie kolegi.</li>
+  <li>Czytanie timestampu z loga zapisanego w UTC i tłumaczenie go na czas lokalny do raportu user-facing.</li>
+  <li>Sprawdzenie, czy okno deploya albo slot maintenance przekracza granicę DST.</li>
+  <li>Sanity check, czy wyrażenie crona w <code>America/New_York</code> odpala w momencie, którego się spodziewasz w swojej strefie.</li>
+  <li>Wyliczenie zmiany dnia tygodnia przy przekraczaniu international date line.</li>
+</ul>
+
+<h3>Dlaczego strefy IANA (nie "GMT+2")</h3>
+<p>Strefa IANA typu <code>Europe/Warsaw</code> albo <code>America/New_York</code> koduje historyczne i bieżące reguły dla danej lokalizacji — daty rozpoczęcia i zakończenia DST, zmiany strefy (Rosja zniosła DST w 2014; Turcja porzuciła DST w 2016), nawet to, że Samoa pominęło cały dzień w 2011. Czysty offset typu "GMT+2" nic nie mówi o tym, czy DST się stosuje, jaka była reguła w zeszłym roku albo jaka będzie za rok. Przeglądarki dostarczają bazę IANA (przez ICU/CLDR) i aktualizują automatycznie, więc konwersja zostaje poprawna w czasie.</p>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Przejścia DST tworzą czasy dwuznaczne i nieistniejące.</strong> Gdy zegar się cofa, 02:30 dzieje się dwa razy; gdy się przesuwa do przodu, 02:30 nie istnieje wcale. Narzędzie domyślnie wybiera interpretację standard time; jeśli potrzebujesz drugiej strony, przesuń o godzinę w którąś stronę.</li>
+  <li><strong>Offsety nie są stałe.</strong> "CET" to UTC+1 zimą i UTC+2 latem (CEST). Wyjście zawsze pokazuje faktyczny offset dla wpisanej daty — ufaj wyświetlanemu offsetowi, nie skrótowi.</li>
+  <li><strong>Skróty krajów to nie strefy.</strong> "EST" jest dwuznaczne (US vs Australian); "IST" może znaczyć indyjską, irlandzką albo izraelską. Zawsze wybieraj strefę IANA, nie skrót.</li>
+  <li><strong>Dokładność historyczna</strong> jest dobra dla nowoczesnej ery, ale rozjeżdża się dla bardzo starych dat. Timestampy sprzed 1970 mogą używać przybliżonych offsetów w niektórych przeglądarkach.</li>
+  <li><strong>Zapisywanie dat: zawsze używaj UTC.</strong> Konwertuj przy wyświetlaniu. Linia UTC na wyjściu daje ci kanoniczną wartość do zapisu w bazie.</li>
 </ul>
 """,
     },

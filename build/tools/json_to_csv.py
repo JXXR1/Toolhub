@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "JSON vers CSV", "tagline": "Convertissez des tableaux JSON d'objets en CSV. Détection des champs, séparateurs personnalisés, échappement compatible Excel et Google Sheets.", "description": "Convertisseur JSON vers CSV gratuit. Aplatit les tableaux d'objets en lignes, échappement RFC 4180, séparateurs virgule/point-virgule/tab."},
         "it": {"name": "JSON a CSV", "tagline": "Converti array JSON di oggetti in CSV. Rilevamento campi, separatori personalizzati, escape compatibile con Excel e Google Sheets.", "description": "Convertitore JSON-CSV gratuito. Appiattisce array di oggetti in righe, escape RFC 4180, separatori virgola/punto e virgola/tab."},
         "pt": {"name": "JSON para CSV", "tagline": "Converte arrays JSON de objetos em CSV. Detecta os campos automaticamente, suporta delimitadores customizados e faz escape correto pra Excel e Google Sheets.", "description": "Conversor JSON para CSV grátis online. Achata arrays de objetos em linhas, faz escape de aspas conforme a RFC 4180, suporta delimitadores vírgula/ponto e vírgula/tab."},
+        "pl": {"name": "JSON do CSV", "tagline": "Konwertuj tablice obiektów JSON na CSV. Auto-wykrywanie pól, własne delimitery, poprawny escape pod Excela i Google Sheets.", "description": "Darmowy online konwerter JSON do CSV. Spłaszcza tablice obiektów w wiersze, escape'uje cudzysłowy wg RFC 4180, wspiera delimitery przecinek/średnik/tab."},
     },
     "body": """
 <div class="tool-card">
@@ -130,6 +131,25 @@ document.addEventListener('DOMContentLoaded', jcRun);
   <li><strong>Objetos/arrays aninhados são serializados como string.</strong> Se você precisa de um CSV achatado (uma coluna por chave aninhada), achate o JSON antes de jogar aqui.</li>
   <li><strong>Excel + delimitadores.</strong> Locales europeus usam ponto e vírgula por padrão; troque o delimitador pra que o arquivo abra com colunas em vez de uma linha gigantesca. O escape da RFC 4180 é aplicado de qualquer jeito.</li>
   <li><strong>BOM UTF-8.</strong> O Excel no macOS às vezes embaralha não-ASCII sem BOM. Esta ferramenta NÃO adiciona um — passe o output por um passo que adiciona BOM se aparecer mojibake.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Droga w drugą stronę: wrzucasz tablicę JSON i dostajesz CSV gotowy do Excela, Google Sheets albo dowolnego narzędzia, które woli format tabularny. Nagłówki są wykrywane automatycznie z kluczy obiektów; zagnieżdżone wartości są stringifikowane do JSON-a w pojedyncze komórki, żeby nic nie zniknęło po cichu.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Zamiana odpowiedzi API w CSV dla stakeholdera, który otwiera tylko arkusze.</li>
+  <li>Eksport masy rekordów z dumpa JSON do czegoś, co da się pivotować/filtrować w Sheets.</li>
+  <li>Generowanie fixture'owych wierszy dla importów do bazy, które przyjmują CSV.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Wnioskowanie nagłówków używa unii wszystkich kluczy obiektów.</strong> Wiersz bez klucza staje się pustą komórką; kolumna nie znika.</li>
+  <li><strong>Zagnieżdżone obiekty/tablice są stringifikowane.</strong> Jeśli potrzebujesz spłaszczonego CSV (jedna kolumna na zagnieżdżony klucz), spłaszcz JSON-a, zanim go tu wrzucisz.</li>
+  <li><strong>Excel + delimitery.</strong> Lokalizacje europejskie domyślnie używają średnika; przełącz delimiter, żeby plik otworzył się w kolumnach zamiast jednej olbrzymiej linii. Escape wg RFC 4180 jest aplikowany tak czy siak.</li>
+  <li><strong>BOM UTF-8.</strong> Excel na macOS czasem psuje znaki spoza ASCII bez BOM. To narzędzie NIE dodaje go — przepuść wyjście przez krok dodający BOM, jeśli widzisz mojibake.</li>
 </ul>
 """,
     },

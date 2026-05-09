@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Image vers Base64", "tagline": "Convertissez n'importe quelle image en data URI Base64 pour HTML, CSS ou Markdown. Le fichier ne quitte pas votre navigateur.", "description": "Encodeur gratuit d'image en data URI Base64. Sélectionnez une image et obtenez l'URL data: prête à coller."},
         "it": {"name": "Immagine a Base64", "tagline": "Converti qualsiasi immagine in un data URI Base64 per HTML, CSS o Markdown. Il file non lascia il browser.", "description": "Encoder gratuito di immagini in data URI Base64. Seleziona un'immagine e ottieni l'URL data: pronta da incollare."},
         "pt": {"name": "Imagem para Base64", "tagline": "Converte qualquer imagem em um data URI Base64 pronto pra uso inline em HTML, CSS ou Markdown. O arquivo fica no seu browser.", "description": "Encoder grátis online de imagem para data URI Base64. Solte ou escolha uma imagem e receba uma URL data: pronta pra colar em HTML inline, background-image de CSS ou e-mail."},
+        "pl": {"name": "Obrazek do Base64", "tagline": "Konwertuj dowolny obrazek na data URI Base64 gotowy do inline'owego użycia w HTML, CSS albo Markdown. Pliki zostają w przeglądarce.", "description": "Darmowy online encoder obrazków do data URI Base64. Upuść albo wybierz obrazek i dostań gotowy do wklejenia data: URL do inline HTML, CSS background-image albo maila."},
     },
     "body": """
 <div class="tool-card">
@@ -102,6 +103,26 @@ function i2bRun(){
   <li><strong>Sem deduplicação entre páginas.</strong> Cada página que embute o URI envia os bytes de novo. Pra qualquer coisa reutilizada, mantenha como URL real pra que o browser cacheie uma vez.</li>
   <li><strong>Clientes de e-mail variam.</strong> Os clientes modernos renderizam data URIs, mas o Outlook no Windows historicamente bloqueia em <code>&lt;img src&gt;</code>. Anexos CID ainda são mais seguros pra envio em massa.</li>
   <li><strong>SVG ≠ raster.</strong> Pra SVG, embutir o markup direto (ou fazer url-encoding do SVG) costuma ficar menor que Base64.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p><em>Data URI</em> osadza bajty pliku bezpośrednio w URL-u używając Base64 — bez osobnego requesta, bez zewnętrznego pliku. Ten konwerter czyta dowolny obrazek, który upuścisz, i produkuje string <code>data:image/...;base64,...</code> gotowy do wklejenia w HTML, CSS, Markdown albo JSON. Plik nigdy nie opuszcza przeglądarki; konwersja idzie przez <code>FileReader.readAsDataURL</code>.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Maleńkie ikonki (&lt; 4 KB) inline w CSS — oszczędza request HTTP i unika flasha przy pierwszym paint.</li>
+  <li>Samowystarczalne maile HTML, demo w jednym pliku albo PWA działające offline.</li>
+  <li>Szybkie wklejki do notatek Markdown, stron Notion albo wątków na czacie, które muszą podróżować razem z obrazkiem.</li>
+  <li>Fixture'y testowe i pliki snapshotów, gdzie chcesz, żeby asset był zacommitowany razem z testem.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Kara za rozmiar.</strong> Base64 nadyma payload o ~33%. Powyżej ~4–8 KB koszt osadzenia przewyższa zaoszczędzony request, zwłaszcza że data URI nie mogą być cache'owane osobno przez przeglądarkę.</li>
+  <li><strong>Brak deduplikacji między stronami.</strong> Każda strona, która osadza URI, wysyła bajty od nowa. Dla czegokolwiek powtarzalnego trzymaj prawdziwy URL, żeby przeglądarka zacache'owała raz.</li>
+  <li><strong>Klienty mailowe się różnią.</strong> Nowoczesne renderują data URI, ale Outlook na Windowsie historycznie blokuje je w <code>&lt;img src&gt;</code>. Załączniki CID nadal są bezpieczniejsze do mailingów masowych.</li>
+  <li><strong>SVG ≠ raster.</strong> Dla SVG osadzenie markupu bezpośrednio (albo url-encoding SVG) jest zwykle mniejsze niż Base64.</li>
 </ul>
 """,
     },

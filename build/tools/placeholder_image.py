@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Générateur d'Image Placeholder", "tagline": "Générez des images SVG placeholder de toute taille avec texte et couleurs personnalisés. Sortie en data URI ou SVG téléchargeable.", "description": "Générateur d'images placeholder gratuit. Spécifiez largeur × hauteur, texte et couleurs ; obtenez un SVG inline à coller — data URI, balisage ou téléchargement. 100% dans le navigateur."},
         "it": {"name": "Generatore Immagine Placeholder", "tagline": "Genera immagini SVG placeholder di qualsiasi dimensione con testo e colori personalizzati. Output come data URI o SVG scaricabile.", "description": "Generatore di immagini placeholder gratuito. Specifica larghezza × altezza, testo e colori; ottieni un SVG inline da incollare — data URI, markup o download. 100% nel browser."},
         "pt": {"name": "Gerador de Imagem Placeholder", "tagline": "Gere imagens placeholder em SVG inline em qualquer tamanho com texto e cores personalizados. Saída como data URI ou SVG para download.", "description": "Gerador de imagens placeholder gratuito. Especifique width × height, texto do label e cores; receba um SVG inline para colar onde quiser — data URI, markup puro ou download. Roda inteiramente no seu navegador."},
+        "pl": {"name": "Generator Placeholder Image", "tagline": "Generuj placeholderowe obrazki inline-SVG w dowolnym rozmiarze z własnym tekstem i kolorami. Wyjście jako data URI albo SVG do pobrania.", "description": "Darmowy generator placeholder imageów. Podaj width × height, tekst labela i kolory; dostaniesz inline-SVG do wklejenia gdziekolwiek — data URI, surowy markup albo download. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -237,6 +238,28 @@ document.addEventListener('DOMContentLoaded', phRun);
 <li><strong>Colori solo hex HTML.</strong> Per rgba() modifica l'SVG.</li>
 <li><strong>La dimensione è intrinseca.</strong> Scalatura CSS con <code>preserveAspectRatio="none"</code>.</li>
 <li><strong>Non lasciare in produzione.</strong></li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Projektując stronę często potrzebujesz obrazka o konkretnym rozmiarze, zanim prawdziwy obrazek będzie gotowy — hero banner, miniaturka karty, awatar, OG card. Wczytanie <code>via.placeholder.com</code> albo <code>placehold.co</code> działa, ale dodaje zewnętrzny request i zewnętrzną zależność. To narzędzie produkuje samowystarczalny inline SVG z rozmiarem i labelem, jakiego chcesz, gotowy do wrzucenia w HTML, CSS-owy <code>background-image</code> albo komponent React jako data URI. Nic nie opuszcza przeglądarki.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Wireframing layoutu, gdzie potrzebujesz placeholderów w kształcie zanim prawdziwe assety są gotowe.</li>
+  <li>Budowa Storybooka albo eksportu z Figmy, potrzebujesz placeholderowej grafiki per komponent.</li>
+  <li>Testowanie kodu ładowania obrazków, progów lazy-loadingu albo CSS aspect-ratio.</li>
+  <li>Zastąpienie zewnętrznego placeholder service w projekcie, który musi działać offline albo pod restrykcyjnym CSP.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>SVG ≠ raster.</strong> Data URI to string SVG; skaluje się bez końca bez bluru, ale designer oczekujący PNG może oczekiwać czego innego. Po obrazek raster zrób screen z preview albo przepuść SVG przez konwerter SVG-to-PNG.</li>
+  <li><strong>Długie data URI są niewygodne w <code>img src</code>.</strong> Przeglądarki je trawią, ale narzędzia (lintery, search-and-replace, diff toole) często krztuszą się wielokilobajtowymi wartościami atrybutów. Dla dużych mockupów wybieraj download SVG.</li>
+  <li><strong>Tekst labela nie jest lokalizowany.</strong> Auto-label to "WxH" ze znakiem mnożenia; jeśli potrzebujesz tłumaczenia, wpisz custom label.</li>
+  <li><strong>Kolory tylko HTML hex.</strong> Color pickery produkują <code>#rrggbb</code>. Jeśli chcesz <code>rgba()</code>, edytuj markup SVG po skopiowaniu.</li>
+  <li><strong>Width/height są intrinsic, nie display.</strong> Ustawienie CSS na inny rozmiar przeskaluje SVG — wizualnie OK, ale osadzony tekst może wyglądać rozciągnięty, jeśli aspect ratio się zmieni; używamy <code>preserveAspectRatio="none"</code> dla przewidywalnego skalowania.</li>
+  <li><strong>Nie wysyłaj placeholdera na produkcję.</strong> Łatwo zapomnieć — podmień na prawdziwy asset przed go-live.</li>
 </ul>
 """,
     },

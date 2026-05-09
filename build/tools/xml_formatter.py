@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Formateur XML", "tagline": "Formatez et minifiez du XML. Validez la bien-formation avec ligne et colonne en cas d'erreur.", "description": "Formateur et minifieur XML gratuit. Pretty-print avec indentation configurable ou suppression des espaces. Valide la bien-formation avec le parseur XML du navigateur — ligne et colonne en cas d'erreur."},
         "it": {"name": "Formattatore XML", "tagline": "Formatta e minifica XML. Valida la ben-formattezza con riga e colonna in caso di errori.", "description": "Formattatore e minificatore XML gratuito. Pretty-print con indentazione configurabile o rimozione spazi. Valida la ben-formattezza con il parser XML del browser — riga e colonna in caso di errori."},
         "pt": {"name": "Formatador de XML", "tagline": "Formate e minifique XML. Valide se está bem-formado com linha e coluna em caso de erro.", "description": "Formatador e minificador de XML online gratuito. Pretty-print de XML com indentação configurável, ou remova whitespace para minificar. Valida well-formedness usando o parser XML do navegador — linha e coluna do erro são exibidos."},
+        "pl": {"name": "Formatter XML", "tagline": "Sformatuj i zminifikuj XML. Waliduj poprawność (well-formed) z linią i kolumną przy błędach.", "description": "Darmowy online formatter i minifikator XML. Pretty-print XML z konfigurowalnym wcięciem albo wycinanie białych znaków do minifikacji. Waliduje well-formedness parserem XML przeglądarki — linia i kolumna błędu pokazane."},
     },
     "body": """
 <div class="tool-card">
@@ -347,6 +348,30 @@ document.addEventListener('DOMContentLoaded', xfRun);
 <li><strong>I namespace sono preservati.</strong></li>
 <li><strong>Ordine attributi.</strong> Per il checksum, canonicalizza (XML C14N).</li>
 <li><strong>Differenze fra parser.</strong> Riga/colonna best-effort.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>XML nadal jest wszędzie — odpowiedzi SOAP, pliki konfiguracyjne, feedy RSS/Atom, markup SVG, wnętrzności OOXML. Gdy musisz przeczytać, zdiffować albo udostępnić kawałek XML-a, różnica między jednoliniową zminifikowaną bryłą a porządnie wciętym drzewem to różnica między zgadywaniem a czytaniem. To narzędzie pretty-printuje dowolny well-formed XML z konfigurowalnym wcięciem albo minifikuje go pod transport, i używa natywnego parsera XML przeglądarki, żeby flagować nieprawidłowości z linią i kolumną tam, gdzie się da.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Inspekcja envelope'a SOAP albo configa XML od dostawcy, który przyszedł jako jedna zminifikowana linia.</li>
+  <li>Czyszczenie SVG, żeby path data było jeden element na linię.</li>
+  <li>Wycięcie białych znaków pretty-printu przed wysłaniem XML-a po sieci.</li>
+  <li>Sanity check, że XML, który wygenerowałeś, jest well-formed, zanim wepchasz go do strict parsera.</li>
+  <li>Diff dwóch dokumentów XML — najpierw pretty-print, potem diff drzew obok siebie.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Well-formed ≠ valid.</strong> "Well-formed" znaczy, że składnia parsuje (tagi się zgadzają, atrybuty w cudzysłowach, jeden root). "Valid" znaczy zgodność z DTD albo schemą. To narzędzie sprawdza tylko well-formedness — walidacja schematu wymaga pliku schematu.</li>
+  <li><strong>Białe znaki bywają znaczące.</strong> W <code>&lt;name&gt; Alice &lt;/name&gt;</code> spacje na początku/końcu są częścią wartości (XML domyślnie ma <code>xml:space="preserve"</code>). Ponowne wcięcie je zmienia. Jeśli twój XML jest wrażliwy na białe znaki (XHTML <code>&lt;pre&gt;</code>, osadzone bloki kodu), pretty-print to złe narzędzie.</li>
+  <li><strong>Self-closing vs jawnie pusty.</strong> <code>&lt;br/&gt;</code> i <code>&lt;br&gt;&lt;/br&gt;</code> są równoważne w XML, ale różnią się w HTML. Formatter normalizuje puste elementy do formy self-closing.</li>
+  <li><strong>CDATA, komentarze i processing instructions są zachowywane.</strong> Ich wewnętrzna treść nie jest reformatowana.</li>
+  <li><strong>Namespace'y przeżywają.</strong> Deklaracje <code>xmlns:foo</code> i kwalifikowane nazwy <code>foo:bar</code> robią round-trip bez modyfikacji.</li>
+  <li><strong>Kolejność atrybutów może się zmienić.</strong> Parser XML nie zachowuje ściśle kolejności atrybutów między narzędziami; jeśli liczysz checksum z XML-a, najpierw kanonikalizuj (XML C14N).</li>
+  <li><strong>Dziwactwa parserów przeglądarek.</strong> Różne przeglądarki raportują błędy parsowania w różnych formatach. Wyciąganie linia/kolumna jest best-effort i w niektórych przeglądarkach pokaże tylko komunikat.</li>
 </ul>
 """,
     },

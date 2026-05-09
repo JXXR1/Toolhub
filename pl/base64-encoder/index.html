@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encoder / Decoder Base64 — Toolhub</title>
+  <meta name="description" content="Darmowy encoder i decoder Base64 online. Bezpieczny dla UTF-8 z opcjonalnym wariantem base64url dla URL-i i JWT. Działa w przeglądarce.">
+  <meta property="og:title" content="Encoder / Decoder Base64 — Toolhub">
+  <meta property="og:description" content="Darmowy encoder i decoder Base64 online. Bezpieczny dla UTF-8 z opcjonalnym wariantem base64url dla URL-i i JWT. Działa w przeglądarce.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/base64-encoder/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/base64-encoder/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/base64-encoder/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/base64-encoder/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/base64-encoder/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/base64-encoder/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/base64-encoder/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/base64-encoder/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/base64-encoder/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/base64-encoder/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/base64-encoder/#tool",
+        "name": "Encoder / Decoder Base64",
+        "description": "Darmowy encoder i decoder Base64 online. Bezpieczny dla UTF-8 z opcjonalnym wariantem base64url dla URL-i i JWT. Działa w przeglądarce.",
+        "url": "https://toolhub.software/pl/base64-encoder/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Encoding & Decoding",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["base64", "encode", "decode", "data-uri"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Encoder / Decoder Base64", "item": "https://toolhub.software/pl/base64-encoder/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/base64-encoder/'; else location.href='/base64-encoder/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Encoder / Decoder Base64</div>
+    <h1>Encoder / Decoder Base64</h1>
+    <p class="tagline">Koduj tekst do Base64 albo dekoduj Base64 z powrotem na tekst. Bezpieczny dla UTF-8, wariant base64url.</p>
+    
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Mode</label>
+      <select id="b64-mode" onchange="b64Run()">
+        <option value="enc">Koduj (text → base64)</option>
+        <option value="dec">Dekoduj (base64 → text)</option>
+      </select>
+    </div>
+    <div>
+      <label>Variant</label>
+      <select id="b64-variant" onchange="b64Run()">
+        <option value="std">Standard</option>
+        <option value="url">base64url (URL/JWT-safe)</option>
+      </select>
+    </div>
+  </div>
+  <label style="margin-top:1rem">Wejście</label>
+  <textarea id="b64-in" oninput="b64Run()" spellcheck="false"></textarea>
+</div>
+<div class="tool-card">
+  <label>Wyjście</label>
+  <div class="output-row">
+    <pre class="output" id="b64-out">Wpisz dane powyżej, aby zobaczyć wynik.</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('b64-out', this)">Kopiuj</button>
+  </div>
+  <div class="meta" id="b64-meta"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Co Base64 właściwie robi</h2>
+<p>Base64 zamienia dowolne bajty w 64 znaki ASCII (A–Z, a–z, 0–9 plus dwa dodatkowe). Trzy bajty wejścia stają się czterema znakami wyjścia, więc wynik jest mniej więcej 33% większy od wejścia. To <em>kodowanie</em>, nie szyfrowanie — każdy może to zdekodować.</p>
+
+<h3>Kiedy używać Base64</h3>
+<ul>
+  <li>Wstawianie małych binarnych danych w formaty tekstowe: data URI, wartości JSON, zmienne środowiskowe, stringi YAML.</li>
+  <li>Kodowanie binarnych tokenów (sygnatury, klucze, hashe) do umieszczenia w URL-ach, headerach albo cookies.</li>
+  <li>Załączniki maili i SMIME — historyczne, ale wciąż żywe.</li>
+</ul>
+
+<h3>Standard vs base64url</h3>
+<ul>
+  <li><strong>Standard</strong> (<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4" target="_blank" rel="noopener noreferrer">RFC 4648 §4</a>) używa <code>+</code>, <code>/</code>, <code>=</code>. OK w mailu, wartościach JSON, większości XML.</li>
+  <li><strong>base64url</strong> (<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-5" target="_blank" rel="noopener noreferrer">RFC 4648 §5</a>) używa <code>-</code>, <code>_</code> i zwykle pomija końcowy padding <code>=</code>. Używany w JWT, tokenach OAuth i wszędzie tam, gdzie wartość siedzi w URL-u, gdzie <code>+</code>/<code>/</code>/<code>=</code> wymagałyby dodatkowego escape'owania.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Nie myl tego z szyfrowaniem.</strong> Base64 jest odwracalny przez każdego. Jeśli dane są wrażliwe — najpierw je zaszyfruj.</li>
+  <li><strong>UTF-8 robi tu poprawny round-trip</strong> — znaki spoza ASCII (é, 你好, 🚀) idą przez <code>TextEncoder</code>/<code>TextDecoder</code>, nie bezpośrednio przez <code>btoa</code>/<code>atob</code>. Naiwne <code>btoa(str)</code> w JavaScripcie wywala się na znakach niełacińskich.</li>
+  <li><strong>Padding</strong> — standardowy Base64 zawsze kończy się 0/1/2 znakami <code>=</code> w zależności od długości wejścia. base64url często go pomija. Dekodery wymagające paddingu odrzucają dane bez paddingu; to narzędzie sam dokleja go przy dekodowaniu, jeśli go brakuje.</li>
+  <li><strong>Białe znaki w środku zakodowanego stringa</strong> — ten dekoder usuwa spacje i końce linii (typowe po copy-paste), ale niektóre biblioteki tego nie robią, więc przekoduj zanim wrzucisz to do takiej.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/url-encoder/">Encoder / Decoder URL</a> <a href="/pl/html-encoder/">Encoder / Decoder HTML</a> <a href="/pl/jwt-decoder/">Decoder JWT</a> <a href="/pl/image-to-base64/">Obrazek do Base64</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+function b64Encode(s, urlSafe){
+  const bytes = new TextEncoder().encode(s);
+  let bin = '';
+  for (const b of bytes) bin += String.fromCharCode(b);
+  let out = btoa(bin);
+  if (urlSafe) out = out.replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  return out;
+}
+function b64Decode(s, urlSafe){
+  let t = s.replace(/\s+/g,'');
+  if (urlSafe) t = t.replace(/-/g,'+').replace(/_/g,'/');
+  while (t.length % 4) t += '=';
+  const bin = atob(t);
+  const bytes = new Uint8Array(bin.length);
+  for (let i=0; i<bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder('utf-8', {fatal: true}).decode(bytes);
+}
+function b64Run(){
+  const mode = document.getElementById('b64-mode').value;
+  const variant = document.getElementById('b64-variant').value;
+  const raw = document.getElementById('b64-in').value;
+  const out = document.getElementById('b64-out');
+  const meta = document.getElementById('b64-meta');
+  out.classList.remove('error');
+  if (!raw){ out.textContent = 'Wpisz dane powyżej, aby zobaczyć wynik.'; meta.textContent = ''; return; }
+  try {
+    const result = (mode === 'enc') ? b64Encode(raw, variant === 'url') : b64Decode(raw, variant === 'url');
+    out.textContent = result;
+    meta.textContent = result.length + ' chars';
+  } catch(e){ out.classList.add('error'); out.textContent = '✗ ' + (e.message || e); meta.textContent = ''; }
+}
+document.addEventListener('DOMContentLoaded', b64Run);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minifikator JavaScript — Toolhub</title>
+  <meta name="description" content="Darmowy online minifikator JavaScriptu. Usuwa jedno- i wieloliniowe komentarze, nadmiarowe białe znaki i puste linie, zachowując stringi, literały regex i template literale.">
+  <meta property="og:title" content="Minifikator JavaScript — Toolhub">
+  <meta property="og:description" content="Darmowy online minifikator JavaScriptu. Usuwa jedno- i wieloliniowe komentarze, nadmiarowe białe znaki i puste linie, zachowując stringi, literały regex i template literale.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/js-minifier/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/js-minifier/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/js-minifier/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/js-minifier/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/js-minifier/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/js-minifier/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/js-minifier/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/js-minifier/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/js-minifier/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/js-minifier/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/js-minifier/#tool",
+        "name": "Minifikator JavaScript",
+        "description": "Darmowy online minifikator JavaScriptu. Usuwa jedno- i wieloliniowe komentarze, nadmiarowe białe znaki i puste linie, zachowując stringi, literały regex i template literale.",
+        "url": "https://toolhub.software/pl/js-minifier/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["javascript", "js", "minify", "compress", "optimize"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Minifikator JavaScript", "item": "https://toolhub.software/pl/js-minifier/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/js-minifier/'; else location.href='/js-minifier/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Minifikator JavaScript</div>
+    <h1>Minifikator JavaScript</h1>
+    <p class="tagline">Szybka strukturalna minifikacja JavaScriptu — wytnij komentarze, zwiń białe znaki, usuń puste linie. Pokazuje rozmiar przed/po i procent oszczędności.</p>
+    
+<div class="tool-card">
+  <label>Wejście</label>
+  <textarea id="jm-input" oninput="jmRun()" placeholder="// Paste JavaScript here" spellcheck="false">// Sample
+function greet(name) {
+  // Say hi
+  const msg = `Hello, ${name}!`;
+  console.log(msg);
+  return msg;
+}
+
+greet('World');</textarea>
+  <div class="meta" id="jm-stats" style="margin-top:0.5rem"></div>
+</div>
+<div class="tool-card">
+  <label>Wyjście</label>
+  <div class="output-row">
+    <pre class="output" id="jm-out">Wpisz dane powyżej, aby zobaczyć wynik.</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('jm-out', this)">Kopiuj</button>
+  </div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Do czego to służy?</h2>
+<p>Strukturalny minifikator JavaScriptu wycina komentarze i niepotrzebne białe znaki bez zmiany działania kodu. Wyjście jest funkcjonalnie identyczne z wejściem — te same identyfikatory, ta sama logika — tylko krótsze. To narzędzie robi tę przejazdkę w przeglądarce, łącznie z trudniejszymi miejscami: zachowuje zawartość stringów i literały regex w nienaruszonej formie, i trzyma końce linii tam, gdzie ASI (Automatic Semicolon Insertion) inaczej zmieniłoby zachowanie.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Szybkie odchudzenie snippetu do bookmarkleta HTML albo dema w jednym pliku, gdzie nie masz pipeline'u buildowego.</li>
+  <li>Sanity check, ile "tłuszczu" siedzi w ręcznie pisanym skrypcie, zanim zdecydujesz, czy warto stawiać prawdziwy optymalizator.</li>
+  <li>Inline'owanie małej biblioteki na statycznej stronie bez ciągnięcia bundlera.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>To strukturalna minifikacja, nie kompresor.</strong> Nie zmieni nazw zmiennych, nie zrobi dead-code elimination, nie zmangle'uje properties ani nie tree-shake'uje. Do produkcyjnych buildów używaj <code>terser</code>, <code>esbuild</code> albo <code>swc</code> w pipeline — tną kolejne 30–60% ponad strukturalny minify.</li>
+  <li><strong>Pułapki ASI.</strong> JavaScript wstawia średniki w zaskakujących miejscach. Minifikator zachowuje newline tam, gdzie usunięcie zmieniłoby znaczenie (np. <code>return\n{}</code> ≠ <code>return {}</code>). Trzymaj się jawnych średników w źródle, jeśli możesz — to robi minifikację bezpieczniejszą dla wszystkich.</li>
+  <li><strong>Source mapy nie są generowane.</strong> Jeśli wysyłasz zminifikowany JS na produkcję, generuj source mapy prawdziwym toolchainem, żeby debug był sensowny.</li>
+  <li><strong>Nowoczesna kompresja dominuje.</strong> Brotli/gzip na drucie robi większość tego, co minify. Największe wygrane biorą się z usuwania nieużywanego kodu — to wymaga statycznej analizy, której strukturalny minifikator nie zrobi.</li>
+  <li><strong>Nie minifikuj tego, co commitujesz.</strong> Źródło wchodzi ładne; minify na buildzie/deployu.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/css-minifier/">Minifikator CSS</a> <a href="/pl/json-formatter/">Formatter JSON</a> <a href="/pl/regex-tester/">Tester Regex</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+// String/regex/comment-aware minifier. Walks the input one char at a time.
+function jmMinify(src){
+  let out = '';
+  const n = src.length;
+  let i = 0;
+  // Track "previous significant token char" to know if a `/` starts a regex
+  let prev = '';
+  const REGEX_PREV = /[(,=:[!&|?{};+\-*~^%<>]|^$/;
+  while(i < n){
+    const c = src[i];
+    const next = src[i+1];
+    // Line comment
+    if(c === '/' && next === '/'){
+      while(i < n && src[i] !== '\n') i++;
+      continue;
+    }
+    // Block comment
+    if(c === '/' && next === '*'){
+      i += 2;
+      while(i < n && !(src[i] === '*' && src[i+1] === '/')) i++;
+      i += 2;
+      continue;
+    }
+    // String literals: ' " `
+    if(c === '"' || c === "'" || c === '`'){
+      const quote = c;
+      let chunk = c;
+      i++;
+      while(i < n){
+        const ch = src[i];
+        chunk += ch;
+        if(ch === '\\' && i+1 < n){ chunk += src[i+1]; i += 2; continue; }
+        if(quote === '`' && ch === '$' && src[i+1] === '{'){
+          chunk += '{'; i += 2; let depth = 1;
+          while(i < n && depth > 0){
+            const k = src[i];
+            chunk += k;
+            if(k === '{') depth++;
+            else if(k === '}') depth--;
+            else if(k === '"' || k === "'" || k === '`'){
+              const q = k; i++;
+              while(i < n){
+                const c2 = src[i]; chunk += c2;
+                if(c2 === '\\' && i+1 < n){ chunk += src[i+1]; i += 2; continue; }
+                if(c2 === q){ i++; break; }
+                i++;
+              }
+              continue;
+            }
+            i++;
+          }
+          continue;
+        }
+        if(ch === quote){ i++; break; }
+        i++;
+      }
+      out += chunk;
+      prev = quote;
+      continue;
+    }
+    // Regex literal — only if prev token suggests regex context
+    if(c === '/' && REGEX_PREV.test(prev)){
+      let chunk = '/'; i++;
+      let inClass = false;
+      while(i < n){
+        const ch = src[i];
+        chunk += ch;
+        if(ch === '\\' && i+1 < n){ chunk += src[i+1]; i += 2; continue; }
+        if(ch === '[') inClass = true;
+        else if(ch === ']') inClass = false;
+        else if(ch === '/' && !inClass){ i++; break; }
+        i++;
+      }
+      // flags
+      while(i < n && /[gimsuy]/.test(src[i])){ chunk += src[i]; i++; }
+      out += chunk;
+      prev = '/';
+      continue;
+    }
+    // Whitespace collapse
+    if(c === ' ' || c === '\t'){
+      // keep one space if both sides are identifier chars
+      let j = i;
+      while(j < n && (src[j] === ' ' || src[j] === '\t')) j++;
+      const before = out[out.length-1] || '';
+      const after = src[j] || '';
+      if(/[A-Za-z0-9_$]/.test(before) && /[A-Za-z0-9_$]/.test(after)) out += ' ';
+      i = j;
+      continue;
+    }
+    if(c === '\n' || c === '\r'){
+      // newline can sometimes be needed (return/no-LF rule). Keep one if both sides could need ASI.
+      let j = i;
+      while(j < n && (src[j] === '\n' || src[j] === '\r' || src[j] === ' ' || src[j] === '\t')) j++;
+      const before = out[out.length-1] || '';
+      const after = src[j] || '';
+      const needsNL = /[A-Za-z0-9_$\)\]\}]/.test(before) && /[A-Za-z_$]/.test(after);
+      if(needsNL) out += '\n';
+      i = j;
+      continue;
+    }
+    out += c;
+    if(/\S/.test(c)) prev = c;
+    i++;
+  }
+  return out;
+}
+function jmHumanBytes(n){
+  if(n < 1024) return n + ' B';
+  if(n < 1024*1024) return (n/1024).toFixed(1) + ' KB';
+  return (n/1048576).toFixed(2) + ' MB';
+}
+function jmRun(){
+  const raw = document.getElementById('jm-input').value;
+  const out = document.getElementById('jm-out');
+  const stats = document.getElementById('jm-stats');
+  out.classList.remove('error');
+  if(!raw){ out.textContent = 'Wpisz dane powyżej, aby zobaczyć wynik.'; stats.textContent = ''; return; }
+  try {
+    const min = jmMinify(raw);
+    out.textContent = min;
+    const before = new TextEncoder().encode(raw).length;
+    const after = new TextEncoder().encode(min).length;
+    const saved = before > 0 ? Math.round((1 - after/before) * 100) : 0;
+    stats.textContent = `Before: ${jmHumanBytes(before)} · After: ${jmHumanBytes(after)} · Saved: ${saved}%`;
+  } catch(e){ out.classList.add('error'); out.textContent = '✗ ' + e.message; stats.textContent = ''; }
+}
+document.addEventListener('DOMContentLoaded', jmRun);
+</script>
+
+</body>
+</html>

@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Éditeur de Tableau Markdown", "tagline": "Éditez visuellement un tableau — lignes, colonnes, alignement par colonne — et copiez le Markdown GitHub.", "description": "Éditeur de tableau Markdown gratuit. Cliquez pour éditer, ajoutez/supprimez lignes et colonnes, alignement par colonne et copie du Markdown GFM. 100% dans le navigateur."},
         "it": {"name": "Editor di Tabelle Markdown", "tagline": "Modifica visualmente una tabella — righe, colonne, allineamento per colonna — e copia il Markdown stile GitHub.", "description": "Editor di tabelle Markdown gratuito. Clicca le celle per modificare, aggiungi/rimuovi righe e colonne, allineamento per colonna e copia il Markdown GFM. 100% nel browser."},
         "pt": {"name": "Editor de Tabelas Markdown", "tagline": "Edite uma tabela visualmente — linhas, colunas, alinhamento por coluna — e copie o Markdown estilo GitHub.", "description": "Editor de tabelas Markdown gratuito online. Clique nas células para editar, adicione/remova linhas e colunas, defina alinhamento por coluna e copie o Markdown estilo GitHub (GFM). Roda inteiramente no seu navegador."},
+        "pl": {"name": "Edytor Tabel Markdown", "tagline": "Edytuj tabelę wizualnie — wiersze, kolumny, wyrównanie per kolumna — i skopiuj Markdown w stylu GitHuba.", "description": "Darmowy online edytor tabel Markdown. Klikaj komórki, by edytować, dodawaj/usuwaj wiersze i kolumny, ustaw wyrównanie per kolumna i skopiuj wyjście Markdown w stylu GitHuba (GFM). Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -341,6 +342,28 @@ document.addEventListener('DOMContentLoaded', mtRender);
 <li><strong>La prima riga è sempre l'header.</strong></li>
 <li><strong>Non tutte le varianti Markdown supportano tabelle.</strong> Output mira a GFM.</li>
 <li><strong>Incollare CSV non funziona.</strong> Si aspetta tabella Markdown con <code>|---|</code>.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Tabele Markdown są świetne w wyrenderowanym wyniku i upierdliwe w pisaniu ręcznie. Pipe'y, dwukropki wyrównania, odpowiednia liczba kresek per kolumna — zanim ułożysz wszystko na miejscu, mogłeś napisać to w HTML-u. Ten edytor daje znajomą siatkę: kliknij dowolną komórkę, żeby edytować, używaj przycisków do dodawania albo usuwania wierszy i kolumn, ustaw wyrównanie per kolumna z dropdowna, a potem skopiuj Markdowna w stylu GitHuba. Możesz też wkleić istniejącą tabelę Markdown na dole, a załaduje się do siatki do dalszej edycji.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Pisanie tabeli porównawczej do README, GitHub issue albo opisu PR.</li>
+  <li>Reedycja tabeli z dokumentacji — wklej istniejącego Markdowna, podstrojuj w siatce, skopiuj z powrotem.</li>
+  <li>Generowanie poprawnie wyrównanej tabeli ASCII (wyjście jest paddowane z prawej, więc jest też czytelne jako zwykły tekst).</li>
+  <li>Szkic tabeli release notes bez walki ze składnią pipe'ów i myślników.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Inline'owe pipe'y łamią tabele GFM.</strong> Dosłowny <code>|</code> w komórce kończy komórkę. Escape'uj jako <code>\\|</code>, kiedy go potrzebujesz.</li>
+  <li><strong>Treść komórki jest jednoliniowa.</strong> Tabele Markdown nie wspierają końców linii w komórkach bez HTML-a (<code>&lt;br&gt;</code>). Do treści wieloliniowej pisz tabelę w HTML.</li>
+  <li><strong>Wyrównanie jest renderowane, nie wymuszane.</strong> Wyjście paddinguje też tak, żeby wyrównać w źródle, ale faktyczne wyrównanie w renderze bierze się z dwukropków w linii separatora, nie ze spacji.</li>
+  <li><strong>Pierwszy wiersz zawsze jest traktowany jako nagłówek.</strong> Tabele GFM mają obowiązkowy header. Jeśli twoje dane nie mają naturalnego nagłówka, używaj pustych komórek w wierszu 1.</li>
+  <li><strong>Niektóre dialekty Markdowna są surowsze niż GFM.</strong> CommonMark sam nie definiuje tabel; GFM, MultiMarkdown i kilka innych wspierają lekko różne warianty. Wyjście tu celuje w GFM (GitHub, GitLab, większość nowoczesnych rendererów).</li>
+  <li><strong>Wklejenie niezformatowanego CSV nie zadziała.</strong> Textarea "import" oczekuje tabeli Markdown (z separatorem <code>|---|</code>). Do CSV → Markdown użyj najpierw narzędzia CSV-to-JSON albo wklej wiersze ręcznie.</li>
 </ul>
 """,
     },

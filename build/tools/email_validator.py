@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Validateur d'Email", "tagline": "Vérifiez si une adresse email est syntaxiquement valide (RFC 5322), avec analyse de la partie locale et du domaine.", "description": "Validateur d'email gratuit en ligne. Vérification syntaxique compatible RFC 5322, analyse de la partie locale et du domaine, alerte domaines jetables."},
         "it": {"name": "Validatore Email", "tagline": "Verifica se un indirizzo email è sintatticamente valido (RFC 5322), con analisi della parte locale e del dominio.", "description": "Validatore email online gratuito. Verifica sintattica conforme RFC 5322, analisi della parte locale e del dominio, segnalazione domini usa-e-getta."},
         "pt": {"name": "Validador de Email", "tagline": "Verifique se um endereço de email é sintaticamente válido (compatível com RFC 5322), com análise da parte local, domínio e armadilhas comuns.", "description": "Validador de email online gratuito. Checagem de sintaxe alinhada à RFC 5322, análise da parte local e do domínio, alerta de domínios descartáveis e verificação de comprimento."},
+        "pl": {"name": "Walidator Email", "tagline": "Sprawdź, czy adres email jest poprawny składniowo (zgodny z RFC 5322), z rozbiciem na local part, domenę i typowe pułapki.", "description": "Darmowy online walidator emaili. Walidacja składni zgodna z RFC 5322, analiza local part i domeny, oznaczanie disposable domains i weryfikacja długości."},
     },
     "body": """
 <div class="tool-card">
@@ -147,6 +148,27 @@ document.addEventListener('DOMContentLoaded', evRun);
   <li><strong>Email internacionalizado (IDN).</strong> <code>用户@例.中国</code> é tecnicamente válido pela RFC 6530 mas ainda não é amplamente suportado por servidores SMTP. Esta ferramenta segue as regras conservadoras ASCII; afrouxe se realmente precisar de IDN.</li>
   <li><strong>Detecção de domínio descartável é só uma dica.</strong> A lista é necessariamente incompleta e qualquer domínio sinalizado pode ainda ser de um usuário real.</li>
   <li><strong>Não rejeite diferenças de caixa.</strong> Partes locais são tecnicamente case-sensitive pela RFC 5321; na prática todo provider moderno trata como case-insensitive. Não lowercase no storage.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Większość "walidatorów emaili" to jednoliniowy regex, który przepuszcza <code>not@an.email</code> i odrzuca <code>edge@case.io</code>. To narzędzie odpala strukturalne sprawdzenia, których faktycznie wymaga RFC 5321 / 5322 — charset local part, reguły kropek, długości labeli, kształt TLD, twarde limity długości — plus podpowiedź disposable domain. Mówi, czy adres jest <em>dobrze sformatowany</em>; nie mówi, czy skrzynka istnieje (do tego potrzeba serwerowego probe MX/SMTP).</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Pre-flight listy adresów email zanim przepchniesz ją przez płatne API walidacji albo mass-mailera (łapie literówki za darmo, oszczędza kredyty).</li>
+  <li>Budowa formularza rejestracji odrzucającego oczywisty syf na poziomie pola.</li>
+  <li>Audyt CSV-a kontaktów w poszukiwaniu literówek przed importem.</li>
+  <li>Sprawdzenie, czy adres, który "wygląda dziwnie" (międzynarodowy TLD, plus-addressing, sub-addressing), faktycznie jest dozwolony.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Składniowo poprawny ≠ dostarczalny.</strong> <code>does-not-exist@gmail.com</code> przechodzi każde strukturalne sprawdzenie. Prawdziwa weryfikacja wymaga odpowiedzi serwera MX. Używaj tego jako filtra pierwszej linii, nie jako sygnału pewności.</li>
+  <li><strong>Plus addressing jest dozwolony.</strong> <code>imie+tag@gmail.com</code> jest poprawny i routuje do <code>imie@gmail.com</code> — nie wycinaj go; to feature.</li>
+  <li><strong>Międzynarodowy email (IDN).</strong> <code>用户@例.中国</code> jest technicznie poprawny wg RFC 6530, ale nadal nie jest powszechnie wspierany przez serwery SMTP. To narzędzie trzyma się konserwatywnych zasad ASCII; poluzuj, jeśli naprawdę potrzebujesz IDN.</li>
+  <li><strong>Wykrywanie disposable domain to tylko podpowiedź.</strong> Lista jest siłą rzeczy niekompletna, a oznaczona domena może i tak być prawdziwym użytkownikiem.</li>
+  <li><strong>Nie odrzucaj różnic wielkości liter.</strong> Local part jest technicznie case-sensitive wg RFC 5321; w praktyce każdy nowoczesny provider traktuje go case-insensitive. Nie zamieniaj na lowercase przy zapisie.</li>
 </ul>
 """,
     },

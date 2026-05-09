@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Calculatrice de Dates", "tagline": "Jours entre deux dates · ajouter ou soustraire jours/semaines/mois/années · âge en années, mois et jours.", "description": "Calculatrice de dates gratuite. Calculez la durée entre deux dates, ajoutez ou soustrayez une période et obtenez l'âge exact."},
         "it": {"name": "Calcolatore di Date", "tagline": "Giorni tra due date · aggiungi o sottrai giorni/settimane/mesi/anni · età esatta in anni, mesi e giorni.", "description": "Calcolatore di date gratuito. Calcola la durata tra due date, aggiungi o sottrai un periodo e ottieni l'età esatta in anni/mesi/giorni."},
         "pt": {"name": "Calculadora de Datas", "tagline": "Dias entre duas datas · somar ou subtrair dias/semanas/meses/anos · idade em anos, meses e dias.", "description": "Calculadora de datas online gratuita. Calcule a duração entre duas datas, some ou subtraia um período e descubra a idade exata em anos/meses/dias. Tudo roda no seu browser."},
+        "pl": {"name": "Kalkulator Dat", "tagline": "Dni między dwiema datami · dodaj/odejmij dni/tygodnie/miesiące/lata · wiek w latach, miesiącach i dniach.", "description": "Darmowy online kalkulator dat. Policz różnicę między dwiema datami, dodaj lub odejmij okres od dowolnej daty i wylicz dokładny wiek w latach/miesiącach/dniach. Wszystko liczy się w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -262,6 +263,27 @@ document.addEventListener('DOMContentLoaded', dcMode);
   <li><strong>Dias úteis não incluem feriados.</strong> O cálculo conhece fins de semana mas não feriados bancários — ajuste manualmente se importar.</li>
   <li><strong>"Total de meses" é aproximado</strong> na visão de idade (anos × 12 + meses) — ignora os dias finais. O número Y/M/D é exato.</li>
   <li><strong>Ancorar em UTC tem trade-off com locale.</strong> Uma data no seu fuso local pode mapear para um dia UTC ligeiramente diferente. Para a maioria dos usos (prazos, idades) UTC ao meio-dia é o ancoramento mais seguro; para trabalho de fuso ao minuto, use o conversor de fuso horário.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Trzy rzeczy, których ludzie naprawdę chcą od kalkulatora dat: różnica między dwiema datami ("ile dni do launchu?"), przesunięcie daty o okres ("90 dni po dacie faktury") i precyzyjny wiek ("lata, miesiące i dni od daty urodzenia"). To narzędzie robi wszystkie trzy, w przeglądarce, zakotwiczone w UTC w południe, żeby DST i przesunięcia stref nie wykrzywiały po cichu odpowiedzi, gdy podróżujesz.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Liczenie długości umów, timeline'ów projektów i deadline'ów.</li>
+  <li>Sprawdzanie, ile dokładnie dni roboczych (pn–pt) wpada między dwie daty do fakturowania albo wyceny.</li>
+  <li>Weryfikacja granic wieku (uprawnienia do wizy, lata szkolne, okrągłe urodziny).</li>
+  <li>Dodawanie okresów "30 dni netto" albo "90 dni odstąpienia" do daty bazowej w sposób, który dobrze radzi sobie z końcami miesięcy.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Daty końcowe inkluzywne vs ekskluzywne.</strong> "Dni od pn do pt" to 4, jeśli liczysz odstępy, 5, jeśli liczysz dni. Toggle kontroluje, którą konwencję; obie są poprawne w zależności od pytania.</li>
+  <li><strong>Kolejność dodawania/odejmowania ma znaczenie.</strong> Lata i miesiące najpierw, potem tygodnie i dni. Dodanie "1 miesiąc + 1 dzień" do 30 stycznia daje 1 marca (30 lutego → 28/29 lutego → +1), nie 2 marca — to bezpieczna konwencja kalendarzowa, której używa niemal każda biblioteka datetime.</li>
+  <li><strong>Dni robocze nie obejmują świąt.</strong> Liczenie zna weekendy, ale nie święta państwowe — popraw ręcznie, jeśli to ważne.</li>
+  <li><strong>"Łączne miesiące" są przybliżone</strong> w widoku wieku (lata × 12 + miesiące) — ignoruje końcowe dni. Liczba R/M/D jest dokładna.</li>
+  <li><strong>Kotwiczenie w UTC ma trade-off z lokalizacją.</strong> Data w twojej strefie lokalnej może zmapować na nieco inny dzień UTC. W większości zastosowań (deadline'y, wiek) UTC w południe jest bezpieczniejsze; do pracy ze strefami z dokładnością do minut użyj konwertera stref czasowych.</li>
 </ul>
 """,
     },

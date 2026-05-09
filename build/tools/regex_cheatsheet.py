@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Aide-mémoire Regex", "tagline": "Référence rapide : ancres, classes de caractères, quantificateurs, groupes, lookarounds, drapeaux. Cliquez pour copier un motif.", "description": "Aide-mémoire regex (expressions régulières) gratuit. Ancres, classes, quantificateurs, groupes, lookarounds et flags — avec copie au clic et filtre. PCRE / JavaScript."},
         "it": {"name": "Cheatsheet Regex", "tagline": "Riferimento rapido: ancore, classi di caratteri, quantificatori, gruppi, lookaround, flag. Clicca un pattern per copiarlo.", "description": "Cheatsheet regex (espressioni regolari) gratuito. Ancore, classi, quantificatori, gruppi, lookaround e flag — con copia al clic e filtro. PCRE / JavaScript."},
         "pt": {"name": "Cheatsheet de Regex", "tagline": "Referência rápida: anchors, classes de caracteres, quantificadores, grupos, lookarounds, flags. Clique em qualquer pattern para copiar.", "description": "Cheatsheet de regex gratuito. Anchors, classes de caracteres, quantificadores, grupos, lookarounds e flags — com clique-para-copiar e filtro ao vivo. Sabor PCRE / JavaScript."},
+        "pl": {"name": "Ściąga Regex", "tagline": "Szybka referencja: anchory, klasy znaków, kwantyfikatory, grupy, lookaroundy, flagi. Kliknij dowolny pattern, by skopiować.", "description": "Darmowa ściąga regex (wyrażenia regularne). Anchory, klasy znaków, kwantyfikatory, grupy, lookaroundy i flagi — z klikaniem do skopiowania i filtrem na żywo. Smak PCRE / JavaScript."},
     },
     "body": """
 <div class="tool-card">
@@ -298,6 +299,28 @@ document.addEventListener('DOMContentLoaded', rcRender);
 <li><strong>Regex non è un parser HTML/JSON.</strong></li>
 <li><strong>Le regex per email sono sempre sbagliate.</strong> In produzione manda email di conferma.</li>
 <li><strong>Non fidarti delle regex "perfette" copiate.</strong></li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Drukowalne, przeszukiwalne podsumowanie kawałków składni regex, które ciągle pamiętasz w połowie. Tabele tu pokrywają główne kategorie — anchory, klasy znaków, kwantyfikatory, grupy, lookaroundy, flagi — plus startowy zestaw typowych patternów. Kliknij dowolny pattern, żeby go skopiować; wpisz w filtr, żeby zawęzić. Sparuj to z <a href="/regex-tester/">Regex Testerem</a>, żeby faktycznie odpalić te patterny na tekście.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Potrzebujesz <code>(?&lt;=foo)</code> i nie pamiętasz, czy <code>?</code> idzie przed czy po <code>&lt;</code>.</li>
+  <li>Tłumaczysz komuś regex i potrzebujesz stabilnej strony referencyjnej zamiast grzebać po zakładkach Stack Overflow.</li>
+  <li>Chcesz pattern startowy (UUID, email, ISO date) do skopiowania i podstrojenia, zamiast pisać od zera.</li>
+  <li>Musisz wiedzieć, która flaga co robi — szczególnie <code>s</code> (dotall) vs <code>m</code> (multi-line), które ludzie regularnie mylą.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Wariant ma znaczenie.</strong> Większość tu to JavaScript / nowoczesny PCRE, ale ficze się różnią. Lookbehind wylądował w JS dopiero z ES2018; <code>x</code> (extended) jest w PCRE/Pythonie i nie ma go w JS; possessive quantifiery <code>++</code> są tylko w PCRE.</li>
+  <li><strong><code>m</code> ≠ "multi-line matching".</strong> <code>m</code> zmienia, co znaczą <code>^</code> i <code>$</code> (per linia, nie per string). Żeby <code>.</code> łapało przez końce linii, chcesz <code>s</code> (dotall).</li>
+  <li><strong>Greedy zżerają za dużo.</strong> <code>&lt;.*&gt;</code> przeciw <code>&lt;a&gt;b&lt;/a&gt;</code> matchuje całość, nie tylko <code>&lt;a&gt;</code>. Użyj <code>&lt;.*?&gt;</code> dla wersji lazy, albo lepiej bardziej specyficznej klasy w stylu <code>&lt;[^&gt;]+&gt;</code>.</li>
+  <li><strong>Regex nie jest parserem HTML ani JSON.</strong> "Typowe patterny" tu są dobre do jednorazowego scrapingu albo wskazówek walidacyjnych, nie do traktowania strukturalnego inputu jak stringa.</li>
+  <li><strong>Regexy do emaili są zawsze złe.</strong> Przykład tu jest grubym sprawdzeniem kształtu; do walidacji produkcyjnej lepiej wyślij maila potwierdzającego.</li>
+  <li><strong>Nie ufaj skopiowanym "idealnym" regexom.</strong> Przetestuj je na swoich realnych danych w Regex Testerze przed deployem.</li>
 </ul>
 """,
     },

@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Encodeur / Décodeur HTML", "tagline": "Échappez les caractères spéciaux HTML ou décodez les entités.", "description": "Encodeur et décodeur d'entités HTML gratuit. Échappe &amp; &lt; &gt; &quot; ' et entités nommées."},
         "it": {"name": "Encoder / Decoder HTML", "tagline": "Escape di caratteri speciali HTML o decodifica delle entità.", "description": "Encoder e decoder di entità HTML gratuito. Escape di &amp; &lt; &gt; &quot; ' e entità con nome."},
         "pt": {"name": "Encoder / Decoder HTML", "tagline": "Faz escape de caracteres especiais HTML ou decodifica entidades de volta. Útil para embutir input do usuário com segurança ou debugar markup escapado.", "description": "Encoder e decoder de entidades HTML grátis online. Faz escape de &amp; &lt; &gt; &quot; ' e entidades nomeadas. Decodifica entidades nomeadas, decimais e em hex."},
+        "pl": {"name": "Encoder / Decoder HTML", "tagline": "Escape'uj znaki specjalne HTML albo dekoduj encje z powrotem. Przydatne do bezpiecznego osadzania inputu użytkownika albo debugowania zescape'owanego markupu.", "description": "Darmowy online encoder i decoder encji HTML. Escape'uje &amp; &lt; &gt; &quot; ' oraz nazwane encje. Dekoduje nazwane, dziesiętne i szesnastkowe odwołania do encji."},
     },
     "body": """
 <div class="tool-card">
@@ -90,6 +91,26 @@ document.addEventListener('DOMContentLoaded', heRun);
   <li><strong>Atributos vs corpo.</strong> Os dois contextos precisam dos mesmos cinco caracteres escapados, mas event handlers JavaScript como <code>onclick</code> precisam de escape adicional (que esta ferramenta não faz — mantenha dados não confiáveis fora de atributos).</li>
   <li><strong>O decoder é permissivo.</strong> Entidades nomeadas (<code>&amp;ldquo;</code>), decimais (<code>&amp;#34;</code>) e hex (<code>&amp;#x22;</code>) são todas decodificadas pelo parser do browser, então aceita qualquer coisa que um browser real aceitaria.</li>
   <li><strong>Não codifique em dobro.</strong> Codificar um valor já codificado dá <code>&amp;amp;amp;</code>. Decodifique antes se vir entidades no input.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>HTML rezerwuje pięć znaków o znaczeniu strukturalnym — <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&quot;</code>, <code>'</code>. Wstawienie któregokolwiek z nich na stronę jako <em>treści</em> wymaga zescape'owania ich jako encji HTML, żeby przeglądarka nie potraktowała ich jako markupu. To narzędzie idzie w obie strony: koduje surowy tekst na bezpieczne encje, albo dekoduje zeskrobany HTML z powrotem na zwykły tekst.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Osadzanie nieufanej treści użytkownika w HTML — zakoduj najpierw, żeby zapobiec XSS.</li>
+  <li>Dekodowanie zeskrobanego albo skopiowanego markupu, który przyszedł z encjami (<code>&amp;amp;</code>, <code>&amp;#x27;</code>, <code>&amp;ldquo;</code>).</li>
+  <li>Odplątywanie szablonów, które zostały przypadkowo zescape'owane podwójnie.</li>
+  <li>Przygotowanie snippetów do JSDoc, XML bez CDATA albo code fence'ów Markdowna, które potrzebują dosłownych ostrych nawiasów.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Encoding to nie sanityzacja.</strong> Encoding sprawia, że tekst można bezpiecznie wyświetlić; jeśli chcesz też <em>wyciąć</em> tagi, potrzebujesz sanitizera HTML.</li>
+  <li><strong>Atrybuty vs treść.</strong> Oba konteksty wymagają tych samych pięciu znaków escape'owanych, ale handlery JS typu <code>onclick</code> potrzebują dodatkowego escape'owania (czego to narzędzie nie robi — trzymaj nieufne dane z dala od atrybutów).</li>
+  <li><strong>Decoder jest permisywny.</strong> Encje nazwane (<code>&amp;ldquo;</code>), dziesiętne (<code>&amp;#34;</code>) i hex (<code>&amp;#x22;</code>) — wszystko dekoduje przez parser przeglądarki, więc akceptuje wszystko, co przyjąłby prawdziwy browser.</li>
+  <li><strong>Nie koduj podwójnie.</strong> Zakodowanie już zakodowanej wartości daje <code>&amp;amp;amp;</code>. Najpierw zdekoduj, jeśli widzisz encje w inpucie.</li>
 </ul>
 """,
     },

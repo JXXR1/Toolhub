@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Générateur de Dégradé CSS", "tagline": "Créez des dégradés CSS linéaires et radiaux visuellement. Éditez les couleurs, copiez le CSS prêt à coller.", "description": "Générateur gratuit de dégradé CSS. Créez des dégradés linéaires ou radiaux avec autant d'arrêts que vous voulez, copiez le CSS en un clic."},
         "it": {"name": "Generatore di Gradienti CSS", "tagline": "Crea gradienti CSS lineari e radiali visualmente. Modifica i punti colore, copia CSS pronto.", "description": "Generatore gratuito di gradienti CSS. Crea gradienti lineari o radiali con quanti punti vuoi, copia CSS pronto in un clic."},
         "pt": {"name": "Gerador de Gradiente CSS", "tagline": "Crie gradientes CSS lineares e radiais visualmente. Edite paradas de cor, copie CSS pronto para colar.", "description": "Gerador gratuito de gradiente CSS. Crie gradientes lineares ou radiais com quantas paradas quiser, copie CSS pronto para produção em um clique."},
+        "pl": {"name": "Generator Gradientów CSS", "tagline": "Buduj liniowe i radialne gradienty CSS wizualnie. Edytuj color stopy, kopiuj CSS gotowy do wklejenia.", "description": "Darmowy generator gradientów CSS. Buduj linear lub radial gradienty z dowolną liczbą color stopów, dostosuj kąt i kształt, kopiuj produkcyjny CSS jednym kliknięciem."},
     },
     "body": """
 <div class="tool-card">
@@ -185,6 +186,34 @@ document.addEventListener('DOMContentLoaded', () => { grRender(); grRun(); });
   <li><strong>Banding em áreas grandes.</strong> Gradientes longos e de baixo contraste podem mostrar "faixas" visíveis em telas de 8 bits. Adicione um overlay SVG sutil de noise (<code>filter: url(#noise)</code>) ou mova as paradas levemente.</li>
   <li><strong>Performance.</strong> Browsers pintam gradientes rápido, mas animar <code>background-image</code> dispara paint a cada frame — anime <code>transform</code> numa camada acima.</li>
   <li><strong>Acessibilidade.</strong> Se texto fica sobre um gradiente, verifique a razão de contraste no <em>pior</em> ponto do gradiente onde o texto aparece, não na média.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Gradienty CSS to jedna linia CSS, która rysuje płynne przejścia kolorów dla teł, przycisków, hero panelów i overlayów — bez żadnego pliku obrazu. Składnia jest potężna, ale upierdliwa do pisania ręcznie: kąty, color stopy w procentach, warianty repeating, mieszanie linear z radial. To narzędzie daje wizualny builder, który odzwierciedla CSS w czasie rzeczywistym, więc możesz przeciągnąć stop na miejsce i skopiować dokładny string <code>linear-gradient(...)</code> albo <code>radial-gradient(...)</code>.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Tło sekcji hero albo CTA bez wypalania w obrazek.</li>
+  <li>Stany hover na przyciskach albo kartach, które wyglądają "nowocześnie" bez assetu graficznego.</li>
+  <li>Mockowanie overlaya w kolorach marki (gradient + półprzezroczysty solid dla czytelności tekstu).</li>
+  <li>Ozdobne dividery, tła w stylu mesh albo animowane wypełnienia SVG.</li>
+</ul>
+
+<h3>Linear vs radial</h3>
+<ul>
+  <li><strong>Linear</strong> — kolory przechodzą wzdłuż prostej linii pod wybranym kątem (0° = z dołu do góry, 90° = z lewej do prawej, 180° = z góry do dołu).</li>
+  <li><strong>Radial</strong> — kolory rozchodzą się z punktu centralnego na zewnątrz w kształcie koła albo elipsy. Świetne do efektów spotlight albo winiety.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Używaj jako <code>background</code>, nie <code>background-color</code>.</strong> Gradienty są obrazami, nie kolorami. <code>background-color</code> jest ignorowane.</li>
+  <li><strong>Stopy muszą być w kolejności</strong> dla przewidywalnego renderowania. Narzędzie sortuje je automatycznie — jeśli kopiujesz CSS i edytujesz ręcznie, trzymaj procenty monotoniczne.</li>
+  <li><strong>Hard stops</strong> (dwa stopy w tym samym procencie) tworzą ostrą granicę zamiast przejścia — przydatne do efektów paskowych albo bandowych.</li>
+  <li><strong>Banding na dużych powierzchniach.</strong> Długie, niskokontrastowe gradienty mogą pokazywać widoczne "pasy" na 8-bitowych ekranach. Dodaj subtelny overlay SVG noise (<code>filter: url(#noise)</code>) albo lekko przesuń stopy.</li>
+  <li><strong>Wydajność.</strong> Przeglądarki malują gradienty szybko, ale animowanie <code>background-image</code> wywołuje paint co klatkę — animuj <code>transform</code> na warstwie nad, zamiast tego.</li>
+  <li><strong>Dostępność.</strong> Jeśli tekst leży na gradiencie, sprawdź współczynnik kontrastu w <em>najgorszym</em> punkcie gradientu, gdzie tekst się pojawia, nie średnią.</li>
 </ul>
 """,
     },

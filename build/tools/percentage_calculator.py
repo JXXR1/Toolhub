@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Calculateur de Pourcentage", "tagline": "Cinq calculateurs de pourcentage en un : de, quel %, hausse/baisse, variation et pourboire/taxe.", "description": "Calculateur de pourcentage gratuit en ligne. X% de Y, quel % est X de Y, variation, hausse/baisse et pourboire ou taxe."},
         "it": {"name": "Calcolatore di Percentuale", "tagline": "Cinque calcolatori di percentuale in uno: di, quale %, aumento/sconto, variazione e mancia/IVA.", "description": "Calcolatore di percentuale gratuito online. X% di Y, quale % è X di Y, variazione, aumento/sconto e mancia o IVA."},
         "pt": {"name": "Calculadora de Porcentagem", "tagline": "Cinco calculadoras de porcentagem em uma: de, qual %, aumento/desconto, variação e gorjeta/imposto.", "description": "Calculadora de porcentagem gratuita online. Calcule X% de Y, qual % X é de Y, variação percentual, aumento/desconto percentual e valores de gorjeta ou imposto."},
+        "pl": {"name": "Kalkulator Procentów", "tagline": "Pięć kalkulatorów procentów w jednym: ile %, ile to %, zmiana, wzrost/spadek i napiwek/podatek.", "description": "Darmowy online kalkulator procentów. Policz X% z Y, ile % X stanowi Y, zmianę procentową, procentowy wzrost/spadek oraz wartość napiwku albo podatku."},
     },
     "body": """
 <div class="tool-card">
@@ -126,6 +127,27 @@ document.addEventListener('DOMContentLoaded', pcSwitch);
   <li><strong>Empilhar porcentagens compõe.</strong> Um aumento de 20% seguido de uma redução de 20% não te leva de volta ao início (1.20 × 0.80 = 0.96, perda líquida de 4%). Para markups/descontos sequenciais, calcule cada passo.</li>
   <li><strong>Gorjeta sobre valor antes ou depois do imposto.</strong> A convenção varia por país e estabelecimento. A ferramenta calcula a porcentagem do valor que você digita — escolha qual valor você de fato quer como base.</li>
   <li><strong>Arredondamento.</strong> A saída é arredondada para 6 casas decimais e depois aparada; se você precisa de precisão legal/contábil (banker's rounding, regras específicas de moeda), faça esse passo na sua camada de domínio, não aqui.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Sześć różnych obliczeń "procentowych" pojawia się codziennie i łatwo je pomylić: ile to X% z Y? Jaki procent X stanowi Y? Jaka zmiana między dwiema wartościami? Doliczyć narzut albo rabat? Napiwek albo podatek? Każde to trochę inny wzór, a pomylenie ich prowadzi do błędnych faktur, błędnych rabatów i krępujących recenzji. To narzędzie liczy wszystkie sześć obok siebie z wyłożonym wzorem, żebyś mógł wybrać właściwe i sprawdzić rachunek.</p>
+
+<h3>Co robi każdy tryb</h3>
+<ul>
+  <li><strong>Ile to X% z Y</strong> — do rabatów, prowizji, procentu sumy. <em>20% z 150 → 30</em>.</li>
+  <li><strong>Ile X stanowi Y</strong> — do współczynników typu "wynik / max". <em>30 ze 150 → 20%</em>.</li>
+  <li><strong>Zmiana %</strong> — ze znakiem: dodatnia to wzrost, ujemna spadek. <em>100 → 125 = +25%</em>.</li>
+  <li><strong>Wzrost / Spadek</strong> — aplikuje korektę procentową do wartości startowej.</li>
+  <li><strong>Napiwek / Podatek</strong> — wygodny sposób na doliczenie procentu do rachunku.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Zmiana procentowa nie jest symetryczna.</strong> Pójście 100 → 125 to +25%; pójście 125 → 100 to −20%, nie −25%. Mianownikiem jest wartość startowa, która różni się w każdym kierunku.</li>
+  <li><strong>Stackowanie procentów się składa.</strong> 20% wzrost, a po nim 20% spadek nie wraca cię do startu (1.20 × 0.80 = 0.96, netto strata 4%). Dla sekwencyjnych narzutów/rabatów licz każdy krok.</li>
+  <li><strong>Napiwek od kwoty przed czy po podatku.</strong> Konwencja różni się krajem i lokalem. Narzędzie liczy procent od wartości, którą wpisujesz — wybierz, którą wartość faktycznie chcesz jako bazę.</li>
+  <li><strong>Zaokrąglanie.</strong> Wyjście jest zaokrąglane do 6 miejsc po przecinku i przycinane; jeśli potrzebujesz precyzji prawnej/księgowej (banker's rounding, walutowe reguły), zrób to w warstwie domeny, nie tutaj.</li>
 </ul>
 """,
     },

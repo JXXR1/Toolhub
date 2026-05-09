@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Converta entre binary, octal, decimal, hexadecimal e qualquer base de 2 a 36.",
             "description": "Conversor de bases numéricas gratuito online. Converta entre binary, octal, decimal, hex e bases arbitrárias de 2 a 36. Lida com números negativos e inteiros grandes via BigInt.",
         },
+        "pl": {
+            "name": "Konwerter Systemów Liczbowych",
+            "tagline": "Konwertuj między binarnym, oktalnym, dziesiętnym, szesnastkowym i dowolną bazą od 2 do 36.",
+            "description": "Darmowy online konwerter systemów liczbowych. Konwertuj między binary, octal, decimal, hex i dowolną bazą 2-36. Obsługuje liczby ujemne i duże integery przez BigInt.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -190,6 +195,34 @@ document.addEventListener('DOMContentLoaded', nbRun);
   <li><strong>Números grandes não perdem precisão aqui.</strong> O <code>Number</code> do JavaScript trava em 2<sup>53</sup>; esta ferramenta usa <code>BigInt</code>, então inteiros de 64 bits, hashes grandes e valores de crypto fazem round-trip exato.</li>
   <li><strong>Não confunda base com case.</strong> Letras de base 16 podem ser maiúsculas ou minúsculas; a ferramenta aceita ambas e emite em maiúsculas. Saídas em base 32 / base 36 são minúsculas por convenção.</li>
   <li><strong>Zeros à esquerda são descartados.</strong> <code>0x000F</code> vira <code>F</code>. Se precisar de hex de largura fixa (por exemplo, para representação de bytes), faça o padding depois no seu código.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Liczby są tą samą liczbą niezależnie od bazy — <code>255</code>, <code>0xff</code>, <code>0b11111111</code> i <code>0o377</code> to to samo. Ale w której bazie czytasz albo piszesz, ma znaczenie, gdy tłumaczysz między layoutami pamięci, parsujesz kody kolorów, dekodujesz bit fieldy albo po prostu czytasz hex z debuggera. To narzędzie konwertuje między binary, octal, decimal, hex i dowolną bazą od 2 do 36, używając BigInt pod spodem, żebyś nie tracił precyzji na dużych liczbach.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Czytanie wartości hex ze stack trace i sprawdzanie, ile to dziesiętnie.</li>
+  <li>Konwersja koloru CSS <code>0xff8800</code> na trójkę RGB albo na odwrót.</li>
+  <li>Inspekcja bitmaski albo flagowego integera w binary, żeby zobaczyć, które bity są ustawione.</li>
+  <li>Tłumaczenie między krótkimi ID-kami w bazie 36 a dziesiętnymi licznikami.</li>
+</ul>
+
+<h3>Rozpoznawane prefiksy</h3>
+<ul>
+  <li>Hex: <code>0x</code>, <code>0X</code>, <code>#</code></li>
+  <li>Binary: <code>0b</code>, <code>0B</code></li>
+  <li>Octal: <code>0o</code>, <code>0O</code></li>
+  <li>Underscore do grupowania cyfr: <code>1_000_000</code></li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Liczby ujemne mają prefiks znaku, nie są w uzupełnieniu do dwóch.</strong> <code>-128</code> jest pokazane jako <code>-10000000</code> w binary, nie <code>10000000</code>. Większość języków pokazuje tak samo dla integerów dowolnej precyzji.</li>
+  <li><strong>Duże liczby nie tracą tu precyzji.</strong> JS-owy <code>Number</code> ma kres w 2<sup>53</sup>; to narzędzie używa <code>BigInt</code>, więc 64-bitowe integery, duże hashe i wartości kryptograficzne robią dokładny round-trip.</li>
+  <li><strong>Nie myl bazy z wielkością liter.</strong> Litery base-16 mogą być wielkie albo małe; narzędzie akceptuje obie i emituje wielkie. Wyjścia base-32 / base-36 są małe z konwencji.</li>
+  <li><strong>Wiodące zera są usuwane.</strong> <code>0x000F</code> staje się <code>F</code>. Jeśli potrzebujesz hex stałej szerokości (np. do reprezentacji bajtów), dopadduj potem w swoim kodzie.</li>
 </ul>
 """,
     },

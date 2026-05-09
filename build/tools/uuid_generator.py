@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Gere UUIDs RFC 4122 (v4 aleatório ou v7 ordenado por tempo). Em lote de até 100. Criptograficamente seguro.",
             "description": "Gerador de UUID online gratuito. RFC 4122 v4 (aleatório) e v7 (ordenado por tempo, sortable). Gere um ou vários de uma vez, tudo no seu navegador.",
         },
+        "pl": {
+            "name": "Generator UUID",
+            "tagline": "Generuj UUID-y RFC 4122 (v4 losowy albo v7 uporządkowany czasem). Hurtowo do 100. Kryptograficznie bezpieczny.",
+            "description": "Darmowy online generator UUID. RFC 4122 v4 (losowy) i v7 (uporządkowany czasem, sortowalny). Generuj jeden albo wiele naraz, wszystko w przeglądarce.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -151,6 +156,35 @@ document.addEventListener('DOMContentLoaded', uuidGen);
   <li><strong>v4 fragmenta índices de banco.</strong> IDs aleatórios espalham writes pelo índice, prejudicando a taxa de hit do cache de páginas e a vazão de escrita. Esse é o argumento original a favor do v7.</li>
   <li><strong>Não use v1.</strong> A variante antiga de tempo-e-MAC vaza o endereço MAC da máquina geradora. v7 é o substituto moderno.</li>
   <li><strong>Use aleatoriedade crypto-segura.</strong> Esta ferramenta usa <code>crypto.getRandomValues</code>; nunca implemente sua própria solução com <code>Math.random</code> — não é aleatório o suficiente e os IDs ficam previsíveis.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>UUID (albo GUID) to 128-bitowy identyfikator — zapisywany jako 32 cyfry hex w 5 grupach, np. <code>550e8400-e29b-41d4-a716-446655440000</code>. Są bezkolizyjne między systemami bez koordynacji: dowolny proces gdziekolwiek może wygenerować jeden, a szansa, że dwa kiedykolwiek się zderzą, jest praktycznie zerowa. Przydatne, gdy potrzebujesz ID przed rozmową z bazą, gdy chcesz uniknąć wycieku liczby wierszy, albo gdy ID musi powstać po stronie klienta i zostać zsynchronizowany później. To narzędzie generuje UUID-y zgodne z RFC 4122 / RFC 9562 w formie v4 (losowej) albo v7 (uporządkowanej czasem), z kryptograficznie bezpieczną losowością w przeglądarce.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Klucze główne w systemach rozproszonych, gdy nie chcesz robić round-tripu do bazy po ID.</li>
+  <li>Idempotency keys dla requestów API (Stripe, providery płatności, wiadomości w kolejce).</li>
+  <li>Identyfikatory uploadu plików, session tokeny, correlation ID-ki w logach.</li>
+  <li>Wszędzie tam, gdzie inaczej eksponowałbyś auto-incrementowane ID i wyciekał, ile masz rekordów.</li>
+  <li>Dane testowe — zaseeduj sto rekordów realistycznymi identyfikatorami jednym kliknięciem.</li>
+</ul>
+
+<h3>v4 vs v7 — którego użyć?</h3>
+<ul>
+  <li><strong>v4 (losowy)</strong> — 122 bity losowości, brak osadzonego czasu utworzenia. Używaj, gdy chcesz zerowej korelacji między ID a kolejnością tworzenia, albo gdy ID będzie żył w hash-mapie / nieklastrowanym indeksie, gdzie kolejność nie ma znaczenia.</li>
+  <li><strong>v7 (uporządkowany czasem)</strong> — 48-bitowy prefiks Unix-ms timestamp + losowy ogon. <strong>Domyślnie używaj go do nowych kluczy głównych w bazie.</strong> Prefiks timestampu daje indeksom B-tree lokalność (świeże inserty trafiają do tych samych stron, znacznie lepsze zachowanie cache niż v4), a ID-ki sortują się mniej więcej w porządku chronologicznym. Zdefiniowany w RFC 9562 (maj 2024) — wypiera ULID i v1/v6 w większości zastosowań.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>UUID-y to nie sekrety.</strong> v4 ma 122 bity entropii i jest nie do zgadnięcia, ale sam format niczego nie autoryzuje. Nie używaj UUID-a jako session tokena ani tokena resetu hasła, chyba że traktujesz go jak sekret (HTTPS-only, ograniczony czasowo, jednokrotny).</li>
+  <li><strong>v7 wycieka czas utworzenia.</strong> Pierwsze 48 bitów koduje milisekundę, w której był wygenerowany. OK do ID wewnętrznych; źle, gdy nie chcesz, żeby użytkownicy dowiadywali się, kiedy rekordy powstały. W takim wypadku użyj v4.</li>
+  <li><strong>Rozmiar indeksu ma znaczenie.</strong> UUID to 16 bajtów vs 8 dla bigint — twoje indeksy B-tree rosną. Warto dla rozproszenia/braku koordynacji, często niewarto dla apek na jednym serwerze z sekwencyjnym ID.</li>
+  <li><strong>v4 fragmentuje indeksy bazy.</strong> Losowe ID rozsiewają zapisy po indeksie, psując hit rate cache stron i przepustowość zapisu. To oryginalny argument za v7.</li>
+  <li><strong>Nie używaj v1.</strong> Stary wariant time-and-MAC wycieka adres MAC maszyny generującej. v7 to nowoczesny zamiennik.</li>
+  <li><strong>Używaj kryptograficznie bezpiecznej losowości.</strong> To narzędzie używa <code>crypto.getRandomValues</code>; nigdy nie pisz własnego z <code>Math.random</code> — nie jest wystarczająco losowy i ID-ki stają się przewidywalne.</li>
 </ul>
 """,
     },

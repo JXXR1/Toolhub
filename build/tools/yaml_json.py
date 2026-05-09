@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Converta entre YAML e JSON nas duas direções. Útil para manifests do Kubernetes, configs de CI e specs OpenAPI.",
             "description": "Conversor de YAML para JSON e JSON para YAML online gratuito. Bidirecional, roda inteiramente no seu navegador. Suporta anchors, aliases e YAML multi-documento.",
         },
+        "pl": {
+            "name": "Konwerter YAML ↔ JSON",
+            "tagline": "Konwertuj między YAML a JSON w obie strony. Przydatne do manifestów Kubernetes, configów CI i speców OpenAPI.",
+            "description": "Darmowy online konwerter YAML do JSON i JSON do YAML. Dwukierunkowy, działa w całości w przeglądarce. Obsługuje anchory, aliasy i wielodokumentowy YAML.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -143,6 +148,26 @@ document.addEventListener('DOMContentLoaded', yjConv);
   <li><strong>Tags customizadas</strong> (<code>!!python/object</code>, <code>!Ref</code>, etc.) violam o YAML 1.2 estrito. YAML do CloudFormation e dumps de pickle do PyYAML vão falhar; limpe as tags antes.</li>
   <li><strong>Anchors e aliases são expandidos</strong> no YAML→JSON. JSON não tem referências, então nodes <code>*ref</code> são inline. Round-tripping dá um YAML equivalente em valor mas textualmente maior.</li>
   <li><strong>Números vs strings.</strong> YAML <code>3.14</code> sem aspas é um float; <code>"3.14"</code> é string.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>YAML i JSON opisują te same rzeczy — zagnieżdżone mapy, listy, prymitywy — ale robią trade-off między czytelnością a ścisłością. YAML jest bardziej przyjazny ludziom (manifesty Kubernetes, GitHub Actions, OpenAPI, większość configów CI); JSON to to, co wysyłają API i formaty czytelne maszynowo. Ten konwerter przerzuca między nimi bezstratnie dla struktur, które oba potrafią wyrazić. YAML używa <a href="https://github.com/nodeca/js-yaml" rel="noopener">js-yaml</a> (YAML 1.2); JSON używa natywnego API. Obie strony działają w przeglądarce.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Wklejenie YAML-a OpenAPI / k8s / docker-compose w narzędzie, które potrzebuje JSON-a.</li>
+  <li>Konwersja odpowiedzi API (JSON) na YAML do pliku configa.</li>
+  <li>Audyt faktycznej struktury pliku YAML, gdy dwuznaczne wcięcie sprawia, że hierarchia jest niejasna.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>"Norway problem".</strong> YAML 1.1 konwertował <code>NO</code>, <code>YES</code>, <code>ON</code>, <code>OFF</code> na boole. YAML 1.2 już nie, ale parsery downstream mogą. Cudzysłowuj dwuznaczne stringi, żeby być bezpiecznym.</li>
+  <li><strong>Wielodokumentowy YAML</strong> (separatory <code>---</code>) — konwertowany jest tylko pierwszy dokument.</li>
+  <li><strong>Custom tagi</strong> (<code>!!python/object</code>, <code>!Ref</code> itd.) łamią ścisły YAML 1.2. YAML CloudFormation i dumpy pickle z PyYAML padną; najpierw posprzątaj tagi.</li>
+  <li><strong>Anchory i aliasy są rozwijane</strong> przy YAML→JSON. JSON nie ma referencji, więc nody <code>*ref</code> są inline. Round-trip daje YAML równoważny wartością, ale tekstowo większy.</li>
+  <li><strong>Liczby vs stringi.</strong> Niezacudzysłowione YAML-owe <code>3.14</code> to float; <code>"3.14"</code> to string.</li>
 </ul>
 """,
     },

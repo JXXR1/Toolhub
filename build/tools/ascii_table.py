@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Table ASCII", "tagline": "Référence ASCII complète 0–127 avec décimal, hex, binaire, caractère et entité HTML. Filtrable.", "description": "Table ASCII gratuite. Les 128 codes ASCII avec décimal, hex, octal, binaire, caractère, entité HTML et description des caractères de contrôle. Filtrage au fil de la frappe."},
         "it": {"name": "Tabella ASCII", "tagline": "Riferimento ASCII completo 0–127 con decimale, hex, binario, carattere ed entità HTML. Filtrabile.", "description": "Tabella ASCII gratuita. Tutti i 128 codici ASCII con decimale, hex, ottale, binario, carattere, entità HTML e descrizione dei caratteri di controllo. Filtra mentre digiti."},
         "pt": {"name": "Tabela ASCII", "tagline": "Referência ASCII completa 0–127 com decimal, hex, binário, caractere e entidade HTML. Filtrável.", "description": "Tabela ASCII gratuita. Todos os 128 códigos ASCII com decimal, hex, octal, binário, caractere, entidade HTML e descrição dos caracteres de controle. Filtre enquanto digita."},
+        "pl": {"name": "Tabela ASCII", "tagline": "Pełna referencja ASCII 0–127 z wartościami dec, hex, bin, znakiem i encją HTML. Z filtrem.", "description": "Darmowa tabela ASCII. Wszystkie 128 kodów ASCII z wartościami decimal, hex, octal, binary, znakiem, encją HTML i opisem znaków sterujących. Filtruj w trakcie pisania."},
     },
     "body": """
 <div class="tool-card">
@@ -221,6 +222,28 @@ document.addEventListener('DOMContentLoaded', asciiRun);
   <li><strong>Caracteres de controle podem ser sabotadores invisíveis.</strong> Um copiar/colar de um terminal ou PDF pode trazer <code>0x1F</code>, <code>0x07</code> (BEL — que de fato faz o terminal apitar), ou caracteres Unicode de largura zero que <em>nem</em> são ASCII. Se o texto "parece igual" mas a comparação falha, despeje em bytes.</li>
   <li><strong>Entidades HTML nem sempre são necessárias.</strong> Em documentos UTF-8 modernos, <code>&amp;#65;</code> e o <code>A</code> literal são equivalentes. Só faça escape de caracteres com significado sintático em HTML: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code> e <code>"</code> em atributos.</li>
   <li><strong>NUL (<code>0x00</code>) termina strings em C.</strong> Não embuta isso em buffers de string C sem pensar — muitas APIs vão truncar silenciosamente no primeiro NUL.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>ASCII (American Standard Code for Information Interchange) to system kodowania 128 znaków, który mapuje cyfry, litery, znaki interpunkcyjne i kilka znaków sterujących na liczby 0–127. To fundament, który rozszerza każde nowoczesne kodowanie tekstu (UTF-8, Latin-1, Windows-1252) — więc znajomość wartości czasem ratuje życie: gdy diagnozujesz dziwny bajt w pliku binarnym, układasz regex na "dowolny drukowalny znak", czytasz hex dump albo próbujesz sobie przypomnieć, czy nowa linia to 0x0A czy 0x0D.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Czytasz hex dump i próbujesz odgadnąć, co te bajty <em>mówią</em>.</li>
+  <li>Piszesz parser i potrzebujesz wartości granicznych: <code>0x20</code> (spacja), <code>0x7E</code> (tylda) — zakres znaków drukowalnych.</li>
+  <li>Debugujesz CSV, który się rozpadł, bo coś zawierało <code>0x09</code> (Tab) albo <code>0x1F</code> (Unit Separator).</li>
+  <li>Tworzysz encję HTML dla problematycznego znaku — <code>&amp;#65;</code> = <code>A</code>.</li>
+  <li>Rozstrzygasz spór, czy <code>\\r</code> to 0x0D (tak — Carriage Return) i <code>\\n</code> to 0x0A (tak — Line Feed).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>ASCII jest 7-bitowy, nie 8-bitowy.</strong> Kody 128–255 to <em>nie</em> ASCII — należą do dowolnego kodowania 8-bitowego (Latin-1, CP-1252, …), które dokument deklaruje, albo są bajtami wiodącymi sekwencji UTF-8.</li>
+  <li><strong>Końce linii różnią się platformą.</strong> Unix/macOS używają tylko <code>LF</code> (0x0A); stary Mac Classic używał <code>CR</code> (0x0D); Windows używa <code>CRLF</code>. Pliki, które je mieszają, łamią naiwne liczenie linii.</li>
+  <li><strong>Znaki sterujące to niewidzialni sabotażyści.</strong> Skopiowanie z terminala albo PDF-a może wciągnąć <code>0x1F</code>, <code>0x07</code> (BEL — naprawdę pika w terminalu), albo unicode'owe znaki o zerowej szerokości, które <em>w ogóle</em> nie są ASCII. Jeśli tekst "wygląda OK" ale nie pasuje przy porównaniu — wyrzuć go w bajtach.</li>
+  <li><strong>Encje HTML nie zawsze są potrzebne.</strong> W nowoczesnych dokumentach UTF-8 <code>&amp;#65;</code> i literalne <code>A</code> są równoważne. Escape'uj tylko znaki ze znaczeniem składniowym w HTML: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code> oraz <code>"</code> w atrybutach.</li>
+  <li><strong>NUL (<code>0x00</code>) kończy stringi w C.</strong> Nie wsadzaj go bezmyślnie do buforów C-stringów — wiele API po cichu utnie wszystko po pierwszym NUL.</li>
 </ul>
 """,
     },

@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Convertisseur XML ↔ JSON", "tagline": "Convertissez XML en JSON ou JSON en XML. Gère attributs, nœuds texte et tableaux intelligemment.", "description": "Convertisseur XML vers JSON gratuit (et JSON vers XML). Utilise le parser XML du navigateur ; attributs avec préfixe configurable ; éléments répétés deviennent des tableaux. 100% dans le navigateur."},
         "it": {"name": "Convertitore XML ↔ JSON", "tagline": "Converti XML in JSON o JSON in XML. Gestisce attributi, nodi testo e array sensibilmente.", "description": "Convertitore XML a JSON gratuito (e JSON a XML). Usa il parser XML del browser; attributi con prefisso configurabile; elementi ripetuti diventano array. 100% nel browser."},
         "pt": {"name": "Conversor XML ↔ JSON", "tagline": "Converta XML para JSON ou JSON de volta para XML. Lida com attributes, text nodes e arrays de forma sensata.", "description": "Conversor XML para JSON online gratuito (e JSON de volta para XML). Usa o parser XML nativo do navegador; attributes vão para um prefixo configurável; elementos repetidos viram arrays. Roda inteiramente no seu navegador."},
+        "pl": {"name": "Konwerter XML ↔ JSON", "tagline": "Konwertuj XML na JSON albo JSON z powrotem na XML. Sensownie obsługuje atrybuty, węzły tekstowe i tablice.", "description": "Darmowy online konwerter XML do JSON (i JSON z powrotem na XML). Używa natywnego parsera XML przeglądarki; atrybuty trafiają z konfigurowalnym prefiksem; powtórzone elementy zwijają się do tablic. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -312,6 +313,29 @@ document.addEventListener('DOMContentLoaded', xjRun);
 <li><strong>Namespace letterali.</strong> <code>ns:tag</code> resta <code>"ns:tag"</code>.</li>
 <li><strong>Niente inferenza di tipo.</strong> Il testo XML è sempre stringa.</li>
 <li><strong>JSON → XML richiede esattamente una chiave radice.</strong></li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>XML i JSON to dwa dominujące formaty wymiany danych i regularnie musisz tłumaczyć między nimi — przy migracji z API SOAP na RESTowe, podpinaniu starych feedów do nowoczesnego stacka albo po prostu czytaniu XML-a w narzędziu, które mówi tylko po JSON-owemu. Mapowanie jest opiniotwórcze, nie odwracalne by-default, bo XML ma ficzery (atrybuty, mixed content, uporządkowane dzieci), których JSON nie ma. To narzędzie używa konwencjonalnego mapowania w stylu <a href="https://www.npmjs.com/package/fast-xml-parser" target="_blank" rel="noopener noreferrer">fast-xml-parser</a>: atrybuty dostają prefiks (domyślnie <code>@</code>), węzły tekstowe trafiają pod klucz (domyślnie <code>#text</code>), a powtórzone elementy potomne zwijają się do tablic. Obie strony działają w przeglądarce.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Konwersja odpowiedzi RSS / Atom / SOAP na JSON do konsumpcji w apce JS.</li>
+  <li>Generowanie XML configa z szablonu JSON (configi buildowe, beany Springa, scaffoldy OOXML).</li>
+  <li>Szybkie wyciąganie zagnieżdżonych wartości — przekonwertuj XML na JSON, potem użyj dowolnego narzędzia JSON-owego, które już znasz.</li>
+  <li>Round-trip danych i potwierdzenie, że kształt przeżywa konwersję.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Pojedyncze dziecko vs tablica.</strong> Dokument z jednym <code>&lt;item&gt;</code> staje się <code>{"item": {...}}</code>; ten sam dokument z dwoma — <code>{"item": [..., ...]}</code>. Konsumenci muszą obsłużyć obie formy (albo znormalizować na wyjściu).</li>
+  <li><strong>Kolejność elementów nie jest gwarantowana.</strong> Obiekty JSON nie zachowują kolejności kluczy w sposób spójny we wszystkich parserach/transmisjach. Jeśli twój XML ma rodzeństwo o znaczącej kolejności — JSON to zła destynacja.</li>
+  <li><strong>Mixed content się składa.</strong> Element typu <code>&lt;p&gt;hello &lt;b&gt;world&lt;/b&gt;!&lt;/p&gt;</code> nie robi round-tripu — tekst i inline'owe elementy przeplatają się w sposób, który nie ma czystej reprezentacji obiektowej.</li>
+  <li><strong>Kolizje prefiksu atrybutów.</strong> Jeśli element XML ma dziecko, którego nazwa zaczyna się od <code>@</code>, najpierw zmień prefiks na coś innego.</li>
+  <li><strong>Namespace'y są trzymane dosłownie.</strong> <code>ns:tag</code> zostaje jako klucz JSON <code>"ns:tag"</code>. Atrybuty <code>xmlns:</code> tak samo.</li>
+  <li><strong>Liczby i boole nie są auto-konwertowane.</strong> Tekst XML zawsze jest stringiem; <code>"1"</code> zostaje <code>"1"</code> w JSON. Konwertuj typy w kodzie aplikacji, jeśli ich potrzebujesz.</li>
+  <li><strong>JSON → XML wymaga jednego klucza root.</strong> XML wymaga dokładnie jednego elementu root; wejściowy JSON musi być obiektem z jednym kluczem na top-level.</li>
 </ul>
 """,
     },

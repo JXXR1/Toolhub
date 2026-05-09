@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Inspecteur Unicode", "tagline": "Collez du texte → tableau de chaque point de code. Hex, décimal, octets UTF-8, catégorie. Repère les caractères invisibles.", "description": "Inspecteur Unicode gratuit. Collez du texte et voyez chaque point de code Unicode : hex, décimal, séquence d'octets UTF-8, catégorie générale. Met en évidence les caractères invisibles et confondants."},
         "it": {"name": "Ispettore Unicode", "tagline": "Incolla testo → tabella di ogni code point. Hex, decimale, byte UTF-8, categoria. Trova caratteri invisibili.", "description": "Ispettore Unicode gratuito. Incolla qualsiasi testo e vedi ogni code point Unicode: hex, decimale, sequenza di byte UTF-8, categoria. Evidenzia caratteri invisibili e confondibili."},
         "pt": {"name": "Inspetor Unicode", "tagline": "Cole texto → tabela de cada code point. Hex, decimal, bytes UTF-8, categoria. Detecte caracteres invisíveis.", "description": "Inspetor Unicode gratuito. Cole qualquer texto e veja cada code point Unicode: hex, decimal, sequência de bytes UTF-8, categoria geral e o nome quando conhecido. Destaca caracteres invisíveis e confundíveis."},
+        "pl": {"name": "Inspektor Unicode", "tagline": "Wklej tekst → tabela każdego code pointa. Hex, decimal, bajty UTF-8, kategoria. Wyłapuj niewidzialne znaki.", "description": "Darmowy inspektor Unicode. Wklej dowolny tekst i zobacz każdy code point Unicode: hex, decimal, sekwencję bajtów UTF-8, kategorię ogólną i nazwę, gdy znana. Podświetla znaki niewidzialne i zwodnicze."},
     },
     "body": """
 <div class="tool-card">
@@ -317,6 +318,38 @@ document.addEventListener('DOMContentLoaded', uiRun);
 <li><strong>La normalizzazione conta.</strong> "café" può essere NFC o NFD.</li>
 <li><strong>RTL override pericolosi.</strong> U+202E nei nomi file per phishing.</li>
 <li><strong>Surrogati isolati</strong> = UTF-16 malformato.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>"Dlaczego ten string nie porównuje się jako równy?" "Dlaczego ten username jest odrzucany jako już zajęty, choć wygląda na wolny?" "Dlaczego ta nazwa pliku łamie mi shell?" Odpowiedź prawie zawsze brzmi: bajty nie pasują do tego, co widzą oczy. Dwa znaki mogą <em>wyglądać</em> identycznie, ale być różnymi code pointami (łacińskie "a" vs cyryliczne "а"); whitespace może ukrywać non-breaking spaces, zero-width joinery albo right-to-left override'y; emoji może być jednym code pointem albo czterema. To narzędzie rozkłada dowolny tekst na poszczególne code pointy Unicode, z hex, decimal, sekwencją bajtów UTF-8, kategorią i nazwą, gdy znana.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Diagnoza buga "wygląda tak samo, ale nie jest równe".</li>
+  <li>Znalezienie niewidzialnych znaków (zero-width space, BOM, override RTL) ukrytych w skopiowanym tekście.</li>
+  <li>Liczenie bajtów vs code pointów vs jednostek UTF-16 przed zapisem do kolumny o stałej szerokości.</li>
+  <li>Inspekcja emoji, żeby zobaczyć, której sekwencji ZWJ używa.</li>
+  <li>Wyłapywanie ataków homoglyph w nazwach domen albo username'ach.</li>
+  <li>Generowanie dokładnych sekwencji bajtów UTF-8 do hex dumpa.</li>
+</ul>
+
+<h3>Czytanie wyjścia</h3>
+<ul>
+  <li><strong>Code point</strong> — abstrakcyjna wartość Unicode, zapisana <code>U+XXXX</code>. Jest ich 1,1 mln; najwyższy w użyciu to U+10FFFF.</li>
+  <li><strong>UTF-8</strong> — jak ten code point jest kodowany w bajty w nowoczesnych plikach (1–4 bajty na znak).</li>
+  <li><strong>Jednostki UTF-16</strong> — to, co liczą stringi JavaScriptu (<code>s.length</code>) i stringi Javy. Code point powyżej U+FFFF (większość emoji) zajmuje <em>dwie</em> jednostki UTF-16 (parę surrogate'ów).</li>
+  <li><strong>Kategoria</strong> — skrót ogólnej kategorii Unicode: L=letter, N=number, P=punctuation, S=symbol, Z=separator, C=control/format/private.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Długość jest dwuznaczna.</strong> "👨‍👩‍👧" ma 1 grapheme cluster, 5 code pointów, 11 jednostek UTF-16 i 18 bajtów UTF-8 — to wszystko "długości", które coś może raportować.</li>
+  <li><strong>Sekwencje zero-width joiner vs sekwencje selektorów.</strong> Wiele emoji to sekwencje ZWJ: rodzina, profesja, warianty tonu skóry. Przestawienie albo wycięcie ZWJ zmienia to, co jest renderowane.</li>
+  <li><strong>Normalizacja ma znaczenie.</strong> "café" może być e+◌́ (NFD) albo é (NFC). Wyglądają identycznie, ale to różne bajty; bazy i kod porównujący muszą znormalizować do tej samej formy.</li>
+  <li><strong>Right-to-left override'y są niebezpieczne.</strong> Nazwa pliku zawierająca U+202E może odwrócić swoje wyświetlanie — sprawiając, że <code>resu&#x202E;txt.exe</code> wygląda jak <code>resuexe.txt</code> w eksploratorze plików. Używane w phishingu.</li>
+  <li><strong>Kolumna nazw jest częściowa.</strong> Prawdziwa baza Unicode ma nazwy dla każdego code pointa; inspektor podaje nazwy tylko dla znaków sterujących i typowych znaków format/whitespace, gdzie nazwa jest najbardziej użyteczną diagnostyką.</li>
+  <li><strong>Połówki surrogate'ów nie powinny pojawiać się samodzielnie.</strong> Jeśli widzisz U+D800–U+DFFF w wyjściu, wejście to zniekształcony string UTF-16 (lone surrogate). Większość API odmówi zakodowania tego do UTF-8.</li>
 </ul>
 """,
     },

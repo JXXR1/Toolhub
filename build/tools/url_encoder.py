@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Encodeur / Décodeur URL", "tagline": "Encodez en pourcentage pour URLs ou décodez vers texte brut.", "description": "Encodeur et décodeur URL gratuit. Échappe les caractères spéciaux pour URLs, query strings et formulaires."},
         "it": {"name": "Encoder / Decoder URL", "tagline": "Codifica stringhe per URL (percent-encoding) o decodifica in testo semplice.", "description": "Encoder e decoder URL gratuito. Escape di caratteri speciali per URL, query string e dati form."},
         "pt": {"name": "Encoder / Decoder de URL", "tagline": "Faça percent-encoding de strings para URLs ou decodifique de volta para texto puro.", "description": "Encoder e decoder de URL online gratuito. Codifica caracteres especiais como percent-escapes para URLs, query strings e dados de formulário. Component-safe."},
+        "pl": {"name": "Encoder / Decoder URL", "tagline": "Percent-encoduj stringi pod URL-e albo dekoduj zakodowane procentowo z powrotem na zwykły tekst.", "description": "Darmowy online encoder i decoder URL. Koduje znaki specjalne jako percent-escape pod URL-e, query stringi i form data. Component-safe."},
     },
     "body": """
 <div class="tool-card">
@@ -98,6 +99,24 @@ document.addEventListener('DOMContentLoaded', urlRun);
   <li><strong>Espaços nem sempre são <code>%20</code>.</strong> Em corpos <em>application/x-www-form-urlencoded</em>, espaços são <code>+</code>. Esta ferramenta segue a convenção do <code>encodeURIComponent</code> do JavaScript (sempre <code>%20</code>); a decodificação aceita os dois.</li>
   <li><strong>UTF-8 vs Latin-1.</strong> Browsers modernos e <code>encodeURIComponent</code> sempre usam UTF-8. Alguns sistemas antigos ainda produzem percent-escapes em Latin-1 — esses não fazem round-trip corretamente aqui.</li>
   <li><strong>Caracteres reservados são case-insensitive no percent-escape mas case-sensitive no resultado decodificado</strong> — <code>%2F</code> e <code>%2f</code> ambos decodificam para <code>/</code>, mas o case original do caractere é preservado.</li>
+</ul>
+""",
+        "pl": """
+<h2>Co robi URL encoding</h2>
+<p>URL-e i nagłówki HTTP są ograniczone do małego podzbioru ASCII. Wszystko poza nim — w tym spacje, litery z diakrytykami, emoji i kilka zarezerwowanych znaków interpunkcyjnych — musi być <em>percent-encoded</em>: zastąpione <code>%</code> i dwiema cyframi hex na bajt. <code>café</code> staje się <code>caf%C3%A9</code> (UTF-8). Dekodowanie odwraca to.</p>
+
+<h3>Kiedy którego scope użyć</h3>
+<ul>
+  <li><strong>Component</strong> — wybierz to dla pojedynczych <em>wartości</em>, które wkleisz do URL-a: wartości query stringa, segmenty path, tekst fragmentu, wartości nagłówków. Koduje znaki strukturalne <code>/ ? # &amp; = +</code>, żeby nie zostały przypadkowo sparsowane jako składnia URL-a.</li>
+  <li><strong>Full URI</strong> — wybierz to dla całego URL-a, który chcesz uporządkować. Zachowuje <code>/ ? # &amp; = +</code> jako strukturę URL-a, koduje tylko znaki <em>nielegalne</em> (spacje, non-ASCII itd.).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Nie koduj podwójnie.</strong> Zakodowanie już zakodowanego stringa zamienia <code>%20</code> w <code>%2520</code>. Jeśli wejście pokazuje sekwencje <code>%XX</code>, najpierw zdekoduj.</li>
+  <li><strong>Spacje nie zawsze to <code>%20</code>.</strong> W ciałach <em>application/x-www-form-urlencoded</em> spacje to <code>+</code>. To narzędzie idzie za konwencją JS-owego <code>encodeURIComponent</code> (zawsze <code>%20</code>); dekodowanie obsługuje obie.</li>
+  <li><strong>UTF-8 vs Latin-1.</strong> Nowoczesne przeglądarki i <code>encodeURIComponent</code> zawsze używają UTF-8. Niektóre starsze systemy nadal produkują percent-escape w Latin-1 — te nie zrobią tu czystego round-tripu.</li>
+  <li><strong>Znaki zarezerwowane są case-insensitive w percent-escape, ale case-sensitive w zdekodowanym wyniku</strong> — <code>%2F</code> i <code>%2f</code> oba dekodują do <code>/</code>, ale oryginalna wielkość znaku jest zachowana.</li>
 </ul>
 """,
     },

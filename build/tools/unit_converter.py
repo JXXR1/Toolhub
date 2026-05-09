@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Convertisseur d'Unités", "tagline": "Convertissez entre unités métriques et impériales de longueur, poids, température, volume et surface.", "description": "Convertisseur d'unités gratuit. Conversion entre unités métriques et impériales de longueur, poids, température, volume et surface."},
         "it": {"name": "Convertitore di Unità", "tagline": "Converti tra unità metriche e imperiali di lunghezza, peso, temperatura, volume e area.", "description": "Convertitore di unità gratuito. Conversione tra unità metriche e imperiali di lunghezza, peso, temperatura, volume e area."},
         "pt": {"name": "Conversor de Unidades", "tagline": "Converta entre unidades métricas e imperiais de comprimento, peso, temperatura, volume e área.", "description": "Conversor de unidades online gratuito. Converta comprimento (mm, cm, m, km, in, ft, yd, mi), peso (g, kg, lb, oz), temperatura (C, F, K), volume (mL, L, gal, fl oz) e área (m², ft², acre, ha)."},
+        "pl": {"name": "Konwerter Jednostek", "tagline": "Konwertuj między metrycznymi i imperialnymi jednostkami długości, wagi, temperatury, objętości i powierzchni.", "description": "Darmowy online konwerter jednostek. Konwertuj długość (mm, cm, m, km, in, ft, yd, mi), wagę (g, kg, lb, oz), temperaturę (C, F, K), objętość (mL, L, gal, fl oz) i powierzchnię (m², ft², acre, ha)."},
     },
     "body": """
 <div class="tool-card">
@@ -249,6 +250,37 @@ document.addEventListener('DOMContentLoaded', () => { ucCatChanged(); ucRun(); }
   <li><strong>Massa vs peso.</strong> Estritamente, kg é massa e libras também são massa (apesar do coloquial "eu peso 70 kg"). A ferramenta trata como conversão de massa para massa. Para força (newtons, pound-force), você precisa de outra categoria.</li>
   <li><strong>Arredonde no fim, não no meio.</strong> Não converta m → ft, arredonde, e depois ft → in — você acumula erros. Vá direto para a unidade alvo.</li>
   <li><strong>Stones &amp; pounds.</strong> Uma medida britânica de peso: 1 stone = 14 lb. A ferramenta tem stone (st), mas você terá que fazer a parte das lb separadamente para entradas no estilo "11 st 4 lb".</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Większość świata jest metryczna, USA jest imperialne, UK jest pół na pół, przepisy są w cupach, kiedy powinny być w gramach, a gdzieś pomiędzy szkolny projekt dziecka pyta o "5 yardów w centymetrach". To narzędzie liczy konwersje długości, wagi, temperatury, objętości, powierzchni, czasu i prędkości używając wysokiej precyzji definicji — i rozkłada wynik na każdą jednostkę kategorii naraz, żebyś nie musiał konwertować dwa razy.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Czytanie przepisu w cupach, gdy gotujesz w gramach (albo na odwrót).</li>
+  <li>Tłumaczenie odległości lotu w milach morskich na kilometry.</li>
+  <li>Konwersja prognozy temperatury z °C na °F przed podróżą.</li>
+  <li>Wymiarowanie mebla: 72 cale szerokości → zmieści się w drzwiach 1,9 m?</li>
+  <li>Czytanie pomiarów z papera naukowego w SI, gdy myślisz w imperialnym.</li>
+</ul>
+
+<h3>Co jest dokładne, a co nie</h3>
+<ul>
+  <li><strong>Długość, waga, temperatura, powierzchnia, prędkość</strong> używają definicji SI i międzynarodowego porozumienia yard-and-pound (1959), więc są dokładne do precyzji twojego wejścia.</li>
+  <li><strong>Objętość</strong> bywa upierdliwa: amerykański "gallon" (3,785 L) i brytyjski "imperial gallon" (4,546 L) to różne rzeczy. Narzędzie podaje, który jest który.</li>
+  <li><strong>Cup / tablespoon / teaspoon</strong> domyślnie są tu w mierze amerykańskiej. Brytyjskie i australijskie cupy są lekko inne (250 mL w AU, 240 mL w US).</li>
+  <li><strong>"Miesiąc" i "rok"</strong> w kategorii czasu używają średnich (30,44 dnia / 365,25 dnia). Nie używaj tego do prawnych albo księgowych obliczeń, gdzie liczą się dokładne miesiące — użyj kalkulatora dat.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Temperatura nie jest stosunkiem.</strong> 0°C to nie "brak temperatury" — to punkt odniesienia. Podwojenie Celsjuszy nie podwaja ciepła. Konwersja używa addytywnych przesunięć (273,15 do/z Kelvinów, 32 między C a F) — dlatego narzędzie używa funkcji do temperatury, nie mnożników.</li>
+  <li><strong>US i UK fluid ounces są różne.</strong> 1 US fl oz = 29,57 mL, 1 UK fl oz = 28,41 mL. Zawsze sprawdzaj, którego standardu używa przepis.</li>
+  <li><strong>"Tonne" vs "ton".</strong> Tona metryczna = 1000 kg. US short ton = 907 kg. UK long ton = 1016 kg. "t" w narzędziu to tona metryczna.</li>
+  <li><strong>Masa vs waga.</strong> Ściśle, kg to masa, a funty to też masa (mimo potocznego "ważę 70 kg"). Narzędzie traktuje to jako konwersję masa-do-masy. Do siły (newtony, pound-force) potrzeba innej kategorii.</li>
+  <li><strong>Zaokrąglaj na końcu, nie w środku.</strong> Nie konwertuj m → ft, zaokrąglaj, potem ft → in — kumulujesz błędy. Idź wprost do docelowej jednostki.</li>
+  <li><strong>Stones &amp; pounds.</strong> Brytyjska waga: 1 stone = 14 lb. Narzędzie ma stone (st), ale część w lb musisz zrobić osobno dla wpisów typu "11 st 4 lb".</li>
 </ul>
 """,
     },

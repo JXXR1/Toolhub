@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parser Wyrażeń Cron — Toolhub</title>
+  <meta name="description" content="Darmowy online parser wyrażeń cron. Waliduje składnię 5-polowego crontaba i listuje 10 najbliższych zaplanowanych odpaleń w twojej lokalnej strefie czasowej.">
+  <meta property="og:title" content="Parser Wyrażeń Cron — Toolhub">
+  <meta property="og:description" content="Darmowy online parser wyrażeń cron. Waliduje składnię 5-polowego crontaba i listuje 10 najbliższych zaplanowanych odpaleń w twojej lokalnej strefie czasowej.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/cron-parser/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/cron-parser/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/cron-parser/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/cron-parser/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/cron-parser/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/cron-parser/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/cron-parser/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/cron-parser/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/cron-parser/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/cron-parser/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/cron-parser/#tool",
+        "name": "Parser Wyrażeń Cron",
+        "description": "Darmowy online parser wyrażeń cron. Waliduje składnię 5-polowego crontaba i listuje 10 najbliższych zaplanowanych odpaleń w twojej lokalnej strefie czasowej.",
+        "url": "https://toolhub.software/pl/cron-parser/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["cron", "schedule", "crontab", "next run", "expression"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Parser Wyrażeń Cron", "item": "https://toolhub.software/pl/cron-parser/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/cron-parser/'; else location.href='/cron-parser/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Parser Wyrażeń Cron</div>
+    <h1>Parser Wyrażeń Cron</h1>
+    <p class="tagline">Sparsuj wyrażenia cron i zobacz 10 najbliższych odpaleń. Standardowy 5-polowy crontab.</p>
+    
+<div class="tool-card">
+  <label>Cron expression (5 fields: minute hour day-of-month month day-of-week)</label>
+  <input type="text" id="cron-in" oninput="cronRun()" placeholder="*/5 * * * *" value="0 9 * * 1-5" style="font-family:ui-monospace,monospace">
+  <div class="button-row">
+    <button class="secondary" onclick="cronSet('*/5 * * * *')">every 5 min</button>
+    <button class="secondary" onclick="cronSet('0 * * * *')">hourly</button>
+    <button class="secondary" onclick="cronSet('0 9 * * 1-5')">weekdays 9am</button>
+    <button class="secondary" onclick="cronSet('0 0 1 * *')">1st of month</button>
+    <button class="secondary" onclick="cronSet('0 2 * * 0')">Sunday 2am</button>
+  </div>
+  <div class="meta" id="cron-explain"></div>
+</div>
+<div class="tool-card">
+  <label>Next 10 fire times (local timezone)</label>
+  <pre class="output" id="cron-out">Wpisz dane powyżej, aby zobaczyć wynik.</pre>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Do czego to służy?</h2>
+<p>Wyrażenia cron są potężne i łatwo je źle napisać. <code>0 0 * * 1-5</code> wygląda jak harmonogram "o północy w dni robocze" — i tym jest. <code>*/15 0-9 * * *</code> wygląda jak "co 15 minut w godzinach pracy" — i tym jest. <code>0 0 1 */3 *</code> wygląda jak "kwartalnie"... jeśli pamiętałeś, że <code>*/3</code> znaczy "co trzeci miesiąc". To narzędzie pozwala wkleić wyrażenie, zobaczyć, co ono naprawdę znaczy po polsku, i podejrzeć 10 najbliższych odpaleń, żebyś mógł zweryfikować przed deployem.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Sanity check linii crona w <code>crontab -e</code> przed zapisem.</li>
+  <li>Tłumaczenie schedule'a z <code>CronJob</code> w Kubernetesie na "o której to faktycznie odpali?".</li>
+  <li>Projektowanie nowego harmonogramu — zacznij od polskiego ("rano w każdy dzień roboczy") i iteruj wyrażenie, aż podgląd się zgodzi.</li>
+  <li>Debug joba, który "nie odpalił, kiedy się spodziewałem" — wklej schedule, spójrz na 10 najbliższych odpaleń i zobacz, czy zaskoczeniem jest rzeczywistość, czy wyrażenie.</li>
+</ul>
+
+<h3>Referencja pól crona</h3>
+<table>
+  <tr><th>Pole</th><th>Zakres</th><th>Wildcardy</th></tr>
+  <tr><td>Minuta</td><td>0-59</td><td><code>*</code> · <code>*/5</code> · <code>0,30</code> · <code>0-29</code></td></tr>
+  <tr><td>Godzina</td><td>0-23</td><td>tak samo</td></tr>
+  <tr><td>Dzień miesiąca</td><td>1-31</td><td>tak samo</td></tr>
+  <tr><td>Miesiąc</td><td>1-12</td><td>tak samo</td></tr>
+  <tr><td>Dzień tygodnia</td><td>0-6 (0 = niedziela, 7 też = niedziela)</td><td>tak samo</td></tr>
+</table>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Day-of-month i day-of-week wchodzą w interakcję.</strong> Jeśli oba są ograniczone (np. <code>15 * * * 1</code> znaczy "15. dzień LUB poniedziałek"), większość implementacji crona robi OR. To narzędzie trzyma się tej konwencji.</li>
+  <li><strong><code>*/N</code> nie znaczy dokładnie "co N".</strong> To "co N zaczynając od dolnej granicy", więc <code>*/15</code> w minutach = 0,15,30,45 (nie 12,27,42,57). Żeby zacząć później, użyj listy: <code>5,20,35,50</code>.</li>
+  <li><strong>Kombinacje step + range.</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30. Krok działa tylko wewnątrz zakresu.</li>
+  <li><strong>Strefa czasowa to tu lokalna strefa przeglądarki.</strong> Prawdziwe demony cron działają w czasie serwera (często UTC). Schedule, który wygląda OK w przeglądarce, może odpalić o innej godzinie ściennej na serwerze. Zweryfikuj strefę przed wklejeniem.</li>
+  <li><strong>Niektóre dialekty crona dodają pola.</strong> Quartz cron ma 6 albo 7 pól (z sekundami i rokiem). Timery systemd używają zupełnie innego formatu. To narzędzie parsuje standardowy 5-polowy crontab.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/timestamp-converter/">Konwerter Unix Timestamp</a> <a href="/pl/timezone-converter/">Konwerter Stref Czasowych</a> <a href="/pl/date-calculator/">Kalkulator Dat</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const FIELD_RANGES = [[0,59],[0,23],[1,31],[1,12],[0,7]]; // last 0 and 7 = Sunday
+const FIELD_NAMES = ['minute','hour','day-of-month','month','day-of-week'];
+
+function cronExpand(field, idx){
+  const [lo,hi] = FIELD_RANGES[idx];
+  const out = new Set();
+  field.split(',').forEach(part => {
+    let step = 1;
+    if (part.includes('/')){ const [a,b] = part.split('/'); step = parseInt(b,10); part = a; }
+    let from = lo, to = hi;
+    if (part === '*'){ /* keep range */ }
+    else if (part.includes('-')){ const [a,b] = part.split('-'); from = parseInt(a,10); to = parseInt(b,10); }
+    else { from = to = parseInt(part,10); }
+    if (isNaN(from) || isNaN(to) || from < lo || to > hi || from > to) throw new Error('Invalid value: ' + part + ' (expected ' + lo + '-' + hi + ')');
+    if (isNaN(step) || step < 1) throw new Error('Invalid step: ' + step);
+    for (let v = from; v <= to; v += step) out.add(idx === 4 && v === 7 ? 0 : v);
+  });
+  return out;
+}
+
+function cronMatches(date, sets){
+  return sets[0].has(date.getMinutes())
+      && sets[1].has(date.getHours())
+      && sets[2].has(date.getDate())
+      && sets[3].has(date.getMonth() + 1)
+      && sets[4].has(date.getDay());
+}
+
+function cronNext(expr, count){
+  const fields = expr.trim().split(/\s+/);
+  if (fields.length !== 5) throw new Error('Expected 5 space-separated fields, got ' + fields.length);
+  const sets = fields.map((f, i) => cronExpand(f, i));
+  const now = new Date();
+  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 1, 0, 0);
+  const out = [];
+  let d = new Date(start);
+  let safety = 0;
+  while (out.length < count && safety < 600000){
+    if (cronMatches(d, sets)) out.push(new Date(d));
+    d.setMinutes(d.getMinutes() + 1);
+    safety++;
+  }
+  if (safety >= 600000) throw new Error('Search exhausted (no matches in next ~1 year)');
+  return out;
+}
+
+function cronExplain(expr){
+  // Very brief human-readable summary
+  const parts = expr.trim().split(/\s+/);
+  if (parts.length !== 5) return '';
+  const m = parts[0], h = parts[1], dom = parts[2], mon = parts[3], dow = parts[4];
+  let s = 'At ';
+  if (m === '*') s += 'every minute';
+  else if (m.startsWith('*/')) s += 'every ' + m.slice(2) + ' minutes';
+  else s += 'minute ' + m;
+  s += ', ';
+  if (h === '*') s += 'every hour';
+  else if (h.startsWith('*/')) s += 'every ' + h.slice(2) + ' hours';
+  else s += 'hour ' + h;
+  if (dow !== '*'){
+    const names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    if (dow.includes('-')){
+      const [a,b] = dow.split('-').map(x => parseInt(x,10));
+      s += ', on ' + names[a] + '-' + names[b];
+    } else if (!isNaN(parseInt(dow,10))){
+      s += ', on ' + names[parseInt(dow,10) % 7];
+    }
+  }
+  if (dom !== '*'){
+    s += ', on day ' + dom + ' of the month';
+  }
+  if (mon !== '*'){
+    s += ', in month ' + mon;
+  }
+  return s + '.';
+}
+
+function cronRun(){
+  const expr = document.getElementById('cron-in').value;
+  const out = document.getElementById('cron-out');
+  const exp = document.getElementById('cron-explain');
+  out.classList.remove('error');
+  if (!expr.trim()){ out.textContent = 'Wpisz dane powyżej, aby zobaczyć wynik.'; exp.textContent = ''; return; }
+  try {
+    const dates = cronNext(expr, 10);
+    out.textContent = dates.map((d,i) => (i+1).toString().padStart(2,' ') + '.  ' + d.toLocaleString(undefined,{weekday:'short', year:'numeric', month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'})).join('\n');
+    exp.textContent = cronExplain(expr);
+  } catch(e){
+    out.classList.add('error');
+    out.textContent = '✗ ' + e.message;
+    exp.textContent = '';
+  }
+}
+function cronSet(s){ document.getElementById('cron-in').value = s; cronRun(); }
+document.addEventListener('DOMContentLoaded', cronRun);
+</script>
+
+</body>
+</html>

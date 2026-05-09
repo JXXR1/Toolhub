@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Gere QR codes para qualquer texto, URL, Wi-Fi ou vCard. Tamanho, cores e correção de erro personalizáveis. Exporte como PNG ou SVG.",
             "description": "Gerador de QR code gratuito online. Tamanho, cores de foreground/background e níveis de correção de erro personalizáveis. Baixe como PNG ou SVG. Sem marca d'água.",
         },
+        "pl": {
+            "name": "Generator Kodów QR",
+            "tagline": "Generuj kody QR dla dowolnego tekstu, URL-a, Wi-Fi albo vCard. Konfigurowalny rozmiar, kolory i korekcja błędów. Eksportuj PNG albo SVG.",
+            "description": "Darmowy online generator kodów QR. Konfigurowalny rozmiar, kolory foreground/background i poziomy korekcji błędów. Pobierz jako PNG albo SVG. Bez znaków wodnych.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -172,6 +177,27 @@ document.addEventListener('DOMContentLoaded', () => { setTimeout(qrRender, 100);
   <li><strong>Conteúdo longo força um código mais denso.</strong> Se você precisa codificar uma URL de 200 caracteres, o código resultante é denso e mais difícil de escanear de longe. Encurte com um redirect antes se o tamanho importar.</li>
   <li><strong>SVG vs PNG.</strong> SVG escala sem perda de qualidade — melhor para impressão ou displays grandes. PNG é universalmente aceito mas pixela se aumentar de escala; exporte no tamanho que vai usar.</li>
   <li><strong>Formato do preset Wi-Fi.</strong> <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;senha&gt;;;</code> — iOS/Android modernos escaneiam e conectam automaticamente; celulares muito antigos podem não suportar.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Kody QR to maleńkie URL-e, które kamera telefonu czyta w ułamku sekundy. Zakoduj URL, sieć Wi-Fi, wersję roboczą maila, numer telefonu albo dowolny krótki tekst — wydrukuj na plakacie, wizytówce albo karcie menu i każdy z telefonem może coś z tym zrobić bez wpisywania. Ten generator działa w całości w przeglądarce, używając open-source'owej biblioteki <a href="https://github.com/soldair/node-qrcode" rel="noopener">qrcode</a>. Twój tekst nie opuszcza strony.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Udostępnianie URL-a na slajdzie, plakacie, wizytówce albo wkładce do opakowania.</li>
+  <li>Łatwe dołączenie gości do twojego Wi-Fi bez wpisywania hasła (preset Wi-Fi).</li>
+  <li>"Skanuj, żeby zapłacić / zarezerwować / zamówić" na oznakowaniu w przestrzeniach fizycznych.</li>
+  <li>Kodowanie vCarda do natychmiastowego importu kontaktu na telefonie odbiorcy.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Korekcja błędów ma trade-off z gęstością.</strong> Wyższe poziomy (Q, H) przeżyją zarysowania i nałożone logo; niższe (L, M) trzymają kod mały i szybszy do skanowania. Używaj <strong>H</strong>, jeśli planujesz nakładać logo, w przeciwnym razie <strong>M</strong> to sensowny default.</li>
+  <li><strong>Kontrast ma znaczenie.</strong> Stylizowane kody QR z niskim kontrastem foreground/background często ładnie wyglądają, ale słabo skanują w gorszym świetle. Przetestuj skanując z wydruku/ekranu, zanim ruszy.</li>
+  <li><strong>Długa zawartość wymusza gęstszy kod.</strong> Jeśli musisz zakodować 200-znakowy URL, wynikowy kod jest gęsty i trudniej go zeskanować z daleka. Skróć przez redirect, jeśli rozmiar ma znaczenie.</li>
+  <li><strong>SVG vs PNG.</strong> SVG skaluje się bez utraty jakości — najlepsze do druku albo dużych ekranów. PNG jest powszechnie akceptowany, ale piksel się rozbiega przy powiększaniu; eksportuj w docelowym rozmiarze.</li>
+  <li><strong>Format presetu Wi-Fi.</strong> <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;hasło&gt;;;</code> — nowoczesne iOS/Android skanują i łączą się automatycznie; bardzo stare telefony mogą nie wspierać.</li>
 </ul>
 """,
     },

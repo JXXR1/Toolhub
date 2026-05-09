@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Testeur JSONPath", "tagline": "Exécutez des requêtes JSONPath sur tout document JSON. Résultats et chemins en temps réel.", "description": "Testeur JSONPath gratuit. Interrogez du JSON imbriqué avec $.., wildcards, slices, filtres. Résultats en direct."},
         "it": {"name": "Tester JSONPath", "tagline": "Esegui query JSONPath su qualsiasi documento JSON. Match e percorsi in tempo reale.", "description": "Tester JSONPath gratuito. Interroga JSON annidato con $.., wildcard, slice, filtri. Risultati live."},
         "pt": {"name": "Testador JSONPath", "tagline": "Roda queries JSONPath contra qualquer documento JSON. Veja os nós correspondentes e seus paths em tempo real.", "description": "Testador JSONPath grátis online. Consulta JSON aninhado com $.., wildcards, array slices e expressões de filtro. Resultados ao vivo, cole seu JSON e comece a consultar."},
+        "pl": {"name": "Tester JSONPath", "tagline": "Uruchamiaj zapytania JSONPath na dowolnym dokumencie JSON. Zobacz dopasowane węzły i ich ścieżki w czasie rzeczywistym.", "description": "Darmowy online tester JSONPath. Odpytuj zagnieżdżony JSON za pomocą $.., wildcardów, slice'ów tablic i wyrażeń filtrujących. Wyniki na żywo, wklej swój JSON i zacznij szukać."},
     },
     "body": """
 <div class="tool-card">
@@ -272,6 +273,40 @@ document.addEventListener('DOMContentLoaded', jpRun);
   <li><strong><code>$..*</code></strong> retorna todo nó da árvore (depth-first), o que pode ser muita coisa. Útil pra explorar um documento desconhecido.</li>
   <li><strong>Strings numéricas.</strong> <code>{"1": "a"}</code> — acessar com <code>$['1']</code> funciona; <code>$.1</code> não (números não são válidos como nomes de propriedade com ponto).</li>
   <li><strong>Ordenação.</strong> JSON não garante ordem de propriedades de objetos. Se seu filtro depende de ordem, ordene antes.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>JSONPath ma się do JSON-a tak, jak XPath do XML-a — to język zapytań do wyciągania konkretnych wartości z zagnieżdżonego dokumentu bez pisania custom kodu. <code>$.store.books[*].title</code> mówi "daj mi każdy tytuł książki ze store"; <code>$..price</code> mówi "każdy <em>price</em> w dowolnym miejscu dokumentu". To narzędzie uruchamia zapytanie na żywo na dowolnym wklejonym JSON-ie, pokazując zarówno dopasowane wartości, jak i ścieżki, z których pochodzą, żebyś mógł iterować zapytanie, aż zwróci dokładnie to, czego chcesz.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Pisanie zapytania do narzędzia, które używa JSONPath: CLI w stylu jq, testy w Postmanie, Stedi, n8n albo AWS CloudWatch / Step Functions.</li>
+  <li>Wyciąganie konkretnych pól z dużej odpowiedzi API bez pisania skryptu.</li>
+  <li>Filtrowanie tablicy po wartości pola (np. "wszystkie zamówienia, gdzie total &gt; 100").</li>
+  <li>Sprawdzenie, czy głęboko zagnieżdżony path faktycznie rozwiązuje się do wartości, zanim wpiszesz to do kodu.</li>
+</ul>
+
+<h3>Szybka referencja składni</h3>
+<ul>
+  <li><strong><code>$</code></strong> — korzeń dokumentu.</li>
+  <li><strong><code>.name</code></strong> albo <strong><code>['name']</code></strong> — dziecko po nazwie.</li>
+  <li><strong><code>..</code></strong> — descent rekurencyjny (dowolna głębokość).</li>
+  <li><strong><code>*</code></strong> — wildcard (dowolna właściwość albo element tablicy).</li>
+  <li><strong><code>[n]</code></strong> — indeks tablicy (ujemny liczy od końca).</li>
+  <li><strong><code>[start:end:step]</code></strong> — slice tablicy (w stylu Pythona).</li>
+  <li><strong><code>[a, b, c]</code></strong> — unia indeksów albo nazw.</li>
+  <li><strong><code>[?(@.field &gt; 5)]</code></strong> — wyrażenie filtrujące. <code>@</code> = bieżący element; obsługuje <code>== != &lt; &gt; &lt;= &gt;= &amp;&amp; ||</code> i <code>=~ /regex/</code>.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>JSONPath nie ma jednej oficjalnej speca.</strong> Pierwotny draft Stefana Gössnera był de facto referencją przez lata; RFC 9535 (luty 2024) wreszcie to wystandaryzowało. Implementacje delikatnie się różnią — to, co działa w Postmanie, może nie zadziałać w Jaegerze.</li>
+  <li><strong>Kropka vs nawias.</strong> <code>$.foo-bar</code> wygląda dla parsera jak "foo minus bar"; używaj <code>$['foo-bar']</code> dla nazw właściwości z myślnikami, kropkami albo spacjami.</li>
+  <li><strong>Wyrażenia filtrujące mają tu smak JavaScript</strong> — to świadoma wygoda, ale nie pasuje ściśle do RFC 9535. Nie polegaj na tym, że filtry tego narzędzia zadziałają bajt-w-bajt w innej implementacji.</li>
+  <li><strong><code>$..*</code></strong> zwraca każdy węzeł w drzewie (depth-first), co może być sporo. Przydaje się do eksploracji nieznanego dokumentu.</li>
+  <li><strong>Numeryczne stringi.</strong> <code>{"1": "a"}</code> — dostęp przez <code>$['1']</code> działa; <code>$.1</code> nie (liczby nie są poprawne jako nazwy properties po kropce).</li>
+  <li><strong>Kolejność.</strong> JSON nie gwarantuje kolejności properties obiektów. Jeśli filtr zależy od kolejności, najpierw posortuj.</li>
 </ul>
 """,
     },

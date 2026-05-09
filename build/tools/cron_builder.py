@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Constructeur Cron", "tagline": "Construisez visuellement une expression cron — minute, heure, jour, mois, jour-semaine — et prévisualisez les 5 prochaines exécutions.", "description": "Constructeur d'expression cron gratuit. Choisissez les champs via menus, récupérez la chaîne cron, voyez les 5 prochaines exécutions dans votre fuseau. Crontab standard 5 champs."},
         "it": {"name": "Costruttore Cron", "tagline": "Costruisci visivamente un'espressione cron — minuto, ora, giorno, mese, giorno-settimana — e anteprima delle prossime 5 esecuzioni.", "description": "Costruttore di espressioni cron gratuito. Scegli i campi con menu, ottieni la stringa cron e vedi le prossime 5 esecuzioni nel tuo fuso. Crontab standard a 5 campi."},
         "pt": {"name": "Construtor de Expressões Cron", "tagline": "Monte uma expressão cron visualmente — minuto, hora, dia, mês, dia da semana — e veja os próximos 5 horários de execução.", "description": "Construtor online gratuito de expressões cron. Escolha os campos com dropdowns e presets, obtenha a string cron e veja os próximos 5 horários de execução no seu fuso local. Crontab padrão de 5 campos."},
+        "pl": {"name": "Builder Wyrażeń Cron", "tagline": "Zbuduj wyrażenie cron wizualnie — minuta, godzina, dzień, miesiąc, dzień tygodnia — i zobacz 5 najbliższych odpaleń.", "description": "Darmowy online builder wyrażeń cron. Wybieraj pola z dropdownów i presetów, dostań string crona i zobacz 5 najbliższych odpaleń w twojej lokalnej strefie czasowej. Standardowy 5-polowy crontab."},
     },
     "body": """
 <div class="tool-card">
@@ -344,6 +345,37 @@ document.addEventListener('DOMContentLoaded', cbBuild);
   <li><strong>Combinações step + range.</strong> <code>0-30/5</code> cobre só 0,5,10,15,20,25,30.</li>
   <li><strong>Alguns dialetos de cron adicionam campos.</strong> O cron do Quartz tem 6 ou 7 campos (com segundos e ano). Timers do systemd usam um formato totalmente diferente. Este construtor visa o crontab padrão de 5 campos.</li>
   <li><strong>Sexta-feira 13 é difícil de expressar em cron.</strong> O dia do mês e o dia da semana do cron interagem por OR, então combinar os dois estritamente exige um script wrapper.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Składnia crona jest niesławnie gęsta — pięć pól, każde przyjmujące wildcardy, zakresy, listy i kroki. Pisanie od zera za każdym razem prosi się o literówki. Ten builder pozwala wystartować z presetu (co-5-minut, w-dni-robocze-o-09:00 itd.) albo wpisywać ręcznie w pojedyncze pola, zobaczyć wynikowy string crona, dostać podsumowanie po polsku i zweryfikować przeciw 5 najbliższym faktycznym odpaleniom w twojej lokalnej strefie. Komplementarne narzędzie to <a href="/cron-parser/">Cron Expression Parser</a>, który dekoduje istniejące wyrażenie do tego samego podglądu.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Konfiguracja nowego wpisu <code>crontab</code>, <code>CronJob</code> w Kubernetesie, schedule w GitHub Actions albo reguły AWS EventBridge.</li>
+  <li>Tłumaczenie wymagania "uruchamiaj rano w każdy dzień roboczy" na poprawną składniowo linię crona.</li>
+  <li>Sanity check, że wyrażenie, które naszkicowałeś, faktycznie odpali wtedy, kiedy myślisz — przed deployem.</li>
+  <li>Onboarding kogoś nowego do crona — niech dropdowny i podgląd nauczą składni.</li>
+</ul>
+
+<h3>Ściąga składni pól</h3>
+<ul>
+  <li><code>*</code> — każda wartość z zakresu pola.</li>
+  <li><code>*/N</code> — co N (zaczynając od dolnej granicy).</li>
+  <li><code>A-B</code> — zakres włącznie.</li>
+  <li><code>A,B,C</code> — lista konkretnych wartości.</li>
+  <li><code>A-B/N</code> — co N w obrębie zakresu A–B.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Day-of-month i day-of-week wchodzą w interakcję.</strong> Większość implementacji crona łączy je przez OR, gdy oba są ograniczone: <code>* * 15 * 1</code> odpala 15. dnia LUB w poniedziałek, nie "15. jeśli to poniedziałek".</li>
+  <li><strong>Strefa czasowa to tu lokalna strefa twojej przeglądarki.</strong> Prawdziwe demony cron działają w strefie serwera (często UTC). Zweryfikuj, zanim wkleisz na serwer.</li>
+  <li><strong><code>*/N</code> nie znaczy dokładnie "co N".</strong> <code>*/15</code> w minutach = 0,15,30,45 — nie 12,27,42,57. Użyj listy, jeśli potrzebujesz konkretnej fazy.</li>
+  <li><strong>Kombinacje step + range.</strong> <code>0-30/5</code> obejmuje tylko 0,5,10,15,20,25,30.</li>
+  <li><strong>Niektóre dialekty crona dodają pola.</strong> Quartz cron ma 6 albo 7 pól (z sekundami i rokiem). Timery systemd używają zupełnie innego formatu. Ten builder celuje w standardowy 5-polowy crontab.</li>
+  <li><strong>Piątek 13. trudno wyrazić w cronie.</strong> Day-of-month i day-of-week w cronie łączą się przez OR, więc ścisłe ich połączenie wymaga skryptu opakowującego.</li>
 </ul>
 """,
     },

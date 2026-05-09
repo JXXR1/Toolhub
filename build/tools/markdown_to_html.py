@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Markdown vers HTML", "tagline": "Convertissez Markdown en HTML propre avec aperçu en direct. Titres, listes, code, tableaux, images et liens.", "description": "Convertisseur Markdown vers HTML gratuit. Style CommonMark : titres, listes, blocs code, tableaux, images, citations, format en ligne. Aperçu live + copier."},
         "it": {"name": "Markdown a HTML", "tagline": "Converti Markdown in HTML pulito con anteprima live. Intestazioni, liste, codice, tabelle, immagini e link.", "description": "Convertitore Markdown-HTML gratuito. Stile CommonMark: intestazioni, liste, blocchi codice, tabelle, immagini, citazioni, formattazione inline. Anteprima + copia."},
         "pt": {"name": "Markdown para HTML", "tagline": "Converta Markdown em HTML limpo com preview ao vivo. Suporta cabeçalhos, listas, código, tabelas, imagens e links.", "description": "Conversor Markdown para HTML gratuito online. Estilo CommonMark: cabeçalhos, listas, blocos de código fenced, tabelas, imagens, blockquotes, formatação inline. Preview ao vivo + copiar."},
+        "pl": {"name": "Markdown do HTML", "tagline": "Konwertuj Markdowna na czysty HTML z podglądem na żywo. Wspiera nagłówki, listy, kod, tabele, obrazki i linki.", "description": "Darmowy online konwerter Markdown do HTML. W smaku CommonMark: nagłówki, listy, fenced bloki kodu, tabele, obrazki, blockquote'y, formatowanie inline. Podgląd na żywo + kopia."},
     },
     "body": """
 <div class="md-grid">
@@ -214,6 +215,28 @@ document.addEventListener('DOMContentLoaded', mdRun);
   <li><strong>Tabelas vs alinhamento.</strong> Tabelas com pipe precisam de uma linha separadora (<code>|---|</code>) e usam <code>:---:</code> / <code>:---</code> / <code>---:</code> para centralizar/esquerda/direita. Esquecer o separador é o motivo mais comum de uma "tabela" renderizar como um parágrafo.</li>
   <li><strong>Smart punctuation.</strong> Alguns renderers convertem <code>--</code> em travessão e aspas retas em curvas. Esta ferramenta não — passe por um passo de tipografia se precisar disso.</li>
   <li><strong>Round-trip não é lossless.</strong> Markdown → HTML → Markdown vai normalizar estilo de cabeçalho, espaçamento de lista e forma do link. A semântica sobrevive; os bytes exatos não.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Markdown to najczęściej pisany format autorski na świecie — pliki README, posty blogowe, GitHub issues, wiadomości na czacie, strony dokumentacji. HTML to to, co renderuje przeglądarka. To narzędzie konwertuje Markdowna na czysty HTML z podglądem na żywo, żebyś mógł zobaczyć, jak wyrenderowany wynik będzie wyglądał, zanim wkleisz go w CMS, wygenerujesz statyczną stronę albo wyślesz jako część szablonu maila.</p>
+
+<h3>Wspierana składnia</h3>
+<ul>
+  <li>Nagłówki <code>#</code> do <code>######</code>; bold, italic, strike</li>
+  <li>Inline'owy <code>`code`</code> i fenced'owe bloki <code>```lang</code></li>
+  <li>Listy punktowane / numerowane / zagnieżdżone</li>
+  <li>Linki <code>[tekst](url)</code> i obrazki <code>![alt](url)</code></li>
+  <li>Blockquote'y, tabele z pipe'ami i wyrównaniem, linie poziome</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>To szybki parser w przeglądarce, nie suite zgodności.</strong> CommonMark i GFM mają edge case'y (zagnieżdżone emfazy, definicje referencji linków, ekspansja autolinków), które różnią się między implementacjami. Po ścisłą zgodność użyj <code>marked</code>, <code>markdown-it</code> albo <code>remark</code> w buildzie.</li>
+  <li><strong>HTML osadzony w Markdownie</strong> w większości przechodzi tak jak jest, ale niektóre implementacje go sanityzują. Nie polegaj na tym dla bezpieczeństwa; traktuj nieufnego markdowna jak nieufny HTML.</li>
+  <li><strong>Tabele vs wyrównanie.</strong> Tabele z pipe'ami potrzebują wiersza separatora (<code>|---|</code>) i używają <code>:---:</code> / <code>:---</code> / <code>---:</code> dla wyśrodkowania/lewej/prawej. Pominięcie separatora to najczęstszy powód, dla którego "tabela" renderuje się jako jeden akapit.</li>
+  <li><strong>Smart punctuation.</strong> Niektóre renderery konwertują <code>--</code> na półpauzę i proste cudzysłowy na drukarskie. To narzędzie tego nie robi — przepuść przez krok typograficzny, jeśli tego potrzebujesz.</li>
+  <li><strong>Round-trip nie jest bezstratny.</strong> Markdown → HTML → Markdown znormalizuje styl nagłówków, odstępy w listach i formę linków. Semantyka przeżyje; dokładne bajty nie.</li>
 </ul>
 """,
     },

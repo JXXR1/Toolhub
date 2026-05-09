@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Formateur SQL", "tagline": "Formatez et embellissez du SQL avec indentation, ou minifiez sur une ligne. Conscient du dialecte (ANSI / MySQL / Postgres).", "description": "Formateur SQL gratuit. Pretty-print de SELECT/INSERT/UPDATE/DDL avec indentation cohérente, casse des mots-clés et alignement des clauses. Minify aussi. 100% dans le navigateur."},
         "it": {"name": "Formattatore SQL", "tagline": "Formatta e abbellisce SQL con indentazione corretta, o minifica su una riga. Consapevole del dialetto (ANSI / MySQL / Postgres).", "description": "Formattatore SQL gratuito. Pretty-print di SELECT/INSERT/UPDATE/DDL con indentazione coerente, maiuscole di parole chiave e allineamento clausole. Minifica anche. 100% nel browser."},
         "pt": {"name": "Formatador SQL", "tagline": "Formate e embeleze SQL com indentação correta, ou minifique para uma linha. Reconhece dialetos (ANSI / MySQL / Postgres).", "description": "Formatador SQL gratuito. Pretty-print de qualquer SELECT/INSERT/UPDATE/DDL com indentação consistente, case de keywords e alinhamento de cláusulas. Também minifica para uma linha. Roda inteiramente no navegador."},
+        "pl": {"name": "Formatter SQL", "tagline": "Sformatuj i upiększ SQL z porządną indentacją albo zminifikuj do jednej linii. Świadom dialektu (ANSI / MySQL / Postgres).", "description": "Darmowy formatter SQL. Pretty-print dowolnego SELECT/INSERT/UPDATE/DDL ze spójną indentacją, wielkością keywordów i wyrównaniem klauzul. Minifikuje też do jednej linii. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -432,6 +433,28 @@ document.addEventListener('DOMContentLoaded', sfRun);
 <li><strong>I commenti sopravvivono ma su righe proprie.</strong></li>
 <li><strong>Minify rimuove i commenti.</strong></li>
 <li><strong>Non è un linter.</strong> Usa <code>sqlfluff</code> in CI.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>SQL ciągnie się od jednoliniowca wpisanego w <code>psql</code> aż do 200-liniowej query analitycznej, której nikt nie przeczyta, póki nie jest porządnie wcięta. Ten formatter bierze dowolne SELECT, INSERT, UPDATE albo DDL i przepisuje je ze spójną indentacją, końcami linii przed każdą klauzulą i jednolitą wielkością keywordów. Tryb minify robi odwrotnie — zgniata wszystko do jednej linii do osadzenia w kodzie albo skryptach. Całość działa w przeglądarce; query nigdy nie opuszczają strony.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Reformatowanie query skopiowanej z loga, ORM-a albo wiadomości na czacie w coś diff-owalnego i review-owalnego.</li>
+  <li>Normalizacja konwencji zespołu (UPPERCASE keywordy, 2-spacjowe wcięcie) przed commitem skryptu migracji.</li>
+  <li>Zgniatanie długiej pretty-printed query w jedną linię, żeby zmieściła się w configu YAML albo argumencie CLI.</li>
+  <li>Wyłapywanie strukturalnych problemów — niezbalansowanych nawiasów, brakującego przecinka w SELECT liście albo JOIN-a bez ON-a — które są oczywiste, gdy query jest wcięta.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Formatter jest strukturalny, nie semantyczny.</strong> Nie powie ci, czy query to poprawny SQL, tylko jak wciąć tokeny, które widzi. Błąd składniowy w wejściu staje się błędem składniowym w wyjściu.</li>
+  <li><strong>Keywordy specyficzne dla dialektu się różnią.</strong> <code>ILIKE</code>, <code>RETURNING</code>, <code>LATERAL</code> to Postgres; <code>STRAIGHT_JOIN</code>, <code>SQL_CALC_FOUND_ROWS</code> to MySQL. Wybierz właściwy dialekt, bo inaczej te słowa nie zostaną rozpoznane jako keywordy.</li>
+  <li><strong>Literały stringów są zachowywane dosłownie.</strong> Wieloliniowy string w pojedynczych cudzysłowach trzyma swoje końce linii; formatter nie reflowuje tekstu wewnątrz <code>'...'</code>.</li>
+  <li><strong>Komentarze przeżywają, ale lądują na własnych liniach.</strong> Jeśli miałeś <code>-- inline komentarz</code> w środku linii, przeniesie się na własną linię podczas pretty-printu.</li>
+  <li><strong>Minify wycina komentarze.</strong> Jeśli ich potrzebujesz, nie minifikuj.</li>
+  <li><strong>To nie linter.</strong> Do walidacji, egzekwowania stylu i sprawdzania dialektu w CI używaj prawdziwego parsera SQL (np. <code>sqlfluff</code>).</li>
 </ul>
 """,
     },

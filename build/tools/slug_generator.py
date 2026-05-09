@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Générateur de Slug", "tagline": "Transformez tout titre en slug URL propre — translittère les accents, supprime la ponctuation, joint avec tirets.", "description": "Générateur de slug URL gratuit. Minuscules, translittération des accents (à → a, ñ → n), suppression de la ponctuation et jonction des mots."},
         "it": {"name": "Generatore di Slug", "tagline": "Trasforma qualsiasi titolo in uno slug URL pulito — translittera accenti, rimuove punteggiatura, unisce con trattini.", "description": "Generatore di slug URL gratuito. Minuscole, traslitterazione di accenti (à → a, ñ → n), rimozione punteggiatura e unione parole con separatore."},
         "pt": {"name": "Gerador de Slug", "tagline": "Transforme qualquer título em um slug de URL limpo — translitera acentos, remove pontuação, une com hifens.", "description": "Gerador de slug de URL gratuito. Coloca em minúsculas, translitera caracteres acentuados (à → a, ñ → n), remove pontuação e une as palavras com o separador escolhido. Remoção opcional de stop words."},
+        "pl": {"name": "Generator Slugów", "tagline": "Zamień dowolny tytuł w czysty slug URL — translikuje znaki diakrytyczne, wycina interpunkcję, łączy myślnikami.", "description": "Darmowy online generator slugów URL. Zamienia na małe litery, translikuje znaki diakrytyczne (à → a, ń → n, ż → z), wycina interpunkcję i łączy słowa wybranym separatorem. Opcjonalne usuwanie stop words."},
     },
     "body": """
 <div class="tool-card">
@@ -158,6 +159,36 @@ document.addEventListener('DOMContentLoaded', sgRun);
   <li><strong>Truncamento pode mudar o sentido.</strong> "introduction-to-rust-programming" cortado em 20 caracteres vira "introduction-to-rust" — ok; cortado em 16 vira "introduction-to" — claramente pior. Defina o limite à mão para conteúdo onde a parte final importa.</li>
   <li><strong>Slugs não são únicos.</strong> Dois títulos diferentes podem virar o mesmo slug ("Café" e "Cafe" ambos → <code>cafe</code>). Se você usa slugs como chave de URL, anexe um ID curto ou um sufixo em caso de colisão.</li>
   <li><strong>Não mude slugs que já estão no ar.</strong> Uma vez que a URL está publicada e indexada, regerar o slug quebra links e SEO. Se o título muda, mantenha o slug antigo ou configure um redirect 301.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>URL slug to czytelny dla człowieka ostatni segment URL-a — <code>/blog/the-quick-brown-fox</code> zamiast <code>/blog/post-4827</code>. Dobre slugi są małymi literami, łączone myślnikami, tylko ASCII i wystarczająco krótkie, by przeczytać na pierwszy rzut oka, ale generowanie ich z prawdziwych tytułów pełnych diakrytyków, interpunkcji i emoji jest upierdliwe. To narzędzie translikuje diakrytyki, wycina śmieci, łączy wybranym separatorem i ucina na czystej granicy, więc wyjście jest bezpieczne, by wkleić wprost do route'a albo nazwy pliku.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Generowanie URL-i <code>/blog/&lt;slug&gt;</code> z tytułów artykułów — szczególnie gdy tytuły zawierają znaki diakrytyczne (à, ń, ø) albo interpunkcję (dwukropki, nawiasy, pauzy).</li>
+  <li>Tworzenie bezpiecznych nazw plików z nazw podanych przez użytkownika — uploady, eksporty, generowane raporty.</li>
+  <li>Budowa stabilnych identyfikatorów dla tagów, kategorii albo anchorów (<code>#getting-started</code>) z czytelnych etykiet.</li>
+  <li>Hurtowa konwersja listy nagłówków na kebab-case w buildzie statycznej strony.</li>
+</ul>
+
+<h3>Jak działa konwersja</h3>
+<ol>
+  <li>NFD-normalizuje Unicode i wycina łączące diakrytyki (<code>café → cafe</code>, <code>żółć → zolc</code>).</li>
+  <li>Mapuje typowe europejskie ligatury i znaki specjalne: <code>ß → ss</code>, <code>æ → ae</code>, <code>ø → o</code>, <code>Ł → L</code>, plus kilka symboli walutowych/matematycznych (<code>€ → eur</code>, <code>& → and</code>).</li>
+  <li>Zamienia każdy ciąg nie-alfanumeryczny na pojedynczą spację.</li>
+  <li>Opcjonalnie wycina typowe angielskie stop words (<em>a, an, and, the, of, to, …</em>).</li>
+  <li>Zamienia na małe litery (albo zachowuje wielkość), łączy twoim separatorem i ucina na limicie bez zostawiania wiszącego separatora.</li>
+</ol>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Skrypty nielatyńskie wypadają.</strong> Wycinanie diakrytyków radzi sobie z à/ń/ø, ale nie zromanizuje chińskiego, japońskiego, cyrylicy, arabskiego ani hebrajskiego znak po znaku — te wymagają tabel zależnych od języka (Hanyu Pinyin, ICU transliteration), które są celowo poza zakresem. Te znaki znikają po kroku wycinania.</li>
+  <li><strong>Usuwanie stop words działa tylko po angielsku.</strong> "El gato negro" nie traci <em>el</em>; "Le chat noir" nie traci <em>le</em>. Wyłącz toggle dla tytułów nieangielskich.</li>
+  <li><strong>Ucinanie może zmienić znaczenie.</strong> "introduction-to-rust-programming" obcięte do 20 znaków staje się "introduction-to-rust" — OK; obcięte do 16 to "introduction-to" — wyraźnie gorzej. Ustaw limit ręcznie dla treści, gdzie ogon ma znaczenie.</li>
+  <li><strong>Slugi nie są unikalne.</strong> Dwa różne tytuły mogą zwinąć się do tego samego slugu ("Café" i "Cafe" oba → <code>cafe</code>). Jeśli używasz slugów jako kluczy URL, dokleej krótkie ID albo suffix przy kolizji.</li>
+  <li><strong>Nie zmieniaj slugów już opublikowanych.</strong> Gdy URL jest live i zindeksowany, regenerowanie slugu psuje linki i SEO. Jeśli tytuł się zmienia, zachowaj stary slug albo ustaw redirect 301.</li>
 </ul>
 """,
     },

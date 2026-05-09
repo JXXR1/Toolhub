@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Générateur de Lorem Ipsum", "tagline": "Générez des paragraphes, phrases, mots ou éléments de liste en latin de remplissage. Longueur et phrase d'ouverture configurables.", "description": "Générateur de Lorem Ipsum gratuit. Paragraphes, phrases, mots ou listes HTML pour maquettes et designs."},
         "it": {"name": "Generatore di Lorem Ipsum", "tagline": "Genera paragrafi, frasi, parole o voci di elenco di testo segnaposto in latino. Lunghezza e frase iniziale configurabili.", "description": "Generatore di Lorem Ipsum gratuito. Paragrafi, frasi, parole o liste HTML per mockup e progetti grafici."},
         "pt": {"name": "Gerador de Lorem Ipsum", "tagline": "Gere parágrafos, frases, palavras ou itens de lista de texto placeholder em latim. Tamanho e frase inicial configuráveis.", "description": "Gerador de Lorem Ipsum gratuito. Crie parágrafos, frases, palavras ou listas HTML para mockups e composições de design. Abertura clássica 'Lorem ipsum dolor sit amet…' opcional."},
+        "pl": {"name": "Generator Lorem Ipsum", "tagline": "Generuj akapity, zdania, słowa albo elementy listy tekstu placeholder po łacinie. Konfigurowalny rozmiar i fraza otwierająca.", "description": "Darmowy generator Lorem Ipsum. Buduj akapity, zdania, słowa albo listy HTML do mockupów i komp designerskich. Opcjonalna klasyczna otwarka 'Lorem ipsum dolor sit amet…'."},
     },
     "body": """
 <div class="tool-card">
@@ -152,6 +153,26 @@ document.addEventListener('DOMContentLoaded', liRun);
   <li><strong>Texto real é mais curto ou mais longo que o placeholder.</strong> Títulos reais são mais diretos. Corpo de texto real varia muito. Um layout que parece equilibrado com lorem ipsum pode desmoronar com o conteúdo de verdade; valide com texto real antes da aprovação.</li>
   <li><strong>Internacionalização revela o que o lorem esconde.</strong> Designs testados apenas com preenchimento latino quebram com palavras compostas em alemão ou layouts da direita para a esquerda em árabe. Teste com placeholders multilíngues em designs com i18n.</li>
   <li><strong>Convenção importa.</strong> O primeiro parágrafo tradicionalmente começa com "Lorem ipsum dolor sit amet…" — designers reconhecem isso como placeholder. Desativar pode fazer alguém esquecer de fazer a troca.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Lorem ipsum to zniekształcona łacina wywodząca się z <em>De Finibus Bonorum et Malorum</em> Cycerona (45 p.n.e.), używana jako wypełniacz od XVI wieku, bo częstotliwości znaków i długości słów z grubsza odpowiadają realnej prozie, ale tekst nie jest na tyle czytelny, żeby rozpraszać. Designerzy używają go po to, by mózg przetwarzał bloki tekstu jako <em>kształt</em>, a nie <em>treść</em> — dokładnie tego chcesz, oceniając typografię, układ albo rytm strony.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li><strong>Mockupy</strong> — placeholder do "słowa nie mają znaczenia, ważny jest layout".</li>
+  <li><strong>Kompozycje designerskie</strong> — testowanie zawijania, długości linii, font fallbacków przy różnych rozmiarach.</li>
+  <li><strong>Test CMS / szablonów</strong> — wypełnianie pól zanim wpadnie prawdziwa treść.</li>
+  <li><strong>Planowanie pojemności</strong> — sanity check, jak karta / preview / wynik wyszukiwania radzi sobie z długimi treściami.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Nie wysyłaj go na produkcję.</strong> Lorem ipsum był publikowany live więcej niż raz, bo nikt nie zamienił go na prawdziwą treść.</li>
+  <li><strong>Prawdziwa treść jest krótsza albo dłuższa od placeholdera.</strong> Prawdziwe nagłówki są bardziej dosadne. Prawdziwy korpus tekstu szaleje. Layout, który wygląda zrównoważenie z lorem ipsum, może się rozsypać przy faktycznej treści; weryfikuj na prawdziwym tekście przed sign-offem.</li>
+  <li><strong>Internacjonalizacja ujawnia to, co lorem ukrywa.</strong> Designy testowane tylko z łacińskim wypełniaczem często padają przy niemieckich złożeniach albo arabskich layoutach right-to-left. Testuj wielojęzycznymi placeholderami w designach świadomych i18n.</li>
+  <li><strong>Konwencja ma znaczenie.</strong> Pierwszy akapit tradycyjnie zaczyna się "Lorem ipsum dolor sit amet…" — designerzy rozpoznają to jako placeholder. Wyłączenie tego może oznaczać, że ktoś przeoczy podmianę.</li>
 </ul>
 """,
     },

@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Analyseur d'URL", "tagline": "Collez une URL — protocole, hôte, port, chemin, paramètres de requête (décodés), fragment et origine.", "description": "Analyseur d'URL gratuit. Décode toute URL en protocole, hôte, port, chemin, query, fragment et origine ; paramètres décodés. 100% dans le navigateur."},
         "it": {"name": "Analizzatore URL", "tagline": "Incolla un URL — protocollo, host, porta, percorso, parametri query (decodificati), hash e origine.", "description": "Analizzatore URL gratuito. Decodifica qualsiasi URL in protocollo, host, porta, percorso, query, hash e origine; parametri decodificati. 100% nel browser."},
         "pt": {"name": "Parser de URL", "tagline": "Cole qualquer URL — veja protocol, host, porta, path, query parameters (decodificados), hash e origin organizados.", "description": "Parser de URL online gratuito. Decodifica qualquer URL em protocol, host, porta, path, query string, hash e origin, com cada query parameter exibido decodificado. Roda inteiramente no seu navegador."},
+        "pl": {"name": "Parser URL", "tagline": "Wklej dowolny URL — zobacz protocol, host, port, path, query parameters (zdekodowane), hash i origin rozłożone na części.", "description": "Darmowy online parser URL. Dekoduje dowolny URL na protocol, host, port, path, query string, hash i origin, z każdym query parameterem wyświetlonym zdekodowanym. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -226,6 +227,29 @@ document.addEventListener('DOMContentLoaded', upRun);
 <li><strong>Punycode negli hostname.</strong> Visualizzazione browser-dipendente.</li>
 <li><strong>Origin può essere "null"</strong> con file://, data:, sandbox.</li>
 <li><strong>Parsing ≠ validazione.</strong></li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>URL to ustrukturyzowany string z siedmioma jasno zdefiniowanymi częściami (scheme, authority, host, port, path, query, fragment), który widzisz jako jedną bryłę. Gdy coś jest nie tak — zły parametr, niespodziewany port, dodatkowy zakodowany znak — znacznie łatwiej to wypatrzeć w sparsowanej tabeli niż w surowym stringu. To narzędzie używa natywnego obiektu <code>URL</code> przeglądarki, więc parse dokładnie odpowiada temu, co widzi JavaScript, a potem wyciąga każdy query parameter, żeby zdekodowane wartości były widoczne obok formy raw.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Debug callback URL OAuth, gdzie <code>state</code> albo <code>code</code> wygląda źle.</li>
+  <li>Inspekcja URL-a trackingowego (UTM tagi, click-tokeny) i widzenie faktycznych wartości zamiast zakodowanej bryły.</li>
+  <li>Potwierdzenie, że URL webhooka parsuje się tak, jak oczekuje serwis odbiorczy — w szczególności path i ewentualna query.</li>
+  <li>Sprawdzenie, dlaczego deep link działa w jednej apce, a w drugiej nie (port? scheme? authority?).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Powtórzone klucze query są realne.</strong> <code>?a=1&amp;a=2</code> to dwie wartości dla <code>a</code>; narzędzia czytające tylko pierwszą gubią dane. Parser pokazuje wszystkie wartości per klucz.</li>
+  <li><strong>Fragment nigdy nie dociera do serwera.</strong> Wszystko po <code>#</code> zostaje w przeglądarce. Jeśli twój backend nie widzi danych, które wsadziłeś w URL, sprawdź, czy aby nie są w fragmencie.</li>
+  <li><strong>Encoding ma znaczenie.</strong> <code>%20</code> w wartości query dekoduje się do spacji; <code>+</code> w wartości query <em>też</em> dekoduje się do spacji (wg <code>application/x-www-form-urlencoded</code>). Przeglądarkowy <code>URL.searchParams</code> obsługuje obie.</li>
+  <li><strong>Domyślne porty nie pojawiają się w <code>port</code>.</strong> URL typu <code>https://example.com/</code> ma puste <code>port</code> (domyślne 443 jest dorozumiane).</li>
+  <li><strong>Hostname'y w Punycode.</strong> <code>example.中国</code> jest wewnętrznie trzymane jako <code>xn--fiqs8s</code>; <code>hostname</code> może pokazać formę ASCII, zależnie od przeglądarki.</li>
+  <li><strong>Origin bywa "null".</strong> Dla <code>file://</code>, <code>data:</code> albo sandboxowanych kontekstów origin jest opaque.</li>
+  <li><strong>To parsowanie, nie walidacja.</strong> URL może parsować się czysto i dalej być zły dla twojej aplikacji (np. zły host, brakujący path).</li>
 </ul>
 """,
     },

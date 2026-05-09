@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Générateur Box Shadow CSS", "tagline": "Créez des ombres CSS simples ou multi-couches visuellement. Réglez offset, blur, spread, couleur, copiez le CSS.", "description": "Générateur gratuit de box-shadow CSS. Empilez plusieurs ombres, basculez inset, affinez blur et spread, copiez le CSS en un clic."},
         "it": {"name": "Generatore Box Shadow CSS", "tagline": "Crea ombre CSS singole o multi-livello visualmente. Regola offset, blur, spread, colore e copia il CSS.", "description": "Generatore gratuito di box-shadow CSS. Sovrapponi più ombre, alterna inset, regola blur e spread, copia CSS pronto in un clic."},
         "pt": {"name": "Gerador de Box Shadow CSS", "tagline": "Crie sombras CSS de uma ou várias camadas visualmente. Ajuste offset, blur, spread, cor e copie o CSS.", "description": "Gerador gratuito de box-shadow CSS. Empilhe várias sombras, alterne inset, ajuste blur e spread, copie CSS pronto para produção em um clique."},
+        "pl": {"name": "Generator CSS Box Shadow", "tagline": "Buduj jedno- lub wielowarstwowe cienie CSS wizualnie. Dostosuj offset, blur, spread, kolor i kopiuj CSS.", "description": "Darmowy generator box-shadow CSS. Stackuj wiele cieni dla realistycznej elewacji, włączaj inset, dostrajaj blur i spread, kopiuj produkcyjny CSS jednym kliknięciem."},
     },
     "body": """
 <div class="tool-card">
@@ -168,6 +169,38 @@ document.addEventListener('DOMContentLoaded', () => { bsRender(); bsRun(); });
   <li><strong>Sombra em fundo transparente.</strong> Se o box não tem <code>background</code>, a sombra aparece através do próprio box — geralmente surpreendente.</li>
   <li><strong>Performance:</strong> blur muito grande em muitos elementos pode pesar em mobile de baixo desempenho. Teste num device real antes de enviar glows chiques.</li>
   <li><strong>Dark mode.</strong> Sombras escuras sobre escuro praticamente somem; considere uma borda interna brilhante ou uma sombra com tom claro em temas escuros.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>CSS-owy <code>box-shadow</code> to koń roboczy do dodawania głębi — drop shadows na kartach, podświetlenia przycisków, focus ringi, glow, efekty neonowe, nawet udawane 3D. Składnia (<code>x y blur spread kolor</code>, opcjonalnie <code>inset</code>, kilka cieni rozdzielonych przecinkami) jest łatwa do czytania, ale upierdliwa do tweakowania na ślepo. To narzędzie daje suwaki do każdej wartości i podgląd na żywo, plus presety pasujące do typowych elewacji w design systemach.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Projektowanie elewacji karty albo modala, która nie wygląda "tanio i ostro".</li>
+  <li>Zbudowanie stylu focus ring dla dostępności (np. 2px outline glow).</li>
+  <li>Stworzenie efektu neon albo glow dla głównego CTA.</li>
+  <li>Replikacja tokenów elewacji Material Design albo w stylu Apple do design systemu.</li>
+  <li>Sztuczna głębia "inset" dla efektu wciśniętego przycisku albo wgłębienia karty.</li>
+</ul>
+
+<h3>Co robi każda wartość</h3>
+<ul>
+  <li><strong>Offset X / Y</strong> — kierunek, w którym pada cień (Y dodatni = w dół). Dla efektu "światło z góry" używaj Y > 0 i małego albo zerowego X.</li>
+  <li><strong>Blur</strong> — jak miękka jest krawędź. 0 = ostra; większy = łagodniejsze rozmycie.</li>
+  <li><strong>Spread</strong> — o ile cień jest większy (albo mniejszy, jeśli ujemny) od samego boxa.</li>
+  <li><strong>Kolor i alpha</strong> — zwykle czarny z częściowym alpha albo kolor marki. Czysty <code>#000</code> wygląda zbyt ciężko; spróbuj <code>#0003</code> do <code>#0002</code> dla naturalnej głębi.</li>
+  <li><strong>Inset</strong> — odwraca cień do środka, jak wgłębienie.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Jeden duży cień wygląda sztucznie.</strong> Prawdziwa elewacja to dwie lub trzy nałożone warstwy: ciasny, ciemny, blisko + szeroki, miękki, daleko. Preset "Material elevation" pokazuje schemat.</li>
+  <li><strong>Czysta czerń jest za ciężka.</strong> Używaj ~10–25% alpha czerni, albo podbarw cień kolorem dopełniającym powierzchnię, żeby dodać ciepła.</li>
+  <li><strong>Cienie renderują się poza boxem.</strong> Jeśli kontener ma <code>overflow: hidden</code>, cień jest obcinany. Użyj wrappera albo przenieś <code>overflow</code> na dziecko.</li>
+  <li><strong>Cień na przezroczystym tle.</strong> Jeśli box nie ma <code>background</code>, cień przebija przez sam box — zwykle zaskakuje.</li>
+  <li><strong>Wydajność:</strong> bardzo duży blur na wielu elementach potrafi obciążyć słabsze mobilki. Testuj na realnym sprzęcie przed wypuszczeniem fancy glowów.</li>
+  <li><strong>Dark mode.</strong> Subtelne ciemne cienie na ciemnym tle prawie znikają; rozważ jasny inner border albo cień z jasnym podtonem w ciemnych motywach.</li>
 </ul>
 """,
     },

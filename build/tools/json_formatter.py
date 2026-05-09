@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Formata, valida e minifica JSON na hora. Erros destacados com linha e coluna.",
             "description": "Formatador e validador JSON grátis online. Pretty-print, minify e checagem da sintaxe JSON com mensagens de erro precisas.",
         },
+        "pl": {
+            "name": "Formatter JSON",
+            "tagline": "Formatuj, waliduj i minifikuj JSON od ręki. Błędy podświetlone z numerem linii i kolumny.",
+            "description": "Darmowy online formatter i walidator JSON. Pretty-print, minify i sprawdzanie składni JSON z precyzyjnymi komunikatami błędów.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -151,6 +156,26 @@ function jfValidate(){
   <li><strong>Smart quotes vindas de copy-paste.</strong> Editores de texto e apps de chat adoram "ajudar" trocando <code>"</code> por <code>"</code> / <code>"</code>. Esses não são delimitadores JSON válidos.</li>
   <li><strong>JSON não tem comentários.</strong> Se seu "JSON" tem <code>//</code> ou <code>/* */</code>, na verdade é JSONC (usado em config do VS Code) — remova antes de fazer parse.</li>
   <li><strong>Números maiores que 2⁵³.</strong> O JavaScript não consegue representar inteiros acima de <code>9007199254740992</code> com exatidão. IDs snowflake do Twitter e similares devem vir entre aspas como strings.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>JSON podróżuje zminifikowany — każdy bajt się liczy, gdy odpowiedź API leci po sieci. Ale zminifikowany JSON jest nieczytelny. To narzędzie robi round-trip przez natywny <code>JSON.parse</code> / <code>JSON.stringify</code> przeglądarki, żeby wyprodukować wcięte, kopiowalne wyjście, zwalidować strukturę albo wyciąć białe znaki z powrotem. Nic nie jest wysyłane; wszystko dzieje się na stronie.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Wklejenie zminifikowanej odpowiedzi API i dostanie czegoś, co da się przeczytać po ludzku.</li>
+  <li>Łapanie błędów składniowych — końcowych przecinków, kluczy bez cudzysłowu, smart quotes — z dokładnym numerem linii/kolumny, gdzie parser się wywalił.</li>
+  <li>Wycinanie białych znaków przed wklejeniem JSON-a w kontekst, gdzie rozmiar ma znaczenie (parametry URL, zmienne środowiskowe, pliki configa).</li>
+  <li>Potwierdzenie, że ręcznie pisany JSON jest poprawny, zanim wpuścisz go w inne narzędzie.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>JSON ≠ object literal w JavaScripcie.</strong> Klucze muszą być w podwójnych cudzysłowach. Pojedyncze cudzysłowy, klucze bez cudzysłowu i końcowe przecinki — wszystko padnie. Jeśli masz JS-owe object literale, najpierw przepuść je przez konwerter.</li>
+  <li><strong>Smart quotes z copy-paste.</strong> Edytory tekstu i czaty uwielbiają "pomocnie" zamieniać <code>"</code> na <code>"</code> / <code>"</code>. To nie są poprawne delimitery JSON.</li>
+  <li><strong>JSON nie ma komentarzy.</strong> Jeśli twój "JSON" ma <code>//</code> albo <code>/* */</code>, to faktycznie JSONC (używany w configu VS Code) — wytnij je przed parsem.</li>
+  <li><strong>Liczby większe niż 2⁵³.</strong> JavaScript nie potrafi dokładnie reprezentować integerów powyżej <code>9007199254740992</code>. Snowflake'i z Twittera i podobne powinny być cytowane jako stringi.</li>
 </ul>
 """,
     },

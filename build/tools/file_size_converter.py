@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Convertisseur de Taille de Fichier", "tagline": "Convertissez entre octets, Ko, Mo, Go, To et les binaires Kio, Mio, Gio, Tio. Décimal vs binaire clarifié.", "description": "Convertisseur gratuit de taille de fichier. Convertissez n'importe quel nombre d'octets entre unités décimales (B, KB, MB, GB, TB) et unités binaires IEC (KiB, MiB, GiB, TiB)."},
         "it": {"name": "Convertitore Dimensione File", "tagline": "Converti tra byte, KB, MB, GB, TB e i binari KiB, MiB, GiB, TiB. Decimale vs binario chiari.", "description": "Convertitore gratuito di dimensioni file. Converti qualsiasi quantità di byte tra unità decimali (B, KB, MB, GB, TB) e unità binarie IEC (KiB, MiB, GiB, TiB)."},
         "pt": {"name": "Conversor de Tamanho de Arquivo", "tagline": "Converta entre bytes, KB, MB, GB, TB e os binários KiB, MiB, GiB, TiB. Decimal vs binário bem distinguidos.", "description": "Conversor gratuito de unidades de tamanho de arquivo. Converta qualquer quantidade de bytes entre unidades decimais (B, KB, MB, GB, TB, PB) e unidades binárias IEC (KiB, MiB, GiB, TiB, PiB). Veja os dois lado a lado, com a distinção exata."},
+        "pl": {"name": "Konwerter Rozmiaru Plików", "tagline": "Konwertuj między bajtami, KB, MB, GB, TB a binarnymi KiB, MiB, GiB, TiB. Decimal vs binary jasno rozdzielone.", "description": "Darmowy konwerter jednostek rozmiaru pliku. Przelicz dowolną liczbę bajtów między jednostkami dziesiętnymi (B, KB, MB, GB, TB, PB) i binarnymi IEC (KiB, MiB, GiB, TiB, PiB). Zobacz obie naraz, z dokładnym rozróżnieniem."},
     },
     "body": """
 <div class="tool-card">
@@ -237,6 +238,33 @@ document.addEventListener('DOMContentLoaded', fsRun);
 <li><strong>La RAM usa il binario.</strong> "8 GB RAM" è quasi sempre 8 GiB.</li>
 <li><strong>La rete è in bit.</strong> 100 Mbps = 12,5 MB/s di picco.</li>
 <li><strong>Strumenti incoerenti.</strong> Esplora risorse Windows mostra binario con etichetta KB.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>"Ile to jest 4 GB?" zależy od tego, kto pyta. Producenci dysków, inżynierowie sieciowi i standardy zgodne z SI rozumieją 4 000 000 000 bajtów (potęgi 1000). Systemy operacyjne, moduły RAM i większość menedżerów plików historycznie rozumie 4 294 967 296 bajtów (potęgi 1024). Te dwie liczby różnią się o 7% na poziomie gigabajta i 10% na poziomie terabajta — wystarczająco, żeby poczuć się oszukanym, gdy dysk "1 TB" pokazuje się jako "931 GiB" w komputerze. To narzędzie konwertuje między oboma systemami, żebyś zawsze wiedział, na co patrzysz.</p>
+
+<h3>Dwa systemy</h3>
+<ul>
+  <li><strong>SI / dziesiętny</strong> — KB, MB, GB, TB. <code>1 KB = 1000 bajtów</code>. Używane przez producentów storage'u, prędkości sieciowe (Mbps, Gbps) i standard SI od 1960.</li>
+  <li><strong>IEC / binarny</strong> — KiB, MiB, GiB, TiB. <code>1 KiB = 1024 bajty</code>. IEC wprowadziło je w 1998, żeby ujednoznacznić. Linuksowy <code>du -h</code> ich używa, podobnie macOS Finder dla pamięci.</li>
+</ul>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Wymiarowanie backupu, uploadu albo Docker image i dopasowanie do tego, co raportuje narzędzie.</li>
+  <li>Konwersja "150 Mbps" prędkości pobierania na MB/s (podziel przez 8 — bity na bajty).</li>
+  <li>Estymacja kosztu storage'u w chmurze, gdy jeden provider liczy w GB, a drugi w GiB.</li>
+  <li>Sprawdzenie, ile naprawdę zajmuje "1 GB" maila na dysku.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Dyski twarde używają systemu dziesiętnego.</strong> Dysk "1 TB" mieści 1 000 000 000 000 bajtów ≈ 931 GiB. OS nie kłamie — marketing używa mniejszej jednostki.</li>
+  <li><strong>RAM używa binarnego.</strong> "8 GB RAM" to prawie zawsze 8 GiB (8 589 934 592 bajty). RAM jest budowany w potęgach dwójki.</li>
+  <li><strong>Prędkość sieci jest w bitach, nie bajtach.</strong> 100 Mbps = 100 megabitów na sekundę = 12,5 MB/s w szczycie. Twoja "100 Mbit fiber" nie ściągnie pliku 100 MB w sekundę.</li>
+  <li><strong>Niektóre narzędzia są niespójne.</strong> macOS Finder przeszedł z binarnego (z labelami KB) na dziesiętny w 10.6 i tam głównie został. Eksplorator Windows nadal używa binarnego z labelami KB — myląco, ale niezmiennie.</li>
+  <li><strong><code>Content-Length</code> przeglądarek jest w bajtach.</strong> Zawsze dokładny, bez dwuznaczności SI/IEC.</li>
 </ul>
 """,
     },

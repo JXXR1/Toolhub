@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konwerter Systemów Liczbowych — Toolhub</title>
+  <meta name="description" content="Darmowy online konwerter systemów liczbowych. Konwertuj między binary, octal, decimal, hex i dowolną bazą 2-36. Obsługuje liczby ujemne i duże integery przez BigInt.">
+  <meta property="og:title" content="Konwerter Systemów Liczbowych — Toolhub">
+  <meta property="og:description" content="Darmowy online konwerter systemów liczbowych. Konwertuj między binary, octal, decimal, hex i dowolną bazą 2-36. Obsługuje liczby ujemne i duże integery przez BigInt.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/number-base-converter/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/number-base-converter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/number-base-converter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/number-base-converter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/number-base-converter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/number-base-converter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/number-base-converter/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/number-base-converter/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/number-base-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/number-base-converter/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/number-base-converter/#tool",
+        "name": "Konwerter Systemów Liczbowych",
+        "description": "Darmowy online konwerter systemów liczbowych. Konwertuj między binary, octal, decimal, hex i dowolną bazą 2-36. Obsługuje liczby ujemne i duże integery przez BigInt.",
+        "url": "https://toolhub.software/pl/number-base-converter/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["binary", "hex", "octal", "decimal", "base", "convert", "number"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Konwerter Systemów Liczbowych", "item": "https://toolhub.software/pl/number-base-converter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/number-base-converter/'; else location.href='/number-base-converter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Konwerter Systemów Liczbowych</div>
+    <h1>Konwerter Systemów Liczbowych</h1>
+    <p class="tagline">Konwertuj między binarnym, oktalnym, dziesiętnym, szesnastkowym i dowolną bazą od 2 do 36.</p>
+    
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Wejście</label>
+      <input type="text" id="nb-in" oninput="nbRun()" placeholder="42" value="42" style="font-family:ui-monospace,monospace">
+    </div>
+    <div>
+      <label>Z (base)</label>
+      <select id="nb-from" onchange="nbRun()">
+        <option value="2">2 — binary</option>
+        <option value="8">8 — octal</option>
+        <option value="10" selected>10 — decimal</option>
+        <option value="16">16 — hexadecimal</option>
+        <option value="36">36</option>
+        <option value="other">Other (2-36)…</option>
+      </select>
+      <input type="number" id="nb-from-other" min="2" max="36" placeholder="custom base" oninput="nbRun()" style="display:none;margin-top:0.4rem">
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>All bases</label>
+  <table>
+    <tr><th style="width:140px">Base</th><th>Value</th></tr>
+    <tr><td>2 (binary)</td><td><code id="nb-bin">…</code></td></tr>
+    <tr><td>8 (octal)</td><td><code id="nb-oct">…</code></td></tr>
+    <tr><td>10 (decimal)</td><td><code id="nb-dec">…</code></td></tr>
+    <tr><td>16 (hex)</td><td><code id="nb-hex">…</code></td></tr>
+    <tr><td>32</td><td><code id="nb-32">…</code></td></tr>
+    <tr><td>36</td><td><code id="nb-36">…</code></td></tr>
+  </table>
+  <div class="meta" id="nb-meta"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Do czego to służy?</h2>
+<p>Liczby są tą samą liczbą niezależnie od bazy — <code>255</code>, <code>0xff</code>, <code>0b11111111</code> i <code>0o377</code> to to samo. Ale w której bazie czytasz albo piszesz, ma znaczenie, gdy tłumaczysz między layoutami pamięci, parsujesz kody kolorów, dekodujesz bit fieldy albo po prostu czytasz hex z debuggera. To narzędzie konwertuje między binary, octal, decimal, hex i dowolną bazą od 2 do 36, używając BigInt pod spodem, żebyś nie tracił precyzji na dużych liczbach.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Czytanie wartości hex ze stack trace i sprawdzanie, ile to dziesiętnie.</li>
+  <li>Konwersja koloru CSS <code>0xff8800</code> na trójkę RGB albo na odwrót.</li>
+  <li>Inspekcja bitmaski albo flagowego integera w binary, żeby zobaczyć, które bity są ustawione.</li>
+  <li>Tłumaczenie między krótkimi ID-kami w bazie 36 a dziesiętnymi licznikami.</li>
+</ul>
+
+<h3>Rozpoznawane prefiksy</h3>
+<ul>
+  <li>Hex: <code>0x</code>, <code>0X</code>, <code>#</code></li>
+  <li>Binary: <code>0b</code>, <code>0B</code></li>
+  <li>Octal: <code>0o</code>, <code>0O</code></li>
+  <li>Underscore do grupowania cyfr: <code>1_000_000</code></li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Liczby ujemne mają prefiks znaku, nie są w uzupełnieniu do dwóch.</strong> <code>-128</code> jest pokazane jako <code>-10000000</code> w binary, nie <code>10000000</code>. Większość języków pokazuje tak samo dla integerów dowolnej precyzji.</li>
+  <li><strong>Duże liczby nie tracą tu precyzji.</strong> JS-owy <code>Number</code> ma kres w 2<sup>53</sup>; to narzędzie używa <code>BigInt</code>, więc 64-bitowe integery, duże hashe i wartości kryptograficzne robią dokładny round-trip.</li>
+  <li><strong>Nie myl bazy z wielkością liter.</strong> Litery base-16 mogą być wielkie albo małe; narzędzie akceptuje obie i emituje wielkie. Wyjścia base-32 / base-36 są małe z konwencji.</li>
+  <li><strong>Wiodące zera są usuwane.</strong> <code>0x000F</code> staje się <code>F</code>. Jeśli potrzebujesz hex stałej szerokości (np. do reprezentacji bajtów), dopadduj potem w swoim kodzie.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/base64-encoder/">Encoder / Decoder Base64</a> <a href="/pl/hash-generator/">Generator Hashy</a> <a href="/pl/uuid-generator/">Generator UUID</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+function nbValidate(s, base){
+  // Accept optional leading minus, but BigInt with arbitrary base needs custom parsing
+  if (!s) return null;
+  s = s.trim();
+  let neg = false;
+  if (s.startsWith('-')){ neg = true; s = s.slice(1); }
+  if (!s.length) return null;
+  // Strip leading 0x/0o/0b/# prefix lenience for base 10 input — only when base hints
+  if (base === 16 && (s.startsWith('0x') || s.startsWith('0X') || s.startsWith('#'))) s = s.replace(/^0x|^0X|^#/,'');
+  if (base === 2 && (s.startsWith('0b') || s.startsWith('0B'))) s = s.slice(2);
+  if (base === 8 && (s.startsWith('0o') || s.startsWith('0O'))) s = s.slice(2);
+  s = s.replace(/_/g, ''); // allow digit grouping with underscores
+  // Validate against alphabet
+  const alpha = '0123456789abcdefghijklmnopqrstuvwxyz'.slice(0, base);
+  for (const ch of s.toLowerCase()){
+    if (!alpha.includes(ch)) throw new Error('Invalid digit `' + ch + '` for base ' + base);
+  }
+  let val = 0n;
+  for (const ch of s.toLowerCase()) val = val * BigInt(base) + BigInt(alpha.indexOf(ch));
+  return neg ? -val : val;
+}
+
+function nbToBase(big, base){
+  if (big === 0n) return '0';
+  const neg = big < 0n;
+  let n = neg ? -big : big;
+  const alpha = '0123456789abcdefghijklmnopqrstuvwxyz';
+  let out = '';
+  while (n > 0n){
+    out = alpha[Number(n % BigInt(base))] + out;
+    n = n / BigInt(base);
+  }
+  return (neg ? '-' : '') + out;
+}
+
+function nbRun(){
+  const sel = document.getElementById('nb-from');
+  const otherInput = document.getElementById('nb-from-other');
+  otherInput.style.display = sel.value === 'other' ? 'block' : 'none';
+  let base = sel.value === 'other' ? parseInt(otherInput.value, 10) : parseInt(sel.value, 10);
+  const inp = document.getElementById('nb-in').value;
+  const meta = document.getElementById('nb-meta');
+  const ids = ['nb-bin','nb-oct','nb-dec','nb-hex','nb-32','nb-36'];
+  if (!base || base < 2 || base > 36){ meta.textContent = 'Pick a base between 2 and 36'; return; }
+  try {
+    const big = nbValidate(inp, base);
+    if (big === null){ ids.forEach(id => document.getElementById(id).textContent = '—'); meta.textContent = ''; return; }
+    document.getElementById('nb-bin').textContent = nbToBase(big, 2);
+    document.getElementById('nb-oct').textContent = nbToBase(big, 8);
+    document.getElementById('nb-dec').textContent = big.toString();
+    document.getElementById('nb-hex').textContent = nbToBase(big, 16).toUpperCase();
+    document.getElementById('nb-32').textContent = nbToBase(big, 32);
+    document.getElementById('nb-36').textContent = nbToBase(big, 36);
+    const bits = big < 0n ? (-big).toString(2).length + 1 : big.toString(2).length;
+    meta.textContent = bits + ' bits';
+  } catch(e){
+    meta.textContent = '✗ ' + e.message;
+    ids.forEach(id => document.getElementById(id).textContent = '—');
+  }
+}
+document.addEventListener('DOMContentLoaded', nbRun);
+</script>
+
+</body>
+</html>

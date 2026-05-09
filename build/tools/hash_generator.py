@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Générateur de Hash", "tagline": "Hachez du texte avec SHA-1, SHA-256, SHA-384 ou SHA-512 via WebCrypto. Calcul local — l'entrée ne quitte pas la page.", "description": "Générateur de hash gratuit. SHA-1, SHA-256, SHA-384, SHA-512 via WebCrypto. Sortie hex, tout dans votre navigateur."},
         "it": {"name": "Generatore di Hash", "tagline": "Genera hash SHA-1, SHA-256, SHA-384 o SHA-512 con WebCrypto. Calcolato localmente — l'input non lascia la pagina.", "description": "Generatore di hash gratuito. SHA-1, SHA-256, SHA-384, SHA-512 via WebCrypto. Output esadecimale, tutto nel browser."},
         "pt": {"name": "Gerador de Hash", "tagline": "Gere hash de texto com SHA-1, SHA-256, SHA-384 ou SHA-512 usando WebCrypto do browser. Calculado localmente — o input nunca sai da página.", "description": "Gerador de hash online gratuito. SHA-1, SHA-256, SHA-384, SHA-512 via WebCrypto. Saída em hex, fácil de copiar. Roda inteiramente no seu browser."},
+        "pl": {"name": "Generator Hashy", "tagline": "Hashuj tekst za pomocą SHA-1, SHA-256, SHA-384 lub SHA-512 używając WebCrypto przeglądarki. Liczone lokalnie — input nigdy nie opuszcza strony.", "description": "Darmowy online generator hashy. SHA-1, SHA-256, SHA-384, SHA-512 przez WebCrypto. Wyjście hex, łatwe do skopiowania. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -99,6 +100,26 @@ document.addEventListener('DOMContentLoaded', hRun);
   <li><strong>Não faça hash de senha com SHA-256 puro.</strong> SHA puro é rápido — isso ajuda atacantes a fazer brute-force. Use uma KDF lenta (Argon2id, bcrypt, scrypt) para armazenar senhas.</li>
   <li><strong>MD5 está intencionalmente ausente.</strong> Quebrado desde o início dos anos 2000. Onde quer que você "precise" de MD5, também precisa sinalizar uma revisão de segurança.</li>
   <li><strong>Espaço em branco importa.</strong> Uma quebra de linha no fim produz um hash diferente do mesmo texto sem ela. Compare a saída hex exatamente.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Kryptograficzny hash bierze dowolne wejście i produkuje odcisk palca o stałej długości. Dwa identyczne wejścia zawsze dają ten sam digest; zmiana jednego bitu zmienia digest całkowicie. Hashe leżą u podstaw weryfikacji integralności plików, content-addressable storage, podpisów cyfrowych i pipeline'ów do hashowania haseł (gdzie są łączone z wolną funkcją typu Argon2 albo bcrypt).</p>
+<p>Całe hashowanie tutaj używa <code>crypto.subtle.digest</code> z przeglądarki — tych samych prymitywów, które napędzają TLS. Twój input nigdy nie opuszcza strony.</p>
+
+<h3>Kiedy używać którego</h3>
+<ul>
+  <li><strong>SHA-256</strong> — sensowny default do weryfikacji integralności, content addressingu (Git, w stylu IPFS), kluczy HMAC i podpisów.</li>
+  <li><strong>SHA-384 / SHA-512</strong> — przydatny, gdy potrzebujesz szerszego digestu (tuning PBKDF2/HKDF, większe klucze HMAC, post-quantum margines).</li>
+  <li><strong>SHA-1</strong> — tylko do kompatybilności (Git object IDs, legacy checksum w CI). Nie używaj do granic bezpieczeństwa — praktyczne ataki kolizyjne istnieją od 2017.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Hashowanie to nie szyfrowanie.</strong> Hashe są jednokierunkowe; nie odzyskasz oryginału. Jeśli potrzebujesz poufności — szyfruj.</li>
+  <li><strong>Nie hashuj haseł czystym SHA-256.</strong> Czysty SHA jest szybki — to pomaga atakującym brute-force'ować. Do przechowywania haseł użyj wolnego KDF (Argon2id, bcrypt, scrypt).</li>
+  <li><strong>MD5 jest celowo nieobecny.</strong> Złamany od początku lat 2000. Wszędzie tam, gdzie "potrzebujesz" MD5, musisz też zgłosić review bezpieczeństwa.</li>
+  <li><strong>Białe znaki mają znaczenie.</strong> Końcowy newline daje inny hash niż ten sam tekst bez niego. Porównuj wyjście hex dokładnie.</li>
 </ul>
 """,
     },

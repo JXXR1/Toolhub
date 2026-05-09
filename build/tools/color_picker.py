@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Sélecteur de Couleur", "tagline": "Choisissez une couleur et voyez-la en HEX, RGB, RGBA, HSL, HSLA, HSV et CMJN. Ajustez l'opacité et copiez.", "description": "Sélecteur de couleur en ligne gratuit. HEX, RGB(A), HSL(A), HSV et CMJN avec aperçu et curseur d'opacité."},
         "it": {"name": "Selettore Colore", "tagline": "Scegli un colore e vedilo in HEX, RGB, RGBA, HSL, HSLA, HSV e CMYK. Regola l'opacità e copia.", "description": "Selettore colore online gratuito. HEX, RGB(A), HSL(A), HSV e CMYK con anteprima live e cursore opacità."},
         "pt": {"name": "Seletor de Cores", "tagline": "Escolha uma cor e veja na hora em HEX, RGB, RGBA, HSL, HSLA, HSV e CMYK. Ajuste a opacidade e copie qualquer valor.", "description": "Seletor de cores online gratuito. Converta entre HEX, RGB(A), HSL(A), HSV e CMYK com preview ao vivo, slider de opacidade e botões de copiar."},
+        "pl": {"name": "Color Picker", "tagline": "Wybierz kolor i zobacz go od razu w HEX, RGB, RGBA, HSL, HSLA, HSV i CMYK. Reguluj opacity i kopiuj dowolną wartość.", "description": "Darmowy color picker online. Konwertuj między HEX, RGB(A), HSL(A), HSV i CMYK z podglądem na żywo, suwakiem opacity i przyciskami kopiowania."},
     },
     "body": """
 <div class="tool-card">
@@ -144,6 +145,26 @@ document.addEventListener('DOMContentLoaded', cpRun);
   <li><strong>O hue do HSL é em graus.</strong> 0 = vermelho, 120 = verde, 240 = azul. O CSS também aceita <code>turn</code>, <code>rad</code>, <code>grad</code>, mas a saída aqui é em graus.</li>
   <li><strong>A conversão para CMYK é ingênua.</strong> Impressão de verdade precisa de um perfil ICC (sRGB → CMYK com rendering intent). A saída desta ferramenta serve para mockups de brand deck, não para arquivos prontos para a gráfica.</li>
   <li><strong>OKLCH e OKLAB</strong> (espaços modernos perceptualmente uniformes) não são mostrados aqui — são mais novos e ainda não amplamente suportados. Por enquanto fique com HSL/HSV para tooling de design system.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Wybierz kolor — albo wklej dowolną wartość HEX / <code>rgb()</code> / <code>hsl()</code> — i od razu zobacz go we wszystkich powszechnych notacjach: HEX (3- i 8-cyfrowy z alphą), RGB(A), HSL(A), HSV i CMYK. Przydaje się, gdy masz wartość w jednej przestrzeni i potrzebujesz w innej, gdy dopasowujesz kolor marki między CSS / narzędziami designerskimi / drukiem, albo gdy regulujesz opacity bez ślepego sprawdzania efektu.</p>
+
+<h3>Kiedy której przestrzeni używać</h3>
+<ul>
+  <li><strong>HEX / RGB</strong> — CSS, narzędzia designerskie, szablony maili. Wszędzie wspierane.</li>
+  <li><strong>HSL</strong> — czytelne palety. Tweakuj hue, saturation albo lightness niezależnie, bez dryfowania koloru po innych osiach.</li>
+  <li><strong>HSV</strong> — software designerski (Photoshop, Figma) do cieniowania; pasuje do tego, jak myśli o kolorze większość pickerów ("ten sam kolor, tylko jaśniejszy").</li>
+  <li><strong>CMYK</strong> — wyjście do druku. Tylko przybliżenie: ekrany są w RGB, a drukarki nie współdzielą jednego profilu kolorów.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Kodowanie alphy różni się przestrzenią.</strong> CSS wspiera <code>rgba()</code>, <code>hsla()</code> i 8-cyfrowy HEX (<code>#RRGGBBAA</code>). Starsze szablony maili i niektóre narzędzia projektowe nie ogarniają <code>#RRGGBBAA</code> — wracaj do <code>rgba()</code>.</li>
+  <li><strong>Hue w HSL jest w stopniach.</strong> 0 = czerwony, 120 = zielony, 240 = niebieski. CSS akceptuje też <code>turn</code>, <code>rad</code>, <code>grad</code>, ale tu wyjście jest w stopniach.</li>
+  <li><strong>Konwersja na CMYK jest naiwna.</strong> Prawdziwy druk wymaga profilu ICC (sRGB → CMYK z rendering intent). Wyjście tego narzędzia nadaje się do mockupów brand decka, nie do plików gotowych do druku offsetowego.</li>
+  <li><strong>OKLCH i OKLAB</strong> (nowoczesne przestrzenie percepcyjnie jednolite) nie są tu pokazane — są nowsze i jeszcze nie wszędzie wspierane. Na razie trzymaj się HSL/HSV w toolingu design systemowym.</li>
 </ul>
 """,
     },

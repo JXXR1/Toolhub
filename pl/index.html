@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toolhub.software — Darmowe Narzędzia Online dla Programistów</title>
+  <meta name="description" content="60+ darmowych narzędzi online dla programistów — formatter JSON, generator haseł, koder Base64 i wiele więcej. Bez rejestracji, bez śledzenia.">
+  <meta property="og:title" content="toolhub.software — Darmowe Narzędzia Online dla Programistów">
+  <meta property="og:description" content="60+ darmowych narzędzi online dla programistów — formatter JSON, generator haseł, koder Base64 i wiele więcej. Bez rejestracji, bez śledzenia.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "toolhub.software",
+    "url": "https://toolhub.software/pl",
+    "description": "60+ darmowych narzędzi online dla programistów — formatter JSON, generator haseł, koder Base64 i wiele więcej. Bez rejestracji, bez śledzenia.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://toolhub.software/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --card-hover: #1c2129;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --card-hover: #f3f4f6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+
+    .header { padding: 2rem 1.5rem 1rem; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.75rem; align-items: center; }
+    .lang-select { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; }
+    .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.7rem; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+
+    .hero { text-align: center; padding: 2rem 1.5rem 1.5rem; max-width: 700px; margin: 0 auto; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; }
+
+    .search-wrap { max-width: 600px; margin: 1.5rem auto; padding: 0 1.5rem; }
+    .search-wrap input { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; outline: none; }
+    .search-wrap input:focus { border-color: var(--accent); }
+    .search-wrap input::placeholder { color: var(--text-muted); }
+
+    .filters { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; padding: 0.5rem 1.5rem 1rem; max-width: 800px; margin: 0 auto; }
+    .filter-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; transition: all 0.15s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .filter-btn .cnt { display: inline-block; margin-left: 0.3rem; padding: 0 0.35rem; border-radius: 8px; background: rgba(255,255,255,0.12); font-size: 0.72rem; font-weight: 600; }
+    .filter-btn:not(.active) .cnt { background: var(--bg); color: var(--text-muted); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; transition: all 0.15s; cursor: pointer; display: block; }
+    .card:hover { border-color: var(--accent); background: var(--card-hover); transform: translateY(-2px); }
+    .card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .card h3 { font-size: 1rem; margin-bottom: 0.3rem; color: var(--text); }
+    .card p { font-size: 0.85rem; color: var(--text-muted); }
+    .card-meta { margin-top: 0.6rem; display: flex; gap: 0.5rem; }
+    .tag { font-size: 0.7rem; background: var(--bg); padding: 0.15rem 0.5rem; border-radius: 10px; color: var(--text-muted); }
+
+    .footer { text-align: center; padding: 2rem 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+
+    .no-results { text-align: center; padding: 3rem; color: var(--text-muted); display: none; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.6rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><span>Tool</span>hub</div>
+    <div class="header-actions">
+      <select class="lang-select" onchange="switchLang(this.value)">
+        <option value="">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="pl" selected>🇵🇱 Polski</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Darmowe Narzędzia Online dla Programistów</h1>
+    <p id="hero-sub"></p>
+  </section>
+
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Szukaj narzędzi…  (naciśnij /)" oninput="filterTools()">
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div class="ad-slot" data-slot="indexTop"></div>
+
+  <div class="grid" id="grid"></div>
+  <div class="ad-slot" data-slot="indexBottom"></div>
+  <div class="no-results" id="no-results">Nie znaleziono żadnych narzędzi. Spróbuj innego zapytania.</div>
+
+  <footer class="footer">
+    <p>© 2026 toolhub.software — Darmowe narzędzia dla programistów.</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+
+  <script>
+        const TOOLS = [
+      {"slug": "ascii-table", "name": "Tabela ASCII", "desc": "Pełna referencja ASCII 0–127 z wartościami dec, hex, bin, znakiem i encją HTML. Z filtrem.", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
+      {"slug": "base64-encoder", "name": "Encoder / Decoder Base64", "desc": "Koduj tekst do Base64 albo dekoduj Base64 z powrotem na tekst. Bezpieczny dla UTF-8, wariant base64url.", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
+      {"slug": "bmi-calculator", "name": "Kalkulator BMI", "desc": "Wskaźnik masy ciała z wzrostu i wagi. Metryczny lub imperialny. Pokazuje kategorię WHO — nie jest poradą medyczną.", "icon": "⚖️", "cat": "math", "tags": ["bmi", "body mass index", "health", "weight", "height", "metric", "imperial"]},
+      {"slug": "case-converter", "name": "Konwerter Wielkości Liter", "desc": "Konwertuj tekst między WIELKIMI, małymi, Tytułowymi, Zdaniowymi, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE i dot.case.", "icon": "Aa", "cat": "text", "tags": ["case", "convert", "camel", "snake", "kebab", "pascal", "title", "upper", "lower"]},
+      {"slug": "cidr-calculator", "name": "Kalkulator CIDR / Subnet", "desc": "Liczy podsieci IPv4 z notacji CIDR. Sieć, broadcast, maska, zakres hostów i widok binarny.", "icon": "🌐", "cat": "developer", "tags": ["cidr", "subnet", "ipv4", "network", "mask", "ip", "calculator"]},
+      {"slug": "color-converter", "name": "Konwerter Kolorów", "desc": "Konwertuj dowolny kolor między hex, RGB, HSL i OKLCH. Podgląd na żywo, kopia jednym kliknięciem.", "icon": "🎨", "cat": "design", "tags": ["color", "hex", "rgb", "hsl", "oklch", "convert", "css"]},
+      {"slug": "color-picker", "name": "Color Picker", "desc": "Wybierz kolor i zobacz go od razu w HEX, RGB, RGBA, HSL, HSLA, HSV i CMYK. Reguluj opacity i kopiuj dowolną wartość.", "icon": "🎨", "cat": "design", "tags": ["color", "picker", "hex", "rgb", "hsl", "hsv", "cmyk", "palette"]},
+      {"slug": "credit-card-validator", "name": "Walidator Karty Kredytowej", "desc": "Sprawdź numer karty algorytmem Luhna i wykryj wystawcę. Działa lokalnie — twój numer nigdy nie jest wysyłany.", "icon": "💳", "cat": "validation", "tags": ["credit card", "validate", "luhn", "visa", "mastercard", "amex", "discover"]},
+      {"slug": "cron-builder", "name": "Builder Wyrażeń Cron", "desc": "Zbuduj wyrażenie cron wizualnie — minuta, godzina, dzień, miesiąc, dzień tygodnia — i zobacz 5 najbliższych odpaleń.", "icon": "⏱", "cat": "developer", "tags": ["cron", "schedule", "builder", "crontab", "next run"]},
+      {"slug": "cron-parser", "name": "Parser Wyrażeń Cron", "desc": "Sparsuj wyrażenia cron i zobacz 10 najbliższych odpaleń. Standardowy 5-polowy crontab.", "icon": "🕒", "cat": "developer", "tags": ["cron", "schedule", "crontab", "next run", "expression"]},
+      {"slug": "css-box-shadow", "name": "Generator CSS Box Shadow", "desc": "Buduj jedno- lub wielowarstwowe cienie CSS wizualnie. Dostosuj offset, blur, spread, kolor i kopiuj CSS.", "icon": "▣", "cat": "design", "tags": ["css", "shadow", "box-shadow", "design", "depth", "elevation"]},
+      {"slug": "css-gradient", "name": "Generator Gradientów CSS", "desc": "Buduj liniowe i radialne gradienty CSS wizualnie. Edytuj color stopy, kopiuj CSS gotowy do wklejenia.", "icon": "🌈", "cat": "design", "tags": ["css", "gradient", "linear", "radial", "design", "background"]},
+      {"slug": "css-minifier", "name": "Minifikator CSS", "desc": "Usuń komentarze, białe znaki i nadmiarowość z CSS. Zobacz rozmiar przed/po i procent oszczędności.", "icon": "{}", "cat": "developer", "tags": ["css", "minify", "compress", "optimize", "stylesheet"]},
+      {"slug": "csv-to-json", "name": "CSV do JSON", "desc": "Konwertuj dane CSV na tablice JSON. Wykrywanie nagłówka, własne delimitery, pola w cudzysłowach i osadzone końce linii.", "icon": "📊", "cat": "data", "tags": ["csv", "json", "convert", "data", "import"]},
+      {"slug": "date-calculator", "name": "Kalkulator Dat", "desc": "Dni między dwiema datami · dodaj/odejmij dni/tygodnie/miesiące/lata · wiek w latach, miesiącach i dniach.", "icon": "📅", "cat": "datetime", "tags": ["date", "calculator", "duration", "between", "add", "subtract", "age", "weekday"]},
+      {"slug": "dice-roller", "name": "Rzucacz Kości", "desc": "Rzucaj kostkami w standardowej notacji D&D — 2d6+3, 1d20, 4d6 keep highest 3. Kryptograficznie bezpieczny RNG.", "icon": "🎲", "cat": "utility", "tags": ["dice", "roll", "d20", "rpg", "dnd", "random", "tabletop", "notation"]},
+      {"slug": "email-validator", "name": "Walidator Email", "desc": "Sprawdź, czy adres email jest poprawny składniowo (zgodny z RFC 5322), z rozbiciem na local part, domenę i typowe pułapki.", "icon": "✉", "cat": "validation", "tags": ["email", "validate", "rfc", "syntax", "mx", "domain"]},
+      {"slug": "emoji-picker", "name": "Picker Emoji", "desc": "Paleta emoji z wyszukiwaniem po nazwie i słowach kluczowych. Kliknij dowolne emoji, aby skopiować. Kategorie: smileys, zwierzęta, jedzenie, podróże, obiekty, symbole, flagi.", "icon": "😀", "cat": "text", "tags": ["emoji", "picker", "search", "copy", "unicode", "smiley", "symbol"]},
+      {"slug": "file-size-converter", "name": "Konwerter Rozmiaru Plików", "desc": "Konwertuj między bajtami, KB, MB, GB, TB a binarnymi KiB, MiB, GiB, TiB. Decimal vs binary jasno rozdzielone.", "icon": "📦", "cat": "math", "tags": ["file size", "convert", "byte", "kilobyte", "megabyte", "gigabyte", "kib", "mib", "binary", "decimal"]},
+      {"slug": "hash-generator", "name": "Generator Hashy", "desc": "Hashuj tekst za pomocą SHA-1, SHA-256, SHA-384 lub SHA-512 używając WebCrypto przeglądarki. Liczone lokalnie — input nigdy nie opuszcza strony.", "icon": "🔑", "cat": "security", "tags": ["hash", "md5", "sha", "sha-256", "sha-512", "checksum"]},
+      {"slug": "html-encoder", "name": "Encoder / Decoder HTML", "desc": "Escape'uj znaki specjalne HTML albo dekoduj encje z powrotem. Przydatne do bezpiecznego osadzania inputu użytkownika albo debugowania zescape'owanego markupu.", "icon": "&lt;&gt;", "cat": "encoding", "tags": ["html", "encode", "entities", "escape", "xss"]},
+      {"slug": "html-formatter", "name": "Formatter HTML", "desc": "Sformatuj i upiększ HTML albo zminifikuj. Rozmiar wcięcia, usuwanie komentarzy i świadomość tagów samozamykających.", "icon": "</>", "cat": "developer", "tags": ["html", "format", "beautify", "minify", "indent", "tidy"]},
+      {"slug": "http-status-codes", "name": "Kody Statusu HTTP", "desc": "Sprawdź dowolny kod statusu HTTP (1xx–5xx). Znaczenie, typowe przyczyny i odwołanie do RFC.", "icon": "🌐", "cat": "developer", "tags": ["http", "status", "code", "rest", "api", "response", "rfc"]},
+      {"slug": "image-to-base64", "name": "Obrazek do Base64", "desc": "Konwertuj dowolny obrazek na data URI Base64 gotowy do inline'owego użycia w HTML, CSS albo Markdown. Pliki zostają w przeglądarce.", "icon": "🖼️", "cat": "encoding", "tags": ["image", "base64", "data-uri", "convert", "embed"]},
+      {"slug": "js-minifier", "name": "Minifikator JavaScript", "desc": "Szybka strukturalna minifikacja JavaScriptu — wytnij komentarze, zwiń białe znaki, usuń puste linie. Pokazuje rozmiar przed/po i procent oszczędności.", "icon": "{}", "cat": "developer", "tags": ["javascript", "js", "minify", "compress", "optimize"]},
+      {"slug": "json-diff", "name": "Diff JSON", "desc": "Strukturalny diff dwóch dokumentów JSON — dodane, usunięte, zmienione klucze i zmiany wartości obok siebie.", "icon": "{}±", "cat": "developer", "tags": ["json", "diff", "compare", "structural", "delta", "merge"]},
+      {"slug": "json-formatter", "name": "Formatter JSON", "desc": "Formatuj, waliduj i minifikuj JSON od ręki. Błędy podświetlone z numerem linii i kolumny.", "icon": "{ }", "cat": "developer", "tags": ["json", "format", "beautify", "validate", "minify"]},
+      {"slug": "json-path", "name": "Tester JSONPath", "desc": "Uruchamiaj zapytania JSONPath na dowolnym dokumencie JSON. Zobacz dopasowane węzły i ich ścieżki w czasie rzeczywistym.", "icon": "/{}", "cat": "developer", "tags": ["json", "jsonpath", "query", "filter", "extract", "data"]},
+      {"slug": "json-to-csv", "name": "JSON do CSV", "desc": "Konwertuj tablice obiektów JSON na CSV. Auto-wykrywanie pól, własne delimitery, poprawny escape pod Excela i Google Sheets.", "icon": "📋", "cat": "data", "tags": ["json", "csv", "convert", "data", "export", "excel"]},
+      {"slug": "jwt-decoder", "name": "Decoder JWT", "desc": "Wklej JWT, żeby zdekodować header i payload. Wszystko liczy się w przeglądarce — tokeny nie opuszczają strony.", "icon": "🔓", "cat": "developer", "tags": ["jwt", "json web token", "decode", "auth", "oauth", "openid"]},
+      {"slug": "lorem-ipsum", "name": "Generator Lorem Ipsum", "desc": "Generuj akapity, zdania, słowa albo elementy listy tekstu placeholder po łacinie. Konfigurowalny rozmiar i fraza otwierająca.", "icon": "¶", "cat": "text", "tags": ["lorem", "ipsum", "placeholder", "filler", "dummy", "text"]},
+      {"slug": "markdown-table-editor", "name": "Edytor Tabel Markdown", "desc": "Edytuj tabelę wizualnie — wiersze, kolumny, wyrównanie per kolumna — i skopiuj Markdown w stylu GitHuba.", "icon": "▦", "cat": "text", "tags": ["markdown", "table", "editor", "github", "gfm", "alignment"]},
+      {"slug": "markdown-to-html", "name": "Markdown do HTML", "desc": "Konwertuj Markdowna na czysty HTML z podglądem na żywo. Wspiera nagłówki, listy, kod, tabele, obrazki i linki.", "icon": "M↓", "cat": "text", "tags": ["markdown", "md", "html", "convert", "preview", "render"]},
+      {"slug": "mime-type-lookup", "name": "Wyszukiwarka MIME Types", "desc": "Wyszukuj MIME types po rozszerzeniu albo po typie. ~120 typowych — image, video, audio, application, text, font.", "icon": "📎", "cat": "developer", "tags": ["mime", "type", "extension", "content-type", "file", "media"]},
+      {"slug": "number-base-converter", "name": "Konwerter Systemów Liczbowych", "desc": "Konwertuj między binarnym, oktalnym, dziesiętnym, szesnastkowym i dowolną bazą od 2 do 36.", "icon": "0b", "cat": "developer", "tags": ["binary", "hex", "octal", "decimal", "base", "convert", "number"]},
+      {"slug": "og-tag-preview", "name": "Podgląd Tagów OG", "desc": "Wklej meta tagi OG albo wpisz title/description/image — zobacz, jak share cardy wyglądają na Twitter/X, Facebook, LinkedIn i Discord.", "icon": "🪟", "cat": "design", "tags": ["og", "open graph", "twitter", "facebook", "linkedin", "discord", "preview", "social"]},
+      {"slug": "password-generator", "name": "Generator Haseł", "desc": "Mocne losowe hasła albo łatwe do zapamiętania passphrase'y. Generowane lokalnie — nigdzie nie wysyłane.", "icon": "🔐", "cat": "security", "tags": ["password", "secure", "random", "generate", "passphrase"]},
+      {"slug": "percentage-calculator", "name": "Kalkulator Procentów", "desc": "Pięć kalkulatorów procentów w jednym: ile %, ile to %, zmiana, wzrost/spadek i napiwek/podatek.", "icon": "%", "cat": "math", "tags": ["percentage", "percent", "calculate", "discount", "increase", "decrease", "tip", "tax"]},
+      {"slug": "placeholder-image", "name": "Generator Placeholder Image", "desc": "Generuj placeholderowe obrazki inline-SVG w dowolnym rozmiarze z własnym tekstem i kolorami. Wyjście jako data URI albo SVG do pobrania.", "icon": "🖼", "cat": "design", "tags": ["placeholder", "image", "svg", "mockup", "wireframe", "data uri"]},
+      {"slug": "qr-code-generator", "name": "Generator Kodów QR", "desc": "Generuj kody QR dla dowolnego tekstu, URL-a, Wi-Fi albo vCard. Konfigurowalny rozmiar, kolory i korekcja błędów. Eksportuj PNG albo SVG.", "icon": "📱", "cat": "media", "tags": ["qr", "code", "generate", "url", "wifi", "vcard", "svg", "png"]},
+      {"slug": "query-string-builder", "name": "Builder Query Stringów", "desc": "Dodawaj wiersze key/value; dostań poprawnie URL-encodowanego query stringa. Wspiera tablice (a[]=1) i powtarzane klucze.", "icon": "?=", "cat": "developer", "tags": ["query string", "url", "params", "encode", "build", "key value"]},
+      {"slug": "regex-cheatsheet", "name": "Ściąga Regex", "desc": "Szybka referencja: anchory, klasy znaków, kwantyfikatory, grupy, lookaroundy, flagi. Kliknij dowolny pattern, by skopiować.", "icon": "📖", "cat": "developer", "tags": ["regex", "cheatsheet", "reference", "pattern", "anchors", "groups", "lookaround"]},
+      {"slug": "regex-tester", "name": "Tester Regex", "desc": "Testuj regex JavaScript na żywo. Zobacz matche, grupy przechwytujące i aplikuj zamiany w trakcie pisania.", "icon": ".*", "cat": "developer", "tags": ["regex", "regular expression", "test", "match", "replace", "javascript"]},
+      {"slug": "slug-generator", "name": "Generator Slugów", "desc": "Zamień dowolny tytuł w czysty slug URL — translikuje znaki diakrytyczne, wycina interpunkcję, łączy myślnikami.", "icon": "/-", "cat": "text", "tags": ["slug", "url", "seo", "kebab", "permalink", "transliterate"]},
+      {"slug": "sql-formatter", "name": "Formatter SQL", "desc": "Sformatuj i upiększ SQL z porządną indentacją albo zminifikuj do jednej linii. Świadom dialektu (ANSI / MySQL / Postgres).", "icon": "🗄", "cat": "developer", "tags": ["sql", "format", "beautify", "minify", "indent", "mysql", "postgres", "ansi"]},
+      {"slug": "text-diff", "name": "Diff Tekstu", "desc": "Porównaj dwa bloki tekstu i zobacz dodania, usunięcia i niezmieniony kontekst linia po linii. Widok side-by-side albo unified.", "icon": "±", "cat": "text", "tags": ["diff", "compare", "text", "lines", "patch", "changes"]},
+      {"slug": "timestamp-converter", "name": "Konwerter Unix Timestamp", "desc": "Konwertuj między Unix timestampami a datami czytelnymi dla człowieka. Sekundy i milisekundy, UTC i lokalna.", "icon": "🕐", "cat": "developer", "tags": ["timestamp", "unix", "epoch", "date", "convert", "iso8601"]},
+      {"slug": "timezone-converter", "name": "Konwerter Stref Czasowych", "desc": "Konwertuj datę i godzinę między strefami czasowymi IANA. Zobacz offsety, status DST i dzień tygodnia po obu stronach.", "icon": "🌍", "cat": "data", "tags": ["timezone", "tz", "convert", "utc", "date", "time", "iana"]},
+      {"slug": "tip-split-calculator", "name": "Kalkulator Napiwku i Podziału Rachunku", "desc": "Rachunek + napiwek % + liczba osób = kwota na osobę. Opcja zaokrąglenia w górę, pokazuje napiwek i sumę całkowitą.", "icon": "💵", "cat": "math", "tags": ["tip", "split", "bill", "restaurant", "calculator", "people", "share"]},
+      {"slug": "unicode-inspector", "name": "Inspektor Unicode", "desc": "Wklej tekst → tabela każdego code pointa. Hex, decimal, bajty UTF-8, kategoria. Wyłapuj niewidzialne znaki.", "icon": "🔎", "cat": "text", "tags": ["unicode", "code point", "utf-8", "character", "inspect", "invisible", "encoding"]},
+      {"slug": "unit-converter", "name": "Konwerter Jednostek", "desc": "Konwertuj między metrycznymi i imperialnymi jednostkami długości, wagi, temperatury, objętości i powierzchni.", "icon": "📐", "cat": "math", "tags": ["unit", "convert", "length", "weight", "temperature", "volume", "area", "metric", "imperial"]},
+      {"slug": "url-encoder", "name": "Encoder / Decoder URL", "desc": "Percent-encoduj stringi pod URL-e albo dekoduj zakodowane procentowo z powrotem na zwykły tekst.", "icon": "🔗", "cat": "encoding", "tags": ["url", "encode", "decode", "percent", "querystring"]},
+      {"slug": "url-parser", "name": "Parser URL", "desc": "Wklej dowolny URL — zobacz protocol, host, port, path, query parameters (zdekodowane), hash i origin rozłożone na części.", "icon": "🔍", "cat": "developer", "tags": ["url", "parse", "query", "host", "path", "fragment", "search params"]},
+      {"slug": "uuid-generator", "name": "Generator UUID", "desc": "Generuj UUID-y RFC 4122 (v4 losowy albo v7 uporządkowany czasem). Hurtowo do 100. Kryptograficznie bezpieczny.", "icon": "🆔", "cat": "developer", "tags": ["uuid", "guid", "v4", "v7", "random", "unique", "identifier"]},
+      {"slug": "wcag-contrast", "name": "Sprawdzacz Kontrastu WCAG", "desc": "Sprawdź współczynnik kontrastu między dwoma kolorami. Werdykt pass/fail dla WCAG AA i AAA przy każdym rozmiarze tekstu.", "icon": "◐", "cat": "design", "tags": ["wcag", "contrast", "accessibility", "a11y", "color", "ratio"]},
+      {"slug": "word-counter", "name": "Licznik Słów", "desc": "Licz słowa, znaki, zdania, akapity i estymuj czas czytania + mówienia w trakcie pisania.", "icon": "#", "cat": "text", "tags": ["word", "count", "character", "sentence", "paragraph", "reading", "writing"]},
+      {"slug": "xml-formatter", "name": "Formatter XML", "desc": "Sformatuj i zminifikuj XML. Waliduj poprawność (well-formed) z linią i kolumną przy błędach.", "icon": "&lt;/&gt;", "cat": "developer", "tags": ["xml", "format", "beautify", "minify", "validate", "well-formed"]},
+      {"slug": "xml-to-json", "name": "Konwerter XML ↔ JSON", "desc": "Konwertuj XML na JSON albo JSON z powrotem na XML. Sensownie obsługuje atrybuty, węzły tekstowe i tablice.", "icon": "⇄", "cat": "data", "tags": ["xml", "json", "convert", "transform", "attributes", "data"]},
+      {"slug": "yaml-json", "name": "Konwerter YAML ↔ JSON", "desc": "Konwertuj między YAML a JSON w obie strony. Przydatne do manifestów Kubernetes, configów CI i speców OpenAPI.", "icon": "🔁", "cat": "data", "tags": ["yaml", "json", "convert", "kubernetes", "config", "data"]},
+      {"slug": "youtube-thumbnail", "name": "Pobieranie Miniatur YouTube", "desc": "Wklej dowolny URL albo ID wideo YouTube i pobierz każdy dostępny rozmiar miniatury — bezpośrednie linki, bez uploadu, bez rejestracji.", "icon": "▶", "cat": "media", "tags": ["youtube", "thumbnail", "preview", "image", "download", "video"]}
+    ];
+
+    const LBL_ALL = "Wszystkie";
+    const HERO_SUB_POST = "narzędzi — szybkich, prywatnych, bez rejestracji. Po prostu działają.";
+    const CAT_LABELS = {"developer": "Programowanie", "text": "Tekst", "encoding": "Kodowanie", "data": "Dane", "security": "Bezpieczeństwo", "media": "Media", "validation": "Walidacja", "design": "Design", "datetime": "Data i czas", "math": "Matematyka"};
+
+    function renderFilters() {
+      const counts = {};
+      for (const t of TOOLS) counts[t.cat] = (counts[t.cat] || 0) + 1;
+      const cats = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+      const wrap = document.getElementById('filters');
+      let html = `<button class="filter-btn active" data-cat="all">${LBL_ALL} <span class="cnt">${TOOLS.length}</span></button>`;
+      for (const c of cats) {
+        const label = CAT_LABELS[c] || c.charAt(0).toUpperCase() + c.slice(1);
+        html += `<button class="filter-btn" data-cat="${c}">${label} <span class="cnt">${counts[c]}</span></button>`;
+      }
+      wrap.innerHTML = html;
+    }
+
+    function renderHero() {
+      document.getElementById('hero-sub').textContent = `${TOOLS.length} ${HERO_SUB_POST}`;
+    }
+
+
+    function render(tools) {
+      const grid = document.getElementById('grid');
+      const noResults = document.getElementById('no-results');
+      if (tools.length === 0) { grid.innerHTML = ''; noResults.style.display = 'block'; return; }
+      noResults.style.display = 'none';
+      grid.innerHTML = tools.map(t => `
+        <a class="card" href="/pl/${t.slug}/" data-cat="${t.cat}">
+          <div class="card-icon">${t.icon}</div>
+          <h3>${t.name}</h3>
+          <p>${t.desc}</p>
+          <div class="card-meta"><span class="tag">${t.cat}</span></div>
+        </a>
+      `).join('');
+    }
+
+    function filterTools() {
+      const q = document.getElementById('search').value.toLowerCase();
+      const activeCat = document.querySelector('.filter-btn.active')?.dataset.cat || 'all';
+      const filtered = TOOLS.filter(t => {
+        const matchQ = !q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.tags.some(tag => tag.includes(q));
+        const matchCat = activeCat === 'all' || t.cat === activeCat;
+        return matchQ && matchCat;
+      });
+      render(filtered);
+    }
+
+    document.getElementById('filters').addEventListener('click', e => {
+      if (!e.target.classList.contains('filter-btn')) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      filterTools();
+    });
+
+    function switchLang(lang) {
+      window.location.href = lang ? `/${lang}/` : '/';
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent = next === 'light' ? '🌙' : '☀️';
+    }
+
+    // Init
+    const saved = localStorage.getItem('theme') || 'dark';
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    } else {
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+    renderFilters();
+    renderHero();
+    render(TOOLS);
+
+    // `/` keyboard shortcut to focus search
+    document.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        document.getElementById('search').focus();
+      }
+    });
+  </script>
+</body>
+</html>

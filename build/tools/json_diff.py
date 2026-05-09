@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Diff JSON", "tagline": "Diff structurel entre deux documents JSON — clés ajoutées, supprimées, modifiées et changements de valeur côte à côte.", "description": "Diff JSON gratuit. Calcule un delta structurel entre deux documents JSON — clés ajoutées/supprimées, valeurs modifiées. 100% dans le navigateur."},
         "it": {"name": "Diff JSON", "tagline": "Diff strutturale tra due documenti JSON — chiavi aggiunte, rimosse, modificate e cambi di valore affiancati.", "description": "Diff JSON gratuito. Calcola un delta strutturale tra due documenti JSON — chiavi aggiunte/rimosse, valori modificati. 100% nel browser."},
         "pt": {"name": "Diff JSON", "tagline": "Diff estrutural de dois documentos JSON — chaves adicionadas, removidas, alteradas e mudanças de valor lado a lado.", "description": "Diff JSON grátis online. Calcula um delta estrutural entre dois documentos JSON — chaves adicionadas/removidas, valores alterados, e uma visão lado a lado limpa. Roda totalmente no seu browser."},
+        "pl": {"name": "Diff JSON", "tagline": "Strukturalny diff dwóch dokumentów JSON — dodane, usunięte, zmienione klucze i zmiany wartości obok siebie.", "description": "Darmowy online diff JSON. Liczy strukturalną deltę między dwoma dokumentami JSON — dodane/usunięte klucze, zmienione wartości i czysty widok side-by-side. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -216,6 +217,26 @@ document.addEventListener('DOMContentLoaded', jdRun);
   <li><strong>Number-vs-string não é estrutural.</strong> <code>{"id": 1}</code> e <code>{"id": "1"}</code> aparecem como mudança porque os tipos diferem. Normalize tipos antes do diff se isso importa.</li>
   <li><strong>RFC 6902 é um patch unidirecional, não um merge.</strong> Aplique com uma implementação real de RFC 6902, não por substituição de string.</li>
   <li><strong>Árvores grandes ficam barulhentas.</strong> Se o diff tem centenas de operações, provavelmente você está comparando dois documentos sem relação — confira os inputs.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Diff tekstowy na JSON-ie mówi ci, które linie się zmieniły; diff strukturalny mówi, które <em>punkty danych</em> się zmieniły. To często bardzo różne rzeczy — przeformatowany dokument bez zmiany semantycznej dla diffa tekstowego to "każda linia inna", a tu "brak zmian". To narzędzie chodzi po obu drzewach JSON i raportuje każdy path, gdzie się różnią, używając składni <a href="https://datatracker.ietf.org/doc/html/rfc6901" target="_blank" rel="noopener noreferrer">RFC 6901 JSON Pointer</a> (<code>/users/0/name</code>), żeby wyjście było jednoznaczne niezależnie od formatowania.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Porównanie dwóch odpowiedzi API, żeby zobaczyć, co faktycznie się zmieniło w releasie, ignorując szum białych znaków i kolejności kluczy.</li>
+  <li>Diff plików configa przed/po migracji, żeby potwierdzić, że ruszyły tylko zamierzone pola.</li>
+  <li>Generowanie dokumentu JSON Patch wg RFC 6902 do wysłania do systemu, który to wspiera (endpointy PATCH, fallbacki JSON-Merge-Patch).</li>
+  <li>Patrzenie na dwie fixture testowe, żeby zobaczyć, co sprawia, że jedna pada, a druga przechodzi.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Tryb porównywania tablic ma znaczenie.</strong> "By index" raportuje wstawiony element jako remove+add dla wszystkiego za nim. "By value" traktuje tablice jako zbiory, gubiąc faktyczne zmiany kolejności. Wybierz ten, który pasuje do tego, jak twoje dane mają być uporządkowane.</li>
+  <li><strong>Number-vs-string nie jest strukturalne.</strong> <code>{"id": 1}</code> i <code>{"id": "1"}</code> pokazują się jako zmiana, bo typy się różnią. Znormalizuj typy przed diffem, jeśli to ważne.</li>
+  <li><strong>RFC 6902 to jednokierunkowy patch, nie merge.</strong> Aplikuj go prawdziwą implementacją RFC 6902, nie podstawianiem stringów.</li>
+  <li><strong>Duże drzewa robią szum.</strong> Jeśli diff ma setki operacji, prawdopodobnie porównujesz dwa niepowiązane dokumenty — sprawdź wejście jeszcze raz.</li>
 </ul>
 """,
     },

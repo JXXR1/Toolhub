@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Cole um JWT para decodificar header e payload. Tudo roda no seu browser — os tokens não saem da página.",
             "description": "Decoder de JSON Web Token grátis online. Decodifica header e payload, verifica timestamps de expiração, inspeciona a signature. Funciona totalmente offline no seu browser.",
         },
+        "pl": {
+            "name": "Decoder JWT",
+            "tagline": "Wklej JWT, żeby zdekodować header i payload. Wszystko liczy się w przeglądarce — tokeny nie opuszczają strony.",
+            "description": "Darmowy online decoder JSON Web Token. Dekoduje header i payload, weryfikuje timestamp wygaśnięcia, pokazuje signature. Działa w pełni offline w przeglądarce.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -178,6 +183,36 @@ document.addEventListener('DOMContentLoaded', jwtDecode);
   <li><strong>Não cole tokens de produção em qualquer lugar.</strong> Qualquer um com um JWT vivo pode se passar pelo usuário até o <code>exp</code>. O browser não transmite o token a partir desta ferramenta, mas extensões, gravações de tela e dev tools podem. Use um token novo de um ambiente de teste se precisar compartilhar.</li>
   <li><strong>Tokens com <code>alg: none</code> são uma classe conhecida de ataque.</strong> Se um header tem <code>alg: none</code> e sua biblioteca aceita, atacantes podem forjar tokens. Rejeite isso no servidor.</li>
   <li><strong>Time skew importa.</strong> O <code>exp</code> de um token é checado contra o relógio do verificador. Servidores com drift falham tokens que parecem válidos aqui.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>JWT (JSON Web Token) to trzy części w base64url połączone kropkami: <code>header.payload.signature</code>. Header i payload to obiekty JSON, które możesz obejrzeć; signature dowodzi, że token nie został zmajstrowany po wystawieniu. To narzędzie dekoduje pierwsze dwie części, żebyś mógł zobaczyć, co siedzi w środku, bez szumu base64 — przydaje się przy debugowaniu flow auth, wygasłych sesji albo "do którego użytkownika ten token właściwie należy?".</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Debug logowania OAuth / OpenID Connect, które się sypie — wklej access albo ID token, zobacz, co IdP faktycznie wystawił.</li>
+  <li>Potwierdzenie wygaśnięcia tokenu: narzędzie dekoduje <code>exp</code> jako prawdziwą datę i flaguje, jeśli minął.</li>
+  <li>Sanity check custom claims, które backend asseruje (role, uprawnienia, tenant ID).</li>
+  <li>Czytanie tokenu, który twoja biblioteka "odrzuciła jako nieprawidłowy", żeby zobaczyć, czy problem jest strukturalny, w wygaśnięciu, czy w signature.</li>
+</ul>
+
+<h3>Typowe claimsy</h3>
+<ul>
+  <li><code>iss</code> — issuer (kto utworzył token)</li>
+  <li><code>sub</code> — subject (użytkownik/konto, które reprezentuje)</li>
+  <li><code>aud</code> — audience (kto powinien go akceptować)</li>
+  <li><code>exp</code> — wygaśnięcie (Unix timestamp)</li>
+  <li><code>iat</code> — issued-at (Unix timestamp)</li>
+  <li><code>nbf</code> — not-valid-before (Unix timestamp)</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Zdekodowany JWT to NIE zweryfikowany JWT.</strong> Signature nie jest tu sprawdzana — to wymaga klucza publicznego issuera (RSA/EC) albo współdzielonego sekretu (HMAC). Zdekodowana zawartość mówi ci, co token <em>twierdzi</em>, nie czy powinieneś mu ufać. Zawsze weryfikuj na serwerze, zanim uznasz claimsy.</li>
+  <li><strong>Nie wklejaj tokenów produkcyjnych nigdzie.</strong> Każdy z żywym JWT może podszyć się pod użytkownika do <code>exp</code>. Przeglądarka go z tego narzędzia nie wysyła, ale rozszerzenia, screen recordingi i dev tools mogą podejrzeć. Użyj świeżego tokenu z testowego środowiska, jeśli musisz się podzielić.</li>
+  <li><strong>Tokeny z <code>alg: none</code> to znana klasa ataków.</strong> Jeśli header ma <code>alg: none</code> i twoja biblioteka to akceptuje, atakujący mogą podrabiać tokeny. Odrzucaj to na serwerze.</li>
+  <li><strong>Time skew ma znaczenie.</strong> <code>exp</code> tokenu jest sprawdzane przeciw zegarowi weryfikatora. Serwery z driftem padają na tokenach, które tu wyglądają na poprawne.</li>
 </ul>
 """,
     },

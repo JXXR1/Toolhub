@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Recherche Type MIME", "tagline": "Cherchez les types MIME par extension ou par type. ~120 types courants — image, vidéo, audio, application, text, font.", "description": "Outil gratuit de recherche MIME. Cherchez par extension (.pdf, .png, .json) ou type MIME (image/jpeg, application/pdf) parmi environ 120 types courants."},
         "it": {"name": "Ricerca Tipi MIME", "tagline": "Cerca tipi MIME per estensione o per tipo. ~120 tipi comuni — immagini, video, audio, application, text, font.", "description": "Strumento gratuito di ricerca MIME. Cerca per estensione (.pdf, .png, .json) o tipo MIME (image/jpeg, application/pdf) fra circa 120 tipi comuni."},
         "pt": {"name": "Consulta de MIME Types", "tagline": "Busque MIME types por extensão ou por tipo. ~120 tipos comuns — image, video, audio, application, text, font.", "description": "Ferramenta gratuita de consulta de MIME types. Busque por extensão de arquivo (.pdf, .png, .json) ou por MIME type (image/jpeg, application/pdf) entre cerca de 120 Internet media types comuns."},
+        "pl": {"name": "Wyszukiwarka MIME Types", "tagline": "Wyszukuj MIME types po rozszerzeniu albo po typie. ~120 typowych — image, video, audio, application, text, font.", "description": "Darmowe narzędzie do wyszukiwania MIME types. Szukaj po rozszerzeniu pliku (.pdf, .png, .json) albo po MIME type (image/jpeg, application/pdf) wśród około 120 typowych Internet media types."},
     },
     "body": """
 <div class="tool-card">
@@ -301,6 +302,29 @@ document.addEventListener('DOMContentLoaded', mtRun);
 <li><strong><code>application/octet-stream</code> = "sconosciuto".</strong> Usa un tipo reale quando possibile.</li>
 <li><strong>Il charset conta.</strong> Senza <code>; charset=utf-8</code> il browser indovina e a volte sbaglia.</li>
 <li><strong>Lo sniffing MIME ignora l'header.</strong> Disattivalo con <code>X-Content-Type-Options: nosniff</code>.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>MIME type (obecnie nazywany Internet media type) to dwuczęściowa etykieta typu <code>image/png</code> albo <code>application/json</code>, która mówi serwerowi, przeglądarce albo bibliotece, jak interpretować kawałek bajtów. To, co idzie w nagłówkach HTTP <code>Content-Type</code>, co deklarują części Multipart wiadomości i co raportuje <code>file --mime</code>. Rejestr IANA ma tysiące wpisów; to narzędzie pokrywa około 120, na które faktycznie natkniesz się w pracy webowej.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Ustawianie <code>Content-Type</code> na odpowiedzi API i potrzeba właściwego dla <code>.docx</code>, <code>.heic</code> albo <code>.webmanifest</code>.</li>
+  <li>Konfiguracja atrybutu <code>accept</code> w polu uploadu albo allow-listy bucketu S3.</li>
+  <li>Czytanie hex dumpa albo tcpdumpa i sprawdzanie, czym właściwie jest <code>application/grpc-web</code>.</li>
+  <li>Budowa serwera plików statycznych albo configa CDN i potrzeba mapowania rozszerzenie→MIME.</li>
+  <li>Rozstrzyganie, czy używać <code>text/xml</code> czy <code>application/xml</code> (w nowym kodzie tego drugiego, wg RFC 7303).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Rozszerzenie nie równa się MIME type.</strong> <code>.json</code> zwykle mapuje się na <code>application/json</code>, ale serwer może serwować jako <code>text/plain</code> i przeglądarki posłuchają nagłówka. Zawsze ustawiaj nagłówek jawnie.</li>
+  <li><strong>JavaScript jest bałaganiarski.</strong> RFC 9239 mówi, że <code>text/javascript</code> jest preferowanym typem. <code>application/javascript</code>, <code>application/ecmascript</code> i inne są przestarzałe, ale nadal widywane.</li>
+  <li><strong>Typy OOXML są bardzo długie.</strong> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> dla <code>.docx</code>. Nie próbuj zapamiętywać — kopiuj.</li>
+  <li><strong><code>application/octet-stream</code> znaczy "nie wiem".</strong> Jeśli kontrolujesz typ, użyj prawdziwego — przeglądarki mogą wymusić download contentu octet-stream, nawet jeśli da się go wyrenderować.</li>
+  <li><strong>Charset ma znaczenie dla typów tekstowych.</strong> <code>Content-Type: text/html; charset=utf-8</code> — bez tego przeglądarki zgadują i czasem zgadują źle (mojibake).</li>
+  <li><strong>Magic-byte sniffing różni się od deklarowanego typu.</strong> Przeglądarki mogą zakwestionować <code>Content-Type</code> na bazie zawartości pliku (<code>X-Content-Type-Options: nosniff</code> to wyłącza — ustaw dla bezpieczeństwa).</li>
 </ul>
 """,
     },

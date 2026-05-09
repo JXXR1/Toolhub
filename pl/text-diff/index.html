@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diff Tekstu — Toolhub</title>
+  <meta name="description" content="Darmowe narzędzie do diffowania tekstu online. Myers diff na poziomie linii z widokiem side-by-side i unified, togle do ignorowania białych znaków i wielkości liter. Działa w przeglądarce.">
+  <meta property="og:title" content="Diff Tekstu — Toolhub">
+  <meta property="og:description" content="Darmowe narzędzie do diffowania tekstu online. Myers diff na poziomie linii z widokiem side-by-side i unified, togle do ignorowania białych znaków i wielkości liter. Działa w przeglądarce.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/text-diff/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/text-diff/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/text-diff/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/text-diff/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/text-diff/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/text-diff/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/text-diff/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/text-diff/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/text-diff/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/text-diff/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/text-diff/#tool",
+        "name": "Diff Tekstu",
+        "description": "Darmowe narzędzie do diffowania tekstu online. Myers diff na poziomie linii z widokiem side-by-side i unified, togle do ignorowania białych znaków i wielkości liter. Działa w przeglądarce.",
+        "url": "https://toolhub.software/pl/text-diff/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Text Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["diff", "compare", "text", "lines", "patch", "changes"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Diff Tekstu", "item": "https://toolhub.software/pl/text-diff/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/text-diff/'; else location.href='/text-diff/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Diff Tekstu</div>
+    <h1>Diff Tekstu</h1>
+    <p class="tagline">Porównaj dwa bloki tekstu i zobacz dodania, usunięcia i niezmieniony kontekst linia po linii. Widok side-by-side albo unified.</p>
+    
+<div class="td-grid">
+  <div class="tool-card">
+    <label>Original</label>
+    <textarea id="td-a" oninput="tdRun()" spellcheck="false">The quick brown fox
+jumps over the lazy dog.
+Line three.
+Shared line.</textarea>
+  </div>
+  <div class="tool-card">
+    <label>Changed</label>
+    <textarea id="td-b" oninput="tdRun()" spellcheck="false">The quick brown fox
+leaps over the lazy dog.
+Line three.
+Shared line.
+A new line at the end.</textarea>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>View</label>
+      <select id="td-view" onchange="tdRun()">
+        <option value="split">Side-by-side</option>
+        <option value="unified">Unified</option>
+      </select>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.9rem;justify-content:end">
+      <label><input type="checkbox" id="td-ws" onchange="tdRun()"> Ignore whitespace</label>
+      <label><input type="checkbox" id="td-case" onchange="tdRun()"> Ignore case</label>
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Wynik</label>
+  <div id="td-out" class="td-result"></div>
+  <div class="meta" id="td-stats" style="margin-top:0.5rem"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Do czego to służy?</h2>
+<p>Porównanie dwóch wersji kawałka tekstu — akapitu, pliku configa, query SQL, listy — i zobaczenie, które linie dokładnie zostały dodane, usunięte albo zostały bez zmian. Nawet kiedy nie masz pod ręką <code>git diff</code> albo tekst nie jest w version control. Wyjście to ten sam line-level diff, jaki widzisz w code review: zielony dla dodań, czerwony dla usunięć, zwykły dla niezmienionego kontekstu.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Wykrycie, czym się różnią dwa maile, kontrakty albo wklejone bloby, które "wyglądają tak samo".</li>
+  <li>Porównanie configów albo zmiennych środowiskowych między dwoma środowiskami (staging vs prod).</li>
+  <li>Review zmian w copy, które ktoś inny edytował w Wordzie/Docsach.</li>
+  <li>Diff dwóch wyników query, snippetów logów albo blobów JSON (najpierw przepuść przez JSON Formatter, żeby skanonizować).</li>
+  <li>Szybki sanity check search-and-replace przed zacommitowaniem.</li>
+</ul>
+
+<h3>Side-by-side vs unified</h3>
+<ul>
+  <li><strong>Side-by-side</strong> — łatwiej skanować małe zmiany linia po linii; oryginał po lewej, nowa wersja po prawej.</li>
+  <li><strong>Unified</strong> — bliższe wyjściu <code>git diff</code>; lepsze do dzielenia się albo drukowania, łatwiejsze do śledzenia, gdy zmiany są rozproszone.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>To diff linii, nie słów.</strong> Jeden zmieniony znak w środku długiej linii oznacza całą linię jako zmienioną. Do diffowania prozatorskiego na poziomie akapitów może chcesz narzędzia, które tokenizuje na słowa.</li>
+  <li><strong>"Ignoruj białe znaki" wpływa tylko na porównanie, nie na wyświetlanie.</strong> Linie różniące się tylko końcowymi spacjami albo wcięciem zwijają się w niezmienioną kolumnę, ale oryginalny whitespace nadal jest pokazany.</li>
+  <li><strong>"Ignoruj case" tak samo.</strong> "TODO" i "todo" porównują się jako równe, ale oryginalna wielkość liter jest renderowana.</li>
+  <li><strong>Kolejność ma znaczenie.</strong> Jeśli zamienisz dwie linie miejscami, diff pokaże obie jako usunięte-i-dodane-na-nowo, nie jako parę "przeniesioną". Nie ma detekcji przenosin.</li>
+  <li><strong>Duże inputy (10k+ linii) bywają wolne.</strong> Algorytm LCS jest O(m·n) — OK dla typowych plików, ślamazarny dla bardzo dużych. Diffuj małymi kawałkami.</li>
+  <li><strong>Końcowe newliny</strong> liczą się jako linia. Dwa inputy różniące się tylko tym, czy kończą się newlinem, pokażą jedno końcowe dodanie albo usunięcie.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/json-formatter/">Formatter JSON</a> <a href="/pl/case-converter/">Konwerter Wielkości Liter</a> <a href="/pl/regex-tester/">Tester Regex</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.td-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.td-grid textarea{min-height:180px;font-family:ui-monospace,monospace;font-size:0.88rem}
+.td-result{font-family:ui-monospace,monospace;font-size:0.86rem;background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;overflow:auto;max-height:520px}
+.td-line{display:grid;grid-template-columns:50px 1fr;gap:0;align-items:start;border-bottom:1px solid var(--border)}
+.td-line:last-child{border-bottom:none}
+.td-line .gut{padding:0.2rem 0.5rem;color:var(--text-muted);font-size:0.78rem;text-align:right;background:var(--bg);user-select:none}
+.td-line .body{padding:0.2rem 0.6rem;white-space:pre-wrap;word-break:break-word}
+.td-add{background:rgba(16,185,129,0.12)}
+.td-add .body{color:#10b981}
+.td-add .body::before{content:'+ '}
+.td-del{background:rgba(239,68,68,0.12)}
+.td-del .body{color:#ef4444}
+.td-del .body::before{content:'− '}
+.td-eq .body::before{content:'  '}
+.td-split{display:grid;grid-template-columns:1fr 1fr}
+.td-split>div{overflow:auto;border-right:1px solid var(--border)}
+.td-split>div:last-child{border-right:none}
+@media(max-width:760px){.td-grid{grid-template-columns:1fr}.td-split{grid-template-columns:1fr}.td-split>div:not(:last-child){border-right:none;border-bottom:1px solid var(--border)}}
+</style>
+<script>
+function tdLcs(a, b){
+  const m = a.length, n = b.length;
+  const dp = Array.from({length:m+1}, () => new Uint32Array(n+1));
+  for(let i=m-1;i>=0;i--) for(let j=n-1;j>=0;j--){
+    dp[i][j] = a[i]===b[j] ? dp[i+1][j+1]+1 : Math.max(dp[i+1][j], dp[i][j+1]);
+  }
+  const ops = [];
+  let i=0,j=0;
+  while(i<m && j<n){
+    if(a[i]===b[j]){ ops.push(['eq', a[i], b[j], i, j]); i++; j++; }
+    else if(dp[i+1][j] >= dp[i][j+1]){ ops.push(['del', a[i], null, i, null]); i++; }
+    else { ops.push(['add', null, b[j], null, j]); j++; }
+  }
+  while(i<m){ ops.push(['del', a[i], null, i, null]); i++; }
+  while(j<n){ ops.push(['add', null, b[j], null, j]); j++; }
+  return ops;
+}
+function tdRun(){
+  const rawA = document.getElementById('td-a').value;
+  const rawB = document.getElementById('td-b').value;
+  const ws = document.getElementById('td-ws').checked;
+  const cs = document.getElementById('td-case').checked;
+  const view = document.getElementById('td-view').value;
+  const norm = s => { let n = s; if(ws) n = n.replace(/\s+/g,' ').trim(); if(cs) n = n.toLowerCase(); return n; };
+  const linesA = rawA.split('\n');
+  const linesB = rawB.split('\n');
+  const cmpA = linesA.map(norm);
+  const cmpB = linesB.map(norm);
+  const ops = tdLcs(cmpA, cmpB);
+  let adds=0, dels=0;
+  ops.forEach(o => { if(o[0]==='add') adds++; else if(o[0]==='del') dels++; });
+  const out = document.getElementById('td-out');
+  if(view === 'unified'){
+    const rows = ops.map(o => {
+      if(o[0]==='eq')  return `<div class="td-line td-eq"><div class="gut">${o[3]+1}</div><div class="body">${tdEsc(linesA[o[3]])}</div></div>`;
+      if(o[0]==='del') return `<div class="td-line td-del"><div class="gut">${o[3]+1}</div><div class="body">${tdEsc(linesA[o[3]])}</div></div>`;
+      return `<div class="td-line td-add"><div class="gut">${o[4]+1}</div><div class="body">${tdEsc(linesB[o[4]])}</div></div>`;
+    });
+    out.innerHTML = rows.join('');
+  } else {
+    const left = [], right = [];
+    let i=0;
+    while(i<ops.length){
+      if(ops[i][0]==='eq'){
+        left.push(`<div class="td-line td-eq"><div class="gut">${ops[i][3]+1}</div><div class="body">${tdEsc(linesA[ops[i][3]])}</div></div>`);
+        right.push(`<div class="td-line td-eq"><div class="gut">${ops[i][4]+1}</div><div class="body">${tdEsc(linesB[ops[i][4]])}</div></div>`);
+        i++;
+      } else {
+        const dels = [], adds = [];
+        while(i<ops.length && ops[i][0]==='del'){ dels.push(ops[i]); i++; }
+        while(i<ops.length && ops[i][0]==='add'){ adds.push(ops[i]); i++; }
+        const max = Math.max(dels.length, adds.length);
+        for(let k=0;k<max;k++){
+          if(dels[k]) left.push(`<div class="td-line td-del"><div class="gut">${dels[k][3]+1}</div><div class="body">${tdEsc(linesA[dels[k][3]])}</div></div>`);
+          else        left.push(`<div class="td-line td-eq"><div class="gut"></div><div class="body"></div></div>`);
+          if(adds[k]) right.push(`<div class="td-line td-add"><div class="gut">${adds[k][4]+1}</div><div class="body">${tdEsc(linesB[adds[k][4]])}</div></div>`);
+          else        right.push(`<div class="td-line td-eq"><div class="gut"></div><div class="body"></div></div>`);
+        }
+      }
+    }
+    out.innerHTML = `<div class="td-split"><div>${left.join('')}</div><div>${right.join('')}</div></div>`;
+  }
+  document.getElementById('td-stats').textContent = `+${adds} additions · −${dels} deletions · ${ops.length-adds-dels} unchanged`;
+}
+function tdEsc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') || '&nbsp;'}
+document.addEventListener('DOMContentLoaded', tdRun);
+</script>
+
+</body>
+</html>

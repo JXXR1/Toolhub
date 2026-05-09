@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Compteur de Mots", "tagline": "Comptez mots, caractères, phrases, paragraphes et estimez le temps de lecture et de parole en direct.", "description": "Compteur de mots gratuit. Comptage en direct des mots, caractères (avec/sans espaces), phrases, paragraphes, syllabes, et estimation du temps de lecture et de parole."},
         "it": {"name": "Contatore Parole", "tagline": "Conta parole, caratteri, frasi, paragrafi e stima tempo di lettura e parlato in tempo reale.", "description": "Contatore di parole gratuito. Conteggio live di parole, caratteri (con/senza spazi), frasi, paragrafi, sillabe e stima del tempo di lettura e parlato."},
         "pt": {"name": "Contador de Palavras", "tagline": "Conte palavras, caracteres, frases, parágrafos e estime tempo de leitura e fala enquanto você digita.", "description": "Contador de palavras online gratuito. Contagem ao vivo de palavras, caracteres (com e sem espaços), frases, parágrafos, sílabas, mais estimativas de tempo de leitura e fala."},
+        "pl": {"name": "Licznik Słów", "tagline": "Licz słowa, znaki, zdania, akapity i estymuj czas czytania + mówienia w trakcie pisania.", "description": "Darmowy online licznik słów. Liczenie na żywo słów, znaków (ze spacjami i bez), zdań, akapitów, sylab plus estymacja czasu czytania i mówienia."},
     },
     "body": """
 <div class="tool-card">
@@ -154,6 +155,39 @@ document.addEventListener('DOMContentLoaded', wcRun);
   <li><strong>Contagens de palavras variam entre ferramentas.</strong> Word, Google Docs e sistemas de submissão de periódicos podem discordar em alguns por cento — eles tratam hifens, travessões e números de forma diferente. Se um limite rígido importa, conte na mesma ferramenta que o gatekeeper usa.</li>
   <li><strong>"Mais frequente" não filtra stop words.</strong> "a" e "o" quase sempre lideram a lista. Olhe as entradas mais longas para o sinal real.</li>
   <li><strong>Estimativas de tempo de leitura são pessoais.</strong> 250 wpm é a mediana; conteúdo técnico vai mais devagar, ficção mais rápido. Trate o número como guia de planejamento, não como previsão.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Liczenie słów i znaków ręcznie jest mozolne i błędogenne, ale liczby liczą się ciągle: limity tweetów, segmenty SMS-ów, słownictwo eseju, meta description SEO, długości submisji do journala. To narzędzie daje liczenie na żywo w trakcie pisania — słowa, znaki (ze spacjami i bez), zdania, akapity, linie — plus estymacja czasu czytania i mówienia oraz szybkie zliczenie częstotliwości pierwszej piątki najczęściej powtarzanych słów.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Trafianie w 280 znaków limitu X/Twittera, 160-znakowy SMS, 155-znakowy meta description SEO albo 100-słowną intro na LinkedIn.</li>
+  <li>Budżetowanie słów eseju, posta blogowego, abstraktu albo wniosku grantowego pod twardy limit.</li>
+  <li>Estymacja, ile zajmie skrypt czytany na głos (podcasty, prezentacje, voice-overy).</li>
+  <li>Wyłapywanie nadużywanych słów patrząc na listę "najczęstszych" przed wysłaniem.</li>
+  <li>Sprawdzenie, czy tłumaczenie wyszło mniej więcej tej samej długości co oryginał.</li>
+</ul>
+
+<h3>Co znaczy każda liczba</h3>
+<ul>
+  <li><strong>Słowa</strong> — ciągi znaków non-whitespace rozdzielone whitespace'em. "Dwadzieścia-jeden" liczy się jako jedno słowo; "dwadzieścia jeden" — jako dwa.</li>
+  <li><strong>Znaki</strong> vs <strong>znaki (bez spacji)</strong> — oba liczą code pointy Unicode, nie bajty. Emoji może być tu 1–2 "znakami", ale więcej bajtów po zapisie.</li>
+  <li><strong>Zdania</strong> — segmenty kończące się <code>.</code>, <code>!</code> albo <code>?</code> (albo końcem tekstu). Heurystyka, patrz pułapki.</li>
+  <li><strong>Akapity</strong> — rozdzielone pustymi liniami.</li>
+  <li><strong>Czas czytania</strong> zakłada 250 wpm (czytanie po cichu przez dorosłego).</li>
+  <li><strong>Czas mówienia</strong> zakłada 130 wpm (typowe tempo konwersacyjne; lektorzy newsów lecą szybciej, audiobooki wolniej).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Detekcja zdań jest naiwna.</strong> "Mr.", "U.S.", "np.", "3,14" i wielokropki potrafią napompować licznik zdań. Liczba to przydatna estymata, nie gwarancja.</li>
+  <li><strong>Twitter/X liczy code pointy, nie znaki.</strong> Emoji flagi (🇵🇱) to 2 code pointy, ale renderuje się jako jeden symbol — Twitter traktuje to jako 2 znaki. To narzędzie zachowuje się tak samo.</li>
+  <li><strong>Limity znaków SMS-ów zależą od kodowania.</strong> Czyste ASCII mieści 160 znaków na segment; gdy wstawisz znak spoza GSM (myślnik, smart quote, znak diakrytyczny), cała wiadomość przełącza się na UCS-2 i limit spada do 70. Narzędzie raportuje limit GSM; sprawdź zachowanie operatora dla faktycznego kosztu.</li>
+  <li><strong>Liczenie słów różni się między narzędziami.</strong> Word, Google Docs i systemy submisji journali potrafią różnić się o kilka procent — inaczej traktują myślniki, pauzy i liczby. Jeśli twardy limit ma znaczenie, licz w tym samym narzędziu, którego używa gatekeeper.</li>
+  <li><strong>"Najczęstsze" nie filtruje stop words.</strong> "i", "w", "na" prawie zawsze lecą na czoło. Patrz na dłuższe wpisy po realny sygnał.</li>
+  <li><strong>Estymaty czasu czytania są osobiste.</strong> 250 wpm to mediana; treść techniczna idzie wolniej, fikcja szybciej. Traktuj liczbę jako wskazówkę planowania, nie predykcję.</li>
 </ul>
 """,
     },

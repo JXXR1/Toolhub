@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Codes HTTP", "tagline": "Recherchez n'importe quel code HTTP (1xx–5xx). Signification, causes courantes et référence RFC.", "description": "Référence gratuite des codes HTTP. Recherchez tout code standard (100–599) avec sa signification, ses causes courantes et la RFC. Filtrage en direct."},
         "it": {"name": "Codici di Stato HTTP", "tagline": "Cerca qualsiasi codice HTTP (1xx–5xx). Significato, cause comuni e riferimento RFC.", "description": "Riferimento gratuito per i codici HTTP. Cerca qualsiasi codice standard (100–599) con significato, cause comuni e RFC. Filtra mentre digiti."},
         "pt": {"name": "Códigos de Status HTTP", "tagline": "Consulte qualquer código de status HTTP (1xx–5xx). Significado, causas comuns e a referência da RFC.", "description": "Referência grátis de códigos de status HTTP. Pesquise qualquer código padrão (100–599), veja seu significado, causas comuns e a RFC onde está definido. Filtra enquanto você digita."},
+        "pl": {"name": "Kody Statusu HTTP", "tagline": "Sprawdź dowolny kod statusu HTTP (1xx–5xx). Znaczenie, typowe przyczyny i odwołanie do RFC.", "description": "Darmowa referencja kodów statusu HTTP. Wyszukaj dowolny standardowy kod (100–599), zobacz jego znaczenie, typowe przyczyny i RFC, w którym jest zdefiniowany. Filtruj podczas pisania."},
     },
     "body": """
 <div class="tool-card">
@@ -266,6 +267,29 @@ document.addEventListener('DOMContentLoaded', hsRun);
 <li><strong>200 con corpo di errore non è RESTful.</strong> In caso di fallimento, restituire un 4xx.</li>
 <li><strong>418 è uno scherzo.</strong> Non in produzione.</li>
 <li><strong>RFC 9110 sostituisce RFC 7231 ecc.</strong> Citare 9110.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Kody statusu HTTP to trzycyfrowe liczby, które serwer odsyła klientowi, żeby powiedzieć, jak poszło z requestem. Grupują się w pięć rodzin: 1xx (informacyjne), 2xx (sukces), 3xx (przekierowanie), 4xx (błąd klienta), 5xx (błąd serwera). Większość deweloperów zna nagłówkowe kody — 200, 301, 404, 500 — ale w długim ogonie (409 Conflict, 422 Unprocessable, 504 Gateway Timeout) mieszkają prawdziwe bugi. To narzędzie daje pełną listę ze znaczeniami i RFC, w którym każdy jest zdefiniowany.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Czytasz dokumentację API, która zwraca kod, którego nie kojarzysz (425? 451?).</li>
+  <li>Wybierasz odpowiedni kod do zwrotu z własnego API — 404 vs 410, 401 vs 403, 422 vs 400.</li>
+  <li>Diagnozujesz 502/504 — upstream jest down, czy tylko wolny?</li>
+  <li>Rozstrzygasz, czy 200-z-error-body, czy prawdziwe 4xx jest właściwe.</li>
+  <li>Szukasz odwołania do RFC do code review albo dokumentu design.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>401 znaczy nieuwierzytelniony, 403 znaczy bez uprawnień.</strong> Nazwy mylą — 401 mówi "nie wiem, kim jesteś", 403 mówi "wiem, kim jesteś, i nie wolno ci". Używaj 403 tylko wtedy, gdy ponowne uwierzytelnienie nie pomogłoby.</li>
+  <li><strong>302 jest dwuznaczne co do metody.</strong> Przeglądarki historycznie zmieniały POST→GET przy redirekcie 302. Używaj 307 (zachowuje metodę) albo 303 (zawsze GET), żeby być jednoznacznym.</li>
+  <li><strong>404 to nie 410.</strong> 404 = "nie wiem"; 410 = "wiem i to zniknęło na zawsze". Używaj 410, gdy wyszukiwarki mają porzucić URL.</li>
+  <li><strong>200 z error body to nie "RESTowo".</strong> Jeśli request padł na poziomie zasobu, zwracaj 4xx z błędem w body.</li>
+  <li><strong>418 to żart.</strong> Nie używaj I'm-a-teapot na produkcji — klienci i proxy traktują to niespójnie.</li>
+  <li><strong>RFC 9110 zastępuje RFC 7231/7232/7233/7234/7235.</strong> Jeśli cytujesz spec, użyj 9110 (czerwiec 2022), chyba że specjalnie potrzebujesz starszej wersji.</li>
 </ul>
 """,
     },

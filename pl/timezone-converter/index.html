@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konwerter Stref Czasowych — Toolhub</title>
+  <meta name="description" content="Darmowy online konwerter stref czasowych. Konwertuj między dowolnymi strefami IANA ze świadomością DST. Wybierz spośród typowych stref albo dowolnej z 400+ obsługiwanych przez przeglądarkę.">
+  <meta property="og:title" content="Konwerter Stref Czasowych — Toolhub">
+  <meta property="og:description" content="Darmowy online konwerter stref czasowych. Konwertuj między dowolnymi strefami IANA ze świadomością DST. Wybierz spośród typowych stref albo dowolnej z 400+ obsługiwanych przez przeglądarkę.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/timezone-converter/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/timezone-converter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/timezone-converter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/timezone-converter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/timezone-converter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/timezone-converter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/timezone-converter/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/timezone-converter/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/timezone-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/timezone-converter/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/timezone-converter/#tool",
+        "name": "Konwerter Stref Czasowych",
+        "description": "Darmowy online konwerter stref czasowych. Konwertuj między dowolnymi strefami IANA ze świadomością DST. Wybierz spośród typowych stref albo dowolnej z 400+ obsługiwanych przez przeglądarkę.",
+        "url": "https://toolhub.software/pl/timezone-converter/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Data Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["timezone", "tz", "convert", "utc", "date", "time", "iana"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Konwerter Stref Czasowych", "item": "https://toolhub.software/pl/timezone-converter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/timezone-converter/'; else location.href='/timezone-converter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Konwerter Stref Czasowych</div>
+    <h1>Konwerter Stref Czasowych</h1>
+    <p class="tagline">Konwertuj datę i godzinę między strefami czasowymi IANA. Zobacz offsety, status DST i dzień tygodnia po obu stronach.</p>
+    
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Date &amp; time (in source zone)</label>
+      <input type="datetime-local" id="tz-when" oninput="tzRun()" step="1">
+    </div>
+    <div>
+      <label>Z (source zone)</label>
+      <select id="tz-from" onchange="tzRun()"></select>
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:1rem">
+    <div>
+      <label>Na (target zone)</label>
+      <select id="tz-to" onchange="tzRun()"></select>
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <button class="secondary" onclick="tzNow()" style="width:100%">Now</button>
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Wynik</label>
+  <pre class="output" id="tz-out">Wpisz dane powyżej, aby zobaczyć wynik.</pre>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Do czego to służy?</h2>
+<p>Strefy czasowe są zwodniczo upierdliwe. Spotkanie o "9:00" znaczy różne absolutne momenty w Warszawie, Londynie i Nowym Jorku — a offset między dowolną parą zmienia się dwa razy w roku przez DST, w różnych terminach. To narzędzie bierze czas ścienny w jednej strefie IANA i mówi ci dokładny ekwiwalent w innej, z aktualnymi offsetami, instantem UTC i dniem tygodnia po obu stronach.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Planowanie calla między kontynentami — potwierdzenie, czym jest "15:00 CET" w strefie kolegi.</li>
+  <li>Czytanie timestampu z loga zapisanego w UTC i tłumaczenie go na czas lokalny do raportu user-facing.</li>
+  <li>Sprawdzenie, czy okno deploya albo slot maintenance przekracza granicę DST.</li>
+  <li>Sanity check, czy wyrażenie crona w <code>America/New_York</code> odpala w momencie, którego się spodziewasz w swojej strefie.</li>
+  <li>Wyliczenie zmiany dnia tygodnia przy przekraczaniu international date line.</li>
+</ul>
+
+<h3>Dlaczego strefy IANA (nie "GMT+2")</h3>
+<p>Strefa IANA typu <code>Europe/Warsaw</code> albo <code>America/New_York</code> koduje historyczne i bieżące reguły dla danej lokalizacji — daty rozpoczęcia i zakończenia DST, zmiany strefy (Rosja zniosła DST w 2014; Turcja porzuciła DST w 2016), nawet to, że Samoa pominęło cały dzień w 2011. Czysty offset typu "GMT+2" nic nie mówi o tym, czy DST się stosuje, jaka była reguła w zeszłym roku albo jaka będzie za rok. Przeglądarki dostarczają bazę IANA (przez ICU/CLDR) i aktualizują automatycznie, więc konwersja zostaje poprawna w czasie.</p>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Przejścia DST tworzą czasy dwuznaczne i nieistniejące.</strong> Gdy zegar się cofa, 02:30 dzieje się dwa razy; gdy się przesuwa do przodu, 02:30 nie istnieje wcale. Narzędzie domyślnie wybiera interpretację standard time; jeśli potrzebujesz drugiej strony, przesuń o godzinę w którąś stronę.</li>
+  <li><strong>Offsety nie są stałe.</strong> "CET" to UTC+1 zimą i UTC+2 latem (CEST). Wyjście zawsze pokazuje faktyczny offset dla wpisanej daty — ufaj wyświetlanemu offsetowi, nie skrótowi.</li>
+  <li><strong>Skróty krajów to nie strefy.</strong> "EST" jest dwuznaczne (US vs Australian); "IST" może znaczyć indyjską, irlandzką albo izraelską. Zawsze wybieraj strefę IANA, nie skrót.</li>
+  <li><strong>Dokładność historyczna</strong> jest dobra dla nowoczesnej ery, ale rozjeżdża się dla bardzo starych dat. Timestampy sprzed 1970 mogą używać przybliżonych offsetów w niektórych przeglądarkach.</li>
+  <li><strong>Zapisywanie dat: zawsze używaj UTC.</strong> Konwertuj przy wyświetlaniu. Linia UTC na wyjściu daje ci kanoniczną wartość do zapisu w bazie.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/timestamp-converter/">Konwerter Unix Timestamp</a> <a href="/pl/date-calculator/">Kalkulator Dat</a> <a href="/pl/cron-parser/">Parser Wyrażeń Cron</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const TZ_COMMON = [
+  'UTC','Europe/London','Europe/Paris','Europe/Berlin','Europe/Bratislava','Europe/Madrid','Europe/Rome','Europe/Athens','Europe/Moscow',
+  'Africa/Cairo','Africa/Lagos','Africa/Johannesburg',
+  'Asia/Dubai','Asia/Karachi','Asia/Kolkata','Asia/Bangkok','Asia/Singapore','Asia/Shanghai','Asia/Tokyo','Asia/Seoul',
+  'Australia/Perth','Australia/Sydney','Pacific/Auckland',
+  'America/New_York','America/Toronto','America/Chicago','America/Denver','America/Los_Angeles','America/Anchorage','America/Sao_Paulo','America/Mexico_City'
+];
+
+function tzPopulate(){
+  const local = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  let all = TZ_COMMON.slice();
+  if (Intl.supportedValuesOf){
+    try { all = Intl.supportedValuesOf('timeZone'); } catch(e){}
+  }
+  if (!all.includes(local)) all = [local, ...all];
+  for (const sel of [document.getElementById('tz-from'), document.getElementById('tz-to')]){
+    sel.innerHTML = all.map(z => `<option value="${z}">${z}</option>`).join('');
+  }
+  document.getElementById('tz-from').value = local;
+  document.getElementById('tz-to').value = 'UTC';
+}
+
+function tzNow(){
+  const d = new Date();
+  const local = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  document.getElementById('tz-from').value = local;
+  // Format current local date for datetime-local input
+  const pad = n => String(n).padStart(2,'0');
+  document.getElementById('tz-when').value = d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'T'+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  tzRun();
+}
+
+function tzGetOffsetMinutes(date, tz){
+  // Get the minutes offset of `date` (an instant) in `tz`, vs UTC
+  const dtf = new Intl.DateTimeFormat('en-US', {
+    timeZone: tz, hour12: false,
+    year:'numeric', month:'2-digit', day:'2-digit',
+    hour:'2-digit', minute:'2-digit', second:'2-digit'
+  });
+  const parts = Object.fromEntries(dtf.formatToParts(date).filter(p=>p.type!=='literal').map(p=>[p.type,p.value]));
+  const asLocal = Date.UTC(parts.year, parts.month-1, parts.day, parts.hour==='24'?0:parts.hour, parts.minute, parts.second);
+  return Math.round((asLocal - date.getTime()) / 60000);
+}
+
+function tzFormatOffset(min){
+  const sign = min < 0 ? '-' : '+';
+  const a = Math.abs(min);
+  return sign + String(Math.floor(a/60)).padStart(2,'0') + ':' + String(a%60).padStart(2,'0');
+}
+
+function tzRun(){
+  const whenStr = document.getElementById('tz-when').value;
+  const from = document.getElementById('tz-from').value;
+  const to = document.getElementById('tz-to').value;
+  const out = document.getElementById('tz-out');
+  out.classList.remove('error');
+  if (!whenStr || !from || !to){ out.textContent = 'Wpisz dane powyżej, aby zobaczyć wynik.'; return; }
+  // Parse the wall-clock time as if it's in the source zone.
+  // Strategy: build a Date from the wall-clock as if UTC, then shift by the source-zone offset.
+  const m = whenStr.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?/);
+  if (!m){ out.classList.add('error'); out.textContent = 'Invalid date'; return; }
+  const utcMs = Date.UTC(+m[1], +m[2]-1, +m[3], +m[4], +m[5], +(m[6]||0));
+  const probe = new Date(utcMs);
+  const fromOff = tzGetOffsetMinutes(probe, from);
+  // The actual instant: utcMs minus the source zone offset gives the true UTC instant for the wall-clock time
+  const instant = new Date(utcMs - fromOff * 60000);
+  const toFmt = new Intl.DateTimeFormat(undefined, {
+    timeZone: to, weekday:'short', year:'numeric', month:'short', day:'2-digit',
+    hour:'2-digit', minute:'2-digit', second:'2-digit', timeZoneName:'short', hour12: false
+  });
+  const fromFmt = new Intl.DateTimeFormat(undefined, {
+    timeZone: from, weekday:'short', year:'numeric', month:'short', day:'2-digit',
+    hour:'2-digit', minute:'2-digit', second:'2-digit', timeZoneName:'short', hour12: false
+  });
+  const toOff = tzGetOffsetMinutes(instant, to);
+  out.textContent =
+    'Source:  ' + fromFmt.format(instant) + '\n' +
+    '         (' + from + ', UTC' + tzFormatOffset(fromOff) + ')\n\n' +
+    'Target:  ' + toFmt.format(instant) + '\n' +
+    '         (' + to + ', UTC' + tzFormatOffset(toOff) + ')\n\n' +
+    'Diff:    ' + Math.abs(toOff - fromOff) + ' min (' + ((toOff-fromOff)/60).toFixed(2) + ' h)\n' +
+    'UTC:     ' + instant.toISOString().replace('T',' ').slice(0,19) + 'Z\n' +
+    'Unix:    ' + Math.floor(instant.getTime()/1000);
+}
+document.addEventListener('DOMContentLoaded', () => { tzPopulate(); tzNow(); });
+</script>
+
+</body>
+</html>

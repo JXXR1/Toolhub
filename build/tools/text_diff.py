@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Comparateur de Texte", "tagline": "Comparez deux blocs de texte ligne par ligne. Ajouts, suppressions, contexte. Vue côte à côte ou unifiée.", "description": "Comparateur de texte gratuit en ligne. Diff Myers par ligne avec vue côte-à-côte et unifiée, ignore les espaces ou la casse. Dans le navigateur."},
         "it": {"name": "Confronto Testo", "tagline": "Confronta due blocchi di testo e vedi aggiunte, rimozioni e contesto riga per riga. Vista affiancata o unificata.", "description": "Strumento di diff di testo gratuito online. Diff di Myers per riga con vista affiancata e unificata, ignora spazi e maiuscole. Nel browser."},
         "pt": {"name": "Diff de Texto", "tagline": "Compare dois blocos de texto e veja adições, remoções e contexto inalterado linha a linha. Visão lado a lado ou unificada.", "description": "Ferramenta de diff de texto gratuita online. Diff de Myers em nível de linha com visão lado a lado e unificada, com toggles para ignorar whitespace e ignorar case. Roda no navegador."},
+        "pl": {"name": "Diff Tekstu", "tagline": "Porównaj dwa bloki tekstu i zobacz dodania, usunięcia i niezmieniony kontekst linia po linii. Widok side-by-side albo unified.", "description": "Darmowe narzędzie do diffowania tekstu online. Myers diff na poziomie linii z widokiem side-by-side i unified, togle do ignorowania białych znaków i wielkości liter. Działa w przeglądarce."},
     },
     "body": """
 <div class="td-grid">
@@ -201,6 +202,35 @@ document.addEventListener('DOMContentLoaded', tdRun);
   <li><strong>Ordem importa.</strong> Se você troca duas linhas de lugar, o diff mostra as duas como removidas-e-readicionadas, não como um par "movido". Não há detecção de movimento.</li>
   <li><strong>Entradas grandes (10k+ linhas) podem ser lentas.</strong> O algoritmo LCS é O(m·n) — tudo bem para arquivos típicos, lento para muito grandes. Faça diff em pedaços pequenos.</li>
   <li><strong>Newlines no final</strong> contam como linha. Duas entradas que diferem só em terminar ou não com newline vão mostrar uma adição ou remoção no final.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Porównanie dwóch wersji kawałka tekstu — akapitu, pliku configa, query SQL, listy — i zobaczenie, które linie dokładnie zostały dodane, usunięte albo zostały bez zmian. Nawet kiedy nie masz pod ręką <code>git diff</code> albo tekst nie jest w version control. Wyjście to ten sam line-level diff, jaki widzisz w code review: zielony dla dodań, czerwony dla usunięć, zwykły dla niezmienionego kontekstu.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Wykrycie, czym się różnią dwa maile, kontrakty albo wklejone bloby, które "wyglądają tak samo".</li>
+  <li>Porównanie configów albo zmiennych środowiskowych między dwoma środowiskami (staging vs prod).</li>
+  <li>Review zmian w copy, które ktoś inny edytował w Wordzie/Docsach.</li>
+  <li>Diff dwóch wyników query, snippetów logów albo blobów JSON (najpierw przepuść przez JSON Formatter, żeby skanonizować).</li>
+  <li>Szybki sanity check search-and-replace przed zacommitowaniem.</li>
+</ul>
+
+<h3>Side-by-side vs unified</h3>
+<ul>
+  <li><strong>Side-by-side</strong> — łatwiej skanować małe zmiany linia po linii; oryginał po lewej, nowa wersja po prawej.</li>
+  <li><strong>Unified</strong> — bliższe wyjściu <code>git diff</code>; lepsze do dzielenia się albo drukowania, łatwiejsze do śledzenia, gdy zmiany są rozproszone.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>To diff linii, nie słów.</strong> Jeden zmieniony znak w środku długiej linii oznacza całą linię jako zmienioną. Do diffowania prozatorskiego na poziomie akapitów może chcesz narzędzia, które tokenizuje na słowa.</li>
+  <li><strong>"Ignoruj białe znaki" wpływa tylko na porównanie, nie na wyświetlanie.</strong> Linie różniące się tylko końcowymi spacjami albo wcięciem zwijają się w niezmienioną kolumnę, ale oryginalny whitespace nadal jest pokazany.</li>
+  <li><strong>"Ignoruj case" tak samo.</strong> "TODO" i "todo" porównują się jako równe, ale oryginalna wielkość liter jest renderowana.</li>
+  <li><strong>Kolejność ma znaczenie.</strong> Jeśli zamienisz dwie linie miejscami, diff pokaże obie jako usunięte-i-dodane-na-nowo, nie jako parę "przeniesioną". Nie ma detekcji przenosin.</li>
+  <li><strong>Duże inputy (10k+ linii) bywają wolne.</strong> Algorytm LCS jest O(m·n) — OK dla typowych plików, ślamazarny dla bardzo dużych. Diffuj małymi kawałkami.</li>
+  <li><strong>Końcowe newliny</strong> liczą się jako linia. Dwa inputy różniące się tylko tym, czy kończą się newlinem, pokażą jedno końcowe dodanie albo usunięcie.</li>
 </ul>
 """,
     },

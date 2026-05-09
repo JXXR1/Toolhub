@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker — Toolhub</title>
+  <meta name="description" content="Darmowy color picker online. Konwertuj między HEX, RGB(A), HSL(A), HSV i CMYK z podglądem na żywo, suwakiem opacity i przyciskami kopiowania.">
+  <meta property="og:title" content="Color Picker — Toolhub">
+  <meta property="og:description" content="Darmowy color picker online. Konwertuj między HEX, RGB(A), HSL(A), HSV i CMYK z podglądem na żywo, suwakiem opacity i przyciskami kopiowania.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/color-picker/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/pl/color-picker/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/color-picker/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/color-picker/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/color-picker/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/color-picker/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/color-picker/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/color-picker/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/color-picker/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/color-picker/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/color-picker/#tool",
+        "name": "Color Picker",
+        "description": "Darmowy color picker online. Konwertuj między HEX, RGB(A), HSL(A), HSV i CMYK z podglądem na żywo, suwakiem opacity i przyciskami kopiowania.",
+        "url": "https://toolhub.software/pl/color-picker/",
+        "applicationCategory": "DesignApplication",
+        "applicationSubCategory": "Design Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["color", "picker", "hex", "rgb", "hsl", "hsv", "cmyk", "palette"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Color Picker", "item": "https://toolhub.software/pl/color-picker/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/color-picker/'; else location.href='/color-picker/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Color Picker</div>
+    <h1>Color Picker</h1>
+    <p class="tagline">Wybierz kolor i zobacz go od razu w HEX, RGB, RGBA, HSL, HSLA, HSV i CMYK. Reguluj opacity i kopiuj dowolną wartość.</p>
+    
+<div class="tool-card">
+  <div class="cp-grid">
+    <div class="cp-swatch" id="cp-swatch"></div>
+    <div class="cp-controls">
+      <label>Pick a color</label>
+      <input type="color" id="cp-input" value="#3b82f6" oninput="cpRun()">
+      <label style="margin-top:0.8rem">Opacity: <span id="cp-alpha-display">100%</span></label>
+      <input type="range" id="cp-alpha" min="0" max="100" value="100" oninput="cpRun()">
+      <label style="margin-top:0.8rem">Or paste any value</label>
+      <input type="text" id="cp-paste" placeholder="#ff8800 · rgb(255,136,0) · hsl(32 100% 50%)" oninput="cpFromText()">
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Wynik</label>
+  <div id="cp-out" class="cp-vals"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Do czego to służy?</h2>
+<p>Wybierz kolor — albo wklej dowolną wartość HEX / <code>rgb()</code> / <code>hsl()</code> — i od razu zobacz go we wszystkich powszechnych notacjach: HEX (3- i 8-cyfrowy z alphą), RGB(A), HSL(A), HSV i CMYK. Przydaje się, gdy masz wartość w jednej przestrzeni i potrzebujesz w innej, gdy dopasowujesz kolor marki między CSS / narzędziami designerskimi / drukiem, albo gdy regulujesz opacity bez ślepego sprawdzania efektu.</p>
+
+<h3>Kiedy której przestrzeni używać</h3>
+<ul>
+  <li><strong>HEX / RGB</strong> — CSS, narzędzia designerskie, szablony maili. Wszędzie wspierane.</li>
+  <li><strong>HSL</strong> — czytelne palety. Tweakuj hue, saturation albo lightness niezależnie, bez dryfowania koloru po innych osiach.</li>
+  <li><strong>HSV</strong> — software designerski (Photoshop, Figma) do cieniowania; pasuje do tego, jak myśli o kolorze większość pickerów ("ten sam kolor, tylko jaśniejszy").</li>
+  <li><strong>CMYK</strong> — wyjście do druku. Tylko przybliżenie: ekrany są w RGB, a drukarki nie współdzielą jednego profilu kolorów.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Kodowanie alphy różni się przestrzenią.</strong> CSS wspiera <code>rgba()</code>, <code>hsla()</code> i 8-cyfrowy HEX (<code>#RRGGBBAA</code>). Starsze szablony maili i niektóre narzędzia projektowe nie ogarniają <code>#RRGGBBAA</code> — wracaj do <code>rgba()</code>.</li>
+  <li><strong>Hue w HSL jest w stopniach.</strong> 0 = czerwony, 120 = zielony, 240 = niebieski. CSS akceptuje też <code>turn</code>, <code>rad</code>, <code>grad</code>, ale tu wyjście jest w stopniach.</li>
+  <li><strong>Konwersja na CMYK jest naiwna.</strong> Prawdziwy druk wymaga profilu ICC (sRGB → CMYK z rendering intent). Wyjście tego narzędzia nadaje się do mockupów brand decka, nie do plików gotowych do druku offsetowego.</li>
+  <li><strong>OKLCH i OKLAB</strong> (nowoczesne przestrzenie percepcyjnie jednolite) nie są tu pokazane — są nowsze i jeszcze nie wszędzie wspierane. Na razie trzymaj się HSL/HSV w toolingu design systemowym.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/css-minifier/">Minifikator CSS</a> <a href="/pl/image-to-base64/">Obrazek do Base64</a> <a href="/pl/qr-code-generator/">Generator Kodów QR</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Prywatność</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.cp-grid{display:grid;grid-template-columns:160px 1fr;gap:1rem;align-items:start}
+.cp-swatch{height:160px;border-radius:10px;border:1px solid var(--border);background:linear-gradient(45deg,#ccc 25%,transparent 25%,transparent 75%,#ccc 75%,#ccc),linear-gradient(45deg,#ccc 25%,transparent 25%,transparent 75%,#ccc 75%,#ccc);background-size:20px 20px;background-position:0 0,10px 10px;position:relative;overflow:hidden}
+.cp-swatch::after{content:'';position:absolute;inset:0;background:var(--cp-color,#3b82f6)}
+.cp-controls input[type=color]{width:100%;height:48px;border:1px solid var(--border);border-radius:8px;background:var(--bg-elev);cursor:pointer;padding:0.2rem}
+.cp-vals{display:grid;gap:0.5rem}
+.cp-row{display:grid;grid-template-columns:80px 1fr auto;gap:0.6rem;align-items:center;padding:0.5rem 0.7rem;background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;font-family:ui-monospace,monospace;font-size:0.88rem}
+.cp-row .lbl{color:var(--text-muted);font-size:0.78rem}
+.cp-row button{padding:0.3rem 0.65rem;font-size:0.78rem}
+@media(max-width:600px){.cp-grid{grid-template-columns:1fr}.cp-swatch{height:100px}.cp-row{grid-template-columns:1fr;gap:0.25rem}.cp-row button{justify-self:start}}
+</style>
+<script>
+function cpHexToRgb(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(c=>c+c).join('');return{r:parseInt(h.slice(0,2),16),g:parseInt(h.slice(2,4),16),b:parseInt(h.slice(4,6),16)}}
+function cpRgbToHex(r,g,b){return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase()}
+function cpRgbToHsl(r,g,b){r/=255;g/=255;b/=255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);let h=0,s=0,l=(mx+mn)/2;if(mx!==mn){const d=mx-mn;s=l>0.5?d/(2-mx-mn):d/(mx+mn);if(mx===r)h=(g-b)/d+(g<b?6:0);else if(mx===g)h=(b-r)/d+2;else h=(r-g)/d+4;h*=60}return{h:Math.round(h),s:Math.round(s*100),l:Math.round(l*100)}}
+function cpRgbToHsv(r,g,b){r/=255;g/=255;b/=255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn;let h=0;const s=mx===0?0:d/mx,v=mx;if(d!==0){if(mx===r)h=(g-b)/d+(g<b?6:0);else if(mx===g)h=(b-r)/d+2;else h=(r-g)/d+4;h*=60}return{h:Math.round(h),s:Math.round(s*100),v:Math.round(v*100)}}
+function cpRgbToCmyk(r,g,b){const R=r/255,G=g/255,B=b/255;const K=1-Math.max(R,G,B);if(K===1)return{c:0,m:0,y:0,k:100};const C=(1-R-K)/(1-K),M=(1-G-K)/(1-K),Y=(1-B-K)/(1-K);return{c:Math.round(C*100),m:Math.round(M*100),y:Math.round(Y*100),k:Math.round(K*100)}}
+function cpParse(text){
+  text = text.trim();
+  if(!text) return null;
+  if(text[0]==='#' || /^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(text)) {
+    const h = text[0]==='#'?text:'#'+text;
+    if(/^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(h)) return {...cpHexToRgb(h), a:1};
+  }
+  let m = text.match(/rgba?\(\s*(\d+)[\s,]+(\d+)[\s,]+(\d+)(?:[\s,/]+([\d.]+%?))?\s*\)/i);
+  if(m){const a=m[4]?(m[4].endsWith('%')?parseFloat(m[4])/100:parseFloat(m[4])):1;return{r:+m[1],g:+m[2],b:+m[3],a}}
+  m = text.match(/hsla?\(\s*(\d+(?:\.\d+)?)(?:deg)?[\s,]+(\d+(?:\.\d+)?)%?[\s,]+(\d+(?:\.\d+)?)%?(?:[\s,/]+([\d.]+%?))?\s*\)/i);
+  if(m){const a=m[4]?(m[4].endsWith('%')?parseFloat(m[4])/100:parseFloat(m[4])):1;const rgb=cpHslToRgb(+m[1],+m[2],+m[3]);return{...rgb,a}}
+  return null;
+}
+function cpHslToRgb(h,s,l){s/=100;l/=100;const c=(1-Math.abs(2*l-1))*s,x=c*(1-Math.abs((h/60)%2-1)),m=l-c/2;let r=0,g=0,b=0;if(h<60){r=c;g=x}else if(h<120){r=x;g=c}else if(h<180){g=c;b=x}else if(h<240){g=x;b=c}else if(h<300){r=x;b=c}else{r=c;b=x}return{r:Math.round((r+m)*255),g:Math.round((g+m)*255),b:Math.round((b+m)*255)}}
+function cpRow(label, value){return `<div class="cp-row"><div class="lbl">${label}</div><div>${value}</div><button class="secondary" onclick="cpCopy(this,'${value.replace(/'/g,"\\'")}')">Kopiuj</button></div>`}
+function cpCopy(btn,text){navigator.clipboard.writeText(text);const old=btn.textContent;btn.textContent='✓';setTimeout(()=>btn.textContent=old,900)}
+function cpRun(){
+  const hex = document.getElementById('cp-input').value;
+  const a = parseInt(document.getElementById('cp-alpha').value,10)/100;
+  document.getElementById('cp-alpha-display').textContent = Math.round(a*100)+'%';
+  const {r,g,b} = cpHexToRgb(hex);
+  cpRender(r,g,b,a);
+}
+function cpFromText(){
+  const t = document.getElementById('cp-paste').value;
+  const c = cpParse(t);
+  if(!c) return;
+  document.getElementById('cp-input').value = cpRgbToHex(c.r,c.g,c.b);
+  document.getElementById('cp-alpha').value = Math.round((c.a||1)*100);
+  document.getElementById('cp-alpha-display').textContent = Math.round((c.a||1)*100)+'%';
+  cpRender(c.r,c.g,c.b,c.a||1);
+}
+function cpRender(r,g,b,a){
+  const sw = document.getElementById('cp-swatch');
+  sw.style.setProperty('--cp-color', `rgba(${r},${g},${b},${a})`);
+  const hsl = cpRgbToHsl(r,g,b);
+  const hsv = cpRgbToHsv(r,g,b);
+  const cmyk = cpRgbToCmyk(r,g,b);
+  const out = [
+    cpRow('HEX',  cpRgbToHex(r,g,b)),
+    cpRow('HEX8', cpRgbToHex(r,g,b)+Math.round(a*255).toString(16).padStart(2,'0').toUpperCase()),
+    cpRow('RGB',  `rgb(${r}, ${g}, ${b})`),
+    cpRow('RGBA', `rgba(${r}, ${g}, ${b}, ${a.toFixed(2)})`),
+    cpRow('HSL',  `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`),
+    cpRow('HSLA', `hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, ${a.toFixed(2)})`),
+    cpRow('HSV',  `hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`),
+    cpRow('CMYK', `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`),
+  ].join('');
+  document.getElementById('cp-out').innerHTML = out;
+}
+document.addEventListener('DOMContentLoaded', cpRun);
+</script>
+
+</body>
+</html>

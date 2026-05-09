@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Convertisseur Timestamp Unix", "tagline": "Convertissez entre timestamps Unix et dates lisibles. Secondes et millisecondes, UTC et local.", "description": "Convertisseur de timestamp Unix gratuit. Conversion entre secondes epoch, millisecondes, ISO 8601 et dates lisibles."},
         "it": {"name": "Convertitore Timestamp Unix", "tagline": "Converti tra timestamp Unix e date leggibili. Secondi e millisecondi, UTC e locale.", "description": "Convertitore gratuito di timestamp Unix. Conversione tra secondi epoch, millisecondi, ISO 8601 e date leggibili."},
         "pt": {"name": "Conversor de Timestamp Unix", "tagline": "Converta entre timestamps Unix e datas legíveis. Segundos e milissegundos, UTC e local.", "description": "Conversor gratuito de timestamp Unix. Converta entre segundos epoch, milissegundos, ISO 8601 e datas legíveis em UTC ou hora local."},
+        "pl": {"name": "Konwerter Unix Timestamp", "tagline": "Konwertuj między Unix timestampami a datami czytelnymi dla człowieka. Sekundy i milisekundy, UTC i lokalna.", "description": "Darmowy online konwerter Unix timestampów. Konwertuj między epoch w sekundach, milisekundach, ISO 8601 i datami czytelnymi dla człowieka w UTC albo czasie lokalnym."},
     },
     "body": """
 <div class="tool-card">
@@ -157,6 +158,35 @@ document.addEventListener('DOMContentLoaded', tsNow);
   <li><strong>Timestamps negativos</strong> são válidos e representam datas anteriores a 1970. Algumas bibliotecas rejeitam — teste antes de confiar.</li>
   <li><strong>A auto-detecção não é à prova de balas.</strong> Um valor de 10 dígitos <em>poderia</em> ser um timestamp em milissegundos de 1970 — extremamente improvável na prática, mas se você sabe a unidade, não dependa da heurística.</li>
   <li><strong>Sempre armazene em UTC.</strong> Timestamps são sem timezone; "hora local" é só para exibição. A linha "Local" na saída usa o fuso do seu navegador, mas o inteiro subjacente é sempre UTC.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Unix timestamp to jeden integer — liczba sekund (albo milisekund) od 1970-01-01 00:00:00 UTC. Są wszędzie: w plikach logów, w odpowiedziach API, w claimsach <code>iat</code>/<code>exp</code> JWT, w kolumnach <code>created_at</code> baz danych, w nagłówkach cache. Są jednoznaczne i wolne od strefy czasowej, ale nieczytelne dla człowieka — więc gdy coś się sypie o <code>1735689600</code>, musisz wiedzieć, czy to 14:00 czy 4:00 rano, dziś czy w zeszłym roku. To narzędzie przerzuca między formą integerową a formą czytelną w obie strony, z auto-detekcją sekund/ms i podpowiedzią czasu względnego.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Dekodowanie pola <code>"timestamp": 1735689600</code> z wpisu w logu albo odpowiedzi API.</li>
+  <li>Sprawdzenie, kiedy JWT został wystawiony albo kiedy wygasa (claimsy <code>iat</code> / <code>exp</code> to sekundy od epoch).</li>
+  <li>Wyliczenie przyszłego timestampu do nagłówka <code>retry-after</code>, zaplanowanego joba albo TTL cache.</li>
+  <li>Sanity check, czy data zapisana w bazie jest w sekundach, milisekundach, czy mikrosekundach.</li>
+  <li>Konwersja "now" na format, którego oczekuje twoje aktualne narzędzie.</li>
+</ul>
+
+<h3>Sekundy, milisekundy, mikrosekundy</h3>
+<ul>
+  <li><strong>Sekundy</strong> — pierwotna konwencja Unixa; ~10 cyfr dziś (np. <code>1735689600</code>). Używane w C, Linuksie, JWT, większości API, większości kolumn <code>integer</code> w bazie.</li>
+  <li><strong>Milisekundy</strong> — JS-owy <code>Date.now()</code>, javowy <code>System.currentTimeMillis()</code>, Kafka, wiele JSON-owych API. ~13 cyfr.</li>
+  <li><strong>Mikrosekundy (16 cyfr) / nanosekundy (19 cyfr)</strong> — pythonowy <code>time.time_ns()</code>, golangowy <code>time.Now().UnixNano()</code>, niektóre systemy metryk. To narzędzie ich nie obsługuje automatycznie — najpierw podziel przez 1000 albo 1 000 000.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Problem roku 2038.</strong> Signed 32-bitowe timestampy przepełniają się przy <code>2147483647</code> = <strong>03:14:07 UTC, 19 stycznia 2038</strong>. Stary kod C, kolumny <code>TIMESTAMP</code> w MySQL i systemy embedded mogą zawinąć się do 1901. Nowoczesne systemy używają 64 bitów i są OK do ~roku 292 277 026 596.</li>
+  <li><strong>Czas Unix pomija sekundy przestępne.</strong> Doba uniksowa ma dokładnie 86 400 sekund, nawet gdy UTC ma 86 401. Tak jest z założenia (uproszcza arytmetykę), ale znaczy, że nie użyjesz Unix timestampów do astronomii ani GPS-a z dokładnością subsekundową.</li>
+  <li><strong>Ujemne timestampy</strong> są poprawne i reprezentują daty sprzed 1970. Niektóre biblioteki je odrzucają — przetestuj zanim na tym polegniesz.</li>
+  <li><strong>Auto-detekcja nie jest niezawodna.</strong> 10-cyfrowa wartość <em>mogłaby</em> być milisekundowym timestampem z 1970 — w praktyce nieprawdopodobnie, ale jeśli wiesz, którą jednostkę masz, nie polegaj na heurystyce.</li>
+  <li><strong>Zawsze zapisuj UTC.</strong> Timestampy są wolne od strefy; "czas lokalny" jest tylko do wyświetlania. Linia "Local" na wyjściu używa strefy twojej przeglądarki, ale integer pod spodem to zawsze UTC.</li>
 </ul>
 """,
     },

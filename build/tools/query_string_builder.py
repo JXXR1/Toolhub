@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Constructeur de Query String", "tagline": "Ajoutez des lignes clé/valeur ; obtenez un query string correctement encodé. Supporte les tableaux (a[]=1) et les clés répétées.", "description": "Constructeur de query string gratuit. Ajoutez des paires clé/valeur et obtenez une chaîne ?a=1&b=hello%20world correctement percent-encoded, avec notation crochets optionnelle. 100% dans le navigateur."},
         "it": {"name": "Costruttore Query String", "tagline": "Aggiungi righe chiave/valore; ottieni un query string correttamente URL-codificato. Supporta array (a[]=1) e chiavi ripetute.", "description": "Costruttore di query string gratuito. Aggiungi coppie chiave/valore e ottieni una stringa ?a=1&b=hello%20world correttamente percent-encoded, con notazione bracket opzionale per array. 100% nel browser."},
         "pt": {"name": "Construtor de Query String", "tagline": "Adicione linhas de chave/valor; obtenha um query string corretamente URL-encoded. Suporta arrays (a[]=1) e chaves repetidas.", "description": "Construtor de query string gratuito. Adicione pares chave/valor e obtenha uma string ?a=1&b=hello%20world corretamente percent-encoded, com notação opcional de colchetes para arrays. 100% no navegador."},
+        "pl": {"name": "Builder Query Stringów", "tagline": "Dodawaj wiersze key/value; dostań poprawnie URL-encodowanego query stringa. Wspiera tablice (a[]=1) i powtarzane klucze.", "description": "Darmowy builder query stringów online. Dodawaj pary key/value i dostań poprawnie percent-encodowany ciąg ?a=1&b=hello%20world, z opcjonalną notacją tablic w nawiasach. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -262,6 +263,29 @@ document.addEventListener('DOMContentLoaded', () => { qsRender(); qsBuild(); });
 <li><strong>L'ordine può contare</strong> (URL firmati).</li>
 <li><strong>Limite lunghezza.</strong> 2–8 KB tipicamente.</li>
 <li><strong>Niente segreti</strong> — finiscono in log/cronologia/Referer.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Query string to zwykła lista par key/value sklejona <code>?</code>, <code>=</code> i <code>&amp;</code>, ale napisanie go ręcznie poprawnie jest upierdliwe: spacje stają się <code>%20</code> (albo <code>+</code>, zależnie), każda wartość jest percent-encodowana, a tablice mają co najmniej trzy konkurujące konwencje. To narzędzie pozwala wpisać klucze i wartości, których chcesz, zaznaczyć "multi" tym, które mają się powtarzać, i produkuje poprawnie zakodowany string gotowy do wklejenia po <code>?</code>.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Tworzenie URL-a API z kilkoma parametrami zawierającymi spacje, znaki diakrytyczne albo interpunkcję.</li>
+  <li>Budowa linka trackingowego (tagi UTM) bez literówek w zakodowanych wartościach.</li>
+  <li>Konstrukcja deep linka albo share URL-a, który ma round-trip przez maila, czat albo social.</li>
+  <li>Potwierdzenie właściwej notacji tablic dla API — <code>a[]=1</code>, <code>a=1&amp;a=2</code> albo <code>a=1,2</code> — przez wypróbowanie każdej.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Konwencje tablic nie są ustandaryzowane.</strong> PHP i Rails używają <code>a[]=1&amp;a[]=2</code>; pythonowy <code>requests</code> domyślnie powtarza <code>a=1&amp;a=2</code>; ASP.NET często używa przecinków. Dopasuj do tego, czego oczekuje twoje API.</li>
+  <li><strong><code>+</code> vs <code>%20</code>.</strong> <code>application/x-www-form-urlencoded</code> używa <code>+</code> dla spacji; query stringi URI ściśle używają <code>%20</code>. Większość serwerów akceptuje oba, ale niektóre nie — wybierz to, co dokumentuje twoje API.</li>
+  <li><strong>Pusta wartość różni się od brakującego klucza.</strong> <code>?a=</code> znaczy "a to pusty string"; pominięcie <code>a</code> znaczy "wartość nie podana". Niektóre API traktują to inaczej.</li>
+  <li><strong>Interakcja zarezerwowanych znaków.</strong> <code>=</code>, <code>&amp;</code>, <code>#</code>, <code>?</code> wewnątrz wartości są kodowane; literałne wersje w kluczach/wartościach zakończyłyby parametr albo całą query.</li>
+  <li><strong>Kolejność może mieć znaczenie.</strong> Niektóre schematy podpisanych URL-i (S3, webhooki Stripe, OAuth 1.0) wymagają parametrów w konkretnej kolejności przed podpisem. Narzędzie zachowuje kolejność twoich wierszy.</li>
+  <li><strong>Limity długości.</strong> Przeglądarki i serwery ograniczają długość query stringa w okolicach 2–8 KB. Wciskanie JSON-a w parametr query to smell.</li>
+  <li><strong>Nie wstawiaj sekretów do query stringa.</strong> Wpadną w logi serwera, historię przeglądarki i nagłówki Referer. Używaj body requesta albo nagłówka Authorization.</li>
 </ul>
 """,
     },

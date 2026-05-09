@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Formateur HTML", "tagline": "Formatez et embellissez du HTML ou minifiez-le. Taille d'indentation, suppression de commentaires, gestion des balises auto-fermantes.", "description": "Formateur et minifieur HTML gratuit. Pretty-print avec indentation configurable, suppression optionnelle des commentaires, respect des balises void/auto-fermantes. 100% dans le navigateur."},
         "it": {"name": "Formattatore HTML", "tagline": "Formatta e abbellisce HTML o minifica. Dimensione indentazione, rimozione commenti, consapevolezza tag auto-chiudenti.", "description": "Formattatore e minificatore HTML gratuito. Pretty-print con indentazione configurabile, rimozione opzionale dei commenti, rispetto dei tag void/auto-chiudenti. 100% nel browser."},
         "pt": {"name": "Formatador HTML", "tagline": "Formata e embeleza HTML ou minifica. Tamanho de indentação, remoção de comentários e reconhecimento de tags auto-fechantes.", "description": "Formatador e minificador HTML grátis online. Pretty-print com indentação configurável, remoção opcional de comentários e respeito por tags void/auto-fechantes. Roda totalmente no seu browser."},
+        "pl": {"name": "Formatter HTML", "tagline": "Sformatuj i upiększ HTML albo zminifikuj. Rozmiar wcięcia, usuwanie komentarzy i świadomość tagów samozamykających.", "description": "Darmowy online formatter i minifikator HTML. Pretty-print z konfigurowalnym wcięciem, opcjonalne usuwanie komentarzy i respektowanie tagów void/samozamykających. Działa w całości w przeglądarce."},
     },
     "body": """
 <div class="tool-card">
@@ -376,6 +377,28 @@ document.addEventListener('DOMContentLoaded', hfRun);
 <li><strong>"Comprimi spazi" modifica il rendering.</strong></li>
 <li><strong>Auto-chiudente in HTML è cosmetico.</strong></li>
 <li><strong>Minify non è una barriera di sicurezza.</strong></li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>HTML w edytorze trafia do nas w różnych stanach — zminifikowany na produkcję, generowany przez engine'y szablonów bez troski o białe znaki, klepany ręcznie i niespójnie wcinany. To narzędzie reformatuje dowolny fragment HTML ze spójnym wcięciem na zagnieżdżony element, rozpoznając elementy void (<code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;meta&gt;</code>) i inline (<code>&lt;a&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;strong&gt;</code>), żeby wynik wyglądał jak prawdziwy HTML, nie jak układ z reguły. Tryb minify usuwa białe znaki między tagami i opcjonalnie komentarze. Wszystko zostaje w przeglądarce.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Pretty-print zminifikowanego maila HTML albo "view source" strony, żeby przeczytać strukturę.</li>
+  <li>Sprzątanie snippetu z CMS / WYSIWYG przed wklejeniem do code review.</li>
+  <li>Minifikacja statycznego assetu HTML przed deployem — mniej bajtów na drucie, brak wycieku komentarzy.</li>
+  <li>Usuwanie komentarzy autora z szablonu przed publikacją.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>To pragmatyczny tokenizer, nie pełny parser HTML5.</strong> Sprawdza się na realnych fragmentach, ale nie poradzi sobie z mocno zepsutym inputem tak, jak przeglądarki (przeglądarki uruchamiają pełny algorytm parsowania HTML i po cichu naprawiają błędy — to narzędzie nie).</li>
+  <li><strong>Białe znaki wewnątrz <code>&lt;pre&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> są zachowywane.</strong> Te elementy są traktowane jako raw i nie są reindentowane.</li>
+  <li><strong>Elementy inline zostają w tej samej linii co tekst rodzica</strong> — <code>&lt;p&gt;some &lt;b&gt;bold&lt;/b&gt; text&lt;/p&gt;</code> nie zostanie podzielony na linie.</li>
+  <li><strong>"Collapse whitespace" zmienia renderowany wynik dla niektórych treści.</strong> Dwie spacje stają się jedną. Jeśli design polega na wielu spacjach albo non-breaking sequence'ach, zostaw wyłączone.</li>
+  <li><strong>Notacja samozamykająca w HTML jest kosmetyczna.</strong> <code>&lt;br/&gt;</code> i <code>&lt;br&gt;</code> są równoważne w HTML5; narzędzie zachowuje to, co napisałeś.</li>
+  <li><strong>Minify to nie granica bezpieczeństwa.</strong> Nie polegaj na usuwaniu komentarzy do ukrywania sekretów — i tak były wysłane do klienta.</li>
 </ul>
 """,
     },

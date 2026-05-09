@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Lanceur de Dés", "tagline": "Lancez les dés avec la notation D&D standard — 2d6+3, 1d20, 4d6 garder les 3 plus hauts. RNG crypto-sûr.", "description": "Lanceur de dés gratuit avec notation standard de jeu de rôle : 1d20, 2d6+3, 4d6kh3, 3d8-1. Chaque dé et le total. Utilise crypto.getRandomValues pour des lancers équitables."},
         "it": {"name": "Lanciatore di Dadi", "tagline": "Lancia dadi con notazione D&D standard — 2d6+3, 1d20, 4d6 tieni i 3 più alti. RNG crittograficamente sicuro.", "description": "Lanciatore di dadi gratuito con notazione standard da tavolo: 1d20, 2d6+3, 4d6kh3, 3d8-1. Ogni dado e il totale. Usa crypto.getRandomValues per lanci equi."},
         "pt": {"name": "Rolador de Dados", "tagline": "Role dados com notação padrão de D&D — 2d6+3, 1d20, 4d6 mantendo os 3 maiores. RNG criptograficamente seguro.", "description": "Rolador de dados online gratuito com notação padrão de RPG de mesa: 1d20, 2d6+3, 4d6kh3, 3d8-1. Veja cada dado individualmente e o total. Usa crypto.getRandomValues para rolagens justas e imprevisíveis."},
+        "pl": {"name": "Rzucacz Kości", "tagline": "Rzucaj kostkami w standardowej notacji D&D — 2d6+3, 1d20, 4d6 keep highest 3. Kryptograficznie bezpieczny RNG.", "description": "Darmowy online rzucacz kości w standardowej notacji RPG: 1d20, 2d6+3, 4d6kh3, 3d8-1. Zobacz każdy rzut z osobna plus sumę. Używa crypto.getRandomValues dla uczciwych, nieprzewidywalnych rzutów."},
     },
     "body": """
 <div class="tool-card">
@@ -317,6 +318,40 @@ document.addEventListener('DOMContentLoaded', drValidate);
 <li><strong>Niente esplosioni o conteggio successi.</strong></li>
 <li><strong>Critici solo per d20.</strong> 20 verde, 1 rosso.</li>
 <li><strong>Massimo 1000 dadi.</strong> Limite di performance.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>RPG-i papierowe (Dungeons & Dragons, Pathfinder, OSR i niezliczone inne) używają zwartej notacji rzutów: <code>NdS</code> znaczy "rzuć N kośćmi o S ścianach każda". <code>2d6+3</code> znaczy "rzuć dwiema sześciościennymi i dodaj 3". To narzędzie parsuje tę notację i rzuca kośćmi używając kryptograficznego RNG przeglądarki, który jest nieprzewidywalny i nieobciążony — znacznie lepszy niż <code>Math.random()</code> do ważnych rzutów.</p>
+
+<h3>Obsługiwana notacja</h3>
+<ul>
+  <li><code>1d20</code> — jedna kostka dwudziestościenna.</li>
+  <li><code>2d6+3</code> — dwie d6, suma, plus modyfikator 3.</li>
+  <li><code>3d8-1</code> — trzy d8, suma, minus 1.</li>
+  <li><code>4d6kh3</code> — cztery d6, <strong>k</strong>eep <strong>h</strong>ighest 3 (klasyk D&D 5e do statystyk postaci).</li>
+  <li><code>2d20kl1</code> — dwie d20, zachowaj najniższą (disadvantage).</li>
+  <li><code>2d20kh1</code> — advantage.</li>
+  <li><code>1d100</code> albo <code>1d%</code> — kostka procentowa.</li>
+  <li><code>d20</code> — N domyślnie 1.</li>
+</ul>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Grasz online, fizyczne kostki są poza zasięgiem albo prowadzisz sesję zdalnie.</li>
+  <li>Potrzebujesz rzutu bez subskrypcji apki do kości.</li>
+  <li>Chcesz rozstrzygnąć "rzućmy o to" bez szukania monety (1d2).</li>
+  <li>Prototypujesz prawdopodobieństwo do projektu gry (puść milion rzutów — zmień formułę w kodzie, jeśli chcesz statystyk).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Tab przeglądarki to granica zaufania.</strong> Rzut dzieje się w twoim tabie, w JavaScripcie — każdy z otwartymi devtoolsami może to podkręcić. Do rozgrywki kompetytywnej z obcymi używaj rzucacza arbitrowanego po stronie serwera.</li>
+  <li><strong>Crypto RNG jest nieprzewidywalny, nie "bardziej losowy".</strong> Dobry PRNG i crypto RNG dają nierozróżnialne rozkłady dla kostek. Przewaga crypto polega na tym, że nikt nie przewidzi następnej liczby z poprzednich.</li>
+  <li><strong>Modyfikatory aplikują się raz, po keep.</strong> <code>4d6kh3+2</code> rzuca 4d6, zachowuje top 3, a potem dodaje 2 — nie "dodaje 2 do każdej kostki".</li>
+  <li><strong>To nie są exploding dice.</strong> Brak eksplozji w stylu <code>!</code>, brak rerollów (<code>r1</code>), brak liczenia sukcesów (<code>3d10>=7</code>). Notacja tu to prosty subset "suma i modyfikuj", który pokrywa ~95% typowych rzutów.</li>
+  <li><strong>Crity są oznaczane tylko dla d20.</strong> 20 podświetla się na zielono, 1 na czerwono. Inne rozmiary nie dostają koloru.</li>
+  <li><strong>Limit 1000 kości na rzut.</strong> Rozsądna górna granica, żeby strona nie zamulała.</li>
 </ul>
 """,
     },

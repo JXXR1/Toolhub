@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Calculateur d'IMC", "tagline": "Indice de Masse Corporelle à partir de la taille et du poids. Métrique ou impérial. Catégorie OMS — pas un avis médical.", "description": "Calculateur d'IMC gratuit. Saisissez la taille et le poids en métrique (cm + kg) ou impérial (pieds/pouces + livres) et obtenez l'IMC plus la classification OMS. À titre informatif — pas un avis médical."},
         "it": {"name": "Calcolatore BMI", "tagline": "Indice di Massa Corporea da altezza e peso. Metrico o imperiale. Categoria OMS — non è un consiglio medico.", "description": "Calcolatore BMI gratuito. Inserisci altezza e peso in metrico (cm + kg) o imperiale (piedi/pollici + libbre) e ottieni il BMI e la classificazione OMS. Solo informativo — non un consiglio medico."},
         "pt": {"name": "Calculadora de IMC", "tagline": "Índice de Massa Corporal a partir de altura e peso. Métrico ou imperial. Mostra a categoria da OMS — não é orientação médica.", "description": "Calculadora gratuita de Índice de Massa Corporal. Informe altura e peso em métrico (cm + kg) ou imperial (pés/polegadas + libras) e veja o valor de IMC mais a classificação da OMS (abaixo do peso, normal, sobrepeso, obesidade). Apenas educacional — não é orientação médica."},
+        "pl": {"name": "Kalkulator BMI", "tagline": "Wskaźnik masy ciała z wzrostu i wagi. Metryczny lub imperialny. Pokazuje kategorię WHO — nie jest poradą medyczną.", "description": "Darmowy kalkulator BMI (Body Mass Index). Wpisz wzrost i wagę w jednostkach metrycznych (cm + kg) albo imperialnych (stopy/cale + funty) i zobacz wartość BMI oraz klasyfikację WHO (niedowaga, prawidłowa, nadwaga, otyłość). Tylko cele edukacyjne — nie jest poradą medyczną."},
     },
     "body": """
 <div class="tool-card">
@@ -285,6 +286,34 @@ document.addEventListener('DOMContentLoaded', bmiRun);
   <li><strong>Etnia importa.</strong> Vários órgãos de saúde (NHS, orientação da OMS Ásia-Pacífico) usam limites mais baixos (sobrepeso ≥23, obesidade ≥27,5) para populações sul-asiáticas, chinesas e outras, porque o risco cardiovascular sobe em IMCs mais baixos.</li>
   <li><strong>Pessoas altas vs baixas.</strong> A fórmula com altura ao quadrado sistematicamente classifica em excesso pessoas altas como "abaixo do peso" e pessoas baixas como "sobrepeso" — fórmulas alternativas (o BMI de Trefethen usa altura^2,5) tentam corrigir isso.</li>
   <li><strong>Não é orientação médica.</strong> Se você está preocupado com seu peso, fale com um profissional. Ele tem o resto do quadro (circunferência abdominal, pressão arterial, exames de sangue, estilo de vida) que um número isolado não tem.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Wskaźnik masy ciała (BMI) to pojedyncza liczba — waga w kilogramach podzielona przez kwadrat wzrostu w metrach — używana przez WHO i wiele systemów ochrony zdrowia jako szybki przesiew dla kategorii masy ciała. To nie diagnoza, tylko sygnał. Klasyczne progi dla dorosłych: poniżej 18,5 niedowaga, 18,5–24,9 prawidłowa, 25–29,9 nadwaga, 30 i więcej otyłość (z podziałem na klasy I/II/III przy 35 i 40). To narzędzie liczy wartość i kategorię z wzrostu i wagi w jednostkach metrycznych lub imperialnych.</p>
+
+<h3>Jak to się liczy</h3>
+<ul>
+  <li><strong>Metrycznie:</strong> BMI = kg ÷ (m × m). 70 kg przy 1,75 m → 70 / 3,0625 = 22,9.</li>
+  <li><strong>Imperialnie:</strong> BMI = (lb × 703) ÷ (in × in). Narzędzie konwertuje wewnętrznie do metrycznych dla dokładności.</li>
+  <li>Kategorie WHO są takie same niezależnie od układu jednostek — samo BMI jest bezwymiarowe.</li>
+</ul>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Szybki self-check albo wypełnienie formularza, który tego wymaga (ubezpieczenie, apki fitness, wpis na siłownię).</li>
+  <li>Porównanie wartości między populacjami albo badaniami.</li>
+  <li>Śledzenie kierunku zmiany w czasie (rośnie, stoi, spada) — trend jest użyteczniejszy niż pojedynczy odczyt.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>BMI nie mierzy składu ciała.</strong> Mięśnie ważą więcej niż tłuszcz, więc wysportowana, umięśniona osoba może mieć "nadwagę" przy niskim procencie tkanki tłuszczowej. Z drugiej strony osoba z małą masą mięśniową może wyjść "prawidłowo" będąc niezdrową ("skinny fat").</li>
+  <li><strong>To metryka dla dorosłych.</strong> U dzieci i nastolatków (poniżej 18) używaj siatek centylowych BMI dopasowanych do wieku i płci.</li>
+  <li><strong>Ciąża nie jest obsługiwana.</strong> BMI nie ma zastosowania w czasie ciąży; pogadaj ze swoim lekarzem.</li>
+  <li><strong>Pochodzenie etniczne ma znaczenie.</strong> Kilka instytucji (NHS, wytyczne WHO Asia-Pacific) używa niższych progów (nadwaga ≥23, otyłość ≥27,5) dla populacji południowoazjatyckich, chińskich i innych, bo ryzyko sercowo-naczyniowe rośnie u nich przy niższym BMI.</li>
+  <li><strong>Wysocy vs niscy.</strong> Wzór z kwadratem wzrostu systematycznie klasyfikuje wysokich jako "niedowaga", a niskich jako "nadwaga" — alternatywne wzory (BMI Trefethena używa wzrost^2,5) próbują to skorygować.</li>
+  <li><strong>To nie porada medyczna.</strong> Jeśli martwisz się swoją wagą, pogadaj z lekarzem. Ma resztę obrazu (obwód talii, ciśnienie, badania krwi, styl życia), której pojedyncza liczba nie pokaże.</li>
 </ul>
 """,
     },

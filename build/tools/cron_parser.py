@@ -34,6 +34,11 @@ TOOL = {
             "tagline": "Faça o parse de expressões cron e veja os próximos 10 horários de execução. Crontab padrão de 5 campos.",
             "description": "Parser online gratuito de expressões cron. Valida a sintaxe crontab de 5 campos e lista os próximos 10 horários de execução agendados no seu fuso local.",
         },
+        "pl": {
+            "name": "Parser Wyrażeń Cron",
+            "tagline": "Sparsuj wyrażenia cron i zobacz 10 najbliższych odpaleń. Standardowy 5-polowy crontab.",
+            "description": "Darmowy online parser wyrażeń cron. Waliduje składnię 5-polowego crontaba i listuje 10 najbliższych zaplanowanych odpaleń w twojej lokalnej strefie czasowej.",
+        },
     },
     "body": """
 <div class="tool-card">
@@ -213,6 +218,37 @@ document.addEventListener('DOMContentLoaded', cronRun);
   <li><strong>Combinações step + range.</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30. O step se aplica só dentro do range.</li>
   <li><strong>O fuso horário aqui é o local do navegador.</strong> Daemons cron reais rodam no horário do servidor (frequentemente UTC). Um agendamento que parece certo no seu navegador pode disparar num horário diferente no servidor. Confirme o fuso antes de colar.</li>
   <li><strong>Alguns dialetos de cron adicionam campos.</strong> O cron do Quartz tem 6 ou 7 campos (com segundos e ano). Timers do systemd usam um formato totalmente diferente. Esta ferramenta faz o parse do crontab padrão de 5 campos.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Wyrażenia cron są potężne i łatwo je źle napisać. <code>0 0 * * 1-5</code> wygląda jak harmonogram "o północy w dni robocze" — i tym jest. <code>*/15 0-9 * * *</code> wygląda jak "co 15 minut w godzinach pracy" — i tym jest. <code>0 0 1 */3 *</code> wygląda jak "kwartalnie"... jeśli pamiętałeś, że <code>*/3</code> znaczy "co trzeci miesiąc". To narzędzie pozwala wkleić wyrażenie, zobaczyć, co ono naprawdę znaczy po polsku, i podejrzeć 10 najbliższych odpaleń, żebyś mógł zweryfikować przed deployem.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Sanity check linii crona w <code>crontab -e</code> przed zapisem.</li>
+  <li>Tłumaczenie schedule'a z <code>CronJob</code> w Kubernetesie na "o której to faktycznie odpali?".</li>
+  <li>Projektowanie nowego harmonogramu — zacznij od polskiego ("rano w każdy dzień roboczy") i iteruj wyrażenie, aż podgląd się zgodzi.</li>
+  <li>Debug joba, który "nie odpalił, kiedy się spodziewałem" — wklej schedule, spójrz na 10 najbliższych odpaleń i zobacz, czy zaskoczeniem jest rzeczywistość, czy wyrażenie.</li>
+</ul>
+
+<h3>Referencja pól crona</h3>
+<table>
+  <tr><th>Pole</th><th>Zakres</th><th>Wildcardy</th></tr>
+  <tr><td>Minuta</td><td>0-59</td><td><code>*</code> · <code>*/5</code> · <code>0,30</code> · <code>0-29</code></td></tr>
+  <tr><td>Godzina</td><td>0-23</td><td>tak samo</td></tr>
+  <tr><td>Dzień miesiąca</td><td>1-31</td><td>tak samo</td></tr>
+  <tr><td>Miesiąc</td><td>1-12</td><td>tak samo</td></tr>
+  <tr><td>Dzień tygodnia</td><td>0-6 (0 = niedziela, 7 też = niedziela)</td><td>tak samo</td></tr>
+</table>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Day-of-month i day-of-week wchodzą w interakcję.</strong> Jeśli oba są ograniczone (np. <code>15 * * * 1</code> znaczy "15. dzień LUB poniedziałek"), większość implementacji crona robi OR. To narzędzie trzyma się tej konwencji.</li>
+  <li><strong><code>*/N</code> nie znaczy dokładnie "co N".</strong> To "co N zaczynając od dolnej granicy", więc <code>*/15</code> w minutach = 0,15,30,45 (nie 12,27,42,57). Żeby zacząć później, użyj listy: <code>5,20,35,50</code>.</li>
+  <li><strong>Kombinacje step + range.</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30. Krok działa tylko wewnątrz zakresu.</li>
+  <li><strong>Strefa czasowa to tu lokalna strefa przeglądarki.</strong> Prawdziwe demony cron działają w czasie serwera (często UTC). Schedule, który wygląda OK w przeglądarce, może odpalić o innej godzinie ściennej na serwerze. Zweryfikuj strefę przed wklejeniem.</li>
+  <li><strong>Niektóre dialekty crona dodają pola.</strong> Quartz cron ma 6 albo 7 pól (z sekundami i rokiem). Timery systemd używają zupełnie innego formatu. To narzędzie parsuje standardowy 5-polowy crontab.</li>
 </ul>
 """,
     },

@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Validateur de Carte Bancaire", "tagline": "Validez un numéro de carte avec Luhn et détectez la marque. Fonctionne localement — le numéro n'est jamais envoyé.", "description": "Validateur de carte bancaire gratuit. Somme de contrôle Luhn, détection de marque (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) et longueur. 100% dans le navigateur."},
         "it": {"name": "Validatore Carta di Credito", "tagline": "Valida un numero di carta con Luhn e rileva la marca. Funziona localmente — il numero non viene mai inviato.", "description": "Validatore di carta di credito gratuito. Checksum Luhn, rilevamento marca (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) e lunghezza. 100% nel browser."},
         "pt": {"name": "Validador de Cartão de Crédito", "tagline": "Valide um número de cartão com a verificação de Luhn e detecte a bandeira. Roda localmente — seu número nunca é transmitido.", "description": "Validador de cartão de crédito online gratuito. Checksum de Luhn (mod-10), detecção de bandeira (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) e verificação de tamanho. 100% client-side."},
+        "pl": {"name": "Walidator Karty Kredytowej", "tagline": "Sprawdź numer karty algorytmem Luhna i wykryj wystawcę. Działa lokalnie — twój numer nigdy nie jest wysyłany.", "description": "Darmowy walidator kart kredytowych online. Checksum Luhna (mod-10), wykrywanie wystawcy (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) i sprawdzanie długości. 100% po stronie klienta."},
     },
     "body": """
 <div class="tool-card">
@@ -126,6 +127,28 @@ document.addEventListener('DOMContentLoaded', cvRun);
 </ul>
 
 <h3>Números de teste (seguros para colar)</h3>
+<p>Visa <code>4242 4242 4242 4242</code> · Mastercard <code>5555 5555 5555 4444</code> · Amex <code>3782 822463 10005</code> · Discover <code>6011 1111 1111 1117</code></p>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Numery kart noszą wbudowaną sumę kontrolną (algorytm Luhna / mod-10) i zaczynają się od prefiksów identyfikujących wystawcę. Razem to pozwala wyłapać literówki i rozpoznać wystawcę zanim wyślesz numer do procesora płatności. To narzędzie liczy oba sprawdzenia 100% w twojej przeglądarce — wklejony numer nigdy nie opuszcza strony. To deweloperska walidacja strukturalna, nie weryfikacja anty-fraudowa ani sprawdzenie aktywności karty.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Walidacja, czy testowy numer karty, który skopiowałeś, jest poprawnie zbudowany (karty testowe z <a href="https://docs.stripe.com/testing" rel="noopener">dokumentacji Stripe'a</a> i podobnych przechodzą Luhna).</li>
+  <li>Sanity check pól w formularzu — czy numer spełnia podstawową strukturę, zanim odbije się o API płatności, które kasowałoby za sprawdzenie?</li>
+  <li>Audyt numeru, który "wygląda źle", żeby zobaczyć, czy to literówka (Luhn nie przechodzi) czy niezgodność wystawcy (zła długość dla prefiksu).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>"Strukturalnie poprawny" nie znaczy "wydany" ani "aktywny".</strong> Prawdziwa walidacja wymaga procesora płatności — co kosztuje albo blokuje środki. To narzędzie łapie literówki, nie zamknięte konta.</li>
+  <li><strong>Nie wklejaj nigdzie prawdziwych numerów kart</strong> — w tym tu. Przeglądarka ich nie wysyła, ale screen recorder, rozszerzenie albo otwarte dev-toolsy mogą podejrzeć. Użyj znanego numeru testowego.</li>
+  <li><strong>Niektóre 16-cyfrowe numery to nie karty.</strong> Karty lojalnościowe, gift cardy i pewne pre-paid SKU używają tego samego formatu; przejście Luhna + zgodny wystawca nie gwarantuje, że to instrument płatniczy.</li>
+  <li><strong>Karty co-branded.</strong> Karty wydane pod jedną marką mogą mieć logo innej. Wykrywanie wystawcy używa tu kanonicznego prefiksu, nie nadrukowanego logo.</li>
+</ul>
+
+<h3>Numery testowe (bezpieczne do wklejenia)</h3>
 <p>Visa <code>4242 4242 4242 4242</code> · Mastercard <code>5555 5555 5555 4444</code> · Amex <code>3782 822463 10005</code> · Discover <code>6011 1111 1111 1117</code></p>
 """,
     },

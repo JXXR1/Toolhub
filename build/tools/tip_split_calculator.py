@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Calculateur de Pourboire et Partage", "tagline": "Addition + pourboire % + personnes = montant par personne. Arrondi en option. Pourboire et total affichés.", "description": "Calculateur gratuit de pourboire et partage. Entrez l'addition, le pourcentage et le nombre de personnes. Pourboire, total et part par personne calculés. Arrondi en option."},
         "it": {"name": "Calcolatore Mancia e Conto Diviso", "tagline": "Conto + mancia % + persone = importo per persona. Arrotondamento opzionale. Mancia e totale mostrati.", "description": "Calcolatore gratuito mancia e divisione conto. Inserisci conto, percentuale di mancia e numero di persone. Mancia, totale e quota per persona calcolati. Arrotondamento opzionale."},
         "pt": {"name": "Calculadora de Gorjeta e Rachar a Conta", "tagline": "Total da conta + gorjeta % + pessoas = valor por pessoa. Opção de arredondar para cima, mostra gorjeta e total geral.", "description": "Calculadora gratuita de gorjeta e divisão de conta. Informe a conta, a porcentagem de gorjeta e o número de pessoas. Veja o valor da gorjeta, o total geral e a parte de cada um. Arredondamento opcional para cima."},
+        "pl": {"name": "Kalkulator Napiwku i Podziału Rachunku", "tagline": "Rachunek + napiwek % + liczba osób = kwota na osobę. Opcja zaokrąglenia w górę, pokazuje napiwek i sumę całkowitą.", "description": "Darmowy kalkulator napiwku i podziału rachunku. Wpisz rachunek, procent napiwku i liczbę osób. Zobacz kwotę napiwku, sumę całkowitą i udział na osobę. Opcjonalne zaokrąglenie w górę."},
     },
     "body": """
 <div class="tool-card">
@@ -223,6 +224,27 @@ document.addEventListener('DOMContentLoaded', tsRun);
 <li><strong>Coperto/servizio ≠ mancia.</strong> Se è già in conto, la mancia è opzionale.</li>
 <li><strong>Divisione paritaria iniqua</strong> se uno ha preso vino e l'altro acqua — meglio dividere per voce.</li>
 <li><strong>Contanti vs carta.</strong> La mancia in contanti spesso arriva più direttamente al personale.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Podział restauracyjnego rachunku na końcu kolacji to klasyczny przypadek "łatwa matma, ale wino płynęło". Trzy liczby na wejściu (rachunek, procent napiwku, liczba osób) i trzy na wyjściu (kwota napiwku, suma całkowita, udział na osobę). To narzędzie robi to bez wysyłania czegokolwiek na serwer, plus opcjonalne zaokrąglenie w górę, żeby kwota na osobę wpadła na okrągłą jednostkę i napiwek wyszedł trochę większy zamiast żonglerki drobnymi.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Koniec posiłku w grupie — równy podział.</li>
+  <li>Doliczanie znanego procentu napiwku do rachunku za usługę.</li>
+  <li>Szybkie testowanie różnych poziomów napiwku (10/15/18/20/25) przed decyzją.</li>
+  <li>Rozliczenie rundy kawy, taxi albo dowolnej składki na osobę.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Konwencje napiwków bardzo się różnią.</strong> USA: 18–22% to norma; poniżej 15% to skarga. Większość Europy: zaokrąglić albo 5–10%; serwis często wliczony. Polska: 10% to typowy ukłon, ale nie obowiązkowy. Japonia: nie dawaj napiwku — może zostać odebrany jako niegrzeczność. Zawsze sprawdzaj lokalny obyczaj zamiast ślepo aplikować procent.</li>
+  <li><strong>Napiwek od kwoty przed czy po podatku?</strong> W USA dawanie napiwku od subtotalu pre-tax to typowa etykieta, ale większość terminali kart oferuje procenty od kwoty po podatku. Narzędzie liczy procent od kwoty rachunku, którą wpiszesz — wybierz bazę świadomie.</li>
+  <li><strong>Service charge ≠ napiwek.</strong> Jeśli "service charge" jest już w rachunku (typowe w UK przy 6+ osobach i większości kontynentalnej Europy), dodatkowy napiwek jest opcjonalny. Niektóre lokale dzielą service charge z kuchnią; daj napiwek gotówką wprost, jeśli chcesz, żeby trafił do kelnera.</li>
+  <li><strong>Zaokrąglenie na osobę może ukryć nierówne jedzenie.</strong> Równy podział jest najszybszy, ale niesprawiedliwy, gdy jedna osoba miała wino, a druga wodę — w takim wypadku przejdź na podział pozycyjny.</li>
+  <li><strong>Gotówka vs karta.</strong> Niektóra obsługa woli napiwki w gotówce, bo karciane są dzielone, opodatkowane od razu albo skubane przez lokal. Jeśli kwota na osobę w tym kalkulatorze zawiera napiwek, zdecyduj, czy chcesz dorzucić napiwek w gotówce na wierzch.</li>
 </ul>
 """,
     },

@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Minificateur CSS", "tagline": "Supprimez commentaires, espaces et redondances du CSS. Tailles avant/après et pourcentage d'économie.", "description": "Minificateur CSS gratuit. Supprime commentaires, espaces inutiles, point-virgules superflus et unités zéro. Affiche le taux de compression."},
         "it": {"name": "Minificatore CSS", "tagline": "Rimuovi commenti, spazi e ridondanza dal CSS. Vedi dimensione prima/dopo e percentuale di risparmio.", "description": "Minificatore CSS online gratuito. Rimuove commenti, comprime spazi, taglia punti e virgola e unità zero. Mostra il rapporto di compressione."},
         "pt": {"name": "Minificador CSS", "tagline": "Remova comentários, espaços e redundância do CSS. Veja o tamanho antes/depois e o percentual de economia.", "description": "Minificador CSS online gratuito. Remove comentários, colapsa espaços, corta ponto e vírgula final e unidades zero. Mostra a taxa de compressão."},
+        "pl": {"name": "Minifikator CSS", "tagline": "Usuń komentarze, białe znaki i nadmiarowość z CSS. Zobacz rozmiar przed/po i procent oszczędności.", "description": "Darmowy online minifikator CSS. Usuwa komentarze, zwija białe znaki, ucina końcowe średniki i jednostki zero. Pokazuje współczynnik kompresji."},
     },
     "body": """
 <div class="tool-card">
@@ -147,6 +148,34 @@ document.addEventListener('DOMContentLoaded', cmRun);
   <li><strong>Source maps não são gerados.</strong> Se for fazer debug de CSS minificado em produção, envie-os separadamente.</li>
   <li><strong>Não comite o CSS minificado.</strong> Comite o source bonito; minifique no build/deploy. Misturar os dois deixa o review de diff miserável.</li>
   <li><strong>Compressão moderna domina.</strong> Brotli/gzip no fio faz boa parte do que a minificação faz. As maiores economias vêm de remover regras não usadas — trabalho de tree-shaking, não de minificação.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>CSS, który jest czytelny w źródle — z komentarzami, wcięciami i znaczącymi białymi znakami — pęcznieje plik, który ściągają twoi użytkownicy. Strukturalny minifikator wycina wszystkie kosmetyczne bajty (komentarze, ciągi białych znaków, redundantne zera, krótsze równoważne kody hex) bez zmiany znaczenia reguł. To narzędzie robi tę przejazdkę w przeglądarce i pokazuje rozmiar przed/po, żebyś zobaczył oszczędność.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Jednorazowe wysłanie snippetu CSS inline w mailu HTML albo szablonie blogowym, gdzie chcesz zmniejszyć bajty, ale nie masz pipeline'u buildowego.</li>
+  <li>Szybkie sprawdzenie, ile "tłuszczu" jest w stylesheecie, zanim zdecydujesz, czy warto podpiąć prawdziwy optymalizator.</li>
+  <li>Wklejanie pretty-printed CSS od jakiegoś dostawcy, żeby go odchudzić do włączenia w widget zewnętrzny.</li>
+</ul>
+
+<h3>Co robi</h3>
+<ul>
+  <li>Wycina komentarze blokowe (<code>/* … */</code>) — single-line <code>//</code> i tak nie jest poprawnym czystym CSS-em.</li>
+  <li>Zwija białe znaki wokół <code>{ } : ; ,</code> i kombinatorów (<code>&gt; ~ +</code>).</li>
+  <li>Ucina końcowe średniki przed <code>}</code>.</li>
+  <li>Wycina wiodące zera (<code>0.5</code> → <code>.5</code>) i usuwa jednostki z zera (<code>0px</code> → <code>0</code>).</li>
+  <li>Skraca kolory hex, gdzie to bezstratne (<code>#aabbcc</code> → <code>#abc</code>).</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>To strukturalna minifikacja, nie pełny optymalizator.</strong> Nie zmerguje duplikatów selektorów, nie przegrupuje reguł ani nie przepisze shorthandów. Do tego użyj <code>cssnano</code> albo <code>esbuilda</code> w pipeline buildowym.</li>
+  <li><strong>Source mapy nie są generowane.</strong> Jeśli debugujesz zminifikowany CSS na produkcji, wysyłaj je osobno.</li>
+  <li><strong>Nie commituj zminifikowanego CSS-a.</strong> Commituj ładne źródło; minifikuj na buildzie/deployu. Mieszanie tych dwóch sprawia, że review diffów staje się męką.</li>
+  <li><strong>Nowoczesna kompresja dominuje.</strong> Brotli/gzip na drucie robi większość tego, co minifikacja. Największe oszczędności biorą się z usuwania nieużywanych reguł — to robota dla tree-shakingu, nie minifikacji.</li>
 </ul>
 """,
     },

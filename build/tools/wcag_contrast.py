@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Vérificateur de Contraste WCAG", "tagline": "Vérifiez le ratio de contraste entre deux couleurs. Verdict pass/fail pour WCAG AA et AAA à toute taille.", "description": "Vérificateur gratuit de contraste WCAG. Choisissez les couleurs avant-plan et fond, obtenez le ratio (1:1 à 21:1) et verdict pass/fail selon WCAG 2.1 AA et AAA."},
         "it": {"name": "Verificatore Contrasto WCAG", "tagline": "Controlla il rapporto di contrasto tra due colori. Verdetto pass/fail per WCAG AA e AAA a ogni dimensione.", "description": "Verificatore gratuito di contrasto WCAG. Scegli colori di primo piano e sfondo, ottieni il rapporto (1:1 a 21:1) e verdetto pass/fail secondo WCAG 2.1 AA e AAA."},
         "pt": {"name": "Verificador de Contraste WCAG", "tagline": "Verifique a razão de contraste entre duas cores. Veredito pass/fail para WCAG AA e AAA em qualquer tamanho de texto.", "description": "Verificador de contraste WCAG gratuito. Escolha as cores de foreground e background, obtenha a razão (1:1 a 21:1) e o veredito pass/fail para WCAG 2.1 AA e AAA — para texto normal, texto grande e componentes de UI."},
+        "pl": {"name": "Sprawdzacz Kontrastu WCAG", "tagline": "Sprawdź współczynnik kontrastu między dwoma kolorami. Werdykt pass/fail dla WCAG AA i AAA przy każdym rozmiarze tekstu.", "description": "Darmowy sprawdzacz kontrastu WCAG. Wybierz kolor tekstu i tła, dostań współczynnik (1:1 do 21:1) i werdykt pass/fail dla WCAG 2.1 AA i AAA — dla normalnego tekstu, dużego tekstu i komponentów UI."},
     },
     "body": """
 <div class="tool-card">
@@ -192,6 +193,36 @@ document.addEventListener('DOMContentLoaded', wcRun);
   <li><strong>Estados de hover e focus contam.</strong> Se seu botão passa no AA em repouso mas falha no hover, isso é um bug real de acessibilidade.</li>
   <li><strong>WCAG 2.1 vs APCA.</strong> O novo APCA (Accessible Perceptual Contrast Algorithm), proposto para o WCAG 3, dá números diferentes e provavelmente melhores — mas o WCAG 2.1 é o padrão legal que a maioria das jurisdições ainda referencia. Use os números desta ferramenta para atender EN 301 549, ADA ou claims de conformidade AA.</li>
   <li><strong>Não compense com transparência.</strong> Um foreground com 50% de alpha sobre um fundo conhecido tem um contraste efetivo diferente — calcule contra a cor real renderizada, não a original.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>WCAG (Web Content Accessibility Guidelines) definiuje minimalny współczynnik kontrastu między tekstem a jego tłem, żeby osoby z słabym wzrokiem, daltonizmem albo w warunkach odblasku nadal mogły go przeczytać. To narzędzie liczy ten współczynnik (1:1 = identyczne, 21:1 = czysta czerń na czystej bieli) i mówi, czy twoja para kolorów przechodzi WCAG 2.1 Level AA albo AAA, osobno dla normalnego tekstu, dużego tekstu i komponentów UI. Matematyka idzie ściśle za wzorem luminancji W3C.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Sprawdzanie, czy kolor twojej marki na białej karcie spełnia standardy dostępności.</li>
+  <li>Wybieranie koloru tekstu przycisku, który przejdzie AA na tle w kolorze marki.</li>
+  <li>Audyt design systemu token po tokenie przed wypuszczeniem.</li>
+  <li>Uzasadnienie zmiany koloru przed stakeholderem konkretnym werdyktem pass/fail.</li>
+  <li>Testowanie, co użytkownicy z preferencjami obniżonego kontrastu faktycznie zobaczą.</li>
+</ul>
+
+<h3>Progi</h3>
+<ul>
+  <li><strong>Tekst normalny</strong> (poniżej 18pt / 14pt bold): <strong>4,5:1</strong> dla AA, <strong>7:1</strong> dla AAA.</li>
+  <li><strong>Tekst duży</strong> (≥18pt albo ≥14pt bold): <strong>3:1</strong> dla AA, <strong>4,5:1</strong> dla AAA.</li>
+  <li><strong>Komponenty UI &amp; grafika</strong> (ikony, focus ringi, ramki formularzy, elementy wykresu niosące informację): <strong>3:1</strong> dla AA (WCAG 2.1 §1.4.11). Brak poziomu AAA.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>"Duży tekst" jest większy, niż myślisz.</strong> 18pt to mniej więcej 24px. 14pt bold to mniej więcej 19px bold. Body copy w 16px to <em>nie</em> duży tekst — potrzebuje progu 4,5:1.</li>
+  <li><strong>Jasny tekst na zatłoczonym zdjęciu padnie.</strong> Współczynnik kontrastu jest między konkretnymi pikselami — nałóż ciemny gradient albo użyj solidnego panelu, żeby dać tekstowi kontrolowane tło.</li>
+  <li><strong>Anti-aliasing osłabia kontrast.</strong> 4,5:1 to dno, nie cel. Wygodne czytanie zwykle chce 7:1 albo lepiej, zwłaszcza dla body copy.</li>
+  <li><strong>Stany hover i focus się liczą.</strong> Jeśli twój przycisk przechodzi AA w spoczynku, ale pada na hover, to prawdziwy bug dostępności.</li>
+  <li><strong>WCAG 2.1 vs APCA.</strong> Nowy APCA (Accessible Perceptual Contrast Algorithm), proponowany do WCAG 3, daje inne i prawdopodobnie lepsze liczby — ale WCAG 2.1 jest standardem prawnym, do którego nadal odnosi się większość jurysdykcji. Używaj liczb tego narzędzia przy spełnianiu EN 301 549, ADA albo claimów zgodności AA.</li>
+  <li><strong>Nie kombinuj z przezroczystością.</strong> Foreground z 50% alpha na znanym tle ma inny efektywny kontrast — licz przeciwko faktycznie wyrenderowanemu kolorowi, nie oryginałowi.</li>
 </ul>
 """,
     },

@@ -14,6 +14,7 @@ TOOL = {
         "fr": {"name": "Convertisseur de Casse", "tagline": "Convertissez du texte entre MAJUSCULES, minuscules, Titre, Phrase, camelCase, PascalCase, snake_case, kebab-case, CONSTANTE et dot.case.", "description": "Convertisseur de casse gratuit. MAJ, min, titre, phrase, camel, pascal, snake, kebab, constante et point."},
         "it": {"name": "Convertitore di Maiuscole/Minuscole", "tagline": "Converti testo tra MAIUSCOLO, minuscolo, Titolo, Frase, camelCase, PascalCase, snake_case, kebab-case, COSTANTE e dot.case.", "description": "Convertitore di maiuscole/minuscole gratuito. MAIUSC, minusc, titolo, frase, camel, pascal, snake, kebab, costante e punto."},
         "pt": {"name": "Conversor de Capitalização", "tagline": "Converta texto entre MAIÚSCULAS, minúsculas, Título, Frase, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE e dot.case.", "description": "Conversor de capitalização online gratuito. Alterne texto entre maiúsculas, minúsculas, título, frase, camel, pascal, snake, kebab, constant e dot case com um clique."},
+        "pl": {"name": "Konwerter Wielkości Liter", "tagline": "Konwertuj tekst między WIELKIMI, małymi, Tytułowymi, Zdaniowymi, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE i dot.case.", "description": "Darmowy konwerter wielkości liter online. Zmień tekst między upper, lower, title, sentence, camel, pascal, snake, kebab, constant i dot case jednym kliknięciem."},
     },
     "body": """
 <div class="tool-card">
@@ -125,6 +126,26 @@ document.addEventListener('DOMContentLoaded', ccRun);
   <li><strong>Números ficam grudados na palavra anterior.</strong> "Item2" vira uma palavra só "item2", não duas. Adicione um separador se quiser separar.</li>
   <li><strong>"Primeira letra do camelCase"</strong> é sempre minúscula mesmo se a entrada começou com maiúscula. PascalCase preserva a maiúscula.</li>
   <li><strong>Round-trip nem sempre é sem perdas.</strong> Ir de camelCase → kebab-case → camelCase perde a dica original de capitalização nos limites de palavra; a heurística de detecção faz o que pode, mas não consegue recuperar o que não foi preservado.</li>
+</ul>
+""",
+        "pl": """
+<h2>Do czego to służy?</h2>
+<p>Każdy język i platforma ma swoje konwencje nazewnicze — JavaScript chce <code>camelCase</code>, Python chce <code>snake_case</code>, CSS chce <code>kebab-case</code>, zmienne środowiskowe chcą <code>CONSTANT_CASE</code>. Tłumaczenie między nimi ręcznie jest upierdliwe, zwłaszcza przy edge case'ach (akronimy, liczby, istniejące separatory). To narzędzie dzieli dowolne wejście na słowa, wykrywając zmiany wielkości liter, separatory (<code>_ - . /</code>) i białe znaki, a potem składa je z powrotem w 14 różnych stylach.</p>
+
+<h3>Kiedy tego użyć</h3>
+<ul>
+  <li>Zmiana nazwy pola z JSON-a API (camelCase) na kolumnę ORM-a w Pythonie (snake_case).</li>
+  <li>Generowanie nazw klas CSS z nazw tokenów design systemu, które przychodzą w PascalCase.</li>
+  <li>Konwersja listy nagłówków na slugi w kebab-case albo nazwy zmiennych środowiskowych na CONSTANT_CASE.</li>
+  <li>Szybka konwersja "The Quick Brown Fox" na Title Case, Sentence case albo Train-Case do nagłówka / etykiety przycisku.</li>
+</ul>
+
+<h3>Częste pułapki</h3>
+<ul>
+  <li><strong>Akronimy są podchwytliwe.</strong> Czy "XMLHttpRequest" powinno stać się "XML_Http_Request" czy "Xml_Http_Request"? To narzędzie traktuje ciąg wielkich liter jako jeden punkt podziału (<code>xml http request</code>) i potem ustawia wielkość — co pasuje do konwencji Java/JS, ale nie do wszystkich style guide'ów.</li>
+  <li><strong>Liczby przyklejają się do poprzedniego słowa.</strong> "Item2" staje się jednym słowem "item2", nie dwoma. Dodaj separator, jeśli chcesz je rozdzielić.</li>
+  <li><strong>"Pierwsza litera camelCase"</strong> jest zawsze mała, nawet jeśli wejście zaczynało się od wielkiej. PascalCase zachowuje wielką.</li>
+  <li><strong>Round-trip nie zawsze jest bezstratny.</strong> Przejście camelCase → kebab-case → camelCase gubi oryginalną informację o wielkości liter na granicach słów; heurystyka robi co może, ale nie odtworzy tego, czego nie zachowano.</li>
 </ul>
 """,
     },
