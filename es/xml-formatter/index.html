@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formateador XML — Toolhub</title>
+  <meta name="description" content="Formateador y minimizador XML gratuito. Pretty-print con sangría configurable o sin espacios. Valida buena forma con el parser XML del navegador — línea y columna en errores.">
+  <meta property="og:title" content="Formateador XML — Toolhub">
+  <meta property="og:description" content="Formateador y minimizador XML gratuito. Pretty-print con sangría configurable o sin espacios. Valida buena forma con el parser XML del navegador — línea y columna en errores.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/es/xml-formatter/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/es/xml-formatter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/xml-formatter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/xml-formatter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/xml-formatter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/xml-formatter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/xml-formatter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/xml-formatter/">
+  <meta property="og:locale" content="es_ES">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/es/xml-formatter/#tool",
+        "name": "Formateador XML",
+        "description": "Formateador y minimizador XML gratuito. Pretty-print con sangría configurable o sin espacios. Valida buena forma con el parser XML del navegador — línea y columna en errores.",
+        "url": "https://toolhub.software/es/xml-formatter/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "es",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["xml", "format", "beautify", "minify", "validate", "well-formed"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Todas las herramientas", "item": "https://toolhub.software/es/"},
+          {"@type": "ListItem", "position": 2, "name": "Formateador XML", "item": "https://toolhub.software/es/xml-formatter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/es/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/xml-formatter/'; else location.href='/xml-formatter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" selected="selected">🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/es/">Todas las herramientas</a> / Formateador XML</div>
+    <h1>Formateador XML</h1>
+    <p class="tagline">Formatea y minimiza XML. Valida la buena forma con línea y columna en errores.</p>
+    
+<div class="tool-card">
+  <label>Entrada</label>
+  <textarea id="xf-in" oninput="xfRun()" placeholder="<root><item id=&quot;1&quot;>hello</item></root>" spellcheck="false" style="min-height:180px"><root><item id="1">hello</item><item id="2"><nested>world</nested></item></root></textarea>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Mode</label>
+      <select id="xf-mode" onchange="xfRun()">
+        <option value="pretty" selected>Pretty-print (indent)</option>
+        <option value="minify">Minify (strip whitespace)</option>
+      </select>
+    </div>
+    <div>
+      <label>Indent</label>
+      <select id="xf-indent" onchange="xfRun()">
+        <option value="2" selected>2 spaces</option>
+        <option value="4">4 spaces</option>
+        <option value="tab">Tab</option>
+      </select>
+    </div>
+  </div>
+  <div class="meta" id="xf-status" style="margin-top:0.6rem;font-family:ui-monospace,monospace;font-size:0.82rem"></div>
+</div>
+<div class="tool-card">
+  <label>Salida</label>
+  <div class="output-row">
+    <pre class="output" id="xf-out" style="margin:0;flex:1">Introduce un valor arriba para ver el resultado.</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('xf-out', this)">Copiar</button>
+  </div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>¿Para qué sirve?</h2>
+<p>XML sigue por todas partes: SOAP, configuraciones, RSS/Atom, SVG, OOXML. Una representación indentada es la diferencia entre leer y adivinar. Esta herramienta formatea o minimiza XML bien formado y usa el parser XML del navegador para señalar errores con línea y columna.</p>
+<h3>Cuándo usarlo</h3>
+<ul>
+<li>Inspeccionar un envelope SOAP o una config XML de proveedor.</li>
+<li>Limpiar un SVG.</li>
+<li>Quitar espacios antes de enviar.</li>
+<li>Comprobar buena forma.</li>
+<li>Diff entre dos XML.</li>
+</ul>
+<h3>Errores comunes</h3>
+<ul>
+<li><strong>Bien formado ≠ válido.</strong> La validación de esquema necesita el esquema.</li>
+<li><strong>El espacio puede ser significativo.</strong> Por defecto <code>xml:space="preserve"</code> — no usar pretty-print en XML sensible al espacio.</li>
+<li><strong>Auto-cerrado vs vacío explícito.</strong> La herramienta normaliza a auto-cerrado.</li>
+<li><strong>CDATA, comentarios y PIs se conservan.</strong></li>
+<li><strong>Los namespaces se conservan.</strong></li>
+<li><strong>Orden de atributos.</strong> Para checksum, canonicaliza (XML C14N) antes.</li>
+<li><strong>Diferencias entre parsers.</strong> Línea/columna best-effort.</li>
+</ul>
+<div class="related"><span class="meta">Herramientas relacionadas:</span> <a href="/es/json-formatter/">Formateador JSON</a> <a href="/es/yaml-json/">Conversor YAML ↔ JSON</a> <a href="/es/html-encoder/">Codificador / Decodificador HTML</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacidad</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.xf-ok{color:#3fb950}
+.xf-err{color:#f85149}
+</style>
+<script>
+function xfEsc(s){ return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function xfParseError(xmlString){
+  // Parse via DOMParser; check for parsererror element
+  const dom = new DOMParser().parseFromString(xmlString, 'application/xml');
+  const errEl = dom.querySelector('parsererror');
+  if(!errEl) return {ok: true, dom};
+  // Try to extract line/column from message text
+  const msg = errEl.textContent || 'Parse error';
+  // Firefox: "Line Number 3, Column 7:"
+  // Chrome: "error on line 3 at column 7"
+  let line = null, col = null;
+  let m = msg.match(/[Ll]ine\s*(?:[Nn]umber\s*)?:?\s*(\d+)/);
+  if(m) line = parseInt(m[1], 10);
+  m = msg.match(/[Cc]olumn\s*:?\s*(\d+)/);
+  if(m) col = parseInt(m[1], 10);
+  return {ok: false, msg: msg.trim().split('\n')[0], line, col};
+}
+function xfFormat(node, depth, indent, lines){
+  const pad = indent.repeat(depth);
+  if(node.nodeType === Node.DOCUMENT_NODE){
+    // XML declaration handling: DOMParser strips it; we'll prepend if input had one — caller does that.
+    for(const child of node.childNodes) xfFormat(child, depth, indent, lines);
+    return;
+  }
+  if(node.nodeType === Node.ELEMENT_NODE){
+    const name = node.nodeName;
+    const attrs = Array.from(node.attributes).map(a => `${a.name}="${xfEscAttr(a.value)}"`).join(' ');
+    const open = `<${name}${attrs ? ' ' + attrs : ''}`;
+    const children = Array.from(node.childNodes);
+    // Self-closing if no children
+    if(children.length === 0){
+      lines.push(pad + open + '/>');
+      return;
+    }
+    // Single text child (no element children) — keep on one line
+    const allText = children.every(c => c.nodeType === Node.TEXT_NODE || c.nodeType === Node.CDATA_SECTION_NODE);
+    if(allText){
+      const textContent = children.map(c => {
+        if(c.nodeType === Node.CDATA_SECTION_NODE) return '<![CDATA[' + c.nodeValue + ']]>';
+        return xfEsc(c.nodeValue);
+      }).join('');
+      const trimmed = textContent.replace(/^\s+|\s+$/g,'');
+      if(trimmed === ''){
+        lines.push(pad + open + '/>');
+      } else {
+        lines.push(pad + open + '>' + trimmed + '</' + name + '>');
+      }
+      return;
+    }
+    // Mixed / element children — block form
+    lines.push(pad + open + '>');
+    for(const child of children){
+      if(child.nodeType === Node.TEXT_NODE){
+        const t = (child.nodeValue || '').replace(/^\s+|\s+$/g,'');
+        if(t !== '') lines.push(indent.repeat(depth+1) + xfEsc(t));
+      } else if(child.nodeType === Node.CDATA_SECTION_NODE){
+        lines.push(indent.repeat(depth+1) + '<![CDATA[' + child.nodeValue + ']]>');
+      } else if(child.nodeType === Node.COMMENT_NODE){
+        lines.push(indent.repeat(depth+1) + '<!--' + child.nodeValue + '-->');
+      } else if(child.nodeType === Node.PROCESSING_INSTRUCTION_NODE){
+        lines.push(indent.repeat(depth+1) + '<?' + child.target + ' ' + child.data + '?>');
+      } else {
+        xfFormat(child, depth+1, indent, lines);
+      }
+    }
+    lines.push(pad + '</' + name + '>');
+    return;
+  }
+  if(node.nodeType === Node.COMMENT_NODE){
+    lines.push(pad + '<!--' + node.nodeValue + '-->');
+    return;
+  }
+  if(node.nodeType === Node.PROCESSING_INSTRUCTION_NODE){
+    lines.push(pad + '<?' + node.target + ' ' + node.data + '?>');
+    return;
+  }
+  if(node.nodeType === Node.TEXT_NODE){
+    const t = (node.nodeValue || '').replace(/^\s+|\s+$/g,'');
+    if(t !== '') lines.push(pad + xfEsc(t));
+  }
+}
+function xfEscAttr(v){
+  return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;').replace(/\n/g,'&#10;').replace(/\r/g,'&#13;');
+}
+function xfMinify(node, parts){
+  if(node.nodeType === Node.DOCUMENT_NODE){
+    for(const child of node.childNodes) xfMinify(child, parts);
+    return;
+  }
+  if(node.nodeType === Node.ELEMENT_NODE){
+    const name = node.nodeName;
+    const attrs = Array.from(node.attributes).map(a => `${a.name}="${xfEscAttr(a.value)}"`).join(' ');
+    const open = `<${name}${attrs ? ' ' + attrs : ''}`;
+    const children = Array.from(node.childNodes);
+    if(children.length === 0){ parts.push(open + '/>'); return; }
+    parts.push(open + '>');
+    for(const child of children){
+      if(child.nodeType === Node.TEXT_NODE){
+        const t = (child.nodeValue || '').replace(/^\s+|\s+$/g,'');
+        if(t !== '') parts.push(xfEsc(t));
+      } else if(child.nodeType === Node.CDATA_SECTION_NODE){
+        parts.push('<![CDATA[' + child.nodeValue + ']]>');
+      } else if(child.nodeType === Node.COMMENT_NODE){
+        parts.push('<!--' + child.nodeValue + '-->');
+      } else if(child.nodeType === Node.PROCESSING_INSTRUCTION_NODE){
+        parts.push('<?' + child.target + ' ' + child.data + '?>');
+      } else {
+        xfMinify(child, parts);
+      }
+    }
+    parts.push('</' + name + '>');
+  }
+}
+function xfRun(){
+  const inp = document.getElementById('xf-in').value;
+  const out = document.getElementById('xf-out');
+  const status = document.getElementById('xf-status');
+  if(inp.trim() === ''){ out.classList.remove('error'); out.textContent = 'Introduce un valor arriba para ver el resultado.'; status.textContent = ''; return; }
+  const parsed = xfParseError(inp);
+  if(!parsed.ok){
+    out.classList.add('error');
+    let posStr = '';
+    if(parsed.line !== null) posStr = ` at line ${parsed.line}` + (parsed.col !== null ? `, column ${parsed.col}` : '');
+    out.textContent = '✗ Not well-formed XML' + posStr + '\n\n' + parsed.msg;
+    status.innerHTML = '<span class="xf-err">✗ Parse error</span>';
+    return;
+  }
+  out.classList.remove('error');
+  const mode = document.getElementById('xf-mode').value;
+  const indentChoice = document.getElementById('xf-indent').value;
+  const indent = indentChoice === 'tab' ? '\t' : ' '.repeat(parseInt(indentChoice, 10));
+  // Preserve XML declaration if it existed
+  const declMatch = inp.match(/^\s*(<\?xml[^?]*\?>)/);
+  const decl = declMatch ? declMatch[1] : '';
+  if(mode === 'pretty'){
+    const lines = [];
+    xfFormat(parsed.dom, 0, indent, lines);
+    let result = lines.join('\n');
+    if(decl) result = decl + '\n' + result;
+    out.textContent = result;
+    const inSize = new Blob([inp]).size;
+    const outSize = new Blob([result]).size;
+    status.innerHTML = `<span class="xf-ok">✓ Well-formed</span> · ${inSize.toLocaleString()} → ${outSize.toLocaleString()} bytes`;
+  } else {
+    const parts = [];
+    xfMinify(parsed.dom, parts);
+    let result = parts.join('');
+    if(decl) result = decl + result;
+    out.textContent = result;
+    const inSize = new Blob([inp]).size;
+    const outSize = new Blob([result]).size;
+    const saving = inSize ? Math.max(0, Math.round((1 - outSize/inSize) * 100)) : 0;
+    status.innerHTML = `<span class="xf-ok">✓ Well-formed</span> · ${inSize.toLocaleString()} → ${outSize.toLocaleString()} bytes (-${saving}%)`;
+  }
+}
+document.addEventListener('DOMContentLoaded', xfRun);
+</script>
+
+</body>
+</html>

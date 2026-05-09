@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanzador de Dados — Toolhub</title>
+  <meta name="description" content="Lanzador de dados gratuito con notación estándar de mesa: 1d20, 2d6+3, 4d6kh3, 3d8-1. Cada tirada y el total. Usa crypto.getRandomValues para tiradas justas.">
+  <meta property="og:title" content="Lanzador de Dados — Toolhub">
+  <meta property="og:description" content="Lanzador de dados gratuito con notación estándar de mesa: 1d20, 2d6+3, 4d6kh3, 3d8-1. Cada tirada y el total. Usa crypto.getRandomValues para tiradas justas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/es/dice-roller/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/es/dice-roller/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/dice-roller/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/dice-roller/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/dice-roller/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/dice-roller/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/dice-roller/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/dice-roller/">
+  <meta property="og:locale" content="es_ES">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/es/dice-roller/#tool",
+        "name": "Lanzador de Dados",
+        "description": "Lanzador de dados gratuito con notación estándar de mesa: 1d20, 2d6+3, 4d6kh3, 3d8-1. Cada tirada y el total. Usa crypto.getRandomValues para tiradas justas.",
+        "url": "https://toolhub.software/es/dice-roller/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Utility",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "es",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["dice", "roll", "d20", "rpg", "dnd", "random", "tabletop", "notation"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Todas las herramientas", "item": "https://toolhub.software/es/"},
+          {"@type": "ListItem", "position": 2, "name": "Lanzador de Dados", "item": "https://toolhub.software/es/dice-roller/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/es/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/dice-roller/'; else location.href='/dice-roller/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" selected="selected">🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/es/">Todas las herramientas</a> / Lanzador de Dados</div>
+    <h1>Lanzador de Dados</h1>
+    <p class="tagline">Lanza dados con notación D&D estándar — 2d6+3, 1d20, 4d6 quedarse 3 más altos. RNG criptográfico.</p>
+    
+<div class="tool-card">
+  <label>Dice notation</label>
+  <input type="text" id="dr-notation" value="2d6+3" oninput="drValidate()" placeholder="e.g. 1d20, 2d6+3, 4d6kh3, 3d8-1" autocomplete="off" spellcheck="false" style="font-family:ui-monospace,monospace">
+  <div class="meta" style="margin-top:0.4rem">Examples: <code>1d20</code> · <code>2d6+3</code> · <code>4d6kh3</code> (drop lowest) · <code>3d8-1</code> · <code>d100</code> · <code>2d20kl1</code> (disadvantage)</div>
+  <div class="button-row" style="margin-top:0.7rem;flex-wrap:wrap">
+    <button type="button" onclick="drRoll()">🎲 Roll</button>
+    <button type="button" class="secondary" onclick="drPreset('1d20')" style="padding:0.4rem 0.8rem;font-size:0.85rem">1d20</button>
+    <button type="button" class="secondary" onclick="drPreset('2d6')" style="padding:0.4rem 0.8rem;font-size:0.85rem">2d6</button>
+    <button type="button" class="secondary" onclick="drPreset('4d6kh3')" style="padding:0.4rem 0.8rem;font-size:0.85rem">4d6kh3</button>
+    <button type="button" class="secondary" onclick="drPreset('1d100')" style="padding:0.4rem 0.8rem;font-size:0.85rem">d100</button>
+    <button type="button" class="secondary" onclick="drPreset('2d20kh1')" style="padding:0.4rem 0.8rem;font-size:0.85rem">Adv (2d20kh1)</button>
+    <button type="button" class="secondary" onclick="drPreset('2d20kl1')" style="padding:0.4rem 0.8rem;font-size:0.85rem">Dis (2d20kl1)</button>
+    <button type="button" class="secondary" onclick="drClear()" style="padding:0.4rem 0.8rem;font-size:0.85rem">Clear log</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Resultado</label>
+  <div id="dr-out" class="output">Press Roll.</div>
+</div>
+<div class="tool-card">
+  <label>Roll history</label>
+  <div id="dr-log" class="output" style="font-family:ui-monospace,monospace;font-size:0.85rem;min-height:3rem">(empty)</div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>¿Para qué sirve?</h2>
+<p>Los juegos de rol de mesa (D&D, Pathfinder y muchos más) usan una notación compacta para los dados: <code>NdC</code> = "tira N dados de C caras". <code>2d6+3</code> = "dos d6 y +3". Esta herramienta interpreta la notación y tira con el RNG criptográfico del navegador — imparcial e impredecible.</p>
+<h3>Notación soportada</h3>
+<ul>
+<li><code>1d20</code>, <code>2d6+3</code>, <code>3d8-1</code></li>
+<li><code>4d6kh3</code> — guardar los 3 mejores.</li>
+<li><code>2d20kl1</code> desventaja, <code>2d20kh1</code> ventaja.</li>
+<li><code>1d100</code> o <code>1d%</code> — dado porcentual.</li>
+</ul>
+<h3>Cuándo usarlo</h3>
+<ul>
+<li>Partida online, sin dados físicos, DM remoto.</li>
+<li>Tirada rápida sin app de suscripción.</li>
+<li>Prototipar probabilidad de un diseño.</li>
+</ul>
+<h3>Errores comunes</h3>
+<ul>
+<li><strong>El navegador es el límite de confianza.</strong> Con devtools se puede manipular — para competición usa un servidor.</li>
+<li><strong>Crypto RNG es impredecible, no "más aleatorio".</strong> Distribución equivalente a un buen PRNG.</li>
+<li><strong>El modificador se aplica una sola vez, tras filtrar.</strong></li>
+<li><strong>Sin explosiones ni conteo de éxitos.</strong> Solo suma + modificador.</li>
+<li><strong>Críticos solo en d20.</strong> 20 verde, 1 rojo.</li>
+<li><strong>Máximo 1000 dados.</strong> Límite de rendimiento.</li>
+</ul>
+<div class="related"><span class="meta">Herramientas relacionadas:</span> <a href="/es/password-generator/">Generador de Contraseñas</a> <a href="/es/uuid-generator/">Generador UUID</a> <a href="/es/percentage-calculator/">Calculadora de Porcentajes</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacidad</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.dr-total{font-family:ui-monospace,monospace;font-size:2rem;font-weight:700;color:var(--accent);text-align:center;margin:0.3rem 0}
+.dr-rolls{display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;margin:0.5rem 0}
+.dr-die{display:inline-flex;align-items:center;justify-content:center;min-width:2.4rem;height:2.4rem;padding:0 0.5rem;background:var(--bg-elev);border:1px solid var(--border);border-radius:6px;font-family:ui-monospace,monospace;font-weight:600;color:var(--text)}
+.dr-die.dropped{opacity:0.4;text-decoration:line-through;color:var(--text-muted)}
+.dr-die.crit-h{background:rgba(63,185,80,0.15);color:#3fb950;border-color:#3fb950}
+.dr-die.crit-l{background:rgba(248,81,73,0.15);color:#f85149;border-color:#f85149}
+.dr-detail{text-align:center;color:var(--text-muted);font-family:ui-monospace,monospace;font-size:0.85rem;margin-top:0.4rem}
+.dr-log-row{padding:0.25rem 0;border-bottom:1px dashed var(--border);display:grid;grid-template-columns:auto 1fr auto;gap:0.7rem}
+.dr-log-row:last-child{border:none}
+.dr-log-time{color:var(--text-muted);font-size:0.78rem}
+.dr-log-not{color:var(--accent)}
+.dr-log-tot{color:var(--text);font-weight:600;text-align:right}
+</style>
+<script>
+function drRandInt(maxExclusive){
+  const arr = new Uint32Array(1);
+  // Rejection sampling for unbiased range
+  const range = maxExclusive;
+  const limit = Math.floor(0xFFFFFFFF / range) * range;
+  let v;
+  do { crypto.getRandomValues(arr); v = arr[0]; } while (v >= limit);
+  return v % range;
+}
+function drParse(s){
+  // Format: [N]d<sides>[kh<K>|kl<K>][+/-<mod>]
+  // Split on +/- for mod, but only after the dice spec
+  s = (s||'').trim().toLowerCase().replace(/\s+/g,'');
+  if(!s) return {ok:false, err:'Empty input'};
+  const m = s.match(/^(\d*)d(\d+|%)(?:(kh|kl)(\d+))?([+-]\d+)?$/);
+  if(!m) return {ok:false, err:'Expected something like 2d6, 1d20+3, 4d6kh3'};
+  const n = m[1] === '' ? 1 : parseInt(m[1], 10);
+  const sides = m[2] === '%' ? 100 : parseInt(m[2], 10);
+  const keepKind = m[3] || null;
+  const keepN = m[4] ? parseInt(m[4], 10) : null;
+  const mod = m[5] ? parseInt(m[5], 10) : 0;
+  if(n < 1 || n > 1000) return {ok:false, err:'Number of dice must be 1–1000'};
+  if(sides < 2 || sides > 1000000) return {ok:false, err:'Sides must be 2–1,000,000'};
+  if(keepN !== null && (keepN < 1 || keepN > n)) return {ok:false, err:`Keep count must be between 1 and ${n}`};
+  return {ok:true, n, sides, keepKind, keepN, mod};
+}
+function drValidate(){
+  const p = drParse(document.getElementById('dr-notation').value);
+  const out = document.getElementById('dr-out');
+  if(!p.ok && document.getElementById('dr-notation').value){
+    out.classList.add('error');
+    out.textContent = '✗ ' + p.err;
+  } else {
+    out.classList.remove('error');
+    if(out.textContent.startsWith('✗')) out.textContent = 'Press Roll.';
+  }
+}
+function drPreset(s){
+  document.getElementById('dr-notation').value = s;
+  drValidate();
+}
+function drRoll(){
+  const out = document.getElementById('dr-out');
+  const log = document.getElementById('dr-log');
+  const notation = document.getElementById('dr-notation').value;
+  const p = drParse(notation);
+  if(!p.ok){ out.classList.add('error'); out.textContent = '✗ ' + p.err; return; }
+  out.classList.remove('error');
+  const rolls = [];
+  for(let i=0;i<p.n;i++) rolls.push(drRandInt(p.sides) + 1);
+  // Decide which rolls are kept
+  let keptIdx;
+  if(p.keepKind === 'kh' && p.keepN !== null){
+    const sorted = rolls.map((v,i)=>[v,i]).sort((a,b)=>b[0]-a[0]);
+    keptIdx = new Set(sorted.slice(0, p.keepN).map(x=>x[1]));
+  } else if(p.keepKind === 'kl' && p.keepN !== null){
+    const sorted = rolls.map((v,i)=>[v,i]).sort((a,b)=>a[0]-b[0]);
+    keptIdx = new Set(sorted.slice(0, p.keepN).map(x=>x[1]));
+  } else {
+    keptIdx = new Set(rolls.map((_,i)=>i));
+  }
+  let sumKept = 0;
+  for(const i of keptIdx) sumKept += rolls[i];
+  const total = sumKept + p.mod;
+  const dieHtml = rolls.map((r,i) => {
+    let cls = 'dr-die';
+    if(!keptIdx.has(i)) cls += ' dropped';
+    if(p.sides === 20 && r === 20) cls += ' crit-h';
+    if(p.sides === 20 && r === 1)  cls += ' crit-l';
+    return `<div class="${cls}">${r}</div>`;
+  }).join('');
+  const detail = `${p.n}d${p.sides}${p.keepKind ? p.keepKind + p.keepN : ''}${p.mod ? (p.mod >= 0 ? '+' + p.mod : p.mod) : ''}`;
+  out.innerHTML = `
+    <div class="dr-detail">${detail}</div>
+    <div class="dr-rolls">${dieHtml}</div>
+    <div class="dr-total">${total}</div>
+    <div class="dr-detail">kept ${sumKept}${p.mod ? (p.mod>=0?' + '+p.mod:' − '+Math.abs(p.mod)) : ''} = ${total}</div>
+  `;
+  // Log
+  const t = new Date();
+  const ts = String(t.getHours()).padStart(2,'0') + ':' + String(t.getMinutes()).padStart(2,'0') + ':' + String(t.getSeconds()).padStart(2,'0');
+  const row = `<div class="dr-log-row"><span class="dr-log-time">${ts}</span><span class="dr-log-not">${detail}</span><span class="dr-log-tot">${total}</span></div>`;
+  if(log.textContent === '(empty)') log.innerHTML = row;
+  else log.innerHTML = row + log.innerHTML;
+}
+function drClear(){ document.getElementById('dr-log').textContent = '(empty)'; }
+document.addEventListener('DOMContentLoaded', drValidate);
+</script>
+
+</body>
+</html>

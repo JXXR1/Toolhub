@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de IMC — Toolhub</title>
+  <meta name="description" content="Calculadora gratuita de IMC. Introduce altura y peso en métrico (cm + kg) o imperial (pies/pulgadas + libras) y obtén el IMC y la clasificación de la OMS. Solo educativo — no es consejo médico.">
+  <meta property="og:title" content="Calculadora de IMC — Toolhub">
+  <meta property="og:description" content="Calculadora gratuita de IMC. Introduce altura y peso en métrico (cm + kg) o imperial (pies/pulgadas + libras) y obtén el IMC y la clasificación de la OMS. Solo educativo — no es consejo médico.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/es/bmi-calculator/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/es/bmi-calculator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/bmi-calculator/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/bmi-calculator/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/bmi-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/bmi-calculator/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/bmi-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/bmi-calculator/">
+  <meta property="og:locale" content="es_ES">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/es/bmi-calculator/#tool",
+        "name": "Calculadora de IMC",
+        "description": "Calculadora gratuita de IMC. Introduce altura y peso en métrico (cm + kg) o imperial (pies/pulgadas + libras) y obtén el IMC y la clasificación de la OMS. Solo educativo — no es consejo médico.",
+        "url": "https://toolhub.software/es/bmi-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Math Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "es",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["bmi", "body mass index", "health", "weight", "height", "metric", "imperial"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Todas las herramientas", "item": "https://toolhub.software/es/"},
+          {"@type": "ListItem", "position": 2, "name": "Calculadora de IMC", "item": "https://toolhub.software/es/bmi-calculator/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/es/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/bmi-calculator/'; else location.href='/bmi-calculator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" selected="selected">🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/es/">Todas las herramientas</a> / Calculadora de IMC</div>
+    <h1>Calculadora de IMC</h1>
+    <p class="tagline">Índice de Masa Corporal a partir de altura y peso. Métrico o imperial. Categoría OMS — no es consejo médico.</p>
+    
+<div class="tool-card">
+  <label>Units</label>
+  <select id="bmi-units" onchange="bmiSwitch()">
+    <option value="metric">Metric — cm and kg</option>
+    <option value="imperial">Imperial — feet/inches and pounds</option>
+  </select>
+</div>
+<div class="tool-card" id="bmi-metric">
+  <div class="row-2col">
+    <div>
+      <label>Height (cm)</label>
+      <input type="number" id="bmi-cm" step="0.1" min="50" max="280" value="175" oninput="bmiRun()">
+    </div>
+    <div>
+      <label>Weight (kg)</label>
+      <input type="number" id="bmi-kg" step="0.1" min="10" max="400" value="70" oninput="bmiRun()">
+    </div>
+  </div>
+</div>
+<div class="tool-card" id="bmi-imperial" style="display:none">
+  <div class="row-2col">
+    <div>
+      <label>Height (feet)</label>
+      <input type="number" id="bmi-ft" step="1" min="1" max="8" value="5" oninput="bmiRun()">
+    </div>
+    <div>
+      <label>Height (inches)</label>
+      <input type="number" id="bmi-in" step="0.1" min="0" max="11.9" value="9" oninput="bmiRun()">
+    </div>
+  </div>
+  <div style="margin-top:0.7rem">
+    <label>Weight (pounds)</label>
+    <input type="number" id="bmi-lb" step="0.1" min="20" max="900" value="155" oninput="bmiRun()">
+  </div>
+</div>
+<div class="tool-card">
+  <label>Resultado</label>
+  <div id="bmi-out" class="output"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>¿Para qué sirve?</h2>
+<p>El Índice de Masa Corporal (IMC) es un único número — peso (kg) dividido por el cuadrado de la altura (m) — que la OMS y muchos sistemas sanitarios usan como cribado. Umbrales adultos: menos de 18,5 bajo peso, 18,5–24,9 normal, 25–29,9 sobrepeso, ≥30 obesidad. Esta herramienta calcula valor y categoría desde altura y peso en métrico o imperial.</p>
+<h3>Cómo se calcula</h3>
+<ul>
+<li><strong>Métrico:</strong> IMC = kg ÷ (m × m). 70 kg a 1,75 m → 22,9.</li>
+<li><strong>Imperial:</strong> Se convierte a métrico internamente.</li>
+<li>Las categorías OMS son independientes del sistema.</li>
+</ul>
+<h3>Cuándo usarlo</h3>
+<ul>
+<li>Auto-chequeo rápido o un formulario que lo pida.</li>
+<li>Comparar entre estudios.</li>
+<li>Seguir la tendencia en el tiempo.</li>
+</ul>
+<h3>Errores comunes</h3>
+<ul>
+<li><strong>El IMC no mide composición.</strong> Personas musculadas saldrán "sobrepeso", personas con poco músculo "normal".</li>
+<li><strong>Solo adultos.</strong> Para niños usar percentiles por edad y sexo.</li>
+<li><strong>Embarazo excluido.</strong> Consulta al profesional sanitario.</li>
+<li><strong>La etnia importa.</strong> OMS Asia-Pacífico usa umbrales más bajos.</li>
+<li><strong>Personas altas vs bajas.</strong> La fórmula sobreestima a las altas y subestima a las bajas.</li>
+<li><strong>No es consejo médico.</strong> Acude a un profesional si te preocupa.</li>
+</ul>
+<div class="related"><span class="meta">Herramientas relacionadas:</span> <a href="/es/unit-converter/">Conversor de Unidades</a> <a href="/es/percentage-calculator/">Calculadora de Porcentajes</a> <a href="/es/tip-split-calculator/">Calculadora de Propina y División</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacidad</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.bmi-num{font-family:ui-monospace,monospace;font-size:2.4rem;font-weight:700;color:var(--accent);text-align:center;margin:0.2rem 0}
+.bmi-cat{text-align:center;font-size:1.05rem;font-weight:600;padding:0.4rem 0.8rem;border-radius:6px;display:inline-block;margin:0 auto;display:block;width:fit-content}
+.bmi-c-under{background:rgba(88,166,255,0.15);color:#58a6ff;border:1px solid rgba(88,166,255,0.4)}
+.bmi-c-normal{background:rgba(63,185,80,0.15);color:#3fb950;border:1px solid rgba(63,185,80,0.4)}
+.bmi-c-over{background:rgba(247,147,30,0.15);color:#f7931e;border:1px solid rgba(247,147,30,0.4)}
+.bmi-c-obese{background:rgba(248,81,73,0.15);color:#f85149;border:1px solid rgba(248,81,73,0.4)}
+.bmi-bar{margin-top:1rem;height:14px;border-radius:7px;background:linear-gradient(to right,#58a6ff 0%,#58a6ff 18.5%,#3fb950 18.5%,#3fb950 25%,#f7931e 25%,#f7931e 30%,#f85149 30%,#f85149 100%);position:relative}
+.bmi-marker{position:absolute;top:-4px;width:4px;height:22px;background:var(--text);border-radius:2px}
+.bmi-scale{display:grid;grid-template-columns:repeat(4,1fr);font-size:0.72rem;color:var(--text-muted);margin-top:0.3rem;font-family:ui-monospace,monospace}
+.bmi-scale span:nth-child(2),.bmi-scale span:nth-child(3),.bmi-scale span:nth-child(4){text-align:center}
+.bmi-scale span:last-child{text-align:right}
+.bmi-disclaimer{margin-top:0.8rem;font-size:0.78rem;color:var(--text-muted);text-align:center;font-style:italic}
+.bmi-extras{margin-top:0.7rem;font-size:0.85rem;color:var(--text-muted);text-align:center;font-family:ui-monospace,monospace}
+</style>
+<script>
+function bmiSwitch(){
+  const u = document.getElementById('bmi-units').value;
+  document.getElementById('bmi-metric').style.display = u === 'metric' ? '' : 'none';
+  document.getElementById('bmi-imperial').style.display = u === 'imperial' ? '' : 'none';
+  bmiRun();
+}
+function bmiCat(b){
+  if(b < 18.5) return ['Underweight', 'bmi-c-under'];
+  if(b < 25) return ['Normal weight', 'bmi-c-normal'];
+  if(b < 30) return ['Overweight', 'bmi-c-over'];
+  if(b < 35) return ['Obese (Class I)', 'bmi-c-obese'];
+  if(b < 40) return ['Obese (Class II)', 'bmi-c-obese'];
+  return ['Obese (Class III)', 'bmi-c-obese'];
+}
+function bmiRun(){
+  const u = document.getElementById('bmi-units').value;
+  let m, kg;
+  if(u === 'metric'){
+    const cm = parseFloat(document.getElementById('bmi-cm').value);
+    kg = parseFloat(document.getElementById('bmi-kg').value);
+    if(!isFinite(cm) || cm <= 0 || !isFinite(kg) || kg <= 0){ document.getElementById('bmi-out').textContent = 'Introduce un valor arriba para ver el resultado.'; return; }
+    m = cm / 100;
+  } else {
+    const ft = parseFloat(document.getElementById('bmi-ft').value) || 0;
+    const inch = parseFloat(document.getElementById('bmi-in').value) || 0;
+    const lb = parseFloat(document.getElementById('bmi-lb').value);
+    if(ft <= 0 && inch <= 0){ document.getElementById('bmi-out').textContent = 'Introduce un valor arriba para ver el resultado.'; return; }
+    if(!isFinite(lb) || lb <= 0){ document.getElementById('bmi-out').textContent = 'Introduce un valor arriba para ver el resultado.'; return; }
+    m = (ft * 12 + inch) * 0.0254;
+    kg = lb * 0.45359237;
+  }
+  if(m <= 0){ document.getElementById('bmi-out').textContent = 'Introduce un valor arriba para ver el resultado.'; return; }
+  const bmi = kg / (m * m);
+  const [cat, cls] = bmiCat(bmi);
+  // Marker on 0–40 scale
+  const pct = Math.max(0, Math.min(100, (bmi / 40) * 100));
+  // Healthy range in current units
+  const lowKg = 18.5 * m * m;
+  const highKg = 24.9 * m * m;
+  let rangeStr;
+  if(u === 'metric'){
+    rangeStr = `Healthy weight range: ${lowKg.toFixed(1)} – ${highKg.toFixed(1)} kg`;
+  } else {
+    rangeStr = `Healthy weight range: ${(lowKg/0.45359237).toFixed(1)} – ${(highKg/0.45359237).toFixed(1)} lb`;
+  }
+  document.getElementById('bmi-out').innerHTML = `
+    <div class="bmi-num">${bmi.toFixed(1)}</div>
+    <div class="bmi-cat ${cls}">${cat}</div>
+    <div class="bmi-bar"><div class="bmi-marker" style="left:calc(${pct}% - 2px)"></div></div>
+    <div class="bmi-scale"><span>0</span><span>18.5</span><span>25</span><span>30</span></div>
+    <div class="bmi-extras">${rangeStr}</div>
+    <div class="bmi-disclaimer">BMI is a population-level screening figure. It does not account for muscle mass, body composition, age, ethnicity, or pregnancy. Speak to a clinician for a real assessment.</div>
+  `;
+}
+document.addEventListener('DOMContentLoaded', bmiRun);
+</script>
+
+</body>
+</html>

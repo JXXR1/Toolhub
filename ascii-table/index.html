@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCII Table — Toolhub</title>
+  <meta name="description" content="Free ASCII table reference. All 128 standard ASCII codes with decimal, hex, octal, binary, character, HTML entity, and a description for control characters. Filter as you type.">
+  <meta property="og:title" content="ASCII Table — Toolhub">
+  <meta property="og:description" content="Free ASCII table reference. All 128 standard ASCII codes with decimal, hex, octal, binary, character, HTML entity, and a description for control characters. Filter as you type.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/ascii-table/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/ascii-table/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/ascii-table/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/ascii-table/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/ascii-table/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/ascii-table/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/ascii-table/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/ascii-table/">
+  <meta property="og:locale" content="en_GB">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/ascii-table/#tool",
+        "name": "ASCII Table",
+        "description": "Free ASCII table reference. All 128 standard ASCII codes with decimal, hex, octal, binary, character, HTML entity, and a description for control characters. Filter as you type.",
+        "url": "https://toolhub.software/ascii-table/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "All Tools", "item": "https://toolhub.software/"},
+          {"@type": "ListItem", "position": 2, "name": "ASCII Table", "item": "https://toolhub.software/ascii-table/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/ascii-table/'; else location.href='/ascii-table/'">
+        <option value="" selected="selected">🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/">All Tools</a> / ASCII Table</div>
+    <h1>ASCII Table</h1>
+    <p class="tagline">Full ASCII reference 0–127 with decimal, hex, binary, character, and HTML entity. Filterable.</p>
+    
+<div class="tool-card">
+  <label>Filter</label>
+  <input type="text" id="ascii-q" oninput="asciiRun()" placeholder="Type to filter — try 'tab', 'newline', '0x41', '65', 'A'…" autocomplete="off" spellcheck="false">
+  <div class="meta" style="margin-top:0.4rem">
+    <label style="display:inline-flex;gap:0.4rem;align-items:center;color:var(--text-muted);font-size:0.85rem"><input type="checkbox" id="ascii-ctrl" checked onchange="asciiRun()" style="width:auto"> Show control characters (0–31, 127)</label>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Result</label>
+  <div id="ascii-out" class="output" style="padding:0;overflow:auto"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>What is this for?</h2>
+<p>ASCII (American Standard Code for Information Interchange) is the 128-character coding system that maps the digits, letters, punctuation, and a handful of control codes onto the integers 0–127. It's the foundation every modern text encoding (UTF-8, Latin-1, Windows-1252) extends, so knowing the values is occasionally vital — diagnosing a stray byte in a binary file, building a regex for "any printable", reading a hex dump, or remembering whether 0x0A or 0x0D is a newline.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Reading a hex dump and trying to figure out what those bytes <em>say</em>.</li>
+  <li>Writing a parser and needing the boundary values: <code>0x20</code> (space), <code>0x7E</code> (tilde) — the printable range.</li>
+  <li>Debugging a CSV that broke because something contained <code>0x09</code> (Tab) or <code>0x1F</code> (Unit Separator).</li>
+  <li>Crafting an HTML entity for a tricky character — <code>&amp;#65;</code> = <code>A</code>.</li>
+  <li>Settling an argument about whether <code>\r</code> is 0x0D (yes — Carriage Return) and <code>\n</code> is 0x0A (yes — Line Feed).</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>ASCII is 7-bit, not 8-bit.</strong> Codes 128–255 are <em>not</em> ASCII — they belong to whatever 8-bit encoding (Latin-1, CP-1252, …) the document declares, or are the lead bytes of a UTF-8 sequence.</li>
+  <li><strong>Newlines differ by platform.</strong> Unix/macOS use <code>LF</code> (0x0A) only; legacy Mac Classic used <code>CR</code> (0x0D); Windows uses <code>CRLF</code>. Files that mix them break naïve line counting.</li>
+  <li><strong>Control characters can be invisible saboteurs.</strong> A copy/paste from a terminal or PDF can pick up <code>0x1F</code>, <code>0x07</code> (BEL — actually beeps the terminal), or zero-width Unicode characters that <em>aren't</em> ASCII at all. If text "looks fine" but compares unequal, dump it to bytes.</li>
+  <li><strong>HTML entities aren't always needed.</strong> In modern UTF-8 documents, <code>&amp;#65;</code> and the literal <code>A</code> are equivalent. Only escape characters that have syntactic meaning in HTML: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, and <code>"</code> in attributes.</li>
+  <li><strong>NUL (<code>0x00</code>) terminates strings in C.</strong> Don't embed it in C-string buffers without thinking — many APIs will silently truncate at the first NUL.</li>
+</ul>
+<div class="related"><span class="meta">Related tools:</span> <a href="/unicode-inspector/">Unicode Inspector</a> <a href="/html-encoder/">HTML Encoder / Decoder</a> <a href="/url-encoder/">URL Encoder / Decoder</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.ascii-table{width:100%;border-collapse:collapse;font-family:ui-monospace,monospace;font-size:0.85rem}
+.ascii-table th{position:sticky;top:0;background:var(--surface);color:var(--text-muted);font-weight:600;font-size:0.78rem;text-align:left;padding:0.5rem 0.7rem;border-bottom:1px solid var(--border)}
+.ascii-table td{padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);vertical-align:top}
+.ascii-table tr:hover{background:var(--card-hover)}
+.ascii-ch{font-weight:600;color:var(--accent)}
+.ascii-desc{color:var(--text-muted);font-size:0.78rem}
+.ascii-empty{color:var(--text-muted);text-align:center;padding:1.5rem 0}
+</style>
+<script>
+const ASCII_NAMES = {
+  0:['NUL','Null'],1:['SOH','Start of Heading'],2:['STX','Start of Text'],3:['ETX','End of Text'],
+  4:['EOT','End of Transmission'],5:['ENQ','Enquiry'],6:['ACK','Acknowledge'],7:['BEL','Bell'],
+  8:['BS','Backspace'],9:['HT','Tab (horizontal)'],10:['LF','Line Feed (newline)'],11:['VT','Vertical Tab'],
+  12:['FF','Form Feed'],13:['CR','Carriage Return'],14:['SO','Shift Out'],15:['SI','Shift In'],
+  16:['DLE','Data Link Escape'],17:['DC1','Device Control 1 (XON)'],18:['DC2','Device Control 2'],
+  19:['DC3','Device Control 3 (XOFF)'],20:['DC4','Device Control 4'],21:['NAK','Negative Acknowledge'],
+  22:['SYN','Synchronous Idle'],23:['ETB','End of Transmission Block'],24:['CAN','Cancel'],
+  25:['EM','End of Medium'],26:['SUB','Substitute'],27:['ESC','Escape'],28:['FS','File Separator'],
+  29:['GS','Group Separator'],30:['RS','Record Separator'],31:['US','Unit Separator'],
+  32:['SP','Space'],127:['DEL','Delete']
+};
+function asciiHtmlEntity(n){
+  // Named entities for the few that have one
+  const named = {34:'&amp;quot;',38:'&amp;amp;',39:'&amp;apos;',60:'&amp;lt;',62:'&amp;gt;',160:'&amp;nbsp;'};
+  if(named[n]) return named[n];
+  return '&amp;#' + n + ';';
+}
+function asciiBin(n){ return n.toString(2).padStart(7,'0'); }
+function asciiHex(n){ return '0x' + n.toString(16).toUpperCase().padStart(2,'0'); }
+function asciiOct(n){ return n.toString(8).padStart(3,'0'); }
+function asciiCh(n){
+  if(n < 32 || n === 127) return ASCII_NAMES[n][0];
+  if(n === 32) return '(space)';
+  return String.fromCharCode(n);
+}
+function asciiMatch(n, q){
+  if(!q) return true;
+  q = q.toLowerCase().trim();
+  const ch = asciiCh(n).toLowerCase();
+  const dec = String(n);
+  const hex = asciiHex(n).toLowerCase();
+  const bin = asciiBin(n);
+  const oct = asciiOct(n);
+  const named = ASCII_NAMES[n];
+  const name = named ? (named[0] + ' ' + named[1]).toLowerCase() : '';
+  return ch.includes(q) || dec === q || hex.includes(q) || hex.replace('0x','').includes(q.replace('0x','')) || bin.includes(q) || oct === q || name.includes(q);
+}
+function asciiRun(){
+  const q = document.getElementById('ascii-q').value;
+  const showCtrl = document.getElementById('ascii-ctrl').checked;
+  const rows = [];
+  for(let n=0;n<128;n++){
+    const isCtrl = (n < 32 || n === 127);
+    if(isCtrl && !showCtrl) continue;
+    if(!asciiMatch(n, q)) continue;
+    const named = ASCII_NAMES[n];
+    const desc = named ? `<span class="ascii-desc">${named[0]} — ${named[1]}</span>` : '';
+    const chDisplay = isCtrl ? `<span class="ascii-desc">${named[0]}</span>` : (n === 32 ? '<span class="ascii-desc">(space)</span>' : `<span class="ascii-ch">${String.fromCharCode(n).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}</span>`);
+    rows.push(`<tr><td>${n}</td><td>${asciiHex(n)}</td><td>${asciiOct(n)}</td><td>${asciiBin(n)}</td><td>${chDisplay}</td><td><code>${asciiHtmlEntity(n)}</code></td><td>${desc}</td></tr>`);
+  }
+  const out = document.getElementById('ascii-out');
+  if(rows.length === 0){
+    out.innerHTML = '<div class="ascii-empty">No matches.</div>';
+    return;
+  }
+  out.innerHTML = `<table class="ascii-table">
+    <thead><tr><th>Dec</th><th>Hex</th><th>Oct</th><th>Bin</th><th>Char</th><th>HTML</th><th>Description</th></tr></thead>
+    <tbody>${rows.join('')}</tbody></table>`;
+}
+document.addEventListener('DOMContentLoaded', asciiRun);
+</script>
+
+</body>
+</html>

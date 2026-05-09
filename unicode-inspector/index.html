@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicode Inspector — Toolhub</title>
+  <meta name="description" content="Free Unicode inspector. Paste any text and see each Unicode code point: hex, decimal, UTF-8 byte sequence, general category, and a name where known. Highlights invisible and confusable characters.">
+  <meta property="og:title" content="Unicode Inspector — Toolhub">
+  <meta property="og:description" content="Free Unicode inspector. Paste any text and see each Unicode code point: hex, decimal, UTF-8 byte sequence, general category, and a name where known. Highlights invisible and confusable characters.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/unicode-inspector/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/unicode-inspector/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/unicode-inspector/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/unicode-inspector/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/unicode-inspector/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/unicode-inspector/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/unicode-inspector/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/unicode-inspector/">
+  <meta property="og:locale" content="en_GB">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/unicode-inspector/#tool",
+        "name": "Unicode Inspector",
+        "description": "Free Unicode inspector. Paste any text and see each Unicode code point: hex, decimal, UTF-8 byte sequence, general category, and a name where known. Highlights invisible and confusable characters.",
+        "url": "https://toolhub.software/unicode-inspector/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Text Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["unicode", "code point", "utf-8", "character", "inspect", "invisible", "encoding"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "All Tools", "item": "https://toolhub.software/"},
+          {"@type": "ListItem", "position": 2, "name": "Unicode Inspector", "item": "https://toolhub.software/unicode-inspector/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/unicode-inspector/'; else location.href='/unicode-inspector/'">
+        <option value="" selected="selected">🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/">All Tools</a> / Unicode Inspector</div>
+    <h1>Unicode Inspector</h1>
+    <p class="tagline">Paste text → table of every code point. Hex, decimal, UTF-8 bytes, category. Spot invisible characters.</p>
+    
+<div class="tool-card">
+  <label>Input</label>
+  <textarea id="ui-in" oninput="uiRun()" placeholder="Paste text — try a string with emoji, accents, or invisible characters" spellcheck="false">Hello, café 🌍</textarea>
+  <div class="meta" id="ui-summary" style="margin-top:0.5rem;font-family:ui-monospace,monospace;font-size:0.82rem"></div>
+</div>
+<div class="tool-card">
+  <label>Result</label>
+  <div id="ui-out" style="overflow:auto"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>What is this for?</h2>
+<p>"Why won't this string compare equal?" "Why is this username refused as already taken when it looks free?" "Why does this filename break my shell?" The answer is almost always: the bytes don't match what your eyes see. Two characters can <em>look</em> identical but be different code points (Latin "a" vs Cyrillic "а"); whitespace can hide non-breaking spaces, zero-width joiners, or right-to-left overrides; an emoji can be one code point or four. This tool decomposes any text down to its individual Unicode code points, with hex, decimal, UTF-8 byte sequence, category, and a name where known.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Diagnosing a "looks the same but isn't equal" string bug.</li>
+  <li>Finding invisible characters (zero-width space, BOM, RTL override) hiding inside copy-pasted text.</li>
+  <li>Counting bytes vs code points vs UTF-16 code units before storing in a fixed-width column.</li>
+  <li>Inspecting an emoji to see which ZWJ sequence it uses.</li>
+  <li>Spotting homoglyph attacks in domain names or usernames.</li>
+  <li>Generating exact UTF-8 byte sequences for a hex dump.</li>
+</ul>
+
+<h3>Reading the output</h3>
+<ul>
+  <li><strong>Code point</strong> — the abstract Unicode value, written <code>U+XXXX</code>. There are 1.1 million of them; the highest in use is U+10FFFF.</li>
+  <li><strong>UTF-8</strong> — how that code point is encoded as bytes in modern files (1–4 bytes each).</li>
+  <li><strong>UTF-16 code units</strong> — what JavaScript strings (<code>s.length</code>) and Java strings count. A code point above U+FFFF (most emoji) takes <em>two</em> UTF-16 units (a surrogate pair).</li>
+  <li><strong>Category</strong> — Unicode's general category abbreviation: L=letter, N=number, P=punctuation, S=symbol, Z=separator, C=control/format/private.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Length is ambiguous.</strong> "👨‍👩‍👧" has 1 grapheme cluster, 5 code points, 11 UTF-16 units, and 18 UTF-8 bytes — all "lengths" that something might report.</li>
+  <li><strong>Zero-width joiner sequences vs sequence selectors.</strong> Many emoji are ZWJ sequences: family, profession, skin-tone variants. Reordering or stripping a ZWJ changes what's rendered.</li>
+  <li><strong>Normalisation matters.</strong> "café" can be e+◌́ (NFD) or é (NFC). They look identical but are different bytes; databases and comparison code must normalise to the same form.</li>
+  <li><strong>Right-to-left overrides are dangerous.</strong> A filename containing U+202E can flip its display order — making <code>resu&#x202E;txt.exe</code> look like <code>resuexe.txt</code> in a file browser. Used in phishing.</li>
+  <li><strong>The name column is partial.</strong> A real Unicode database has names for every code point; the inspector only ships names for control characters and common format/whitespace characters where the name is the most useful diagnostic.</li>
+  <li><strong>Surrogate halves shouldn't appear standalone.</strong> If you see U+D800–U+DFFF in the output, the input is a malformed UTF-16 string (lone surrogate). Most APIs will refuse to encode that to UTF-8.</li>
+</ul>
+<div class="related"><span class="meta">Related tools:</span> <a href="/ascii-table/">ASCII Table</a> <a href="/emoji-picker/">Emoji Picker</a> <a href="/html-encoder/">HTML Encoder / Decoder</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.ui-table{width:100%;border-collapse:collapse;font-family:ui-monospace,monospace;font-size:0.82rem}
+.ui-table th{position:sticky;top:0;background:var(--surface);color:var(--text-muted);font-weight:600;font-size:0.75rem;text-align:left;padding:0.45rem 0.6rem;border-bottom:1px solid var(--border)}
+.ui-table td{padding:0.4rem 0.6rem;border-bottom:1px solid var(--border);vertical-align:top}
+.ui-table tr:hover{background:var(--card-hover)}
+.ui-glyph{font-size:1.05rem;font-weight:600;color:var(--text);min-width:1.5rem;display:inline-block}
+.ui-warn{color:#f7931e}
+.ui-bad{color:#f85149}
+.ui-cat{color:var(--text-muted);font-size:0.75rem}
+.ui-bytes{color:var(--accent);font-size:0.78rem}
+.ui-empty{color:var(--text-muted);text-align:center;padding:1.5rem 0}
+</style>
+<script>
+// Compact category lookup for common ranges
+const UI_INVISIBLE = new Set([
+  0x00A0, 0x1680, 0x180E, 0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006,
+  0x2007, 0x2008, 0x2009, 0x200A, 0x200B, 0x200C, 0x200D, 0x200E, 0x200F,
+  0x202F, 0x205F, 0x3000, 0xFEFF, 0x2028, 0x2029, 0x061C, 0x202A, 0x202B,
+  0x202C, 0x202D, 0x202E, 0x2060, 0x2061, 0x2062, 0x2063, 0x2064, 0x206A,
+  0x206B, 0x206C, 0x206D, 0x206E, 0x206F, 0xFFF9, 0xFFFA, 0xFFFB
+]);
+const UI_NAMED = {
+  0x0009:'CHARACTER TABULATION', 0x000A:'LINE FEED', 0x000B:'LINE TABULATION',
+  0x000C:'FORM FEED', 0x000D:'CARRIAGE RETURN', 0x0020:'SPACE',
+  0x00A0:'NO-BREAK SPACE', 0x00AD:'SOFT HYPHEN', 0x00B7:'MIDDLE DOT',
+  0x180E:'MONGOLIAN VOWEL SEPARATOR',
+  0x200B:'ZERO WIDTH SPACE', 0x200C:'ZERO WIDTH NON-JOINER', 0x200D:'ZERO WIDTH JOINER',
+  0x200E:'LEFT-TO-RIGHT MARK', 0x200F:'RIGHT-TO-LEFT MARK',
+  0x2028:'LINE SEPARATOR', 0x2029:'PARAGRAPH SEPARATOR',
+  0x202A:'LEFT-TO-RIGHT EMBEDDING', 0x202B:'RIGHT-TO-LEFT EMBEDDING',
+  0x202C:'POP DIRECTIONAL FORMATTING', 0x202D:'LEFT-TO-RIGHT OVERRIDE',
+  0x202E:'RIGHT-TO-LEFT OVERRIDE', 0x202F:'NARROW NO-BREAK SPACE',
+  0x205F:'MEDIUM MATHEMATICAL SPACE',
+  0x2060:'WORD JOINER', 0x2063:'INVISIBLE SEPARATOR', 0x2064:'INVISIBLE PLUS',
+  0x3000:'IDEOGRAPHIC SPACE', 0xFEFF:'BYTE ORDER MARK / ZERO WIDTH NO-BREAK SPACE',
+  0xFE0F:'VARIATION SELECTOR-16 (emoji presentation)',
+  0xFE0E:'VARIATION SELECTOR-15 (text presentation)',
+  0x061C:'ARABIC LETTER MARK',
+};
+function uiCat(cp){
+  if(cp <= 0x1F || cp === 0x7F) return ['Cc', 'control'];
+  if(cp >= 0x80 && cp <= 0x9F) return ['Cc', 'control'];
+  if(cp === 0x20) return ['Zs', 'space'];
+  if(cp >= 0x30 && cp <= 0x39) return ['Nd', 'digit'];
+  if((cp >= 0x41 && cp <= 0x5A) || (cp >= 0x61 && cp <= 0x7A)) return ['L', 'letter'];
+  if(cp >= 0xD800 && cp <= 0xDFFF) return ['Cs', 'surrogate'];
+  if(UI_INVISIBLE.has(cp)) return ['Cf', 'format/invisible'];
+  if(cp >= 0xE000 && cp <= 0xF8FF) return ['Co', 'private-use'];
+  if(cp >= 0x1D400 && cp <= 0x1D7FF) return ['L', 'math letter'];
+  if(cp >= 0x1F300 && cp <= 0x1FAFF) return ['So', 'symbol/emoji'];
+  if(cp >= 0x2600 && cp <= 0x27BF) return ['So', 'symbol/dingbat'];
+  if(cp >= 0x2000 && cp <= 0x206F) return ['P', 'punctuation/format'];
+  if(cp >= 0x4E00 && cp <= 0x9FFF) return ['Lo', 'han ideograph'];
+  if(cp >= 0x3040 && cp <= 0x309F) return ['Lo', 'hiragana'];
+  if(cp >= 0x30A0 && cp <= 0x30FF) return ['Lo', 'katakana'];
+  if(cp >= 0xAC00 && cp <= 0xD7AF) return ['Lo', 'hangul'];
+  if(cp >= 0x0590 && cp <= 0x05FF) return ['L', 'hebrew'];
+  if(cp >= 0x0600 && cp <= 0x06FF) return ['L', 'arabic'];
+  if(cp >= 0x0400 && cp <= 0x04FF) return ['L', 'cyrillic'];
+  if(cp >= 0x0370 && cp <= 0x03FF) return ['L', 'greek'];
+  if((cp >= 0x80 && cp <= 0xFF)) return ['?', 'latin-1 supplement'];
+  return ['?', '—'];
+}
+function uiToUtf8(cp){
+  const bytes = [];
+  if(cp < 0x80) bytes.push(cp);
+  else if(cp < 0x800){
+    bytes.push(0xC0 | (cp >> 6), 0x80 | (cp & 0x3F));
+  } else if(cp < 0x10000){
+    bytes.push(0xE0 | (cp >> 12), 0x80 | ((cp >> 6) & 0x3F), 0x80 | (cp & 0x3F));
+  } else {
+    bytes.push(0xF0 | (cp >> 18), 0x80 | ((cp >> 12) & 0x3F), 0x80 | ((cp >> 6) & 0x3F), 0x80 | (cp & 0x3F));
+  }
+  return bytes.map(b => b.toString(16).toUpperCase().padStart(2,'0')).join(' ');
+}
+function uiName(cp){
+  if(UI_NAMED[cp]) return UI_NAMED[cp];
+  if(cp <= 0x1F){
+    const ctrls = ['NULL','START OF HEADING','START OF TEXT','END OF TEXT','END OF TRANSMISSION','ENQUIRY','ACKNOWLEDGE','BELL','BACKSPACE','TAB','LINE FEED','VERTICAL TAB','FORM FEED','CARRIAGE RETURN','SHIFT OUT','SHIFT IN','DATA LINK ESCAPE','DEVICE CONTROL ONE','DEVICE CONTROL TWO','DEVICE CONTROL THREE','DEVICE CONTROL FOUR','NEGATIVE ACK','SYNCHRONOUS IDLE','END OF TRANS BLOCK','CANCEL','END OF MEDIUM','SUBSTITUTE','ESCAPE','FILE SEP','GROUP SEP','RECORD SEP','UNIT SEP'];
+    return 'CONTROL: ' + ctrls[cp];
+  }
+  if(cp === 0x7F) return 'DELETE';
+  return '';
+}
+function uiGlyph(cp){
+  if(cp === 0x20) return '<span class="ui-warn">␠</span>';
+  if(cp === 0x09) return '<span class="ui-warn">↹</span>';
+  if(cp === 0x0A) return '<span class="ui-warn">↵</span>';
+  if(cp === 0x0D) return '<span class="ui-warn">␍</span>';
+  if(cp <= 0x1F || cp === 0x7F) return '<span class="ui-bad">␀</span>';
+  if(UI_INVISIBLE.has(cp)) return '<span class="ui-bad">⌧</span>';
+  return String.fromCodePoint(cp);
+}
+function uiEsc(s){ return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function uiRun(){
+  const s = document.getElementById('ui-in').value;
+  const out = document.getElementById('ui-out');
+  const sum = document.getElementById('ui-summary');
+  if(s === ''){ out.innerHTML = '<div class="ui-empty">Paste text above.</div>'; sum.textContent = ''; return; }
+  const codePoints = [...s];
+  let totalBytes = 0;
+  let invisibleCount = 0;
+  const rows = codePoints.map((ch, i) => {
+    const cp = ch.codePointAt(0);
+    const utf8 = uiToUtf8(cp);
+    totalBytes += utf8.split(' ').length;
+    const [cat, catName] = uiCat(cp);
+    const isInv = UI_INVISIBLE.has(cp) || (cp <= 0x1F) || cp === 0x7F;
+    if(isInv) invisibleCount++;
+    const name = uiName(cp);
+    const hex = 'U+' + cp.toString(16).toUpperCase().padStart(4,'0');
+    return `<tr${isInv?' style="background:rgba(247,147,30,0.08)"':''}><td>${i}</td><td><span class="ui-glyph">${uiGlyph(cp)}</span></td><td>${hex}</td><td>${cp}</td><td><span class="ui-bytes">${utf8}</span></td><td><span class="ui-cat">${cat} · ${catName}</span></td><td><span class="ui-cat">${uiEsc(name)}</span></td></tr>`;
+  }).join('');
+  out.innerHTML = `<table class="ui-table">
+    <thead><tr><th>#</th><th>Glyph</th><th>Code point</th><th>Decimal</th><th>UTF-8</th><th>Category</th><th>Name</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
+  const utf16 = s.length;
+  const summary = `${codePoints.length} code points · ${utf16} UTF-16 units · ${totalBytes} UTF-8 bytes` + (invisibleCount ? ` · <span class="ui-warn">${invisibleCount} invisible/control character${invisibleCount===1?'':'s'}</span>` : '');
+  sum.innerHTML = summary;
+}
+document.addEventListener('DOMContentLoaded', uiRun);
+</script>
+
+</body>
+</html>

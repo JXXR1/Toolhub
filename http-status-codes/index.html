@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP Status Codes — Toolhub</title>
+  <meta name="description" content="Free HTTP status code reference. Search every standard HTTP status code (100–599), see its meaning, common causes, and the RFC where it's defined. Filter as you type.">
+  <meta property="og:title" content="HTTP Status Codes — Toolhub">
+  <meta property="og:description" content="Free HTTP status code reference. Search every standard HTTP status code (100–599), see its meaning, common causes, and the RFC where it's defined. Filter as you type.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/http-status-codes/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/http-status-codes/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/http-status-codes/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/http-status-codes/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/http-status-codes/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/http-status-codes/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/http-status-codes/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/http-status-codes/">
+  <meta property="og:locale" content="en_GB">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/http-status-codes/#tool",
+        "name": "HTTP Status Codes",
+        "description": "Free HTTP status code reference. Search every standard HTTP status code (100–599), see its meaning, common causes, and the RFC where it's defined. Filter as you type.",
+        "url": "https://toolhub.software/http-status-codes/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["http", "status", "code", "rest", "api", "response", "rfc"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "All Tools", "item": "https://toolhub.software/"},
+          {"@type": "ListItem", "position": 2, "name": "HTTP Status Codes", "item": "https://toolhub.software/http-status-codes/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/http-status-codes/'; else location.href='/http-status-codes/'">
+        <option value="" selected="selected">🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/">All Tools</a> / HTTP Status Codes</div>
+    <h1>HTTP Status Codes</h1>
+    <p class="tagline">Look up any HTTP status code (1xx–5xx). Meaning, common causes, and the RFC reference.</p>
+    
+<div class="tool-card">
+  <label>Filter</label>
+  <input type="text" id="hs-q" oninput="hsRun()" placeholder="Type a code or phrase — '404', 'auth', 'redirect', 'gateway'…" autocomplete="off" spellcheck="false">
+  <div class="meta" style="margin-top:0.5rem">
+    <button class="filter-btn" data-cls="all" onclick="hsCls('all')" style="padding:0.3rem 0.7rem;border:1px solid var(--border);background:var(--accent);color:#fff;border-radius:14px;cursor:pointer;font-size:0.8rem">All</button>
+    <button class="filter-btn" data-cls="1" onclick="hsCls('1')" style="padding:0.3rem 0.7rem;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);border-radius:14px;cursor:pointer;font-size:0.8rem">1xx Info</button>
+    <button class="filter-btn" data-cls="2" onclick="hsCls('2')" style="padding:0.3rem 0.7rem;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);border-radius:14px;cursor:pointer;font-size:0.8rem">2xx Success</button>
+    <button class="filter-btn" data-cls="3" onclick="hsCls('3')" style="padding:0.3rem 0.7rem;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);border-radius:14px;cursor:pointer;font-size:0.8rem">3xx Redirect</button>
+    <button class="filter-btn" data-cls="4" onclick="hsCls('4')" style="padding:0.3rem 0.7rem;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);border-radius:14px;cursor:pointer;font-size:0.8rem">4xx Client</button>
+    <button class="filter-btn" data-cls="5" onclick="hsCls('5')" style="padding:0.3rem 0.7rem;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);border-radius:14px;cursor:pointer;font-size:0.8rem">5xx Server</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Result</label>
+  <div id="hs-out"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>What is this for?</h2>
+<p>HTTP status codes are the three-digit numbers a server sends back to tell the client how the request went. They group into five families: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client error), 5xx (server error). Most developers know the headline codes — 200, 301, 404, 500 — but the long tail (409 Conflict, 422 Unprocessable, 504 Gateway Timeout) is where the real bugs live. This tool gives you the full list with meanings and the RFC where each is defined.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Reading an API doc that returns a code you don't recognise (425? 451?).</li>
+  <li>Picking the right code to return from your own API — 404 vs 410, 401 vs 403, 422 vs 400.</li>
+  <li>Diagnosing a 502/504 — is the upstream down or just slow?</li>
+  <li>Settling whether 200-with-an-error-body or a real 4xx is the right move.</li>
+  <li>Looking up the RFC reference for a code review or design doc.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>401 means unauthenticated, 403 means unauthorized.</strong> The names are misleading — 401 says "I don't know who you are", 403 says "I know who you are and you can't have it". Use 403 only if a re-authentication wouldn't help.</li>
+  <li><strong>302 is method-ambiguous.</strong> Browsers historically changed POST→GET on a 302 redirect. Use 307 (preserves method) or 303 (always GET) to be explicit.</li>
+  <li><strong>404 is not 410.</strong> 404 = "I don't know"; 410 = "I know and it's gone forever". Use 410 when search engines should drop the URL.</li>
+  <li><strong>200 with an error body is not "RESTful".</strong> If the request failed at the resource level, return a 4xx with the error in the body.</li>
+  <li><strong>418 is a joke.</strong> Don't use I'm-a-teapot in production — clients and proxies treat it inconsistently.</li>
+  <li><strong>RFC 9110 supersedes RFC 7231/7232/7233/7234/7235.</strong> If you're citing the spec, use 9110 (June 2022) unless you specifically need an older version.</li>
+</ul>
+<div class="related"><span class="meta">Related tools:</span> <a href="/mime-type-lookup/">MIME Type Lookup</a> <a href="/url-encoder/">URL Encoder / Decoder</a> <a href="/jwt-decoder/">JWT Decoder</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.hs-list{display:grid;gap:0.5rem}
+.hs-row{display:grid;grid-template-columns:auto 1fr;gap:0.7rem;padding:0.7rem 0.85rem;border:1px solid var(--border);background:var(--bg-elev);border-radius:8px;align-items:start}
+.hs-code{font-family:ui-monospace,monospace;font-weight:700;font-size:1.05rem;padding:0.2rem 0.5rem;border-radius:5px;min-width:3.4rem;text-align:center}
+.hs-1{background:rgba(139,148,158,0.15);color:var(--text-muted);border:1px solid rgba(139,148,158,0.3)}
+.hs-2{background:rgba(63,185,80,0.15);color:#3fb950;border:1px solid rgba(63,185,80,0.4)}
+.hs-3{background:rgba(88,166,255,0.15);color:#58a6ff;border:1px solid rgba(88,166,255,0.4)}
+.hs-4{background:rgba(247,147,30,0.15);color:#f7931e;border:1px solid rgba(247,147,30,0.4)}
+.hs-5{background:rgba(248,81,73,0.15);color:#f85149;border:1px solid rgba(248,81,73,0.4)}
+.hs-name{font-weight:600;color:var(--text)}
+.hs-desc{color:var(--text-muted);font-size:0.85rem;margin-top:0.2rem}
+.hs-rfc{color:var(--text-muted);font-size:0.75rem;margin-top:0.2rem;font-family:ui-monospace,monospace}
+.hs-empty{color:var(--text-muted);text-align:center;padding:1.5rem 0}
+</style>
+<script>
+const HTTP_CODES = [
+  [100,'Continue','Server got the request headers and the client should send the body. Used with Expect: 100-continue.','RFC 9110 §15.2.1'],
+  [101,'Switching Protocols','Server is switching protocols (e.g. to WebSocket) per the Upgrade header.','RFC 9110 §15.2.2'],
+  [102,'Processing','Server has accepted the request but processing is not yet complete (WebDAV).','RFC 2518'],
+  [103,'Early Hints','Hints (typically Link headers for preload) before the final response.','RFC 8297'],
+  [200,'OK','Standard success. Body contains the requested resource.','RFC 9110 §15.3.1'],
+  [201,'Created','Resource created. Should include a Location header pointing at the new resource.','RFC 9110 §15.3.2'],
+  [202,'Accepted','Request accepted for asynchronous processing — outcome not yet known.','RFC 9110 §15.3.3'],
+  [203,'Non-Authoritative Information','Body is from a transforming proxy, not the origin.','RFC 9110 §15.3.4'],
+  [204,'No Content','Success with no body. Common for DELETE and idempotent PUT.','RFC 9110 §15.3.5'],
+  [205,'Reset Content','Success — client should reset the document view (e.g. clear a form).','RFC 9110 §15.3.6'],
+  [206,'Partial Content','Successful range request — body contains only the requested bytes.','RFC 9110 §15.3.7'],
+  [207,'Multi-Status','XML body containing multiple status codes (WebDAV).','RFC 4918'],
+  [208,'Already Reported','Members of a binding already enumerated (WebDAV).','RFC 5842'],
+  [226,'IM Used','Server has fulfilled the request via instance manipulations.','RFC 3229'],
+  [300,'Multiple Choices','Multiple representations available. Rare in practice.','RFC 9110 §15.4.1'],
+  [301,'Moved Permanently','Resource has moved. Cache the redirect; future requests should use Location.','RFC 9110 §15.4.2'],
+  [302,'Found','Temporary redirect. Historically ambiguous about method preservation — prefer 307 or 303.','RFC 9110 §15.4.3'],
+  [303,'See Other','Redirect to a different resource (often after a POST). Always GET the new URL.','RFC 9110 §15.4.4'],
+  [304,'Not Modified','Cached copy is still fresh — sent in response to conditional GET (If-None-Match / If-Modified-Since).','RFC 9110 §15.4.5'],
+  [305,'Use Proxy','Deprecated. Was used to indicate a required proxy.','RFC 9110 (deprecated)'],
+  [307,'Temporary Redirect','Like 302 but explicitly preserves the request method.','RFC 9110 §15.4.8'],
+  [308,'Permanent Redirect','Like 301 but explicitly preserves the request method.','RFC 9110 §15.4.9'],
+  [400,'Bad Request','Server cannot process due to malformed syntax (bad JSON, missing required field, oversized header).','RFC 9110 §15.5.1'],
+  [401,'Unauthorized','Authentication required or failed. Despite the name, it means "unauthenticated".','RFC 9110 §15.5.2'],
+  [402,'Payment Required','Reserved. Some APIs (Stripe, GitHub) use it for billing-related rejections.','RFC 9110 §15.5.3'],
+  [403,'Forbidden','Authenticated but not allowed to access this resource. No login prompt should follow.','RFC 9110 §15.5.4'],
+  [404,'Not Found','Resource does not exist. Don\'t use to hide 403 unless you want stealth.','RFC 9110 §15.5.5'],
+  [405,'Method Not Allowed','Endpoint exists but the HTTP method is not supported. Must return Allow header.','RFC 9110 §15.5.6'],
+  [406,'Not Acceptable','Cannot produce a representation matching the Accept header.','RFC 9110 §15.5.7'],
+  [407,'Proxy Authentication Required','Like 401 but for an intermediate proxy.','RFC 9110 §15.5.8'],
+  [408,'Request Timeout','Client took too long sending the request. Usually retriable.','RFC 9110 §15.5.9'],
+  [409,'Conflict','Request conflicts with current resource state (e.g. edit collision, duplicate username).','RFC 9110 §15.5.10'],
+  [410,'Gone','Resource was here but is permanently removed. Stronger signal than 404.','RFC 9110 §15.5.11'],
+  [411,'Length Required','Server refuses request without a Content-Length header.','RFC 9110 §15.5.12'],
+  [412,'Precondition Failed','Conditional request (If-Match, If-Unmodified-Since) was not met.','RFC 9110 §15.5.13'],
+  [413,'Content Too Large','Request body too big for server to process (was "Payload Too Large").','RFC 9110 §15.5.14'],
+  [414,'URI Too Long','URL exceeds server limits — usually too many query params.','RFC 9110 §15.5.15'],
+  [415,'Unsupported Media Type','Request body is in a format the endpoint cannot accept (wrong Content-Type).','RFC 9110 §15.5.16'],
+  [416,'Range Not Satisfiable','Range header asked for bytes outside the resource length.','RFC 9110 §15.5.17'],
+  [417,'Expectation Failed','Expect request-header could not be met by the server.','RFC 9110 §15.5.18'],
+  [418,"I'm a teapot",'April Fools joke (RFC 2324). Some APIs use it for "deliberately refused".','RFC 2324'],
+  [421,'Misdirected Request','Request sent to a server that cannot produce a response for it (e.g. wrong virtual host).','RFC 9110 §15.5.20'],
+  [422,'Unprocessable Content','Syntactically valid but semantically wrong (validation failure on a JSON body).','RFC 9110 §15.5.21'],
+  [423,'Locked','Resource is locked (WebDAV).','RFC 4918'],
+  [424,'Failed Dependency','A previous request failed; this one depended on it (WebDAV).','RFC 4918'],
+  [425,'Too Early','Server unwilling to risk processing a request that might be replayed.','RFC 8470'],
+  [426,'Upgrade Required','Client must upgrade to a different protocol (e.g. TLS).','RFC 9110 §15.5.22'],
+  [428,'Precondition Required','Server requires the request to be conditional (If-Match etc) to prevent lost updates.','RFC 6585'],
+  [429,'Too Many Requests','Rate-limited. Should include Retry-After.','RFC 6585'],
+  [431,'Request Header Fields Too Large','Headers (often a single one) exceed server limits.','RFC 6585'],
+  [451,'Unavailable For Legal Reasons','Resource removed for legal reasons (court order, government censorship).','RFC 7725'],
+  [500,'Internal Server Error','Generic server fault — usually a bug or unhandled exception.','RFC 9110 §15.6.1'],
+  [501,'Not Implemented','Server does not support the functionality required.','RFC 9110 §15.6.2'],
+  [502,'Bad Gateway','Upstream server returned an invalid response. Common at reverse proxies / load balancers.','RFC 9110 §15.6.3'],
+  [503,'Service Unavailable','Server is overloaded or down for maintenance. Should include Retry-After.','RFC 9110 §15.6.4'],
+  [504,'Gateway Timeout','Upstream server did not respond in time. Common at reverse proxies / load balancers.','RFC 9110 §15.6.5'],
+  [505,'HTTP Version Not Supported','Client used an HTTP version the server refuses.','RFC 9110 §15.6.6'],
+  [506,'Variant Also Negotiates','Content negotiation loop / misconfiguration.','RFC 2295'],
+  [507,'Insufficient Storage','Server cannot store the representation (WebDAV — disk full).','RFC 4918'],
+  [508,'Loop Detected','Infinite loop encountered during processing (WebDAV).','RFC 5842'],
+  [510,'Not Extended','Further extensions to the request are required.','RFC 2774'],
+  [511,'Network Authentication Required','Captive portal — user must authenticate to gain network access.','RFC 6585']
+];
+let HS_CLS = 'all';
+function hsCls(c){
+  HS_CLS = c;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if(b.dataset.cls === c){ b.style.background='var(--accent)'; b.style.color='#fff'; }
+    else { b.style.background='var(--surface)'; b.style.color='var(--text-muted)'; }
+  });
+  hsRun();
+}
+function hsRun(){
+  const q = (document.getElementById('hs-q').value || '').toLowerCase().trim();
+  const out = document.getElementById('hs-out');
+  const matches = HTTP_CODES.filter(([code, name, desc, rfc]) => {
+    const cls = String(Math.floor(code/100));
+    if(HS_CLS !== 'all' && cls !== HS_CLS) return false;
+    if(!q) return true;
+    return String(code).includes(q) || name.toLowerCase().includes(q) || desc.toLowerCase().includes(q) || rfc.toLowerCase().includes(q);
+  });
+  if(matches.length === 0){ out.innerHTML = '<div class="hs-empty">No matching status codes.</div>'; return; }
+  const rows = matches.map(([code, name, desc, rfc]) => {
+    const cls = Math.floor(code/100);
+    return `<div class="hs-row"><div class="hs-code hs-${cls}">${code}</div><div><div class="hs-name">${name}</div><div class="hs-desc">${desc}</div><div class="hs-rfc">${rfc}</div></div></div>`;
+  }).join('');
+  out.innerHTML = `<div class="hs-list">${rows}</div>`;
+}
+document.addEventListener('DOMContentLoaded', hsRun);
+</script>
+
+</body>
+</html>
