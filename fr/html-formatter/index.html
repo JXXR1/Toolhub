@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formateur HTML — Toolhub</title>
+  <meta name="description" content="Formateur et minifieur HTML gratuit. Pretty-print avec indentation configurable, suppression optionnelle des commentaires, respect des balises void/auto-fermantes. 100% dans le navigateur.">
+  <meta property="og:title" content="Formateur HTML — Toolhub">
+  <meta property="og:description" content="Formateur et minifieur HTML gratuit. Pretty-print avec indentation configurable, suppression optionnelle des commentaires, respect des balises void/auto-fermantes. 100% dans le navigateur.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/fr/html-formatter/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/fr/html-formatter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/html-formatter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/html-formatter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/html-formatter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/html-formatter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/html-formatter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/html-formatter/">
+  <meta property="og:locale" content="fr_FR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/fr/html-formatter/#tool",
+        "name": "Formateur HTML",
+        "description": "Formateur et minifieur HTML gratuit. Pretty-print avec indentation configurable, suppression optionnelle des commentaires, respect des balises void/auto-fermantes. 100% dans le navigateur.",
+        "url": "https://toolhub.software/fr/html-formatter/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "fr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["html", "format", "beautify", "minify", "indent", "tidy"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tous les outils", "item": "https://toolhub.software/fr/"},
+          {"@type": "ListItem", "position": 2, "name": "Formateur HTML", "item": "https://toolhub.software/fr/html-formatter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/fr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/html-formatter/'; else location.href='/html-formatter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" selected="selected">🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Changer de thème">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/fr/">Tous les outils</a> / Formateur HTML</div>
+    <h1>Formateur HTML</h1>
+    <p class="tagline">Formatez et embellissez du HTML ou minifiez-le. Taille d'indentation, suppression de commentaires, gestion des balises auto-fermantes.</p>
+    
+<div class="tool-card">
+  <label>Entrée</label>
+  <textarea id="hf-in" oninput="hfRun()" spellcheck="false" placeholder="<!doctype html><html><head><title>x</title></head><body><h1>hi</h1></body></html>" style="min-height:160px"><!doctype html><html lang="en"><head><meta charset="utf-8"><title>Toolhub demo</title><!-- a comment --></head><body><header><h1>Hello</h1><nav><a href="/">home</a><a href="/about">about</a></nav></header><main><p>Some <strong>bold</strong> text and an <img src="/x.png" alt="x"> image.</p></main></body></html></textarea>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Mode</label>
+      <select id="hf-mode" onchange="hfRun()">
+        <option value="pretty" selected>Embellir</option>
+        <option value="minify">Minifier</option>
+      </select>
+    </div>
+    <div>
+      <label>Indent</label>
+      <select id="hf-indent" onchange="hfRun()">
+        <option value="2" selected>2 spaces</option>
+        <option value="4">4 spaces</option>
+        <option value="tab">Tab</option>
+      </select>
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label><input type="checkbox" id="hf-strip" onchange="hfRun()"> Strip comments</label>
+    </div>
+    <div>
+      <label><input type="checkbox" id="hf-collapse" checked onchange="hfRun()"> Collapse whitespace in text</label>
+    </div>
+  </div>
+  <div class="meta" id="hf-status" style="margin-top:0.6rem;font-family:ui-monospace,monospace;font-size:0.82rem"></div>
+</div>
+<div class="tool-card">
+  <label>Sortie</label>
+  <div class="output-row">
+    <pre class="output" id="hf-out" style="margin:0;flex:1">Saisissez une entrée ci-dessus pour voir le résultat.</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('hf-out', this)">Copier</button>
+  </div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>À quoi ça sert ?</h2>
+<p>Le HTML arrive dans tous les états : minifié, généré par templates, indenté à la main. Cet outil reformate avec indentation cohérente, reconnaît les éléments void (<code>&lt;img&gt;</code>) et inline (<code>&lt;a&gt;</code>). Le mode minify supprime les espaces et les commentaires en option. Tout dans le navigateur.</p>
+<h3>Quand l'utiliser</h3>
+<ul>
+<li>Rendre lisible un view-source minifié.</li>
+<li>Nettoyer un snippet CMS avant revue.</li>
+<li>Minifier du HTML statique avant déploiement.</li>
+<li>Supprimer commentaires d'auteur avant publication.</li>
+</ul>
+<h3>Pièges courants</h3>
+<ul>
+<li><strong>Tokenizer pragmatique, pas un parser HTML5.</strong> Ne répare pas les entrées très mal formées.</li>
+<li><strong>Espaces dans <code>pre</code>, <code>textarea</code>, <code>script</code>, <code>style</code> préservés.</strong></li>
+<li><strong>Éléments inline sur la même ligne que le texte parent.</strong></li>
+<li><strong>« Réduire les espaces » modifie le rendu.</strong></li>
+<li><strong>Auto-fermant en HTML est cosmétique.</strong></li>
+<li><strong>Minify n'est pas une frontière de sécurité.</strong></li>
+</ul>
+<div class="related"><span class="meta">Outils similaires:</span> <a href="/fr/html-encoder/">Encodeur / Décodeur HTML</a> <a href="/fr/css-minifier/">Minificateur CSS</a> <a href="/fr/js-minifier/">Minifieur JavaScript</a> <a href="/fr/xml-formatter/">Formateur XML</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Confidentialité</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const HF_VOID = new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
+const HF_INLINE = new Set(['a','abbr','b','bdi','bdo','br','cite','code','data','dfn','em','i','kbd','mark','q','rp','rt','ruby','s','samp','small','span','strong','sub','sup','time','u','var','wbr']);
+const HF_PRESERVE = new Set(['pre','textarea','script','style','code']);
+
+// Lightweight HTML tokenizer — sufficient for formatting; not a strict HTML5 parser.
+function hfTokenize(html){
+  const tokens = [];
+  let i = 0;
+  while(i < html.length){
+    if(html.startsWith('<!--', i)){
+      const end = html.indexOf('-->', i+4);
+      const stop = end === -1 ? html.length : end + 3;
+      tokens.push({t:'comment', v: html.slice(i, stop)});
+      i = stop; continue;
+    }
+    if(html.startsWith('<!', i)){
+      const end = html.indexOf('>', i);
+      const stop = end === -1 ? html.length : end+1;
+      tokens.push({t:'doctype', v: html.slice(i, stop)});
+      i = stop; continue;
+    }
+    if(html.startsWith('<?', i)){
+      const end = html.indexOf('?>', i);
+      const stop = end === -1 ? html.length : end+2;
+      tokens.push({t:'pi', v: html.slice(i, stop)});
+      i = stop; continue;
+    }
+    if(html[i] === '<' && html[i+1] === '/'){
+      const end = html.indexOf('>', i);
+      const stop = end === -1 ? html.length : end+1;
+      const inner = html.slice(i+2, stop-1).trim();
+      tokens.push({t:'close', name: inner.toLowerCase(), v: html.slice(i, stop)});
+      i = stop; continue;
+    }
+    if(html[i] === '<' && /[a-zA-Z]/.test(html[i+1])){
+      // open or self-closing
+      // find matching > but skip inside attribute strings
+      let j = i+1;
+      let inStr = null;
+      while(j < html.length){
+        const c = html[j];
+        if(inStr){ if(c === inStr) inStr = null; }
+        else if(c === '"' || c === "'") inStr = c;
+        else if(c === '>') break;
+        j++;
+      }
+      const stop = j < html.length ? j+1 : html.length;
+      const raw = html.slice(i, stop);
+      const m = raw.match(/^<\s*([A-Za-z][A-Za-z0-9-]*)/);
+      const name = m ? m[1].toLowerCase() : '';
+      const selfClosing = /\/\s*>$/.test(raw);
+      tokens.push({t:'open', name, v: raw, selfClosing});
+      i = stop;
+      // For preserve tags, swallow content verbatim until matching close
+      if(HF_PRESERVE.has(name) && !selfClosing){
+        const re = new RegExp('</\\s*' + name + '\\s*>', 'i');
+        const rest = html.slice(i);
+        const cm = rest.match(re);
+        if(cm){
+          tokens.push({t:'rawtext', v: rest.slice(0, cm.index), parent: name});
+          tokens.push({t:'close', name, v: rest.slice(cm.index, cm.index + cm[0].length)});
+          i += cm.index + cm[0].length;
+        } else {
+          tokens.push({t:'rawtext', v: rest, parent: name});
+          i = html.length;
+        }
+      }
+      continue;
+    }
+    // text
+    let j = i;
+    while(j < html.length && html[j] !== '<') j++;
+    tokens.push({t:'text', v: html.slice(i, j)});
+    i = j;
+  }
+  return tokens;
+}
+
+function hfFormat(html, opts){
+  const tokens = hfTokenize(html);
+  const indent = opts.indent;
+  let depth = 0;
+  let out = '';
+  let lastWasBlock = true;
+  function pad(){ return indent.repeat(Math.max(0, depth)); }
+  for(let i = 0; i < tokens.length; i++){
+    const t = tokens[i];
+    if(t.t === 'comment'){
+      if(opts.stripComments) continue;
+      if(out && !out.endsWith('\n')) out += '\n';
+      out += pad() + t.v + '\n';
+      lastWasBlock = true; continue;
+    }
+    if(t.t === 'doctype' || t.t === 'pi'){
+      if(out && !out.endsWith('\n')) out += '\n';
+      out += pad() + t.v + '\n';
+      lastWasBlock = true; continue;
+    }
+    if(t.t === 'open'){
+      const isVoid = HF_VOID.has(t.name) || t.selfClosing;
+      const isInline = HF_INLINE.has(t.name);
+      const next = tokens[i+1];
+      const next2 = tokens[i+2];
+      // Inline tag with simple text-only content -> keep on one line
+      if(isInline && next && next.t === 'text' && next2 && next2.t === 'close' && next2.name === t.name){
+        if(lastWasBlock){ if(out && !out.endsWith('\n')) out += '\n'; out += pad(); }
+        out += t.v + (opts.collapse ? next.v.replace(/\s+/g, ' ').replace(/^\s|\s$/g, x=>x) : next.v) + next2.v;
+        i += 2;
+        lastWasBlock = false;
+        continue;
+      }
+      if(out && !out.endsWith('\n')) out += '\n';
+      out += pad() + t.v + '\n';
+      if(!isVoid) depth++;
+      lastWasBlock = true; continue;
+    }
+    if(t.t === 'close'){
+      depth = Math.max(0, depth-1);
+      if(out && !out.endsWith('\n')) out += '\n';
+      out += pad() + t.v + '\n';
+      lastWasBlock = true; continue;
+    }
+    if(t.t === 'text'){
+      let s = t.v;
+      if(opts.collapse) s = s.replace(/\s+/g, ' ');
+      if(s.trim() === '') continue;
+      if(lastWasBlock){
+        if(out && !out.endsWith('\n')) out += '\n';
+        out += pad() + s.trim() + '\n';
+        lastWasBlock = true;
+      } else {
+        out += s;
+      }
+      continue;
+    }
+    if(t.t === 'rawtext'){
+      // verbatim content for pre/script/style/textarea
+      out += t.v;
+      lastWasBlock = false;
+      continue;
+    }
+  }
+  return out.replace(/\n{3,}/g, '\n\n').replace(/\n+$/, '').trim() + '\n';
+}
+
+function hfMinify(html, opts){
+  const tokens = hfTokenize(html);
+  let out = '';
+  for(const t of tokens){
+    if(t.t === 'comment'){ if(opts.stripComments) continue; out += t.v; continue; }
+    if(t.t === 'doctype' || t.t === 'pi'){ out += t.v; continue; }
+    if(t.t === 'open' || t.t === 'close'){ out += t.v.replace(/\s+/g, ' ').replace(/\s+>/g,'>'); continue; }
+    if(t.t === 'rawtext'){ out += t.v; continue; }
+    if(t.t === 'text'){
+      const s = t.v.replace(/\s+/g, ' ');
+      if(s === ' ' && (out.endsWith('>') || out.endsWith(' '))) continue;
+      out += s;
+    }
+  }
+  return out.trim();
+}
+
+function hfRun(){
+  const inp = document.getElementById('hf-in').value;
+  const out = document.getElementById('hf-out');
+  const status = document.getElementById('hf-status');
+  out.classList.remove('error');
+  if(!inp.trim()){ out.textContent = 'Saisissez une entrée ci-dessus pour voir le résultat.'; status.textContent=''; return; }
+  try {
+    const mode = document.getElementById('hf-mode').value;
+    const stripComments = document.getElementById('hf-strip').checked;
+    const collapse = document.getElementById('hf-collapse').checked;
+    const indentChoice = document.getElementById('hf-indent').value;
+    const indent = indentChoice === 'tab' ? '\t' : ' '.repeat(parseInt(indentChoice, 10));
+    const result = mode === 'pretty'
+      ? hfFormat(inp, {indent, stripComments, collapse})
+      : hfMinify(inp, {stripComments});
+    out.textContent = result;
+    const inSize = new Blob([inp]).size;
+    const outSize = new Blob([result]).size;
+    if(mode === 'minify'){
+      const saving = inSize ? Math.max(0, Math.round((1 - outSize/inSize) * 100)) : 0;
+      status.textContent = `${inSize.toLocaleString()} → ${outSize.toLocaleString()} bytes (-${saving}%)`;
+    } else {
+      status.textContent = `${inSize.toLocaleString()} → ${outSize.toLocaleString()} bytes`;
+    }
+  } catch(e){
+    out.classList.add('error');
+    out.textContent = '✗ ' + e.message;
+    status.textContent = '';
+  }
+}
+document.addEventListener('DOMContentLoaded', hfRun);
+</script>
+
+</body>
+</html>

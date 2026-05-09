@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cron-Ausdruck-Builder — Toolhub</title>
+  <meta name="description" content="Kostenloser Cron-Ausdruck-Builder. Felder per Dropdown wählen, Cron-String erhalten, nächste 5 Ausführungen in deiner Zeitzone sehen. Standard 5-Felder-Crontab.">
+  <meta property="og:title" content="Cron-Ausdruck-Builder — Toolhub">
+  <meta property="og:description" content="Kostenloser Cron-Ausdruck-Builder. Felder per Dropdown wählen, Cron-String erhalten, nächste 5 Ausführungen in deiner Zeitzone sehen. Standard 5-Felder-Crontab.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/de/cron-builder/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/de/cron-builder/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/cron-builder/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/cron-builder/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/cron-builder/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/cron-builder/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/cron-builder/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/cron-builder/">
+  <meta property="og:locale" content="de_DE">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/de/cron-builder/#tool",
+        "name": "Cron-Ausdruck-Builder",
+        "description": "Kostenloser Cron-Ausdruck-Builder. Felder per Dropdown wählen, Cron-String erhalten, nächste 5 Ausführungen in deiner Zeitzone sehen. Standard 5-Felder-Crontab.",
+        "url": "https://toolhub.software/de/cron-builder/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "de",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["cron", "schedule", "builder", "crontab", "next run"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Alle Tools", "item": "https://toolhub.software/de/"},
+          {"@type": "ListItem", "position": 2, "name": "Cron-Ausdruck-Builder", "item": "https://toolhub.software/de/cron-builder/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/de/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/cron-builder/'; else location.href='/cron-builder/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" selected="selected">🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Theme wechseln">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/de/">Alle Tools</a> / Cron-Ausdruck-Builder</div>
+    <h1>Cron-Ausdruck-Builder</h1>
+    <p class="tagline">Cron-Ausdruck visuell bauen — Minute, Stunde, Tag, Monat, Wochentag — und nächste 5 Auslösezeiten ansehen.</p>
+    
+<div class="tool-card">
+  <label>Preset</label>
+  <select id="cb-preset" onchange="cbPreset()">
+    <option value="">— choose a preset or build below —</option>
+    <option value="* * * * *">Every minute</option>
+    <option value="*/5 * * * *">Every 5 minutes</option>
+    <option value="*/15 * * * *">Every 15 minutes</option>
+    <option value="0 * * * *">Every hour (top of hour)</option>
+    <option value="0 0 * * *">Daily at midnight</option>
+    <option value="0 9 * * *">Daily at 09:00</option>
+    <option value="0 9 * * 1-5">Weekdays at 09:00</option>
+    <option value="0 0 * * 0">Weekly Sunday midnight</option>
+    <option value="0 0 1 * *">Monthly (1st at midnight)</option>
+    <option value="0 0 1 1 *">Yearly (Jan 1 at midnight)</option>
+  </select>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Minute (0–59)</label>
+      <input type="text" id="cb-min" value="0" oninput="cbBuild()" placeholder="* | */5 | 0,30 | 0-29">
+    </div>
+    <div>
+      <label>Hour (0–23)</label>
+      <input type="text" id="cb-hour" value="9" oninput="cbBuild()" placeholder="* | */2 | 9-17">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Day of month (1–31)</label>
+      <input type="text" id="cb-dom" value="*" oninput="cbBuild()" placeholder="* | 1 | 1,15">
+    </div>
+    <div>
+      <label>Month (1–12)</label>
+      <input type="text" id="cb-mon" value="*" oninput="cbBuild()" placeholder="* | */3 | 1-6">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Day of week (0=Sun – 6=Sat)</label>
+      <input type="text" id="cb-dow" value="1-5" oninput="cbBuild()" placeholder="* | 1-5 | 0,6">
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <button class="secondary" onclick="cbReset()" style="width:100%">Reset to */5 every minute</button>
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Cron expression</label>
+  <div class="output-row">
+    <pre class="output" id="cb-expr" style="margin:0;flex:1;font-size:1.05rem">0 9 * * 1-5</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('cb-expr', this)">Kopieren</button>
+  </div>
+  <div class="meta" id="cb-explain" style="margin-top:0.5rem"></div>
+</div>
+<div class="tool-card">
+  <label>Next 5 fire times (local timezone)</label>
+  <pre class="output" id="cb-next">Geben Sie oben eine Eingabe ein, um das Ergebnis zu sehen.</pre>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Wofür ist das?</h2>
+<p>Cron-Syntax ist dicht: fünf Felder, jeweils mit Wildcards, Ranges, Listen, Steps. Dieser Builder lässt dich mit einem Preset starten oder Felder einzeln tippen, zeigt den Cron-String, eine deutsche Erklärung und die nächsten fünf Auslösezeiten in deiner lokalen Zeitzone. Komplement: <a href="/cron-parser/">Cron-Parser</a>.</p>
+<h3>Wann verwenden</h3>
+<ul>
+<li>Neuer <code>crontab</code>-Eintrag, K8s <code>CronJob</code>, GitHub-Action, EventBridge.</li>
+<li>"Jeden Wochentagmorgen" in Cron übersetzen.</li>
+<li>Vor Deploy prüfen, ob der Ausdruck tatsächlich richtig läuft.</li>
+<li>Cron-Einsteiger schulen.</li>
+</ul>
+<h3>Häufige Stolperfallen</h3>
+<ul>
+<li><strong>DoM + DoW per OR verknüpft</strong>, nicht AND.</li>
+<li><strong>Browser-Zeitzone hier</strong> — Server läuft meist in UTC.</li>
+<li><strong><code>*/N</code> ist nicht exakt "alle N".</strong> Beginnt am Range-Anfang.</li>
+<li><strong>Step+Range:</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30.</li>
+<li><strong>Quartz/systemd haben anderes Format.</strong> Dieser Builder = 5-Felder-Crontab.</li>
+<li><strong>Freitag-der-13.</strong> braucht Wrapper-Script.</li>
+</ul>
+<div class="related"><span class="meta">Ähnliche Tools:</span> <a href="/de/cron-parser/">Cron-Ausdruck-Parser</a> <a href="/de/timestamp-converter/">Unix-Zeitstempel-Konverter</a> <a href="/de/timezone-converter/">Zeitzonen-Konverter</a> <a href="/de/date-calculator/">Datumsrechner</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Datenschutz</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const CB_RANGES = [[0,59],[0,23],[1,31],[1,12],[0,7]];
+
+function cbPreset(){
+  const v = document.getElementById('cb-preset').value;
+  if(!v) return;
+  const f = v.split(/\s+/);
+  document.getElementById('cb-min').value = f[0];
+  document.getElementById('cb-hour').value = f[1];
+  document.getElementById('cb-dom').value = f[2];
+  document.getElementById('cb-mon').value = f[3];
+  document.getElementById('cb-dow').value = f[4];
+  cbBuild();
+}
+function cbReset(){
+  document.getElementById('cb-min').value = '*/5';
+  document.getElementById('cb-hour').value = '*';
+  document.getElementById('cb-dom').value = '*';
+  document.getElementById('cb-mon').value = '*';
+  document.getElementById('cb-dow').value = '*';
+  document.getElementById('cb-preset').value = '';
+  cbBuild();
+}
+
+function cbExpand(field, idx){
+  const [lo,hi] = CB_RANGES[idx];
+  const out = new Set();
+  field.split(',').forEach(part => {
+    let step = 1;
+    if (part.includes('/')){ const [a,b] = part.split('/'); step = parseInt(b,10); part = a; }
+    let from = lo, to = hi;
+    if (part === '*'){ /* keep */ }
+    else if (part.includes('-')){ const [a,b] = part.split('-'); from = parseInt(a,10); to = parseInt(b,10); }
+    else { from = to = parseInt(part,10); }
+    if (isNaN(from) || isNaN(to) || from < lo || to > hi || from > to) throw new Error('Bad value: ' + part + ' (range ' + lo + '–' + hi + ')');
+    if (isNaN(step) || step < 1) throw new Error('Bad step: ' + step);
+    for (let v = from; v <= to; v += step) out.add(idx === 4 && v === 7 ? 0 : v);
+  });
+  return out;
+}
+
+function cbMatches(date, sets){
+  return sets[0].has(date.getMinutes())
+    && sets[1].has(date.getHours())
+    && sets[2].has(date.getDate())
+    && sets[3].has(date.getMonth() + 1)
+    && sets[4].has(date.getDay());
+}
+
+function cbNext(expr, count){
+  const fields = expr.trim().split(/\s+/);
+  if (fields.length !== 5) throw new Error('Expected 5 fields, got ' + fields.length);
+  const sets = fields.map((f, i) => cbExpand(f, i));
+  const now = new Date();
+  let d = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 1, 0, 0);
+  const out = [];
+  let safety = 0;
+  while (out.length < count && safety < 600000){
+    if (cbMatches(d, sets)) out.push(new Date(d));
+    d.setMinutes(d.getMinutes() + 1);
+    safety++;
+  }
+  if (safety >= 600000) throw new Error('No matches found in the next ~1 year');
+  return out;
+}
+
+function cbExplain(expr){
+  const f = expr.trim().split(/\s+/);
+  if(f.length !== 5) return '';
+  const [m,h,dom,mon,dow] = f;
+  let s = 'At ';
+  if(m === '*') s += 'every minute';
+  else if(m.startsWith('*/')) s += 'every ' + m.slice(2) + ' minutes';
+  else s += 'minute ' + m;
+  s += ', ';
+  if(h === '*') s += 'every hour';
+  else if(h.startsWith('*/')) s += 'every ' + h.slice(2) + ' hours';
+  else s += 'hour ' + h;
+  if(dow !== '*'){
+    const names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    if(dow.includes('-')){
+      const [a,b] = dow.split('-').map(x => parseInt(x,10));
+      s += ', on ' + names[a] + '–' + names[b];
+    } else if(dow.includes(',')){
+      s += ', on ' + dow.split(',').map(x => names[parseInt(x,10) % 7]).join(',');
+    } else if(!isNaN(parseInt(dow,10))){
+      s += ', on ' + names[parseInt(dow,10) % 7];
+    }
+  }
+  if(dom !== '*') s += ', on day ' + dom;
+  if(mon !== '*'){
+    const monNames = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    if(mon.includes('-')){ const [a,b] = mon.split('-').map(x=>parseInt(x,10)); s += ', in ' + monNames[a] + '–' + monNames[b]; }
+    else if(!isNaN(parseInt(mon,10))) s += ', in ' + monNames[parseInt(mon,10)];
+    else s += ', in month ' + mon;
+  }
+  return s + '.';
+}
+
+function cbBuild(){
+  const expr = [
+    document.getElementById('cb-min').value,
+    document.getElementById('cb-hour').value,
+    document.getElementById('cb-dom').value,
+    document.getElementById('cb-mon').value,
+    document.getElementById('cb-dow').value
+  ].join(' ');
+  document.getElementById('cb-expr').textContent = expr;
+  document.getElementById('cb-expr').classList.remove('error');
+  const next = document.getElementById('cb-next');
+  const explain = document.getElementById('cb-explain');
+  next.classList.remove('error');
+  try {
+    const dates = cbNext(expr, 5);
+    next.textContent = dates.map((d,i) => (i+1) + '.  ' + d.toLocaleString(undefined,{weekday:'short',year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit'})).join('\n');
+    explain.textContent = cbExplain(expr);
+  } catch(e){
+    next.classList.add('error');
+    next.textContent = '✗ ' + e.message;
+    explain.textContent = '';
+  }
+}
+document.addEventListener('DOMContentLoaded', cbBuild);
+</script>
+
+</body>
+</html>

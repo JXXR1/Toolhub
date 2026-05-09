@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anteprima Tag OG — Toolhub</title>
+  <meta name="description" content="Anteprima Open Graph gratuita. Incolla i tuoi <meta> tag o riempi titolo/descrizione/immagine e vedi come apparirà il link su Twitter/X, Facebook, LinkedIn e Discord. 100% nel browser.">
+  <meta property="og:title" content="Anteprima Tag OG — Toolhub">
+  <meta property="og:description" content="Anteprima Open Graph gratuita. Incolla i tuoi <meta> tag o riempi titolo/descrizione/immagine e vedi come apparirà il link su Twitter/X, Facebook, LinkedIn e Discord. 100% nel browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/it/og-tag-preview/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/it/og-tag-preview/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/og-tag-preview/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/og-tag-preview/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/og-tag-preview/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/og-tag-preview/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/og-tag-preview/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/og-tag-preview/">
+  <meta property="og:locale" content="it_IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/it/og-tag-preview/#tool",
+        "name": "Anteprima Tag OG",
+        "description": "Anteprima Open Graph gratuita. Incolla i tuoi <meta> tag o riempi titolo/descrizione/immagine e vedi come apparirà il link su Twitter/X, Facebook, LinkedIn e Discord. 100% nel browser.",
+        "url": "https://toolhub.software/it/og-tag-preview/",
+        "applicationCategory": "DesignApplication",
+        "applicationSubCategory": "Design Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "it",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["og", "open graph", "twitter", "facebook", "linkedin", "discord", "preview", "social"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tutti gli strumenti", "item": "https://toolhub.software/it/"},
+          {"@type": "ListItem", "position": 2, "name": "Anteprima Tag OG", "item": "https://toolhub.software/it/og-tag-preview/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/it/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/og-tag-preview/'; else location.href='/og-tag-preview/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" selected="selected">🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambia tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/it/">Tutti gli strumenti</a> / Anteprima Tag OG</div>
+    <h1>Anteprima Tag OG</h1>
+    <p class="tagline">Incolla meta tag OG o riempi titolo/descrizione/immagine — anteprima delle card Twitter/X, Facebook, LinkedIn e Discord.</p>
+    
+<div class="tool-card">
+  <label>Paste meta tags (optional — fields below are filled from this if provided)</label>
+  <textarea id="og-html" oninput="ogParse()" spellcheck="false" placeholder='<meta property="og:title" content="My Page">&#10;<meta property="og:description" content="A short description.">&#10;<meta property="og:image" content="https://example.com/og.png">&#10;<meta property="og:url" content="https://example.com/page">' style="min-height:120px"></textarea>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Title</label>
+      <input type="text" id="og-title" oninput="ogRender()" placeholder="Page title" value="Toolhub — 60 free privacy-first developer tools">
+    </div>
+    <div>
+      <label>Site URL</label>
+      <input type="text" id="og-url" oninput="ogRender()" placeholder="https://example.com/page" value="https://toolhub.software/">
+    </div>
+  </div>
+  <div style="margin-top:0.7rem">
+    <label>Description</label>
+    <textarea id="og-desc" oninput="ogRender()" rows="3" placeholder="Short description">Format JSON, decode JWTs, build cron schedules, and dozens more — all client-side, no data leaves your browser.</textarea>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Image URL</label>
+      <input type="text" id="og-image" oninput="ogRender()" placeholder="https://example.com/og-image.png" value="https://toolhub.software/og-image.png">
+    </div>
+    <div>
+      <label>Site name</label>
+      <input type="text" id="og-site" oninput="ogRender()" placeholder="example.com" value="toolhub.software">
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Twitter / X (summary_large_image)</label>
+  <div id="og-twitter" class="og-card og-twitter"></div>
+</div>
+<div class="tool-card">
+  <label>Facebook</label>
+  <div id="og-facebook" class="og-card og-facebook"></div>
+</div>
+<div class="tool-card">
+  <label>LinkedIn</label>
+  <div id="og-linkedin" class="og-card og-linkedin"></div>
+</div>
+<div class="tool-card">
+  <label>Discord</label>
+  <div id="og-discord" class="og-card og-discord"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>A cosa serve?</h2>
+<p>Quando condividi un link su Twitter/X, Facebook, LinkedIn, Discord o Slack, viene reso come una card (titolo, descrizione, immagine) in base ai meta tag <a href="https://ogp.me/" target="_blank" rel="noopener noreferrer">Open Graph</a>. Ogni piattaforma renderizza diversamente. Questo strumento mostra il contenuto fianco a fianco.</p>
+<h3>Quando usarlo</h3>
+<ul>
+<li>Verificare immagine OG / testi prima del deploy.</li>
+<li>Testare immagine hero su crop 1,91:1.</li>
+<li>Vedere dove ogni piattaforma taglia titolo/descrizione.</li>
+<li>Redigere tag OG mancanti.</li>
+</ul>
+<h3>Tag minimi</h3>
+<ul>
+<li><code>og:title</code>, <code>og:description</code>, <code>og:image</code> (URL assoluto), <code>og:url</code>, <code>og:type</code></li>
+<li><code>twitter:card="summary_large_image"</code></li>
+</ul>
+<h3>Errori comuni</h3>
+<ul>
+<li><strong>Anteprima statica, non fetch in tempo reale.</strong> Usare i debugger ufficiali.</li>
+<li><strong>URL immagine assoluti.</strong></li>
+<li><strong>Immagine pubblicamente accessibile.</strong></li>
+<li><strong>Aspect 1,91:1</strong> (1200×630) funziona ovunque.</li>
+<li><strong>Dimensione &lt;1 MB.</strong></li>
+<li><strong>Cache</strong> — forza re-scrape via debugger.</li>
+<li><strong>Tagli diversi:</strong> Twitter ~70, FB ~88, LinkedIn ~100.</li>
+<li><strong>Discord usa <code>theme-color</code></strong> per il bordo sinistro.</li>
+</ul>
+<div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/html-encoder/">Encoder / Decoder HTML</a> <a href="/it/url-parser/">Analizzatore URL</a> <a href="/it/placeholder-image/">Generatore Immagine Placeholder</a> <a href="/it/qr-code-generator/">Generatore di Codici QR</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.og-card { border-radius: 10px; overflow: hidden; max-width: 540px; }
+.og-img { width: 100%; aspect-ratio: 1.91 / 1; background: #2228 center/cover no-repeat; display:flex;align-items:center;justify-content:center;color:#888;font-size:0.85rem; }
+.og-img-empty::after { content: '(no image)'; }
+
+.og-twitter { background: var(--surface); border: 1px solid var(--border); }
+.og-twitter .og-body { padding: 0.65rem 0.85rem; }
+.og-twitter .og-host { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.15rem; }
+.og-twitter .og-title { color: var(--text); font-size: 0.95rem; font-weight: 600; line-height: 1.25; }
+.og-twitter .og-desc { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem; line-height: 1.35; max-height: 2.7em; overflow: hidden; }
+
+.og-facebook { background: var(--surface); border: 1px solid var(--border); }
+.og-facebook .og-body { padding: 0.65rem 0.85rem; background: var(--card-hover); }
+.og-facebook .og-host { color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.2rem; }
+.og-facebook .og-title { color: var(--text); font-size: 1rem; font-weight: 700; line-height: 1.2; }
+.og-facebook .og-desc { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem; line-height: 1.35; max-height: 2.7em; overflow: hidden; }
+
+.og-linkedin { background: var(--surface); border: 1px solid var(--border); }
+.og-linkedin .og-body { padding: 0.7rem 0.9rem; }
+.og-linkedin .og-title { color: var(--text); font-size: 0.95rem; font-weight: 600; line-height: 1.3; }
+.og-linkedin .og-host { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.3rem; }
+
+.og-discord { background: #36393f; color: #dcddde; border-left: 4px solid #4f545c; padding: 0.6rem 0.9rem; max-width: 480px; border-radius: 4px; }
+.og-discord .og-host { color: #b9bbbe; font-size: 0.8rem; }
+.og-discord .og-title { color: #00b0f4; font-size: 1rem; font-weight: 600; margin-top: 0.15rem; line-height: 1.25; cursor: pointer; }
+.og-discord .og-desc { color: #dcddde; font-size: 0.88rem; margin-top: 0.25rem; line-height: 1.4; }
+.og-discord .og-img { aspect-ratio: 1.91 / 1; margin-top: 0.5rem; max-width: 400px; border-radius: 4px; }
+</style>
+<script>
+function ogEsc(s){ return String(s||'').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+function ogHost(url){
+  try { return new URL(url).host; } catch(e){ return ''; }
+}
+
+function ogParse(){
+  const html = document.getElementById('og-html').value;
+  if(!html.trim()){ ogRender(); return; }
+  const doc = new DOMParser().parseFromString('<!doctype html><html><head>' + html + '</head><body></body></html>', 'text/html');
+  const get = (sel) => {
+    const el = doc.querySelector(sel);
+    return el ? (el.getAttribute('content') || '') : '';
+  };
+  const t = get('meta[property="og:title"]') || get('meta[name="twitter:title"]') || get('title');
+  const d = get('meta[property="og:description"]') || get('meta[name="twitter:description"]') || get('meta[name="description"]');
+  const img = get('meta[property="og:image"]') || get('meta[name="twitter:image"]');
+  const url = get('meta[property="og:url"]');
+  const site = get('meta[property="og:site_name"]');
+  if(t) document.getElementById('og-title').value = t;
+  if(d) document.getElementById('og-desc').value = d;
+  if(img) document.getElementById('og-image').value = img;
+  if(url) document.getElementById('og-url').value = url;
+  if(site) document.getElementById('og-site').value = site;
+  ogRender();
+}
+
+function ogClampTitle(s, max){
+  if(!s) return '';
+  if(s.length <= max) return s;
+  return s.slice(0, max-1).trim() + '…';
+}
+
+function ogRender(){
+  const title = document.getElementById('og-title').value;
+  const desc = document.getElementById('og-desc').value;
+  const image = document.getElementById('og-image').value;
+  const url = document.getElementById('og-url').value;
+  const site = document.getElementById('og-site').value || ogHost(url) || 'example.com';
+
+  const imgStyle = image ? `style="background-image:url('${ogEsc(image).replace(/'/g, "\\'")}')"` : '';
+  const imgClass = image ? '' : 'og-img-empty';
+
+  // Twitter / X — summary_large_image
+  document.getElementById('og-twitter').innerHTML = `
+    <div class="og-img ${imgClass}" ${imgStyle}></div>
+    <div class="og-body">
+      <div class="og-host">${ogEsc(ogHost(url) || site)}</div>
+      <div class="og-title">${ogEsc(ogClampTitle(title, 70))}</div>
+      <div class="og-desc">${ogEsc(ogClampTitle(desc, 200))}</div>
+    </div>`;
+
+  // Facebook
+  document.getElementById('og-facebook').innerHTML = `
+    <div class="og-img ${imgClass}" ${imgStyle}></div>
+    <div class="og-body">
+      <div class="og-host">${ogEsc(ogHost(url) || site)}</div>
+      <div class="og-title">${ogEsc(ogClampTitle(title, 88))}</div>
+      <div class="og-desc">${ogEsc(ogClampTitle(desc, 200))}</div>
+    </div>`;
+
+  // LinkedIn
+  document.getElementById('og-linkedin').innerHTML = `
+    <div class="og-img ${imgClass}" ${imgStyle}></div>
+    <div class="og-body">
+      <div class="og-title">${ogEsc(ogClampTitle(title, 100))}</div>
+      <div class="og-host">${ogEsc(ogHost(url) || site)}</div>
+    </div>`;
+
+  // Discord
+  document.getElementById('og-discord').innerHTML = `
+    <div class="og-host">${ogEsc(site)}</div>
+    <div class="og-title">${ogEsc(ogClampTitle(title, 100))}</div>
+    <div class="og-desc">${ogEsc(ogClampTitle(desc, 300))}</div>
+    <div class="og-img ${imgClass}" ${imgStyle}></div>`;
+}
+
+document.addEventListener('DOMContentLoaded', ogRender);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Table Editor — Toolhub</title>
+  <meta name="description" content="Free online Markdown table editor. Click cells to edit, add/remove rows and columns, set per-column alignment, and copy the GitHub-flavoured Markdown output. Runs entirely in your browser.">
+  <meta property="og:title" content="Markdown Table Editor — Toolhub">
+  <meta property="og:description" content="Free online Markdown table editor. Click cells to edit, add/remove rows and columns, set per-column alignment, and copy the GitHub-flavoured Markdown output. Runs entirely in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/markdown-table-editor/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/markdown-table-editor/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/markdown-table-editor/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/markdown-table-editor/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/markdown-table-editor/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/markdown-table-editor/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/markdown-table-editor/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/markdown-table-editor/">
+  <meta property="og:locale" content="en_GB">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/markdown-table-editor/#tool",
+        "name": "Markdown Table Editor",
+        "description": "Free online Markdown table editor. Click cells to edit, add/remove rows and columns, set per-column alignment, and copy the GitHub-flavoured Markdown output. Runs entirely in your browser.",
+        "url": "https://toolhub.software/markdown-table-editor/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Text Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["markdown", "table", "editor", "github", "gfm", "alignment"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "All Tools", "item": "https://toolhub.software/"},
+          {"@type": "ListItem", "position": 2, "name": "Markdown Table Editor", "item": "https://toolhub.software/markdown-table-editor/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/markdown-table-editor/'; else location.href='/markdown-table-editor/'">
+        <option value="" selected="selected">🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/">All Tools</a> / Markdown Table Editor</div>
+    <h1>Markdown Table Editor</h1>
+    <p class="tagline">Visually edit a table — rows, columns, alignment per column — and copy the GitHub-flavoured Markdown.</p>
+    
+<div class="tool-card">
+  <div class="button-row">
+    <button class="secondary" onclick="mtAddRow()">+ Row</button>
+    <button class="secondary" onclick="mtAddCol()">+ Column</button>
+    <button class="secondary" onclick="mtDelRow()">− Row</button>
+    <button class="secondary" onclick="mtDelCol()">− Column</button>
+    <button class="secondary" onclick="mtClear()">Reset</button>
+  </div>
+  <div style="overflow-x:auto;border:1px solid var(--border);border-radius:6px;background:var(--code-bg);padding:0.4rem">
+    <table id="mt-table" style="border-collapse:collapse;width:100%;min-width:300px">
+      <thead><tr id="mt-head"></tr></thead>
+      <thead><tr id="mt-align"></tr></thead>
+      <tbody id="mt-body"></tbody>
+    </table>
+  </div>
+  <div class="meta" style="margin-top:0.5rem">Click any cell to edit. Use the dropdown row to set per-column alignment.</div>
+</div>
+<div class="tool-card">
+  <label>Paste an existing Markdown table (optional)</label>
+  <textarea id="mt-import" oninput="mtImport()" spellcheck="false" placeholder="| col 1 | col 2 |&#10;|---|---|&#10;| a | b |" style="min-height:100px"></textarea>
+</div>
+<div class="tool-card">
+  <label>Markdown Output</label>
+  <div class="output-row">
+    <pre class="output" id="mt-out" style="margin:0;flex:1">Enter input above to see the result.</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('mt-out', this)">Copy</button>
+  </div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>What is this for?</h2>
+<p>Markdown tables are great in the rendered output and miserable to write by hand. Pipe characters, alignment colons, the right number of dashes per column — by the time you've nudged everything into place, you could have written it as HTML. This editor gives you a familiar grid: click any cell to edit, use the buttons to add or remove rows and columns, set alignment per column from a dropdown, and copy the GitHub-flavoured Markdown when you're done. You can also paste an existing Markdown table at the bottom and it'll load into the grid for further editing.</p>
+
+<h3>When to use it</h3>
+<ul>
+  <li>Authoring a comparison table for a README, GitHub issue, or PR description.</li>
+  <li>Re-editing a table from a doc — paste the existing Markdown, tweak in the grid, copy back.</li>
+  <li>Producing a properly-aligned ASCII-padded table (the output is right-padded so it's also readable as plain text).</li>
+  <li>Drafting a release-notes table without fighting the pipe-and-dash syntax.</li>
+</ul>
+
+<h3>Common gotchas</h3>
+<ul>
+  <li><strong>Inline pipes break GFM tables.</strong> A literal <code>|</code> inside a cell ends the cell. Escape it as <code>\|</code> when you need it.</li>
+  <li><strong>Cell content is single-line.</strong> Markdown tables don't support line breaks inside cells without HTML (<code>&lt;br&gt;</code>). For multi-line content, write the table in HTML.</li>
+  <li><strong>Alignment is rendered, not enforced.</strong> The output also pads to align in the source, but the actual rendered alignment comes from the colons in the separator row, not the spacing.</li>
+  <li><strong>The first row is always treated as the header.</strong> GFM tables have a mandatory header. If your data has no natural header, use blank cells in row 1.</li>
+  <li><strong>Some Markdown flavours are stricter than GFM.</strong> CommonMark itself doesn't define tables; GFM, MultiMarkdown, and various others all support slightly different variants. The output here targets GFM (GitHub, GitLab, most modern renderers).</li>
+  <li><strong>Pasting an unformatted CSV won't work.</strong> The "import" textarea expects a Markdown table (with the <code>|---|</code> separator). For CSV → Markdown, use the CSV-to-JSON tool first or hand-paste rows.</li>
+</ul>
+<div class="related"><span class="meta">Related tools:</span> <a href="/markdown-to-html/">Markdown to HTML</a> <a href="/csv-to-json/">CSV to JSON</a> <a href="/json-to-csv/">JSON to CSV</a> <a href="/ascii-table/">ASCII Table</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+#mt-table th, #mt-table td { border: 1px solid var(--border); padding: 0; min-width: 70px; }
+#mt-table input { width: 100%; padding: 0.4rem 0.5rem; background: transparent; border: none; color: var(--text); font-family: inherit; font-size: 0.88rem; }
+#mt-table input:focus { background: var(--surface); outline: 2px solid var(--accent); }
+#mt-table select { width: 100%; padding: 0.3rem 0.5rem; background: var(--surface); border: none; color: var(--text-muted); font-size: 0.78rem; border-radius: 0; }
+#mt-table thead tr:first-child input { font-weight: 600; }
+</style>
+<script>
+let MT = {
+  cols: 3,
+  rows: 2,
+  align: ['left','left','left'],
+  data: [
+    ['Header 1','Header 2','Header 3'],
+    ['Cell A1','Cell B1','Cell C1'],
+    ['Cell A2','Cell B2','Cell C2']
+  ]
+};
+
+function mtRender(){
+  const head = document.getElementById('mt-head');
+  const align = document.getElementById('mt-align');
+  const body = document.getElementById('mt-body');
+  head.innerHTML = '';
+  align.innerHTML = '';
+  body.innerHTML = '';
+  for(let c = 0; c < MT.cols; c++){
+    const th = document.createElement('th');
+    const inp = document.createElement('input');
+    inp.value = MT.data[0][c] ?? '';
+    inp.dataset.r = 0; inp.dataset.c = c;
+    inp.oninput = () => { MT.data[0][c] = inp.value; mtBuildOutput(); };
+    th.appendChild(inp);
+    head.appendChild(th);
+  }
+  for(let c = 0; c < MT.cols; c++){
+    const th = document.createElement('th');
+    const sel = document.createElement('select');
+    ['left','center','right'].forEach(a => {
+      const o = document.createElement('option');
+      o.value = a; o.textContent = a;
+      if(MT.align[c] === a) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.onchange = () => { MT.align[c] = sel.value; mtBuildOutput(); };
+    th.appendChild(sel);
+    align.appendChild(th);
+  }
+  for(let r = 1; r < MT.rows + 1; r++){
+    const tr = document.createElement('tr');
+    for(let c = 0; c < MT.cols; c++){
+      const td = document.createElement('td');
+      const inp = document.createElement('input');
+      inp.value = MT.data[r] ? (MT.data[r][c] ?? '') : '';
+      inp.dataset.r = r; inp.dataset.c = c;
+      inp.oninput = () => {
+        if(!MT.data[r]) MT.data[r] = [];
+        MT.data[r][c] = inp.value;
+        mtBuildOutput();
+      };
+      td.appendChild(inp);
+      tr.appendChild(td);
+    }
+    body.appendChild(tr);
+  }
+  mtBuildOutput();
+}
+
+function mtAddRow(){
+  MT.rows++;
+  MT.data.push(new Array(MT.cols).fill(''));
+  mtRender();
+}
+function mtDelRow(){
+  if(MT.rows <= 1) return;
+  MT.rows--;
+  MT.data.pop();
+  mtRender();
+}
+function mtAddCol(){
+  MT.cols++;
+  MT.align.push('left');
+  for(let r = 0; r < MT.data.length; r++){
+    MT.data[r].push(r === 0 ? 'Header ' + MT.cols : '');
+  }
+  mtRender();
+}
+function mtDelCol(){
+  if(MT.cols <= 1) return;
+  MT.cols--;
+  MT.align.pop();
+  for(let r = 0; r < MT.data.length; r++) MT.data[r].pop();
+  mtRender();
+}
+function mtClear(){
+  MT = {
+    cols: 3, rows: 2, align: ['left','left','left'],
+    data: [['Header 1','Header 2','Header 3'], ['','',''], ['','','']]
+  };
+  document.getElementById('mt-import').value = '';
+  mtRender();
+}
+
+function mtPad(s, n){
+  s = String(s);
+  if(s.length >= n) return s;
+  return s + ' '.repeat(n - s.length);
+}
+function mtAlignBar(width, mode){
+  const w = Math.max(width, 3);
+  if(mode === 'center') return ':' + '-'.repeat(w-2) + ':';
+  if(mode === 'right') return '-'.repeat(w-1) + ':';
+  return '-'.repeat(w);
+}
+function mtBuildOutput(){
+  const widths = new Array(MT.cols).fill(3);
+  for(let r = 0; r < MT.rows + 1; r++){
+    for(let c = 0; c < MT.cols; c++){
+      const v = (MT.data[r] && MT.data[r][c]) || '';
+      widths[c] = Math.max(widths[c], v.length);
+    }
+  }
+  const lines = [];
+  // header
+  lines.push('| ' + MT.data[0].map((v,c) => mtPad(v ?? '', widths[c])).join(' | ') + ' |');
+  // separator
+  lines.push('| ' + widths.map((w,c) => mtAlignBar(w, MT.align[c])).join(' | ') + ' |');
+  // body
+  for(let r = 1; r < MT.rows + 1; r++){
+    const row = MT.data[r] || [];
+    lines.push('| ' + new Array(MT.cols).fill(0).map((_,c) => mtPad(row[c] ?? '', widths[c])).join(' | ') + ' |');
+  }
+  document.getElementById('mt-out').textContent = lines.join('\n');
+}
+
+function mtImport(){
+  const txt = document.getElementById('mt-import').value;
+  if(!txt.trim()) return;
+  const lines = txt.split('\n').filter(l => /\|/.test(l));
+  if(lines.length < 2) return;
+  function splitRow(l){
+    let s = l.trim();
+    if(s.startsWith('|')) s = s.slice(1);
+    if(s.endsWith('|')) s = s.slice(0, -1);
+    return s.split('|').map(c => c.trim());
+  }
+  const header = splitRow(lines[0]);
+  const sep = splitRow(lines[1]);
+  if(!sep.every(c => /^:?-+:?$/.test(c))) return;
+  const align = sep.map(c => {
+    const left = c.startsWith(':');
+    const right = c.endsWith(':');
+    if(left && right) return 'center';
+    if(right) return 'right';
+    return 'left';
+  });
+  const body = lines.slice(2).map(splitRow);
+  MT.cols = header.length;
+  MT.rows = body.length;
+  if(MT.rows === 0){ MT.rows = 1; body.push(new Array(MT.cols).fill('')); }
+  MT.align = align;
+  MT.data = [header, ...body.map(r => {
+    const out = r.slice(0, MT.cols);
+    while(out.length < MT.cols) out.push('');
+    return out;
+  })];
+  mtRender();
+}
+
+document.addEventListener('DOMContentLoaded', mtRender);
+</script>
+
+</body>
+</html>

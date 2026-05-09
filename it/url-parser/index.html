@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analizzatore URL — Toolhub</title>
+  <meta name="description" content="Analizzatore URL gratuito. Decodifica qualsiasi URL in protocollo, host, porta, percorso, query, hash e origine; parametri decodificati. 100% nel browser.">
+  <meta property="og:title" content="Analizzatore URL — Toolhub">
+  <meta property="og:description" content="Analizzatore URL gratuito. Decodifica qualsiasi URL in protocollo, host, porta, percorso, query, hash e origine; parametri decodificati. 100% nel browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/it/url-parser/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/it/url-parser/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/url-parser/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/url-parser/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/url-parser/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/url-parser/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/url-parser/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/url-parser/">
+  <meta property="og:locale" content="it_IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/it/url-parser/#tool",
+        "name": "Analizzatore URL",
+        "description": "Analizzatore URL gratuito. Decodifica qualsiasi URL in protocollo, host, porta, percorso, query, hash e origine; parametri decodificati. 100% nel browser.",
+        "url": "https://toolhub.software/it/url-parser/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "it",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["url", "parse", "query", "host", "path", "fragment", "search params"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tutti gli strumenti", "item": "https://toolhub.software/it/"},
+          {"@type": "ListItem", "position": 2, "name": "Analizzatore URL", "item": "https://toolhub.software/it/url-parser/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .row-2col { grid-template-columns: 1fr; } }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); }
+    .related a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    .footer a:hover { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    /* Toolhub monetization config — fill these in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/it/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/url-parser/'; else location.href='/url-parser/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" selected="selected">🇮🇹 IT</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambia tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/it/">Tutti gli strumenti</a> / Analizzatore URL</div>
+    <h1>Analizzatore URL</h1>
+    <p class="tagline">Incolla un URL — protocollo, host, porta, percorso, parametri query (decodificati), hash e origine.</p>
+    
+<div class="tool-card">
+  <label>URL</label>
+  <input type="text" id="up-in" oninput="upRun()" placeholder="https://user:pw@example.com:8080/path/to?lang=en&items=1&items=2#section" value="https://www.example.com:8080/products/search?q=hello%20world&category=books&page=2#reviews" autocomplete="off" spellcheck="false" style="font-family:ui-monospace,monospace">
+  <div class="meta" style="margin-top:0.5rem">Both URL-encoded and decoded views shown for query values.</div>
+</div>
+<div class="tool-card">
+  <label>Components</label>
+  <div id="up-components" class="output">Inserisci un input sopra per vedere il risultato.</div>
+</div>
+<div class="tool-card">
+  <label>Query parameters</label>
+  <div id="up-params" class="output">Inserisci un input sopra per vedere il risultato.</div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>A cosa serve?</h2>
+<p>Un URL ha sette parti (schema, autorità, host, porta, percorso, query, frammento) che si vedono come una stringa unica. Una tabella scomposta rende facile individuare errori. Lo strumento usa l'oggetto <code>URL</code> nativo del browser.</p>
+<h3>Quando usarlo</h3>
+<ul>
+<li>Debug callback OAuth con <code>state</code> o <code>code</code> strani.</li>
+<li>Ispezionare URL di tracking (UTM) decodificato.</li>
+<li>Verificare URL di webhook.</li>
+<li>Confrontare deep link tra app.</li>
+</ul>
+<h3>Errori comuni</h3>
+<ul>
+<li><strong>Chiavi ripetute sono reali.</strong> <code>?a=1&amp;a=2</code> = due valori.</li>
+<li><strong>Il frammento non raggiunge il server.</strong> Tutto dopo <code>#</code> resta nel browser.</li>
+<li><strong><code>+</code> e <code>%20</code> entrambi decodificano in spazio</strong> nella query.</li>
+<li><strong>Le porte di default non compaiono in <code>port</code>.</strong></li>
+<li><strong>Punycode negli hostname.</strong> Visualizzazione browser-dipendente.</li>
+<li><strong>Origin può essere "null"</strong> con file://, data:, sandbox.</li>
+<li><strong>Parsing ≠ validazione.</strong></li>
+</ul>
+<div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/url-encoder/">Encoder / Decoder URL</a> <a href="/it/query-string-builder/">Costruttore Query String</a> <a href="/it/jwt-decoder/">Decoder JWT</a> <a href="/it/base64-encoder/">Encoder / Decoder Base64</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.up-table { width: 100%; }
+.up-table td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); font-family: ui-monospace, monospace; font-size: 0.85rem; vertical-align: top; word-break: break-all; }
+.up-table td:first-child { width: 30%; color: var(--text-muted); }
+.up-empty { color: var(--text-muted); font-style: italic; }
+</style>
+<script>
+function upEsc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function upRun(){
+  const v = document.getElementById('up-in').value.trim();
+  const comps = document.getElementById('up-components');
+  const params = document.getElementById('up-params');
+  comps.classList.remove('error');
+  params.classList.remove('error');
+  if(!v){ comps.textContent = 'Inserisci un input sopra per vedere il risultato.'; params.textContent = 'Inserisci un input sopra per vedere il risultato.'; return; }
+  let url;
+  try { url = new URL(v); }
+  catch(e){
+    // Try with prepended https:// for hostname-only inputs
+    try { url = new URL('https://' + v); }
+    catch(e2){
+      comps.classList.add('error');
+      comps.textContent = '✗ Not a valid URL — ' + e.message;
+      params.textContent = '';
+      return;
+    }
+  }
+
+  const rows = [
+    ['Origin', url.origin || '<i class="up-empty">(opaque)</i>'],
+    ['Protocol', url.protocol],
+    ['Username', url.username || '<i class="up-empty">(none)</i>'],
+    ['Password', url.password ? '<i class="up-empty">(set)</i>' : '<i class="up-empty">(none)</i>'],
+    ['Host', url.host],
+    ['Hostname', url.hostname],
+    ['Port', url.port || '<i class="up-empty">(default)</i>'],
+    ['Pathname', url.pathname || '<i class="up-empty">(empty)</i>'],
+    ['Search', url.search || '<i class="up-empty">(empty)</i>'],
+    ['Hash', url.hash || '<i class="up-empty">(empty)</i>'],
+  ];
+  comps.innerHTML = '<table class="up-table">' + rows.map(r => `<tr><td>${r[0]}</td><td>${typeof r[1] === 'string' && !r[1].startsWith('<') ? upEsc(r[1]) : r[1]}</td></tr>`).join('') + '</table>';
+
+  const sp = url.searchParams;
+  const keys = [];
+  for(const k of sp.keys()) if(!keys.includes(k)) keys.push(k);
+  if(keys.length === 0){
+    params.innerHTML = '<i class="up-empty">No query parameters.</i>';
+  } else {
+    let rowsHtml = '<table class="up-table"><tr><td><b>Key</b></td><td><b>Decoded value</b></td><td><b>Raw</b></td></tr>';
+    for(const k of keys){
+      const all = sp.getAll(k);
+      all.forEach((vv, i) => {
+        // Re-encode to show "raw" form as it would appear in the URL
+        const raw = encodeURIComponent(k) + '=' + encodeURIComponent(vv);
+        const keyDisp = i === 0 ? upEsc(k) : '';
+        rowsHtml += `<tr><td>${keyDisp}${all.length > 1 ? ' <span class="up-empty">[' + i + ']</span>' : ''}</td><td>${upEsc(vv)}</td><td><span style="color:var(--text-muted)">${upEsc(raw)}</span></td></tr>`;
+      });
+    }
+    rowsHtml += '</table>';
+    params.innerHTML = rowsHtml;
+  }
+}
+document.addEventListener('DOMContentLoaded', upRun);
+</script>
+
+</body>
+</html>
