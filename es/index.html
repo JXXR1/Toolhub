@@ -19,6 +19,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="alternate icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,6 +59,8 @@
     .header-actions { display: flex; gap: 0.75rem; align-items: center; }
     .lang-select { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; }
     .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.7rem; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+    .install-btn { display: none; background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.7rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     .hero { text-align: center; padding: 2rem 1.5rem 1.5rem; max-width: 700px; margin: 0 auto; }
     .hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
@@ -118,6 +124,7 @@
         <option value="pt">🇧🇷 Português</option>
         <option value="pl">🇵🇱 Polski</option>
       </select>
+      <button class="install-btn" id="installBtn" type="button">Instalar app</button>
       <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
     </div>
   </header>
@@ -145,7 +152,7 @@
   </footer>
 
   <script>
-                                    const TOOLS = [
+                                        const TOOLS = [
       {"slug": "ascii-table", "name": "Tabla ASCII", "desc": "Referencia completa ASCII 0–127 con decimal, hex, binario, carácter y entidad HTML. Filtrable.", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
       {"slug": "base64-encoder", "name": "Codificador / Decodificador Base64", "desc": "Codifica texto a Base64 o decodifica Base64 a texto. Compatible con UTF-8 y variante base64url.", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
       {"slug": "bmi-calculator", "name": "Calculadora de IMC", "desc": "Índice de Masa Corporal a partir de altura y peso. Métrico o imperial. Categoría OMS — no es consejo médico.", "icon": "⚖️", "cat": "math", "tags": ["bmi", "body mass index", "health", "weight", "height", "metric", "imperial"]},
@@ -294,6 +301,31 @@
         document.getElementById('search').focus();
       }
     });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.style.display = 'inline-block';
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.style.display = 'none';
+      });
+      window.addEventListener('appinstalled', () => { btn.style.display = 'none'; });
+    })();
   </script>
 </body>
 </html>

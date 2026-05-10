@@ -33,6 +33,7 @@ UI = {
         "related_tools": "Related tools",
         "no_input": "Enter input above to see the result.",
         "invalid_input": "Invalid input.",
+        "install_app": "Install app",
     },
     "de": {
         "all_tools": "Alle Tools",
@@ -65,6 +66,7 @@ UI = {
         "related_tools": "Ähnliche Tools",
         "no_input": "Geben Sie oben eine Eingabe ein, um das Ergebnis zu sehen.",
         "invalid_input": "Ungültige Eingabe.",
+        "install_app": "App installieren",
     },
     "es": {
         "all_tools": "Todas las herramientas",
@@ -97,6 +99,7 @@ UI = {
         "related_tools": "Herramientas relacionadas",
         "no_input": "Introduce un valor arriba para ver el resultado.",
         "invalid_input": "Entrada no válida.",
+        "install_app": "Instalar app",
     },
     "fr": {
         "all_tools": "Tous les outils",
@@ -129,6 +132,7 @@ UI = {
         "related_tools": "Outils similaires",
         "no_input": "Saisissez une entrée ci-dessus pour voir le résultat.",
         "invalid_input": "Entrée invalide.",
+        "install_app": "Installer l'app",
     },
     "it": {
         "all_tools": "Tutti gli strumenti",
@@ -161,6 +165,7 @@ UI = {
         "related_tools": "Strumenti correlati",
         "no_input": "Inserisci un input sopra per vedere il risultato.",
         "invalid_input": "Input non valido.",
+        "install_app": "Installa app",
     },
     "pt": {
         "all_tools": "Todas as ferramentas",
@@ -193,6 +198,7 @@ UI = {
         "related_tools": "Ferramentas relacionadas",
         "no_input": "Digite uma entrada acima para ver o resultado.",
         "invalid_input": "Entrada inválida.",
+        "install_app": "Instalar app",
     },
     "pl": {
         "all_tools": "Wszystkie narzędzia",
@@ -225,6 +231,7 @@ UI = {
         "related_tools": "Powiązane narzędzia",
         "no_input": "Wpisz dane powyżej, aby zobaczyć wynik.",
         "invalid_input": "Nieprawidłowe dane.",
+        "install_app": "Zainstaluj aplikację",
     },
 }
 
