@@ -304,6 +304,7 @@ def render_tool(tool: dict, lang: str) -> str:
         "APP_CATEGORY": CATEGORY_TO_APP_CAT.get(cat, "UtilityApplication"),
         "APP_SUBCATEGORY": SUBCATEGORY_LABELS.get(cat, cat.title()),
         "FEATURE_LIST": feature_list_json,
+        "OG_IMAGE_URL": f"https://toolhub.software/og-images/{slug}.png",
     }
 
     return fill_placeholders(TEMPLATE, placeholders)
@@ -412,6 +413,7 @@ def render_page(page: dict, lang: str) -> str:
         "OG_LOCALE": OG_LOCALES.get(lang, "en_GB"),
         "INLANG": lang,
         "SCHEMA_TYPE": page.get("schema", "WebPage"),
+        "OG_IMAGE_URL": "https://toolhub.software/og-image.png",
     }
     return fill_placeholders(PAGE_TEMPLATE, placeholders)
 

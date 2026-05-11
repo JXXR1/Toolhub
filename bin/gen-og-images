@@ -1,0 +1,209 @@
+#!/usr/bin/env python3
+"""Generate per-tool Open Graph images for toolhub.software.
+
+Produces:
+  og-images/<slug>.png   — one per tool (60×, EN tool name + tagline)
+  og-image.png           — base image used by home + static pages
+
+Brand:
+  bg     #0d1117
+  accent #58a6ff
+  text   #e6edf3
+  muted  #8b949e
+
+Usage:
+  bin/gen-og-images               # render all tools + base
+  bin/gen-og-images --only <slug> # render one tool
+"""
+import argparse
+import importlib.util
+import sys
+from pathlib import Path
+
+from PIL import Image, ImageDraw, ImageFont
+
+ROOT = Path(__file__).resolve().parent.parent
+TOOLS_DIR = ROOT / "build" / "tools"
+OUT_DIR = ROOT / "og-images"
+BASE_OUT = ROOT / "og-image.png"
+
+W, H = 1200, 630
+BG = (13, 17, 23)
+ACCENT = (88, 166, 255)
+TEXT = (230, 237, 243)
+MUTED = (139, 148, 158)
+STRIPE_H = 8
+
+FONT_CANDIDATES_BOLD = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+    "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf",
+]
+FONT_CANDIDATES_REG = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf",
+]
+
+
+def find_font(candidates):
+    for p in candidates:
+        if Path(p).exists():
+            return p
+    return None
+
+
+FONT_BOLD = find_font(FONT_CANDIDATES_BOLD)
+FONT_REG = find_font(FONT_CANDIDATES_REG)
+if not FONT_BOLD or not FONT_REG:
+    print("WARN: no system bold/regular sans-serif font found; falling back to PIL default — quality will suffer", file=sys.stderr)
+
+
+def load_font(bold: bool, size: int) -> ImageFont.FreeTypeFont:
+    path = FONT_BOLD if bold else FONT_REG
+    if path:
+        return ImageFont.truetype(path, size)
+    return ImageFont.load_default()
+
+
+def load_tools():
+    tools = []
+    for p in sorted(TOOLS_DIR.glob("*.py")):
+        if p.name.startswith("_"):
+            continue
+        spec = importlib.util.spec_from_file_location(p.stem, p)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        if hasattr(mod, "TOOL"):
+            tools.append(mod.TOOL)
+    return tools
+
+
+def measure(draw, text, font):
+    bbox = draw.textbbox((0, 0), text, font=font)
+    return bbox[2] - bbox[0], bbox[3] - bbox[1]
+
+
+def wrap_to_width(draw, text, font, max_width):
+    """Greedy word-wrap into lines that fit max_width."""
+    words = text.split()
+    lines = []
+    cur = ""
+    for w in words:
+        trial = (cur + " " + w).strip()
+        tw, _ = measure(draw, trial, font)
+        if tw <= max_width or not cur:
+            cur = trial
+        else:
+            lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def fit_title(draw, text, max_width, max_lines=2, start_size=92, min_size=58):
+    """Shrink title font until it wraps within max_lines and fits max_width."""
+    size = start_size
+    while size >= min_size:
+        font = load_font(True, size)
+        lines = wrap_to_width(draw, text, font, max_width)
+        if len(lines) <= max_lines:
+            return font, lines, size
+        size -= 4
+    font = load_font(True, min_size)
+    lines = wrap_to_width(draw, text, font, max_width)
+    return font, lines[:max_lines], min_size
+
+
+def render_image(out_path: Path, title: str, tagline: str):
+    img = Image.new("RGB", (W, H), BG)
+    draw = ImageDraw.Draw(img)
+
+    draw.rectangle((0, 0, W, STRIPE_H), fill=ACCENT)
+
+    pad_x = 80
+    max_w = W - 2 * pad_x
+
+    brand_font = load_font(True, 36)
+    tool_part_w, tool_part_h = measure(draw, "Tool", brand_font)
+    hub_part_w, _ = measure(draw, "hub", brand_font)
+    brand_y = 56
+    draw.text((pad_x, brand_y), "Tool", font=brand_font, fill=TEXT)
+    draw.text((pad_x + tool_part_w, brand_y), "hub", font=brand_font, fill=ACCENT)
+
+    title_font, title_lines, title_size = fit_title(draw, title, max_w, max_lines=2)
+    line_h = int(title_size * 1.15)
+
+    tagline_size = 30
+    tagline_font = load_font(False, tagline_size)
+    tagline_lines = wrap_to_width(draw, tagline, tagline_font, max_w)
+    if len(tagline_lines) > 3:
+        tagline_lines = tagline_lines[:3]
+        last = tagline_lines[-1]
+        while measure(draw, last + "…", tagline_font)[0] > max_w and " " in last:
+            last = last.rsplit(" ", 1)[0]
+        tagline_lines[-1] = last + "…"
+    tagline_line_h = int(tagline_size * 1.35)
+
+    block_h = len(title_lines) * line_h + 24 + len(tagline_lines) * tagline_line_h
+    start_y = (H - block_h) // 2 + 10
+
+    y = start_y
+    for line in title_lines:
+        draw.text((pad_x, y), line, font=title_font, fill=TEXT)
+        y += line_h
+
+    y += 24
+    for line in tagline_lines:
+        draw.text((pad_x, y), line, font=tagline_font, fill=MUTED)
+        y += tagline_line_h
+
+    foot_font = load_font(False, 22)
+    foot_text = "toolhub.software"
+    fw, fh = measure(draw, foot_text, foot_font)
+    draw.text((W - pad_x - fw, H - 40 - fh), foot_text, font=foot_font, fill=MUTED)
+
+    img.save(out_path, format="PNG", optimize=True)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", help="Render only this slug (or 'base' for og-image.png)")
+    args = ap.parse_args()
+
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    tools = load_tools()
+
+    if args.only:
+        if args.only == "base":
+            render_image(BASE_OUT, "Toolhub", "60 free dev tools, browser-only. No signup, no upload, no tracking.")
+            print(f"  ✓ {BASE_OUT.relative_to(ROOT)} ({BASE_OUT.stat().st_size // 1024} KB)")
+            return
+        wanted = [t for t in tools if t["slug"] == args.only]
+        if not wanted:
+            print(f"ERROR: no tool with slug {args.only!r}", file=sys.stderr)
+            sys.exit(1)
+        tools = wanted
+
+    rendered = 0
+    for tool in tools:
+        slug = tool["slug"]
+        en = tool["i18n"]["en"]
+        out = OUT_DIR / f"{slug}.png"
+        render_image(out, en["name"], en["tagline"])
+        rendered += 1
+        size_kb = out.stat().st_size // 1024
+        print(f"  ✓ og-images/{slug}.png ({size_kb} KB)")
+
+    if not args.only:
+        render_image(BASE_OUT, "Toolhub", "60 free dev tools, browser-only. No signup, no upload, no tracking.")
+        size_kb = BASE_OUT.stat().st_size // 1024
+        print(f"  ✓ og-image.png ({size_kb} KB) [base]")
+
+    print(f"Done. Rendered {rendered} tool image(s).")
+
+
+if __name__ == "__main__":
+    main()
