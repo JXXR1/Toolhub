@@ -493,6 +493,7 @@ def render_tool(tool: dict, lang: str) -> str:
         "LBL_NO_INPUT": ui["no_input"],
         "LBL_INVALID": ui["invalid_input"],
         "LBL_INSTALL_APP": ui["install_app"],
+        "LBL_INSTALL_APP_HINT": ui["install_app_hint"],
     }
     body = fill_braces(tool["body"], label_map)
     script = fill_braces(tool.get("script", ""), label_map)
@@ -554,6 +555,7 @@ def render_tool(tool: dict, lang: str) -> str:
         "ALL_TOOLS": ui["all_tools"],
         "THEME_TIP": ui["theme_tip"],
         "INSTALL_APP": ui["install_app"],
+        "INSTALL_APP_HINT": ui["install_app_hint"],
         "LANGUAGE": ui["language"],
         "SLUG": slug,
         "TOOL_BODY": body,
