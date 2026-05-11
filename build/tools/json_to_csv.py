@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "JSON do CSV", "tagline": "Konwertuj tablice obiektów JSON na CSV. Auto-wykrywanie pól, własne delimitery, poprawny escape pod Excela i Google Sheets.", "description": "Darmowy online konwerter JSON do CSV. Spłaszcza tablice obiektów w wiersze, escape'uje cudzysłowy wg RFC 4180, wspiera delimitery przecinek/średnik/tab."},
         "ja": {"name": "JSON から CSV", "tagline": "JSON のオブジェクト配列を CSV に変換。フィールド自動検出、カスタム区切り、Excel・Google Sheets 向けに正しくエスケープ。", "description": "オンライン無料の JSON → CSV コンバーター。オブジェクト配列を行に展開し、RFC 4180 に従って引用符をエスケープ。カンマ／セミコロン／タブの区切り文字に対応します。"},
         "nl": {"name": "JSON naar CSV", "tagline": "Converteer JSON-arrays van objects naar CSV. Detecteert velden automatisch, ondersteunt custom delimiters, escapet correct voor Excel en Google Sheets.", "description": "Gratis online JSON-naar-CSV converter. Flat arrays van objects naar rows, escapet quotes volgens RFC 4180, ondersteunt komma/puntkomma/tab delimiters."},
+        "tr": {"name": "JSON'dan CSV'ye", "tagline": "Nesne JSON dizilerini CSV'ye dönüştür. Alanları otomatik tespit eder, özel sınırlayıcıları destekler, Excel ve Google Sheets için doğru escape yapar.", "description": "Ücretsiz online JSON'dan CSV'ye dönüştürücü. Nesne dizilerini satırlara düzleştirir, tırnakları RFC 4180'e göre escape eder, virgül/noktalı virgül/sekme sınırlayıcılarını destekler."},
     },
     "body": """
 <div class="tool-card">
@@ -190,6 +191,25 @@ document.addEventListener('DOMContentLoaded', jcRun);
   <li><strong>Geneste objects/arrays worden gestringified.</strong> Als je een flattened CSV nodig hebt (één kolom per geneste key), pre-flatten je het JSON voor je het invoert.</li>
   <li><strong>Excel + delimiters.</strong> Europese locales defaulten op puntkomma's; switch de delimiter zodat het bestand met kolommen opent in plaats van één grote regel. RFC 4180-escaping wordt sowieso toegepast.</li>
   <li><strong>UTF-8 BOM.</strong> Excel op macOS verprutst non-ASCII soms zonder een BOM. Deze tool zet er GEEN voor — pak de output door een BOM-toevoegende stap als je mojibake ziet.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Ters yolculuk: bir JSON array besle ve Excel, Google Sheets veya tablosal biçimleri tercih eden herhangi bir veri aracı için hazır bir CSV çıkar. Başlıklar nesne anahtarlarından otomatik tespit edilir; iç içe değerler tek hücrelere JSON-stringify edilir, böylece hiçbir şey sessizce kaybolmaz.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Sadece spreadsheet açan bir paydaş için bir API yanıtını CSV'ye dönüştürme.</li>
+  <li>Sheets'te pivot/filter yapabileceğin bir şeye JSON dump'tan bir yığın kayıt dışa aktarma.</li>
+  <li>CSV alan veritabanı import'ları için fixture satırları üretme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Başlık çıkarımı tüm nesne anahtarlarının birleşimini kullanır.</strong> Anahtar eksik bir satır boş hücre olur; sütun kaybolmaz.</li>
+  <li><strong>İç içe nesneler/array'ler stringify edilir.</strong> Düzleştirilmiş bir CSV gerekiyorsa (iç içe anahtar başına bir sütun), beslemeden önce JSON'u önceden düzleştir.</li>
+  <li><strong>Excel + sınırlayıcılar.</strong> Avrupa locale'leri varsayılan olarak noktalı virgül kullanır; dosya tek dev satır yerine sütunlarla açılsın diye sınırlayıcıyı değiştir. Her durumda RFC 4180 escape uygulanır.</li>
+  <li><strong>UTF-8 BOM.</strong> macOS'ta Excel BOM olmadan bazen ASCII olmayanı bozar. Bu araç birini önüne EKLEMEZ — mojibake görürsen çıktıyı BOM-ekleme adımından geçir.</li>
 </ul>
 """,
     },

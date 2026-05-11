@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Pobieranie Miniatur YouTube", "tagline": "Wklej dowolny URL albo ID wideo YouTube i pobierz każdy dostępny rozmiar miniatury — bezpośrednie linki, bez uploadu, bez rejestracji.", "description": "Darmowy downloader miniatur YouTube. Wyciąga ID wideo z dowolnej formy URL YouTube (watch, youtu.be, shorts, embed, /v/) i pokazuje wszystkie dostępne rozdzielczości miniatur z bezpośrednimi linkami do pobrania."},
         "ja": {"name": "YouTube サムネイルダウンローダー", "tagline": "YouTube の URL や動画 ID を貼り付けて、利用可能な全サイズのサムネイルを取得 — 直接ダウンロード、登録不要。", "description": "無料の YouTube サムネイルダウンローダー。YouTube の各種 URL 形式（watch、youtu.be、shorts、embed、/v/）から動画 ID を抽出し、利用可能なすべての解像度のサムネイルを直接ダウンロードリンクとともに表示します。"},
         "nl": {"name": "YouTube Thumbnail Downloader", "tagline": "Plak elke YouTube-URL of video-ID en grijp elke beschikbare thumbnail-size — directe downloadlinks, geen upload, geen registratie.", "description": "Gratis YouTube thumbnail downloader. Extraheert de video-ID uit elke YouTube-URL (watch, youtu.be, shorts, embed, /v/) en toont alle beschikbare thumbnail-resoluties met directe downloadlinks."},
+        "tr": {"name": "YouTube Thumbnail İndirici", "tagline": "Herhangi bir YouTube URL'i veya video ID'sini yapıştır ve mevcut her thumbnail boyutunu yakala — doğrudan indirme linkleri, upload yok, kayıt yok.", "description": "Ücretsiz YouTube thumbnail indirici. Herhangi bir YouTube URL'inden (watch, youtu.be, shorts, embed, /v/) video ID'sini çıkarır ve doğrudan indirme linkleriyle mevcut tüm thumbnail çözünürlüklerini gösterir."},
     },
     "body": """
 <div class="tool-card">
@@ -256,6 +257,37 @@ document.addEventListener('DOMContentLoaded', ytRun);
   <li><strong>Het is nog steeds YouTube's image.</strong> Hot-linking is prima; rehosten op je eigen CDN is technisch prima maar check de licensing als je het commercieel gebruikt. De videomaker kan copyright hebben op de visuele content van het frame.</li>
   <li><strong>WebP hier niet ondersteund.</strong> YouTube serveert ook <code>.webp</code>-versies (kleinere files), maar die worden vanaf een ander CDN-pad geserveerd en niet door deze tool blootgesteld.</li>
   <li><strong>Live streams en Shorts</strong> werken prima — de URL-parser handelt alle moderne vormen af — maar live-stream thumbnails veranderen terwijl de stream live is.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Her YouTube videosunun öngörülebilir URL'lerde önceden üretilmiş küçük bir thumbnail görsel seti vardır — YouTube bunları kendisi arama sonuçlarında, embed'lerde ve önizlemelerde kullanır. Bu araç herhangi bir YouTube URL biçiminden (watch, youtu.be, Shorts, embed, /v/) 11 karakterlik video ID'sini çıkarır ve mevcut her boyutu doğrudan indirme linkleri ve URL-kopyala düğmeleriyle düzenler. Çevrimdışı önizlemeye, bir blog gönderisi için hero görseline, Discord/Slack zengin linkine veya özel video player için yedek poster'a ihtiyacın olduğunda kullanışlıdır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir blog gönderisine bir YouTube videosu gömme ve YouTube'un gösterdiği aynı thumbnail'i, yerel olarak barındırma.</li>
+  <li>Hâlâ bir görsele ihtiyacın olduğu Notion / Slack / e-postada tıklanabilir "bu videoyu izle" tile yapma.</li>
+  <li>Özel video player kurma ve iframe yüklenmeden önce bir poster görseline ihtiyaç duyma.</li>
+  <li>Referans, içerik veya moodboard materyali olarak çevrimdışı kullanım için bir thumbnail kaydetme.</li>
+  <li>YouTube Data API ile uğraşmadan en yüksek çözünürlüklü thumbnail'i alma.</li>
+</ul>
+
+<h3>Varyantlar açıklandı</h3>
+<ul>
+  <li><strong>maxresdefault</strong> (1280×720) — orijinal full-HD thumbnail. Yalnızca HD yüklenen videolar için var; aksi takdirde URL 404 döner ve önizleme boş olur.</li>
+  <li><strong>sddefault</strong> (640×480) — modern çağda çoğu video için üretilir.</li>
+  <li><strong>hqdefault</strong> (480×360) — <strong>her zaman vardır</strong>, en eski YouTube videolarına kadar gider. Bunu yedek olarak kullan.</li>
+  <li><strong>mqdefault</strong> (320×180) ve <strong>default</strong> (120×90) — küçük önizlemeler; in-list render için kullanışlıdır.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>maxresdefault sıklıkla 404 verir.</strong> Eski veya düşük çözünürlüklü yüklemelerde yok. Yedek zincirini kur: <code>maxresdefault → sddefault → hqdefault</code>.</li>
+  <li><strong>hqdefault'ta siyah bantlar.</strong> 480×360 thumbnail 4:3 olmayan kaynaklar için letterbox edilir — üstte ve altta bantlar vardır. <code>mqdefault</code> (320×180) modern yüklemeler için doğru 16:9 en-boyuna sahiptir.</li>
+  <li><strong>1/2/3 kareleri.</strong> YouTube aynı path'te <code>1.jpg</code>, <code>2.jpg</code>, <code>3.jpg</code>'i de açığa çıkarır — videodan otomatik olarak çıkarılan üç kare. Bazen özel bir poster için gerçekten istediğin biri budur ve varsayılan varyant listesinde değildirler.</li>
+  <li><strong>Hâlâ YouTube'un görseli.</strong> Hot-link yapma iyidir; kendi CDN'inde yeniden barındırma teknik olarak iyidir ama ticari kullanıyorsan lisanslamayı kontrol et. Video oluşturucusu karenin görsel içeriği üzerinde telif hakkına sahip olabilir.</li>
+  <li><strong>WebP burada desteklenmiyor.</strong> YouTube ayrıca <code>.webp</code> sürümlerini de sunar (daha küçük dosyalar), ama farklı bir CDN path'ten servis edilirler ve bu araç tarafından açığa çıkarılmazlar.</li>
+  <li><strong>Canlı yayınlar ve Shorts</strong> iyi çalışır — URL parser tüm modern formları işler — ama canlı yayın thumbnail'leri yayın sırasında değişir.</li>
 </ul>
 """,
     },

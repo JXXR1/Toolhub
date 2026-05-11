@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cron İfadesi Oluşturucu — Toolhub</title>
+  <meta name="description" content="Ücretsiz online cron ifadesi oluşturucu. Alanları açılır menü ve hazır ayarlardan seç, cron string'ini al ve yerel saat diliminde sonraki 5 çalışma zamanını gör. Standart 5 alanlı crontab.">
+  <meta property="og:title" content="Cron İfadesi Oluşturucu — Toolhub">
+  <meta property="og:description" content="Ücretsiz online cron ifadesi oluşturucu. Alanları açılır menü ve hazır ayarlardan seç, cron string'ini al ve yerel saat diliminde sonraki 5 çalışma zamanını gör. Standart 5 alanlı crontab.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/cron-builder/">
+  <meta property="og:image" content="https://toolhub.software/og-images/cron-builder.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/cron-builder.png">
+  <link rel="canonical" href="https://toolhub.software/tr/cron-builder/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/cron-builder/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/cron-builder/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/cron-builder/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/cron-builder/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/cron-builder/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/cron-builder/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/cron-builder/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/cron-builder/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/cron-builder/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/cron-builder/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/cron-builder/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/cron-builder/#tool",
+        "name": "Cron İfadesi Oluşturucu",
+        "description": "Ücretsiz online cron ifadesi oluşturucu. Alanları açılır menü ve hazır ayarlardan seç, cron string'ini al ve yerel saat diliminde sonraki 5 çalışma zamanını gör. Standart 5 alanlı crontab.",
+        "url": "https://toolhub.software/tr/cron-builder/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["cron", "schedule", "builder", "crontab", "next run"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "Cron İfadesi Oluşturucu", "item": "https://toolhub.software/tr/cron-builder/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cron sözdizimi ünlü şekilde yoğundur — beş alan, her biri joker, aralık, liste ve adımları kabul eder. Her seferinde sıfırdan yazmak yazım hatasına davet çıkarır. Bu builder hazır ayarlardan başlamana (her 5 dakika, hafta içi 09:00'da vb.) veya tek tek alanlara yazmana, sonuç cron string'ini görmene, sade bir İngilizce özetine ulaşmana ve yerel saat diliminde sonraki beş gerçek çalışma zamanına karşı doğrulamana izin verir. Bu aracın tamamlayıcısı, mevcut bir ifadeyi aynı önizlemeye çözen Cron Expression Parser 'dır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yeni bir crontab girdisi, Kubernetes CronJob , GitHub Actions zaman çizelgesi veya AWS EventBridge kuralı kurma. \"Her hafta içi sabah çalış\" gereksinimini sözdizimsel olarak doğru bir cron satırına çevirme. Çizdiğin bir ifadenin deploy etmeden önce gerçekten istediğin zamanda çalışacağının sanity check'i. Birini cron'a alıştırma — dropdown'lar ve önizleme sözdizimini öğretsin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Alan sözdizimi çeteli",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "* — alanın aralığındaki her değer. */N — her N'inci (alt sınırdan başlayarak). A-B — aralık, dahil. A,B,C — belirli değerlerin listesi. A-B/N — A–B aralığında her N'inci."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Day-of-month + day-of-week etkileşir. Çoğu cron uygulaması her ikisi de kısıtlandığında bunları OR'lar: * * 15 * 1 15'inde VEYA Pazartesi'de çalışır, \"Pazartesi ise 15'inde\" değil. Saat dilimi burada tarayıcının yerel dilimidir. Gerçek cron daemon'ları sunucunun saat diliminde (genellikle UTC) çalışır. Bir sunucuya yapıştırmadan önce doğrula. */N tam olarak \"her N\" değildir. Dakikada */15 = 0,15,30,45 — 12,27,42,57 değil. Belirli bir faz istiyorsan liste kullan. Adım + aralık kombinasyonları. 0-30/5 sadece 0,5,10,15,20,25,30'u kapsar. Bazı cron lehçeleri alan ekler. Quartz cron 6 veya 7 alana sahiptir (saniyeler ve yıl ile). systemd timer'lar tamamen farklı bir biçim kullanır. Bu builder standart 5 alanlı crontab'ı hedefler. Friday-the-13th cron'da ifade edilmesi zordur. Cron'un day-of-month ve day-of-week'i OR ile etkileşir, bu yüzden bunları katı şekilde birleştirmek bir wrapper script gerektirir."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cron İfadesi Oluşturucu",
+  "description": "Görsel olarak cron ifadesi kur — dakika, saat, gün, ay, hafta günü — ve sonraki 5 çalışma zamanını önizle.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Seçenekleri ayarla",
+      "text": "İhtiyacın olan cron ifadesi seçeneklerini seç."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Oluştur düğmesine tıkla",
+      "text": "Yeni bir cron ifadesi üretmek için Oluştur düğmesine bas."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kopyala",
+      "text": "Üretilen cron ifadesi verisini kopyalamak için Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/cron-builder/'; else location.href='/cron-builder/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / Cron İfadesi Oluşturucu</div>
+    <h1>Cron İfadesi Oluşturucu</h1>
+    <p class="tagline">Görsel olarak cron ifadesi kur — dakika, saat, gün, ay, hafta günü — ve sonraki 5 çalışma zamanını önizle.</p>
+    
+<div class="tool-card">
+  <label>Preset</label>
+  <select id="cb-preset" onchange="cbPreset()">
+    <option value="">— choose a preset or build below —</option>
+    <option value="* * * * *">Every minute</option>
+    <option value="*/5 * * * *">Every 5 minutes</option>
+    <option value="*/15 * * * *">Every 15 minutes</option>
+    <option value="0 * * * *">Every hour (top of hour)</option>
+    <option value="0 0 * * *">Daily at midnight</option>
+    <option value="0 9 * * *">Daily at 09:00</option>
+    <option value="0 9 * * 1-5">Weekdays at 09:00</option>
+    <option value="0 0 * * 0">Weekly Sunday midnight</option>
+    <option value="0 0 1 * *">Monthly (1st at midnight)</option>
+    <option value="0 0 1 1 *">Yearly (Jan 1 at midnight)</option>
+  </select>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Minute (0–59)</label>
+      <input type="text" id="cb-min" value="0" oninput="cbBuild()" placeholder="* | */5 | 0,30 | 0-29">
+    </div>
+    <div>
+      <label>Hour (0–23)</label>
+      <input type="text" id="cb-hour" value="9" oninput="cbBuild()" placeholder="* | */2 | 9-17">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Day of month (1–31)</label>
+      <input type="text" id="cb-dom" value="*" oninput="cbBuild()" placeholder="* | 1 | 1,15">
+    </div>
+    <div>
+      <label>Month (1–12)</label>
+      <input type="text" id="cb-mon" value="*" oninput="cbBuild()" placeholder="* | */3 | 1-6">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Day of week (0=Sun – 6=Sat)</label>
+      <input type="text" id="cb-dow" value="1-5" oninput="cbBuild()" placeholder="* | 1-5 | 0,6">
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <button class="secondary" onclick="cbReset()" style="width:100%">Sıfırla → */5 * * * *</button>
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Cron expression</label>
+  <div class="output-row">
+    <pre class="output" id="cb-expr" style="margin:0;flex:1;font-size:1.05rem">0 9 * * 1-5</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('cb-expr', this)">Kopyala</button>
+  </div>
+  <div class="meta" id="cb-explain" style="margin-top:0.5rem"></div>
+</div>
+<div class="tool-card">
+  <label>Next 5 fire times (local timezone)</label>
+  <pre class="output" id="cb-next">Sonucu görmek için yukarıya giriş yapın.</pre>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>Cron sözdizimi ünlü şekilde yoğundur — beş alan, her biri joker, aralık, liste ve adımları kabul eder. Her seferinde sıfırdan yazmak yazım hatasına davet çıkarır. Bu builder hazır ayarlardan başlamana (her 5 dakika, hafta içi 09:00'da vb.) veya tek tek alanlara yazmana, sonuç cron string'ini görmene, sade bir İngilizce özetine ulaşmana ve yerel saat diliminde sonraki beş gerçek çalışma zamanına karşı doğrulamana izin verir. Bu aracın tamamlayıcısı, mevcut bir ifadeyi aynı önizlemeye çözen <a href="/cron-parser/">Cron Expression Parser</a>'dır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Yeni bir <code>crontab</code> girdisi, Kubernetes <code>CronJob</code>, GitHub Actions zaman çizelgesi veya AWS EventBridge kuralı kurma.</li>
+  <li>"Her hafta içi sabah çalış" gereksinimini sözdizimsel olarak doğru bir cron satırına çevirme.</li>
+  <li>Çizdiğin bir ifadenin deploy etmeden önce gerçekten istediğin zamanda çalışacağının sanity check'i.</li>
+  <li>Birini cron'a alıştırma — dropdown'lar ve önizleme sözdizimini öğretsin.</li>
+</ul>
+
+<h3>Alan sözdizimi çeteli</h3>
+<ul>
+  <li><code>*</code> — alanın aralığındaki her değer.</li>
+  <li><code>*/N</code> — her N'inci (alt sınırdan başlayarak).</li>
+  <li><code>A-B</code> — aralık, dahil.</li>
+  <li><code>A,B,C</code> — belirli değerlerin listesi.</li>
+  <li><code>A-B/N</code> — A–B aralığında her N'inci.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Day-of-month + day-of-week etkileşir.</strong> Çoğu cron uygulaması her ikisi de kısıtlandığında bunları OR'lar: <code>* * 15 * 1</code> 15'inde VEYA Pazartesi'de çalışır, "Pazartesi ise 15'inde" değil.</li>
+  <li><strong>Saat dilimi burada tarayıcının yerel dilimidir.</strong> Gerçek cron daemon'ları sunucunun saat diliminde (genellikle UTC) çalışır. Bir sunucuya yapıştırmadan önce doğrula.</li>
+  <li><strong><code>*/N</code> tam olarak "her N" değildir.</strong> Dakikada <code>*/15</code> = 0,15,30,45 — 12,27,42,57 değil. Belirli bir faz istiyorsan liste kullan.</li>
+  <li><strong>Adım + aralık kombinasyonları.</strong> <code>0-30/5</code> sadece 0,5,10,15,20,25,30'u kapsar.</li>
+  <li><strong>Bazı cron lehçeleri alan ekler.</strong> Quartz cron 6 veya 7 alana sahiptir (saniyeler ve yıl ile). systemd timer'lar tamamen farklı bir biçim kullanır. Bu builder standart 5 alanlı crontab'ı hedefler.</li>
+  <li><strong>Friday-the-13th cron'da ifade edilmesi zordur.</strong> Cron'un day-of-month ve day-of-week'i OR ile etkileşir, bu yüzden bunları katı şekilde birleştirmek bir wrapper script gerektirir.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/cron-parser/">Cron İfadesi Parser</a> <a href="/tr/timestamp-converter/">Unix Timestamp Dönüştürücü</a> <a href="/tr/timezone-converter/">Saat Dilimi Dönüştürücü</a> <a href="/tr/date-calculator/">Tarih Hesaplayıcı</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const CB_RANGES = [[0,59],[0,23],[1,31],[1,12],[0,7]];
+
+function cbPreset(){
+  const v = document.getElementById('cb-preset').value;
+  if(!v) return;
+  const f = v.split(/\s+/);
+  document.getElementById('cb-min').value = f[0];
+  document.getElementById('cb-hour').value = f[1];
+  document.getElementById('cb-dom').value = f[2];
+  document.getElementById('cb-mon').value = f[3];
+  document.getElementById('cb-dow').value = f[4];
+  cbBuild();
+}
+function cbReset(){
+  document.getElementById('cb-min').value = '*/5';
+  document.getElementById('cb-hour').value = '*';
+  document.getElementById('cb-dom').value = '*';
+  document.getElementById('cb-mon').value = '*';
+  document.getElementById('cb-dow').value = '*';
+  document.getElementById('cb-preset').value = '';
+  cbBuild();
+}
+
+function cbExpand(field, idx){
+  const [lo,hi] = CB_RANGES[idx];
+  const out = new Set();
+  field.split(',').forEach(part => {
+    let step = 1;
+    if (part.includes('/')){ const [a,b] = part.split('/'); step = parseInt(b,10); part = a; }
+    let from = lo, to = hi;
+    if (part === '*'){ /* keep */ }
+    else if (part.includes('-')){ const [a,b] = part.split('-'); from = parseInt(a,10); to = parseInt(b,10); }
+    else { from = to = parseInt(part,10); }
+    if (isNaN(from) || isNaN(to) || from < lo || to > hi || from > to) throw new Error('Bad value: ' + part + ' (range ' + lo + '–' + hi + ')');
+    if (isNaN(step) || step < 1) throw new Error('Bad step: ' + step);
+    for (let v = from; v <= to; v += step) out.add(idx === 4 && v === 7 ? 0 : v);
+  });
+  return out;
+}
+
+function cbMatches(date, sets){
+  return sets[0].has(date.getMinutes())
+    && sets[1].has(date.getHours())
+    && sets[2].has(date.getDate())
+    && sets[3].has(date.getMonth() + 1)
+    && sets[4].has(date.getDay());
+}
+
+function cbNext(expr, count){
+  const fields = expr.trim().split(/\s+/);
+  if (fields.length !== 5) throw new Error('Expected 5 fields, got ' + fields.length);
+  const sets = fields.map((f, i) => cbExpand(f, i));
+  const now = new Date();
+  let d = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 1, 0, 0);
+  const out = [];
+  let safety = 0;
+  while (out.length < count && safety < 600000){
+    if (cbMatches(d, sets)) out.push(new Date(d));
+    d.setMinutes(d.getMinutes() + 1);
+    safety++;
+  }
+  if (safety >= 600000) throw new Error('No matches found in the next ~1 year');
+  return out;
+}
+
+function cbExplain(expr){
+  const f = expr.trim().split(/\s+/);
+  if(f.length !== 5) return '';
+  const [m,h,dom,mon,dow] = f;
+  let s = 'At ';
+  if(m === '*') s += 'every minute';
+  else if(m.startsWith('*/')) s += 'every ' + m.slice(2) + ' minutes';
+  else s += 'minute ' + m;
+  s += ', ';
+  if(h === '*') s += 'every hour';
+  else if(h.startsWith('*/')) s += 'every ' + h.slice(2) + ' hours';
+  else s += 'hour ' + h;
+  if(dow !== '*'){
+    const names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    if(dow.includes('-')){
+      const [a,b] = dow.split('-').map(x => parseInt(x,10));
+      s += ', on ' + names[a] + '–' + names[b];
+    } else if(dow.includes(',')){
+      s += ', on ' + dow.split(',').map(x => names[parseInt(x,10) % 7]).join(',');
+    } else if(!isNaN(parseInt(dow,10))){
+      s += ', on ' + names[parseInt(dow,10) % 7];
+    }
+  }
+  if(dom !== '*') s += ', on day ' + dom;
+  if(mon !== '*'){
+    const monNames = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    if(mon.includes('-')){ const [a,b] = mon.split('-').map(x=>parseInt(x,10)); s += ', in ' + monNames[a] + '–' + monNames[b]; }
+    else if(!isNaN(parseInt(mon,10))) s += ', in ' + monNames[parseInt(mon,10)];
+    else s += ', in month ' + mon;
+  }
+  return s + '.';
+}
+
+function cbBuild(){
+  const expr = [
+    document.getElementById('cb-min').value,
+    document.getElementById('cb-hour').value,
+    document.getElementById('cb-dom').value,
+    document.getElementById('cb-mon').value,
+    document.getElementById('cb-dow').value
+  ].join(' ');
+  document.getElementById('cb-expr').textContent = expr;
+  document.getElementById('cb-expr').classList.remove('error');
+  const next = document.getElementById('cb-next');
+  const explain = document.getElementById('cb-explain');
+  next.classList.remove('error');
+  try {
+    const dates = cbNext(expr, 5);
+    next.textContent = dates.map((d,i) => (i+1) + '.  ' + d.toLocaleString(undefined,{weekday:'short',year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit'})).join('\n');
+    explain.textContent = cbExplain(expr);
+  } catch(e){
+    next.classList.add('error');
+    next.textContent = '✗ ' + e.message;
+    explain.textContent = '';
+  }
+}
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(cbBuild));
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

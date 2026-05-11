@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の JSON フォーマッター・バリデーター。整形（pretty-print）、ミニファイ、構文検証を行い、正確なエラー位置を表示します。",
         },
         "nl": {"name": "JSON Formatter", "tagline": "Formatteer, valideer en minify JSON direct. Errors gehighlight met regel en kolom.", "description": "Gratis online JSON-formatter en -validator. Pretty-print, minify en check JSON-syntax met precieze foutmeldingen."},
+        "tr": {"name": "JSON Formatter", "tagline": "JSON'u anında biçimlendir, doğrula ve küçült. Hatalar satır ve sütunla vurgulanır.", "description": "Ücretsiz online JSON formatter ve doğrulayıcı. JSON sözdizimini güzel yazdır, küçült ve hassas hata mesajlarıyla denetle."},
     },
     "body": """
 <div class="tool-card">
@@ -222,6 +223,26 @@ function jfValidate(){
   <li><strong>Smart quotes uit copy-paste.</strong> Word processors en chat-apps vervangen <code>"</code> graag "behulpzaam" door <code>"</code> / <code>"</code>. Die zijn geen geldige JSON-delimiters.</li>
   <li><strong>JSON heeft geen comments.</strong> Als jouw "JSON" <code>//</code> of <code>/* */</code> heeft, is het eigenlijk JSONC (gebruikt in VS Code config) — strip die voor parsen.</li>
   <li><strong>Getallen groter dan 2⁵³.</strong> JavaScript kan integers boven <code>9007199254740992</code> niet exact representeren. Twitter snowflake-IDs en vergelijkbaar moeten als strings ge-quote'd worden.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>JSON minified seyahat eder — bir API yanıtı gönderilirken her byte sayılır. Ama minified JSON okunmaz. Bu araç tarayıcının yerel <code>JSON.parse</code> / <code>JSON.stringify</code> üzerinden round-trip yaparak indent edilmiş, kopyalanabilir çıktı üretir, yapıyı doğrular veya boşluğu geri temizler. Hiçbir şey upload edilmez; her şey sayfada olur.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Minified bir API yanıtı yapıştırma ve bir insanın tarayabileceği bir şey geri alma.</li>
+  <li>Parser'ın tökezlediği tam satır/sütun ile sözdizimi hatalarını yakalama — sondaki virgüller, tırnaksız anahtarlar, smart quote'lar.</li>
+  <li>Boyutun önemli olduğu bir bağlama (URL parametreleri, ortam değişkenleri, config dosyaları) JSON yapıştırmadan önce boşluğu temizleme.</li>
+  <li>El yazımı JSON'unun başka bir araca pipe etmeden önce geçerli olduğunu doğrulama.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>JSON ≠ JavaScript nesne literal'i.</strong> Anahtarlar çift tırnak içinde olmalıdır. Tek tırnak, tırnaksız anahtarlar ve sondaki virgüller hepsi başarısız olur. JS nesne literal'ların varsa, önce bir dönüştürücüden geçir.</li>
+  <li><strong>Kopyala-yapıştırdan smart quote'lar.</strong> Word ve sohbet uygulamaları <code>"</code>'yi <code>"</code> / <code>"</code> ile "yardımcı" şekilde değiştirmeyi sever. Bunlar geçerli JSON sınırlayıcılar değildir.</li>
+  <li><strong>JSON'da yorum yoktur.</strong> "JSON"un <code>//</code> veya <code>/* */</code> içeriyorsa, aslında JSONC'tir (VS Code config tarafından kullanılır) — parse etmeden önce bunları temizle.</li>
+  <li><strong>2⁵³'ten büyük sayılar.</strong> JavaScript <code>9007199254740992</code> üzerindeki tamsayıları tam olarak temsil edemez. Twitter snowflake ID'leri ve benzerleri string olarak tırnaklanmalıdır.</li>
 </ul>
 """,
     },

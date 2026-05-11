@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Konwerter Unix Timestamp", "tagline": "Konwertuj między Unix timestampami a datami czytelnymi dla człowieka. Sekundy i milisekundy, UTC i lokalna.", "description": "Darmowy online konwerter Unix timestampów. Konwertuj między epoch w sekundach, milisekundach, ISO 8601 i datami czytelnymi dla człowieka w UTC albo czasie lokalnym."},
         "ja": {"name": "Unix タイムスタンプ変換", "tagline": "Unix タイムスタンプと人間可読な日時を相互変換。秒・ミリ秒、UTC・ローカルに対応。", "description": "オンライン無料の Unix タイムスタンプ変換ツール。エポック秒、ミリ秒、ISO 8601、UTC およびローカル時刻の人間可読な日時間で変換できます。"},
         "nl": {"name": "Unix Timestamp Converter", "tagline": "Converteer tussen Unix-timestamps en menselijk leesbare datums. Seconds en milliseconds, UTC en lokaal.", "description": "Gratis online Unix timestamp converter. Converteer tussen epoch seconds, milliseconds, ISO 8601 en menselijk leesbare datums in UTC of lokale tijd."},
+        "tr": {"name": "Unix Timestamp Dönüştürücü", "tagline": "Unix timestamp'leri ile insan tarafından okunabilir tarihler arasında dönüştür. Saniyeler ve milisaniyeler, UTC ve yerel.", "description": "Ücretsiz online Unix timestamp dönüştürücü. Epoch saniyeleri, milisaniyeler, ISO 8601 ve UTC veya yerel saatte insan tarafından okunabilir tarihler arasında dönüştür."},
     },
     "body": """
 <div class="tool-card">
@@ -247,6 +248,35 @@ document.addEventListener('DOMContentLoaded', tsNow);
   <li><strong>Negatieve timestamps</strong> zijn geldig en representeren datums voor 1970. Sommige libraries wijzen ze af — test voor je erop vertrouwt.</li>
   <li><strong>Auto-detectie is niet vlekkeloos.</strong> Een 10-cijferige waarde <em>kan</em> een millisecond-timestamp uit 1970 zijn — verdwijnend onwaarschijnlijk in de praktijk, maar als je weet welke unit je hebt, vertrouw niet op de heuristiek.</li>
   <li><strong>Sla altijd UTC op.</strong> Timestamps zijn tijdzone-vrij; "lokale tijd" is alleen voor display. De "Local"-regel in de output gebruikt je browser-zone, maar de onderliggende integer is altijd UTC.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir Unix timestamp tek bir tamsayıdır — 1970-01-01 00:00:00 UTC'den bu yana saniye (veya milisaniye) sayısı. Her yerdeler: log dosyaları, API yanıtları, JWT <code>iat</code>/<code>exp</code> claim'leri, veritabanı <code>created_at</code> sütunları, cache header'ları. Belirsiz ve saat dilimsizdirler, ama insan tarafından okunamaz, bu yüzden <code>1735689600</code>'da bir şey bozulduğunda, bunun 14:00 mı yoksa 04:00 mı, bugün mü yoksa geçen yıl mı olduğunu bilmen gerekir. Bu araç tamsayı formu ile okunabilir formu her iki yönde çevirir, saniye/ms otomatik tespiti ve göreceli zaman ipucuyla.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir log girdisinden veya API yanıtından <code>"timestamp": 1735689600</code> alanını çözme.</li>
+  <li>Bir JWT'nin ne zaman verildiğini veya ne zaman süresinin dolduğunu kontrol etme (<code>iat</code> / <code>exp</code> claim'leri saniye-since-epoch'tur).</li>
+  <li><code>retry-after</code> header, zamanlanmış iş veya cache TTL için gelecekteki bir timestamp hesaplama.</li>
+  <li>Veritabanında saklanan bir tarihin saniye, milisaniye veya mikrosaniye cinsinden olup olmadığının sanity check'i.</li>
+  <li>"Şimdi"yi anlık aracın istediği biçime dönüştürme.</li>
+</ul>
+
+<h3>Saniye, milisaniye, mikrosaniye</h3>
+<ul>
+  <li><strong>Saniye</strong> — orijinal Unix konvansiyonu; bugün ~10 basamak (örn. <code>1735689600</code>). C, Linux, JWT, çoğu API, çoğu veritabanı <code>integer</code> sütununda kullanılır.</li>
+  <li><strong>Milisaniye</strong> — JavaScript'in <code>Date.now()</code>, Java <code>System.currentTimeMillis()</code>, Kafka, birçok JSON API. ~13 basamak.</li>
+  <li><strong>Mikrosaniye (16 basamak) / nanosaniye (19 basamak)</strong> — Python <code>time.time_ns()</code>, Go <code>time.Now().UnixNano()</code>, bazı metrik sistemleri. Bu araç bunları otomatik işlemez — önce 1.000 veya 1.000.000'a böl.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Yıl 2038 problemi.</strong> İşaretli 32-bit timestamp'lar <code>2147483647</code> = <strong>03:14:07 UTC, 19 Ocak 2038</strong>'de taşar. Eski C kodu, MySQL <code>TIMESTAMP</code> sütunları ve gömülü sistemler 1901'e dönebilir. Modern sistemler 64-bit kullanır ve ~292,277,026,596 yılına kadar iyidir.</li>
+  <li><strong>Unix zamanı leap saniyeleri atlar.</strong> Bir Unix günü tam olarak 86.400 saniyedir, UTC 86.401 olduğunda bile. Bu tasarım gereğidir (aritmetiği basit tutar) ama Unix timestamp'larını sub-saniye doğruluklu astronomi veya GPS için kullanamayacağın anlamına gelir.</li>
+  <li><strong>Negatif timestamp'lar</strong> geçerlidir ve 1970'ten önceki tarihleri temsil eder. Bazı kütüphaneler bunları reddeder — güvenmeden önce test et.</li>
+  <li><strong>Otomatik tespit kusursuz değildir.</strong> 10 basamaklı bir değer 1970'ten bir milisaniye timestamp'i <em>olabilir</em> — pratikte yok denecek kadar olası değildir, ama hangi birimin olduğunu biliyorsan, sezgisele güvenme.</li>
+  <li><strong>Her zaman UTC sakla.</strong> Timestamp'lar saat dilimsizdir; "yerel saat" sadece gösterim içindir. Çıktıdaki "Yerel" satırı tarayıcının dilimini kullanır, ama temel tamsayı her zaman UTC'dir.</li>
 </ul>
 """,
     },

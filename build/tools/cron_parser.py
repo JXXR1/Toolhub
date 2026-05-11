@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の cron 式パーサー。5 フィールドの crontab 構文を検証し、ローカルタイムゾーンで次の 10 回の予定実行時刻を一覧表示します。",
         },
         "nl": {"name": "Cron Expression Parser", "tagline": "Parse cron-expressies en zie de volgende 10 fire times. Standaard 5-veld crontab.", "description": "Gratis online cron expression parser. Valideert 5-veld crontab-syntax en lijst de volgende 10 geplande fire times in je lokale tijdzone."},
+        "tr": {"name": "Cron İfadesi Parser", "tagline": "Cron ifadelerini parse et ve sonraki 10 çalışma zamanını gör. Standart 5 alanlı crontab.", "description": "Ücretsiz online cron ifadesi parser. 5 alanlı crontab sözdizimini doğrular ve yerel saat diliminde planlanan sonraki 10 çalışma zamanını listeler."},
     },
     "body": """
 <div class="tool-card">
@@ -317,6 +318,37 @@ document.addEventListener('DOMContentLoaded', cronRun);
   <li><strong>Step + range combinaties.</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30. De step werkt alleen binnen de range.</li>
   <li><strong>Tijdzone is hier browser-lokaal.</strong> Echte cron-daemons draaien in servertijd (vaak UTC). Een schedule die in je browser prima lijkt, kan op de server op een andere wandkloktijd vuren. Bevestig de tijdzone voor je plakt.</li>
   <li><strong>Sommige cron-varianten voegen velden toe.</strong> Quartz cron heeft 6 of 7 velden (met seconden en jaar). systemd timers gebruiken een heel ander formaat. Deze tool parset standaard 5-veld crontab.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Cron ifadeleri güçlüdür ve yanlış yazılması kolaydır. <code>0 0 * * 1-5</code> hafta içi gece yarısı zaman çizelgesi gibi görünür ve öyledir. <code>*/15 0-9 * * *</code> mesai saatlerinde her on beş dakikada gibi görünür ve öyledir. <code>0 0 1 */3 *</code> üç ayda bir gibi görünür... <code>*/3</code>'ün "her üçüncü ay" anlamına geldiğini hatırladıysan. Bu araç bir ifade yapıştırmana, gerçekten ne anlama geldiğini sade dilde görmene ve deploy etmeden önce doğrulamak için sonraki 10 çalışma zamanını önizlemene izin verir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Kaydetmeden önce <code>crontab -e</code>'deki bir cron satırının sanity check'i.</li>
+  <li>Kubernetes <code>CronJob</code> zaman çizelgesi string'ini "bu gerçekten ne zaman çalışacak?" diye çevirme.</li>
+  <li>Yeni bir zaman çizelgesi tasarlama — İngilizce ile başla ("her hafta içi sabah") ve önizleme eşleşene kadar ifadeyi yinele.</li>
+  <li>"Beklediğim zaman çalışmadı" diye debug'lanan bir iş — zaman çizelgesini yapıştır, sonraki 10 zamana bak, sürprizin gerçeklik mi yoksa ifade mi olduğunu gör.</li>
+</ul>
+
+<h3>Cron alan referansı</h3>
+<table>
+  <tr><th>Alan</th><th>Aralık</th><th>Joker</th></tr>
+  <tr><td>Dakika</td><td>0-59</td><td><code>*</code> · <code>*/5</code> · <code>0,30</code> · <code>0-29</code></td></tr>
+  <tr><td>Saat</td><td>0-23</td><td>aynı</td></tr>
+  <tr><td>Ayın günü</td><td>1-31</td><td>aynı</td></tr>
+  <tr><td>Ay</td><td>1-12</td><td>aynı</td></tr>
+  <tr><td>Haftanın günü</td><td>0-6 (0 = Pazar, 7 de = Pazar)</td><td>aynı</td></tr>
+</table>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Day-of-month + day-of-week etkileşir.</strong> Her ikisi de kısıtlanmışsa (örn. <code>15 * * * 1</code> "15'inde VEYA Pazartesi" anlamında), çoğu cron uygulaması bunları OR'lar. Bu araç bu geleneği izler.</li>
+  <li><strong><code>*/N</code> tam olarak "her N" değildir.</strong> "Alt sınırdan başlayarak her N"dir, bu yüzden dakikada <code>*/15</code> = 0,15,30,45 (12,27,42,57 değil). Sonra başlatmak için liste kullan: <code>5,20,35,50</code>.</li>
+  <li><strong>Adım + aralık kombinasyonları.</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30. Adım sadece aralık içinde geçerlidir.</li>
+  <li><strong>Saat dilimi burada tarayıcının yerel dilimidir.</strong> Gerçek cron daemon'ları sunucu zamanında (genellikle UTC) çalışır. Tarayıcında iyi görünen bir zaman çizelgesi sunucuda farklı saatte çalışabilir.</li>
+  <li><strong>Bazı cron lehçeleri alan ekler.</strong> Quartz cron 6 veya 7 alana sahiptir (saniyeler ve yıl ile). systemd timer'lar tamamen farklı bir biçim kullanır. Bu araç standart 5 alanlı crontab'ı parse eder.</li>
 </ul>
 """,
     },

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Markdown do HTML", "tagline": "Konwertuj Markdowna na czysty HTML z podglądem na żywo. Wspiera nagłówki, listy, kod, tabele, obrazki i linki.", "description": "Darmowy online konwerter Markdown do HTML. W smaku CommonMark: nagłówki, listy, fenced bloki kodu, tabele, obrazki, blockquote'y, formatowanie inline. Podgląd na żywo + kopia."},
         "ja": {"name": "Markdown から HTML", "tagline": "Markdown をクリーンな HTML に変換し、ライブプレビューを表示。見出し、リスト、コード、テーブル、画像、リンクに対応。", "description": "オンライン無料の Markdown → HTML コンバーター。CommonMark 風に対応：見出し、リスト、フェンス付きコード、テーブル、画像、ブロッククォート、インライン書式。ライブプレビューとコピーに対応。"},
         "nl": {"name": "Markdown naar HTML", "tagline": "Converteer Markdown naar schone HTML met een live preview. Ondersteunt headings, lists, code, tables, images en links.", "description": "Gratis online Markdown-naar-HTML converter. CommonMark-flavoured: headings, lists, fenced code, tables, images, blockquotes, inline formatting. Live preview + copy."},
+        "tr": {"name": "Markdown'dan HTML'e", "tagline": "Markdown'u canlı önizlemeyle temiz HTML'e dönüştür. Başlıkları, listeleri, kodu, tabloları, görselleri ve linkleri destekler.", "description": "Ücretsiz online Markdown'dan HTML'e dönüştürücü. CommonMark uyumlu: başlıklar, listeler, çitli kod, tablolar, görseller, blok alıntılar, satır içi biçimlendirme. Canlı önizleme + kopyala."},
     },
     "body": """
 <div class="md-grid">
@@ -283,6 +284,28 @@ document.addEventListener('DOMContentLoaded', mdRun);
   <li><strong>Tables vs alignment.</strong> Pipe-tables hebben een separator-row nodig (<code>|---|</code>) en gebruiken <code>:---:</code> / <code>:---</code> / <code>---:</code> voor center/left/right alignment. De separator vergeten is de meest voorkomende reden dat een "tabel" als één paragraaf rendert.</li>
   <li><strong>Smart punctuation.</strong> Sommige renderers converteren <code>--</code> naar en-dashes en straight quotes naar curly. Deze tool niet — laat door een typografie-pass gaan als je dat nodig hebt.</li>
   <li><strong>Round-trippen is niet lossless.</strong> Markdown → HTML → Markdown normaliseert heading-stijl, list-spacing en link-vorm. De semantiek overleeft; de exacte bytes niet.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Markdown gezegende en çok yazılan yazım biçimidir — README dosyaları, blog gönderileri, GitHub issue'ları, sohbet mesajları, doc siteleri. HTML, tarayıcıların render ettiği şeydir. Bu araç Markdown'u canlı önizlemeli temiz HTML'e dönüştürür, böylece bir CMS'e yapıştırmadan, statik bir sayfa oluşturmadan veya bir e-posta şablonunun parçası olarak göndermeden önce render edilen çıktının nasıl görüneceğini görebilirsin.</p>
+
+<h3>Desteklenen sözdizimi</h3>
+<ul>
+  <li>Başlıklar <code>#</code>'tan <code>######</code>'a; bold, italik, üstü çizili</li>
+  <li>Inline <code>`code`</code> ve fenced <code>```lang</code> blokları</li>
+  <li>Madde işaretli / numaralı / iç içe listeler</li>
+  <li>Linkler <code>[text](url)</code> ve görseller <code>![alt](url)</code></li>
+  <li>Blok alıntılar, hizalamalı pipe tabloları, yatay kurallar</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Bu hızlı bir in-browser parser'dır, spec suite değil.</strong> CommonMark ve GFM uygulamalar arasında farklılaşan uç durumlara (iç içe vurgu, link referans tanımları, autolink genişletme) sahiptir.</li>
+  <li><strong>Markdown içine gömülü HTML</strong> çoğunlukla olduğu gibi geçer, ancak bazı uygulamalar temizler. Bunu güvenlik için güvenme; güvenilmez markdown'u güvenilmez HTML olarak ele al.</li>
+  <li><strong>Tablolar - hizalama.</strong> Pipe tabloları bir ayraç satırı (<code>|---|</code>) gerektirir ve merkez/sol/sağ hizalama için <code>:---:</code> / <code>:---</code> / <code>---:</code> kullanır.</li>
+  <li><strong>Smart noktalama.</strong> Bazı renderer'lar <code>--</code>'i en dash'e ve düz tırnakları kıvrılmıştırılmışa dönüştürür. Bu araç dönüştürmez.</li>
+  <li><strong>Round-trip kayıpsız değildir.</strong> Markdown → HTML → Markdown başlık stilini, liste aralıklarını ve link biçimini normalize edecektir.</li>
 </ul>
 """,
     },

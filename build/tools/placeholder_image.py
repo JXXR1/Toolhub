@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Generator Placeholder Image", "tagline": "Generuj placeholderowe obrazki inline-SVG w dowolnym rozmiarze z własnym tekstem i kolorami. Wyjście jako data URI albo SVG do pobrania.", "description": "Darmowy generator placeholder imageów. Podaj width × height, tekst labela i kolory; dostaniesz inline-SVG do wklejenia gdziekolwiek — data URI, surowy markup albo download. Działa w całości w przeglądarce."},
         "ja": {"name": "プレースホルダー画像ジェネレーター", "tagline": "任意のサイズで、テキストや色をカスタムしたインライン SVG プレースホルダー画像を生成。data URI または SVG ダウンロードで出力。", "description": "無料のプレースホルダー画像ジェネレーター。横×高さ、ラベルテキスト、配色を指定し、貼り付けに使えるインライン SVG（data URI、生のマークアップ、ダウンロード）を取得できます。すべてブラウザ内で動作します。"},
         "nl": {"name": "Placeholder Image Generator", "tagline": "Genereer inline-SVG placeholder images op elke size met custom tekst en kleuren. Output als data URI of downloadbaar SVG.", "description": "Gratis placeholder image-generator. Specificeer width × height, labeltekst en kleuren; krijg een inline SVG die je overal kunt plakken — data URI, raw markup of download. Draait volledig in je browser."},
+        "tr": {"name": "Placeholder Görsel Üretici", "tagline": "Özel metin ve renklerle her boyutta inline-SVG placeholder görseller üret. Data URI veya indirilebilir SVG olarak çıkar.", "description": "Ücretsiz placeholder görsel üretici. Genişlik × yükseklik, etiket metni ve renkleri belirle; her yere yapıştırabileceğin inline SVG al — data URI, ham işaretleme veya indirme. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -306,6 +307,28 @@ document.addEventListener('DOMContentLoaded', phRun);
   <li><strong>Kleuren zijn alleen HTML-hex.</strong> De kleurkiezers produceren <code>#rrggbb</code>. Als je <code>rgba()</code> nodig hebt, bewerk de SVG-markup direct na kopiëren.</li>
   <li><strong>Width/height zijn intrinsiek, niet display.</strong> CSS op een andere size zetten zal de SVG schalen — visueel prima, maar de embedded tekst kan stretched lijken als de aspect ratio verandert; we gebruiken <code>preserveAspectRatio="none"</code> voor voorspelbare scaling.</li>
   <li><strong>Ship de placeholder niet.</strong> Makkelijk te vergeten — vervang met het echte asset voor je live gaat.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir sayfa tasarlarken, gerçek görsel hazır olmadan önce sıklıkla belirli boyutta bir görsele ihtiyacın olur — hero banner, kart thumbnail, avatar, OG kartı. <code>via.placeholder.com</code> veya <code>placehold.co</code> yüklemek çalışır ama harici bir istek ve üçüncü taraf bağımlılığı ekler. Bu araç istediğin boyut ve etiketle kendi kendine yeten inline SVG üretir, HTML'ine, CSS <code>background-image</code>'ına veya React bileşenine data URI olarak bırakmaya hazır. Hiçbir şey tarayıcını terk etmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Gerçek varlıklar hazır olmadan önce şekilli placeholder'lara ihtiyaç duyduğun bir layout için wireframe yapma.</li>
+  <li>Bir Storybook veya Figma export kurma ve bileşen başına placeholder grafiğine ihtiyaç duyma.</li>
+  <li>Görsel yükleme kodunu, lazy-loading eşiklerini veya en-boy oranı CSS'ini test etme.</li>
+  <li>Çevrimdışı çalışması veya katı CSP altında çalışması gereken bir projedeki üçüncü taraf placeholder servisini değiştirme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>SVG ≠ raster.</strong> Data URI bir SVG string'idir; sonsuza kadar bulanıklık olmadan ölçeklenir ama PNG bekleyen bir tasarımcı beklemeyebilir. Raster görsel için önizlemenin ekran görüntüsünü al veya SVG'yi bir SVG-to-PNG dönüştürücüden geçir.</li>
+  <li><strong>Uzun data URI'lar <code>img src</code>'de zahmetlidir.</strong> Tarayıcılar bunları işler, ancak araçlar (linter'lar, search-and-replace, diff araçları) sıklıkla çok-KB nitelik değerlerinde tıkanır. Büyük mockup'lar için SVG dosya indirmesini tercih et.</li>
+  <li><strong>Etiket metni yerelleştirilmemiştir.</strong> Otomatik etiket çarpma işareti ile "WxH"dir; çeviri gerekiyorsa özel bir etiket yaz.</li>
+  <li><strong>Renkler sadece HTML hex'tir.</strong> Renk seçiciler <code>#rrggbb</code> üretir. <code>rgba()</code> gerekiyorsa, kopyaladıktan sonra SVG markup'ını doğrudan düzenle.</li>
+  <li><strong>Genişlik/yükseklik içseldir, display değildir.</strong> CSS'i farklı bir boyuta ayarlamak SVG'yi ölçeklendirir — görsel olarak iyi, ama en-boy oranı değişirse gömülü metin gerilmiş görünebilir.</li>
+  <li><strong>Placeholder'ı gönderme.</strong> Unutmak kolaydır — yayına geçmeden önce gerçek varlıkla değiştir.</li>
 </ul>
 """,
     },

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Obrazek do Base64", "tagline": "Konwertuj dowolny obrazek na data URI Base64 gotowy do inline'owego użycia w HTML, CSS albo Markdown. Pliki zostają w przeglądarce.", "description": "Darmowy online encoder obrazków do data URI Base64. Upuść albo wybierz obrazek i dostań gotowy do wklejenia data: URL do inline HTML, CSS background-image albo maila."},
         "ja": {"name": "画像から Base64 へ", "tagline": "任意の画像を Base64 データ URI に変換し、HTML・CSS・Markdown へインライン挿入。ファイルはブラウザ内のみ。", "description": "オンライン無料の画像 → Base64 データ URI エンコーダー。画像をドロップまたは選択すると、HTML インライン・CSS の background-image・メール用に貼り付け可能な data: URL を得られます。"},
         "nl": {"name": "Afbeelding naar Base64", "tagline": "Converteer elke afbeelding naar een Base64-data-URI klaar voor inline gebruik in HTML, CSS of Markdown. Bestanden blijven in je browser.", "description": "Gratis online afbeelding-naar-Base64-data-URI encoder. Drop of kies een afbeelding en krijg een ready-to-paste data: URL voor inline HTML, CSS background-image of email."},
+        "tr": {"name": "Görsel'den Base64'e", "tagline": "Herhangi bir görseli HTML, CSS veya Markdown'da inline kullanım için Base64 data URI'a dönüştür. Dosyalar tarayıcında kalır.", "description": "Ücretsiz online görselden Base64 data URI encoder. Bir görseli bırak veya seç, inline HTML, CSS background-image veya e-posta için yapıştırılmaya hazır data: URL al."},
     },
     "body": """
 <div class="tool-card">
@@ -165,6 +166,26 @@ function i2bRun(){
   <li><strong>Geen de-duplicatie over pagina's heen.</strong> Elke pagina die de URI embedt stuurt de bytes opnieuw mee. Voor alles dat hergebruikt wordt, houd het als echte URL zodat de browser het één keer cached.</li>
   <li><strong>Email-clients verschillen.</strong> De meeste moderne clients renderen data URIs, maar Outlook op Windows blokkeerde ze historisch in <code>&lt;img src&gt;</code>. CID-attachments zijn nog steeds veiliger voor mass email.</li>
   <li><strong>SVG ≠ raster.</strong> Voor SVG is de markup direct embedden (of de SVG url-encoderen) meestal kleiner dan Base64.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir <em>data URI</em> bir dosyanın byte'larını doğrudan bir URL'ye Base64 kullanarak gömer — ayrı istek yok, harici dosya yok. Bu dönüştürücü üzerine bıraktığın herhangi bir görseli okur ve HTML, CSS, Markdown veya JSON'a yapıştırmaya hazır bir <code>data:image/...;base64,...</code> string'i üretir. Dosya tarayıcını asla terk etmez; dönüşüm <code>FileReader.readAsDataURL</code> üzerinden olur.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>CSS'te küçük ikonlar (&lt; 4 KB) inline — bir HTTP isteğinden tasarruf eder ve ilk paint'te flash'tan kaçınır.</li>
+  <li>Kendi kendine yeten HTML e-postalar, tek dosyalı demolar veya çevrimdışı yetenekli PWA'lar.</li>
+  <li>Görselle birlikte gitmesi gereken Markdown notlarına, Notion sayfalarına veya sohbet thread'lerine hızlı yapıştırmalar.</li>
+  <li>Test fixture'ları ve snapshot dosyaları — varlığı testle birlikte commit etmek istediğinde.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Boyut cezası.</strong> Base64 yükü ~%33 şişirir. ~4–8 KB üzerinde, gömme maliyeti tasarruf edilen isteği geçer, özellikle data URI'lar tarayıcı tarafından ayrı önbelleğe alınamadığı için.</li>
+  <li><strong>Sayfalar arası deduplikasyon yok.</strong> URI'yi gömen her sayfa byte'ları yeniden gönderir. Yeniden kullanılan herhangi bir şey için tarayıcı bir kez önbelleğe alsın diye gerçek URL olarak tut.</li>
+  <li><strong>E-posta istemcileri değişir.</strong> Çoğu modern istemci data URI'ları render eder, ancak Windows'ta Outlook tarihsel olarak bunları <code>&lt;img src&gt;</code> içinde engeller. CID ekleri toplu e-posta için hâlâ daha güvenlidir.</li>
+  <li><strong>SVG ≠ raster.</strong> SVG için, markup'ı doğrudan gömme (veya SVG'yi url-encode etme) genellikle Base64'ten daha küçüktür.</li>
 </ul>
 """,
     },

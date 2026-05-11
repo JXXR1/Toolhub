@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Konwerter Jednostek", "tagline": "Konwertuj między metrycznymi i imperialnymi jednostkami długości, wagi, temperatury, objętości i powierzchni.", "description": "Darmowy online konwerter jednostek. Konwertuj długość (mm, cm, m, km, in, ft, yd, mi), wagę (g, kg, lb, oz), temperaturę (C, F, K), objętość (mL, L, gal, fl oz) i powierzchnię (m², ft², acre, ha)."},
         "ja": {"name": "単位変換ツール", "tagline": "メートル法とヤード・ポンド法の長さ、重さ、温度、体積、面積を相互変換。", "description": "オンライン無料の単位変換ツール。長さ（mm、cm、m、km、in、ft、yd、mi）、重さ（g、kg、lb、oz）、温度（C、F、K）、体積（mL、L、gal、fl oz）、面積（m²、ft²、acre、ha）を相互変換できます。"},
         "nl": {"name": "Unit Converter", "tagline": "Converteer tussen metrische en imperiale eenheden van lengte, gewicht, temperatuur, volume en oppervlakte.", "description": "Gratis online unit-converter. Converteer lengte (mm, cm, m, km, in, ft, yd, mi), gewicht (g, kg, lb, oz), temperatuur (C, F, K), volume (mL, L, gal, fl oz) en oppervlakte (m², ft², acre, ha)."},
+        "tr": {"name": "Birim Dönüştürücü", "tagline": "Uzunluk, ağırlık, sıcaklık, hacim ve alan için metrik ve imperial birimler arasında dönüştür.", "description": "Ücretsiz online birim dönüştürücü. Uzunluk (mm, cm, m, km, in, ft, yd, mi), ağırlık (g, kg, lb, oz), sıcaklık (C, F, K), hacim (mL, L, gal, fl oz) ve alan (m², ft², acre, ha) dönüşümleri."},
     },
     "body": """
 <div class="tool-card">
@@ -345,6 +346,37 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Mass vs weight.</strong> Strikt is kg massa en pounds ook massa (ondanks het spreektalige "ik weeg 70 kg"). De tool behandelt ze als een mass-to-mass conversie. Voor force (newtons, pound-force) heb je een andere categorie nodig.</li>
   <li><strong>Rond af op het einde, niet in het midden.</strong> Niet m → ft, afronden, dan ft → in — fouten stapelen op. Ga rechtstreeks naar de doel-unit.</li>
   <li><strong>Stones &amp; pounds.</strong> Een Brits gewicht: 1 stone = 14 lb. De tool heeft stone (st) maar je moet het lb-gedeelte apart doen voor "11 st 4 lb"-stijl entries.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Dünyanın çoğu metriktir, ABD imperialdir, İngiltere yarı-yarıdır, tarifler gram olması gerektiğinde cup'tadır ve ortada bir yerde bir çocuğun okul projesi "5 yard santimetrede" ister. Bu araç yüksek hassasiyetli tanımlar kullanarak uzunluk, ağırlık, sıcaklık, hacim, alan, zaman ve hız için dönüşümleri çalıştırır — ve sonucu kategorideki her birim üzerine bir kerede yayar, böylece iki kez dönüştürmen gerekmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Gram cinsinden pişirdiğinde cup'ta bir tarif okuma (veya tersi).</li>
+  <li>Bir uçuş mesafesini deniz mili cinsinden kilometreye çevirme.</li>
+  <li>Seyahatten önce dış mekan sıcaklık tahmini °C'den °F'a dönüştürme.</li>
+  <li>Bir mobilya parçasını boyutlandırma: 72 inç genişlik → 1,9 m kapıdan geçer mi?</li>
+  <li>Imperial düşündüğünde SI'da bilimsel makale ölçümlerini okuma.</li>
+</ul>
+
+<h3>Ne doğru, ne değil</h3>
+<ul>
+  <li><strong>Uzunluk, ağırlık, sıcaklık, alan, hız</strong> SI tanımlarını ve uluslararası yard-and-pound anlaşmasını (1959) kullanır, böylece girdinin sahip olduğu hassasiyete kesindirler.</li>
+  <li><strong>Hacim</strong> zahmetli olabilir: ABD "galon" (3,785 L) ve İngiliz "imperial galon" (4,546 L) farklıdır. Araç hangisinin hangisi olduğunu etiketler.</li>
+  <li><strong>Cup / yemek kaşığı / çay kaşığı</strong> burada varsayılan olarak ABD ölçüsüdür. İngiliz ve Avustralya cup'ları biraz farklıdır (AU'da 250 mL, ABD'de 240 mL).</li>
+  <li><strong>Zaman kategorisinde "ay" ve "yıl"</strong> ortalamalar kullanır (30,44 gün / 365,25 gün). Bunu kesin ayların önemli olduğu yasal veya muhasebe hesaplamaları için kullanma — bunun yerine bir tarih hesaplayıcı kullan.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Sıcaklık bir oran değildir.</strong> 0°C "sıcaklık yok" demek değildir — bir referans noktasıdır. Celsius'u ikiye katlamak ısıyı ikiye katlamaz. Dönüşüm aditif ofsetleri kullanır (Kelvin'e/dan 273,15, C ile F arasında 32) bu yüzden araç sıcaklık için çarpanlar değil fonksiyonlar kullanır.</li>
+  <li><strong>ABD ve İngiliz fluid ons'ları farklıdır.</strong> 1 ABD fl oz = 29,57 mL, 1 İngiliz fl oz = 28,41 mL. Bir tarifin hangi standardı kullandığını her zaman kontrol et.</li>
+  <li><strong>"Tonne" ve "ton".</strong> Metrik tonne = 1000 kg. ABD kısa ton = 907 kg. İngiliz uzun ton = 1016 kg. Aracın "t"si metrik tonne'dur.</li>
+  <li><strong>Kütle - ağırlık.</strong> Kesin olarak, kg kütledir ve pound da kütledir (günlük "70 kg ağırlığım var"a rağmen). Araç bunları kütle-kütle dönüşümü olarak ele alır. Kuvvet (newton, pound-force) için farklı bir kategoriye ihtiyacın var.</li>
+  <li><strong>Sonda yuvarla, ortada değil.</strong> m → ft'a çevirme, yuvarlama, sonra ft → in'e çevirme — hatalar birikir. Hedef birime doğru git.</li>
+  <li><strong>Stone &amp; pound.</strong> Bir İngiliz ağırlığı: 1 stone = 14 lb. Aracın stone (st) vardır ama "11 st 4 lb" tarzı girişler için lb kısmını ayrı yapman gerekir.</li>
 </ul>
 """,
     },

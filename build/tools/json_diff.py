@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Diff JSON", "tagline": "Strukturalny diff dwóch dokumentów JSON — dodane, usunięte, zmienione klucze i zmiany wartości obok siebie.", "description": "Darmowy online diff JSON. Liczy strukturalną deltę między dwoma dokumentami JSON — dodane/usunięte klucze, zmienione wartości i czysty widok side-by-side. Działa w całości w przeglądarce."},
         "ja": {"name": "JSON 差分", "tagline": "2 つの JSON ドキュメントの構造的差分 — 追加・削除・変更されたキーと値の変化を並べて表示。", "description": "オンライン無料の JSON 差分ツール。2 つの JSON ドキュメントの構造的なデルタ（追加／削除されたキー、値の変化）を計算し、見やすい並列表示を提供します。すべてブラウザ内で動作します。"},
         "nl": {"name": "JSON Diff", "tagline": "Structurele diff voor twee JSON-documenten — keys toegevoegd, verwijderd, gewijzigd en waarde-wijzigingen naast elkaar getoond.", "description": "Gratis online JSON-diff. Berekent een structurele delta tussen twee JSON-documenten — toegevoegde/verwijderde keys, gewijzigde waarden en een schone side-by-side view. Draait volledig in je browser."},
+        "tr": {"name": "JSON Diff", "tagline": "İki JSON belgesi için yapısal diff — eklenen, silinen, değişen anahtarlar ve değer değişiklikleri yan yana gösterilir.", "description": "Ücretsiz online JSON diff. İki JSON belgesi arasında yapısal delta hesaplar — eklenen/silinen anahtarlar, değişen değerler ve temiz yan yana görünüm. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -279,6 +280,26 @@ document.addEventListener('DOMContentLoaded', jdRun);
   <li><strong>Number-vs-string is niet structureel.</strong> <code>{"id": 1}</code> en <code>{"id": "1"}</code> tonen als een wijziging omdat de types verschillen. Normaliseer types voor diff-en als dat ertoe doet.</li>
   <li><strong>RFC 6902 is een one-way patch, geen merge.</strong> Pas het toe met een echte RFC 6902-implementatie, niet door string-replacement.</li>
   <li><strong>Grote bomen worden ruizig.</strong> Als de diff honderden operations lang is, vergelijk je waarschijnlijk twee ongerelateerde documenten — check de inputs.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>JSON üzerinde düz metin diff hangi satırların değiştiğini söyler; yapısal diff hangi <em>veri noktalarının</em> değiştiğini söyler. Sıklıkla çok farklılaşır — anlam değişikliği olmayan yeniden biçimlendirilmiş bir belge metin diff için "her satır farklı"dır ama burada "değişiklik yok"tur. Bu araç her iki JSON ağacında yürür ve farklı oldukları her yolu raporlar, biçimlendirme ne olursa olsun çıktının belirsiz olmaması için <a href="https://datatracker.ietf.org/doc/html/rfc6901" target="_blank" rel="noopener noreferrer">RFC 6901 JSON Pointer</a> sözdizimini (<code>/users/0/name</code>) kullanır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>İki API yanıtını karşılaştırarak bir sürümde gerçekten ne değiştiğini görme, boşluk/anahtar-sırası gürültüsünü yok sayma.</li>
+  <li>Bir geçişten önce/sonra config dosyalarını diff'leyerek yalnızca amaçlanan alanların taşındığını doğrulama.</li>
+  <li>Destekleyen bir sisteme gönderilecek bir RFC 6902 JSON Patch belgesi üretme (PATCH endpoint'leri, JSON-Merge-Patch fallback'leri).</li>
+  <li>Birinin başarısız olmasını diğerinin başarılı olmasını sağlayan şeyin ne olduğunu görmek için iki test fixture'ına bakma.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Array karşılaştırma modu önemlidir.</strong> "İndeks ile" eklenen bir elementi sonrasındaki her şey için remove+add olarak raporlar. "Değer ile" array'leri set olarak ele alır, gerçek yeniden sıralamaları kaçırır. Verinin nasıl sıralanması gerektiğine uyan birini seç.</li>
+  <li><strong>Sayı-vs-string yapısal değildir.</strong> <code>{"id": 1}</code> ve <code>{"id": "1"}</code> türler farklı olduğu için değişiklik olarak gösterilir. Önemliyse, diff'lemeden önce türleri normalize et.</li>
+  <li><strong>RFC 6902 tek yönlü bir patch'tir, merge değil.</strong> String-değiştirme ile değil, gerçek bir RFC 6902 uygulamasıyla uygula.</li>
+  <li><strong>Büyük ağaçlar gürültülü olur.</strong> Diff yüzlerce işlem uzunsa, muhtemelen iki ilgisiz belgeyi karşılaştırıyorsun — girdileri yeniden kontrol et.</li>
 </ul>
 """,
     },

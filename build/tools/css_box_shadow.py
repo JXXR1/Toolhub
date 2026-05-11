@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Generator CSS Box Shadow", "tagline": "Buduj jedno- lub wielowarstwowe cienie CSS wizualnie. Dostosuj offset, blur, spread, kolor i kopiuj CSS.", "description": "Darmowy generator box-shadow CSS. Stackuj wiele cieni dla realistycznej elewacji, włączaj inset, dostrajaj blur i spread, kopiuj produkcyjny CSS jednym kliknięciem."},
         "ja": {"name": "CSS box-shadow ジェネレーター", "tagline": "1 層または多層の CSS box-shadow をビジュアルに作成。オフセット・ぼかし・広がり・色を調整し、CSS をコピー。", "description": "無料の CSS box-shadow ジェネレーター。複数のシャドウを重ねてリアルな立体感を表現でき、inset の切り替え、blur と spread の微調整、本番投入できる CSS のワンクリックコピーに対応します。"},
         "nl": {"name": "CSS Box-Shadow Generator", "tagline": "Bouw visueel single- of multi-layer CSS box shadows. Stel offset, blur, spread en kleur in en kopieer CSS.", "description": "Gratis CSS box-shadow generator. Stack meerdere shadows voor realistische elevation, toggle inset, fine-tune blur en spread en kopieer production-ready CSS in één klik."},
+        "tr": {"name": "CSS Box Shadow Oluşturucu", "tagline": "Tek veya çok katmanlı CSS box shadow'ları görsel olarak kur. Offset, blur, spread, renk ayarla ve CSS'i kopyala.", "description": "Ücretsiz CSS box-shadow oluşturucu. Gerçekçi yükseklik için birden fazla gölgeyi üst üste bin, inset'i aç/kapa, blur ve spread'i ince ayarla ve üretime hazır CSS'i tek tıkla kopyala."},
     },
     "body": """
 <div class="tool-card">
@@ -267,6 +268,38 @@ document.addEventListener('DOMContentLoaded', () => { bsRender(); bsRun(); });
   <li><strong>Shadow op transparante achtergrond.</strong> Als de box geen <code>background</code> heeft, schijnt de shadow door de box zelf — meestal verrassend.</li>
   <li><strong>Performance:</strong> heel grote blur op veel elementen kan duur zijn op low-end mobile. Test op een echt device voor je fancy glows uitlevert.</li>
   <li><strong>Dark mode.</strong> Subtiele dark-on-dark shadows verdwijnen bijna; overweeg een heldere inner border of een licht-getinte shadow in donkere thema's.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>CSS <code>box-shadow</code> özelliği derinlik eklemek için iş atıdır — kartlarda drop shadow, düğme highlight, focus ring, glow, neon efektleri, hatta sahte 3D. Sözdizimi (<code>x y blur spread color</code>, isteğe bağlı <code>inset</code>, virgülle ayrılmış birden fazla gölge) okuması kolaydır ama körü körüne ayarlamak zahmetlidir. Bu araç her değer için kaydırıcılar ve canlı önizleme, artı yaygın tasarım sistemi yüksekliklerini eşleştiren preset'ler sunar.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>"Ucuz ve sert" görünmeyen kart veya modal yüksekliği tasarlama.</li>
+  <li>Erişilebilirlik için focus-ring stili kurma (örn. 2px outline glow).</li>
+  <li>Bir hero CTA için neon veya glow efekti hazırlama.</li>
+  <li>Material Design veya Apple stili yükseklik token'larını bir tasarım sistemi için kopyalama.</li>
+  <li>Basılı düğme efekti veya kart girintisi için sahte "inset" derinlik üretme.</li>
+</ul>
+
+<h3>Her değer ne yapar</h3>
+<ul>
+  <li><strong>X / Y offset</strong> — gölgenin düştüğü yön (pozitif Y = aşağı). "Yukarıdan ışık" hissi için Y > 0 ve küçük veya sıfır X kullan.</li>
+  <li><strong>Blur</strong> — kenarın ne kadar yumuşak olduğu. 0 = keskin; daha büyük = daha yumuşak.</li>
+  <li><strong>Spread</strong> — gölgenin kutudan ne kadar büyük (veya negatifse küçük) olduğu.</li>
+  <li><strong>Renk &amp; alfa</strong> — genellikle kısmi alfalı siyah veya marka rengi. Saf <code>#000</code> çok ağır görünür; doğal derinlik için <code>#0003</code> ile <code>#0002</code> dene.</li>
+  <li><strong>Inset</strong> — gölgeyi içe çevirir, girinti gibi.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Tek büyük gölge yapay görünür.</strong> Gerçek yükseklik iki veya üç katman üst üstedir: sıkı, koyu, yakın bir gölge artı geniş, yumuşak, uzak bir gölge. "Material elevation" preset'i bu deseni gösterir.</li>
+  <li><strong>Saf siyah çok ağırdır.</strong> ~%10–25 alfa siyah kullan veya gölgeyi yüzeyin tamamlayıcısıyla renklendir.</li>
+  <li><strong>Gölgeler kutu dışında render olur.</strong> Container'ın <code>overflow: hidden</code> varsa, gölge kırpılır. Bir wrapper kullan veya <code>overflow</code>'u bir child'a taşı.</li>
+  <li><strong>Şeffaf arka planda gölge.</strong> Kutunun <code>background</code>'u yoksa, gölge kutunun kendisinden geçer — genellikle sürpriz.</li>
+  <li><strong>Performans:</strong> Çok elemanda çok büyük blur düşük seviye mobilde maliyetli olabilir. Süslü glow'ları göndermeden önce gerçek cihazda test et.</li>
+  <li><strong>Dark mode.</strong> Subtle koyu üzeri koyu gölgeler neredeyse kaybolur; karanlık temalarda parlak bir iç kenarlık veya açık tonlu bir gölge düşün.</li>
 </ul>
 """,
     },

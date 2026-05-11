@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toolhub.software — Geliştiriciler için ücretsiz online araçlar</title>
+  <meta name="description" content="60+ ücretsiz online geliştirici aracı — JSON formatter, parola oluşturucu, Base64 encoder ve dahası. Kayıt yok, takip yok.">
+  <meta property="og:title" content="toolhub.software — Geliştiriciler için ücretsiz online araçlar">
+  <meta property="og:description" content="60+ ücretsiz online geliştirici aracı — JSON formatter, parola oluşturucu, Base64 encoder ve dahası. Kayıt yok, takip yok.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/tr/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "toolhub.software",
+    "url": "https://toolhub.software/tr",
+    "description": "60+ ücretsiz online geliştirici aracı — JSON formatter, parola oluşturucu, Base64 encoder ve dahası. Kayıt yok, takip yok.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://toolhub.software/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --card-hover: #1c2129;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --card-hover: #f3f4f6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    .header { padding: 2rem 1.5rem 1rem; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.75rem; align-items: center; }
+    .lang-select { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 0.4rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; }
+    .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.7rem; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.7rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero { text-align: center; padding: 2rem 1.5rem 1.5rem; max-width: 700px; margin: 0 auto; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; overflow-wrap: anywhere; }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; overflow-wrap: anywhere; }
+
+    .search-wrap { max-width: 600px; margin: 1.5rem auto; padding: 0 1.5rem; }
+    .search-wrap input { width: 100%; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; outline: none; }
+    .search-wrap input:focus { border-color: var(--accent); }
+    .search-wrap input::placeholder { color: var(--text-muted); }
+
+    .filters { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; padding: 0.5rem 1.5rem 1rem; max-width: 800px; margin: 0 auto; }
+    .filter-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; transition: all 0.15s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .filter-btn .cnt { display: inline-block; margin-left: 0.3rem; padding: 0 0.35rem; border-radius: 8px; background: rgba(255,255,255,0.12); font-size: 0.72rem; font-weight: 600; }
+    .filter-btn:not(.active) .cnt { background: var(--bg); color: var(--text-muted); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; transition: all 0.15s; cursor: pointer; display: block; }
+    .card:hover { border-color: var(--accent); background: var(--card-hover); transform: translateY(-2px); }
+    .card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .card h3 { font-size: 1rem; margin-bottom: 0.3rem; color: var(--text); }
+    .card p { font-size: 0.85rem; color: var(--text-muted); }
+    .card-meta { margin-top: 0.6rem; display: flex; gap: 0.5rem; }
+    .tag { font-size: 0.7rem; background: var(--bg); padding: 0.15rem 0.5rem; border-radius: 10px; color: var(--text-muted); }
+
+    .footer { text-align: center; padding: 2rem 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+
+    .no-results { text-align: center; padding: 3rem; color: var(--text-muted); display: none; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 1.5rem 1rem 1rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .header { padding: 1.25rem 1rem 0.75rem; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .header { padding: 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.25rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      .hero { padding: 1.25rem 1rem 1rem; }
+      .hero h1 { font-size: clamp(1.15rem, 5vw, 1.65rem); }
+      .hero p { font-size: 1rem; }
+      .search-wrap { padding: 0 1rem; margin: 1rem auto; }
+      .search-wrap input { padding: 0.75rem 1rem; font-size: 1rem; min-height: 44px; }
+      .filters { padding: 0.5rem 1rem 1rem; }
+      .filter-btn { padding: 0.5rem 0.85rem; font-size: 0.85rem; min-height: 36px; }
+      .grid { grid-template-columns: 1fr; padding: 0 1rem 2rem; }
+      .card { padding: 1rem; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config — fill in once you have the IDs.
+       Empty values keep ads OFF and the consent banner SUPPRESSED. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><span>Tool</span>hub</div>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="switchLang(this.value)">
+        <option value="">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="pl">🇵🇱 Polski</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="nl">🇳🇱 Nederlands</option>
+        <option value="tr" selected>🇹🇷 Türkçe</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+
+  <main>
+  <section class="hero">
+    <h1>Geliştiriciler için ücretsiz online araçlar</h1>
+    <p id="hero-sub"></p>
+  </section>
+
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Araç ara…  (odak için /)" oninput="filterTools()">
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div class="ad-slot" data-slot="indexTop"></div>
+
+  <h2 class="visually-hidden">Tüm araçlar</h2>
+  <div class="grid" id="grid"></div>
+  <div class="ad-slot" data-slot="indexBottom"></div>
+  <div class="no-results" id="no-results">Araç bulunamadı. Başka bir arama terimi dene.</div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 toolhub.software — Geliştiriciler için ücretsiz araçlar.</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+
+  <script>
+        const TOOLS = [
+      {"slug": "ascii-table", "name": "ASCII Tablosu", "desc": "0–127 tam ASCII referansı: ondalık, hex, ikilik, karakter ve HTML entity. Filtrelenebilir.", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
+      {"slug": "base64-encoder", "name": "Base64 Encoder / Decoder", "desc": "Metni Base64'e kodla veya Base64'ü metne çöz. UTF-8 güvenli, base64url varyantı destekli.", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
+      {"slug": "bmi-calculator", "name": "BMI Hesaplayıcı", "desc": "Boy ve kilodan vücut kitle indeksi. Metrik veya imperial. DSÖ kategorisini gösterir — tıbbi tavsiye değildir.", "icon": "⚖️", "cat": "math", "tags": ["bmi", "body mass index", "health", "weight", "height", "metric", "imperial"]},
+      {"slug": "case-converter", "name": "Case Converter", "desc": "Metni UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE ve dot.case arasında dönüştür.", "icon": "Aa", "cat": "text", "tags": ["case", "convert", "camel", "snake", "kebab", "pascal", "title", "upper", "lower"]},
+      {"slug": "cidr-calculator", "name": "CIDR Subnet Hesaplayıcı", "desc": "CIDR notasyonundan IPv4 alt ağlarını hesapla. Network, broadcast, mask, host aralığı ve ikilik görünüm.", "icon": "🌐", "cat": "developer", "tags": ["cidr", "subnet", "ipv4", "network", "mask", "ip", "calculator"]},
+      {"slug": "color-converter", "name": "Renk Dönüştürücü", "desc": "Herhangi bir rengi hex, RGB, HSL ve OKLCH arasında dönüştür. Canlı önizleme, tek tıkla kopyala.", "icon": "🎨", "cat": "design", "tags": ["color", "hex", "rgb", "hsl", "oklch", "convert", "css"]},
+      {"slug": "color-picker", "name": "Renk Seçici", "desc": "Bir renk seç; HEX, RGB, RGBA, HSL, HSLA, HSV ve CMYK olarak anında gör. Opaklığı ayarla ve istediğin değeri kopyala.", "icon": "🎨", "cat": "design", "tags": ["color", "picker", "hex", "rgb", "hsl", "hsv", "cmyk", "palette"]},
+      {"slug": "credit-card-validator", "name": "Kredi Kartı Doğrulayıcı", "desc": "Kart numarasını Luhn kontrolü ile doğrula ve kart markasını tespit et. Yerel çalışır — numaran asla iletilmez.", "icon": "💳", "cat": "validation", "tags": ["credit card", "validate", "luhn", "visa", "mastercard", "amex", "discover"]},
+      {"slug": "cron-builder", "name": "Cron İfadesi Oluşturucu", "desc": "Görsel olarak cron ifadesi kur — dakika, saat, gün, ay, hafta günü — ve sonraki 5 çalışma zamanını önizle.", "icon": "⏱", "cat": "developer", "tags": ["cron", "schedule", "builder", "crontab", "next run"]},
+      {"slug": "cron-parser", "name": "Cron İfadesi Parser", "desc": "Cron ifadelerini parse et ve sonraki 10 çalışma zamanını gör. Standart 5 alanlı crontab.", "icon": "🕒", "cat": "developer", "tags": ["cron", "schedule", "crontab", "next run", "expression"]},
+      {"slug": "css-box-shadow", "name": "CSS Box Shadow Oluşturucu", "desc": "Tek veya çok katmanlı CSS box shadow'ları görsel olarak kur. Offset, blur, spread, renk ayarla ve CSS'i kopyala.", "icon": "▣", "cat": "design", "tags": ["css", "shadow", "box-shadow", "design", "depth", "elevation"]},
+      {"slug": "css-gradient", "name": "CSS Gradient Oluşturucu", "desc": "Lineer ve radial CSS gradient'larını görsel olarak kur. Renk durak noktalarını düzenle, yapıştırılmaya hazır CSS'i kopyala.", "icon": "🌈", "cat": "design", "tags": ["css", "gradient", "linear", "radial", "design", "background"]},
+      {"slug": "css-minifier", "name": "CSS Minifier", "desc": "CSS'ten yorumları, boşlukları ve gereksizliği temizle. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.", "icon": "{}", "cat": "developer", "tags": ["css", "minify", "compress", "optimize", "stylesheet"]},
+      {"slug": "csv-to-json", "name": "CSV'den JSON'a", "desc": "CSV verisini JSON dizilerine dönüştür. Başlık tespiti, özel sınırlayıcılar, tırnaklı alanlar ve gömülü satır sonları işlenir.", "icon": "📊", "cat": "data", "tags": ["csv", "json", "convert", "data", "import"]},
+      {"slug": "date-calculator", "name": "Tarih Hesaplayıcı", "desc": "İki tarih arasındaki gün sayısı · bir tarihe gün/hafta/ay/yıl ekle veya çıkar · yıl, ay ve gün cinsinden yaş.", "icon": "📅", "cat": "datetime", "tags": ["date", "calculator", "duration", "between", "add", "subtract", "age", "weekday"]},
+      {"slug": "dice-roller", "name": "Zar Atıcı", "desc": "Standart D&D notasyonuyla zar at — 2d6+3, 1d20, 4d6 en yüksek 3'ü tut. Kripto-güvenli RNG.", "icon": "🎲", "cat": "utility", "tags": ["dice", "roll", "d20", "rpg", "dnd", "random", "tabletop", "notation"]},
+      {"slug": "email-validator", "name": "E-posta Doğrulayıcı", "desc": "Bir e-posta adresinin sözdizimsel olarak geçerli olup olmadığını kontrol et (RFC 5322 uyumlu); local part, domain ve yaygın hataları ayrıştırır.", "icon": "✉", "cat": "validation", "tags": ["email", "validate", "rfc", "syntax", "mx", "domain"]},
+      {"slug": "emoji-picker", "name": "Emoji Seçici", "desc": "Ad ve anahtar kelimeye göre aranabilir emoji paleti. Kopyalamak için herhangi bir emojiye tıkla. Kategoriler: gülümseyenler, hayvanlar, yiyecekler, seyahat, nesneler, semboller, bayraklar.", "icon": "😀", "cat": "text", "tags": ["emoji", "picker", "search", "copy", "unicode", "smiley", "symbol"]},
+      {"slug": "file-size-converter", "name": "Dosya Boyutu Dönüştürücü", "desc": "byte, KB, MB, GB, TB ve ikilik KiB, MiB, GiB, TiB arasında dönüştür. Ondalık - ikilik ayrımı net.", "icon": "📦", "cat": "math", "tags": ["file size", "convert", "byte", "kilobyte", "megabyte", "gigabyte", "kib", "mib", "binary", "decimal"]},
+      {"slug": "hash-generator", "name": "Hash Üretici", "desc": "Metni tarayıcının WebCrypto'su ile SHA-1, SHA-256, SHA-384 veya SHA-512 hash'le. Yerel hesaplanır — giriş sayfayı asla terk etmez.", "icon": "🔑", "cat": "security", "tags": ["hash", "md5", "sha", "sha-256", "sha-512", "checksum"]},
+      {"slug": "html-encoder", "name": "HTML Encoder / Decoder", "desc": "HTML özel karakterlerini escape et veya entity'leri geri çöz. Kullanıcı girdisini güvenle gömmek veya kodlanmış işaretlemeyi debug etmek için kullanışlı.", "icon": "&lt;&gt;", "cat": "encoding", "tags": ["html", "encode", "entities", "escape", "xss"]},
+      {"slug": "html-formatter", "name": "HTML Formatter", "desc": "HTML'i biçimlendir ve güzelleştir ya da küçült. Indent boyutu, yorum temizleme ve self-closing tag farkındalığı.", "icon": "</>", "cat": "developer", "tags": ["html", "format", "beautify", "minify", "indent", "tidy"]},
+      {"slug": "http-status-codes", "name": "HTTP Durum Kodları", "desc": "Herhangi bir HTTP durum kodunu ara (1xx–5xx). Anlamı, yaygın sebepleri ve RFC referansı.", "icon": "🌐", "cat": "developer", "tags": ["http", "status", "code", "rest", "api", "response", "rfc"]},
+      {"slug": "image-to-base64", "name": "Görsel'den Base64'e", "desc": "Herhangi bir görseli HTML, CSS veya Markdown'da inline kullanım için Base64 data URI'a dönüştür. Dosyalar tarayıcında kalır.", "icon": "🖼️", "cat": "encoding", "tags": ["image", "base64", "data-uri", "convert", "embed"]},
+      {"slug": "js-minifier", "name": "JavaScript Minifier", "desc": "Hızlı yapısal JavaScript minify — yorumları sil, boşlukları daralt, boş satırları at. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.", "icon": "{}", "cat": "developer", "tags": ["javascript", "js", "minify", "compress", "optimize"]},
+      {"slug": "json-diff", "name": "JSON Diff", "desc": "İki JSON belgesi için yapısal diff — eklenen, silinen, değişen anahtarlar ve değer değişiklikleri yan yana gösterilir.", "icon": "{}±", "cat": "developer", "tags": ["json", "diff", "compare", "structural", "delta", "merge"]},
+      {"slug": "json-formatter", "name": "JSON Formatter", "desc": "JSON'u anında biçimlendir, doğrula ve küçült. Hatalar satır ve sütunla vurgulanır.", "icon": "{ }", "cat": "developer", "tags": ["json", "format", "beautify", "validate", "minify"]},
+      {"slug": "json-path", "name": "JSONPath Tester", "desc": "Herhangi bir JSON belgesine JSONPath sorgusu çalıştır. Eşleşen düğümleri ve yollarını gerçek zamanlı gör.", "icon": "/{}", "cat": "developer", "tags": ["json", "jsonpath", "query", "filter", "extract", "data"]},
+      {"slug": "json-to-csv", "name": "JSON'dan CSV'ye", "desc": "Nesne JSON dizilerini CSV'ye dönüştür. Alanları otomatik tespit eder, özel sınırlayıcıları destekler, Excel ve Google Sheets için doğru escape yapar.", "icon": "📋", "cat": "data", "tags": ["json", "csv", "convert", "data", "export", "excel"]},
+      {"slug": "jwt-decoder", "name": "JWT Decoder", "desc": "JWT'yi yapıştır, header ve payload'ı çöz. Tüm decode tarayıcında çalışır — token'lar sayfayı asla terk etmez.", "icon": "🔓", "cat": "developer", "tags": ["jwt", "json web token", "decode", "auth", "oauth", "openid"]},
+      {"slug": "lorem-ipsum", "name": "Lorem Ipsum Üretici", "desc": "Placeholder Latince metnin paragraflarını, cümlelerini, kelimelerini veya liste öğelerini üret. Ayarlanabilir uzunluk ve başlangıç ibaresi.", "icon": "¶", "cat": "text", "tags": ["lorem", "ipsum", "placeholder", "filler", "dummy", "text"]},
+      {"slug": "markdown-table-editor", "name": "Markdown Tablo Editörü", "desc": "Bir tabloyu görsel olarak düzenle — satırlar, sütunlar, sütun başına hizalama — ve GitHub uyumlu Markdown'u kopyala.", "icon": "▦", "cat": "text", "tags": ["markdown", "table", "editor", "github", "gfm", "alignment"]},
+      {"slug": "markdown-to-html", "name": "Markdown'dan HTML'e", "desc": "Markdown'u canlı önizlemeyle temiz HTML'e dönüştür. Başlıkları, listeleri, kodu, tabloları, görselleri ve linkleri destekler.", "icon": "M↓", "cat": "text", "tags": ["markdown", "md", "html", "convert", "preview", "render"]},
+      {"slug": "mime-type-lookup", "name": "MIME Type Arama", "desc": "MIME type'ları uzantıya veya türe göre ara. ~120 yaygın tür — image, video, audio, application, text, font.", "icon": "📎", "cat": "developer", "tags": ["mime", "type", "extension", "content-type", "file", "media"]},
+      {"slug": "number-base-converter", "name": "Sayı Tabanı Dönüştürücü", "desc": "İkilik, sekizlik, ondalık, onaltılık ve 2'den 36'ya kadar her taban arasında dönüştür.", "icon": "0b", "cat": "developer", "tags": ["binary", "hex", "octal", "decimal", "base", "convert", "number"]},
+      {"slug": "og-tag-preview", "name": "OG Tag Önizleme", "desc": "OG meta tag'lerini yapıştır veya title/description/image doldur — paylaşım kartlarını Twitter/X, Facebook, LinkedIn ve Discord'da nasıl görüneceği gibi önizle.", "icon": "🪟", "cat": "design", "tags": ["og", "open graph", "twitter", "facebook", "linkedin", "discord", "preview", "social"]},
+      {"slug": "password-generator", "name": "Parola Üretici", "desc": "Güçlü rastgele parolalar veya akılda kalıcı passphrase'ler. Yerel olarak üretilir — hiçbir yere gönderilmez.", "icon": "🔐", "cat": "security", "tags": ["password", "secure", "random", "generate", "passphrase"]},
+      {"slug": "percentage-calculator", "name": "Yüzde Hesaplayıcı", "desc": "Tek araçta beş yüzde hesaplayıcı: of, what %, artış/azalış, değişim ve tip/vergi.", "icon": "%", "cat": "math", "tags": ["percentage", "percent", "calculate", "discount", "increase", "decrease", "tip", "tax"]},
+      {"slug": "placeholder-image", "name": "Placeholder Görsel Üretici", "desc": "Özel metin ve renklerle her boyutta inline-SVG placeholder görseller üret. Data URI veya indirilebilir SVG olarak çıkar.", "icon": "🖼", "cat": "design", "tags": ["placeholder", "image", "svg", "mockup", "wireframe", "data uri"]},
+      {"slug": "qr-code-generator", "name": "QR Kod Üretici", "desc": "Herhangi bir metin, URL, Wi-Fi veya vCard için QR kod üret. Özel boyut, renkler ve hata düzeltme. PNG veya SVG olarak dışa aktar.", "icon": "📱", "cat": "media", "tags": ["qr", "code", "generate", "url", "wifi", "vcard", "svg", "png"]},
+      {"slug": "query-string-builder", "name": "Query String Builder", "desc": "key/value satırları ekle; doğru URL-encoded query string çıkar. Dizi (a[]=1) ve braket'siz tekrarlayan anahtarları destekler.", "icon": "?=", "cat": "developer", "tags": ["query string", "url", "params", "encode", "build", "key value"]},
+      {"slug": "regex-cheatsheet", "name": "Regex Çetel", "desc": "Hızlı referans: çapalar, karakter sınıfları, niceleyiciler, gruplar, lookaround'lar, bayraklar. Kopyalamak için herhangi bir desene tıkla.", "icon": "📖", "cat": "developer", "tags": ["regex", "cheatsheet", "reference", "pattern", "anchors", "groups", "lookaround"]},
+      {"slug": "regex-tester", "name": "Regex Tester", "desc": "JavaScript düzenli ifadelerini canlı test et. Eşleşmeleri, capture gruplarını gör ve yazdıkça değiştirme uygula.", "icon": ".*", "cat": "developer", "tags": ["regex", "regular expression", "test", "match", "replace", "javascript"]},
+      {"slug": "slug-generator", "name": "Slug Üretici", "desc": "Herhangi bir başlığı temiz URL slug'a dönüştür — aksanları transliter eder, noktalama temizler, tirelerle birleştirir.", "icon": "/-", "cat": "text", "tags": ["slug", "url", "seo", "kebab", "permalink", "transliterate"]},
+      {"slug": "sql-formatter", "name": "SQL Formatter", "desc": "SQL'i düzgün indent ile biçimlendir ve güzelleştir veya tek satıra küçült. Lehçe farkında (ANSI / MySQL / Postgres).", "icon": "🗄", "cat": "developer", "tags": ["sql", "format", "beautify", "minify", "indent", "mysql", "postgres", "ansi"]},
+      {"slug": "text-diff", "name": "Metin Diff", "desc": "İki metin bloğunu karşılaştır ve satır satır eklemeleri, silmeleri ve değişmeyen bağlamı gör. Yan yana veya birleşik görünüm.", "icon": "±", "cat": "text", "tags": ["diff", "compare", "text", "lines", "patch", "changes"]},
+      {"slug": "timestamp-converter", "name": "Unix Timestamp Dönüştürücü", "desc": "Unix timestamp'leri ile insan tarafından okunabilir tarihler arasında dönüştür. Saniyeler ve milisaniyeler, UTC ve yerel.", "icon": "🕐", "cat": "developer", "tags": ["timestamp", "unix", "epoch", "date", "convert", "iso8601"]},
+      {"slug": "timezone-converter", "name": "Saat Dilimi Dönüştürücü", "desc": "Bir tarih ve saati IANA saat dilimleri arasında dönüştür. Her iki uç için offset, DST durumu ve haftanın gününü gör.", "icon": "🌍", "cat": "data", "tags": ["timezone", "tz", "convert", "utc", "date", "time", "iana"]},
+      {"slug": "tip-split-calculator", "name": "Bahşiş & Bölüştürme Hesaplayıcı", "desc": "Hesap toplamı + bahşiş % + kişi sayısı = kişi başı tutar. Yukarı yuvarlama seçeneği, bahşiş ve genel toplam gösterilir.", "icon": "💵", "cat": "math", "tags": ["tip", "split", "bill", "restaurant", "calculator", "people", "share"]},
+      {"slug": "unicode-inspector", "name": "Unicode İnceleyici", "desc": "Metni yapıştır → her code point için tablo. Hex, ondalık, UTF-8 byte, kategori. Görünmez karakterleri yakala.", "icon": "🔎", "cat": "text", "tags": ["unicode", "code point", "utf-8", "character", "inspect", "invisible", "encoding"]},
+      {"slug": "unit-converter", "name": "Birim Dönüştürücü", "desc": "Uzunluk, ağırlık, sıcaklık, hacim ve alan için metrik ve imperial birimler arasında dönüştür.", "icon": "📐", "cat": "math", "tags": ["unit", "convert", "length", "weight", "temperature", "volume", "area", "metric", "imperial"]},
+      {"slug": "url-encoder", "name": "URL Encoder / Decoder", "desc": "String'leri URL'ler için percent-encode et veya percent-encoded string'leri düz metne çöz.", "icon": "🔗", "cat": "encoding", "tags": ["url", "encode", "decode", "percent", "querystring"]},
+      {"slug": "url-parser", "name": "URL Parser", "desc": "Herhangi bir URL'i yapıştır — protokolü, host'u, port'u, path'i, query parametrelerini (decoded), hash'i ve origin'i ayrıştırılmış olarak gör.", "icon": "🔍", "cat": "developer", "tags": ["url", "parse", "query", "host", "path", "fragment", "search params"]},
+      {"slug": "uuid-generator", "name": "UUID Üretici", "desc": "RFC 4122 UUID üret (v4 rastgele veya v7 zaman sıralı). 100'e kadar toplu. Kriptografik olarak güvenli.", "icon": "🆔", "cat": "developer", "tags": ["uuid", "guid", "v4", "v7", "random", "unique", "identifier"]},
+      {"slug": "wcag-contrast", "name": "WCAG Kontrast Denetleyici", "desc": "İki renk arasındaki kontrast oranını kontrol et. Her metin boyutu için WCAG AA ve AAA'da geçer/kalır yargısı.", "icon": "◐", "cat": "design", "tags": ["wcag", "contrast", "accessibility", "a11y", "color", "ratio"]},
+      {"slug": "word-counter", "name": "Kelime Sayacı", "desc": "Kelimeleri, karakterleri, cümleleri, paragrafları say ve yazdıkça okuma + konuşma süresini tahmin et.", "icon": "#", "cat": "text", "tags": ["word", "count", "character", "sentence", "paragraph", "reading", "writing"]},
+      {"slug": "xml-formatter", "name": "XML Formatter", "desc": "XML'i biçimlendir ve küçült. Hatalarda satır ve sütun ile well-formedness doğrula.", "icon": "&lt;/&gt;", "cat": "developer", "tags": ["xml", "format", "beautify", "minify", "validate", "well-formed"]},
+      {"slug": "xml-to-json", "name": "XML ↔ JSON Dönüştürücü", "desc": "XML'i JSON'a veya JSON'u XML'e geri dönüştür. Attribute'ları, text node'ları ve dizileri akıllıca işler.", "icon": "⇄", "cat": "data", "tags": ["xml", "json", "convert", "transform", "attributes", "data"]},
+      {"slug": "yaml-json", "name": "YAML ↔ JSON Dönüştürücü", "desc": "YAML ve JSON arasında her iki yöne dönüştür. Kubernetes manifest'leri, CI config'leri ve OpenAPI spec'leri için kullanışlı.", "icon": "🔁", "cat": "data", "tags": ["yaml", "json", "convert", "kubernetes", "config", "data"]},
+      {"slug": "youtube-thumbnail", "name": "YouTube Thumbnail İndirici", "desc": "Herhangi bir YouTube URL'i veya video ID'sini yapıştır ve mevcut her thumbnail boyutunu yakala — doğrudan indirme linkleri, upload yok, kayıt yok.", "icon": "▶", "cat": "media", "tags": ["youtube", "thumbnail", "preview", "image", "download", "video"]}
+    ];
+
+    const LBL_ALL = "Tümü";
+    const HERO_SUB_POST = "araç — hızlı, gizli, kayıt yok. Hemen kullanılabilir.";
+    const CAT_LABELS = {"developer": "Geliştirici", "text": "Metin", "encoding": "Kodlama", "data": "Veri", "security": "Güvenlik", "media": "Medya", "validation": "Doğrulama", "design": "Tasarım", "datetime": "Tarih & saat", "math": "Matematik"};
+
+    function renderFilters() {
+      const counts = {};
+      for (const t of TOOLS) counts[t.cat] = (counts[t.cat] || 0) + 1;
+      const cats = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+      const wrap = document.getElementById('filters');
+      let html = `<button class="filter-btn active" data-cat="all">${LBL_ALL} <span class="cnt">${TOOLS.length}</span></button>`;
+      for (const c of cats) {
+        const label = CAT_LABELS[c] || c.charAt(0).toUpperCase() + c.slice(1);
+        html += `<button class="filter-btn" data-cat="${c}">${label} <span class="cnt">${counts[c]}</span></button>`;
+      }
+      wrap.innerHTML = html;
+    }
+
+    function renderHero() {
+      document.getElementById('hero-sub').textContent = `${TOOLS.length} ${HERO_SUB_POST}`;
+    }
+
+
+    function render(tools) {
+      const grid = document.getElementById('grid');
+      const noResults = document.getElementById('no-results');
+      if (tools.length === 0) { grid.innerHTML = ''; noResults.style.display = 'block'; return; }
+      noResults.style.display = 'none';
+      grid.innerHTML = tools.map(t => `
+        <a class="card" href="/tr/${t.slug}/" data-cat="${t.cat}">
+          <div class="card-icon">${t.icon}</div>
+          <h3>${t.name}</h3>
+          <p>${t.desc}</p>
+          <div class="card-meta"><span class="tag">${t.cat}</span></div>
+        </a>
+      `).join('');
+    }
+
+    function filterTools() {
+      const q = document.getElementById('search').value.toLowerCase();
+      const activeCat = document.querySelector('.filter-btn.active')?.dataset.cat || 'all';
+      const filtered = TOOLS.filter(t => {
+        const matchQ = !q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.tags.some(tag => tag.includes(q));
+        const matchCat = activeCat === 'all' || t.cat === activeCat;
+        return matchQ && matchCat;
+      });
+      render(filtered);
+    }
+
+    document.getElementById('filters').addEventListener('click', e => {
+      if (!e.target.classList.contains('filter-btn')) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      filterTools();
+    });
+
+    function switchLang(lang) {
+      window.location.href = lang ? `/${lang}/` : '/';
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent = next === 'light' ? '🌙' : '☀️';
+    }
+
+    // Init
+    const saved = localStorage.getItem('theme') || 'dark';
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.querySelector('.theme-toggle').textContent = '🌙';
+    } else {
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+    renderFilters();
+    renderHero();
+    render(TOOLS);
+
+    // `/` keyboard shortcut to focus search
+    document.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        document.getElementById('search').focus();
+      }
+    });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Inspektor Unicode", "tagline": "Wklej tekst → tabela każdego code pointa. Hex, decimal, bajty UTF-8, kategoria. Wyłapuj niewidzialne znaki.", "description": "Darmowy inspektor Unicode. Wklej dowolny tekst i zobacz każdy code point Unicode: hex, decimal, sekwencję bajtów UTF-8, kategorię ogólną i nazwę, gdy znana. Podświetla znaki niewidzialne i zwodnicze."},
         "ja": {"name": "Unicode インスペクター", "tagline": "テキストを貼ると各コードポイントを一覧表示。hex、10 進、UTF-8 バイト、カテゴリ。不可視文字も発見。", "description": "無料の Unicode インスペクター。任意のテキストを貼り付けると、各 Unicode コードポイントを hex、10 進、UTF-8 バイト列、一般カテゴリ、既知の名称付きで表示します。不可視文字や紛らわしい文字をハイライトします。"},
         "nl": {"name": "Unicode Inspector", "tagline": "Plak tekst → tabel van elke code point. Hex, decimaal, UTF-8 bytes, categorie. Spot onzichtbare tekens.", "description": "Gratis Unicode-inspector. Plak elke tekst en zie elke Unicode code point: hex, decimaal, UTF-8 byte sequence, general category en een naam waar bekend. Highlight onzichtbare en confusable karakters."},
+        "tr": {"name": "Unicode İnceleyici", "tagline": "Metni yapıştır → her code point için tablo. Hex, ondalık, UTF-8 byte, kategori. Görünmez karakterleri yakala.", "description": "Ücretsiz Unicode inceleyici. Herhangi bir metni yapıştır ve her Unicode code point'ini gör: hex, ondalık, UTF-8 byte dizisi, genel kategori ve bilinen yerlerde ad. Görünmez ve karıştırılabilir karakterleri vurgular."},
     },
     "body": """
 <div class="tool-card">
@@ -416,6 +417,38 @@ document.addEventListener('DOMContentLoaded', uiRun);
   <li><strong>Right-to-left overrides zijn gevaarlijk.</strong> Een filename met U+202E kan zijn display-volgorde omkeren — waardoor <code>resu&#x202E;txt.exe</code> in een file browser op <code>resuexe.txt</code> lijkt. Gebruikt in phishing.</li>
   <li><strong>De namen-kolom is partieel.</strong> Een echte Unicode-database heeft namen voor elke code point; de inspector levert alleen namen voor control-karakters en gangbare format/whitespace-karakters waar de naam het meest nuttig diagnostisch is.</li>
   <li><strong>Surrogate halves horen niet standalone te verschijnen.</strong> Als je U+D800–U+DFFF in de output ziet, is de input een malformed UTF-16 string (lone surrogate). De meeste API's weigeren dat naar UTF-8 te encoderen.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>"Bu string neden eşit karşılaştırmıyor?" "Bu kullanıcı adı neden boşken zaten alınmış olarak reddediliyor?" "Bu dosya adı neden shell'imi bozuyor?" Cevap neredeyse her zaman: byte'lar gözlerinin gördüğünü eşleştirmiyor. İki karakter <em>aynı görünebilir</em> ama farklı code point'ler olabilir (Latin "a" vs Kiril "а"); boşluk non-breaking space'leri, sıfır genişlik birleştiricileri veya sağdan sola override'ları gizleyebilir; bir emoji bir code point veya dört olabilir. Bu araç herhangi bir metni hex, ondalık, UTF-8 byte dizisi, kategori ve bilinen yerlerde adıyla bireysel Unicode code point'lerine ayrıştırır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>"Aynı görünen ama eşit olmayan" string hatasını teşhis etme.</li>
+  <li>Kopya-yapıştırılmış metnin içine gizlenen görünmez karakterler (sıfır-genişlik boşluk, BOM, RTL override) bulma.</li>
+  <li>Sabit genişlikli bir sütunda saklamadan önce byte'lar - code point'ler - UTF-16 code unit'lar sayma.</li>
+  <li>Hangi ZWJ dizisini kullandığını görmek için bir emojiyi inceleme.</li>
+  <li>Alan adlarında veya kullanıcı adlarında homoglyph saldırılarını tespit etme.</li>
+  <li>Bir hex dump için tam UTF-8 byte dizileri üretme.</li>
+</ul>
+
+<h3>Çıktıyı okuma</h3>
+<ul>
+  <li><strong>Code point</strong> — soyut Unicode değeri, <code>U+XXXX</code> yazılır. 1,1 milyon tane vardır; kullanımdaki en yüksek U+10FFFF'tir.</li>
+  <li><strong>UTF-8</strong> — bu code point'in modern dosyalarda nasıl byte olarak kodlandığı (her biri 1–4 byte).</li>
+  <li><strong>UTF-16 code unit'ları</strong> — JavaScript string'lerinin (<code>s.length</code>) ve Java string'lerinin saydığı şey. U+FFFF üzerindeki bir code point (çoğu emoji) <em>iki</em> UTF-16 unit alır (bir surrogate çifti).</li>
+  <li><strong>Kategori</strong> — Unicode'un genel kategori kısaltması: L=harf, N=sayı, P=noktalama, S=sembol, Z=ayırıcı, C=kontrol/biçim/özel.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Uzunluk belirsizdir.</strong> "👨‍👩‍👧" 1 grapheme cluster, 5 code point, 11 UTF-16 unit ve 18 UTF-8 byte'a sahiptir — bir şeyin raporlayabileceği tüm "uzunluklar".</li>
+  <li><strong>Sıfır-genişlik birleştirici dizileri ile dizi seçicileri.</strong> Birçok emoji ZWJ dizisidir: aile, meslek, cilt tonu varyantları. Bir ZWJ'yi yeniden sıralamak veya temizlemek render edileni değiştirir.</li>
+  <li><strong>Normalleştirme önemlidir.</strong> "café" e+◌́ (NFD) veya é (NFC) olabilir. Aynı görünürler ama farklı byte'lardır; veritabanları ve karşılaştırma kodu aynı forma normalize etmelidir.</li>
+  <li><strong>Sağdan sola override'lar tehlikelidir.</strong> U+202E içeren bir dosya adı gösterim sırasını çevirebilir — <code>resu&#x202E;txt.exe</code>'yi dosya tarayıcısında <code>resuexe.txt</code> gibi gösterir. Phishing'de kullanılır.</li>
+  <li><strong>Ad sütunu kısmidir.</strong> Gerçek bir Unicode veritabanı her code point için ad içerir; inceleyici sadece kontrol karakterleri ve adın en kullanışlı teşhis olduğu yaygın biçim/boşluk karakterleri için ad gönderir.</li>
+  <li><strong>Surrogate yarımları tek başına görünmemelidir.</strong> Çıktıda U+D800–U+DFFF görürsen, girdi bozuk bir UTF-16 string'idir (yalnız surrogate). Çoğu API bunu UTF-8'e kodlamayı reddedecektir.</li>
 </ul>
 """,
     },

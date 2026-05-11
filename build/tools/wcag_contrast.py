@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Sprawdzacz Kontrastu WCAG", "tagline": "Sprawdź współczynnik kontrastu między dwoma kolorami. Werdykt pass/fail dla WCAG AA i AAA przy każdym rozmiarze tekstu.", "description": "Darmowy sprawdzacz kontrastu WCAG. Wybierz kolor tekstu i tła, dostań współczynnik (1:1 do 21:1) i werdykt pass/fail dla WCAG 2.1 AA i AAA — dla normalnego tekstu, dużego tekstu i komponentów UI."},
         "ja": {"name": "WCAG コントラストチェッカー", "tagline": "2 色のコントラスト比をチェック。各テキストサイズの WCAG AA／AAA で合否を判定。", "description": "無料の WCAG コントラスト比チェッカー。前景色と背景色を選ぶと比率（1:1〜21:1）と、WCAG 2.1 AA／AAA の合否（通常テキスト、大きい文字、UI コンポーネント別）を判定します。"},
         "nl": {"name": "WCAG Contrast Checker", "tagline": "Check de contrastratio tussen twee kleuren. Pass/fail-verdict voor WCAG AA en AAA op elke tekstgrootte.", "description": "Gratis WCAG contrastratio-checker. Kies foreground- en background-kleuren, krijg de ratio (1:1 tot 21:1) en pass/fail-verdicts voor WCAG 2.1 AA en AAA — voor normale tekst, grote tekst en UI-componenten."},
+        "tr": {"name": "WCAG Kontrast Denetleyici", "tagline": "İki renk arasındaki kontrast oranını kontrol et. Her metin boyutu için WCAG AA ve AAA'da geçer/kalır yargısı.", "description": "Ücretsiz WCAG kontrast oranı denetleyici. Ön plan ve arka plan renklerini seç, oranı (1:1 ile 21:1) ve WCAG 2.1 AA ve AAA için geçer/kalır yargılarını al — normal metin, büyük metin ve UI bileşenleri için."},
     },
     "body": """
 <div class="tool-card">
@@ -285,6 +286,36 @@ document.addEventListener('DOMContentLoaded', wcRun);
   <li><strong>Hover- en focus-states tellen.</strong> Als je button AA haalt at rest maar faalt op hover, is dat een echte accessibility-bug.</li>
   <li><strong>WCAG 2.1 vs APCA.</strong> De nieuwe APCA (Accessible Perceptual Contrast Algorithm), voorgesteld voor WCAG 3, geeft andere en arguably betere getallen — maar WCAG 2.1 is de wettelijke standaard waar de meeste jurisdicties nog naar verwijzen. Gebruik de getallen van deze tool bij EN 301 549, ADA of AA-conformance claims.</li>
   <li><strong>Pad niet met transparency.</strong> Een 50%-alpha foreground over een bekende achtergrond heeft een andere effectieve contrast — bereken tegen de daadwerkelijk gerenderde kleur, niet het origineel.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>WCAG (Web İçerik Erişilebilirlik Yönergeleri), düşük görüşlü, renk körü veya parlama koşullarındaki insanların hâlâ okuyabilmesi için metin ile arka planı arasında minimum bir kontrast oranı tanımlar. Bu araç bu oranı hesaplar (1:1 = aynı, 21:1 = saf siyah üzeri saf beyaz) ve renk çiftinin WCAG 2.1 Seviye AA veya AAA'yı geçip geçmediğini, normal metin, büyük metin ve UI bileşenleri için ayrı ayrı söyler. Matematik W3C luminance formülünü tam olarak izler.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Beyaz bir kart üzerindeki marka renginin erişilebilirlik standartlarını karşılayıp karşılamadığını kontrol etme.</li>
+  <li>Marka renkli bir arka plana karşı AA'yı geçen bir düğme metin rengi seçme.</li>
+  <li>Bir tasarım sistemini token by token denetleme — gönderim öncesi.</li>
+  <li>Somut bir geçer/kalır yargısıyla bir paydaşa bir renk-değiştirme isteğini gerekçelendirme.</li>
+  <li>Azaltılmış kontrast tercihleri olan kullanıcılarının gerçekte ne göreceğini test etme.</li>
+</ul>
+
+<h3>Eşikler</h3>
+<ul>
+  <li><strong>Normal metin</strong> (18pt / 14pt bold altında): AA için <strong>4.5:1</strong>, AAA için <strong>7:1</strong>.</li>
+  <li><strong>Büyük metin</strong> (≥18pt veya ≥14pt bold): AA için <strong>3:1</strong>, AAA için <strong>4.5:1</strong>.</li>
+  <li><strong>UI bileşenleri &amp; grafikler</strong> (ikonlar, focus ring, form kenarlıkları, bilgi taşıyan grafik elementleri): AA için <strong>3:1</strong> (WCAG 2.1 §1.4.11). AAA tier yok.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>"Büyük metin" düşündüğünden daha büyüktür.</strong> 18pt kabaca 24px'tir. 14pt bold kabaca 19px bold'dur. 16px'teki gövde kopyası büyük metin <em>değildir</em> — 4.5:1 eşiğine ihtiyacı var.</li>
+  <li><strong>Yoğun bir fotoğraf üzerindeki açık metin başarısız olacaktır.</strong> Kontrast oranı belirli pikseller arasındadır — metni kontrollü bir arka plan vermek için koyu bir gradient veya solid bir panel yerleştir.</li>
+  <li><strong>Anti-aliasing kontrastı yumuşatır.</strong> 4.5:1 zemindir, hedef değildir. Rahat okuma genellikle 7:1 veya daha iyisini ister, özellikle gövde kopyası için.</li>
+  <li><strong>Hover ve focus durumları sayılır.</strong> Düğmen rest'te AA'yı geçer ama hover'da başarısız olursa, bu gerçek bir erişilebilirlik hatasıdır.</li>
+  <li><strong>WCAG 2.1 vs APCA.</strong> WCAG 3 için önerilen yeni APCA (Erişilebilir Algısal Kontrast Algoritması) farklı ve tartışmasız daha iyi sayılar verir — ama WCAG 2.1 çoğu yargı yetkisinin hâlâ atıfta bulunduğu yasal standarttır.</li>
+  <li><strong>Şeffaflıkla pad etme.</strong> Bilinen bir arka plan üzerinde %50 alfalı bir ön plan farklı bir etkili kontrasta sahiptir — orijinaline değil, gerçek render edilen renge karşı hesapla.</li>
 </ul>
 """,
     },

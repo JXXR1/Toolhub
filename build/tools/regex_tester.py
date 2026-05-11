@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の JavaScript 正規表現テスター。ライブハイライト、キャプチャグループ表示、置換モードに対応。PCRE 互換のフラグ（g/i/m/s/u/y）。",
         },
         "nl": {"name": "Regex Tester", "tagline": "Test JavaScript regular expressions live. Zie matches, capture groups, en pas replacements toe terwijl je typt.", "description": "Gratis online JavaScript regex tester met live highlighting, capture groups en replace mode. PCRE-compatible flags (g/i/m/s/u/y)."},
+        "tr": {"name": "Regex Tester", "tagline": "JavaScript düzenli ifadelerini canlı test et. Eşleşmeleri, capture gruplarını gör ve yazdıkça değiştirme uygula.", "description": "Canlı vurgulama, capture grupları ve değiştirme moduyla ücretsiz online JavaScript regex tester. PCRE uyumlu bayraklar (g/i/m/s/u/y)."},
     },
     "body": """
 <div class="tool-card">
@@ -301,6 +302,37 @@ document.addEventListener('DOMContentLoaded', reRun);
   <li><strong>Anchors op line- vs string-grenzen.</strong> <code>^</code> en <code>$</code> matchen standaard string-einden; met <code>m</code>-flag matchen ze elke regel.</li>
   <li><strong>Replacement-specials.</strong> <code>$&amp;</code> is de hele match; <code>$1</code>, <code>$2</code>, … zijn capture groups; <code>$$</code> is een letterlijke <code>$</code>. Dat vergeten is een gangbare bron van "waarom eet mijn regex mijn dollars".</li>
   <li><strong>Parse geen HTML met regex</strong> voor iets serieus. De klassieke waarschuwing klopt: nested tags, comments en CDATA hebben een echte parser nodig. Regex is prima voor eenmalig log-scrapen of gecontroleerde inputs.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Düzenli ifadeler yoğun ve affetmezdir. Gerçekten çalışan birini yazmanın yolu yinelemelidir — desen, örnek metin, ne eşleştiğini gör, ayarla. Bu araç tarayıcında JavaScript motorunun yerel <code>RegExp</code>'ini kullanarak bu döngüyü, artı capture-group incelemesi ve replacement önizlemesini verir. Desenler ve girdiler sayfayı asla terk etmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Kullanıcı girişini doğrulama (e-posta şekilli, telefon şekilli, posta kodu şekilli) ve tam olarak hangi girdilerin geçtiğini ve başarısız olduğunu görme.</li>
+  <li>Log satırlarını parse etme, alanlar çıkarma, log filtreleri kurma.</li>
+  <li>Gerçek bir kod tabanı boyunca çalıştırmadan önce find-and-replace desenlerini tasarlama.</li>
+  <li>Çalışmayan Stack Overflow'dan kopyaladığın bir regex'i debug etme — buraya yapıştır, gerçekte neyi eşleştirdiğini gör.</li>
+</ul>
+
+<h3>Yaygın desenler</h3>
+<ul>
+  <li><code>\b\w+@\w+\.\w+\b</code> — e-postaya benzer</li>
+  <li><code>^\s*$</code> — boş/sadece-boşluk satırı (<code>m</code> bayrağı ile)</li>
+  <li><code>(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})</code> — adlandırılmış capture grupları</li>
+  <li><code>(?:.*)</code> — non-capturing grup</li>
+  <li><code>(?=foo)</code> / <code>(?!foo)</code> — lookahead / negatif lookahead</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>JavaScript ≠ PCRE.</strong> <code>\K</code> yok, recursive desenler yok, lookbehind sadece ES2018'den beri. Perl, PHP veya Python'dan gelen desenler sıklıkla ayarlama gerektirir.</li>
+  <li><strong><code>g</code> bayrağı olmadan sadece ilk eşleşmeyi alırsın.</strong> "Hepsini bul" için <code>g</code> ekle; çapalar satır başına eşleşmeli ise <code>m</code> ile birleştir.</li>
+  <li><strong>Greedy - lazy.</strong> <code>.*</code> mümkün olduğu kadar çok yakalar; <code>.*?</code> mümkün olduğu kadar az yakalar. <code>&lt;b&gt;hi&lt;/b&gt; and &lt;i&gt;there&lt;/i&gt;</code>'ı tek blok veya iki blok olarak eşleştirme arasındaki fark.</li>
+  <li><strong>Satır - string sınırlarında çapalar.</strong> <code>^</code> ve <code>$</code> varsayılan olarak string uçlarıyla eşleşir; <code>m</code> bayrağı ile her satırla eşleşir.</li>
+  <li><strong>Replacement özellikleri.</strong> <code>$&amp;</code> tüm eşleşmedir; <code>$1</code>, <code>$2</code>, … capture gruplarıdır; <code>$$</code> literal <code>$</code>'dır. Bunu unutmak "neden regex'im dolarlarımı yiyor"un yaygın bir kaynağıdır.</li>
+  <li><strong>Ciddi bir şey için regex ile HTML parse etme.</strong> Klasik uyarı doğrudur: iç içe tag'ler, yorumlar ve CDATA gerçek bir parser gerektirir.</li>
 </ul>
 """,
     },

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Walidator Karty Kredytowej", "tagline": "Sprawdź numer karty algorytmem Luhna i wykryj wystawcę. Działa lokalnie — twój numer nigdy nie jest wysyłany.", "description": "Darmowy walidator kart kredytowych online. Checksum Luhna (mod-10), wykrywanie wystawcy (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) i sprawdzanie długości. 100% po stronie klienta."},
         "ja": {"name": "クレジットカード検証ツール", "tagline": "Luhn チェックでカード番号を検証し、ブランドを検出。ローカル動作で、番号は送信されません。", "description": "オンライン無料のクレジットカード検証ツール。Luhn (mod-10) チェックサム、ブランド検出（Visa、Mastercard、Amex、Discover、JCB、Diners、UnionPay）、桁数検証を行います。100% クライアントサイドで動作します。"},
         "nl": {"name": "Creditcard-validator", "tagline": "Valideer een kaartnummer met de Luhn-check en detecteer het kaartmerk. Draait lokaal — je nummer wordt nooit verzonden.", "description": "Gratis online creditcard-validator. Luhn (mod-10) checksum, brand-detectie (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) en lengtecontrole. 100% client-side."},
+        "tr": {"name": "Kredi Kartı Doğrulayıcı", "tagline": "Kart numarasını Luhn kontrolü ile doğrula ve kart markasını tespit et. Yerel çalışır — numaran asla iletilmez.", "description": "Ücretsiz online kredi kartı doğrulayıcı. Luhn (mod-10) checksum, marka tespiti (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) ve uzunluk doğrulaması. %100 istemci tarafında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -195,6 +196,28 @@ document.addEventListener('DOMContentLoaded', cvRun);
 </ul>
 
 <h3>Testnummers (veilig om te plakken)</h3>
+<p>Visa <code>4242 4242 4242 4242</code> · Mastercard <code>5555 5555 5555 4444</code> · Amex <code>3782 822463 10005</code> · Discover <code>6011 1111 1111 1117</code></p>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Kart numaraları yerleşik bir checksum (Luhn / mod-10 algoritması) taşır ve veren markayı tanımlayan öneklerle başlar. Bu ikisi birlikte, bir numarayı ödeme işlemcisine göndermeden önce yazım hatalarını yakalamana ve markayı tanımlamana izin verir. Bu araç her iki kontrolü de %100 tarayıcında yapar — yapıştırdığın numara sayfayı asla terk etmez. Geliştirici seviyesi yapısal doğrulamadır, dolandırıcılık kontrolü veya canlı kart araması değildir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Kopyaladığın bir test kart numarasının iyi biçimli olduğunu doğrulama (<a href="https://docs.stripe.com/testing" rel="noopener">Stripe docs</a> veya benzerinden test kartları hepsi Luhn'dan geçer).</li>
+  <li>Bir formdaki giriş alanlarının sanity check'i — numara, aksi takdirde arama için ücret alan bir ödeme API'sine round-trip yapmadan önce temel yapıyı karşılıyor mu?</li>
+  <li>"Yanlış görünen" bir kart numarasını denetleyip yazım hatası mı (Luhn başarısız) yoksa marka uyumsuzluğu mu (önek için uzunluk yanlış) olduğunu görme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>"Yapısal olarak geçerli" "verilmiş" veya "aktif" anlamına gelmez.</strong> Gerçek doğrulama bir ödeme işlemcisi gerektirir — bu para harcatır veya hold koyar. Bu araç yazım hatalarını yakalar, kapatılmış hesapları değil.</li>
+  <li><strong>Gerçek kart numaralarını hiçbir yere yapıştırma</strong> — bu araç dahil. Tarayıcı iletmez ama ekran kaydedici, tarayıcı uzantısı veya açık dev-tools paneli yapabilir. Bilinen bir test numarası kullan.</li>
+  <li><strong>Bazı 16 basamaklı numaralar kart değildir.</strong> Sadakat kartları, hediye kartları ve bazı prepaid SKU'lar biçimi tekrar kullanır; Luhn geçişi + marka eşleşmesi bir ödeme aracı garantilemez.</li>
+  <li><strong>Co-branded kartlar.</strong> Bir marka altında verilen kartlar başka bir markanın logosunu gösterebilir. Buradaki marka tespiti basılı logoyu değil kanonik veren önekini kullanır.</li>
+</ul>
+
+<h3>Test numaraları (yapıştırılması güvenli)</h3>
 <p>Visa <code>4242 4242 4242 4242</code> · Mastercard <code>5555 5555 5555 4444</code> · Amex <code>3782 822463 10005</code> · Discover <code>6011 1111 1111 1117</code></p>
 """,
     },

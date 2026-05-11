@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Kalkulator BMI", "tagline": "Wskaźnik masy ciała z wzrostu i wagi. Metryczny lub imperialny. Pokazuje kategorię WHO — nie jest poradą medyczną.", "description": "Darmowy kalkulator BMI (Body Mass Index). Wpisz wzrost i wagę w jednostkach metrycznych (cm + kg) albo imperialnych (stopy/cale + funty) i zobacz wartość BMI oraz klasyfikację WHO (niedowaga, prawidłowa, nadwaga, otyłość). Tylko cele edukacyjne — nie jest poradą medyczną."},
         "ja": {"name": "BMI 計算機", "tagline": "身長と体重から BMI を計算。メートル法・ヤード・ポンド法対応。WHO 区分を表示 — 医療助言ではありません。", "description": "無料の BMI（体格指数）計算ツール。身長と体重をメートル法（cm + kg）またはヤード・ポンド法（フィート/インチ + ポンド）で入力すると、BMI 値と WHO 分類（低体重・標準・肥満気味・肥満）が表示されます。教育目的のみで、医療助言ではありません。"},
         "nl": {"name": "BMI-calculator", "tagline": "Body Mass Index uit lengte en gewicht. Metrisch of imperiaal. Toont de WHO-categorie — geen medisch advies.", "description": "Gratis Body Mass Index-calculator. Voer lengte en gewicht in metrisch (cm + kg) of imperiaal (feet/inches + pounds) in en zie de BMI-waarde plus de WHO-classificatie (ondergewicht, normaal, overgewicht, obesitas). Alleen educatief — geen medisch advies."},
+        "tr": {"name": "BMI Hesaplayıcı", "tagline": "Boy ve kilodan vücut kitle indeksi. Metrik veya imperial. DSÖ kategorisini gösterir — tıbbi tavsiye değildir.", "description": "Ücretsiz vücut kitle indeksi hesaplayıcı. Boy ve kiloyu metrik (cm + kg) veya imperial (feet/inç + pound) gir; BMI değeri ve DSÖ sınıflandırmasını (zayıf, normal, fazla kilolu, obez) gör. Sadece bilgilendirme amaçlıdır — tıbbi tavsiye değildir."},
     },
     "body": """
 <div class="tool-card">
@@ -372,6 +373,34 @@ document.addEventListener('DOMContentLoaded', bmiRun);
   <li><strong>Etniciteit doet ertoe.</strong> Diverse gezondheidsinstanties (NHS, WHO Asia-Pacific-richtlijnen) hanteren lagere drempels (overgewicht ≥23, obesitas ≥27,5) voor Zuid-Aziatische, Chinese en andere groepen, omdat cardiovasculair risico bij lagere BMI stijgt.</li>
   <li><strong>Lange vs korte mensen.</strong> De gekwadrateerde-lengte formule classificeert lange mensen systematisch als "ondergewicht" en korte mensen als "overgewicht" — alternatieve formules (Trefethen's BMI gebruikt lengte^2.5) proberen dit te corrigeren.</li>
   <li><strong>Geen medisch advies.</strong> Als je je zorgen maakt over je gewicht, overleg met een arts. Die heeft de rest van het plaatje (buikomvang, bloeddruk, bloedwaarden, leefstijl) dat één getal niet biedt.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Vücut Kitle İndeksi (BMI), kilogram cinsinden ağırlığın metre cinsinden boyun karesine bölümü — Dünya Sağlık Örgütü ve birçok sağlık sisteminin vücut ağırlığı kategorileri için hızlı bir tarama olarak kullandığı tek bir sayıdır. Tanı koymaz; bir bayrak olarak çalışır. Klasik yetişkin eşikleri: 18,5 altı zayıf, 18,5–24,9 normal, 25–29,9 fazla kilolu, 30 ve üzeri obez (35 ve 40'ta Sınıf I/II/III'e ayrılır). Bu araç metrik veya imperial boy ve kilodan değeri ve kategoriyi hesaplar.</p>
+
+<h3>Nasıl hesaplanır</h3>
+<ul>
+  <li><strong>Metrik:</strong> BMI = kg ÷ (m × m). 1,75 m'de 70 kg → 70 / 3,0625 = 22,9.</li>
+  <li><strong>Imperial:</strong> BMI = (lb × 703) ÷ (in × in). Araç doğruluk için içsel olarak metriğe dönüştürür.</li>
+  <li>DSÖ kategorileri birim sistemden bağımsız aynıdır — BMI'nin kendisi birimsizdir.</li>
+</ul>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Hızlı öz kontrol veya isteyen bir form (sigorta, fitness uygulamaları, spor salonu girişi) doldurmak için.</li>
+  <li>Bir değeri popülasyonlar veya çalışmalar arasında karşılaştırma.</li>
+  <li>Zaman içinde değişim yönünü (artan, sabit, azalan) takip etme — eğilim, herhangi bir tek okumadan daha kullanışlıdır.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>BMI vücut kompozisyonunu ölçmez.</strong> Kas yağdan daha ağırdır, bu nedenle fit, kaslı biri düşük vücut yağ oranıyla "fazla kilolu" çıkabilir. Tersine, düşük kaslı biri sağlıksız olduğu halde "normal" çıkabilir ("zayıf yağlı").</li>
+  <li><strong>Bu bir yetişkin metriğidir.</strong> 18 yaş altı çocuk ve ergenler için yaşa ve cinsiyete özgü BMI yüzdelik tabloları kullan.</li>
+  <li><strong>Hamilelik desteklenmiyor.</strong> BMI hamilelik sırasında geçerli değildir; sağlık hizmeti sağlayıcına danış.</li>
+  <li><strong>Etnik köken önemli.</strong> Birkaç sağlık kuruluşu (NHS, DSÖ Asya-Pasifik kılavuzu) Güney Asyalı, Çinli ve diğer gruplar için kardiyovasküler risk daha düşük BMI'lerde arttığı için daha düşük eşikler (fazla kilolu ≥23, obez ≥27,5) kullanır.</li>
+  <li><strong>Uzun - kısa insanlar.</strong> Karesi alınmış boy formülü sistematik olarak uzun insanları "zayıf" ve kısa insanları "fazla kilolu" olarak fazla sınıflandırır.</li>
+  <li><strong>Tıbbi tavsiye değildir.</strong> Kilonla ilgili endişen varsa, bir klinisyenle konuş. Tek bir sayının vermediği bel çevresi, kan basıncı, kan değerleri, yaşam tarzı gibi resmin geri kalanına sahipler.</li>
 </ul>
 """,
     },

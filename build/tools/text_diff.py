@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Diff Tekstu", "tagline": "Porównaj dwa bloki tekstu i zobacz dodania, usunięcia i niezmieniony kontekst linia po linii. Widok side-by-side albo unified.", "description": "Darmowe narzędzie do diffowania tekstu online. Myers diff na poziomie linii z widokiem side-by-side i unified, togle do ignorowania białych znaków i wielkości liter. Działa w przeglądarce."},
         "ja": {"name": "テキスト差分", "tagline": "2 つのテキストブロックを比較し、行単位で追加・削除・変更されない部分を表示。並列または統合表示。", "description": "オンライン無料のテキスト差分ツール。Myers アルゴリズムによる行単位の差分を、並列／統合ビューで表示。空白無視、大小無視のトグルにも対応します。すべてブラウザ内で動作します。"},
         "nl": {"name": "Text Diff", "tagline": "Vergelijk twee blokken tekst en zie regel-voor-regel additions, removals en unchanged context. Side-by-side of unified view.", "description": "Gratis online text-diff tool. Line-level Myers-diff met side-by-side en unified views, ignore-whitespace en ignore-case toggles. Draait in je browser."},
+        "tr": {"name": "Metin Diff", "tagline": "İki metin bloğunu karşılaştır ve satır satır eklemeleri, silmeleri ve değişmeyen bağlamı gör. Yan yana veya birleşik görünüm.", "description": "Ücretsiz online metin diff aracı. Yan yana ve birleşik görünümlü, ignore-whitespace ve ignore-case anahtarlı satır seviyesi Myers diff. Tarayıcında çalışır."},
     },
     "body": """
 <div class="td-grid">
@@ -291,6 +292,35 @@ document.addEventListener('DOMContentLoaded', tdRun);
   <li><strong>Volgorde doet ertoe.</strong> Als je twee regels omwisselt, toont de diff beide als removed-and-re-added, niet als een "moved" paar. Er is geen move-detectie.</li>
   <li><strong>Grote inputs (10k+ regels) kunnen traag zijn.</strong> Het LCS-algoritme is O(m·n) — prima voor typische files, traag voor heel grote. Diff kleine stukken tegelijk.</li>
   <li><strong>Trailing newlines</strong> tellen als een regel. Twee inputs die alleen verschillen in of ze met een newline eindigen, tonen één trailing addition of removal.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir metin parçasının iki sürümünü — paragraf, config dosyası, SQL sorgusu, liste — karşılaştırma ve tam olarak hangi satırların eklendiğini, silindiğini veya bırakıldığını görme. <code>git diff</code>'in elinin altında olmadığında veya metin sürüm kontrolünde değilken bile. Çıktı, kod incelemesinde göreceğin aynı satır seviyesi diff'tir: eklemeler için yeşil, çıkarmalar için kırmızı, değişmeyen bağlam için düz.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>"Aynı görünen" iki e-posta, sözleşme veya yapıştırılmış blob arasındaki farkı tespit etme.</li>
+  <li>İki ortamdaki (staging vs prod) config dosyalarını veya ortam değişkenlerini karşılaştırma.</li>
+  <li>Word/Docs'ta başka biri tarafından düzenlenen bir metin parçasına yapılan değişiklikleri inceleme.</li>
+  <li>İki sorgu sonucunu, log snippet'ini veya JSON blob'unu diff'leme (önce kanonikleştirmek için JSON Formatter kullan).</li>
+  <li>Commit etmeden önce bir search-and-replace'in hızlı sanity check'i.</li>
+</ul>
+
+<h3>Yan yana - birleşik</h3>
+<ul>
+  <li><strong>Yan yana</strong> — küçük değişiklikleri satır satır taramak için daha kolay; orijinal solda, yeni sürüm sağda.</li>
+  <li><strong>Birleşik</strong> — <code>git diff</code> çıktısına daha yakın; paylaşma veya yazdırma için daha iyi, değişiklikler seyrek olduğunda takip etmesi daha kolay.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Bu bir satır diff'idir, kelime diff'i değildir.</strong> Uzun bir satırın ortasında değişen tek karakter tüm satırı değişmiş olarak işaretler. Paragrafların düzyazı seviyesinde diff'i için kelimelere tokenize eden bir araç istemen gerekebilir.</li>
+  <li><strong>"Boşluğu yok say" yalnızca karşılaştırmayı etkiler, gösterimi değil.</strong> Yalnızca sondaki boşluk veya girinti farklı olan satırlar değişmeyen sütuna çöker, ancak orijinal boşluk hâlâ gösterilir.</li>
+  <li><strong>"Büyük/küçük harfi yok say" benzer şekilde.</strong> "TODO" ve "todo" eşit karşılaştırır, ama orijinal case render edilir.</li>
+  <li><strong>Sıra önemlidir.</strong> İki satırı takas edersen, diff her ikisini de "taşınan" çifti olarak değil, kaldırıldı-ve-yeniden-eklendi olarak gösterir. Taşıma tespiti yoktur.</li>
+  <li><strong>Büyük girdiler (10k+ satır) yavaş olabilir.</strong> LCS algoritması O(m·n)'dir — tipik dosyalar için iyidir, çok büyükler için ağırdır. Bir seferde küçük parçaları diff'le.</li>
+  <li><strong>Sondaki yeni satırlar</strong> satır olarak sayılır. Yalnızca yeni satırla bitip bitmediği konusunda farklı iki girdi sondaki bir ekleme veya çıkarma gösterir.</li>
 </ul>
 """,
     },

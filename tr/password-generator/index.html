@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parola Üretici — Toolhub</title>
+  <meta name="description" content="Ücretsiz güvenli parola üretici. Özel karakter kuralları, passphrase modu ve toplu üretim. Tamamen tarayıcında çalışır.">
+  <meta property="og:title" content="Parola Üretici — Toolhub">
+  <meta property="og:description" content="Ücretsiz güvenli parola üretici. Özel karakter kuralları, passphrase modu ve toplu üretim. Tamamen tarayıcında çalışır.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/password-generator/">
+  <meta property="og:image" content="https://toolhub.software/og-images/password-generator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/password-generator.png">
+  <link rel="canonical" href="https://toolhub.software/tr/password-generator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/password-generator/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/password-generator/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/password-generator/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/password-generator/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/password-generator/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/password-generator/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/password-generator/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/password-generator/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/password-generator/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/password-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/password-generator/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/password-generator/#tool",
+        "name": "Parola Üretici",
+        "description": "Ücretsiz güvenli parola üretici. Özel karakter kuralları, passphrase modu ve toplu üretim. Tamamen tarayıcında çalışır.",
+        "url": "https://toolhub.software/tr/password-generator/",
+        "applicationCategory": "SecurityApplication",
+        "applicationSubCategory": "Security Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["password", "secure", "random", "generate", "passphrase"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "Parola Üretici", "item": "https://toolhub.software/tr/password-generator/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İyi bir parola, saldırganın tahmin edemediği ve hatırlamak zorunda olmadığın bir paroladır (çünkü parola yöneticinde saklanır). Bu üretici, tamamen tarayıcında, TLS'in kullandığı kriptografik olarak güvenli rastgele kaynak olan crypto.getRandomValues kullanarak güçlü rastgele parolalar veya akılda kalıcı passphrase'ler üretir. Hiçbir şey iletilmez; parola cihazını asla terk etmez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parola yöneticisine giden herhangi bir yeni hesap için benzersiz bir parola oluşturma. Belleğine alacağın bir master parola veya kurtarma passphrase'i üretme — passphrase modu yazması ve hatırlaması daha kolaydır. Bir CI değişkeni, API token veya Wi-Fi ağı için insan olmayan bir secret üretme. Yeni bir kullanıcı toplu hesabı için toplu parola üretimi (sayıyı 50'ye kadar ayarla)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Rastgele karakterler - passphrase'ler",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rastgele karakterler — uzunluk başına en fazla entropi. 20 karışık karakter ≈ 130 bit. Yapıştırdığın şeyler için doğru, yazdığın değil. Passphrase'ler — yazması ve hatırlaması daha kolay. Dört kelime ≈ 40 bit, altı kelime ≈ 60 bit. Master parolalar, cihaz kilidi ve sık manuel girdiğin her şey için doğru. \"Belirsiz olanları hariç tut\" ekranlardan veya el yazısı notlardan güvenli okuma için 0/O/1/l/I 'yi düşürür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne kadar entropi gerekir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "≥ 60 bit — düşük değerli hesaplar için uygun ≥ 80 bit — çoğu hesap için iyi ≥ 100 bit — yüksek değerli (finansal, master parola, root kimlik bilgileri)"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parolaları yeniden kullanma. Yapabileceğin en büyük tek güvenlik yükseltmesi, bir yöneticide saklanan, site başına bir benzersiz paroladır. Üretilen parolaları korumasız yazma. Bir parola yöneticisi (1Password, Bitwarden, KeePass) kullan — Notes uygulaması, metin dosyası veya e-posta taslağı değil. Uzun > karmaşık. Sadece küçük harfler kullanan 24 karakterlik bir parola, her sembol sınıfı olan 10 karakterlikten daha fazla entropiye sahiptir. Uzunluk kazanır. Siteye özgü kurallar kopyala-yapıştırı bozabilir. Bazı siteler belirli sembolleri yasaklar veya uzunluğu 16'da sınırlar. Sinir bozucu ama gerçek — üret, sonra gerekirse uydurmak için kırp/değiştir."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Parola Üretici",
+  "description": "Güçlü rastgele parolalar veya akılda kalıcı passphrase'ler. Yerel olarak üretilir — hiçbir yere gönderilmez.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Seçenekleri ayarla",
+      "text": "İhtiyacın olan parola seçeneklerini seç."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Oluştur düğmesine tıkla",
+      "text": "Yeni bir parola üretmek için Oluştur düğmesine bas."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kopyala",
+      "text": "Üretilen parola verisini kopyalamak için Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/password-generator/'; else location.href='/password-generator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / Parola Üretici</div>
+    <h1>Parola Üretici</h1>
+    <p class="tagline">Güçlü rastgele parolalar veya akılda kalıcı passphrase'ler. Yerel olarak üretilir — hiçbir yere gönderilmez.</p>
+    
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Tür</label>
+      <select id="pw-mode" onchange="pwToggleMode()">
+        <option value="chars">Random characters</option>
+        <option value="phrase">Passphrase (words)</option>
+      </select>
+    </div>
+    <div>
+      <label>Adet (1-50)</label>
+      <input type="number" id="pw-count" value="1" min="1" max="50">
+    </div>
+  </div>
+  <div id="pw-chars-opts">
+    <div class="row-2col" style="margin-top:1rem">
+      <div>
+        <label>Uzunluk: <span id="pw-len-display">20</span></label>
+        <input type="range" id="pw-length" min="6" max="128" value="20" oninput="document.getElementById('pw-len-display').textContent=this.value">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.9rem">
+        <label><input type="checkbox" id="pw-lower" checked> a-z lowercase</label>
+        <label><input type="checkbox" id="pw-upper" checked> A-Z uppercase</label>
+        <label><input type="checkbox" id="pw-digit" checked> 0-9 digits</label>
+        <label><input type="checkbox" id="pw-symbol" checked> Symbols !@#$…</label>
+        <label><input type="checkbox" id="pw-noambig"> Exclude ambiguous (0/O/1/l/I)</label>
+      </div>
+    </div>
+  </div>
+  <div id="pw-phrase-opts" style="display:none;margin-top:1rem">
+    <div class="row-2col">
+      <div>
+        <label>Words per phrase</label>
+        <input type="number" id="pw-words" value="4" min="2" max="12">
+      </div>
+      <div>
+        <label>Separator</label>
+        <select id="pw-sep">
+          <option value="-">- (hyphen)</option>
+          <option value=".">. (period)</option>
+          <option value="_">_ (underscore)</option>
+          <option value=" ">space</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="button-row">
+    <button onclick="pwGenerate()">Oluştur</button>
+    <button class="secondary" onclick="pwCopy()">Kopyala</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Çıktı</label>
+  <pre class="output" id="pw-out">Sonucu görmek için yukarıya giriş yapın.</pre>
+  <div class="meta" id="pw-meta"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>İyi bir parola, saldırganın tahmin edemediği ve hatırlamak zorunda olmadığın bir paroladır (çünkü parola yöneticinde saklanır). Bu üretici, tamamen tarayıcında, TLS'in kullandığı kriptografik olarak güvenli rastgele kaynak olan <code>crypto.getRandomValues</code> kullanarak güçlü rastgele parolalar veya akılda kalıcı passphrase'ler üretir. Hiçbir şey iletilmez; parola cihazını asla terk etmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Parola yöneticisine giden herhangi bir yeni hesap için benzersiz bir parola oluşturma.</li>
+  <li>Belleğine alacağın bir master parola veya kurtarma passphrase'i üretme — passphrase modu yazması ve hatırlaması daha kolaydır.</li>
+  <li>Bir CI değişkeni, API token veya Wi-Fi ağı için insan olmayan bir secret üretme.</li>
+  <li>Yeni bir kullanıcı toplu hesabı için toplu parola üretimi (sayıyı 50'ye kadar ayarla).</li>
+</ul>
+
+<h3>Rastgele karakterler - passphrase'ler</h3>
+<ul>
+  <li><strong>Rastgele karakterler</strong> — uzunluk başına en fazla entropi. 20 karışık karakter ≈ 130 bit. Yapıştırdığın şeyler için doğru, yazdığın değil.</li>
+  <li><strong>Passphrase'ler</strong> — yazması ve hatırlaması daha kolay. Dört kelime ≈ 40 bit, altı kelime ≈ 60 bit. Master parolalar, cihaz kilidi ve sık manuel girdiğin her şey için doğru.</li>
+  <li>"Belirsiz olanları hariç tut" ekranlardan veya el yazısı notlardan güvenli okuma için <code>0/O/1/l/I</code>'yi düşürür.</li>
+</ul>
+
+<h3>Ne kadar entropi gerekir?</h3>
+<ul>
+  <li>≥ 60 bit — düşük değerli hesaplar için uygun</li>
+  <li>≥ 80 bit — çoğu hesap için iyi</li>
+  <li>≥ 100 bit — yüksek değerli (finansal, master parola, root kimlik bilgileri)</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Parolaları yeniden kullanma.</strong> Yapabileceğin en büyük tek güvenlik yükseltmesi, bir yöneticide saklanan, site başına bir benzersiz paroladır.</li>
+  <li><strong>Üretilen parolaları korumasız yazma.</strong> Bir parola yöneticisi (1Password, Bitwarden, KeePass) kullan — Notes uygulaması, metin dosyası veya e-posta taslağı değil.</li>
+  <li><strong>Uzun &gt; karmaşık.</strong> Sadece küçük harfler kullanan 24 karakterlik bir parola, her sembol sınıfı olan 10 karakterlikten daha fazla entropiye sahiptir. Uzunluk kazanır.</li>
+  <li><strong>Siteye özgü kurallar kopyala-yapıştırı bozabilir.</strong> Bazı siteler belirli sembolleri yasaklar veya uzunluğu 16'da sınırlar. Sinir bozucu ama gerçek — üret, sonra gerekirse uydurmak için kırp/değiştir.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/uuid-generator/">UUID Üretici</a> <a href="/tr/hash-generator/">Hash Üretici</a> <a href="/tr/jwt-decoder/">JWT Decoder</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const PW_WORDS = ["able","acid","aged","also","area","army","away","baby","back","ball","band","bank","base","bath","bear","beat","been","beer","bell","belt","best","bike","bird","blow","blue","boat","body","bomb","bond","bone","book","boom","born","boss","both","bowl","bulk","burn","bush","busy","call","calm","came","camp","card","care","case","cash","cast","cell","chat","chip","city","club","coal","coat","code","cold","come","cook","cool","cope","copy","core","cost","crew","crop","dark","data","date","dawn","days","dead","deal","dean","dear","debt","deep","deny","desk","dial","dice","diet","disc","disk","does","done","door","dose","down","draw","drew","drop","drug","dual","duke","dust","duty","each","earn","ease","east","easy","edge","else","even","ever","evil","exit","face","fact","fail","fair","fall","farm","fast","fate","fear","feed","feel","feet","fell","felt","file","fill","film","find","fine","fire","firm","fish","five","flag","flat","flow","food","foot","fork","form","fort","four","free","from","fuel","full","fund","gain","game","gate","gave","gear","gene","gift","girl","give","glad","goal","goes","gold","golf","gone","good","gray","grew","grey","grow","gulf","hair","half","hall","hand","hang","hard","harm","hate","have","head","hear","heat","held","hell","help","here","hero","high","hill","hint","hire","hold","hole","holy","home","hope","host","hour","huge","hunt","hurt","idea","into","iron","item","jack","jane","java","jean","jess","jest","jets","john","join","jose","jude","jump","june","jury","just","keen","keep","kept","kick","kind","king","knee","knew","know","lack","lady","laid","lake","land","lane","last","late","lava","lawn","laws","lead","leaf","lean","leap","left","lend","less","life","lift","like","line","link","lion","list","live","load","loan","lock","lost","loud","love","luck","made","mail","main","make","male","many","mark","mass","matt","mean","meat","meet","menu","mere","mike","mile","milk","mill","mind","mine","miss","mode","mood","moon","more","most","move","much","must","name","navy","near","neck","need","news","next","nice","nine","none","nose","note","ohio","once","only","onto","open","oral","over","pace","pack","page","paid","pain","pair","palm","park","part","pass","past","path","peak","pick","pink","pipe","plan","play","plot","plug","plus","poll","pool","poor","port","post","pull","pure","push","race","rage","rail","rain","rank","rare","rate","read","real","rear","rely","rent","rest","rice","rich","ride","ring","rise","risk","road","rock","role","roll","roof","room","root","rose","rule","rush","ruth","safe","said","sake","sale","salt","same","sand","save","seal","seat","seed","seek","seem","seen","self","sell","send","sent","sept","sets","sext","shed","ship","shoe","shop","shot","show","shut","sick","side","sign","silk","sing","sink","site","size","skin","slip","slow","snap","snow","soft","soil","sold","sole","some","song","soon","sort","soul","soup","spot","star","stay","step","stir","stop","such","suit","sure","take","tale","talk","tall","tank","tape","task","team","tech","tell","tend","term","test","text","than","that","them","then","they","thin","this","thus","tide","tied","time","tiny","told","toll","tone","tony","took","tool","tops","tore","torn","tour","town","tree","trip","true","tube","tune","turn","twin","type","ugly","unit","upon","used","user","uses","vary","vast","very","vice","view","vote","wage","wait","wake","walk","wall","want","ward","warm","warn","wash","wave","ways","weak","wear","week","well","went","were","west","what","when","whom","wide","wife","wild","will","wind","wine","wing","wire","wise","wish","with","wood","word","wore","work","worn","yard","yeah","year","your","zero","zone"];
+
+function pwToggleMode(){
+  const m = document.getElementById('pw-mode').value;
+  document.getElementById('pw-chars-opts').style.display = m === 'chars' ? 'block' : 'none';
+  document.getElementById('pw-phrase-opts').style.display = m === 'phrase' ? 'block' : 'none';
+}
+
+function pwRandInt(max){
+  const u = new Uint32Array(1);
+  crypto.getRandomValues(u);
+  return u[0] % max;
+}
+
+function pwGenChars(){
+  let pool = '';
+  if (document.getElementById('pw-lower').checked) pool += 'abcdefghijklmnopqrstuvwxyz';
+  if (document.getElementById('pw-upper').checked) pool += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (document.getElementById('pw-digit').checked) pool += '0123456789';
+  if (document.getElementById('pw-symbol').checked) pool += '!@#$%^&*()-_=+[]{};:,.<>?/~';
+  if (document.getElementById('pw-noambig').checked) pool = pool.replace(/[0O1lI]/g, '');
+  if (!pool) return 'Pick at least one character set.';
+  const len = parseInt(document.getElementById('pw-length').value, 10);
+  const out = new Array(len);
+  const rand = new Uint32Array(len);
+  crypto.getRandomValues(rand);
+  for (let i = 0; i < len; i++) out[i] = pool[rand[i] % pool.length];
+  return out.join('');
+}
+
+function pwGenPhrase(){
+  const n = parseInt(document.getElementById('pw-words').value, 10);
+  const sep = document.getElementById('pw-sep').value;
+  const words = [];
+  for (let i = 0; i < n; i++) words.push(PW_WORDS[pwRandInt(PW_WORDS.length)]);
+  return words.join(sep);
+}
+
+function pwEntropy(s, mode){
+  if (mode === 'phrase'){
+    const n = parseInt(document.getElementById('pw-words').value, 10);
+    return Math.round(n * Math.log2(PW_WORDS.length));
+  }
+  let pool = 0;
+  if (document.getElementById('pw-lower').checked) pool += 26;
+  if (document.getElementById('pw-upper').checked) pool += 26;
+  if (document.getElementById('pw-digit').checked) pool += 10;
+  if (document.getElementById('pw-symbol').checked) pool += 27;
+  if (!pool) return 0;
+  return Math.round(s.length * Math.log2(pool));
+}
+
+function pwGenerate(){
+  const mode = document.getElementById('pw-mode').value;
+  const count = parseInt(document.getElementById('pw-count').value, 10) || 1;
+  const lines = [];
+  let example = '';
+  for (let i = 0; i < count; i++){
+    const p = mode === 'phrase' ? pwGenPhrase() : pwGenChars();
+    if (i === 0) example = p;
+    lines.push(p);
+  }
+  document.getElementById('pw-out').textContent = lines.join('\n');
+  const bits = pwEntropy(example, mode);
+  let strength = 'weak';
+  if (bits >= 60) strength = 'fair';
+  if (bits >= 80) strength = 'strong';
+  if (bits >= 100) strength = 'very strong';
+  document.getElementById('pw-meta').textContent = '~' + bits + ' bits of entropy · ' + strength;
+}
+
+function pwCopy(){
+  const text = document.getElementById('pw-out').textContent;
+  if (!text || text === 'Sonucu görmek için yukarıya giriş yapın.') return;
+  navigator.clipboard.writeText(text);
+}
+
+document.addEventListener('DOMContentLoaded', pwGenerate);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

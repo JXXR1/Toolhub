@@ -45,6 +45,7 @@ TOOL = {
             "description": "無料で安全なパスワード生成ツール。文字種ルールのカスタマイズ、パスフレーズモード、まとめて生成に対応。すべてブラウザ内で動作します。",
         },
         "nl": {"name": "Wachtwoord-generator", "tagline": "Sterke random wachtwoorden of memorabele passphrases. Lokaal gegenereerd — nergens heen gestuurd.", "description": "Gratis veilige wachtwoord-generator. Custom karakterregels, passphrase-mode en batch-generatie. Draait volledig in je browser."},
+        "tr": {"name": "Parola Üretici", "tagline": "Güçlü rastgele parolalar veya akılda kalıcı passphrase'ler. Yerel olarak üretilir — hiçbir yere gönderilmez.", "description": "Ücretsiz güvenli parola üretici. Özel karakter kuralları, passphrase modu ve toplu üretim. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -355,6 +356,40 @@ document.addEventListener('DOMContentLoaded', pwGenerate);
   <li><strong>Schrijf gegenereerde wachtwoorden niet op zonder bescherming.</strong> Gebruik een password manager (1Password, Bitwarden, KeePass) — geen Notes-app, geen tekstbestand, geen email-concept.</li>
   <li><strong>Lang &gt; complex.</strong> Een 24-karakter wachtwoord met alleen lowercase letters heeft meer entropie dan een 10-karakter met elke symboolklasse. Lengte wint.</li>
   <li><strong>Site-specifieke regels kunnen copy-paste breken.</strong> Sommige sites verbieden specifieke symbolen of kappen lengte af op 16. Vervelend maar echt — genereer, trim/swap dan om te passen indien nodig (en sla dan het daadwerkelijk opgeslagen wachtwoord op in je manager).</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>İyi bir parola, saldırganın tahmin edemediği ve hatırlamak zorunda olmadığın bir paroladır (çünkü parola yöneticinde saklanır). Bu üretici, tamamen tarayıcında, TLS'in kullandığı kriptografik olarak güvenli rastgele kaynak olan <code>crypto.getRandomValues</code> kullanarak güçlü rastgele parolalar veya akılda kalıcı passphrase'ler üretir. Hiçbir şey iletilmez; parola cihazını asla terk etmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Parola yöneticisine giden herhangi bir yeni hesap için benzersiz bir parola oluşturma.</li>
+  <li>Belleğine alacağın bir master parola veya kurtarma passphrase'i üretme — passphrase modu yazması ve hatırlaması daha kolaydır.</li>
+  <li>Bir CI değişkeni, API token veya Wi-Fi ağı için insan olmayan bir secret üretme.</li>
+  <li>Yeni bir kullanıcı toplu hesabı için toplu parola üretimi (sayıyı 50'ye kadar ayarla).</li>
+</ul>
+
+<h3>Rastgele karakterler - passphrase'ler</h3>
+<ul>
+  <li><strong>Rastgele karakterler</strong> — uzunluk başına en fazla entropi. 20 karışık karakter ≈ 130 bit. Yapıştırdığın şeyler için doğru, yazdığın değil.</li>
+  <li><strong>Passphrase'ler</strong> — yazması ve hatırlaması daha kolay. Dört kelime ≈ 40 bit, altı kelime ≈ 60 bit. Master parolalar, cihaz kilidi ve sık manuel girdiğin her şey için doğru.</li>
+  <li>"Belirsiz olanları hariç tut" ekranlardan veya el yazısı notlardan güvenli okuma için <code>0/O/1/l/I</code>'yi düşürür.</li>
+</ul>
+
+<h3>Ne kadar entropi gerekir?</h3>
+<ul>
+  <li>≥ 60 bit — düşük değerli hesaplar için uygun</li>
+  <li>≥ 80 bit — çoğu hesap için iyi</li>
+  <li>≥ 100 bit — yüksek değerli (finansal, master parola, root kimlik bilgileri)</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Parolaları yeniden kullanma.</strong> Yapabileceğin en büyük tek güvenlik yükseltmesi, bir yöneticide saklanan, site başına bir benzersiz paroladır.</li>
+  <li><strong>Üretilen parolaları korumasız yazma.</strong> Bir parola yöneticisi (1Password, Bitwarden, KeePass) kullan — Notes uygulaması, metin dosyası veya e-posta taslağı değil.</li>
+  <li><strong>Uzun &gt; karmaşık.</strong> Sadece küçük harfler kullanan 24 karakterlik bir parola, her sembol sınıfı olan 10 karakterlikten daha fazla entropiye sahiptir. Uzunluk kazanır.</li>
+  <li><strong>Siteye özgü kurallar kopyala-yapıştırı bozabilir.</strong> Bazı siteler belirli sembolleri yasaklar veya uzunluğu 16'da sınırlar. Sinir bozucu ama gerçek — üret, sonra gerekirse uydurmak için kırp/değiştir.</li>
 </ul>
 """,
     },

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Edytor Tabel Markdown", "tagline": "Edytuj tabelę wizualnie — wiersze, kolumny, wyrównanie per kolumna — i skopiuj Markdown w stylu GitHuba.", "description": "Darmowy online edytor tabel Markdown. Klikaj komórki, by edytować, dodawaj/usuwaj wiersze i kolumny, ustaw wyrównanie per kolumna i skopiuj wyjście Markdown w stylu GitHuba (GFM). Działa w całości w przeglądarce."},
         "ja": {"name": "Markdown テーブルエディター", "tagline": "テーブルをビジュアルに編集 — 行・列・列ごとの揃えまで — して、GitHub 風 Markdown をコピー。", "description": "オンライン無料の Markdown テーブルエディター。セルをクリックして編集、行や列を追加／削除、列ごとの揃えを設定し、GitHub 風 Markdown 出力をコピーできます。すべてブラウザ内で動作します。"},
         "nl": {"name": "Markdown Table Editor", "tagline": "Bewerk visueel een tabel — rows, kolommen, alignment per kolom — en kopieer de GitHub-flavoured Markdown.", "description": "Gratis online Markdown table editor. Klik cellen om te bewerken, voeg rows en kolommen toe of verwijder, stel per-kolom alignment in en kopieer de GitHub-flavoured Markdown output. Draait volledig in je browser."},
+        "tr": {"name": "Markdown Tablo Editörü", "tagline": "Bir tabloyu görsel olarak düzenle — satırlar, sütunlar, sütun başına hizalama — ve GitHub uyumlu Markdown'u kopyala.", "description": "Ücretsiz online Markdown tablo editörü. Düzenlemek için hücrelere tıkla, satır/sütun ekle/kaldır, sütun başına hizalama ayarla ve GitHub uyumlu Markdown çıktısını kopyala. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -414,6 +415,28 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>De eerste row wordt altijd als header behandeld.</strong> GFM-tabellen hebben een verplichte header. Als je data geen natuurlijke header heeft, gebruik blanke cellen in row 1.</li>
   <li><strong>Sommige Markdown-flavours zijn strenger dan GFM.</strong> CommonMark zelf definieert geen tabellen; GFM, MultiMarkdown en diverse andere ondersteunen lichtjes verschillende varianten. De output hier targets GFM (GitHub, GitLab, de meeste moderne renderers).</li>
   <li><strong>Een unformatted CSV plakken werkt niet.</strong> Het "import"-textarea verwacht een Markdown-tabel (met de <code>|---|</code> separator). Voor CSV → Markdown gebruik de CSV-to-JSON tool eerst of plak rijen met de hand.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Markdown tabloları render edilen çıktıda harikadır ve elle yazılması sefalettir. Pipe karakterleri, hizalama iki nokta üst üsteleri, sütun başına doğru sayıda tire — her şeyi yerine itelediğinde, HTML olarak yazmış olabilirdin. Bu editör tanıdık bir grid verir: düzenlemek için herhangi bir hücreye tıkla, satır ve sütun eklemek/kaldırmak için düğmeleri kullan, açılır menüden sütun başına hizalama ayarla ve bitince GitHub uyumlu Markdown'u kopyala. Aşağıya mevcut bir Markdown tablosu da yapıştırabilirsin ve daha fazla düzenleme için grid'e yüklenecektir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir README, GitHub issue veya PR description için karşılaştırma tablosu yazma.</li>
+  <li>Bir belgeden bir tabloyu yeniden düzenleme — mevcut Markdown'u yapıştır, grid'de ince ayarla, geri kopyala.</li>
+  <li>Düzgün hizalanmış ASCII-padded tablo üretme (çıktı sağdan padded'dir, böylece düz metin olarak da okunabilir).</li>
+  <li>Pipe-and-dash sözdizimiyle mücadele etmeden bir release-notes tablosu hazırlama.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Inline pipe'lar GFM tablolarını bozar.</strong> Bir hücre içindeki literal <code>|</code> hücreyi sonlandırır. İhtiyacın olduğunda <code>\|</code> olarak escape et.</li>
+  <li><strong>Hücre içeriği tek satırdır.</strong> Markdown tabloları HTML (<code>&lt;br&gt;</code>) olmadan hücreler içinde satır sonlarını desteklemez. Çok satırlı içerik için HTML'de tablo yaz.</li>
+  <li><strong>Hizalama render edilir, zorlanmaz.</strong> Çıktı kaynakta da hizalamak için pad yapar, ama gerçek render edilen hizalama ayraç satırındaki iki nokta üst üstelerden gelir, aralıklardan değil.</li>
+  <li><strong>İlk satır her zaman başlık olarak ele alınır.</strong> GFM tabloları zorunlu bir başlığa sahiptir.</li>
+  <li><strong>Bazı Markdown lehçeleri GFM'den daha katıdır.</strong> CommonMark'ın kendisi tabloları tanımlamaz; GFM, MultiMarkdown ve diğerleri biraz farklı varyantları destekler.</li>
+  <li><strong>Biçimlendirilmemiş CSV yapıştırmak çalışmaz.</strong> "Import" textarea bir Markdown tablosu (<code>|---|</code> ayraç ile) bekler.</li>
 </ul>
 """,
     },

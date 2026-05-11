@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Generator Slugów", "tagline": "Zamień dowolny tytuł w czysty slug URL — translikuje znaki diakrytyczne, wycina interpunkcję, łączy myślnikami.", "description": "Darmowy online generator slugów URL. Zamienia na małe litery, translikuje znaki diakrytyczne (à → a, ń → n, ż → z), wycina interpunkcję i łączy słowa wybranym separatorem. Opcjonalne usuwanie stop words."},
         "ja": {"name": "スラグ生成ツール", "tagline": "任意のタイトルからクリーンな URL スラグを生成。アクセントを翻字し、句読点を取り除き、ハイフンで連結。", "description": "オンライン無料の URL スラグ生成ツール。小文字化、アクセント文字の翻字（à → a、ñ → n）、句読点除去、選択した区切り文字での連結を実行します。ストップワードの除去もオプションで利用可能です。"},
         "nl": {"name": "Slug Generator", "tagline": "Maak van elke titel een schone URL-slug — translitereert accenten, strijkt punctuation, voegt met hyphens samen.", "description": "Gratis online URL slug generator. Maakt lowercase, translitereert accenten (à → a, ñ → n), strijkt punctuation en voegt woorden samen met een gekozen separator. Stop-word removal optioneel."},
+        "tr": {"name": "Slug Üretici", "tagline": "Herhangi bir başlığı temiz URL slug'a dönüştür — aksanları transliter eder, noktalama temizler, tirelerle birleştirir.", "description": "Ücretsiz online URL slug üretici. Küçük harfe çevirir, aksanlı karakterleri transliter eder (à → a, ñ → n), noktalama işaretlerini temizler ve kelimeleri seçilen ayraçla birleştirir. Stop-word kaldırma opsiyoneldir."},
     },
     "body": """
 <div class="tool-card">
@@ -251,6 +252,36 @@ document.addEventListener('DOMContentLoaded', sgRun);
   <li><strong>Truncation kan betekenis veranderen.</strong> "introduction-to-rust-programming" gekapt op 20 tekens wordt "introduction-to-rust" — prima; gekapt op 16 wordt "introduction-to" — duidelijk slechter. Stel de limit met de hand in voor content waar de staart ertoe doet.</li>
   <li><strong>Slugs zijn niet uniek.</strong> Twee verschillende titels kunnen tot dezelfde slug instorten ("Café" en "Cafe" worden beide → <code>cafe</code>). Als je slugs als URL-keys gebruikt, voeg een korte ID of suffix toe bij collision.</li>
   <li><strong>Verander geen geshipte slugs.</strong> Zodra een URL live en geïndexeerd is, breekt zijn slug regenereren links en SEO. Als een titel verandert, behoud de oude slug of zet een 301-redirect op.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir URL slug, bir URL'nin insan tarafından okunabilir son segmentidir — <code>/blog/the-quick-brown-fox</code>, <code>/blog/post-4827</code> yerine. İyi slug'lar küçük harfli, tirelidir, sadece ASCII'dir ve bir bakışta okunacak kadar kısadır, ama aksan, noktalama ve emoji dolu gerçek başlıklardan üretmek zahmetlidir. Bu araç aksanları transliter eder, çöpü temizler, seçtiğin ayraçla birleştirir ve çıktının doğrudan bir route veya dosya adına bırakmaya güvenli olması için temiz bir sınırda keser.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Makale başlıklarından <code>/blog/&lt;slug&gt;</code> URL'leri üretme — özellikle başlıklar aksanlı karakterler (à, ñ, ø) veya noktalama (iki nokta üst üste, parantez, em dash) içerdiğinde.</li>
+  <li>Kullanıcı tarafından sağlanan adlardan güvenli dosya adları üretme — upload'lar, export'lar, üretilen raporlar.</li>
+  <li>İnsan etiketlerinden tag'ler, kategoriler veya çapalar için (<code>#getting-started</code>) kararlı tanımlayıcılar kurma.</li>
+  <li>Statik site build adımı için bir başlık listesini toplu olarak kebab-case'e dönüştürme.</li>
+</ul>
+
+<h3>Dönüşüm nasıl çalışır</h3>
+<ol>
+  <li>Unicode'u NFD-normalize eder ve birleştirici diakritikleri temizler (<code>café → cafe</code>).</li>
+  <li>Yaygın Avrupa bağlaçlarını ve özel harfleri eşler: <code>ß → ss</code>, <code>æ → ae</code>, <code>ø → o</code>, <code>Ł → L</code>, artı birkaç para birimi/matematik sembolü (<code>€ → eur</code>, <code>& → and</code>).</li>
+  <li>Her alfanümerik olmayan grubu tek boşlukla değiştirir.</li>
+  <li>İsteğe bağlı olarak yaygın İngilizce stop word'leri düşürür (<em>a, an, and, the, of, to, …</em>).</li>
+  <li>Küçük harfe çevirir (veya case'i korur), ayraçınla birleştirir ve sondaki ayraç bırakmadan sınırda keser.</li>
+</ol>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Latin olmayan yazılar düşer.</strong> Diakritik temizleme à/ñ/ø'yi ele alır, ama Çince, Japonca, Kiril, Arapça veya İbranice'yi karakter karakter romanize edemez — bunlar dile özgü tablolar gerektirir.</li>
+  <li><strong>Stop-word kaldırma sadece İngilizce'dir.</strong> "El gato negro" <em>el</em>'i kaybetmez; "Le chat noir" <em>le</em>'yi kaybetmez. İngilizce olmayan başlıklar için toggle'ı kapat.</li>
+  <li><strong>Kesme anlamı değiştirebilir.</strong> "introduction-to-rust-programming" 20 karaktere kesilirse "introduction-to-rust" olur — iyi; 16'ya kesilirse "introduction-to" olur — açıkça daha kötü.</li>
+  <li><strong>Slug'lar benzersiz değildir.</strong> İki farklı başlık aynı slug'a çökebilir ("Café" ve "Cafe" ikisi de → <code>cafe</code>). Slug'ları URL anahtarları olarak kullanıyorsan, çakışmada kısa bir ID veya sonek ekle.</li>
+  <li><strong>Gönderilmiş slug'ları değiştirme.</strong> Bir URL canlı ve indekslendikten sonra, slug'unu yeniden üretmek linkleri ve SEO'yu bozar. Bir başlık değişirse, eski slug'u koru veya 301 yönlendirmesi kur.</li>
 </ul>
 """,
     },

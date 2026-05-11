@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Rzucacz Kości", "tagline": "Rzucaj kostkami w standardowej notacji D&D — 2d6+3, 1d20, 4d6 keep highest 3. Kryptograficznie bezpieczny RNG.", "description": "Darmowy online rzucacz kości w standardowej notacji RPG: 1d20, 2d6+3, 4d6kh3, 3d8-1. Zobacz każdy rzut z osobna plus sumę. Używa crypto.getRandomValues dla uczciwych, nieprzewidywalnych rzutów."},
         "ja": {"name": "ダイスローラー", "tagline": "標準 D&D 記法でダイスをロール — 2d6+3、1d20、4d6 keep highest 3 など。暗号論的に安全な RNG。", "description": "オンライン無料のダイスローラー。標準的な TRPG 記法（1d20、2d6+3、4d6kh3、3d8-1）に対応し、各ダイスの目と合計を表示します。crypto.getRandomValues を使用し、公平で予測不能なロールを行います。"},
         "nl": {"name": "Dobbelsteen-roller", "tagline": "Gooi dobbelstenen met standaard D&D-notatie — 2d6+3, 1d20, 4d6 keep highest 3. Crypto-secure RNG.", "description": "Gratis online dobbelsteen-roller met standaard tabletop-notatie: 1d20, 2d6+3, 4d6kh3, 3d8-1. Zie elke individuele worp plus het totaal. Gebruikt crypto.getRandomValues voor eerlijke, onvoorspelbare worpen."},
+        "tr": {"name": "Zar Atıcı", "tagline": "Standart D&D notasyonuyla zar at — 2d6+3, 1d20, 4d6 en yüksek 3'ü tut. Kripto-güvenli RNG.", "description": "Standart masaüstü notasyonuyla ücretsiz online zar atıcı: 1d20, 2d6+3, 4d6kh3, 3d8-1. Her tek atışı ve toplamı gör. Adil, öngörülemez atışlar için crypto.getRandomValues kullanır."},
     },
     "body": """
 <div class="tool-card">
@@ -422,6 +423,40 @@ document.addEventListener('DOMContentLoaded', drValidate);
   <li><strong>Dit is geen exploding dice.</strong> Geen <code>!</code>-style explosions, geen rerolls (<code>r1</code>), geen successes-counting (<code>3d10>=7</code>). De notatie hier is de simpele "sum and modify"-subset die ~95% van gewone worpen dekt.</li>
   <li><strong>Crits worden alleen gevlagd voor d20.</strong> Een 20 highlight groen, een 1 highlight rood. Andere dice-sizes krijgen geen kleuring.</li>
   <li><strong>Cap van 1000 dobbelstenen per worp.</strong> Verstandige bovengrens om de pagina responsive te houden.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Masaüstü rol yapma oyunları (Dungeons & Dragons, Pathfinder, OSR, sayısız diğeri) zar atışları için kompakt bir notasyon kullanır: <code>NdS</code> "her biri S yüzlü N zar at" anlamına gelir. <code>2d6+3</code> "iki altı yüzlü zar at ve 3 ekle" demektir. Bu araç bu notasyonu parse eder ve zarları tarayıcının kriptografik RNG'siyle atar; bu öngörülemez ve önyargısızdır — yüksek riskli atışlar için <code>Math.random()</code>'dan çok daha iyidir.</p>
+
+<h3>Desteklenen notasyon</h3>
+<ul>
+  <li><code>1d20</code> — bir yirmi yüzlü zar.</li>
+  <li><code>2d6+3</code> — iki d6, topla, artı 3 modifier.</li>
+  <li><code>3d8-1</code> — üç d8, topla, eksi 1.</li>
+  <li><code>4d6kh3</code> — dört d6, <strong>k</strong>eep en y<strong>h</strong>üksek 3 (klasik D&D 5e ability score).</li>
+  <li><code>2d20kl1</code> — iki d20, en düşük 1'i tut (disadvantage).</li>
+  <li><code>2d20kh1</code> — advantage.</li>
+  <li><code>1d100</code> veya <code>1d%</code> — yüzdelik zar.</li>
+  <li><code>d20</code> — N varsayılan 1.</li>
+</ul>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Online oynuyorsun, fiziksel zarların ulaşılmaz veya uzaktan DM yapıyorsun.</li>
+  <li>Zar uygulaması aboneliği olmadan tekrarlanabilir-hissi bir atışa ihtiyacın var.</li>
+  <li>Madeni para bulmadan "haydi yazı tura atalım" (1d2) çözmek istiyorsun.</li>
+  <li>Bir oyun tasarımı için olasılığı prototipliyorsun (bir milyon atış dene — istatistik istiyorsan kodda formülü değiştir).</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Tarayıcı sekmesi güven sınırıdır.</strong> Atış sekmende, JavaScript'te olur — devtools açık olan herkes hile yapabilir. Yabancılarla rekabetçi oyun için sunucu hakemli atıcı kullan.</li>
+  <li><strong>Kripto RNG öngörülemez, "daha rastgele" değil.</strong> İyi bir PRNG ve kripto RNG zarlar için ayırt edilemez dağılımlar üretir. Kripto'nun avantajı kimsenin geçmişten sonraki sayıyı tahmin edememesidir.</li>
+  <li><strong>Modifier'lar tutmadan sonra bir kez uygulanır.</strong> <code>4d6kh3+2</code> 4d6 atar, en yüksek 3'ü tutar, sonra 2 ekler — "her zara 2 ekle" değil.</li>
+  <li><strong>Bu patlayan zar değildir.</strong> <code>!</code>-stili patlamalar yok, reroll'lar yok (<code>r1</code>), başarı sayımı yok (<code>3d10>=7</code>). Buradaki notasyon yaygın atışların ~%95'ini kapsayan basit "topla ve değiştir" alt kümesidir.</li>
+  <li><strong>Kritikler sadece d20 için işaretlenir.</strong> 20 yeşil, 1 kırmızı vurgulanır. Diğer zar boyutları renklendirme almaz.</li>
+  <li><strong>Atış başına 1000 zar sınırı.</strong> Sayfayı yanıt verir tutmak için makul üst sınır.</li>
 </ul>
 """,
     },

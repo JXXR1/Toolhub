@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Kalkulator CIDR / Subnet", "tagline": "Liczy podsieci IPv4 z notacji CIDR. Sieć, broadcast, maska, zakres hostów i widok binarny.", "description": "Darmowy kalkulator CIDR / podsieci IPv4. Wpisz dowolny CIDR (np. 10.0.0.0/16) i zobacz adres sieci, broadcast, maskę podsieci, zakres hostów, łączną liczbę adresów i reprezentację binarną."},
         "ja": {"name": "CIDR / サブネット計算機", "tagline": "CIDR 表記から IPv4 サブネットを計算。ネットワーク、ブロードキャスト、マスク、ホスト範囲、バイナリ表示。", "description": "無料の IPv4 CIDR / サブネット計算ツール。任意の CIDR（例：10.0.0.0/16）を入力すると、ネットワークアドレス、ブロードキャスト、サブネットマスク、ホスト範囲、総アドレス数、バイナリ表現が確認できます。"},
         "nl": {"name": "CIDR Subnet-calculator", "tagline": "Bereken IPv4-subnetten uit CIDR-notatie. Netwerk, broadcast, mask, hostbereik en binaire weergave.", "description": "Gratis IPv4 CIDR / subnet-calculator. Voer een CIDR in (bijv. 10.0.0.0/16) en zie het netwerkadres, broadcast, subnet mask, hostbereik, totaal aantal adressen en binaire representatie."},
+        "tr": {"name": "CIDR Subnet Hesaplayıcı", "tagline": "CIDR notasyonundan IPv4 alt ağlarını hesapla. Network, broadcast, mask, host aralığı ve ikilik görünüm.", "description": "Ücretsiz IPv4 CIDR / subnet hesaplayıcı. Herhangi bir CIDR gir (örn. 10.0.0.0/16) ve network adresi, broadcast, subnet mask, host aralığı, toplam adres sayısı ve ikilik gösterimi gör."},
     },
     "body": """
 <div class="tool-card">
@@ -275,6 +276,40 @@ document.addEventListener('DOMContentLoaded', cidrRun);
   <li><strong>Verwar class niet met CIDR.</strong> Klassen A/B/C zijn een legacy-concept (van vóór 1993). Een /24 kan binnen een "class A"-bereik vallen en dat is prima.</li>
   <li><strong>RFC 1918 private ranges:</strong> <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code>. Al het andere is publiek routeerbaar (of gereserveerd).</li>
   <li><strong>Deze tool is alleen IPv4.</strong> IPv6 CIDR is structureel vergelijkbaar maar de prefix kan tot /128 gaan en de adresruimte is veel groter; hier niet ondersteund.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>CIDR (Classless Inter-Domain Routing) notasyonu bir IPv4 adresini ve subnet boyutunu tek bir string'e paketler: <code>192.168.1.0/24</code> "24-bit network prefix ile 192.168.1.0 adresi" anlamına gelir — eski <code>255.255.255.0</code> mask ile aynı ağ, ama 30 yerine 12 karakterde yazılır. Bu araç herhangi bir CIDR'yi insan tarafından anlamlı değerlere çözer: subnet <em>içindeki</em> adresler, broadcast, noktalı biçimde mask ve cihazlara gerçekten atayabileceğin host aralığı.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir VLAN veya VPC tasarlarken ve /22 ile /23'ün kaç host tutacağını (1022 - 510) hesaplarken.</li>
+  <li><code>allow 10.42.0.0/16</code> gibi bir firewall kuralı okurken ve tam olarak hangi aralığı kapsadığını doğrularken.</li>
+  <li>Bir /24'ü daha küçük subnet'lere bölüp sınırların çakışmadığını kontrol ederken.</li>
+  <li>Deploy etmeden önce bir cloud security-group kuralının sanity check'i.</li>
+  <li>Router config'lerinde CIDR ile eski <code>255.x.x.x</code> noktalı mask arasında çeviri yapma.</li>
+</ul>
+
+<h3>Hızlı CIDR çetel</h3>
+<ul>
+  <li><strong>/32</strong> — 1 adres (tek host route).</li>
+  <li><strong>/30</strong> — 4 adres, 2 kullanılabilir (point-to-point linkler).</li>
+  <li><strong>/29</strong> — 8 adres, 6 kullanılabilir (küçük ofis subnet'i).</li>
+  <li><strong>/24</strong> — 256 adres, 254 kullanılabilir (klasik Class C / tipik LAN).</li>
+  <li><strong>/16</strong> — 65.536 adres (tipik site ağı veya VPC).</li>
+  <li><strong>/8</strong> — 16,7M adres (tüm bir kurum).</li>
+  <li><strong>/0</strong> — her IPv4 adresi (default route).</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>"Kullanılabilir" network ve broadcast'i hariç tutar.</strong> Bir /24'te 256 adres vardır ama host'lar için sadece 254 kullanılabilir — ilki (.0) network'tür, sonuncu (.255) broadcast'tir.</li>
+  <li><strong>/31 ve /32 özeldir.</strong> /31 RFC 3021'e göre point-to-point linkler için kullanılır — her iki adres de kullanılabilir. /32 tek bir host'tur (routing girdilerinde kullanılır).</li>
+  <li><strong>Adres kısmının network adresi olması gerekmez.</strong> <code>10.5.7.42/24</code> hâlâ <code>10.5.7.0/24</code> ile aynı /24 demektir — önemli olan prefix uzunluğudur. Araç çıktıda network adresine normalize eder.</li>
+  <li><strong>Class ve CIDR'yi karıştırma.</strong> A/B/C sınıfları eski (1993 öncesi) bir kavramdır. Bir /24 "class A" aralığına düşebilir ve bu sorun değildir.</li>
+  <li><strong>RFC 1918 özel aralıkları:</strong> <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code>. Başka her şey kamuya açık şekilde routable'dır (veya rezervedir).</li>
+  <li><strong>Bu araç sadece IPv4'tür.</strong> IPv6 CIDR yapısal olarak benzer ama prefix /128'e kadar çıkabilir ve adres alanı çok daha büyüktür; burada işlenmez.</li>
 </ul>
 """,
     },

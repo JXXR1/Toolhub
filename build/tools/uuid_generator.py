@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の UUID 生成ツール。RFC 4122 の v4（ランダム）と v7（時刻順、ソート可能）に対応。1 つから複数まで、すべてブラウザ内で生成します。",
         },
         "nl": {"name": "UUID Generator", "tagline": "Genereer RFC 4122 UUIDs (v4 random of v7 time-ordered). Batch tot 100. Cryptografisch veilig.", "description": "Gratis online UUID-generator. RFC 4122 v4 (random) en v7 (time-ordered, sorteerbaar). Genereer er één of veel tegelijk, allemaal in je browser."},
+        "tr": {"name": "UUID Üretici", "tagline": "RFC 4122 UUID üret (v4 rastgele veya v7 zaman sıralı). 100'e kadar toplu. Kriptografik olarak güvenli.", "description": "Ücretsiz online UUID üretici. RFC 4122 v4 (rastgele) ve v7 (zaman sıralı, sıralanabilir). Bir veya birden fazlasını üret, hepsi tarayıcında."},
     },
     "body": """
 <div class="tool-card">
@@ -249,6 +250,35 @@ document.addEventListener('DOMContentLoaded', uuidGen);
   <li><strong>v4 fragmenteert database-indexes.</strong> Random IDs verspreiden writes over de index, wat page cache hit rate en write throughput pijn doet. Dit is het oorspronkelijke argument voor v7.</li>
   <li><strong>Gebruik geen v1.</strong> De oude time-and-MAC variant lekt het MAC-adres van de genererende machine. v7 is de moderne vervanger.</li>
   <li><strong>Gebruik crypto-veilige randomness.</strong> Deze tool gebruikt <code>crypto.getRandomValues</code>; roll nooit je eigen met <code>Math.random</code> — die is niet random genoeg en IDs worden voorspelbaar.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir UUID (veya GUID) 128-bit bir tanımlayıcıdır — <code>550e8400-e29b-41d4-a716-446655440000</code> gibi 5 grupta 32 hex basamak olarak yazılır. Koordinasyon olmadan sistemler arasında çarpışmasızlardır: herhangi bir yerde herhangi bir süreç bir tane basabilir ve ikisinin çarpışma olasılığı pratikte sıfırdır. Veritabanına konuşmadan önce bir ID gerektiğinde, satır sayılarının sızmasını önlemek istediğinde veya bir ID'nin istemci tarafında üretilip sonra senkronize edilmesi gerektiğinde kullanışlıdır. Bu araç v4 (rastgele) veya v7 (zaman-sıralı) biçiminde RFC 4122 / RFC 9562 uyumlu UUID'ler yayar, tarayıcında kriptografik olarak güvenli rastgelelikle üretilir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir ID için veritabanına round-trip yapmak istemediğin dağıtık sistemler için birincil anahtarlar.</li>
+  <li>API istekleri için idempotency anahtarları (stripe, ödeme sağlayıcıları, queue mesajları).</li>
+  <li>Dosya yükleme tanımlayıcıları, oturum token'ları, loglarda correlation ID'ler.</li>
+  <li>Aksi takdirde otomatik artan bir ID'yi açığa çıkardığın ve kaç kaydın olduğunu sızdırdığın herhangi bir yer.</li>
+  <li>Test verisi — tek tıkla yüz kayıt gerçekçi tanımlayıcılarla seed et.</li>
+</ul>
+
+<h3>v4 - v7 — hangisini kullanmalı?</h3>
+<ul>
+  <li><strong>v4 (rastgele)</strong> — 122 bit rastgelelik, gömülü oluşturma zamanı yok. ID'ler ve oluşturma sırası arasında sıfır korelasyon istediğinde veya ID'nin sıralamanın önemli olmadığı hash-map / non-clustered indekste yaşayacağı zaman kullan.</li>
+  <li><strong>v7 (zaman-sıralı)</strong> — 48-bit Unix-ms timestamp öneki + rastgele kuyruk. <strong>Yeni veritabanı birincil anahtarları için varsayılan olarak bunu kullan.</strong> Timestamp öneki B-tree indekslerine locality verir (son insert'ler aynı sayfalara gider, v4'ten çok daha iyi cache davranışı) ve ID'ler kabaca kronolojik sırada sıralanır. RFC 9562'de tanımlandı (Mayıs 2024) — çoğu kullanım durumu için ULID ve v1/v6'nın yerini alır.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>UUID'ler sır değildir.</strong> v4'ün 122 bit entropisi vardır ve tahmin edilemezdir, ama biçimin kendisi hiçbir şey yetkilendirmez. Bir oturum token'ı veya parola sıfırlama token'ı olarak UUID kullanma, onu bir sır gibi ele almıyorsan (yalnızca HTTPS, zaman sınırlı, tek kullanımlık).</li>
+  <li><strong>v7 oluşturma zamanını sızdırır.</strong> İlk 48 bit basıldığı milisaniyeyi kodlar. Dahili ID'ler için iyidir; kullanıcıların kayıtların ne zaman oluşturulduğunu öğrenmesini istemiyorsan kötü. Bu durumda v4 kullan.</li>
+  <li><strong>İndeks boyutu önemlidir.</strong> Bir UUID bigint için 8 byte'a karşı 16 byte'tır — B-tree indekslerin büyür. Dağıtık/koordinasyonsuz için değer, sıralı ID olan tek sunucu uygulamaları için sıklıkla değmez.</li>
+  <li><strong>v4 veritabanı indekslerini parçalar.</strong> Rastgele ID'ler yazmaları indeks boyunca dağıtır, sayfa cache hit oranına ve yazma throughput'una zarar verir. Bu v7 için orijinal argümandır.</li>
+  <li><strong>v1 kullanma.</strong> Eski zaman-ve-MAC varyantı üreten makinenin MAC adresini sızdırır. v7 modern yedektir.</li>
+  <li><strong>Kripto-güvenli rastgelelik kullan.</strong> Bu araç <code>crypto.getRandomValues</code> kullanır; asla <code>Math.random</code> ile kendini yapma — yeterince rastgele değildir ve ID'ler öngörülebilir olur.</li>
 </ul>
 """,
     },

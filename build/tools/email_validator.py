@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Walidator Email", "tagline": "Sprawdź, czy adres email jest poprawny składniowo (zgodny z RFC 5322), z rozbiciem na local part, domenę i typowe pułapki.", "description": "Darmowy online walidator emaili. Walidacja składni zgodna z RFC 5322, analiza local part i domeny, oznaczanie disposable domains i weryfikacja długości."},
         "ja": {"name": "メールアドレス検証ツール", "tagline": "メールアドレスが構文的に有効か（RFC 5322 準拠）を確認。ローカル部・ドメイン・よくある落とし穴も解析。", "description": "オンライン無料のメールアドレス検証ツール。RFC 5322 準拠の構文チェック、ローカル部とドメインの解析、使い捨てドメインの検出、長さ検証を行います。"},
         "nl": {"name": "Email-validator", "tagline": "Check of een emailadres syntactisch geldig is (RFC 5322-friendly), met breakdown van local part, domain en veelvoorkomende valkuilen.", "description": "Gratis online email-validator. RFC 5322-aware syntax check, analyse van local part en domain, disposable-domain hint en lengtecontrole."},
+        "tr": {"name": "E-posta Doğrulayıcı", "tagline": "Bir e-posta adresinin sözdizimsel olarak geçerli olup olmadığını kontrol et (RFC 5322 uyumlu); local part, domain ve yaygın hataları ayrıştırır.", "description": "Ücretsiz online e-posta doğrulayıcı. RFC 5322 uyumlu sözdizimi kontrolü, local-part ve domain analizi, geçici domain ipucu ve uzunluk doğrulaması."},
     },
     "body": """
 <div class="tool-card">
@@ -213,6 +214,27 @@ document.addEventListener('DOMContentLoaded', evRun);
   <li><strong>Internationalised email (IDN).</strong> <code>用户@例.中国</code> is technisch geldig volgens RFC 6530 maar nog niet breed ondersteund door SMTP-servers. Deze tool volgt de conservatieve ASCII-regels; versoepel als je echt IDN nodig hebt.</li>
   <li><strong>Disposable-domain detectie is hint-only.</strong> De lijst is per definitie incompleet en een gevlagde domain kan nog steeds een echte gebruiker zijn.</li>
   <li><strong>Wijs case-verschillen niet af.</strong> Local parts zijn technisch case-sensitive volgens RFC 5321; in de praktijk behandelt elke moderne provider ze als case-insensitive. Maak ze niet lowercase bij opslag.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Çoğu "e-posta doğrulayıcı" <code>not@an.email</code>'i onaylayan ve <code>edge@case.io</code>'yu reddeden tek satırlık bir regex'tir. Bu araç RFC 5321 / 5322'nin gerçekten gerektirdiği yapısal kontrolleri yapar — local part charset, nokta kuralları, etiket uzunlukları, TLD şekli, sert uzunluk sınırları — artı bir geçici domain ipucu. Adresin <em>iyi biçimli</em> olup olmadığını söyler; mailbox'ın var olup olmadığını söylemez (bu sunucu tarafı MX/SMTP probe gerektirir).</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Ücretli bir doğrulama API'sine veya mass-mailer'a göndermeden önce bir e-posta listesini önden kontrol etme (ücretsiz yazım hatalarını yakalar, kredilerden tasarruf eder).</li>
+  <li>Alan seviyesinde bariz çöpü reddeden bir kayıt formu kurma.</li>
+  <li>İçe aktarmadan önce yazım hatalarını bulmak için bir CSV kişi listesi denetleme.</li>
+  <li>"Tuhaf görünen" bir adresin (uluslararası TLD, plus-addressing, sub-addressing) gerçekten izinli olup olmadığını kontrol etme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Sözdizimsel olarak geçerli ≠ teslim edilebilir.</strong> <code>does-not-exist@gmail.com</code> her yapısal kontrolü geçer. Gerçek doğrulama MX sunucusunun yanıtını gerektirir. Bunu güven sinyali değil, ilk hat filtre olarak kullan.</li>
+  <li><strong>Plus addressing izinlidir.</strong> <code>name+tag@gmail.com</code> geçerlidir ve <code>name@gmail.com</code>'a yönlenir — temizleme; bir özelliktir.</li>
+  <li><strong>Internationalised email (IDN).</strong> <code>用户@例.中国</code> teknik olarak RFC 6530'a göre geçerlidir ama SMTP sunucuları tarafından henüz geniş çapta desteklenmez. Bu araç muhafazakar ASCII kurallarını izler; gerçekten IDN gerekliyse gevşet.</li>
+  <li><strong>Geçici domain tespiti sadece ipucu.</strong> Liste zorunlu olarak eksiktir ve işaretlenmiş herhangi bir domain hâlâ gerçek bir kullanıcı olabilir.</li>
+  <li><strong>Case farklarını reddetme.</strong> Local part'lar RFC 5321'e göre teknik olarak case-sensitive'dir; pratikte her modern sağlayıcı case-insensitive ele alır. Depolamada küçük harfe çevirme.</li>
 </ul>
 """,
     },

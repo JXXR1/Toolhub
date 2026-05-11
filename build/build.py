@@ -80,7 +80,7 @@ spec = importlib.util.spec_from_file_location("i18n", BUILD / "i18n.py")
 i18n_mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(i18n_mod)
 UI = i18n_mod.UI
-LANGS = i18n_mod.LANGS  # ["en", "de", "es", "fr", "it", "pt", "pl", "ja", "nl"]
+LANGS = i18n_mod.LANGS  # ["en", "de", "es", "fr", "it", "pt", "pl", "ja", "nl", "tr"]
 
 # Load static content pages (about, contact, for-schools)
 spec = importlib.util.spec_from_file_location("pages", BUILD / "pages.py")
@@ -145,7 +145,7 @@ def fill_braces(text: str, mapping: dict) -> str:
     return text
 
 
-OG_LOCALES = {"en": "en_GB", "de": "de_DE", "es": "es_ES", "fr": "fr_FR", "it": "it_IT", "pt": "pt_BR", "pl": "pl_PL", "ja": "ja_JP", "nl": "nl_NL"}
+OG_LOCALES = {"en": "en_GB", "de": "de_DE", "es": "es_ES", "fr": "fr_FR", "it": "it_IT", "pt": "pt_BR", "pl": "pl_PL", "ja": "ja_JP", "nl": "nl_NL", "tr": "tr_TR"}
 
 CATEGORY_TO_APP_CAT = {
     # schema.org/SoftwareApplication applicationCategory enum-ish values
@@ -275,6 +275,9 @@ HOWTO_TEMPLATES = {
         "nl": [("Plak je {noun}",             "Zet je {noun} in het {input}-veld."),
                ("Klik op {action}",           "Druk op de {action}-knop om de tool te draaien."),
                ("Kopieer het resultaat",      "Druk op {copy} om de {output} te kopiëren.")],
+        "tr": [("{noun} verisini yapıştır",   "{noun} verisini {input} alanına bırak."),
+               ("{action} düğmesine tıkla",   "Aracı çalıştırmak için {action} düğmesine bas."),
+               ("Sonucu kopyala",             "{output} alanını kopyalamak için {copy} düğmesine bas.")],
     },
     "generate": {
         "en": [("Set your options",           "Pick the {noun} options you need."),
@@ -304,6 +307,9 @@ HOWTO_TEMPLATES = {
         "nl": [("Stel je opties in",          "Kies de {noun}-opties die je nodig hebt."),
                ("Klik op {action}",           "Druk op {action} om een nieuwe {noun} te produceren."),
                ("Kopieer het resultaat",      "Druk op {copy} om de gegenereerde {noun} te kopiëren.")],
+        "tr": [("Seçenekleri ayarla",         "İhtiyacın olan {noun} seçeneklerini seç."),
+               ("{action} düğmesine tıkla",   "Yeni bir {noun} üretmek için {action} düğmesine bas."),
+               ("Sonucu kopyala",             "Üretilen {noun} verisini kopyalamak için {copy} düğmesine bas.")],
     },
     "calculate": {
         "en": [("Enter your values",          "Type the {noun} inputs the tool needs."),
@@ -333,6 +339,9 @@ HOWTO_TEMPLATES = {
         "nl": [("Voer je waarden in",         "Typ de {noun}-invoer in die de tool nodig heeft."),
                ("Lees de berekening",         "Het {noun}-resultaat werkt direct bij — geen knop nodig."),
                ("Gebruik of kopieer het resultaat", "Druk op {copy} als je de {noun}-waarde ergens anders nodig hebt.")],
+        "tr": [("Değerlerini gir",            "Aracın ihtiyaç duyduğu {noun} girişlerini yaz."),
+               ("Hesaplamayı oku",            "{noun} sonucu anında güncellenir — düğmeye gerek yok."),
+               ("Sonucu kullan veya kopyala", "{noun} değerini başka bir yerde lazım edersen {copy} düğmesine bas.")],
     },
     "compare": {
         "en": [("Paste both {noun} versions", "Drop each version of your {noun} into the two input fields."),
@@ -362,6 +371,9 @@ HOWTO_TEMPLATES = {
         "nl": [("Plak beide {noun}-versies",  "Zet elke versie van je {noun} in een van de twee invoervelden."),
                ("Klik op {action}",           "Druk op {action} om de verschillen op te sporen."),
                ("Lees de diff",               "Bekijk de gemarkeerde verschillen in de {output}.")],
+        "tr": [("İki {noun} sürümünü yapıştır","{noun} verisinin her sürümünü iki giriş alanından birine bırak."),
+               ("{action} düğmesine tıkla",   "Farkları bulmak için {action} düğmesine bas."),
+               ("Diff'i incele",              "{output} alanında vurgulanan farkları gözden geçir.")],
     },
 }
 
@@ -369,28 +381,28 @@ HOWTO_TEMPLATES = {
 # Pre-translated nouns used across many manifests. Tools reference these by key
 # (e.g. "noun": "text") to avoid duplicating translations.
 NOUNS = {
-    "text":     {"en": "text",     "de": "Text",     "es": "texto",    "fr": "texte",    "it": "testo",    "pt": "texto",    "pl": "tekst",    "ja": "テキスト",   "nl": "tekst"},
-    "password": {"en": "password", "de": "Passwort", "es": "contraseña","fr": "mot de passe","it": "password","pt": "senha",  "pl": "hasło",    "ja": "パスワード", "nl": "wachtwoord"},
-    "image":    {"en": "image",    "de": "Bild",     "es": "imagen",   "fr": "image",    "it": "immagine", "pt": "imagem",   "pl": "obraz",    "ja": "画像",       "nl": "afbeelding"},
-    "color":    {"en": "color",    "de": "Farbe",    "es": "color",    "fr": "couleur",  "it": "colore",   "pt": "cor",      "pl": "kolor",    "ja": "色",         "nl": "kleur"},
-    "date":     {"en": "date",     "de": "Datum",    "es": "fecha",    "fr": "date",     "it": "data",     "pt": "data",     "pl": "data",     "ja": "日付",       "nl": "datum"},
-    "time":     {"en": "time",     "de": "Zeit",     "es": "hora",     "fr": "heure",    "it": "ora",      "pt": "hora",     "pl": "czas",     "ja": "時刻",       "nl": "tijd"},
-    "timestamp":{"en": "timestamp","de": "Timestamp","es": "timestamp","fr": "timestamp","it": "timestamp","pt": "timestamp","pl": "znacznik czasu","ja": "タイムスタンプ","nl": "timestamp"},
-    "number":   {"en": "number",   "de": "Zahl",     "es": "número",   "fr": "nombre",   "it": "numero",   "pt": "número",   "pl": "liczba",   "ja": "数値",       "nl": "getal"},
-    "shadow":   {"en": "shadow",   "de": "Schatten", "es": "sombra",   "fr": "ombre",    "it": "ombra",    "pt": "sombra",   "pl": "cień",     "ja": "シャドウ",   "nl": "schaduw"},
-    "gradient": {"en": "gradient", "de": "Verlauf",  "es": "degradado","fr": "dégradé",  "it": "gradiente","pt": "gradiente","pl": "gradient", "ja": "グラデーション","nl": "gradiënt"},
-    "file size":{"en": "file size","de": "Dateigröße","es": "tamaño de archivo","fr": "taille de fichier","it": "dimensione file","pt": "tamanho de arquivo","pl": "rozmiar pliku","ja": "ファイルサイズ","nl": "bestandsgrootte"},
-    "unit":     {"en": "unit",     "de": "Einheit",  "es": "unidad",   "fr": "unité",    "it": "unità",    "pt": "unidade",  "pl": "jednostka","ja": "単位",       "nl": "eenheid"},
-    "percentage":{"en":"percentage","de":"Prozentwert","es":"porcentaje","fr":"pourcentage","it":"percentuale","pt":"porcentagem","pl":"procent","ja":"パーセント","nl":"percentage"},
-    "table":    {"en": "table",    "de": "Tabelle",  "es": "tabla",    "fr": "tableau",  "it": "tabella",  "pt": "tabela",   "pl": "tabela",   "ja": "表",         "nl": "tabel"},
-    "bill":     {"en": "bill",     "de": "Rechnung", "es": "cuenta",   "fr": "addition", "it": "conto",    "pt": "conta",    "pl": "rachunek", "ja": "請求額",     "nl": "rekening"},
-    "card number":{"en":"card number","de":"Kartennummer","es":"número de tarjeta","fr":"numéro de carte","it":"numero di carta","pt":"número do cartão","pl":"numer karty","ja":"カード番号","nl":"kaartnummer"},
-    "email":    {"en": "email",    "de": "E-Mail",   "es": "correo",   "fr": "e-mail",   "it": "email",    "pt": "e-mail",   "pl": "e-mail",   "ja": "メール",     "nl": "e-mail"},
-    "cron expression":{"en":"cron expression","de":"Cron-Ausdruck","es":"expresión cron","fr":"expression cron","it":"espressione cron","pt":"expressão cron","pl":"wyrażenie cron","ja":"cron 式","nl":"cron-expressie"},
-    "query string":{"en":"query string","de":"Query-String","es":"cadena de consulta","fr":"chaîne de requête","it":"stringa di query","pt":"query string","pl":"query string","ja":"クエリ文字列","nl":"query-string"},
-    "color pair":{"en":"color pair","de":"Farbpaar","es":"par de colores","fr":"paire de couleurs","it":"coppia di colori","pt":"par de cores","pl":"para kolorów","ja":"色のペア","nl":"kleurenpaar"},
-    "roll":     {"en": "dice roll","de": "Würfelwurf","es":"tirada",   "fr": "lancer",   "it": "lancio",   "pt": "rolagem",  "pl": "rzut",     "ja": "ロール",     "nl": "worp"},
-    "slug":     {"en": "slug",     "de": "Slug",     "es": "slug",     "fr": "slug",     "it": "slug",     "pt": "slug",     "pl": "slug",     "ja": "スラッグ",   "nl": "slug"},
+    "text":     {"en": "text",     "de": "Text",     "es": "texto",    "fr": "texte",    "it": "testo",    "pt": "texto",    "pl": "tekst",    "ja": "テキスト",   "nl": "tekst",      "tr": "metin"},
+    "password": {"en": "password", "de": "Passwort", "es": "contraseña","fr": "mot de passe","it": "password","pt": "senha",  "pl": "hasło",    "ja": "パスワード", "nl": "wachtwoord", "tr": "parola"},
+    "image":    {"en": "image",    "de": "Bild",     "es": "imagen",   "fr": "image",    "it": "immagine", "pt": "imagem",   "pl": "obraz",    "ja": "画像",       "nl": "afbeelding", "tr": "görsel"},
+    "color":    {"en": "color",    "de": "Farbe",    "es": "color",    "fr": "couleur",  "it": "colore",   "pt": "cor",      "pl": "kolor",    "ja": "色",         "nl": "kleur",      "tr": "renk"},
+    "date":     {"en": "date",     "de": "Datum",    "es": "fecha",    "fr": "date",     "it": "data",     "pt": "data",     "pl": "data",     "ja": "日付",       "nl": "datum",      "tr": "tarih"},
+    "time":     {"en": "time",     "de": "Zeit",     "es": "hora",     "fr": "heure",    "it": "ora",      "pt": "hora",     "pl": "czas",     "ja": "時刻",       "nl": "tijd",       "tr": "saat"},
+    "timestamp":{"en": "timestamp","de": "Timestamp","es": "timestamp","fr": "timestamp","it": "timestamp","pt": "timestamp","pl": "znacznik czasu","ja": "タイムスタンプ","nl": "timestamp",  "tr": "timestamp"},
+    "number":   {"en": "number",   "de": "Zahl",     "es": "número",   "fr": "nombre",   "it": "numero",   "pt": "número",   "pl": "liczba",   "ja": "数値",       "nl": "getal",      "tr": "sayı"},
+    "shadow":   {"en": "shadow",   "de": "Schatten", "es": "sombra",   "fr": "ombre",    "it": "ombra",    "pt": "sombra",   "pl": "cień",     "ja": "シャドウ",   "nl": "schaduw",    "tr": "gölge"},
+    "gradient": {"en": "gradient", "de": "Verlauf",  "es": "degradado","fr": "dégradé",  "it": "gradiente","pt": "gradiente","pl": "gradient", "ja": "グラデーション","nl": "gradiënt",  "tr": "gradyan"},
+    "file size":{"en": "file size","de": "Dateigröße","es": "tamaño de archivo","fr": "taille de fichier","it": "dimensione file","pt": "tamanho de arquivo","pl": "rozmiar pliku","ja": "ファイルサイズ","nl": "bestandsgrootte","tr": "dosya boyutu"},
+    "unit":     {"en": "unit",     "de": "Einheit",  "es": "unidad",   "fr": "unité",    "it": "unità",    "pt": "unidade",  "pl": "jednostka","ja": "単位",       "nl": "eenheid",    "tr": "birim"},
+    "percentage":{"en":"percentage","de":"Prozentwert","es":"porcentaje","fr":"pourcentage","it":"percentuale","pt":"porcentagem","pl":"procent","ja":"パーセント","nl":"percentage", "tr":"yüzde"},
+    "table":    {"en": "table",    "de": "Tabelle",  "es": "tabla",    "fr": "tableau",  "it": "tabella",  "pt": "tabela",   "pl": "tabela",   "ja": "表",         "nl": "tabel",      "tr": "tablo"},
+    "bill":     {"en": "bill",     "de": "Rechnung", "es": "cuenta",   "fr": "addition", "it": "conto",    "pt": "conta",    "pl": "rachunek", "ja": "請求額",     "nl": "rekening",   "tr": "hesap"},
+    "card number":{"en":"card number","de":"Kartennummer","es":"número de tarjeta","fr":"numéro de carte","it":"numero di carta","pt":"número do cartão","pl":"numer karty","ja":"カード番号","nl":"kaartnummer","tr":"kart numarası"},
+    "email":    {"en": "email",    "de": "E-Mail",   "es": "correo",   "fr": "e-mail",   "it": "email",    "pt": "e-mail",   "pl": "e-mail",   "ja": "メール",     "nl": "e-mail",     "tr": "e-posta"},
+    "cron expression":{"en":"cron expression","de":"Cron-Ausdruck","es":"expresión cron","fr":"expression cron","it":"espressione cron","pt":"expressão cron","pl":"wyrażenie cron","ja":"cron 式","nl":"cron-expressie","tr":"cron ifadesi"},
+    "query string":{"en":"query string","de":"Query-String","es":"cadena de consulta","fr":"chaîne de requête","it":"stringa di query","pt":"query string","pl":"query string","ja":"クエリ文字列","nl":"query-string","tr":"query string"},
+    "color pair":{"en":"color pair","de":"Farbpaar","es":"par de colores","fr":"paire de couleurs","it":"coppia di colori","pt":"par de cores","pl":"para kolorów","ja":"色のペア","nl":"kleurenpaar","tr":"renk çifti"},
+    "roll":     {"en": "dice roll","de": "Würfelwurf","es":"tirada",   "fr": "lancer",   "it": "lancio",   "pt": "rolagem",  "pl": "rzut",     "ja": "ロール",     "nl": "worp",       "tr": "zar atışı"},
+    "slug":     {"en": "slug",     "de": "Slug",     "es": "slug",     "fr": "slug",     "it": "slug",     "pt": "slug",     "pl": "slug",     "ja": "スラッグ",   "nl": "slug",       "tr": "slug"},
 }
 
 
@@ -570,6 +582,7 @@ def render_tool(tool: dict, lang: str) -> str:
         "SEL_PL": sel["pl"],
         "SEL_JA": sel["ja"],
         "SEL_NL": sel["nl"],
+        "SEL_TR": sel["tr"],
         "ALTERNATE_LINKS": alternate_links(slug),
         "OG_LOCALE": OG_LOCALES.get(lang, "en_GB"),
         "INLANG": lang,
@@ -684,6 +697,7 @@ def render_page(page: dict, lang: str) -> str:
         "SEL_PL": sel["pl"],
         "SEL_JA": sel["ja"],
         "SEL_NL": sel["nl"],
+        "SEL_TR": sel["tr"],
         "ALTERNATE_LINKS": alternate_links(slug),
         "OG_LOCALE": OG_LOCALES.get(lang, "en_GB"),
         "INLANG": lang,

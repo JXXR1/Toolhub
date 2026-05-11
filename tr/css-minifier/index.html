@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Minifier — Toolhub</title>
+  <meta name="description" content="Ücretsiz online CSS minifier. Yorumları kaldırır, boşlukları daraltır, sondaki noktalı virgülleri ve sıfır birimlerini keser. Sıkıştırma oranını gösterir.">
+  <meta property="og:title" content="CSS Minifier — Toolhub">
+  <meta property="og:description" content="Ücretsiz online CSS minifier. Yorumları kaldırır, boşlukları daraltır, sondaki noktalı virgülleri ve sıfır birimlerini keser. Sıkıştırma oranını gösterir.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/css-minifier/">
+  <meta property="og:image" content="https://toolhub.software/og-images/css-minifier.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/css-minifier.png">
+  <link rel="canonical" href="https://toolhub.software/tr/css-minifier/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/css-minifier/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/css-minifier/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/css-minifier/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/css-minifier/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/css-minifier/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/css-minifier/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/css-minifier/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/css-minifier/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/css-minifier/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/css-minifier/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/css-minifier/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/css-minifier/#tool",
+        "name": "CSS Minifier",
+        "description": "Ücretsiz online CSS minifier. Yorumları kaldırır, boşlukları daraltır, sondaki noktalı virgülleri ve sıfır birimlerini keser. Sıkıştırma oranını gösterir.",
+        "url": "https://toolhub.software/tr/css-minifier/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["css", "minify", "compress", "optimize", "stylesheet"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "CSS Minifier", "item": "https://toolhub.software/tr/css-minifier/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kaynakta okunabilir olan CSS — yorumlar, indent ve anlamlı boşluklarla — kullanıcılarının indirdiği dosyayı şişirir. Yapısal bir minifier tüm kozmetik byte'ları (yorumlar, boşluk grupları, gereksiz sıfırlar, eşdeğer kısa hex kodları) kuralların anlamını değiştirmeden temizler. Bu araç bu pasajı tarayıcında çalıştırır ve öncesi/sonrası boyutunu gösterir, böylece tasarrufu görebilirsin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bir HTML e-postaya veya blog gönderisi şablonuna bir CSS snippet'i tek seferlik inline gönderme, byte'ları küçültmek istediğinde ama build chain yokken. Gerçek bir optimizer'ı kurmaya değip değmeyeceğine karar vermeden önce bir stylesheet'te ne kadar \"yağ\" olduğunu hızlıca kontrol etme. Üçüncü taraf widget'ında dahil etmek için ince hale getirmek üzere bir vendor'ın güzel basılı CSS'ini yapıştırma."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne yapar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blok yorumlarını temizler ( /* … */ ) — tek satırlık // zaten geçerli sade CSS değildir. { } : ; , ve birleştiriciler ( > ~ + ) etrafındaki boşluğu daraltır. } öncesi sondaki noktalı virgülleri düşürür. Önde gelen sıfırları ( 0.5 → .5 ) keser ve sıfırdan birimleri kaldırır ( 0px → 0 ). Hex renklerini kısaltır kesinse ( #aabbcc → #abc )."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bu yapısal bir minify, tam optimizer değil. Yinelenen selector'ları birleştirmez, kuralları yeniden sıralamaz veya kısaltmayı yeniden yazmaz. Onun için build pipeline'ında cssnano veya esbuild çalıştır. Source map üretilmez. Production'da minified CSS'i debug ediyorsan, onları ayrıca gönder. Commit ettiğin CSS'i minify etme. Güzel kaynak commit et; build/deploy'da minify et. İkisini karıştırmak diff incelemesini sefil yapar. Modern sıkıştırma baskın. Wire üzerindeki Brotli/gzip minification'ın çoğunu yapar. En büyük tasarruflar kullanılmayan kuralları çıkarmaktan gelir — bir tree-shaking işidir, minification değil."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "CSS Minifier",
+  "description": "CSS'ten yorumları, boşlukları ve gereksizliği temizle. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "CSS verisini yapıştır",
+      "text": "CSS verisini Giriş alanına bırak."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Küçült düğmesine tıkla",
+      "text": "Aracı çalıştırmak için Küçült düğmesine bas."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kopyala",
+      "text": "Çıktı alanını kopyalamak için Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/css-minifier/'; else location.href='/css-minifier/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / CSS Minifier</div>
+    <h1>CSS Minifier</h1>
+    <p class="tagline">CSS'ten yorumları, boşlukları ve gereksizliği temizle. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.</p>
+    
+<div class="tool-card">
+  <label>Giriş</label>
+  <textarea id="cm-input" oninput="cmRun()" placeholder="/* paste your CSS here */
+.button {
+  background: #3b82f6;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #ffffff;
+}" spellcheck="false">/* sample */
+.button {
+  background-color: #3b82f6;
+  padding: 0.5rem 1.0rem;
+  border-radius: 6px;
+  color: #ffffff;
+  margin: 0px 0px 0px 0px;
+}
+
+/* hover state */
+.button:hover {
+  background-color: #2563eb;
+}</textarea>
+</div>
+<div class="tool-card">
+  <label>Çıktı</label>
+  <div class="output-row">
+    <pre class="output" id="cm-out" style="white-space:pre-wrap;word-break:break-all"></pre>
+    <button class="copy-btn secondary" onclick="copyOutput('cm-out', this)">Kopyala</button>
+  </div>
+  <div class="meta" id="cm-stats" style="margin-top:0.6rem"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>Kaynakta okunabilir olan CSS — yorumlar, indent ve anlamlı boşluklarla — kullanıcılarının indirdiği dosyayı şişirir. Yapısal bir minifier tüm kozmetik byte'ları (yorumlar, boşluk grupları, gereksiz sıfırlar, eşdeğer kısa hex kodları) kuralların anlamını değiştirmeden temizler. Bu araç bu pasajı tarayıcında çalıştırır ve öncesi/sonrası boyutunu gösterir, böylece tasarrufu görebilirsin.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir HTML e-postaya veya blog gönderisi şablonuna bir CSS snippet'i tek seferlik inline gönderme, byte'ları küçültmek istediğinde ama build chain yokken.</li>
+  <li>Gerçek bir optimizer'ı kurmaya değip değmeyeceğine karar vermeden önce bir stylesheet'te ne kadar "yağ" olduğunu hızlıca kontrol etme.</li>
+  <li>Üçüncü taraf widget'ında dahil etmek için ince hale getirmek üzere bir vendor'ın güzel basılı CSS'ini yapıştırma.</li>
+</ul>
+
+<h3>Ne yapar</h3>
+<ul>
+  <li>Blok yorumlarını temizler (<code>/* … */</code>) — tek satırlık <code>//</code> zaten geçerli sade CSS değildir.</li>
+  <li><code>{ } : ; ,</code> ve birleştiriciler (<code>&gt; ~ +</code>) etrafındaki boşluğu daraltır.</li>
+  <li><code>}</code> öncesi sondaki noktalı virgülleri düşürür.</li>
+  <li>Önde gelen sıfırları (<code>0.5</code> → <code>.5</code>) keser ve sıfırdan birimleri kaldırır (<code>0px</code> → <code>0</code>).</li>
+  <li>Hex renklerini kısaltır kesinse (<code>#aabbcc</code> → <code>#abc</code>).</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Bu yapısal bir minify, tam optimizer değil.</strong> Yinelenen selector'ları birleştirmez, kuralları yeniden sıralamaz veya kısaltmayı yeniden yazmaz. Onun için build pipeline'ında <code>cssnano</code> veya <code>esbuild</code> çalıştır.</li>
+  <li><strong>Source map üretilmez.</strong> Production'da minified CSS'i debug ediyorsan, onları ayrıca gönder.</li>
+  <li><strong>Commit ettiğin CSS'i minify etme.</strong> Güzel kaynak commit et; build/deploy'da minify et. İkisini karıştırmak diff incelemesini sefil yapar.</li>
+  <li><strong>Modern sıkıştırma baskın.</strong> Wire üzerindeki Brotli/gzip minification'ın çoğunu yapar. En büyük tasarruflar kullanılmayan kuralları çıkarmaktan gelir — bir tree-shaking işidir, minification değil.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/js-minifier/">JavaScript Minifier</a> <a href="/tr/html-encoder/">HTML Encoder / Decoder</a> <a href="/tr/color-picker/">Renk Seçici</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+function copyOutput(id, btn){
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.textContent || '');
+  const o = btn.textContent; btn.textContent = '✓'; setTimeout(()=>btn.textContent = o, 900);
+}
+function cmMinify(css){
+  // Strip /* … */ comments (non-greedy)
+  let out = css.replace(/\/\*[\s\S]*?\*\//g, '');
+  // Preserve string contents — quick mask
+  const strings = [];
+  out = out.replace(/("([^"\\]|\\.)*"|'([^'\\]|\\.)*')/g, m => { strings.push(m); return '\u0001' + (strings.length-1) + '\u0002'; });
+  // Collapse all whitespace
+  out = out.replace(/\s+/g, ' ');
+  // Tighten around punctuation
+  out = out.replace(/\s*([{}:;,>~+])\s*/g, '$1');
+  // Trim trailing ; before }
+  out = out.replace(/;}/g, '}');
+  // Drop leading zeros (0.5 → .5) but keep 0 alone
+  out = out.replace(/(^|[\s:,(])0+(\.\d+)/g, '$1$2');
+  // Zero units (0px, 0em, 0% → 0) — but not in calc() and not for time/angle where 0s differs
+  out = out.replace(/(^|[\s:,(])(0)(px|em|rem|%|vh|vw|pt|pc|ex|ch)(?=[\s,;)})]|$)/g, '$1$2');
+  // Hex shortening (#aabbcc → #abc)
+  out = out.replace(/#([0-9a-f])\1([0-9a-f])\2([0-9a-f])\3/gi, '#$1$2$3');
+  // Restore strings
+  out = out.replace(/\u0001(\d+)\u0002/g, (_, i) => strings[+i]);
+  return out.trim();
+}
+function cmRun(){
+  const src = document.getElementById('cm-input').value;
+  const out = document.getElementById('cm-out');
+  const stats = document.getElementById('cm-stats');
+  if(!src.trim()){ out.textContent = 'Sonucu görmek için yukarıya giriş yapın.'; stats.textContent = ''; return; }
+  const min = cmMinify(src);
+  out.textContent = min;
+  const before = new Blob([src]).size;
+  const after = new Blob([min]).size;
+  const saved = before - after;
+  const pct = before ? Math.round((saved/before)*100) : 0;
+  stats.textContent = `Original: ${before.toLocaleString()} B · Minified: ${after.toLocaleString()} B · Saved: ${saved.toLocaleString()} B (${pct}%)`;
+}
+document.addEventListener('DOMContentLoaded', cmRun);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Tabela ASCII", "tagline": "Pełna referencja ASCII 0–127 z wartościami dec, hex, bin, znakiem i encją HTML. Z filtrem.", "description": "Darmowa tabela ASCII. Wszystkie 128 kodów ASCII z wartościami decimal, hex, octal, binary, znakiem, encją HTML i opisem znaków sterujących. Filtruj w trakcie pisania."},
         "ja": {"name": "ASCII テーブル", "tagline": "ASCII 0–127 の完全リファレンス。10 進・16 進・2 進・文字・HTML エンティティを表示。フィルタ可能。", "description": "無料の ASCII テーブルリファレンス。128 個の標準 ASCII コードすべてを 10 進・16 進・8 進・2 進・文字・HTML エンティティ付きで表示し、制御文字には説明も併記。入力に応じてリアルタイムにフィルタリングできます。"},
         "nl": {"name": "ASCII-tabel", "tagline": "Volledige ASCII-referentie 0–127 met decimaal, hex, binair, teken en HTML-entiteit. Filterbaar.", "description": "Gratis ASCII-tabelreferentie. Alle 128 standaard ASCII-codes met decimaal, hex, octaal, binair, teken, HTML-entiteit en een omschrijving voor stuurtekens. Filter tijdens het typen."},
+        "tr": {"name": "ASCII Tablosu", "tagline": "0–127 tam ASCII referansı: ondalık, hex, ikilik, karakter ve HTML entity. Filtrelenebilir.", "description": "Ücretsiz ASCII tablo referansı. 128 standart ASCII kodunun tamamı; ondalık, hex, octal, ikilik, karakter, HTML entity ve kontrol karakterleri için açıklama. Yazdıkça filtrele."},
     },
     "body": """
 <div class="tool-card">
@@ -290,6 +291,28 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Stuurtekens zijn onzichtbare saboteurs.</strong> Copy/paste vanuit een terminal of PDF kan <code>0x1F</code>, <code>0x07</code> (BEL — laat de terminal echt piepen), of zero-width Unicode-tekens oppikken die <em>geen</em> ASCII zijn. Als tekst er gelijk uitziet maar ongelijk vergelijkt, dump je het naar bytes.</li>
   <li><strong>HTML-entiteiten zijn niet altijd nodig.</strong> In moderne UTF-8-documenten zijn <code>&amp;#65;</code> en de letterlijke <code>A</code> equivalent. Escape alleen tekens met syntactische betekenis in HTML: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code> en <code>"</code> in attributen.</li>
   <li><strong>NUL (<code>0x00</code>) sluit strings af in C.</strong> Embed het niet zomaar in C-string buffers — veel API's kappen stilletjes af bij de eerste NUL.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>ASCII (American Standard Code for Information Interchange), rakamları, harfleri, noktalama işaretlerini ve bir avuç kontrol kodunu 0–127 tam sayıları üzerine eşleyen 128 karakterlik kodlama sistemidir. Her modern metin kodlamasının (UTF-8, Latin-1, Windows-1252) temelinde durur, bu yüzden değerleri bilmek bazen hayati önemde olur — bir ikilik dosyadaki kaçak byte'ı teşhis etmek, "her yazdırılabilir" için regex kurmak, hex dump okumak veya 0x0A mı yoksa 0x0D mi yeni satır hatırlamak için.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Hex dump okuyup o byte'ların ne <em>dediğini</em> anlamaya çalışırken.</li>
+  <li>Parser yazıp sınır değerlerine ihtiyaç duyduğunda: <code>0x20</code> (boşluk), <code>0x7E</code> (tilde) — yazdırılabilir aralık.</li>
+  <li><code>0x09</code> (Tab) veya <code>0x1F</code> (Unit Separator) içerdiği için bozulan bir CSV'yi debug ederken.</li>
+  <li>Zorlu bir karakter için HTML entity üretirken — <code>&amp;#65;</code> = <code>A</code>.</li>
+  <li><code>\r</code>'in 0x0D (evet — Carriage Return) ve <code>\n</code>'in 0x0A (evet — Line Feed) olduğu konusundaki bir tartışmayı bitirirken.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>ASCII 7-bit'tir, 8-bit değil.</strong> 128–255 kodları ASCII <em>değildir</em> — belgenin beyan ettiği 8-bit kodlamaya (Latin-1, CP-1252, …) aittirler veya UTF-8 dizisinin lead byte'larıdır.</li>
+  <li><strong>Yeni satırlar platforma göre farklılaşır.</strong> Unix/macOS sadece <code>LF</code> (0x0A); eski Mac Classic <code>CR</code> (0x0D) kullandı; Windows <code>CRLF</code> kullanır. Karışık dosyalar naif satır sayımını bozar.</li>
+  <li><strong>Kontrol karakterleri görünmez sabotajcılar olabilir.</strong> Terminal veya PDF'ten kopyala/yapıştır <code>0x1F</code>, <code>0x07</code> (BEL — gerçekten terminali ötürür) veya ASCII <em>olmayan</em> sıfır-genişlik Unicode karakterleri yakalayabilir. Metin "iyi görünüyor" ama eşit karşılaştırmıyorsa, byte'lara dök.</li>
+  <li><strong>HTML entity'ler her zaman gerekli değildir.</strong> Modern UTF-8 belgelerinde, <code>&amp;#65;</code> ve literal <code>A</code> eşdeğerdir. Yalnızca HTML'de sözdizimsel anlamı olan karakterleri escape et: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code> ve nitelik içinde <code>"</code>.</li>
+  <li><strong>NUL (<code>0x00</code>) C'de string'leri sonlandırır.</strong> C-string buffer'larına düşünmeden gömme — birçok API ilk NUL'da sessizce keser.</li>
 </ul>
 """,
     },

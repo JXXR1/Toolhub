@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Kalkulator Dat", "tagline": "Dni między dwiema datami · dodaj/odejmij dni/tygodnie/miesiące/lata · wiek w latach, miesiącach i dniach.", "description": "Darmowy online kalkulator dat. Policz różnicę między dwiema datami, dodaj lub odejmij okres od dowolnej daty i wylicz dokładny wiek w latach/miesiącach/dniach. Wszystko liczy się w przeglądarce."},
         "ja": {"name": "日付計算機", "tagline": "2 つの日付の差・日付に対する日／週／月／年の加減・年齢を年・月・日で算出。", "description": "オンライン無料の日付計算機。2 つの日付の期間を計算し、任意の日付に対して期間を加減算し、年・月・日で正確な年齢を算出します。すべてブラウザ内で実行されます。"},
         "nl": {"name": "Datum-calculator", "tagline": "Dagen tussen twee datums · dagen/weken/maanden/jaren optellen of aftrekken · leeftijd in jaren, maanden en dagen.", "description": "Gratis online datum-calculator. Bereken de duur tussen twee datums, tel een span op of trek af van een datum, en bepaal exacte leeftijd in jaren/maanden/dagen. Alle berekeningen draaien in je browser."},
+        "tr": {"name": "Tarih Hesaplayıcı", "tagline": "İki tarih arasındaki gün sayısı · bir tarihe gün/hafta/ay/yıl ekle veya çıkar · yıl, ay ve gün cinsinden yaş.", "description": "Ücretsiz online tarih hesaplayıcı. İki tarih arasındaki süreyi hesapla, bir tarihten ekle veya çıkar, yıl/ay/gün cinsinden tam yaş bul. Tüm hesaplamalar tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -328,6 +329,27 @@ document.addEventListener('DOMContentLoaded', dcMode);
   <li><strong>Werkdagen tellen geen feestdagen.</strong> De berekening kent weekenden maar geen bank holidays — pas handmatig aan als het uitmaakt.</li>
   <li><strong>"Totaal maanden" is benaderend</strong> in de age view (jaren × 12 + maanden) — negeert de trailing days. Het J/M/D-getal is exact.</li>
   <li><strong>UTC-verankering offert af tegen locale.</strong> Een datum in je lokale tijdzone kan mappen op een iets andere UTC-dag. Voor de meeste use-cases (deadlines, leeftijden) is UTC-middag het veiligere anker; voor tot-de-minuut tijdzone-werk gebruik je de timezone-converter.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>İnsanların gerçekten bir tarih hesaplayıcıdan istediği üç şey: iki tarih arasındaki aralık ("lansmana kaç gün var?"), bir tarihi bir süreyle kaydırma ("fatura tarihinden 90 gün sonra") ve kesin yaş ("bir doğum tarihinden yıl, ay ve gün"). Bu araç üçünü de tarayıcında, DST ve saat dilimi kaymalarının seyahat ederken cevabı sessizce yanlışlamaması için UTC öğleye sabitlenmiş şekilde yapar.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Sözleşme süreleri, proje zaman çizelgeleri ve son tarihler hesaplama.</li>
+  <li>Faturalama veya proje tahmini için iki tarih arasında kaç iş günü (Pzt–Cum) düştüğünü hesaplama.</li>
+  <li>Yaş kesimlerini doğrulama (vize uygunluğu, okul yılları, kilometre taşı doğum günleri).</li>
+  <li>Ay sonunu doğru ele alarak bir baseline tarihe "30 gün net" veya "90 gün cayma" süreleri ekleme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Dahil - hariç bitiş tarihleri.</strong> "Pzt'dan Cum'a günler" boşluk sayarsan 4, gün sayarsan 5'tir. Toggle hangi gelenek kontrol eder; ikisi de soruya bağlı doğrudur.</li>
+  <li><strong>Ekle/çıkar sırası önemlidir.</strong> Yıllar ve aylar önce uygulanır, sonra haftalar ve günler. 30 Ocak'a "1 ay + 1 gün" eklemek 1 Mart verir (30 Şubat → 28/29 Şubat → +1), 2 Mart değil — neredeyse her datetime kütüphanesinin kullandığı takvim güvenli gelenek.</li>
+  <li><strong>İş günleri tatilleri içermez.</strong> Hesaplama hafta sonlarını bilir ama banka tatillerini bilmez — önemliyse elle ayarla.</li>
+  <li><strong>Yaş görünümünde "Toplam ay" yaklaşıktır</strong> (yıl × 12 + ay) — sondaki günleri yok sayar. Y/A/G rakamı kesindir.</li>
+  <li><strong>UTC sabitleme locale ile değiş tokuş yapar.</strong> Yerel saat dilimindeki bir tarih biraz farklı bir UTC gününe haritalanabilir. Çoğu kullanım için (son tarihler, yaşlar) UTC öğle daha güvenli sabitlemedir.</li>
 </ul>
 """,
     },

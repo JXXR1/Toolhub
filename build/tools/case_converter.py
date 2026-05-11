@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Konwerter Wielkości Liter", "tagline": "Konwertuj tekst między WIELKIMI, małymi, Tytułowymi, Zdaniowymi, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE i dot.case.", "description": "Darmowy konwerter wielkości liter online. Zmień tekst między upper, lower, title, sentence, camel, pascal, snake, kebab, constant i dot case jednym kliknięciem."},
         "ja": {"name": "ケース変換ツール", "tagline": "テキストを大文字、小文字、タイトル、文、camelCase、PascalCase、snake_case、kebab-case、CONSTANT_CASE、dot.case の間で変換。", "description": "オンライン無料のケース変換ツール。upper、lower、title、sentence、camel、pascal、snake、kebab、constant、dot ケースをワンクリックで切り替えできます。"},
         "nl": {"name": "Case Converter", "tagline": "Converteer tekst tussen UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE en dot.case.", "description": "Gratis online case converter. Schakel tekst tussen upper, lower, title, sentence, camel, pascal, snake, kebab, constant en dot case in één klik."},
+        "tr": {"name": "Case Converter", "tagline": "Metni UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE ve dot.case arasında dönüştür.", "description": "Ücretsiz online büyük/küçük harf dönüştürücü. Metni tek tıkla upper, lower, title, sentence, camel, pascal, snake, kebab, constant ve dot case arasında değiştir."},
     },
     "body": """
 <div class="tool-card">
@@ -188,6 +189,26 @@ document.addEventListener('DOMContentLoaded', ccRun);
   <li><strong>Getallen plakken aan het vorige woord.</strong> "Item2" wordt één woord "item2", geen twee. Voeg een separator toe als je ze gesplitst wilt.</li>
   <li><strong>"camelCase eerste letter"</strong> is altijd kleine letter, ook als de input met een hoofdletter begon. PascalCase behoudt de hoofdletter.</li>
   <li><strong>Round-trippen is niet altijd lossless.</strong> camelCase → kebab-case → camelCase verliest de oorspronkelijke hoofdletterhint bij woordgrenzen; de case-detectie heuristiek doet zijn best maar kan niet terughalen wat niet bewaard is.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Her dilin ve platformun şeyleri adlandırma için kendi gelenekleri vardır — JavaScript <code>camelCase</code>, Python <code>snake_case</code>, CSS <code>kebab-case</code>, ortam değişkenleri <code>CONSTANT_CASE</code> ister. Aralarında elle çevirmek özellikle uç durumlarda (kısaltmalar, sayılar, mevcut ayraçlar) zahmetlidir. Bu araç herhangi bir girdiyi case geçişlerini, ayraçları (<code>_ - . /</code>) ve boşluğu tespit ederek kelimelere ayırır, sonra 14 farklı stilde yeniden birleştirir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir API JSON'undan (camelCase) bir Python ORM sütununa (snake_case) alan adı değiştirme.</li>
+  <li>PascalCase'de gelen tasarım sistemi token adlarından CSS sınıf adları üretme.</li>
+  <li>Bir başlık listesini kebab-case slug'lara veya ortam değişkeni adlarını CONSTANT_CASE'e dönüştürme.</li>
+  <li>"The Quick Brown Fox" ifadesini bir başlık / düğme etiketi için Title Case, Sentence case veya Train-Case'e hızlıca dönüştürme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Kısaltmalar zordur.</strong> "XMLHttpRequest" "XML_Http_Request" mi yoksa "Xml_Http_Request" mi olmalı? Bu araç ardışık büyük harfleri tek kelime sınırı olarak ele alır (<code>xml http request</code>), sonra yeniden case'ler.</li>
+  <li><strong>Sayılar önceki kelimeye yapışır.</strong> "Item2" tek kelime "item2" olur, iki değil. Ayrılmasını istiyorsan ayraç ekle.</li>
+  <li><strong>"camelCase ilk harfi"</strong> giriş büyükle başlasa bile her zaman küçüktür. PascalCase büyük harfi korur.</li>
+  <li><strong>Round-trip her zaman kayıpsız değildir.</strong> camelCase → kebab-case → camelCase, kelime sınırlarındaki orijinal büyük harf ipucunu kaybeder.</li>
 </ul>
 """,
     },

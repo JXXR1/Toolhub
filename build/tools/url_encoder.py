@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Encoder / Decoder URL", "tagline": "Percent-encoduj stringi pod URL-e albo dekoduj zakodowane procentowo z powrotem na zwykły tekst.", "description": "Darmowy online encoder i decoder URL. Koduje znaki specjalne jako percent-escape pod URL-e, query stringi i form data. Component-safe."},
         "ja": {"name": "URL エンコーダー / デコーダー", "tagline": "URL 用に文字列を percent-encode、または percent-encoded をテキストにデコード。", "description": "オンライン無料の URL エンコーダー／デコーダー。URL、クエリ文字列、フォームデータ用に特殊文字を percent-escape にエンコードします。コンポーネントセーフ。"},
         "nl": {"name": "URL Encoder / Decoder", "tagline": "Percent-encode strings voor URLs of decodeer percent-encoded strings terug naar plain text.", "description": "Gratis online URL encoder en decoder. Encodet speciale tekens als percent-escapes voor URLs, query strings en form data. Component-safe."},
+        "tr": {"name": "URL Encoder / Decoder", "tagline": "String'leri URL'ler için percent-encode et veya percent-encoded string'leri düz metne çöz.", "description": "Ücretsiz online URL encoder ve decoder. URL'ler, query string'ler ve form verisi için özel karakterleri percent-escape olarak kodlar. Component-safe."},
     },
     "body": """
 <div class="tool-card">
@@ -155,6 +156,24 @@ document.addEventListener('DOMContentLoaded', urlRun);
   <li><strong>Spaties zijn niet altijd <code>%20</code>.</strong> In <em>application/x-www-form-urlencoded</em>-bodies zijn spaties <code>+</code>. Deze tool volgt de JavaScript <code>encodeURIComponent</code>-conventie (altijd <code>%20</code>); decode handelt beide af.</li>
   <li><strong>UTF-8 vs Latin-1.</strong> Moderne browsers en <code>encodeURIComponent</code> gebruiken altijd UTF-8. Sommige oudere systemen produceren nog Latin-1 percent-escapes — die round-trippen hier niet schoon.</li>
   <li><strong>Reserved karakters zijn case-insensitive in de percent-escape maar case-sensitive in het decoded resultaat</strong> — <code>%2F</code> en <code>%2f</code> decoderen beide naar <code>/</code>, maar de case van het oorspronkelijke karakter blijft behouden.</li>
+</ul>
+""",
+        "tr": """
+<h2>URL kodlama ne yapar</h2>
+<p>URL'ler ve HTTP header'ları küçük bir ASCII alt kümesiyle sınırlıdır. Bu setin dışındaki her şey — boşluklar, aksanlı harfler, emoji ve birkaç rezerve noktalama karakteri dahil — <em>percent-encoded</em> olmalıdır: byte başına iki hex basamak izleyen <code>%</code> ile değiştirilir. <code>café</code> <code>caf%C3%A9</code> olur (UTF-8). Çözme bunu tersine çevirir.</p>
+
+<h3>Hangi kapsamı ne zaman kullanmalı</h3>
+<ul>
+  <li><strong>Component</strong> — bir URL'ye ekleyeceğin bireysel <em>değerler</em> için bunu seç: query string değerleri, path segmentleri, fragment metni, header değerleri. Yapısal karakterleri <code>/ ? # &amp; = +</code> kodlar, böylece yanlışlıkla URL sözdizimi olarak parse edilmezler.</li>
+  <li><strong>Full URI</strong> — temizlemek istediğin tüm bir URL için bunu seç. <code>/ ? # &amp; = +</code>'ı URL yapısı olarak korur, yalnızca <em>yasadışı</em> karakterleri (boşluklar, ASCII olmayan, vb.) kodlar.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Çift kodlama yapma.</strong> Zaten kodlanmış bir string'i kodlamak <code>%20</code>'yi <code>%2520</code>'ye çevirir. Girişinde <code>%XX</code> dizileri görüyorsan, önce çöz.</li>
+  <li><strong>Boşluklar her zaman <code>%20</code> değildir.</strong> <em>application/x-www-form-urlencoded</em> gövdelerinde, boşluklar <code>+</code>'tır. Bu araç JavaScript <code>encodeURIComponent</code> konvansiyonunu izler (her zaman <code>%20</code>); çözme her ikisini de işler.</li>
+  <li><strong>UTF-8 vs Latin-1.</strong> Modern tarayıcılar ve <code>encodeURIComponent</code> her zaman UTF-8 kullanır. Bazı eski sistemler hâlâ Latin-1 percent-escape'leri üretir — bunlar burada temiz round-trip yapmaz.</li>
+  <li><strong>Rezerve karakterler percent-escape'te büyük/küçük harfe duyarsızdır ama çözülmüş sonuçta büyük/küçük harfe duyarlıdır</strong> — <code>%2F</code> ve <code>%2f</code> ikisi de <code>/</code>'a çözülür, ama orijinal karakterin case'i korunur.</li>
 </ul>
 """,
     },

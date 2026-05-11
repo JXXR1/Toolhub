@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UUID Üretici — Toolhub</title>
+  <meta name="description" content="Ücretsiz online UUID üretici. RFC 4122 v4 (rastgele) ve v7 (zaman sıralı, sıralanabilir). Bir veya birden fazlasını üret, hepsi tarayıcında.">
+  <meta property="og:title" content="UUID Üretici — Toolhub">
+  <meta property="og:description" content="Ücretsiz online UUID üretici. RFC 4122 v4 (rastgele) ve v7 (zaman sıralı, sıralanabilir). Bir veya birden fazlasını üret, hepsi tarayıcında.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/uuid-generator/">
+  <meta property="og:image" content="https://toolhub.software/og-images/uuid-generator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/uuid-generator.png">
+  <link rel="canonical" href="https://toolhub.software/tr/uuid-generator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/uuid-generator/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/uuid-generator/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/uuid-generator/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/uuid-generator/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/uuid-generator/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/uuid-generator/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/uuid-generator/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/uuid-generator/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/uuid-generator/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/uuid-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/uuid-generator/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/uuid-generator/#tool",
+        "name": "UUID Üretici",
+        "description": "Ücretsiz online UUID üretici. RFC 4122 v4 (rastgele) ve v7 (zaman sıralı, sıralanabilir). Bir veya birden fazlasını üret, hepsi tarayıcında.",
+        "url": "https://toolhub.software/tr/uuid-generator/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["uuid", "guid", "v4", "v7", "random", "unique", "identifier"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "UUID Üretici", "item": "https://toolhub.software/tr/uuid-generator/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bir UUID (veya GUID) 128-bit bir tanımlayıcıdır — 550e8400-e29b-41d4-a716-446655440000 gibi 5 grupta 32 hex basamak olarak yazılır. Koordinasyon olmadan sistemler arasında çarpışmasızlardır: herhangi bir yerde herhangi bir süreç bir tane basabilir ve ikisinin çarpışma olasılığı pratikte sıfırdır. Veritabanına konuşmadan önce bir ID gerektiğinde, satır sayılarının sızmasını önlemek istediğinde veya bir ID'nin istemci tarafında üretilip sonra senkronize edilmesi gerektiğinde kullanışlıdır. Bu araç v4 (rastgele) veya v7 (zaman-sıralı) biçiminde RFC 4122 / RFC 9562 uyumlu UUID'ler yayar, tarayıcında kriptografik olarak güvenli rastgelelikle üretilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bir ID için veritabanına round-trip yapmak istemediğin dağıtık sistemler için birincil anahtarlar. API istekleri için idempotency anahtarları (stripe, ödeme sağlayıcıları, queue mesajları). Dosya yükleme tanımlayıcıları, oturum token'ları, loglarda correlation ID'ler. Aksi takdirde otomatik artan bir ID'yi açığa çıkardığın ve kaç kaydın olduğunu sızdırdığın herhangi bir yer. Test verisi — tek tıkla yüz kayıt gerçekçi tanımlayıcılarla seed et."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "v4 - v7 — hangisini kullanmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "v4 (rastgele) — 122 bit rastgelelik, gömülü oluşturma zamanı yok. ID'ler ve oluşturma sırası arasında sıfır korelasyon istediğinde veya ID'nin sıralamanın önemli olmadığı hash-map / non-clustered indekste yaşayacağı zaman kullan. v7 (zaman-sıralı) — 48-bit Unix-ms timestamp öneki + rastgele kuyruk. Yeni veritabanı birincil anahtarları için varsayılan olarak bunu kullan. Timestamp öneki B-tree indekslerine locality verir (son insert'ler aynı sayfalara gider, v4'ten çok daha iyi cache davranışı) ve ID'ler kabaca kronolojik sırada sıralanır. RFC 9562'de tanımlandı (Mayıs 2024) — çoğu kullanım durumu için ULID ve v1/v6'nın yerini alır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UUID'ler sır değildir. v4'ün 122 bit entropisi vardır ve tahmin edilemezdir, ama biçimin kendisi hiçbir şey yetkilendirmez. Bir oturum token'ı veya parola sıfırlama token'ı olarak UUID kullanma, onu bir sır gibi ele almıyorsan (yalnızca HTTPS, zaman sınırlı, tek kullanımlık). v7 oluşturma zamanını sızdırır. İlk 48 bit basıldığı milisaniyeyi kodlar. Dahili ID'ler için iyidir; kullanıcıların kayıtların ne zaman oluşturulduğunu öğrenmesini istemiyorsan kötü. Bu durumda v4 kullan. İndeks boyutu önemlidir. Bir UUID bigint için 8 byte'a karşı 16 byte'tır — B-tree indekslerin büyür. Dağıtık/koordinasyonsuz için değer, sıralı ID olan tek sunucu uygulamaları için sıklıkla değmez. v4 veritabanı indekslerini parçalar. Rastgele ID'ler yazmaları indeks boyunca dağıtır, sayfa cache hit oranına ve yazma throughput'una zarar verir. Bu v7 için orijinal argümandır. v1 kullanma. Eski zaman-ve-MAC varyantı üreten makinenin MAC adresini sızdırır. v7 modern yedektir. Kripto-güvenli rastgelelik kullan. Bu araç crypto.getRandomValues kullanır; asla Math.random ile kendini yapma — yeterince rastgele değildir ve ID'ler öngörülebilir olur."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "UUID Üretici",
+  "description": "RFC 4122 UUID üret (v4 rastgele veya v7 zaman sıralı). 100'e kadar toplu. Kriptografik olarak güvenli.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Seçenekleri ayarla",
+      "text": "İhtiyacın olan UUID seçeneklerini seç."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Oluştur düğmesine tıkla",
+      "text": "Yeni bir UUID üretmek için Oluştur düğmesine bas."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kopyala",
+      "text": "Üretilen UUID verisini kopyalamak için Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/uuid-generator/'; else location.href='/uuid-generator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / UUID Üretici</div>
+    <h1>UUID Üretici</h1>
+    <p class="tagline">RFC 4122 UUID üret (v4 rastgele veya v7 zaman sıralı). 100'e kadar toplu. Kriptografik olarak güvenli.</p>
+    
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Version</label>
+      <select id="uuid-ver">
+        <option value="4">v4 (random)</option>
+        <option value="7">v7 (time-ordered, sortable)</option>
+      </select>
+    </div>
+    <div>
+      <label>Adet (1-100)</label>
+      <input type="number" id="uuid-count" value="1" min="1" max="100">
+    </div>
+  </div>
+  <div class="button-row">
+    <button onclick="uuidGen()">Oluştur</button>
+    <button class="secondary" onclick="copyOutput('uuid-out', this)">Kopyala</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Çıktı</label>
+  <pre class="output" id="uuid-out"></pre>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>Bir UUID (veya GUID) 128-bit bir tanımlayıcıdır — <code>550e8400-e29b-41d4-a716-446655440000</code> gibi 5 grupta 32 hex basamak olarak yazılır. Koordinasyon olmadan sistemler arasında çarpışmasızlardır: herhangi bir yerde herhangi bir süreç bir tane basabilir ve ikisinin çarpışma olasılığı pratikte sıfırdır. Veritabanına konuşmadan önce bir ID gerektiğinde, satır sayılarının sızmasını önlemek istediğinde veya bir ID'nin istemci tarafında üretilip sonra senkronize edilmesi gerektiğinde kullanışlıdır. Bu araç v4 (rastgele) veya v7 (zaman-sıralı) biçiminde RFC 4122 / RFC 9562 uyumlu UUID'ler yayar, tarayıcında kriptografik olarak güvenli rastgelelikle üretilir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir ID için veritabanına round-trip yapmak istemediğin dağıtık sistemler için birincil anahtarlar.</li>
+  <li>API istekleri için idempotency anahtarları (stripe, ödeme sağlayıcıları, queue mesajları).</li>
+  <li>Dosya yükleme tanımlayıcıları, oturum token'ları, loglarda correlation ID'ler.</li>
+  <li>Aksi takdirde otomatik artan bir ID'yi açığa çıkardığın ve kaç kaydın olduğunu sızdırdığın herhangi bir yer.</li>
+  <li>Test verisi — tek tıkla yüz kayıt gerçekçi tanımlayıcılarla seed et.</li>
+</ul>
+
+<h3>v4 - v7 — hangisini kullanmalı?</h3>
+<ul>
+  <li><strong>v4 (rastgele)</strong> — 122 bit rastgelelik, gömülü oluşturma zamanı yok. ID'ler ve oluşturma sırası arasında sıfır korelasyon istediğinde veya ID'nin sıralamanın önemli olmadığı hash-map / non-clustered indekste yaşayacağı zaman kullan.</li>
+  <li><strong>v7 (zaman-sıralı)</strong> — 48-bit Unix-ms timestamp öneki + rastgele kuyruk. <strong>Yeni veritabanı birincil anahtarları için varsayılan olarak bunu kullan.</strong> Timestamp öneki B-tree indekslerine locality verir (son insert'ler aynı sayfalara gider, v4'ten çok daha iyi cache davranışı) ve ID'ler kabaca kronolojik sırada sıralanır. RFC 9562'de tanımlandı (Mayıs 2024) — çoğu kullanım durumu için ULID ve v1/v6'nın yerini alır.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>UUID'ler sır değildir.</strong> v4'ün 122 bit entropisi vardır ve tahmin edilemezdir, ama biçimin kendisi hiçbir şey yetkilendirmez. Bir oturum token'ı veya parola sıfırlama token'ı olarak UUID kullanma, onu bir sır gibi ele almıyorsan (yalnızca HTTPS, zaman sınırlı, tek kullanımlık).</li>
+  <li><strong>v7 oluşturma zamanını sızdırır.</strong> İlk 48 bit basıldığı milisaniyeyi kodlar. Dahili ID'ler için iyidir; kullanıcıların kayıtların ne zaman oluşturulduğunu öğrenmesini istemiyorsan kötü. Bu durumda v4 kullan.</li>
+  <li><strong>İndeks boyutu önemlidir.</strong> Bir UUID bigint için 8 byte'a karşı 16 byte'tır — B-tree indekslerin büyür. Dağıtık/koordinasyonsuz için değer, sıralı ID olan tek sunucu uygulamaları için sıklıkla değmez.</li>
+  <li><strong>v4 veritabanı indekslerini parçalar.</strong> Rastgele ID'ler yazmaları indeks boyunca dağıtır, sayfa cache hit oranına ve yazma throughput'una zarar verir. Bu v7 için orijinal argümandır.</li>
+  <li><strong>v1 kullanma.</strong> Eski zaman-ve-MAC varyantı üreten makinenin MAC adresini sızdırır. v7 modern yedektir.</li>
+  <li><strong>Kripto-güvenli rastgelelik kullan.</strong> Bu araç <code>crypto.getRandomValues</code> kullanır; asla <code>Math.random</code> ile kendini yapma — yeterince rastgele değildir ve ID'ler öngörülebilir olur.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/password-generator/">Parola Üretici</a> <a href="/tr/hash-generator/">Hash Üretici</a> <a href="/tr/timestamp-converter/">Unix Timestamp Dönüştürücü</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+function uuidV4(){
+  const b = new Uint8Array(16);
+  crypto.getRandomValues(b);
+  b[6] = (b[6] & 0x0f) | 0x40;
+  b[8] = (b[8] & 0x3f) | 0x80;
+  const h = [...b].map(x => x.toString(16).padStart(2,'0'));
+  return h.slice(0,4).join('') + '-' + h.slice(4,6).join('') + '-' + h.slice(6,8).join('') + '-' + h.slice(8,10).join('') + '-' + h.slice(10,16).join('');
+}
+function uuidV7(){
+  // RFC 9562 v7: 48-bit unix-ms timestamp + 12 bits rand_a + 62 bits rand_b + version/variant bits
+  const ts = BigInt(Date.now());
+  const r = new Uint8Array(10);
+  crypto.getRandomValues(r);
+  const b = new Uint8Array(16);
+  // 6 bytes of timestamp (big-endian)
+  for (let i = 0; i < 6; i++) b[i] = Number((ts >> BigInt(40 - 8*i)) & 0xffn);
+  for (let i = 0; i < 10; i++) b[i+6] = r[i];
+  b[6] = (b[6] & 0x0f) | 0x70;     // version 7
+  b[8] = (b[8] & 0x3f) | 0x80;     // variant 10
+  const h = [...b].map(x => x.toString(16).padStart(2,'0'));
+  return h.slice(0,4).join('') + '-' + h.slice(4,6).join('') + '-' + h.slice(6,8).join('') + '-' + h.slice(8,10).join('') + '-' + h.slice(10,16).join('');
+}
+function uuidGen(){
+  const ver = document.getElementById('uuid-ver').value;
+  const n = Math.max(1, Math.min(100, parseInt(document.getElementById('uuid-count').value, 10) || 1));
+  const out = [];
+  for (let i = 0; i < n; i++) out.push(ver === '7' ? uuidV7() : uuidV4());
+  document.getElementById('uuid-out').textContent = out.join('\n');
+}
+document.addEventListener('DOMContentLoaded', uuidGen);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

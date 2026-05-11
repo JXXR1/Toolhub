@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の YAML → JSON / JSON → YAML コンバーター。双方向で、すべてブラウザ内で動作。アンカー、エイリアス、複数ドキュメント YAML にも対応します。",
         },
         "nl": {"name": "YAML ↔ JSON Converter", "tagline": "Converteer tussen YAML en JSON in beide richtingen. Nuttig voor Kubernetes manifests, CI-configs en OpenAPI-specs.", "description": "Gratis online YAML-naar-JSON en JSON-naar-YAML converter. Bidirectioneel, draait volledig in je browser. Handelt anchors, aliases en multi-document YAML af."},
+        "tr": {"name": "YAML ↔ JSON Dönüştürücü", "tagline": "YAML ve JSON arasında her iki yöne dönüştür. Kubernetes manifest'leri, CI config'leri ve OpenAPI spec'leri için kullanışlı.", "description": "Ücretsiz online YAML'den JSON'a ve JSON'dan YAML'a dönüştürücü. Çift yönlü, tamamen tarayıcında çalışır. Anchor'ları, alias'ları ve çoklu belge YAML'ı işler."},
     },
     "body": """
 <div class="tool-card">
@@ -214,6 +215,26 @@ document.addEventListener('DOMContentLoaded', yjConv);
   <li><strong>Custom tags</strong> (<code>!!python/object</code>, <code>!Ref</code>, enz.) schenden strikte YAML 1.2. CloudFormation YAML en PyYAML pickle-dumps zullen falen; ruim tags eerst op.</li>
   <li><strong>Anchors en aliases worden ge-expandeerd</strong> bij YAML→JSON. JSON heeft geen references, dus <code>*ref</code>-nodes worden inline gezet. Round-trippen geeft een value-equivalente maar textueel-grotere YAML.</li>
   <li><strong>Getallen vs strings.</strong> Unquoted YAML <code>3.14</code> is een float; <code>"3.14"</code> is een string.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>YAML ve JSON aynı şeyleri tanımlar — iç içe map'ler, listeler, primitive'ler — ama okunabilirlik vs katılık değiş tokuş yaparlar. YAML insanlar için daha dostçadır (Kubernetes manifest'leri, GitHub Actions, OpenAPI, çoğu CI config'i); JSON API'lerin ve makine tarafından okunabilir biçimlerin gönderdiği şeydir. Bu dönüştürücü her ikisinin de ifade edebileceği yapılar için kayıpsız olarak aralarında çevirir. YAML <a href="https://github.com/nodeca/js-yaml" rel="noopener">js-yaml</a> kullanır (YAML 1.2); JSON yerel API'yi kullanır. Her iki yön de tarayıcında çalışır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>JSON gerektiren bir araca bir OpenAPI / k8s / docker-compose YAML yapıştırma.</li>
+  <li>Bir API yanıtını (JSON) bir config dosyası için YAML'a dönüştürme.</li>
+  <li>Belirsiz indent ebeveynliği belirsiz yaptığında bir YAML dosyasının gerçek yapısını denetleme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>"Norveç problemi".</strong> YAML 1.1 <code>NO</code>, <code>YES</code>, <code>ON</code>, <code>OFF</code>'u boolean'a zorladı. YAML 1.2 zorlamaz, ama aşağı akış parser'lar yapabilir. Güvende olmak için belirsiz string'leri tırnakla.</li>
+  <li><strong>Çoklu belge YAML</strong> (<code>---</code> ayraçları) — yalnızca ilk belge dönüştürülür.</li>
+  <li><strong>Özel tag'ler</strong> (<code>!!python/object</code>, <code>!Ref</code>, vb.) katı YAML 1.2'yi ihlal eder. CloudFormation YAML ve PyYAML pickle dump'ları başarısız olacaktır; önce tag'leri temizle.</li>
+  <li><strong>Anchor'lar ve alias'lar YAML→JSON'da genişletilir.</strong> JSON'da referans yoktur, bu yüzden <code>*ref</code> node'ları inline olur. Round-trip değer-eşdeğer ama metinsel olarak daha büyük bir YAML verir.</li>
+  <li><strong>Sayılar - string'ler.</strong> Tırnaksız YAML <code>3.14</code> bir float'tır; <code>"3.14"</code> bir string'tir.</li>
 </ul>
 """,
     },

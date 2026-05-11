@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Encoder / Decoder HTML", "tagline": "Escape'uj znaki specjalne HTML albo dekoduj encje z powrotem. Przydatne do bezpiecznego osadzania inputu użytkownika albo debugowania zescape'owanego markupu.", "description": "Darmowy online encoder i decoder encji HTML. Escape'uje &amp; &lt; &gt; &quot; ' oraz nazwane encje. Dekoduje nazwane, dziesiętne i szesnastkowe odwołania do encji."},
         "ja": {"name": "HTML エンコーダー / デコーダー", "tagline": "HTML 特殊文字をエスケープ、またはエンティティをデコード。ユーザー入力の安全な埋め込みや、エスケープ済みマークアップのデバッグに便利。", "description": "オンライン無料の HTML エンティティエンコーダー / デコーダー。&amp; &lt; &gt; &quot; ' と名前付きエンティティをエスケープし、名前付き・10 進・16 進のエンティティ参照をデコードします。"},
         "nl": {"name": "HTML Encoder / Decoder", "tagline": "Escape HTML-speciale tekens of decodeer entities terug. Nuttig voor veilig embedden van user input of debuggen van encoded markup.", "description": "Gratis online HTML-entity encoder en decoder. Escapet &amp; &lt; &gt; &quot; ' en named entities. Decodeert named, decimal en hex entity references."},
+        "tr": {"name": "HTML Encoder / Decoder", "tagline": "HTML özel karakterlerini escape et veya entity'leri geri çöz. Kullanıcı girdisini güvenle gömmek veya kodlanmış işaretlemeyi debug etmek için kullanışlı.", "description": "Ücretsiz online HTML entity encoder ve decoder. &amp; &lt; &gt; &quot; ' ve adlandırılmış entity'leri escape eder. Adlandırılmış, sayısal ve hex entity referanslarını çözer."},
     },
     "body": """
 <div class="tool-card">
@@ -153,6 +154,26 @@ document.addEventListener('DOMContentLoaded', heRun);
   <li><strong>Attributen vs body.</strong> Beide contexts vereisen dezelfde vijf karakters geëscaped, maar JavaScript event handlers zoals <code>onclick</code> hebben extra escaping nodig (wat deze tool niet doet — houd untrusted data uit attributen).</li>
   <li><strong>Decoder is permissief.</strong> Named entities (<code>&amp;ldquo;</code>), decimal (<code>&amp;#34;</code>) en hex (<code>&amp;#x22;</code>) decoderen allemaal via de browser-parser, dus hij accepteert alles wat een echte browser zou accepteren.</li>
   <li><strong>Encode niet dubbel.</strong> Een al-encoded value encoderen geeft <code>&amp;amp;amp;</code>. Decodeer eerst als je entities in je input ziet.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>HTML beş karakter yapısal anlam için ayırır — <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&quot;</code>, <code>'</code>. Bunlardan herhangi birini bir sayfaya <em>içerik</em> olarak koymak, tarayıcının markup olarak yorumlamaması için bunları HTML entity olarak escape etmeyi gerektirir. Bu araç her iki yönü çevirir: ham metni güvenli entity'lere kodla veya kazınmış HTML'i düz metne geri çöz.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Güvenilmeyen kullanıcı içeriğini HTML'e gömerken — XSS'i önlemek için önce kodla.</li>
+  <li>Entity'lerle gelen kazınmış veya kopyala-yapıştırılmış markup'ı çözme (<code>&amp;amp;</code>, <code>&amp;#x27;</code>, <code>&amp;ldquo;</code>).</li>
+  <li>Yanlışlıkla çift escape edilmiş template'ları düzeltme.</li>
+  <li>JSDoc, CDATA-free XML veya literal açı parantezi gereken markdown code fence'leri için snippet hazırlama.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Kodlama temizleme değildir.</strong> Kodlama metni güvenli gösterilebilir yapar; tag'leri <em>çıkarmak</em> istiyorsan, bir HTML sanitizer'a ihtiyacın var.</li>
+  <li><strong>Nitelikler - gövde.</strong> Her iki bağlam da aynı beş karakteri escape etmeyi gerektirir, ancak <code>onclick</code> gibi JavaScript olay işleyicileri ek escape gerektirir (bu araç bunu yapmaz — güvenilmeyen veriyi niteliklerden uzak tut).</li>
+  <li><strong>Decoder hoşgörülüdür.</strong> Adlandırılmış entity'ler (<code>&amp;ldquo;</code>), ondalık (<code>&amp;#34;</code>) ve hex (<code>&amp;#x22;</code>) hepsi tarayıcının parser'ı aracılığıyla çözülür, bu yüzden gerçek bir tarayıcının kabul edeceği her şeyi kabul eder.</li>
+  <li><strong>Çift kodlama yapma.</strong> Zaten kodlanmış bir değeri kodlamak <code>&amp;amp;amp;</code> verir. Girişinde entity'ler görüyorsan önce decode et.</li>
 </ul>
 """,
     },

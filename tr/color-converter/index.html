@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renk Dönüştürücü — Toolhub</title>
+  <meta name="description" content="Ücretsiz online renk dönüştürücü. hex (#3498db), rgb(), hsl() ve modern oklch() biçimi arasında çevir. Canlı renk önizlemesi, herhangi bir değeri tek tıkla kopyala.">
+  <meta property="og:title" content="Renk Dönüştürücü — Toolhub">
+  <meta property="og:description" content="Ücretsiz online renk dönüştürücü. hex (#3498db), rgb(), hsl() ve modern oklch() biçimi arasında çevir. Canlı renk önizlemesi, herhangi bir değeri tek tıkla kopyala.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/color-converter/">
+  <meta property="og:image" content="https://toolhub.software/og-images/color-converter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/color-converter.png">
+  <link rel="canonical" href="https://toolhub.software/tr/color-converter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/color-converter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/color-converter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/color-converter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/color-converter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/color-converter/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/color-converter/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/color-converter/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/color-converter/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/color-converter/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/color-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/color-converter/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/color-converter/#tool",
+        "name": "Renk Dönüştürücü",
+        "description": "Ücretsiz online renk dönüştürücü. hex (#3498db), rgb(), hsl() ve modern oklch() biçimi arasında çevir. Canlı renk önizlemesi, herhangi bir değeri tek tıkla kopyala.",
+        "url": "https://toolhub.software/tr/color-converter/",
+        "applicationCategory": "DesignApplication",
+        "applicationSubCategory": "Design Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["color", "hex", "rgb", "hsl", "oklch", "convert", "css"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "Renk Dönüştürücü", "item": "https://toolhub.software/tr/color-converter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tasarımcılar ve front-end geliştiriciler renkleri sürekli biçimler arasında karıştırır — Figma sana hex verir, design tokens spec OKLCH ister, CSS'in HSL kullanır ve aldığın görsel RGB'dir. Bu araç her notasyonu eş zamanlı tutar: birini düzenle, diğerleri canlı güncellenir. CSS Color Module 4'te eklenen ve HSL'den çok daha kolay akıl yürütülen perceptually uniform renkler üreten modern oklch() biçimini içerir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bir marka hex kodunu CSS overlay için alfalı rgb() 'ye çevirme. Bir tasarım sistemini perceptual renge geçirirken HSL ile OKLCH arasında dönüştürme. Bir screenshot aracından yapıştırılmış rgb(52, 152, 219) 'ü stylesheet'in için hex koduna geri okuma. Bir OKLCH chroma değerinin sanity check'i (~0,4 üzerindeki her şey muhtemelen sRGB gamut dışıdır)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Biçim hızlı referansı",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hex — #RRGGBB (veya 3 basamak kısaltma #RGB ). Evrensel, 8 basamak ( #RRGGBBAA ) olmadıkça alfa yok. RGB — rgb(0–255, 0–255, 0–255) . Ekranının aldığı gerçek sRGB kanal değerleri. HSL — hue (0–360°), saturation (0–100%), lightness (0–100%). Renk aileleri hakkında akıl yürütmesi kolay ama lightness perceptual değil: HSL 50% yeşil HSL 50% maviden daha parlak görünür. OKLCH — perceptual lightness (0–1), chroma (sRGB'de 0–~0,4), hue (0–360°). Aynı L'ye sahip iki renk eşit parlaklıkta görünür; tasarım sistemleri ve erişilebilirlik için idealdir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OKLCH lightness 0–100 değil 0–1 kullanır. CSS ikisini de kabul eder ( 0.65 veya 65% ); bu araç her formu kabul eder. Bazı OKLCH değerleri sRGB dışına düşer (örn. mavi için yüksek chroma). Araç dönüşümde gösterilebilir sRGB'ye clamp eder — sonuç yaklaşıktır, kesin değil. HSL HSV ile aynı değildir. HSV'nin \"value\"'su en parlak kanaldır; HSL'nin \"lightness\"'i en parlak ve en karanlığın orta noktasıdır. Aynı renk için farklı sayılar verirler. Round-trip her zaman kayıpsız değildir. hex → hsl → hex yuvarlamadan tek bir tamsayı kaydırabilir. Tam reprodüksiyon için hex'i sakla. Hex ve RGB varsayılan olarak sRGB'dir, Display P3 veya Rec. 2020 değil. Tasarım aracın geniş gamut profildeyse aynı hex farklı görünür."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Renk Dönüştürücü",
+  "description": "Herhangi bir rengi hex, RGB, HSL ve OKLCH arasında dönüştür. Canlı önizleme, tek tıkla kopyala.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "renk verisini yapıştır",
+      "text": "renk verisini Giriş alanına bırak."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Dönüştür düğmesine tıkla",
+      "text": "Aracı çalıştırmak için Dönüştür düğmesine bas."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kopyala",
+      "text": "Çıktı alanını kopyalamak için Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/color-converter/'; else location.href='/color-converter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / Renk Dönüştürücü</div>
+    <h1>Renk Dönüştürücü</h1>
+    <p class="tagline">Herhangi bir rengi hex, RGB, HSL ve OKLCH arasında dönüştür. Canlı önizleme, tek tıkla kopyala.</p>
+    
+<div class="tool-card">
+  <div class="cc-grid">
+    <div>
+      <label>Hex</label>
+      <input type="text" id="cc-hex" oninput="ccFromHex()" placeholder="#3498db" autocomplete="off" spellcheck="false" style="font-family:ui-monospace,monospace">
+    </div>
+    <div>
+      <label>RGB</label>
+      <input type="text" id="cc-rgb" oninput="ccFromRgb()" placeholder="rgb(52, 152, 219)" autocomplete="off" spellcheck="false" style="font-family:ui-monospace,monospace">
+    </div>
+    <div>
+      <label>HSL</label>
+      <input type="text" id="cc-hsl" oninput="ccFromHsl()" placeholder="hsl(204, 70%, 53%)" autocomplete="off" spellcheck="false" style="font-family:ui-monospace,monospace">
+    </div>
+    <div>
+      <label>OKLCH</label>
+      <input type="text" id="cc-oklch" oninput="ccFromOklch()" placeholder="oklch(0.65 0.13 240)" autocomplete="off" spellcheck="false" style="font-family:ui-monospace,monospace">
+    </div>
+    <div>
+      <label>Picker</label>
+      <input type="color" id="cc-pick" oninput="ccFromPicker()" value="#3498db" style="width:100%;height:42px;padding:2px">
+    </div>
+    <div>
+      <label>Sonuç</label>
+      <div id="cc-swatch" class="cc-swatch"></div>
+    </div>
+  </div>
+  <div class="meta" id="cc-meta" style="margin-top:0.5rem"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>Tasarımcılar ve front-end geliştiriciler renkleri sürekli biçimler arasında karıştırır — Figma sana hex verir, design tokens spec OKLCH ister, CSS'in HSL kullanır ve aldığın görsel RGB'dir. Bu araç her notasyonu eş zamanlı tutar: birini düzenle, diğerleri canlı güncellenir. CSS Color Module 4'te eklenen ve HSL'den çok daha kolay akıl yürütülen perceptually uniform renkler üreten modern <code>oklch()</code> biçimini içerir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir marka hex kodunu CSS overlay için alfalı <code>rgb()</code>'ye çevirme.</li>
+  <li>Bir tasarım sistemini perceptual renge geçirirken HSL ile OKLCH arasında dönüştürme.</li>
+  <li>Bir screenshot aracından yapıştırılmış <code>rgb(52, 152, 219)</code>'ü stylesheet'in için hex koduna geri okuma.</li>
+  <li>Bir OKLCH chroma değerinin sanity check'i (~0,4 üzerindeki her şey muhtemelen sRGB gamut dışıdır).</li>
+</ul>
+
+<h3>Biçim hızlı referansı</h3>
+<ul>
+  <li><strong>Hex</strong> — <code>#RRGGBB</code> (veya 3 basamak kısaltma <code>#RGB</code>). Evrensel, 8 basamak (<code>#RRGGBBAA</code>) olmadıkça alfa yok.</li>
+  <li><strong>RGB</strong> — <code>rgb(0–255, 0–255, 0–255)</code>. Ekranının aldığı gerçek sRGB kanal değerleri.</li>
+  <li><strong>HSL</strong> — hue (0–360°), saturation (0–100%), lightness (0–100%). Renk aileleri hakkında akıl yürütmesi kolay ama lightness perceptual değil: HSL 50% yeşil HSL 50% maviden daha parlak görünür.</li>
+  <li><strong>OKLCH</strong> — perceptual lightness (0–1), chroma (sRGB'de 0–~0,4), hue (0–360°). Aynı L'ye sahip iki renk eşit parlaklıkta görünür; tasarım sistemleri ve erişilebilirlik için idealdir.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>OKLCH lightness 0–100 değil 0–1 kullanır.</strong> CSS ikisini de kabul eder (<code>0.65</code> veya <code>65%</code>); bu araç her formu kabul eder.</li>
+  <li><strong>Bazı OKLCH değerleri sRGB dışına düşer</strong> (örn. mavi için yüksek chroma). Araç dönüşümde gösterilebilir sRGB'ye clamp eder — sonuç yaklaşıktır, kesin değil.</li>
+  <li><strong>HSL HSV ile aynı değildir.</strong> HSV'nin "value"'su en parlak kanaldır; HSL'nin "lightness"'i en parlak ve en karanlığın orta noktasıdır. Aynı renk için farklı sayılar verirler.</li>
+  <li><strong>Round-trip her zaman kayıpsız değildir.</strong> hex → hsl → hex yuvarlamadan tek bir tamsayı kaydırabilir. Tam reprodüksiyon için hex'i sakla.</li>
+  <li><strong>Hex ve RGB varsayılan olarak sRGB'dir,</strong> Display P3 veya Rec. 2020 değil. Tasarım aracın geniş gamut profildeyse aynı hex farklı görünür.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/color-picker/">Renk Seçici</a> <a href="/tr/wcag-contrast/">WCAG Kontrast Denetleyici</a> <a href="/tr/css-gradient/">CSS Gradient Oluşturucu</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.cc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.7rem}
+.cc-swatch{height:42px;border:1px solid var(--border);border-radius:8px;background:#3498db}
+</style>
+<script>
+function ccClamp(n,lo,hi){return Math.min(hi,Math.max(lo,n))}
+function ccHexToRgb(h){
+  h = h.trim().replace(/^#/,'');
+  if(h.length===3) h = h.split('').map(c=>c+c).join('');
+  if(!/^[0-9a-fA-F]{6}$/.test(h)) return null;
+  return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+}
+function ccRgbToHex(r,g,b){
+  const h = n => ccClamp(Math.round(n),0,255).toString(16).padStart(2,'0');
+  return '#' + h(r) + h(g) + h(b);
+}
+function ccRgbToHsl(r,g,b){
+  r/=255; g/=255; b/=255;
+  const mx = Math.max(r,g,b), mn = Math.min(r,g,b), d = mx-mn;
+  let h=0, s=0, l=(mx+mn)/2;
+  if(d){
+    s = d / (1 - Math.abs(2*l - 1));
+    switch(mx){
+      case r: h = ((g-b)/d) % 6; break;
+      case g: h = (b-r)/d + 2; break;
+      default: h = (r-g)/d + 4;
+    }
+    h *= 60; if(h<0) h += 360;
+  }
+  return [h, s*100, l*100];
+}
+function ccHslToRgb(h,s,l){
+  h = ((h%360)+360)%360; s/=100; l/=100;
+  const c = (1 - Math.abs(2*l - 1)) * s;
+  const x = c * (1 - Math.abs(((h/60) % 2) - 1));
+  const m = l - c/2;
+  let r=0,g=0,b=0;
+  if(h<60){r=c;g=x} else if(h<120){r=x;g=c} else if(h<180){g=c;b=x} else if(h<240){g=x;b=c} else if(h<300){r=x;b=c} else {r=c;b=x}
+  return [(r+m)*255, (g+m)*255, (b+m)*255];
+}
+// sRGB <-> linear
+function ccSrgbToLinear(c){c/=255; return c <= 0.04045 ? c/12.92 : Math.pow((c+0.055)/1.055, 2.4)}
+function ccLinearToSrgb(c){const v = c <= 0.0031308 ? c*12.92 : 1.055*Math.pow(c, 1/2.4) - 0.055; return ccClamp(Math.round(v*255),0,255)}
+// linear sRGB -> Oklab (per Björn Ottosson)
+function ccLinearToOklab(r,g,b){
+  const l = 0.4122214708*r + 0.5363325363*g + 0.0514459929*b;
+  const m = 0.2119034982*r + 0.6806995451*g + 0.1073969566*b;
+  const s = 0.0883024619*r + 0.2817188376*g + 0.6299787005*b;
+  const l_ = Math.cbrt(l), m_ = Math.cbrt(m), s_ = Math.cbrt(s);
+  return [
+    0.2104542553*l_ + 0.7936177850*m_ - 0.0040720468*s_,
+    1.9779984951*l_ - 2.4285922050*m_ + 0.4505937099*s_,
+    0.0259040371*l_ + 0.7827717662*m_ - 0.8086757660*s_
+  ];
+}
+function ccOklabToLinear(L,a,b){
+  const l_ = L + 0.3963377774*a + 0.2158037573*b;
+  const m_ = L - 0.1055613458*a - 0.0638541728*b;
+  const s_ = L - 0.0894841775*a - 1.2914855480*b;
+  const l = l_*l_*l_, m = m_*m_*m_, s = s_*s_*s_;
+  return [
+    +4.0767416621*l - 3.3077115913*m + 0.2309699292*s,
+    -1.2684380046*l + 2.6097574011*m - 0.3413193965*s,
+    -0.0041960863*l - 0.7034186147*m + 1.7076147010*s
+  ];
+}
+function ccRgbToOklch(r,g,b){
+  const [lr,lg,lb] = [ccSrgbToLinear(r), ccSrgbToLinear(g), ccSrgbToLinear(b)];
+  const [L,a,bb] = ccLinearToOklab(lr,lg,lb);
+  const C = Math.hypot(a,bb);
+  let h = Math.atan2(bb,a) * 180 / Math.PI; if(h<0) h += 360;
+  return [L, C, h];
+}
+function ccOklchToRgb(L,C,h){
+  const a = C * Math.cos(h*Math.PI/180);
+  const b = C * Math.sin(h*Math.PI/180);
+  const [lr,lg,lb] = ccOklabToLinear(L,a,b);
+  return [ccLinearToSrgb(lr), ccLinearToSrgb(lg), ccLinearToSrgb(lb)];
+}
+let ccCurrent = [52,152,219];
+function ccUpdate(rgb, except){
+  ccCurrent = rgb;
+  const [r,g,b] = rgb;
+  const hex = ccRgbToHex(r,g,b);
+  const [hh,sl,ll] = ccRgbToHsl(r,g,b);
+  const [oL,oC,oH] = ccRgbToOklch(r,g,b);
+  if(except!=='hex')  document.getElementById('cc-hex').value = hex;
+  if(except!=='rgb')  document.getElementById('cc-rgb').value = `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
+  if(except!=='hsl')  document.getElementById('cc-hsl').value = `hsl(${hh.toFixed(0)}, ${sl.toFixed(0)}%, ${ll.toFixed(0)}%)`;
+  if(except!=='oklch') document.getElementById('cc-oklch').value = `oklch(${oL.toFixed(3)} ${oC.toFixed(3)} ${oH.toFixed(1)})`;
+  if(except!=='pick') document.getElementById('cc-pick').value = hex;
+  document.getElementById('cc-swatch').style.background = hex;
+  document.getElementById('cc-meta').textContent =
+    `Click any field to edit · sRGB ${Math.round(r)},${Math.round(g)},${Math.round(b)} · perceptual L=${oL.toFixed(2)}`;
+}
+function ccFromHex(){
+  const v = document.getElementById('cc-hex').value;
+  const rgb = ccHexToRgb(v); if(rgb) ccUpdate(rgb, 'hex');
+}
+function ccFromRgb(){
+  const m = document.getElementById('cc-rgb').value.match(/(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)/);
+  if(m) ccUpdate([+m[1],+m[2],+m[3]], 'rgb');
+}
+function ccFromHsl(){
+  const m = document.getElementById('cc-hsl').value.match(/(-?\d+(?:\.\d+)?)\s*,?\s*(\d+(?:\.\d+)?)\s*%?\s*,?\s*(\d+(?:\.\d+)?)\s*%?/);
+  if(m) ccUpdate(ccHslToRgb(+m[1],+m[2],+m[3]), 'hsl');
+}
+function ccFromOklch(){
+  const m = document.getElementById('cc-oklch').value.match(/(\d*\.?\d+)%?\s+(\d*\.?\d+)\s+(-?\d*\.?\d+)/);
+  if(m){
+    let L = +m[1]; if(m[1].includes('.')===false && L > 1) L /= 100; // accept 65 as 0.65
+    if(L > 1) L /= 100;
+    ccUpdate(ccOklchToRgb(L, +m[2], +m[3]), 'oklch');
+  }
+}
+function ccFromPicker(){
+  const rgb = ccHexToRgb(document.getElementById('cc-pick').value);
+  if(rgb) ccUpdate(rgb, 'pick');
+}
+document.addEventListener('DOMContentLoaded', () => ccUpdate([52,152,219]));
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

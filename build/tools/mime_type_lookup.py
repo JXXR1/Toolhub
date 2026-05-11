@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Wyszukiwarka MIME Types", "tagline": "Wyszukuj MIME types po rozszerzeniu albo po typie. ~120 typowych — image, video, audio, application, text, font.", "description": "Darmowe narzędzie do wyszukiwania MIME types. Szukaj po rozszerzeniu pliku (.pdf, .png, .json) albo po MIME type (image/jpeg, application/pdf) wśród około 120 typowych Internet media types."},
         "ja": {"name": "MIME タイプ検索", "tagline": "拡張子やタイプから MIME タイプを検索。image・video・audio・application・text・font の約 120 種を収録。", "description": "無料の MIME タイプ検索ツール。ファイル拡張子（.pdf、.png、.json）や MIME タイプ（image/jpeg、application/pdf）から、よく使われる約 120 種のインターネットメディアタイプを検索できます。"},
         "nl": {"name": "MIME Type Lookup", "tagline": "Zoek MIME types op extensie of type. ~120 gangbare types — image, video, audio, application, text, font.", "description": "Gratis MIME-type-lookup tool. Zoek op bestandsextensie (.pdf, .png, .json) of op MIME-type (image/jpeg, application/pdf) over ruwweg 120 gangbare Internet media types."},
+        "tr": {"name": "MIME Type Arama", "tagline": "MIME type'ları uzantıya veya türe göre ara. ~120 yaygın tür — image, video, audio, application, text, font.", "description": "Ücretsiz MIME type arama aracı. Dosya uzantısı (.pdf, .png, .json) veya MIME type (image/jpeg, application/pdf) ile yaklaşık 120 yaygın internet medya türünü ara."},
     },
     "body": """
 <div class="tool-card">
@@ -373,6 +374,29 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong><code>application/octet-stream</code> betekent "ik weet het niet".</strong> Als je het type controleert, gebruik een echte — browsers kunnen octet-stream content force-downloaden zelfs als die renderbaar is.</li>
   <li><strong>Charset doet ertoe voor text-types.</strong> <code>Content-Type: text/html; charset=utf-8</code> — zonder gokt de browser en gokt soms verkeerd (mojibake).</li>
   <li><strong>Magic-byte sniffing verschilt van het gedeclareerde type.</strong> Browsers kunnen <code>Content-Type</code> tweede-raden op basis van file-contents (<code>X-Content-Type-Options: nosniff</code> schakelt dit uit — zet het voor security).</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir MIME type (şimdi Internet media type denir) <code>image/png</code> veya <code>application/json</code> gibi iki parçalı bir etikettir; bir sunucuya, tarayıcıya veya kütüphaneye bir byte parçasını nasıl yorumlayacağını söyler. HTTP <code>Content-Type</code> header'larında giren şey, Multipart mesaj parçalarının beyan ettiği şey ve <code>file --mime</code>'ın raporladığı şeydir. IANA kayıt defterinin binlerce girişi var; bu araç web çalışmasında gerçekten karşılaşacağın yaklaşık 120'yi kapsar.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir API yanıtında <code>Content-Type</code> ayarlama ve <code>.docx</code>, <code>.heic</code> veya <code>.webmanifest</code> için doğru olanı isteme.</li>
+  <li>Bir upload alanının <code>accept</code> niteliğini veya S3 bucket allow-list'ini yapılandırma.</li>
+  <li>Bir hex dump veya tcpdump okuma ve <code>application/grpc-web</code>'in gerçekte ne olduğunu arama.</li>
+  <li>Bir static-file sunucusu veya CDN config'i kurma ve uzantı-mime eşlemesi gerektirme.</li>
+  <li><code>text/xml</code> mı yoksa <code>application/xml</code> mi kullanılacağı konusunda karar verme (yeni kod için RFC 7303'e göre ikincisini kullan).</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Uzantı MIME type'a eşit değildir.</strong> <code>.json</code> genellikle <code>application/json</code>'a eşlenir, ancak bir sunucu onu <code>text/plain</code> olarak sunabilir ve tarayıcılar header'a uyacaktır. Header'ı her zaman açık olarak ayarla.</li>
+  <li><strong>JavaScript karışıktır.</strong> RFC 9239, <code>text/javascript</code>'in tercih edilen tür olduğunu söyler. <code>application/javascript</code>, <code>application/ecmascript</code> ve diğerleri eskidir ama hâlâ görülür.</li>
+  <li><strong>OOXML türleri çok uzundur.</strong> <code>.docx</code> için <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>. Onları hatırlamaya çalışma — kopyala.</li>
+  <li><strong><code>application/octet-stream</code> "bilmiyorum" demektir.</strong> Türü kontrol ediyorsan, gerçek olanı kullan — tarayıcılar render edilebilir olduğunda bile octet-stream içeriğini zorla indirebilir.</li>
+  <li><strong>Charset metin türleri için önemlidir.</strong> <code>Content-Type: text/html; charset=utf-8</code> — onsuz, tarayıcılar tahmin eder ve bazen yanlış tahmin eder (mojibake).</li>
+  <li><strong>Magic-byte sniffing beyan edilen türden farklıdır.</strong> Tarayıcılar dosya içeriğine göre <code>Content-Type</code>'ı ikinci kez tahmin edebilir (<code>X-Content-Type-Options: nosniff</code> bunu devre dışı bırakır — güvenlik için ayarla).</li>
 </ul>
 """,
     },

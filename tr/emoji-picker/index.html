@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Seçici — Toolhub</title>
+  <meta name="description" content="Anahtar kelime aramalı ücretsiz emoji seçici. Herhangi bir emojiyi kopyalamak için tıkla. Gülümseyenler, insanlar, hayvanlar, yiyecekler, seyahat, nesneler, semboller ve bayrakları kapsayan derli toplu set. Saf Unicode — her yerde çalışır.">
+  <meta property="og:title" content="Emoji Seçici — Toolhub">
+  <meta property="og:description" content="Anahtar kelime aramalı ücretsiz emoji seçici. Herhangi bir emojiyi kopyalamak için tıkla. Gülümseyenler, insanlar, hayvanlar, yiyecekler, seyahat, nesneler, semboller ve bayrakları kapsayan derli toplu set. Saf Unicode — her yerde çalışır.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/emoji-picker/">
+  <meta property="og:image" content="https://toolhub.software/og-images/emoji-picker.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/emoji-picker.png">
+  <link rel="canonical" href="https://toolhub.software/tr/emoji-picker/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/emoji-picker/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/emoji-picker/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/emoji-picker/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/emoji-picker/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/emoji-picker/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/emoji-picker/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/emoji-picker/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/emoji-picker/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/emoji-picker/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/emoji-picker/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/emoji-picker/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/emoji-picker/#tool",
+        "name": "Emoji Seçici",
+        "description": "Anahtar kelime aramalı ücretsiz emoji seçici. Herhangi bir emojiyi kopyalamak için tıkla. Gülümseyenler, insanlar, hayvanlar, yiyecekler, seyahat, nesneler, semboller ve bayrakları kapsayan derli toplu set. Saf Unicode — her yerde çalışır.",
+        "url": "https://toolhub.software/tr/emoji-picker/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Text Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["emoji", "picker", "search", "copy", "unicode", "smiley", "symbol"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "Emoji Seçici", "item": "https://toolhub.software/tr/emoji-picker/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İşletim sistemlerinin hepsi emoji seçici gönderir (Windows'ta Win+., macOS'ta Cmd+Ctrl+Space, telefonlarda klavye), ama tutarsız, bazen gizli ve sıklıkla yavaştırlar. Bu araç sana kategoriye göre düzenlenmiş ve anahtar kelimeyle aranabilir, en çok kullanılan emojilerin derli toplu ızgarasını verir. Emojiyi panoya kopyalamak için herhangi bir tile'a tıkla. Son kopyalanan emojiler ziyaretler arasında tarayıcı yerel deposunda hatırlanır — sunucuya hiçbir şey gönderilmez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hızlı OS seviyesi emoji kısayolu olmayan bir masaüstündesin. OS seçicinin sunduğundan daha geniş anahtar kelime araması istiyorsun. Yerel seçicisi olmayan uzak masaüstü veya eski sistem kullanıyorsun. IME'nin kabul etmediği bir metin alanına yapıştırmak için emoji gerekiyor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Render nasıl çalışır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bir emoji sadece bir veya daha fazla Unicode code point'tir. Nasıl göründüğü tarayıcı/OS'in seçtiği fonta bağlıdır: Apple'ın emoji'leri Google'ın Noto'sundan, Microsoft'un Segoe UI Emoji'sinden ve Twitter'ın Twemoji'sinden farklıdır. Byte'lar aynıdır — resim yereldir. Bir emoji kare veya fallback \"desteklenmiyor\" olarak gösteriliyorsa, sistem fontunda bunun için glyph yok; OS güncellemek veya Noto Color Emoji gibi bir font yüklemek düzeltir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cilt tonları ve aile/meslek varyantları dizilerdir. 👨‍🍳 \"adam\" + ZWJ + \"yemek pişirme\"dir — beş code point. Bazı sistemler diziyi desteklemiyorsa bileşenleri ayrı ayrı görüntüler. Bayraklar bölgesel göstergelerdir. 🇬🇧 \"🇬\" + \"🇧\"dir — iki bölgesel-gösterge harfi. Topraklar için diziler (İskoçya, Texas) ek tag karakterleri gerektirir ve her sistemde render olmayabilir. Bu araç derli toplu, kapsamlı değildir. Unicode 15'te yüzlerce cilt tonu ve cinsiyet varyantı dahil 3.664 emoji vardır. Seçici muhtemelen isteyeceğin ~600'e odaklanır; tam liste için Unicode'un emoji verisini veya OS seçicini gör. Bazı karakterler emoji gibi görünür ama metin olarak render olur. \"Variation selector\" (U+FE0F) renderer'a \"bunu emoji olarak çiz\" der. Onsuz, ☂ düz metin olarak render olabilir 🌂 yerine. Araç gerekli yerlerde seçicileri içerir. Pano desteği değişir. Bazı tarayıcıların pano API'si kullanıcı hareketi gerektirir (tıklama bunu yapar), ama izin reddi sessizce başarısız olur."
+      }
+    }
+  ]
+}
+</script>
+  
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/emoji-picker/'; else location.href='/emoji-picker/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / Emoji Seçici</div>
+    <h1>Emoji Seçici</h1>
+    <p class="tagline">Ad ve anahtar kelimeye göre aranabilir emoji paleti. Kopyalamak için herhangi bir emojiye tıkla. Kategoriler: gülümseyenler, hayvanlar, yiyecekler, seyahat, nesneler, semboller, bayraklar.</p>
+    
+<div class="tool-card">
+  <label>Search</label>
+  <input type="text" id="ep-q" oninput="epRun()" placeholder="Type to filter — 'happy', 'fire', 'pizza', 'rocket'…" autocomplete="off" spellcheck="false">
+  <div class="meta" id="ep-cats" style="margin-top:0.6rem;display:flex;flex-wrap:wrap;gap:0.3rem"></div>
+</div>
+<div class="tool-card">
+  <label id="ep-recent-lbl" style="display:none">Recent</label>
+  <div id="ep-recent" style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.5rem"></div>
+  <label>Sonuç</label>
+  <div id="ep-grid"></div>
+  <div id="ep-toast" style="position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:6px;font-size:0.9rem;display:none;z-index:1000;font-family:ui-monospace,monospace"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>İşletim sistemlerinin hepsi emoji seçici gönderir (Windows'ta Win+., macOS'ta Cmd+Ctrl+Space, telefonlarda klavye), ama tutarsız, bazen gizli ve sıklıkla yavaştırlar. Bu araç sana kategoriye göre düzenlenmiş ve anahtar kelimeyle aranabilir, en çok kullanılan emojilerin derli toplu ızgarasını verir. Emojiyi panoya kopyalamak için herhangi bir tile'a tıkla. Son kopyalanan emojiler ziyaretler arasında tarayıcı yerel deposunda hatırlanır — sunucuya hiçbir şey gönderilmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Hızlı OS seviyesi emoji kısayolu olmayan bir masaüstündesin.</li>
+  <li>OS seçicinin sunduğundan daha geniş anahtar kelime araması istiyorsun.</li>
+  <li>Yerel seçicisi olmayan uzak masaüstü veya eski sistem kullanıyorsun.</li>
+  <li>IME'nin kabul etmediği bir metin alanına yapıştırmak için emoji gerekiyor.</li>
+</ul>
+
+<h3>Render nasıl çalışır</h3>
+<p>Bir emoji sadece bir veya daha fazla Unicode code point'tir. <em>Nasıl</em> göründüğü tarayıcı/OS'in seçtiği fonta bağlıdır: Apple'ın emoji'leri Google'ın Noto'sundan, Microsoft'un Segoe UI Emoji'sinden ve Twitter'ın Twemoji'sinden farklıdır. Byte'lar aynıdır — resim yereldir. Bir emoji kare veya fallback "desteklenmiyor" olarak gösteriliyorsa, sistem fontunda bunun için glyph yok; OS güncellemek veya Noto Color Emoji gibi bir font yüklemek düzeltir.</p>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Cilt tonları ve aile/meslek varyantları dizilerdir.</strong> 👨‍🍳 "adam" + ZWJ + "yemek pişirme"dir — beş code point. Bazı sistemler diziyi desteklemiyorsa bileşenleri ayrı ayrı görüntüler.</li>
+  <li><strong>Bayraklar bölgesel göstergelerdir.</strong> 🇬🇧 "🇬" + "🇧"dir — iki bölgesel-gösterge harfi. Topraklar için diziler (İskoçya, Texas) ek tag karakterleri gerektirir ve her sistemde render olmayabilir.</li>
+  <li><strong>Bu araç derli toplu, kapsamlı değildir.</strong> Unicode 15'te yüzlerce cilt tonu ve cinsiyet varyantı dahil 3.664 emoji vardır. Seçici muhtemelen isteyeceğin ~600'e odaklanır; tam liste için Unicode'un emoji verisini veya OS seçicini gör.</li>
+  <li><strong>Bazı karakterler emoji gibi görünür ama metin olarak render olur.</strong> "Variation selector" (U+FE0F) renderer'a "bunu emoji olarak çiz" der. Onsuz, ☂ düz metin olarak render olabilir 🌂 yerine. Araç gerekli yerlerde seçicileri içerir.</li>
+  <li><strong>Pano desteği değişir.</strong> Bazı tarayıcıların pano API'si kullanıcı hareketi gerektirir (tıklama bunu yapar), ama izin reddi sessizce başarısız olur.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/unicode-inspector/">Unicode İnceleyici</a> <a href="/tr/ascii-table/">ASCII Tablosu</a> <a href="/tr/lorem-ipsum/">Lorem Ipsum Üretici</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(2.6rem,1fr));gap:0.3rem}
+.ep-tile{display:flex;align-items:center;justify-content:center;font-size:1.5rem;padding:0.45rem 0.3rem;background:var(--bg-elev);border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:all 0.1s;line-height:1}
+.ep-tile:hover{background:var(--surface);border-color:var(--accent);transform:scale(1.1)}
+.ep-cat-btn{padding:0.25rem 0.7rem;font-size:0.78rem;background:var(--surface);color:var(--text-muted);border:1px solid var(--border);border-radius:14px;cursor:pointer}
+.ep-cat-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.ep-empty{color:var(--text-muted);text-align:center;padding:1.5rem 0;grid-column:1/-1}
+.ep-section{margin-bottom:0.8rem}
+.ep-section h4{font-size:0.78rem;color:var(--text-muted);font-weight:600;margin:0.5rem 0 0.3rem;letter-spacing:0.04em;text-transform:uppercase}
+</style>
+<script>
+const EP_DATA = {
+  smileys: [
+    ['😀','grinning happy face'],['😃','smiley happy joy'],['😄','grinning eyes happy'],['😁','beaming grin smile'],
+    ['😆','laughing satisfied'],['😅','sweat smile relief'],['🤣','rofl laughing rolling'],['😂','tears joy laughing'],
+    ['🙂','slight smile happy'],['🙃','upside-down sarcasm silly'],['😉','wink playful'],['😊','blush smile happy'],
+    ['😇','innocent halo angel'],['🥰','smile hearts love'],['😍','heart eyes love admire'],['🤩','star eyes wow'],
+    ['😘','kiss face love'],['😋','yum tongue tasty'],['😛','tongue cheeky'],['🤪','zany silly crazy'],
+    ['😎','cool sunglasses'],['🤓','nerd geek glasses'],['🥳','party hat celebrate'],['😏','smirk sly'],
+    ['😞','disappointed sad'],['😟','worried concerned'],['😕','confused unsure'],['🙁','frown sad'],
+    ['☹️','frowning sad'],['😣','persevere strain'],['😖','confounded frustrated'],['😫','tired weary'],
+    ['😩','weary tired'],['😢','cry sad tear'],['😭','sob crying loud'],['😤','triumph annoyed steam'],
+    ['😡','angry mad red'],['😠','angry mad'],['🤬','curse swearing angry'],['😨','fearful afraid'],
+    ['😰','anxious sweat fear'],['😥','sad relieved'],['😓','sweat downcast'],['😱','scream shock fear'],
+    ['🥺','pleading puppy beg'],['😴','sleeping zzz'],['😪','sleepy drowsy'],['🤤','drool tasty'],
+    ['🤔','thinking pondering'],['🤨','raised eyebrow skeptical'],['😐','neutral expressionless'],['😑','expressionless meh'],
+    ['🙄','eye roll annoyed'],['😬','grimace awkward'],['🤐','zipper mouth quiet'],['🤫','shush quiet secret'],
+    ['🤥','liar pinocchio nose'],['😷','mask sick covid'],['🤒','thermometer sick fever'],['🤢','nauseated sick gross'],
+    ['🤮','vomit sick gross'],['🤧','sneeze cold'],['🥶','cold freezing blue'],['🥵','hot heat sweat'],
+    ['🥴','woozy dizzy drunk'],['😵','dizzy ko knocked'],['🤯','mind blown explode'],['🤠','cowboy hat'],
+    ['🤡','clown'],['👻','ghost halloween'],['💀','skull death dead'],['👽','alien et space'],
+    ['🤖','robot bot ai'],['😺','grinning cat'],['😸','smile cat'],['😻','heart eyes cat love'],
+    ['😼','smirk cat'],['🙀','scared cat'],['👍','thumbs up like ok'],['👎','thumbs down dislike'],
+    ['👌','ok perfect'],['✌️','peace victory'],['🤞','fingers crossed luck'],['🤟','love rock horns'],
+    ['🤘','rock metal horns'],['👊','fist punch'],['✊','fist solidarity'],['🤝','handshake deal'],
+    ['🙏','pray thanks please'],['👏','clap applause'],['🙌','raised hands celebrate'],['👋','wave hello bye'],
+    ['💪','muscle strong flex'],['🫶','heart hands love'],['🫡','salute respect'],['🤲','open hands prayer'],
+  ],
+  animals: [
+    ['🐶','dog puppy'],['🐱','cat kitten'],['🐭','mouse'],['🐹','hamster'],['🐰','rabbit bunny'],
+    ['🦊','fox'],['🐻','bear'],['🐼','panda'],['🐨','koala'],['🐯','tiger'],['🦁','lion'],
+    ['🐮','cow'],['🐷','pig'],['🐸','frog'],['🐵','monkey'],['🙈','see no evil monkey'],
+    ['🙉','hear no evil monkey'],['🙊','speak no evil monkey'],['🐒','monkey'],['🦍','gorilla'],
+    ['🦒','giraffe'],['🦓','zebra'],['🐴','horse'],['🦄','unicorn'],['🐔','chicken hen'],
+    ['🐧','penguin'],['🐦','bird'],['🐤','baby chick'],['🦆','duck'],['🦅','eagle'],['🦉','owl'],
+    ['🦇','bat'],['🐺','wolf'],['🐗','boar'],['🐴','horse face'],['🦌','deer'],
+    ['🐢','turtle'],['🐍','snake'],['🦎','lizard'],['🦖','t-rex dinosaur'],['🦕','sauropod dinosaur'],
+    ['🐙','octopus'],['🦑','squid'],['🦐','shrimp'],['🦞','lobster'],['🦀','crab'],
+    ['🐠','tropical fish'],['🐟','fish'],['🐬','dolphin'],['🐳','whale'],['🦈','shark'],
+    ['🐊','crocodile'],['🐅','tiger'],['🐆','leopard'],['🦏','rhino'],['🦛','hippo'],
+    ['🐂','ox'],['🐃','buffalo'],['🐎','horse'],['🐖','pig'],['🐑','sheep'],['🐐','goat'],
+    ['🐪','camel'],['🐘','elephant'],['🦘','kangaroo'],['🦡','badger'],['🐾','paw prints'],
+    ['🦋','butterfly'],['🐛','caterpillar bug'],['🐝','bee'],['🐞','ladybug'],['🐜','ant'],
+    ['🕷️','spider'],['🦂','scorpion'],['🐌','snail'],['🐚','shell'],['🌸','blossom'],
+    ['🌹','rose flower'],['🌻','sunflower'],['🌷','tulip'],['🌳','tree'],['🌴','palm'],
+    ['🌵','cactus'],['🍀','clover luck four-leaf'],['🍁','maple leaf'],
+  ],
+  food: [
+    ['🍎','apple'],['🍏','green apple'],['🍐','pear'],['🍊','orange tangerine'],['🍋','lemon'],
+    ['🍌','banana'],['🍉','watermelon'],['🍇','grapes'],['🍓','strawberry'],['🫐','blueberry'],
+    ['🍈','melon'],['🍒','cherry'],['🍑','peach'],['🥭','mango'],['🍍','pineapple'],
+    ['🥥','coconut'],['🥝','kiwi'],['🍅','tomato'],['🍆','eggplant'],['🥑','avocado'],
+    ['🥦','broccoli'],['🥬','leafy green'],['🥒','cucumber'],['🌶️','hot pepper chili'],['🫑','bell pepper'],
+    ['🌽','corn'],['🥕','carrot'],['🧄','garlic'],['🧅','onion'],['🥔','potato'],
+    ['🍠','sweet potato'],['🥐','croissant'],['🥯','bagel'],['🍞','bread'],['🥖','baguette'],
+    ['🧀','cheese'],['🥚','egg'],['🍳','fried egg'],['🥞','pancakes'],['🧇','waffle'],
+    ['🥓','bacon'],['🥩','steak meat'],['🍗','poultry leg'],['🍖','meat bone'],['🌭','hot dog'],
+    ['🍔','burger hamburger'],['🍟','fries'],['🍕','pizza'],['🥪','sandwich'],['🥙','wrap pita'],
+    ['🌮','taco'],['🌯','burrito'],['🫔','tamale'],['🥗','salad'],['🥘','paella'],
+    ['🍝','spaghetti pasta'],['🍜','ramen noodles'],['🍲','stew'],['🍛','curry'],['🍣','sushi'],
+    ['🍱','bento'],['🥟','dumpling'],['🍤','shrimp tempura'],['🍙','rice ball'],['🍚','rice bowl'],
+    ['🍘','rice cracker'],['🍡','dango skewer'],['🍦','soft serve ice cream'],['🍨','ice cream'],
+    ['🍧','shaved ice'],['🍰','cake slice'],['🎂','birthday cake'],['🧁','cupcake'],['🍮','custard pudding'],
+    ['🍭','lollipop'],['🍬','candy'],['🍫','chocolate bar'],['🍩','donut'],['🍪','cookie'],
+    ['🥛','milk'],['🍼','baby bottle'],['☕','coffee hot'],['🍵','tea'],['🧃','juice box'],
+    ['🥤','soft drink'],['🧋','bubble tea'],['🍺','beer'],['🍻','beers cheers'],['🍷','wine glass'],
+    ['🥂','champagne toast'],['🍸','cocktail martini'],['🍹','tropical drink'],['🍾','champagne bottle'],
+    ['🥃','whiskey'],['🧉','mate'],['🍴','fork knife'],['🥢','chopsticks'],['🥄','spoon'],
+  ],
+  travel: [
+    ['🚗','car'],['🚕','taxi'],['🚙','suv'],['🚌','bus'],['🚎','trolleybus'],['🏎️','race car'],
+    ['🚓','police car'],['🚑','ambulance'],['🚒','fire engine'],['🚐','minibus'],['🛻','pickup truck'],
+    ['🚚','delivery truck'],['🚛','articulated lorry'],['🚜','tractor'],['🏍️','motorcycle'],['🛵','scooter'],
+    ['🚲','bike bicycle'],['🛹','skateboard'],['🛼','roller skate'],['🚏','bus stop'],
+    ['🚂','steam locomotive'],['🚆','train'],['🚇','metro subway'],['🚊','tram'],['🚝','monorail'],
+    ['🚄','high-speed train'],['🚅','bullet train shinkansen'],['🚉','train station'],
+    ['✈️','airplane'],['🛫','takeoff plane'],['🛬','landing plane'],['🚀','rocket'],['🛸','flying saucer ufo'],
+    ['🚁','helicopter'],['🚢','ship'],['⛴️','ferry'],['🛥️','motor boat'],['🛳️','passenger ship'],
+    ['⛵','sailboat'],['🚤','speedboat'],['🛶','canoe'],['⚓','anchor'],
+    ['🏖️','beach'],['🏝️','desert island'],['⛰️','mountain'],['🏔️','snowy mountain'],['🌋','volcano'],
+    ['🏕️','camping'],['🏞️','national park'],['🛤️','railway track'],['🛣️','motorway'],
+    ['🏛️','classical building'],['🏟️','stadium'],['🏰','castle'],['🏯','japanese castle'],['🗽','statue of liberty'],
+    ['🗼','tokyo tower'],['🗻','mount fuji'],['🗿','moai'],['🌁','foggy bridge'],['🌃','city night'],
+    ['🌄','sunrise mountain'],['🌅','sunrise'],['🌆','dusk city'],['🌇','sunset city'],['🌉','bridge night'],
+    ['🎡','ferris wheel'],['🎢','roller coaster'],['🎠','carousel'],['⛲','fountain'],
+    ['🏨','hotel'],['🏩','love hotel'],['🏪','convenience store'],['🏫','school'],['🏬','department store'],
+    ['🏭','factory'],['🏥','hospital'],['🏦','bank'],['⛪','church'],['🕌','mosque'],['🛕','hindu temple'],
+    ['🕍','synagogue'],['🛤️','tracks'],['🌍','earth africa'],['🌎','earth americas'],['🌏','earth asia'],
+    ['🗺️','world map'],['🧭','compass'],['🧳','luggage suitcase'],
+  ],
+  objects: [
+    ['⌚','watch'],['📱','phone mobile'],['💻','laptop'],['⌨️','keyboard'],['🖥️','desktop computer'],
+    ['🖨️','printer'],['🖱️','mouse'],['💾','floppy save disk'],['💿','cd'],['📀','dvd'],
+    ['📷','camera'],['📸','camera flash'],['🎥','movie camera'],['📺','tv television'],['📻','radio'],
+    ['🎙️','microphone studio'],['🎚️','level slider'],['🎛️','control knobs'],['⏰','alarm clock'],
+    ['⏱️','stopwatch'],['🕰️','mantelpiece clock'],['⏳','hourglass'],['📡','satellite antenna'],
+    ['🔋','battery'],['🔌','plug power'],['💡','lightbulb idea'],['🔦','flashlight torch'],['🕯️','candle'],
+    ['🧯','fire extinguisher'],['🛢️','oil drum'],['💸','money flying'],['💵','dollar bill'],
+    ['💴','yen bill'],['💶','euro bill'],['💷','pound bill'],['💰','money bag'],['💳','credit card'],
+    ['🧾','receipt'],['💎','gem diamond'],['⚖️','balance scale'],['🧰','toolbox'],
+    ['🔧','wrench'],['🔨','hammer'],['⚒️','hammer pick'],['🛠️','tools'],['⛏️','pick'],
+    ['🪓','axe'],['🔩','nut bolt'],['⚙️','gear settings'],['🧲','magnet'],['🧪','test tube'],
+    ['🧫','petri dish'],['🧬','dna'],['🔬','microscope'],['🔭','telescope'],['📐','triangular ruler'],
+    ['📏','straight ruler'],['🧮','abacus'],['📌','pushpin'],['📍','round pushpin'],['🖇️','paperclip'],
+    ['📎','paperclip'],['✂️','scissors'],['🖊️','pen'],['🖋️','fountain pen'],['✒️','nib pen'],
+    ['🖌️','paintbrush'],['🖍️','crayon'],['📝','memo note'],['✏️','pencil'],['📓','notebook'],
+    ['📒','ledger'],['📔','decorative notebook'],['📕','closed book'],['📖','open book'],['📗','green book'],
+    ['📘','blue book'],['📙','orange book'],['📚','books library'],['📰','newspaper'],['📦','package box'],
+    ['📤','outbox'],['📥','inbox'],['📨','envelope incoming'],['✉️','envelope email'],['📧','email'],
+    ['📩','envelope arrow'],['📪','closed mailbox'],['📫','mailbox'],['📬','mailbox open'],
+    ['📭','mailbox empty'],['📮','postbox'],['🗳️','ballot box'],['🔒','lock'],['🔓','unlock'],
+    ['🔏','lock pen'],['🔐','lock key'],['🔑','key'],['🗝️','old key'],['🛎️','bellhop bell'],
+    ['🔔','bell'],['🔕','bell off mute'],['🎵','music note'],['🎶','music notes'],['🎼','musical score'],
+    ['🎹','piano keyboard'],['🥁','drum'],['🎷','saxophone'],['🎺','trumpet'],['🎸','guitar'],
+    ['🎻','violin'],['🎤','microphone'],['🎧','headphones'],['🎬','clapper'],['🎮','game controller'],
+    ['🕹️','joystick'],['🎲','dice'],['🧸','teddy bear'],['🎨','artist palette'],['🖼️','framed picture'],
+  ],
+  symbols: [
+    ['❤️','red heart love'],['🧡','orange heart'],['💛','yellow heart'],['💚','green heart'],
+    ['💙','blue heart'],['💜','purple heart'],['🖤','black heart'],['🤍','white heart'],['🤎','brown heart'],
+    ['💔','broken heart'],['❣️','heart exclamation'],['💕','two hearts'],['💞','revolving hearts'],
+    ['💓','beating heart'],['💗','growing heart'],['💖','sparkling heart'],['💘','arrow heart cupid'],
+    ['💝','heart ribbon'],['💟','heart decoration'],['☮️','peace'],['✝️','latin cross'],['☪️','star crescent'],
+    ['🕉️','om'],['☸️','wheel dharma'],['✡️','star david'],['🔯','six pointed star'],['🕎','menorah'],
+    ['☯️','yin yang'],['☦️','orthodox cross'],['🛐','place worship'],['⛎','ophiuchus'],['♈','aries'],
+    ['♉','taurus'],['♊','gemini'],['♋','cancer zodiac'],['♌','leo'],['♍','virgo'],['♎','libra'],
+    ['♏','scorpio'],['♐','sagittarius'],['♑','capricorn'],['♒','aquarius'],['♓','pisces'],
+    ['🆔','id'],['⚛️','atom science'],['☢️','radioactive'],['☣️','biohazard'],['📴','phone off'],
+    ['📳','vibration'],['🈶','japanese not free'],['🈚','japanese free'],['🆚','vs versus'],
+    ['🆎','blood type ab'],['🆑','cl symbol'],['🆘','sos help'],['🆔','id'],['🆕','new'],['🆓','free'],
+    ['🆖','ng'],['🆗','ok'],['🆙','up'],['🆒','cool'],['🆓','free'],['0️⃣','keycap zero'],
+    ['1️⃣','keycap one'],['2️⃣','keycap two'],['3️⃣','keycap three'],['4️⃣','keycap four'],
+    ['5️⃣','keycap five'],['6️⃣','keycap six'],['7️⃣','keycap seven'],['8️⃣','keycap eight'],
+    ['9️⃣','keycap nine'],['🔟','keycap ten'],['#️⃣','keycap hash'],['*️⃣','keycap asterisk'],
+    ['🔢','numbers'],['🔣','symbols'],['🔤','letters abc'],['🅰️','a button'],['🅱️','b button'],
+    ['🆎','ab button'],['🅾️','o button'],['💯','100 hundred'],['🔝','top'],['🔚','end'],
+    ['🔙','back'],['🔜','soon'],['🔛','on'],['🔃','clockwise vertical arrows'],['🔄','counterclockwise arrows'],
+    ['↩️','left arrow curved'],['↪️','right arrow curved'],['⬆️','up arrow'],['⬇️','down arrow'],
+    ['⬅️','left arrow'],['➡️','right arrow'],['↗️','up-right arrow'],['↘️','down-right arrow'],
+    ['↙️','down-left arrow'],['↖️','up-left arrow'],['↕️','up-down arrow'],['↔️','left-right arrow'],
+    ['🔀','shuffle'],['🔁','repeat'],['🔂','repeat single'],['▶️','play'],['⏸️','pause'],['⏹️','stop'],
+    ['⏺️','record'],['⏭️','next track'],['⏮️','previous track'],['⏩','fast forward'],['⏪','rewind'],
+    ['⏫','fast up'],['⏬','fast down'],['⏏️','eject'],['🔆','bright'],['🔅','dim'],['🔇','muted'],
+    ['🔈','speaker low'],['🔉','speaker medium'],['🔊','speaker loud'],['🔔','bell'],['🔕','bell off'],
+    ['💬','speech bubble'],['💭','thought bubble'],['🗯️','right anger bubble'],['♻️','recycle'],
+    ['✅','check mark'],['❎','x button'],['❌','cross x'],['❓','question'],['❔','white question'],
+    ['❗','exclamation'],['❕','white exclamation'],['‼️','double exclamation'],['⁉️','exclamation question'],
+    ['⭐','star'],['🌟','glowing star'],['✨','sparkles'],['⚡','lightning'],['🔥','fire'],['💥','collision boom'],
+    ['☀️','sun'],['🌤️','sun small cloud'],['⛅','sun behind cloud'],['🌥️','sun large cloud'],
+    ['☁️','cloud'],['🌦️','sun rain'],['🌧️','rain cloud'],['⛈️','thunderstorm'],['🌩️','lightning cloud'],
+    ['🌨️','snow cloud'],['❄️','snowflake'],['☃️','snowman'],['⛄','snowman no snow'],['🌬️','wind blowing'],
+    ['💨','dash wind'],['💧','droplet'],['💦','sweat droplets'],['🌊','wave'],['🌈','rainbow'],
+    ['🌚','new moon face'],['🌝','full moon face'],['🌞','sun face'],['🌛','crescent moon face'],
+    ['🌜','last quarter moon face'],['🌙','crescent moon'],['🪐','ringed planet'],['☄️','comet'],
+    ['💤','sleep zzz'],['🚫','prohibited'],['⛔','no entry'],['📛','name badge'],['🔰','japanese symbol beginner'],
+  ],
+  flags: [
+    ['🏳️','white flag'],['🏴','black flag'],['🏁','checkered flag'],['🚩','triangular flag'],
+    ['🏳️‍🌈','rainbow flag pride'],['🏳️‍⚧️','transgender flag'],['🏴‍☠️','pirate flag'],
+    ['🇦🇷','argentina'],['🇦🇺','australia'],['🇦🇹','austria'],['🇧🇪','belgium'],['🇧🇷','brazil'],
+    ['🇨🇦','canada'],['🇨🇳','china'],['🇨🇿','czech republic'],['🇩🇰','denmark'],['🇪🇬','egypt'],
+    ['🇫🇮','finland'],['🇫🇷','france'],['🇩🇪','germany'],['🇬🇷','greece'],['🇭🇰','hong kong'],
+    ['🇭🇺','hungary'],['🇮🇸','iceland'],['🇮🇳','india'],['🇮🇩','indonesia'],['🇮🇪','ireland'],
+    ['🇮🇱','israel'],['🇮🇹','italy'],['🇯🇵','japan'],['🇰🇷','south korea'],['🇲🇽','mexico'],
+    ['🇳🇱','netherlands'],['🇳🇿','new zealand'],['🇳🇴','norway'],['🇵🇱','poland'],['🇵🇹','portugal'],
+    ['🇷🇴','romania'],['🇷🇺','russia'],['🇸🇦','saudi arabia'],['🇸🇬','singapore'],['🇿🇦','south africa'],
+    ['🇪🇸','spain'],['🇸🇪','sweden'],['🇨🇭','switzerland'],['🇹🇼','taiwan'],['🇹🇭','thailand'],
+    ['🇹🇷','turkey'],['🇺🇦','ukraine'],['🇦🇪','united arab emirates'],['🇬🇧','united kingdom uk britain'],
+    ['🇺🇸','united states us america'],['🇻🇳','vietnam'],['🇪🇺','european union eu'],['🇺🇳','united nations un'],
+  ],
+};
+const EP_CAT_LABELS = {smileys:'Smileys & People', animals:'Animals & Nature', food:'Food & Drink', travel:'Travel & Places', objects:'Objects', symbols:'Symbols', flags:'Flags'};
+let EP_ACTIVE = 'all';
+let EP_RECENT = [];
+try { EP_RECENT = JSON.parse(localStorage.getItem('emoji-recent') || '[]'); } catch(e){ EP_RECENT = []; }
+function epToast(msg){
+  const t = document.getElementById('ep-toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>{ t.style.display='none'; }, 1200);
+}
+function epCopy(emoji){
+  navigator.clipboard.writeText(emoji).then(()=>{
+    epToast('Copied: ' + emoji);
+    EP_RECENT = [emoji].concat(EP_RECENT.filter(e => e !== emoji)).slice(0, 12);
+    try { localStorage.setItem('emoji-recent', JSON.stringify(EP_RECENT)); } catch(e){}
+    epRenderRecent();
+  });
+}
+function epRenderCats(){
+  const cats = ['all'].concat(Object.keys(EP_DATA));
+  document.getElementById('ep-cats').innerHTML = cats.map(c => {
+    const lbl = c === 'all' ? 'All' : EP_CAT_LABELS[c];
+    const cls = c === EP_ACTIVE ? 'ep-cat-btn active' : 'ep-cat-btn';
+    return `<button type="button" class="${cls}" data-cat="${c}" onclick="epCat('${c}')">${lbl}</button>`;
+  }).join('');
+}
+function epCat(c){
+  EP_ACTIVE = c;
+  epRenderCats();
+  epRun();
+}
+function epRenderRecent(){
+  const wrap = document.getElementById('ep-recent');
+  const lbl = document.getElementById('ep-recent-lbl');
+  if(EP_RECENT.length === 0){ wrap.innerHTML = ''; lbl.style.display = 'none'; return; }
+  lbl.style.display = '';
+  wrap.innerHTML = EP_RECENT.map(e => `<button type="button" class="ep-tile" onclick="epCopy('${e.replace(/'/g,'\\\'')}')" title="${e}">${e}</button>`).join('');
+}
+function epRun(){
+  const q = (document.getElementById('ep-q').value || '').toLowerCase().trim();
+  const grid = document.getElementById('ep-grid');
+  const cats = EP_ACTIVE === 'all' ? Object.keys(EP_DATA) : [EP_ACTIVE];
+  let html = '';
+  let total = 0;
+  for(const cat of cats){
+    const matches = EP_DATA[cat].filter(([e, kw]) => !q || kw.toLowerCase().includes(q));
+    if(matches.length === 0) continue;
+    if(cats.length > 1) html += `<div class="ep-section"><h4>${EP_CAT_LABELS[cat]}</h4><div class="ep-grid">`;
+    else html += '<div class="ep-grid">';
+    for(const [e, kw] of matches){
+      const ej = e.replace(/'/g, "\\'");
+      html += `<button type="button" class="ep-tile" onclick="epCopy('${ej}')" title="${kw}">${e}</button>`;
+      total++;
+    }
+    html += cats.length > 1 ? '</div></div>' : '</div>';
+  }
+  if(total === 0) html = '<div class="ep-empty">No matching emoji.</div>';
+  grid.innerHTML = html;
+}
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(() => { epRenderCats(); epRenderRecent(); epRun(); }));
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

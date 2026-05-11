@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Kalkulator Napiwku i Podziału Rachunku", "tagline": "Rachunek + napiwek % + liczba osób = kwota na osobę. Opcja zaokrąglenia w górę, pokazuje napiwek i sumę całkowitą.", "description": "Darmowy kalkulator napiwku i podziału rachunku. Wpisz rachunek, procent napiwku i liczbę osób. Zobacz kwotę napiwku, sumę całkowitą i udział na osobę. Opcjonalne zaokrąglenie w górę."},
         "ja": {"name": "チップ＆割り勘計算機", "tagline": "請求額 + チップ % + 人数 = 1 人あたり。切り上げオプションあり、チップ額と合計を表示。", "description": "無料のチップ・割り勘計算ツール。請求額、チップ率、人数を入力すると、チップ額、合計、1 人あたりの支払額が表示されます。切り上げオプションも利用可能です。"},
         "nl": {"name": "Tip & Split Calculator", "tagline": "Rekeningtotaal + tip % + personen = per-persoon bedrag. Round-up optie, tip en grand total getoond.", "description": "Gratis tip- en rekening-split-calculator. Voer de rekening, tip-percentage en aantal personen in. Zie het tip-bedrag, het grand total en het per-persoon-aandeel. Optionele round-up."},
+        "tr": {"name": "Bahşiş & Bölüştürme Hesaplayıcı", "tagline": "Hesap toplamı + bahşiş % + kişi sayısı = kişi başı tutar. Yukarı yuvarlama seçeneği, bahşiş ve genel toplam gösterilir.", "description": "Ücretsiz bahşiş ve hesap bölüştürme hesaplayıcı. Hesabı, bahşiş yüzdesini ve kişi sayısını gir. Bahşiş tutarını, genel toplamı ve kişi başı payı gör. Opsiyonel yukarı yuvarlama."},
     },
     "body": """
 <div class="tool-card">
@@ -289,6 +290,27 @@ document.addEventListener('DOMContentLoaded', tsRun);
   <li><strong>Service charge ≠ fooi.</strong> Als een "service charge" al op de rekening staat (gangbaar in UK groepen van 6+ en de meeste van continentaal Europa), is extra fooi optioneel. Sommige venues splitsen service charges met de keuken; geef cash-fooi direct als je wil dat het de bediening bereikt.</li>
   <li><strong>Per-persoon-afronding kan ongelijk eten verbergen.</strong> Een even split is het snelst maar oneerlijk als één persoon wijn had en een ander water — schakel in dat geval naar itemised splitting.</li>
   <li><strong>Cash vs card.</strong> Sommige medewerkers prefereren cash-fooi omdat card-fooien gepoold, direct belast of door de venue gestreken worden. Als het per-persoon-bedrag op deze calculator de fooi bevat, besluit of je de fooi cash bovenop wil voldoen.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Akşam yemeğinin sonunda bir restoran hesabını bölmek "kolay matematik, ama şarap akıyor"un klasik durumudur. Üç sayı girer (hesap, tip yüzdesi, kişi sayısı) ve üçü çıkar (tip tutarı, genel toplam, kişi başı pay). Bu araç sunucuya hiçbir şey göndermeden bunu yapar, artı isteğe bağlı yuvarlama, böylece kişi başı rakam tam bir birime düşer ve küçük bozuklukla cebelleşmek yerine biraz fazla tip verirsin.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir grup yemeğinin sonu — eşit bölme.</li>
+  <li>Hizmet faturasına bilinen bir tip yüzdesi ekleme.</li>
+  <li>Karar vermeden önce farklı tip seviyelerini (10/15/18/20/25) hızlıca test etme.</li>
+  <li>Bir kahve turu, bir taksi veya kişi başı herhangi bir payı çözme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Tip konvansiyonu vahşice değişir.</strong> Amerika Birleşik Devletleri: %18–22 normaldir; %15 altı bir şikayettir. Çoğu Avrupa: yuvarla veya %5–10; servis sıklıkla dahildir. Japonya: tip verme — kaba kabul edilebilir. Yüzdeyi körü körüne uygulamak yerine her zaman yerel adetleri kontrol et.</li>
+  <li><strong>Vergi öncesi mi vergi sonrası tip mi?</strong> ABD'de vergi öncesi ara toplamda tip vermek yaygın görgüdür ama çoğu kart terminali vergi sonrası yüzdeler sunar. Araç girdiğin hesap totalinin yüzdesini hesaplar — temeli kasıtlı olarak seç.</li>
+  <li><strong>Hizmet ücreti ≠ tip.</strong> Hesapta zaten bir "hizmet ücreti" varsa (6+ kişilik İngiltere gruplarında ve çoğu kıta Avrupa'sında yaygın), ek tip vermek isteğe bağlıdır. Bazı mekanlar hizmet ücretlerini mutfakla böler; sunucuya ulaşmasını istiyorsan doğrudan nakit tip ver.</li>
+  <li><strong>Kişi başına yuvarlama eşit olmayan yemeyi gizleyebilir.</strong> Eşit bölme en hızlıdır ama biri şarap içtiyken diğeri su içtiyse adil değildir — bu durumda kalemli bölüşmeye geç.</li>
+  <li><strong>Nakit - kart.</strong> Bazı personel nakit tipleri tercih eder çünkü kart tipleri toplanır, hemen vergilendirilir veya mekan tarafından sıyrılır. Bu hesaplayıcıdaki kişi başı rakam tip'i içeriyorsa, tip'i üstüne nakit olarak kapatmak isteyip istemediğine karar ver.</li>
 </ul>
 """,
     },

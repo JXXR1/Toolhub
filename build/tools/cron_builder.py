@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Builder Wyrażeń Cron", "tagline": "Zbuduj wyrażenie cron wizualnie — minuta, godzina, dzień, miesiąc, dzień tygodnia — i zobacz 5 najbliższych odpaleń.", "description": "Darmowy online builder wyrażeń cron. Wybieraj pola z dropdownów i presetów, dostań string crona i zobacz 5 najbliższych odpaleń w twojej lokalnej strefie czasowej. Standardowy 5-polowy crontab."},
         "ja": {"name": "cron 式ビルダー", "tagline": "cron 式をビジュアルに構築 — 分・時・日・月・曜日 — して、次の 5 回の発火時刻をプレビュー。", "description": "オンライン無料の cron 式ビルダー。ドロップダウンとプリセットでフィールドを選び、cron 文字列を生成。あなたのローカルタイムゾーンで次の 5 回の実行時刻まで確認できます。標準 5 フィールドの crontab です。"},
         "nl": {"name": "Cron Expression Builder", "tagline": "Bouw visueel een cron-expressie — minuut, uur, dag, maand, weekdag — en preview de volgende 5 fire times.", "description": "Gratis online cron expression builder. Kies velden met dropdowns en presets, krijg de cron-string eruit en zie de volgende 5 fire times in je lokale tijdzone. Standaard 5-veld crontab."},
+        "tr": {"name": "Cron İfadesi Oluşturucu", "tagline": "Görsel olarak cron ifadesi kur — dakika, saat, gün, ay, hafta günü — ve sonraki 5 çalışma zamanını önizle.", "description": "Ücretsiz online cron ifadesi oluşturucu. Alanları açılır menü ve hazır ayarlardan seç, cron string'ini al ve yerel saat diliminde sonraki 5 çalışma zamanını gör. Standart 5 alanlı crontab."},
     },
     "body": """
 <div class="tool-card">
@@ -440,6 +441,37 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Step + range combinaties.</strong> <code>0-30/5</code> dekt alleen 0,5,10,15,20,25,30.</li>
   <li><strong>Sommige cron-varianten voegen velden toe.</strong> Quartz cron heeft 6 of 7 velden (met seconden en jaar). systemd timers gebruiken een heel ander formaat. Deze builder richt zich op de standaard 5-veld crontab.</li>
   <li><strong>Friday-the-13th is lastig in cron uit te drukken.</strong> Crons day-of-month en day-of-week interacteren via OR, dus die strict combineren vereist een wrapper-script.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Cron sözdizimi ünlü şekilde yoğundur — beş alan, her biri joker, aralık, liste ve adımları kabul eder. Her seferinde sıfırdan yazmak yazım hatasına davet çıkarır. Bu builder hazır ayarlardan başlamana (her 5 dakika, hafta içi 09:00'da vb.) veya tek tek alanlara yazmana, sonuç cron string'ini görmene, sade bir İngilizce özetine ulaşmana ve yerel saat diliminde sonraki beş gerçek çalışma zamanına karşı doğrulamana izin verir. Bu aracın tamamlayıcısı, mevcut bir ifadeyi aynı önizlemeye çözen <a href="/cron-parser/">Cron Expression Parser</a>'dır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Yeni bir <code>crontab</code> girdisi, Kubernetes <code>CronJob</code>, GitHub Actions zaman çizelgesi veya AWS EventBridge kuralı kurma.</li>
+  <li>"Her hafta içi sabah çalış" gereksinimini sözdizimsel olarak doğru bir cron satırına çevirme.</li>
+  <li>Çizdiğin bir ifadenin deploy etmeden önce gerçekten istediğin zamanda çalışacağının sanity check'i.</li>
+  <li>Birini cron'a alıştırma — dropdown'lar ve önizleme sözdizimini öğretsin.</li>
+</ul>
+
+<h3>Alan sözdizimi çeteli</h3>
+<ul>
+  <li><code>*</code> — alanın aralığındaki her değer.</li>
+  <li><code>*/N</code> — her N'inci (alt sınırdan başlayarak).</li>
+  <li><code>A-B</code> — aralık, dahil.</li>
+  <li><code>A,B,C</code> — belirli değerlerin listesi.</li>
+  <li><code>A-B/N</code> — A–B aralığında her N'inci.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Day-of-month + day-of-week etkileşir.</strong> Çoğu cron uygulaması her ikisi de kısıtlandığında bunları OR'lar: <code>* * 15 * 1</code> 15'inde VEYA Pazartesi'de çalışır, "Pazartesi ise 15'inde" değil.</li>
+  <li><strong>Saat dilimi burada tarayıcının yerel dilimidir.</strong> Gerçek cron daemon'ları sunucunun saat diliminde (genellikle UTC) çalışır. Bir sunucuya yapıştırmadan önce doğrula.</li>
+  <li><strong><code>*/N</code> tam olarak "her N" değildir.</strong> Dakikada <code>*/15</code> = 0,15,30,45 — 12,27,42,57 değil. Belirli bir faz istiyorsan liste kullan.</li>
+  <li><strong>Adım + aralık kombinasyonları.</strong> <code>0-30/5</code> sadece 0,5,10,15,20,25,30'u kapsar.</li>
+  <li><strong>Bazı cron lehçeleri alan ekler.</strong> Quartz cron 6 veya 7 alana sahiptir (saniyeler ve yıl ile). systemd timer'lar tamamen farklı bir biçim kullanır. Bu builder standart 5 alanlı crontab'ı hedefler.</li>
+  <li><strong>Friday-the-13th cron'da ifade edilmesi zordur.</strong> Cron'un day-of-month ve day-of-week'i OR ile etkileşir, bu yüzden bunları katı şekilde birleştirmek bir wrapper script gerektirir.</li>
 </ul>
 """,
     },

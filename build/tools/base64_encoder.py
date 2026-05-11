@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Encoder / Decoder Base64", "tagline": "Koduj tekst do Base64 albo dekoduj Base64 z powrotem na tekst. Bezpieczny dla UTF-8, wariant base64url.", "description": "Darmowy encoder i decoder Base64 online. Bezpieczny dla UTF-8 z opcjonalnym wariantem base64url dla URL-i i JWT. Działa w przeglądarce."},
         "ja": {"name": "Base64 エンコーダー / デコーダー", "tagline": "テキストを Base64 にエンコード、または Base64 をテキストにデコード。UTF-8 対応で base64url バリアントもサポート。", "description": "オンライン無料の Base64 エンコーダー・デコーダー。UTF-8 安全で、URL や JWT 向けの base64url バリアントにも対応。すべてブラウザ内で処理されます。"},
         "nl": {"name": "Base64 Encoder / Decoder", "tagline": "Codeer tekst naar Base64 of decodeer Base64 terug naar tekst. UTF-8 safe met base64url-variant.", "description": "Gratis online Base64 encoder en decoder. UTF-8 safe met optionele base64url-variant voor URLs en JWTs. Draait in je browser."},
+        "tr": {"name": "Base64 Encoder / Decoder", "tagline": "Metni Base64'e kodla veya Base64'ü metne çöz. UTF-8 güvenli, base64url varyantı destekli.", "description": "Ücretsiz online Base64 encoder ve decoder. UTF-8 güvenli, URL ve JWT'ler için opsiyonel base64url varyantı. Tarayıcıda çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -208,6 +209,31 @@ document.addEventListener('DOMContentLoaded', b64Run);
   <li><strong>UTF-8 round-trips hier correct</strong> — non-ASCII (é, 你好, 🚀) gaat door <code>TextEncoder</code>/<code>TextDecoder</code>, niet direct door <code>btoa</code>/<code>atob</code>. Naïeve <code>btoa(str)</code> in JavaScript breekt op niet-Latin tekens.</li>
   <li><strong>Padding</strong> — standaard Base64 eindigt altijd op 0/1/2 <code>=</code>-tekens afhankelijk van de input-lengte. base64url laat ze vaak weg. Decoders die padding vereisen weigeren input zonder padding; deze tool voegt het weer toe bij decoderen indien afwezig.</li>
   <li><strong>Whitespace in encoded strings</strong> — de decoder hier strijkt spaties en regeleinden eruit (komen vaak van copy-paste), maar sommige libraries niet, dus re-encode als je naar zo'n library doorstuurt.</li>
+</ul>
+""",
+        "tr": """
+<h2>Base64 gerçekte ne yapar</h2>
+<p>Base64, rastgele byte'ları 64 ASCII karaktere (A–Z, a–z, 0–9 artı iki ek) çevirir. Üç giriş byte'ı dört çıkış karakteri olur, yani sonuç girişten kabaca %33 daha büyüktür. Bu bir <em>kodlama</em>dır, şifreleme değil — herkes çözebilir.</p>
+
+<h3>Base64'ü ne zaman kullanmalı</h3>
+<ul>
+  <li>Küçük ikilik verileri sadece metin biçimlerine gömerken: data URI'ler, JSON değerleri, ortam değişkenleri, YAML string'leri.</li>
+  <li>İkilik token'ları (imzalar, anahtarlar, hash'ler) URL, header veya cookie'lere dahil etmek için kodlama.</li>
+  <li>E-posta ekleri ve SMIME — tarihsel ama hâlâ canlı.</li>
+</ul>
+
+<h3>Standart - base64url</h3>
+<ul>
+  <li><strong>Standart</strong> (<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4" target="_blank" rel="noopener noreferrer">RFC 4648 §4</a>) <code>+</code>, <code>/</code>, <code>=</code> kullanır. E-posta, JSON değerleri, çoğu XML'de uygundur.</li>
+  <li><strong>base64url</strong> (<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-5" target="_blank" rel="noopener noreferrer">RFC 4648 §5</a>) <code>-</code>, <code>_</code> kullanır ve genellikle sondaki <code>=</code> padding'ini düşürür. JWT'ler, OAuth token'ları ve değerin URL içinde yaşadığı yerlerde kullanılır.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Şifrelemeyle karıştırma.</strong> Base64 herkes tarafından geri çevrilebilir. Veri hassassa, önce şifrele.</li>
+  <li><strong>UTF-8 burada doğru round-trip yapar</strong> — ASCII olmayan (é, 你好, 🚀) doğrudan <code>btoa</code>/<code>atob</code>'dan değil, <code>TextEncoder</code>/<code>TextDecoder</code>'dan geçer. JavaScript'te naif <code>btoa(str)</code> Latin olmayan karakterlerde bozulur.</li>
+  <li><strong>Padding</strong> — standart Base64 giriş uzunluğuna bağlı olarak her zaman 0/1/2 <code>=</code> karakteriyle biter. base64url genellikle bunları atlar. Padding gerektiren decoder'lar padding'siz girişi reddeder; bu araç decode sırasında eksikse yeniden ekler.</li>
+  <li><strong>Kodlanmış string içindeki boşluk</strong> — buradaki decoder boşluklar ve satır sonlarını temizler (kopyala-yapıştırdan yaygın), ancak bazı kütüphaneler temizlemez, bu nedenle birine pipe yapıyorsan yeniden kodla.</li>
 </ul>
 """,
     },

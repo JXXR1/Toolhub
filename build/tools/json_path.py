@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Tester JSONPath", "tagline": "Uruchamiaj zapytania JSONPath na dowolnym dokumencie JSON. Zobacz dopasowane węzły i ich ścieżki w czasie rzeczywistym.", "description": "Darmowy online tester JSONPath. Odpytuj zagnieżdżony JSON za pomocą $.., wildcardów, slice'ów tablic i wyrażeń filtrujących. Wyniki na żywo, wklej swój JSON i zacznij szukać."},
         "ja": {"name": "JSONPath テスター", "tagline": "任意の JSON ドキュメントに JSONPath クエリを実行。マッチしたノードとパスをリアルタイムで表示。", "description": "オンライン無料の JSONPath テスター。$.. やワイルドカード、配列スライス、フィルタ式を使ってネストされた JSON を検索できます。結果はライブ表示。JSON を貼り付けてすぐに使い始められます。"},
         "nl": {"name": "JSONPath Tester", "tagline": "Voer JSONPath-queries uit op elk JSON-document. Zie matched nodes en hun paden real-time.", "description": "Gratis online JSONPath-tester. Query genest JSON met $.., wildcards, array slices en filter-expressies. Live resultaten, plak je JSON en begin met queryen."},
+        "tr": {"name": "JSONPath Tester", "tagline": "Herhangi bir JSON belgesine JSONPath sorgusu çalıştır. Eşleşen düğümleri ve yollarını gerçek zamanlı gör.", "description": "Ücretsiz online JSONPath tester. İç içe JSON'u $.., joker karakterler, dizi dilimleri ve filtre ifadeleriyle sorgula. Canlı sonuçlar, JSON'unu yapıştır ve sorgulamaya başla."},
     },
     "body": """
 <div class="tool-card">
@@ -377,6 +378,40 @@ document.addEventListener('DOMContentLoaded', jpRun);
   <li><strong><code>$..*</code></strong> retourneert elke node in de boom (depth-first), wat veel kan zijn. Nuttig om een onbekend document te verkennen.</li>
   <li><strong>Numerieke strings.</strong> <code>{"1": "a"}</code> — toegang met <code>$['1']</code> werkt; <code>$.1</code> niet (getallen zijn geen geldige dot-property-namen).</li>
   <li><strong>Volgorde.</strong> Object property-volgorde wordt door JSON niet gegarandeerd. Als je filter afhangt van volgorde, sorteer eerst.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>JSONPath, JSON için XPath'in XML için olduğu gibi — özel kod yazmadan iç içe bir belgeden belirli değerleri çekmek için bir sorgu dili. <code>$.store.books[*].title</code> "store altındaki her kitap başlığını ver" der; <code>$..price</code> "belgede herhangi bir yerde her <em>price</em>" der. Bu araç yapıştırdığın herhangi bir JSON'a karşı canlı bir sorgu çalıştırır, hem eşleşen değerleri hem de geldikleri yolları gösterir, böylece sorguyu tam olarak istediğin şeyi döndürene kadar yineleyebilirsin.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>JSONPath kullanan bir araç için bir sorgu hazırlama: jq benzeri CLI yardımcı programları, Postman testleri, Stedi, n8n veya AWS CloudWatch / Step Functions.</li>
+  <li>Script yazmadan büyük bir API yanıtından belirli alanları çekme.</li>
+  <li>Bir array'i alan değerine göre filtreleme (örn. "total &gt; 100 olan tüm orders").</li>
+  <li>Derinlemesine iç içe bir yolun gerçekten bir değere çözüldüğünden emin olma — kodu bağlamadan önce.</li>
+</ul>
+
+<h3>Hızlı sözdizimi referansı</h3>
+<ul>
+  <li><strong><code>$</code></strong> — belgenin kökü.</li>
+  <li><strong><code>.name</code></strong> veya <strong><code>['name']</code></strong> — ada göre child.</li>
+  <li><strong><code>..</code></strong> — recursive descent (herhangi bir derinlik).</li>
+  <li><strong><code>*</code></strong> — joker (herhangi bir özellik veya array elementi).</li>
+  <li><strong><code>[n]</code></strong> — array indeksi (negatif sondan sayar).</li>
+  <li><strong><code>[start:end:step]</code></strong> — array dilimi (Python stili).</li>
+  <li><strong><code>[a, b, c]</code></strong> — indeks veya ad birleşimi.</li>
+  <li><strong><code>[?(@.field &gt; 5)]</code></strong> — filtre ifadesi. <code>@</code> = mevcut öğe; <code>== != &lt; &gt; &lt;= &gt;= &amp;&amp; ||</code> ve <code>=~ /regex/</code> destekler.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>JSONPath'in tek bir resmi spec'i yoktur.</strong> Orijinal Stefan Gössner taslağı yıllarca de facto referans olmuştur; RFC 9535 (Şub 2024) sonunda standartlaştırdı. Uygulamalar biraz farklılaşır.</li>
+  <li><strong>Nokta - bracket.</strong> <code>$.foo-bar</code> parser'a "foo eksi bar" gibi görünür; tireli, noktalı veya boşluklu özellik adları için <code>$['foo-bar']</code> kullan.</li>
+  <li><strong>Filtre ifadeleri burada JavaScript lehçeli</strong> — bu kasıtlı bir kolaylıktır ama RFC 9535'e tam uymaz. Bu aracın filtrelerinin başka bir uygulamada byte-aynı çalışmasına güvenme.</li>
+  <li><strong><code>$..*</code></strong> ağaçtaki her node'u döndürür (depth-first), bu çok olabilir. Tanıdık olmayan bir belgeyi keşfetmek için kullanışlıdır.</li>
+  <li><strong>Sayısal string'ler.</strong> <code>{"1": "a"}</code> — <code>$['1']</code> ile erişim çalışır; <code>$.1</code> çalışmaz (sayılar nokta-özellik adları olarak geçerli değildir).</li>
+  <li><strong>Sıralama.</strong> Nesne özellik sırası JSON tarafından garanti edilmez. Filtren sıraya bağlıysa önce sırala.</li>
 </ul>
 """,
     },

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Builder Query Stringów", "tagline": "Dodawaj wiersze key/value; dostań poprawnie URL-encodowanego query stringa. Wspiera tablice (a[]=1) i powtarzane klucze.", "description": "Darmowy builder query stringów online. Dodawaj pary key/value i dostań poprawnie percent-encodowany ciąg ?a=1&b=hello%20world, z opcjonalną notacją tablic w nawiasach. Działa w całości w przeglądarce."},
         "ja": {"name": "クエリ文字列ビルダー", "tagline": "key/value 行を追加し、URL エンコード済みのクエリ文字列を生成。配列（a[]=1）や同名キーの繰り返しに対応。", "description": "オンライン無料のクエリ文字列ビルダー。key/value 行を追加すると、適切に percent-encode された ?a=1&b=hello%20world 形式の文字列を生成します。配列のブラケット記法もオプションで対応。すべてブラウザ内で動作します。"},
         "nl": {"name": "Query String Builder", "tagline": "Voeg key/value-rijen toe; krijg een correct URL-encoded query-string. Ondersteunt array (a[]=1) en bracket-loze herhaalde keys.", "description": "Gratis online query string builder. Voeg rijen van key/value-paren toe en krijg een correct percent-encoded ?a=1&b=hello%20world string uit, met optionele array bracket-notatie. Draait volledig in je browser."},
+        "tr": {"name": "Query String Builder", "tagline": "key/value satırları ekle; doğru URL-encoded query string çıkar. Dizi (a[]=1) ve braket'siz tekrarlayan anahtarları destekler.", "description": "Ücretsiz online query string builder. key/value çiftleri satırları ekle ve düzgün percent-encoded ?a=1&b=hello%20world string çıkar, opsiyonel dizi braket notasyonu ile. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -334,6 +335,29 @@ document.addEventListener('DOMContentLoaded', () => { qsRender(); qsBuild(); });
   <li><strong>Volgorde kan ertoe doen.</strong> Sommige signed-URL-schema's (S3, Stripe webhooks, OAuth 1.0) vereisen parameters in een specifieke volgorde voor signing. De tool behoudt je rij-volgorde.</li>
   <li><strong>Lengte-limieten.</strong> Browsers en servers kappen query-string-lengte rond 2–8 KB. JSON in een query-parameter proppen is een smell.</li>
   <li><strong>Zet geen secrets in de query string.</strong> Die verschijnen in server-logs, browser-history en Referer-headers. Gebruik de request-body of een Authorization-header in plaats daarvan.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir query string sadece <code>?</code>, <code>=</code> ve <code>&amp;</code> ile yapıştırılmış key/value çiftlerinin bir listesidir, ama elle doğru yazmak zahmetlidir: boşluklar <code>%20</code> olur (veya <code>+</code>, duruma bağlı), her değer percent-encoded olur ve dizilerin en az üç rakip geleneği vardır. Bu araç istediğin anahtar ve değerleri yazmana, tekrarlanmasını istediklerin için "multi"yi işaretlemene izin verir ve <code>?</code> sonrası yapıştırmaya hazır doğru kodlanmış string üretir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Boşluk, aksan veya noktalama içeren birkaç parametreli bir API URL'i hazırlama.</li>
+  <li>Kodlanmış değerlerde yazım hatası olmadan bir takip linki (UTM tag'leri) oluşturma.</li>
+  <li>E-posta, sohbet veya sosyal üzerinden round-trip yapması gereken bir derin link veya paylaşım URL'i oluşturma.</li>
+  <li>Bir API için doğru array notasyonunu doğrulama — <code>a[]=1</code>, <code>a=1&amp;a=2</code> veya <code>a=1,2</code> — her birini deneyerek.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Array gelenekleri standartlaştırılmamıştır.</strong> PHP ve Rails <code>a[]=1&amp;a[]=2</code> kullanır; Python'un <code>requests</code>'i varsayılan olarak tekrarlanan <code>a=1&amp;a=2</code>'a sahiptir; ASP.NET sıklıkla virgül kullanır. API'nin beklediği şeyle eşleş.</li>
+  <li><strong><code>+</code> vs <code>%20</code>.</strong> <code>application/x-www-form-urlencoded</code> boşluklar için <code>+</code> kullanır; URI query string'leri kesinlikle <code>%20</code> kullanır. Çoğu sunucu ikisini de kabul eder, ama bazıları etmez — API'nin belgelediğini seç.</li>
+  <li><strong>Boş değerler eksik anahtarlardan farklıdır.</strong> <code>?a=</code> "a boş string'dir" demektir; <code>a</code>'yı atlamak "değer verilmedi" demektir. Bazı API'ler ikisini farklı ele alır.</li>
+  <li><strong>Rezerve karakter etkileşimi.</strong> Değerler içindeki <code>=</code>, <code>&amp;</code>, <code>#</code>, <code>?</code> kodlanır; anahtar/değerlerdeki literal sürümler parametre veya tüm sorguyu sonlandırır.</li>
+  <li><strong>Sıra önemli olabilir.</strong> Bazı imzalı URL şemaları (S3, Stripe webhook'ları, OAuth 1.0) imzalamadan önce parametrelerin belirli bir sırada olmasını gerektirir. Araç satır sıranı korur.</li>
+  <li><strong>Uzunluk sınırları.</strong> Tarayıcılar ve sunucular query-string uzunluğunu yaklaşık 2–8 KB'da tepe yapar. Bir query parametresine JSON tıkıştırmak bir kokudur.</li>
+  <li><strong>Query string'e sırlar koyma.</strong> Sunucu loglarında, tarayıcı geçmişinde ve Referer header'larında görünürler. Bunun yerine istek gövdesini veya Authorization header'ı kullan.</li>
 </ul>
 """,
     },

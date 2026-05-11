@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Formatter SQL", "tagline": "Sformatuj i upiększ SQL z porządną indentacją albo zminifikuj do jednej linii. Świadom dialektu (ANSI / MySQL / Postgres).", "description": "Darmowy formatter SQL. Pretty-print dowolnego SELECT/INSERT/UPDATE/DDL ze spójną indentacją, wielkością keywordów i wyrównaniem klauzul. Minifikuje też do jednej linii. Działa w całości w przeglądarce."},
         "ja": {"name": "SQL フォーマッター", "tagline": "SQL をきちんとインデントして整形、または 1 行に圧縮。ANSI / MySQL / Postgres の方言に対応。", "description": "オンライン無料の SQL フォーマッター。SELECT / INSERT / UPDATE / DDL を一貫したインデント、キーワード大文字小文字、句の整列で整形できます。1 行へのミニファイにも対応。すべてブラウザ内で動作します。"},
         "nl": {"name": "SQL Formatter", "tagline": "Formatteer en beautify SQL met goede indentatie, of minify naar een enkele regel. Dialect-aware (ANSI / MySQL / Postgres).", "description": "Gratis online SQL-formatter. Pretty-print elke SELECT/INSERT/UPDATE/DDL met consistente indentatie, keyword-casing en clause-alignment. Minify ook naar een enkele regel. Draait volledig in je browser."},
+        "tr": {"name": "SQL Formatter", "tagline": "SQL'i düzgün indent ile biçimlendir ve güzelleştir veya tek satıra küçült. Lehçe farkında (ANSI / MySQL / Postgres).", "description": "Ücretsiz online SQL formatter. Herhangi bir SELECT/INSERT/UPDATE/DDL'yi tutarlı indent, anahtar kelime büyük/küçük harf ve clause hizalaması ile güzel yazdırır. Aynı zamanda tek satıra küçültür. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -501,6 +502,28 @@ document.addEventListener('DOMContentLoaded', sfRun);
   <li><strong>Comments overleven maar worden geïsoleerd op hun eigen regel.</strong> Als je een <code>-- inline comment</code> mid-line had, verhuist hij naar zijn eigen regel tijdens pretty-print.</li>
   <li><strong>Minify strijkt comments eruit.</strong> Als je ze nodig hebt, minify niet.</li>
   <li><strong>Het is geen linter.</strong> Gebruik een echte SQL-parser (bijv. <code>sqlfluff</code>) voor validation, style enforcement en dialect-checking in CI.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>SQL <code>psql</code>'de yazdığın bir tek satırdan 200 satırlık ve düzgün indent edilmeden kimsenin okuyamadığı bir analitik sorguya kadar uzanır. Bu formatter herhangi bir SELECT, INSERT, UPDATE veya DDL'yi tutarlı indent, her clause'tan önce satır sonları ve tek tip anahtar kelime case'i ile yeniden yazar. Minify modu tersini yapar — kod veya script'lere gömmek için her şeyi tek satıra çöker. Her şey tarayıcında çalışır; sorgular sayfayı asla terk etmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir log dosyasından, ORM'den veya sohbet mesajından kopyaladığın bir sorguyu diffable ve reviewable bir şeye yeniden biçimlendirme.</li>
+  <li>Bir migration script'ini commit etmeden önce takım geleneklerini (UPPERCASE anahtar kelimeler, 2-boşluk indent) normalize etme.</li>
+  <li>Uzun bir güzel basılı sorguyu YAML config veya tek satırlık CLI argümanına sığması için tek satıra ezme.</li>
+  <li>Yapısal problemleri tespit etme — dengelenmemiş parantezler, SELECT listesinde eksik virgül veya ON olmadan JOIN — sorgu indent edildiğinde belirgin olanları.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Formatter yapısaldır, anlamsal değildir.</strong> Sorgunun doğru SQL olup olmadığını söylemez, sadece gördüğü token'ları nasıl indent edeceğini. Girdideki bir sözdizimi hatası çıktıda bir sözdizimi hatası olur.</li>
+  <li><strong>Lehçeye özgü anahtar kelimeler değişir.</strong> <code>ILIKE</code>, <code>RETURNING</code>, <code>LATERAL</code> Postgres'tir; <code>STRAIGHT_JOIN</code>, <code>SQL_CALC_FOUND_ROWS</code> MySQL'dir. Doğru lehçeyi seç yoksa bu kelimeler anahtar kelime olarak tanınmayacaktır.</li>
+  <li><strong>String literal'ları aynen korunur.</strong> Tek tırnak içindeki çok satırlı bir string satır sonlarını korur; formatter <code>'...'</code> içindeki metni yeniden akıtmaz.</li>
+  <li><strong>Yorumlar hayatta kalır ama kendi satırlarında izole olur.</strong> Satır ortasında bir <code>-- inline yorum</code> varsa, güzel-yazdırma sırasında kendi satırına taşınır.</li>
+  <li><strong>Minify yorumları temizler.</strong> Onlara ihtiyacın varsa, minify etme.</li>
+  <li><strong>Bu bir linter değildir.</strong> Doğrulama, stil zorlaması ve CI'da lehçe kontrolü için gerçek bir SQL parser (örn. <code>sqlfluff</code>) kullan.</li>
 </ul>
 """,
     },

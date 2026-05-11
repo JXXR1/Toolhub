@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Konwerter XML ↔ JSON", "tagline": "Konwertuj XML na JSON albo JSON z powrotem na XML. Sensownie obsługuje atrybuty, węzły tekstowe i tablice.", "description": "Darmowy online konwerter XML do JSON (i JSON z powrotem na XML). Używa natywnego parsera XML przeglądarki; atrybuty trafiają z konfigurowalnym prefiksem; powtórzone elementy zwijają się do tablic. Działa w całości w przeglądarce."},
         "ja": {"name": "XML ↔ JSON コンバーター", "tagline": "XML を JSON に、または JSON を XML に変換。属性・テキストノード・配列を妥当に処理。", "description": "オンライン無料の XML → JSON（および JSON → XML）コンバーター。ブラウザの XML パーサを使用し、属性は設定可能なプレフィックス付き、繰り返し要素は配列にまとめます。すべてブラウザ内で動作します。"},
         "nl": {"name": "XML ↔ JSON Converter", "tagline": "Converteer XML naar JSON of JSON terug naar XML. Handelt attributes, text-nodes en arrays verstandig af.", "description": "Gratis online XML-naar-JSON converter (en JSON terug naar XML). Gebruikt de native XML-parser van de browser; attributes krijgen een configureerbaar prefix; herhaalde elementen storten in arrays. Draait volledig in je browser."},
+        "tr": {"name": "XML ↔ JSON Dönüştürücü", "tagline": "XML'i JSON'a veya JSON'u XML'e geri dönüştür. Attribute'ları, text node'ları ve dizileri akıllıca işler.", "description": "Ücretsiz online XML'den JSON'a dönüştürücü (ve JSON'dan XML'e geri). Tarayıcının yerel XML parser'ını kullanır; attribute'lar ayarlanabilir bir önek alır; tekrarlayan elementler dizilere indirgenir. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -384,6 +385,29 @@ document.addEventListener('DOMContentLoaded', xjRun);
   <li><strong>Namespaces blijven letterlijk behouden.</strong> <code>ns:tag</code> blijft als JSON-key <code>"ns:tag"</code>. <code>xmlns:</code>-attributes idem.</li>
   <li><strong>Getallen en booleans worden niet auto-gecoerced.</strong> XML-text is altijd strings; <code>"1"</code> blijft <code>"1"</code> in JSON. Coerce types in je applicatiecode als je ze nodig hebt.</li>
   <li><strong>JSON → XML vereist één root-key.</strong> XML eist precies één root-element; de input-JSON moet een object zijn met één top-level key.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>XML ve JSON iki baskın veri değişim biçimidir ve düzenli olarak aralarında çeviri yapman gerekir — bir SOAP API'den REST'e geçiş, eski feed'leri modern bir yığına bağlama veya sadece JSON konuşan bir araçta XML okuma. Eşleme tarafsız değildir, varsayılan olarak tersinir değildir, çünkü XML JSON'da olmayan özelliklere (nitelikler, karışık içerik, sıralı child'lar) sahiptir. Bu araç geleneksel <a href="https://www.npmjs.com/package/fast-xml-parser" target="_blank" rel="noopener noreferrer">fast-xml-parser</a>-stili eşlemeyi kullanır: nitelikler bir önek alır (varsayılan <code>@</code>), text node'ları bir anahtara gider (varsayılan <code>#text</code>) ve tekrarlanan child elementler array'lere çöker. Her iki yön de tarayıcında çalışır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir RSS / Atom / SOAP yanıtını bir JS uygulamasında tüketmek için JSON'a dönüştürme.</li>
+  <li>Bir JSON template'tan XML config üretme (build config'leri, Spring bean'leri, OOXML scaffold'lar).</li>
+  <li>İç içe değerleri hızlıca çıkarma — XML'i JSON'a dönüştür, sonra bildiğin herhangi bir JSON aracını kullan.</li>
+  <li>Veriyi round-trip yapma ve şeklin dönüşümden sağ çıktığını doğrulama.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Tek child - array.</strong> Bir <code>&lt;item&gt;</code> olan bir belge <code>{"item": {...}}</code> olur; iki olan aynı belge <code>{"item": [..., ...]}</code> olur. Tüketicilerin her iki şekli de işlemesi gerekir.</li>
+  <li><strong>Element sırası garanti edilmez.</strong> JSON nesneleri tüm parser'lar/iletim'ler arasında anahtar sırasını korumaz. XML'in sıra-anlamlı kardeşleri varsa, JSON yanlış hedeftir.</li>
+  <li><strong>Karışık içerik çöker.</strong> <code>&lt;p&gt;hello &lt;b&gt;world&lt;/b&gt;!&lt;/p&gt;</code> gibi bir element round-trip yapmaz — metin ve inline elementler temiz bir nesne temsiline sahip olmayan bir şekilde iç içe geçer.</li>
+  <li><strong>Nitelik öneki çakışmaları.</strong> Bir XML elementinin adı <code>@</code> ile başlayan bir child'ı varsa, önce öneki başka bir şeye değiştir.</li>
+  <li><strong>Namespace'ler aynen korunur.</strong> <code>ns:tag</code> JSON anahtarı olarak <code>"ns:tag"</code> kalır. <code>xmlns:</code> nitelikleri de benzer şekilde.</li>
+  <li><strong>Sayılar ve boolean'lar otomatik dönüştürülmez.</strong> XML metni her zaman string'tir; <code>"1"</code> JSON'da <code>"1"</code> kalır. İhtiyacın varsa uygulama kodunda türleri dönüştür.</li>
+  <li><strong>JSON → XML tek bir kök anahtar gerektirir.</strong> XML tam olarak bir kök element ister; giriş JSON tek bir üst seviye anahtarı olan bir nesne olmalıdır.</li>
 </ul>
 """,
     },

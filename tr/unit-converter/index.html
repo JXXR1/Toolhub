@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birim Dönüştürücü — Toolhub</title>
+  <meta name="description" content="Ücretsiz online birim dönüştürücü. Uzunluk (mm, cm, m, km, in, ft, yd, mi), ağırlık (g, kg, lb, oz), sıcaklık (C, F, K), hacim (mL, L, gal, fl oz) ve alan (m², ft², acre, ha) dönüşümleri.">
+  <meta property="og:title" content="Birim Dönüştürücü — Toolhub">
+  <meta property="og:description" content="Ücretsiz online birim dönüştürücü. Uzunluk (mm, cm, m, km, in, ft, yd, mi), ağırlık (g, kg, lb, oz), sıcaklık (C, F, K), hacim (mL, L, gal, fl oz) ve alan (m², ft², acre, ha) dönüşümleri.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/unit-converter/">
+  <meta property="og:image" content="https://toolhub.software/og-images/unit-converter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/unit-converter.png">
+  <link rel="canonical" href="https://toolhub.software/tr/unit-converter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/unit-converter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/unit-converter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/unit-converter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/unit-converter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/unit-converter/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/unit-converter/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/unit-converter/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/unit-converter/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/unit-converter/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/unit-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/unit-converter/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/unit-converter/#tool",
+        "name": "Birim Dönüştürücü",
+        "description": "Ücretsiz online birim dönüştürücü. Uzunluk (mm, cm, m, km, in, ft, yd, mi), ağırlık (g, kg, lb, oz), sıcaklık (C, F, K), hacim (mL, L, gal, fl oz) ve alan (m², ft², acre, ha) dönüşümleri.",
+        "url": "https://toolhub.software/tr/unit-converter/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Math Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["unit", "convert", "length", "weight", "temperature", "volume", "area", "metric", "imperial"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "Birim Dönüştürücü", "item": "https://toolhub.software/tr/unit-converter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dünyanın çoğu metriktir, ABD imperialdir, İngiltere yarı-yarıdır, tarifler gram olması gerektiğinde cup'tadır ve ortada bir yerde bir çocuğun okul projesi \"5 yard santimetrede\" ister. Bu araç yüksek hassasiyetli tanımlar kullanarak uzunluk, ağırlık, sıcaklık, hacim, alan, zaman ve hız için dönüşümleri çalıştırır — ve sonucu kategorideki her birim üzerine bir kerede yayar, böylece iki kez dönüştürmen gerekmez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gram cinsinden pişirdiğinde cup'ta bir tarif okuma (veya tersi). Bir uçuş mesafesini deniz mili cinsinden kilometreye çevirme. Seyahatten önce dış mekan sıcaklık tahmini °C'den °F'a dönüştürme. Bir mobilya parçasını boyutlandırma: 72 inç genişlik → 1,9 m kapıdan geçer mi? Imperial düşündüğünde SI'da bilimsel makale ölçümlerini okuma."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne doğru, ne değil",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uzunluk, ağırlık, sıcaklık, alan, hız SI tanımlarını ve uluslararası yard-and-pound anlaşmasını (1959) kullanır, böylece girdinin sahip olduğu hassasiyete kesindirler. Hacim zahmetli olabilir: ABD \"galon\" (3,785 L) ve İngiliz \"imperial galon\" (4,546 L) farklıdır. Araç hangisinin hangisi olduğunu etiketler. Cup / yemek kaşığı / çay kaşığı burada varsayılan olarak ABD ölçüsüdür. İngiliz ve Avustralya cup'ları biraz farklıdır (AU'da 250 mL, ABD'de 240 mL). Zaman kategorisinde \"ay\" ve \"yıl\" ortalamalar kullanır (30,44 gün / 365,25 gün). Bunu kesin ayların önemli olduğu yasal veya muhasebe hesaplamaları için kullanma — bunun yerine bir tarih hesaplayıcı kullan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sıcaklık bir oran değildir. 0°C \"sıcaklık yok\" demek değildir — bir referans noktasıdır. Celsius'u ikiye katlamak ısıyı ikiye katlamaz. Dönüşüm aditif ofsetleri kullanır (Kelvin'e/dan 273,15, C ile F arasında 32) bu yüzden araç sıcaklık için çarpanlar değil fonksiyonlar kullanır. ABD ve İngiliz fluid ons'ları farklıdır. 1 ABD fl oz = 29,57 mL, 1 İngiliz fl oz = 28,41 mL. Bir tarifin hangi standardı kullandığını her zaman kontrol et. \"Tonne\" ve \"ton\". Metrik tonne = 1000 kg. ABD kısa ton = 907 kg. İngiliz uzun ton = 1016 kg. Aracın \"t\"si metrik tonne'dur. Kütle - ağırlık. Kesin olarak, kg kütledir ve pound da kütledir (günlük \"70 kg ağırlığım var\"a rağmen). Araç bunları kütle-kütle dönüşümü olarak ele alır. Kuvvet (newton, pound-force) için farklı bir kategoriye ihtiyacın var. Sonda yuvarla, ortada değil. m → ft'a çevirme, yuvarlama, sonra ft → in'e çevirme — hatalar birikir. Hedef birime doğru git. Stone & pound. Bir İngiliz ağırlığı: 1 stone = 14 lb. Aracın stone (st) vardır ama \"11 st 4 lb\" tarzı girişler için lb kısmını ayrı yapman gerekir."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Birim Dönüştürücü",
+  "description": "Uzunluk, ağırlık, sıcaklık, hacim ve alan için metrik ve imperial birimler arasında dönüştür.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Değerlerini gir",
+      "text": "Aracın ihtiyaç duyduğu birim girişlerini yaz."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Hesaplamayı oku",
+      "text": "birim sonucu anında güncellenir — düğmeye gerek yok."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kullan veya kopyala",
+      "text": "birim değerini başka bir yerde lazım edersen Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/unit-converter/'; else location.href='/unit-converter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / Birim Dönüştürücü</div>
+    <h1>Birim Dönüştürücü</h1>
+    <p class="tagline">Uzunluk, ağırlık, sıcaklık, hacim ve alan için metrik ve imperial birimler arasında dönüştür.</p>
+    
+<div class="tool-card">
+  <label>Category</label>
+  <select id="uc-cat" onchange="ucCatChanged(); ucRun()">
+    <option value="length">Length</option>
+    <option value="weight">Weight</option>
+    <option value="temperature">Temperature</option>
+    <option value="volume">Volume</option>
+    <option value="area">Area</option>
+    <option value="time">Time</option>
+    <option value="speed">Speed</option>
+  </select>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Kimden</label>
+      <div class="uc-row">
+        <input type="number" id="uc-in" value="1" oninput="ucRun()" step="any" style="font-family:ui-monospace,monospace">
+        <select id="uc-from" onchange="ucRun()"></select>
+      </div>
+    </div>
+    <div>
+      <label>Kime</label>
+      <div class="uc-row">
+        <input type="text" id="uc-out" readonly style="font-family:ui-monospace,monospace;background:var(--bg-elev)">
+        <select id="uc-to" onchange="ucRun()"></select>
+      </div>
+    </div>
+  </div>
+  <div class="button-row" style="margin-top:0.6rem">
+    <button class="secondary" onclick="ucSwap()">⇄ Yer değiştir</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Sonuç</label>
+  <pre class="output" id="uc-summary">Sonucu görmek için yukarıya giriş yapın.</pre>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>Dünyanın çoğu metriktir, ABD imperialdir, İngiltere yarı-yarıdır, tarifler gram olması gerektiğinde cup'tadır ve ortada bir yerde bir çocuğun okul projesi "5 yard santimetrede" ister. Bu araç yüksek hassasiyetli tanımlar kullanarak uzunluk, ağırlık, sıcaklık, hacim, alan, zaman ve hız için dönüşümleri çalıştırır — ve sonucu kategorideki her birim üzerine bir kerede yayar, böylece iki kez dönüştürmen gerekmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Gram cinsinden pişirdiğinde cup'ta bir tarif okuma (veya tersi).</li>
+  <li>Bir uçuş mesafesini deniz mili cinsinden kilometreye çevirme.</li>
+  <li>Seyahatten önce dış mekan sıcaklık tahmini °C'den °F'a dönüştürme.</li>
+  <li>Bir mobilya parçasını boyutlandırma: 72 inç genişlik → 1,9 m kapıdan geçer mi?</li>
+  <li>Imperial düşündüğünde SI'da bilimsel makale ölçümlerini okuma.</li>
+</ul>
+
+<h3>Ne doğru, ne değil</h3>
+<ul>
+  <li><strong>Uzunluk, ağırlık, sıcaklık, alan, hız</strong> SI tanımlarını ve uluslararası yard-and-pound anlaşmasını (1959) kullanır, böylece girdinin sahip olduğu hassasiyete kesindirler.</li>
+  <li><strong>Hacim</strong> zahmetli olabilir: ABD "galon" (3,785 L) ve İngiliz "imperial galon" (4,546 L) farklıdır. Araç hangisinin hangisi olduğunu etiketler.</li>
+  <li><strong>Cup / yemek kaşığı / çay kaşığı</strong> burada varsayılan olarak ABD ölçüsüdür. İngiliz ve Avustralya cup'ları biraz farklıdır (AU'da 250 mL, ABD'de 240 mL).</li>
+  <li><strong>Zaman kategorisinde "ay" ve "yıl"</strong> ortalamalar kullanır (30,44 gün / 365,25 gün). Bunu kesin ayların önemli olduğu yasal veya muhasebe hesaplamaları için kullanma — bunun yerine bir tarih hesaplayıcı kullan.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Sıcaklık bir oran değildir.</strong> 0°C "sıcaklık yok" demek değildir — bir referans noktasıdır. Celsius'u ikiye katlamak ısıyı ikiye katlamaz. Dönüşüm aditif ofsetleri kullanır (Kelvin'e/dan 273,15, C ile F arasında 32) bu yüzden araç sıcaklık için çarpanlar değil fonksiyonlar kullanır.</li>
+  <li><strong>ABD ve İngiliz fluid ons'ları farklıdır.</strong> 1 ABD fl oz = 29,57 mL, 1 İngiliz fl oz = 28,41 mL. Bir tarifin hangi standardı kullandığını her zaman kontrol et.</li>
+  <li><strong>"Tonne" ve "ton".</strong> Metrik tonne = 1000 kg. ABD kısa ton = 907 kg. İngiliz uzun ton = 1016 kg. Aracın "t"si metrik tonne'dur.</li>
+  <li><strong>Kütle - ağırlık.</strong> Kesin olarak, kg kütledir ve pound da kütledir (günlük "70 kg ağırlığım var"a rağmen). Araç bunları kütle-kütle dönüşümü olarak ele alır. Kuvvet (newton, pound-force) için farklı bir kategoriye ihtiyacın var.</li>
+  <li><strong>Sonda yuvarla, ortada değil.</strong> m → ft'a çevirme, yuvarlama, sonra ft → in'e çevirme — hatalar birikir. Hedef birime doğru git.</li>
+  <li><strong>Stone &amp; pound.</strong> Bir İngiliz ağırlığı: 1 stone = 14 lb. Aracın stone (st) vardır ama "11 st 4 lb" tarzı girişler için lb kısmını ayrı yapman gerekir.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/timestamp-converter/">Unix Timestamp Dönüştürücü</a> <a href="/tr/timezone-converter/">Saat Dilimi Dönüştürücü</a> <a href="/tr/percentage-calculator/">Yüzde Hesaplayıcı</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.uc-row{display:flex;gap:0.5rem;align-items:center}
+.uc-row input{flex:1}
+.uc-row select{flex:0 0 130px}
+</style>
+<script>
+// All units defined as a factor relative to a base. For temperature, use functions.
+const UC = {
+  length: {
+    base: 'm',
+    units: {
+      mm:0.001, cm:0.01, m:1, km:1000,
+      in:0.0254, ft:0.3048, yd:0.9144, mi:1609.344,
+      'nautical mi':1852
+    }
+  },
+  weight: {
+    base: 'kg',
+    units: {
+      mg:0.000001, g:0.001, kg:1, t:1000,
+      oz:0.028349523125, lb:0.45359237, st:6.35029318
+    }
+  },
+  temperature: {
+    base: 'K',
+    fns: {
+      C: { to: c => c + 273.15, from: k => k - 273.15 },
+      F: { to: f => (f - 32) * 5/9 + 273.15, from: k => (k - 273.15) * 9/5 + 32 },
+      K: { to: k => k, from: k => k }
+    }
+  },
+  volume: {
+    base: 'L',
+    units: {
+      mL:0.001, L:1, m3:1000,
+      'tsp (US)':0.00492892, 'tbsp (US)':0.0147868, 'fl oz (US)':0.0295735,
+      cup:0.236588, 'pint (US)':0.473176, 'quart (US)':0.946353, 'gal (US)':3.78541,
+      'gal (UK)':4.54609, 'pint (UK)':0.568261
+    }
+  },
+  area: {
+    base: 'm2',
+    units: {
+      mm2:0.000001, cm2:0.0001, m2:1, ha:10000, km2:1000000,
+      in2:0.00064516, ft2:0.092903, yd2:0.836127, acre:4046.8564, mi2:2589988.11
+    }
+  },
+  time: {
+    base: 's',
+    units: {
+      ms:0.001, s:1, min:60, h:3600, day:86400, week:604800,
+      month:2629800,  // average
+      year:31557600
+    }
+  },
+  speed: {
+    base: 'm/s',
+    units: {
+      'm/s':1, 'km/h':1/3.6, 'mph':0.44704, 'ft/s':0.3048, 'knot':0.514444
+    }
+  }
+};
+function ucPopulate(){
+  const cat = document.getElementById('uc-cat').value;
+  const def = UC[cat];
+  const labels = def.units ? Object.keys(def.units) : Object.keys(def.fns);
+  for(const id of ['uc-from','uc-to']){
+    const sel = document.getElementById(id);
+    sel.innerHTML = labels.map(l => `<option value="${l}">${l}</option>`).join('');
+  }
+}
+function ucCatChanged(){
+  const cat = document.getElementById('uc-cat').value;
+  ucPopulate();
+  if(cat === 'temperature'){
+    document.getElementById('uc-from').value = 'C';
+    document.getElementById('uc-to').value = 'F';
+  } else if(cat === 'length'){
+    document.getElementById('uc-from').value = 'm';
+    document.getElementById('uc-to').value = 'ft';
+  } else if(cat === 'weight'){
+    document.getElementById('uc-from').value = 'kg';
+    document.getElementById('uc-to').value = 'lb';
+  } else if(cat === 'volume'){
+    document.getElementById('uc-from').value = 'L';
+    document.getElementById('uc-to').value = 'gal (US)';
+  } else if(cat === 'area'){
+    document.getElementById('uc-from').value = 'm2';
+    document.getElementById('uc-to').value = 'ft2';
+  } else if(cat === 'time'){
+    document.getElementById('uc-from').value = 'h';
+    document.getElementById('uc-to').value = 'min';
+  } else if(cat === 'speed'){
+    document.getElementById('uc-from').value = 'km/h';
+    document.getElementById('uc-to').value = 'mph';
+  }
+}
+function ucConvert(val, from, to){
+  const cat = document.getElementById('uc-cat').value;
+  const def = UC[cat];
+  if(def.fns){
+    const baseVal = def.fns[from].to(val);
+    return def.fns[to].from(baseVal);
+  } else {
+    return val * def.units[from] / def.units[to];
+  }
+}
+function ucFmt(n){
+  if(!isFinite(n)) return '—';
+  const a = Math.abs(n);
+  if(a !== 0 && (a >= 1e6 || a < 1e-3)) return n.toExponential(4);
+  return Number(n.toFixed(6)).toString();
+}
+function ucSwap(){
+  const f = document.getElementById('uc-from'), t = document.getElementById('uc-to');
+  [f.value, t.value] = [t.value, f.value];
+  ucRun();
+}
+function ucRun(){
+  const v = parseFloat(document.getElementById('uc-in').value);
+  if(isNaN(v)){ document.getElementById('uc-out').value = ''; document.getElementById('uc-summary').textContent = 'Sonucu görmek için yukarıya giriş yapın.'; return; }
+  const f = document.getElementById('uc-from').value;
+  const t = document.getElementById('uc-to').value;
+  const r = ucConvert(v, f, t);
+  document.getElementById('uc-out').value = ucFmt(r);
+  // Show a few common targets too
+  const cat = document.getElementById('uc-cat').value;
+  const def = UC[cat];
+  const labels = def.units ? Object.keys(def.units) : Object.keys(def.fns);
+  const lines = labels.map(l => `  ${ucFmt(ucConvert(v, f, l)).padStart(15)} ${l}`);
+  document.getElementById('uc-summary').textContent = `${ucFmt(v)} ${f} =\n${lines.join('\n')}`;
+}
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(() => { ucCatChanged(); ucRun(); }));
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

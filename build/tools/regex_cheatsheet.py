@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Ściąga Regex", "tagline": "Szybka referencja: anchory, klasy znaków, kwantyfikatory, grupy, lookaroundy, flagi. Kliknij dowolny pattern, by skopiować.", "description": "Darmowa ściąga regex (wyrażenia regularne). Anchory, klasy znaków, kwantyfikatory, grupy, lookaroundy i flagi — z klikaniem do skopiowania i filtrem na żywo. Smak PCRE / JavaScript."},
         "ja": {"name": "正規表現チートシート", "tagline": "クイックリファレンス：アンカー、文字クラス、量指定子、グループ、後読み／先読み、フラグ。クリックでコピー。", "description": "無料の正規表現チートシート。アンカー、文字クラス、量指定子、グループ、ルックアラウンド、フラグを網羅し、クリックでコピー、ライブフィルタにも対応。PCRE / JavaScript 風です。"},
         "nl": {"name": "Regex Spiekbrief", "tagline": "Snelle referentie: anchors, character classes, quantifiers, groups, lookarounds, flags. Klik elk patroon om te kopiëren.", "description": "Gratis regex (regular expression)-spiekbrief. Anchors, character classes, quantifiers, groups, lookarounds en flags — met click-to-copy patronen en een live filter. PCRE / JavaScript flavour."},
+        "tr": {"name": "Regex Çetel", "tagline": "Hızlı referans: çapalar, karakter sınıfları, niceleyiciler, gruplar, lookaround'lar, bayraklar. Kopyalamak için herhangi bir desene tıkla.", "description": "Ücretsiz regex (düzenli ifade) çeteli. Çapalar, karakter sınıfları, niceleyiciler, gruplar, lookaround'lar ve bayraklar — tıkla-kopyala desenler ve canlı filtre ile. PCRE / JavaScript lehçesi."},
     },
     "body": """
 <div class="tool-card">
@@ -375,6 +376,28 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Regex is geen HTML- of JSON-parser.</strong> De "veelvoorkomende patronen" hier zijn goed voor eenmalig scrapen of validatie-hints, niet om structured input als string te behandelen.</li>
   <li><strong>Email-regexes zijn altijd fout.</strong> Het voorbeeld hier is een ruwe shape-check; voor production-validatie stuur je in plaats daarvan een bevestigingsmail.</li>
   <li><strong>Vertrouw geen copy-pasted "perfect" regexes.</strong> Test ze tegen je echte data met de Regex Tester voor je deployt.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Yarı hatırladığın regex sözdiziminin parçalarının yazdırılabilir, aranabilir bir özeti. Buradaki tablolar ana kategorileri kapsar — çapalar, karakter sınıfları, niceleyiciler, gruplar, lookaround'lar, bayraklar — artı yaygın desenlerin başlangıç seti. Bir deseni kopyalamak için tıkla; daraltmak için filtreye yaz. Desenleri metne karşı gerçekten denemek için bunu <a href="/regex-tester/">Regex Tester</a> ile eşle.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li><code>(?&lt;=foo)</code>'ya ihtiyacın var ve <code>?</code>'nin <code>&lt;</code>'den önce mi sonra mı geldiğini hatırlayamıyorsun.</li>
+  <li>Birine regex anlatıyorsun ve Stack Overflow sekmeleri karıştırmak yerine kararlı bir referans sayfası gerekiyor.</li>
+  <li>Sıfırdan yazmak yerine kopyalayıp ince ayarlayabileceğin bir başlangıç deseni (UUID, e-posta, ISO tarih) istiyorsun.</li>
+  <li>Hangi bayrağın ne yaptığını bilmek istiyorsun — özellikle <code>s</code> (dotall) ve <code>m</code> (multi-line) ki insanlar rutin olarak karıştırır.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Lehçe önemlidir.</strong> Bunun çoğu JavaScript / modern PCRE'dir, ama özellikler değişir. Lookbehind JavaScript'e sadece ES2018 ile geldi; <code>x</code> (extended) PCRE/Python'dur ve JS'de yoktur; possessive niceleyiciler <code>++</code> sadece PCRE'dir.</li>
+  <li><strong><code>m</code> ≠ "çok satırlı eşleştirme".</strong> <code>m</code> <code>^</code> ve <code>$</code>'ın anlamını değiştirir (string başına yerine satır başına). <code>.</code> ile satır sonları arasında eşleştirmek için <code>s</code> (dotall) istiyorsun.</li>
+  <li><strong>Greedy eşleşmeler çok fazla yer.</strong> <code>&lt;a&gt;b&lt;/a&gt;</code>'a karşı <code>&lt;.*&gt;</code> tüm şeyi eşleştirir, sadece <code>&lt;a&gt;</code>'yı değil. Lazy sürüm için <code>&lt;.*?&gt;</code> kullan, veya daha iyisi <code>&lt;[^&gt;]+&gt;</code> gibi daha spesifik bir sınıf.</li>
+  <li><strong>Regex bir HTML veya JSON parser değildir.</strong> Buradaki "yaygın desenler" tek seferlik kazıma veya doğrulama ipuçları için iyidir, yapılandırılmış girdiyi bir string olarak ele almak için değil.</li>
+  <li><strong>E-posta regex'leri her zaman yanlıştır.</strong> Buradaki örnek kaba bir şekil kontrolüdür; production doğrulama için bunun yerine bir onay e-postası gönder.</li>
+  <li><strong>Kopya-yapıştırılmış "mükemmel" regex'lere güvenme.</strong> Deploy etmeden önce gerçek verinle Regex Tester ile test et.</li>
 </ul>
 """,
     },

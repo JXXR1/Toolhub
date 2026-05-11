@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料のタイムゾーン変換ツール。任意の IANA タイムゾーン間で DST を考慮しながら変換できます。よく使うゾーンから、ブラウザがサポートする 400 以上のゾーンまで選択可能です。",
         },
         "nl": {"name": "Tijdzone-converter", "tagline": "Converteer een datum en tijd tussen IANA-tijdzones. Zie offsets, DST-status en weekdag voor beide kanten.", "description": "Gratis online tijdzone-converter. Converteer tussen elke IANA-tijdzone met DST-awareness. Kies uit veelgebruikte zones of een van de ~400+ die je browser ondersteunt."},
+        "tr": {"name": "Saat Dilimi Dönüştürücü", "tagline": "Bir tarih ve saati IANA saat dilimleri arasında dönüştür. Her iki uç için offset, DST durumu ve haftanın gününü gör.", "description": "Ücretsiz online saat dilimi dönüştürücü. DST farkındalığıyla herhangi bir IANA saat dilimleri arasında dönüştür. Yaygın dilimlerden veya tarayıcının desteklediği ~400+ taneden birini seç."},
     },
     "body": """
 <div class="tool-card">
@@ -287,6 +288,31 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Land-afkortingen zijn geen zones.</strong> "EST" is ambigu (US vs Australisch); "IST" kan Indisch, Iers of Israëlisch betekenen. Kies altijd de IANA-zone, niet de afkorting.</li>
   <li><strong>Historische accuratesse</strong> is goed voor het moderne tijdperk maar breekt af voor heel oude datums. Pre-1970 timestamps kunnen in sommige browsers benaderde offsets gebruiken.</li>
   <li><strong>Datums opslaan: altijd UTC.</strong> Converteer op display-tijd. De UTC-regel in de output geeft je de canonieke waarde om naar je database te schrijven.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Saat dilimleri aldatıcı şekilde sinir bozucudur. "09:00"da bir toplantı Londra, Bratislava ve New York'ta farklı mutlak anlamlara gelir — ve aralarındaki ofset günyaylığı tasarrufu nedeniyle yılda iki kez farklı tarihlerde değişir. Bu araç bir IANA diliminde bir duvar saati zamanı alır ve mevcut ofsetler, UTC anı ve her iki uç için haftanın günü ile başka bir dilimdeki tam eşdeğerini söyler.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Kıtalar arası bir arama planlama — "15:00 CET"in meslektaşının diliminde ne olduğunu doğrulama.</li>
+  <li>UTC'de kaydedilmiş bir log timestamp'ini okuma ve kullanıcı odaklı bir rapor için yerel saate çevirme.</li>
+  <li>Bir deploy penceresi veya bakım slot'unun bir DST sınırını aşıp aşmadığını kontrol etme.</li>
+  <li><code>America/New_York</code>'taki bir cron ifadesinin kendi diliminden beklediğin anda çalışacağının sanity check'i.</li>
+  <li>Uluslararası tarih çizgisini geçerken haftanın günü değişikliğini hesaplama.</li>
+</ul>
+
+<h3>Neden IANA dilimleri (GMT+2 değil)</h3>
+<p><code>Europe/Bratislava</code> veya <code>America/New_York</code> gibi bir IANA dilimi o konumun tarihsel ve devam eden kurallarını kodlar — DST başlangıç ve bitiş tarihleri, saat dilimi değişiklikleri (Rusya 2014'te DST'yi kaldırdı; Türkiye 2016'da DST'yi düşürdü), hatta Samoa'nın 2011'de bütün bir günü atlaması. "GMT+2" gibi çıplak bir ofset sana DST'nin geçerli olup olmadığını, geçen yıl kuralın ne olduğunu veya gelecek yıl ne olacağını söylemez. Tarayıcılar IANA veritabanını (ICU/CLDR aracılığıyla) gönderir ve otomatik olarak günceller, böylece dönüşüm zamanla doğru kalır.</p>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>DST geçişleri belirsiz ve eksik zamanlar yaratır.</strong> Saat geri düştüğünde, 02:30 iki kez olur; ileri sıçradığında, 02:30 hiç olmaz. Araç varsayılan olarak standart zaman yorumunu seçer.</li>
+  <li><strong>Ofsetler sabit değildir.</strong> "CET" kışın UTC+1 ve yazın UTC+2'dir (CEST). Çıktı her zaman girdiğin tarih için gerçek ofseti gösterir, bu yüzden kısaltma yerine gösterilen ofsete güven.</li>
+  <li><strong>Ülke kısaltmaları dilim değildir.</strong> "EST" belirsizdir (ABD vs Avustralya); "IST" Hint, İrlanda veya İsrail anlamına gelebilir. Her zaman IANA dilimini seç, kısaltmayı değil.</li>
+  <li><strong>Tarihsel doğruluk</strong> modern çağ için iyidir ama çok eski tarihler için bozulur. 1970 öncesi timestamp'lar bazı tarayıcılarda yaklaştırılmış ofsetler kullanabilir.</li>
+  <li><strong>Tarihleri saklarken: her zaman UTC kullan.</strong> Gösterim zamanında çevir. Çıktıdaki UTC satırı veritabanına yazılacak kanonik değeri sana verir.</li>
 </ul>
 """,
     },

@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の QR コードジェネレーター。サイズ、前景／背景色、誤り訂正レベルをカスタマイズし、PNG または SVG でダウンロード可能。透かしはありません。",
         },
         "nl": {"name": "QR Code Generator", "tagline": "Genereer QR codes voor elke tekst, URL, Wi-Fi of vCard. Custom size, kleuren en error correction. Export PNG of SVG.", "description": "Gratis online QR code generator. Custom size, foreground/background-kleuren, error correction levels. Download als PNG of SVG. Geen watermerken."},
+        "tr": {"name": "QR Kod Üretici", "tagline": "Herhangi bir metin, URL, Wi-Fi veya vCard için QR kod üret. Özel boyut, renkler ve hata düzeltme. PNG veya SVG olarak dışa aktar.", "description": "Ücretsiz online QR kod üretici. Özel boyut, ön plan/arka plan renkleri, hata düzeltme seviyeleri. PNG veya SVG olarak indir. Filigran yok."},
     },
     "body": """
 <div class="tool-card">
@@ -246,6 +247,27 @@ document.addEventListener('DOMContentLoaded', () => { setTimeout(qrRender, 100);
   <li><strong>Lange content forceert een dichtere code.</strong> Als je een 200-karakter URL moet encoderen, is de resulterende code dicht en moeilijker van ver te scannen. Verkort via een redirect eerst als size telt.</li>
   <li><strong>SVG vs PNG.</strong> SVG schaalt zonder kwaliteitsverlies — best voor print of grote displays. PNG is universeel geaccepteerd maar pixelt als opgeschaald; export op de size die je zult gebruiken.</li>
   <li><strong>Wi-Fi-preset-formaat.</strong> <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;password&gt;;;</code> — moderne iOS/Android scannen en joinen automatisch; heel oude telefoons ondersteunen het misschien niet.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>QR kodları bir telefon kamerasının saniyenin bir kısmında okuyabileceği küçük URL'lerdir. Bir URL, bir Wi-Fi ağı, bir e-posta taslağı, bir telefon numarası veya herhangi bir kısa metni kodla — bir poster, kartvizit veya menüye bas, ve telefonu olan herkes yazmadan eyleme geçebilir. Bu üretici tamamen tarayıcında açık kaynaklı <a href="https://github.com/soldair/node-qrcode" rel="noopener">qrcode</a> kütüphanesini kullanır. Giriş metnin sayfayı asla terk etmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir slayt, poster, kartvizit veya ambalaj eki üzerinde URL paylaşma.</li>
+  <li>Misafirlerin parola yazmadan Wi-Fi'ne katılmasına izin verme (Wi-Fi preset'ini kullan).</li>
+  <li>Fiziksel alanlardaki tabelalara "ödemek / rezervasyon / sipariş için tara" koyma.</li>
+  <li>Alıcının telefonunda anında kişi kartı içe aktarımı için bir vCard kodlama.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Hata düzeltme yoğunlukla değiş tokuş yapar.</strong> Daha yüksek seviyeler (Q, H) çiziklere ve üzerine yerleştirilmiş logolara dayanır; daha düşük seviyeler (L, M) kodu küçük ve tarama için daha hızlı tutar. Logo yerleştirmeyi planlıyorsan <strong>H</strong> kullan, aksi takdirde <strong>M</strong> makul varsayılandır.</li>
+  <li><strong>Kontrast önemlidir.</strong> Düşük ön plan/arka plan kontrastlı stilize QR kodları sıklıkla güzel görünür ama kötü ışıkta kötü taranır. Göndermeden önce basılı/ekran çıktısından tarayarak test et.</li>
+  <li><strong>Uzun içerik daha yoğun bir kod zorlar.</strong> 200 karakterlik bir URL kodlamak zorundaysan, sonuç kod yoğundur ve uzaktan taranması daha zordur. Boyut önemliyse önce bir yönlendirme ile kısalt.</li>
+  <li><strong>SVG - PNG.</strong> SVG kalite kaybı olmadan ölçeklenir — baskı veya büyük ekranlar için en iyisi. PNG evrensel olarak kabul edilir ama ölçeklendirildiğinde pikselleşir; kullanacağın boyutta dışa aktar.</li>
+  <li><strong>Wi-Fi preset biçimi.</strong> <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;parola&gt;;;</code> — modern iOS/Android tarar ve otomatik katılır; çok eski telefonlar desteklemeyebilir.</li>
 </ul>
 """,
     },

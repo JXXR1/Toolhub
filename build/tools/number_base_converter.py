@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の進数変換ツール。2 進、8 進、10 進、16 進、そして 2〜36 の任意の基数を相互変換できます。負数や大きな整数も BigInt によって扱えます。",
         },
         "nl": {"name": "Getalstelsel-converter", "tagline": "Converteer tussen binair, octaal, decimaal, hexadecimaal en elk grondtal van 2 tot 36.", "description": "Gratis online converter voor getalstelsels. Converteer tussen binair, octaal, decimaal, hex en willekeurige grondtallen 2-36. Verwerkt negatieve getallen en grote integers via BigInt."},
+        "tr": {"name": "Sayı Tabanı Dönüştürücü", "tagline": "İkilik, sekizlik, ondalık, onaltılık ve 2'den 36'ya kadar her taban arasında dönüştür.", "description": "Ücretsiz online sayı tabanı dönüştürücü. İkilik, sekizlik, ondalık, hex ve 2-36 arası rastgele tabanlar arasında dönüştür. BigInt üzerinden negatif sayıları ve büyük tamsayıları işler."},
     },
     "body": """
 <div class="tool-card">
@@ -285,6 +286,34 @@ document.addEventListener('DOMContentLoaded', nbRun);
   <li><strong>Grote getallen verliezen hier geen precisie.</strong> JavaScript <code>Number</code> kapt af bij 2<sup>53</sup>; deze tool gebruikt <code>BigInt</code>, dus 64-bit integers, grote hashes en crypto-waarden round-trip allemaal exact.</li>
   <li><strong>Verwar grondtal niet met case.</strong> Base-16 letters kunnen upper- of lowercase zijn; de tool accepteert beide en geeft uppercase. Base-32 / base-36 outputs zijn per conventie lowercase.</li>
   <li><strong>Leading zeros worden gedropt.</strong> <code>0x000F</code> wordt <code>F</code>. Als je een fixed-width hex nodig hebt (bijv. voor byte-representaties), pad daarna in je code.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Sayılar tabandan bağımsız aynı sayıdır — <code>255</code>, <code>0xff</code>, <code>0b11111111</code> ve <code>0o377</code> aynıdır. Ama okuduğun veya yazdığın taban, bellek düzenleri arasında çeviri yaparken, renk kodlarını parse ederken, bit alanlarını çözerken veya sadece bir debugger'dan hex okurken önemlidir. Bu araç ikilik, sekizlik, ondalık, onaltılık ve 2'den 36'ya kadar herhangi bir taban arasında dönüşür, büyük sayılarda hassasiyet kaybetmemen için altta BigInt kullanır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir stack trace'ten hex değeri okuyup ondalıkta ne olduğunu bulma.</li>
+  <li>CSS rengi <code>0xff8800</code>'ı bir RGB üçlüsüne veya tersine dönüştürme.</li>
+  <li>Hangi bit'lerin set edildiğini görmek için ikilikte bir bitmask veya flag tamsayısını inceleme.</li>
+  <li>Base-36 kısa ID'ler ile ondalık sayaçlar arasında çeviri yapma.</li>
+</ul>
+
+<h3>Tanınan önekler</h3>
+<ul>
+  <li>Hex: <code>0x</code>, <code>0X</code>, <code>#</code></li>
+  <li>İkilik: <code>0b</code>, <code>0B</code></li>
+  <li>Sekizlik: <code>0o</code>, <code>0O</code></li>
+  <li>Alt çizgi rakam gruplaması: <code>1_000_000</code></li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Negatif sayılar işaret önekli, two's complement değil.</strong> <code>-128</code> ikilikte <code>-10000000</code> olarak gösterilir, <code>10000000</code> değil. Çoğu dil keyfi-hassasiyet tamsayıları için aynı şekilde gösterir.</li>
+  <li><strong>Burada büyük sayılar hassasiyet kaybetmez.</strong> JavaScript <code>Number</code> 2<sup>53</sup>'te tepe yapar; bu araç <code>BigInt</code> kullanır, bu nedenle 64-bit tamsayılar, büyük hash'ler ve kripto değerleri hepsi tam round-trip yapar.</li>
+  <li><strong>Tabanla büyük/küçük harfi karıştırma.</strong> Base-16 harfler büyük veya küçük olabilir; araç ikisini de kabul eder ve büyük harf yayınlar. Base-32 / base-36 çıktıları konvansiyon gereği küçüktür.</li>
+  <li><strong>Baştaki sıfırlar düşürülür.</strong> <code>0x000F</code> <code>F</code> olur. Sabit genişlikli hex (örn. byte temsilleri için) gerekiyorsa, kodunda sonradan pad et.</li>
 </ul>
 """,
     },

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Kalkulator Procentów", "tagline": "Pięć kalkulatorów procentów w jednym: ile %, ile to %, zmiana, wzrost/spadek i napiwek/podatek.", "description": "Darmowy online kalkulator procentów. Policz X% z Y, ile % X stanowi Y, zmianę procentową, procentowy wzrost/spadek oraz wartość napiwku albo podatku."},
         "ja": {"name": "パーセンテージ計算機", "tagline": "5 つの百分率計算をひとつに：%、何%、増加／減少、変化、チップ／税。", "description": "オンライン無料のパーセンテージ計算機。Y の X%、X は Y の何 %、パーセンテージ変化、増加／減少、チップや税の金額を計算できます。"},
         "nl": {"name": "Percentage-calculator", "tagline": "Vijf percentage-calculators in één: of, hoeveel %, increase/decrease, change en tip/tax.", "description": "Gratis online percentage-calculator. Bereken X% van Y, welk % is X van Y, percentage-wijziging, percentage-verhoging/-verlaging en tip- of belastingbedragen."},
+        "tr": {"name": "Yüzde Hesaplayıcı", "tagline": "Tek araçta beş yüzde hesaplayıcı: of, what %, artış/azalış, değişim ve tip/vergi.", "description": "Ücretsiz online yüzde hesaplayıcı. Y'nin X%'si, X Y'nin yüzde kaçı, yüzde değişim, yüzde artış/azalış ve tip veya vergi tutarlarını hesapla."},
     },
     "body": """
 <div class="tool-card">
@@ -192,6 +193,27 @@ document.addEventListener('DOMContentLoaded', pcSwitch);
   <li><strong>Percentages stacken compounded.</strong> Een 20%-toename gevolgd door een 20%-afname brengt je niet terug naar het begin (1.20 × 0.80 = 0.96, een netto 4%-verlies). Voor sequentiële markups/discounts bereken je elke stap.</li>
   <li><strong>Fooi op pre-tax vs post-tax.</strong> Conventie varieert per land en venue. De tool berekent het percentage van de waarde die je invoert — kies welke waarde je daadwerkelijk wil als basis.</li>
   <li><strong>Afronding.</strong> Output is afgerond op 6 decimalen en daarna getrimd; als je legal/accounting-precisie nodig hebt (banker's rounding, currency-specifieke regels), doe die stap in je domain-laag, niet hier.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Günlük olarak karşılaşılan ve karıştırması kolay altı farklı "yüzde" hesaplaması: Y'nin X%'si ne kadar? X, Y'nin yüzde kaçı? İki değer arasındaki değişim nedir? Bir markup veya indirim uygulansın mı? Tip veya vergi? Her biri biraz farklı bir formüldür ve karıştırmak yanlış faturalar, yanlış indirimler ve utanç verici incelemelere yol açar. Bu araç altısını yan yana, formülü açıkça gösterilerek çalıştırır, böylece doğru olanı seçip matematiği iki kez kontrol edebilirsin.</p>
+
+<h3>Her mod ne yapar</h3>
+<ul>
+  <li><strong>Y'nin X%'si ne</strong> — indirimler, komisyonlar, bir totalin yüzdesi için. <em>150'nin 20%'si → 30</em>.</li>
+  <li><strong>X, Y'nin yüzde kaçı</strong> — "skor / max" tarzı oranlar için. <em>150'nin 30'u → 20%</em>.</li>
+  <li><strong>% değişim</strong> — işaretli: pozitif artış, negatif azalış. <em>100 → 125 = +25%</em>.</li>
+  <li><strong>Artış / Azalış</strong> — başlangıç değerine bir yüzde ayarlaması uygular.</li>
+  <li><strong>Tip / Vergi</strong> — bir hesabın üzerine yüzde eklemek için kolaylık.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Yüzde değişim simetrik değildir.</strong> 100 → 125 gitmek +25%; 125 → 100 gitmek −20%, −25% değil. Payda başlangıç değeridir ve her yönde farklıdır.</li>
+  <li><strong>Yüzdeleri üst üste koymak bileşik etki yapar.</strong> %20 artış ve ardından %20 azalış seni başlangıca döndürmez (1,20 × 0,80 = 0,96, net %4 kayıp). Sıralı markup'lar/indirimler için her adımı hesapla.</li>
+  <li><strong>Vergi öncesi - vergi sonrası tip.</strong> Konvansiyon ülke ve mekana göre değişir. Araç girdiğin değerin yüzdesini hesaplar — temel olarak hangi değeri istediğini seç.</li>
+  <li><strong>Yuvarlama.</strong> Çıktı 6 ondalığa yuvarlanır ve sonra kırpılır; yasal/muhasebe hassasiyeti gerekiyorsa (banker's yuvarlama, para birimine özgü kurallar), bu adımı burada değil domain katmanında yap.</li>
 </ul>
 """,
     },

@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Podgląd Tagów OG", "tagline": "Wklej meta tagi OG albo wpisz title/description/image — zobacz, jak share cardy wyglądają na Twitter/X, Facebook, LinkedIn i Discord.", "description": "Darmowy podgląd Open Graph tagów. Wklej swoje <meta> tagi albo po prostu wpisz title/description/image i zobacz, jak twój link wyrenderuje się w podglądach udostępnień na Twitter/X, Facebook, LinkedIn i Discord. Działa w całości w przeglądarce."},
         "ja": {"name": "OG タグプレビュー", "tagline": "OG メタタグを貼るか、タイトル／説明／画像を入力すると、Twitter/X、Facebook、LinkedIn、Discord のシェアカードを確認できます。", "description": "無料の Open Graph タグプレビュー。<meta> タグの貼り付けか、タイトル／説明／画像の入力で、リンクが Twitter/X、Facebook、LinkedIn、Discord でどう見えるかを確認できます。すべてブラウザ内で動作します。"},
         "nl": {"name": "OG Tag Preview", "tagline": "Plak OG meta tags of vul title/description/image — preview share cards zoals ze er op Twitter/X, Facebook, LinkedIn en Discord uitzien.", "description": "Gratis Open Graph tag preview. Plak je <meta>-tags of vul gewoon title/description/image in en zie hoe je link zal renderen in Twitter/X, Facebook, LinkedIn en Discord share-previews. Draait volledig in je browser."},
+        "tr": {"name": "OG Tag Önizleme", "tagline": "OG meta tag'lerini yapıştır veya title/description/image doldur — paylaşım kartlarını Twitter/X, Facebook, LinkedIn ve Discord'da nasıl görüneceği gibi önizle.", "description": "Ücretsiz Open Graph tag önizleme. <meta> tag'lerini yapıştır veya sadece title/description/image doldur ve linkinin Twitter/X, Facebook, LinkedIn ve Discord paylaşım önizlemelerinde nasıl görüneceğini gör. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -453,6 +454,40 @@ document.addEventListener('DOMContentLoaded', ogRender);
   <li><strong>Cache-invalidatie is echt.</strong> Zodra een platform je URL heeft gescraped, cached het de card. Gebruik de platform-debuggers om een re-scrape te forceren.</li>
   <li><strong>Title/description-lengte-limieten verschillen.</strong> Twitter/X clipt title rond 70 tekens; Facebook rond 88; LinkedIn rond 100. Zet de belangrijke woorden vooraan.</li>
   <li><strong>Discord prefereert <code>theme-color</code>.</strong> <code>&lt;meta name="theme-color" content="#xxxxxx"&gt;</code> toevoegen zet de linker rand-kleur op Discord embeds.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Twitter/X, Facebook, LinkedIn, Discord, Slack veya herhangi bir modern sohbet veya sosyal uygulamada bir link paylaştığında, link sayfa head'indeki <a href="https://ogp.me/" target="_blank" rel="noopener noreferrer">Open Graph</a> meta tag'lerine dayanarak bir "kart" — başlık, açıklama ve görsel — olarak açılır. Çeşitli platformlar bu kartları farklı render eder ve metni farklı uzunluklarda keser. Bu araç sana her platformda URL'i gerçekten paylaşmak zorunda kalmadan her birinde aynı içeriğin nasıl görüneceğinin yan yana önizlemelerini verir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>OG görselini veya kopyayı değiştirdin ve deploy etmeden önce doğru göründüğünü doğrulamak istiyorsun.</li>
+  <li>Bir hero görsel seçiyorsun ve odak noktasının 1.91:1 kırpmasından sağ çıkıp çıkmayacağını görmek istiyorsun.</li>
+  <li>Başlık/açıklama kopyasını yazıyorsun ve her platformun nerede keseceğini bilmek istiyorsun.</li>
+  <li>OG tag'i olmayan bir sayfayı miras aldın ve render edilen kartı önizleyerek bunları hazırlamak istiyorsun.</li>
+</ul>
+
+<h3>Minimum tag'ler</h3>
+<ul>
+  <li><code>&lt;meta property="og:title" content="…"&gt;</code></li>
+  <li><code>&lt;meta property="og:description" content="…"&gt;</code></li>
+  <li><code>&lt;meta property="og:image" content="https://…"&gt;</code> (mutlak URL, 1200×630 ideal)</li>
+  <li><code>&lt;meta property="og:url" content="https://…"&gt;</code></li>
+  <li><code>&lt;meta property="og:type" content="website"&gt;</code></li>
+  <li><code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code> (X/Twitter büyük-görsel stili için)</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Bu statik bir önizleme, canlı bir fetcher değil.</strong> Gerçek platformlar sayfanı kendi sunucularından kazır; gerçek sitenin farklı bir görseli varsa, bu araç bunu yakalamayacaktır.</li>
+  <li><strong>Görsel URL'leri mutlak olmalıdır.</strong> <code>/og.png</code> çalışmayacaktır — kazıyıcılar origin'ini bilmez.</li>
+  <li><strong>Görsel kamuya ulaşılabilir olmalıdır.</strong> Auth duvarları, referer gerektiren CDN'ler veya hot-link koruması seni bozuk bir kartla bırakacaktır.</li>
+  <li><strong>En-boy oranı önemlidir.</strong> 1.91:1 (1200×630 kanoniktir) her platformda iyi render olur. Kare veya portre kötü kırpılır.</li>
+  <li><strong>Dosya boyutu önemlidir.</strong> Bazı kazıyıcılar 8 MB üzerindeki görselleri reddeder; ilk yükü hızlı tutmak için &lt;1 MB hedefle.</li>
+  <li><strong>Cache geçersizleştirme gerçek.</strong> Bir platform URL'ini kazıdığında, kartı önbelleğe alır. Yeniden kazımayı zorlamak için platform debugger'larını kullan.</li>
+  <li><strong>Başlık/açıklama uzunluk sınırları değişir.</strong> Twitter/X başlığı ~70 karakterde, Facebook ~88'de, LinkedIn ~100'de keser. Önemli kelimeleri öne yükle.</li>
+  <li><strong>Discord <code>theme-color</code>'ı tercih eder.</strong> <code>&lt;meta name="theme-color" content="#xxxxxx"&gt;</code> eklemek Discord embed'lerindeki sol kenarlık rengini ayarlar.</li>
 </ul>
 """,
     },

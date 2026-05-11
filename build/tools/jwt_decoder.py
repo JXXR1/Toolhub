@@ -45,6 +45,7 @@ TOOL = {
             "description": "オンライン無料の JSON Web Token デコーダー。ヘッダーとペイロードのデコード、有効期限のタイムスタンプ確認、署名の表示まで対応。完全にオフライン（ブラウザ内）で動作します。",
         },
         "nl": {"name": "JWT Decoder", "tagline": "Plak een JWT om header en payload te decoderen. Alle decodering draait in je browser — tokens verlaten de pagina nooit.", "description": "Gratis online JSON Web Token decoder. Decodeer header en payload, verifieer expiry-timestamps, inspecteer signature. Werkt volledig offline in je browser."},
+        "tr": {"name": "JWT Decoder", "tagline": "JWT'yi yapıştır, header ve payload'ı çöz. Tüm decode tarayıcında çalışır — token'lar sayfayı asla terk etmez.", "description": "Ücretsiz online JSON Web Token decoder. Header ve payload'ı çöz, expiry timestamp'leri doğrula, imzayı incele. Tarayıcında tamamen çevrimdışı çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -279,6 +280,36 @@ document.addEventListener('DOMContentLoaded', jwtDecode);
   <li><strong>Plak production-tokens nergens.</strong> Iedereen met een live JWT kan de user impersoneren tot <code>exp</code>. De browser stuurt het vanaf deze tool niet door, maar extensies, screen-recordings en dev tools kunnen dat wel. Gebruik een fresh token uit een test-omgeving als je moet delen.</li>
   <li><strong><code>alg: none</code> tokens zijn een bekende aanvalsklasse.</strong> Als een header <code>alg: none</code> heeft en je library accepteert het, kunnen aanvallers tokens forgen. Wijs dit af op de server.</li>
   <li><strong>Time skew doet ertoe.</strong> Een token's <code>exp</code> wordt gecheckt tegen de klok van de verifier. Servers met drift falen tokens die hier valide lijken.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir JWT (JSON Web Token) nokta ile birleştirilmiş üç base64url-kodlanmış parçadır: <code>header.payload.signature</code>. Header ve payload, inceleyebileceğin JSON nesneleridir; imza, token'ın verildikten sonra değiştirilmediğini kanıtlar. Bu araç ilk iki kısmı çözer, böylece base64 gürültüsü olmadan içinde ne olduğunu görebilirsin — auth akışları, süresi dolmuş oturumlar veya "tam olarak hangi kullanıcı için bu token?" debug ederken kullanışlıdır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Başarısız olan bir OAuth / OpenID Connect girişini debug etme — access veya ID token'ı yapıştır, IdP'nin gerçekte ne verdiğini gör.</li>
+  <li>Token süresinin dolduğunu doğrulama: araç <code>exp</code>'i gerçek bir tarih olarak çözer ve geçmişteyse işaretler.</li>
+  <li>Bir backend'in iddia ettiği özel claim'lerin (roller, izinler, tenant ID'ler) sanity check'i.</li>
+  <li>Kütüphanenin "geçersiz olarak reddettiği" bir token'ı okuyarak sorunun yapısal mı, expiry mi yoksa imza mı olduğunu görme.</li>
+</ul>
+
+<h3>Yaygın claim'ler</h3>
+<ul>
+  <li><code>iss</code> — issuer (token'ı kim oluşturdu)</li>
+  <li><code>sub</code> — subject (temsil ettiği kullanıcı/hesap)</li>
+  <li><code>aud</code> — audience (kim kabul etmeli)</li>
+  <li><code>exp</code> — expiry (Unix timestamp)</li>
+  <li><code>iat</code> — issued-at (Unix timestamp)</li>
+  <li><code>nbf</code> — not-valid-before (Unix timestamp)</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Decoded bir JWT doğrulanmış bir JWT DEĞİLDİR.</strong> İmza burada kontrol edilmez — bu, veren tarafın açık anahtarını (RSA/EC) veya paylaşılan secret'ı (HMAC) gerektirir. Çözülmüş içerik sana token'ın ne <em>dediğini</em> söyler, ona güvenip güvenmemen gerektiğini değil. Claim'leri onurlandırmadan önce sunucuda her zaman doğrula.</li>
+  <li><strong>Production token'larını hiçbir yere yapıştırma.</strong> Canlı bir JWT olan herkes <code>exp</code>'e kadar kullanıcıyı taklit edebilir. Tarayıcı bu araçtan iletmez ama uzantılar, ekran kayıtları ve dev tools yapabilir. Paylaşman gerekiyorsa test ortamından taze bir token kullan.</li>
+  <li><strong><code>alg: none</code> token'ları bilinen bir saldırı sınıfıdır.</strong> Bir header'da <code>alg: none</code> varsa ve kütüphanen kabul ediyorsa, saldırganlar token sahteleyebilir. Sunucuda reddet.</li>
+  <li><strong>Zaman kayması önemlidir.</strong> Bir token'ın <code>exp</code>'i doğrulayıcının saatine karşı kontrol edilir. Kayan saatler burada geçerli görünen token'ları başarısız yapar.</li>
 </ul>
 """,
     },

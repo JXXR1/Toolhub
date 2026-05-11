@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Picker Emoji", "tagline": "Paleta emoji z wyszukiwaniem po nazwie i słowach kluczowych. Kliknij dowolne emoji, aby skopiować. Kategorie: smileys, zwierzęta, jedzenie, podróże, obiekty, symbole, flagi.", "description": "Darmowy picker emoji z wyszukiwaniem po słowach kluczowych. Kliknij, aby skopiować dowolne emoji. Wyselekcjonowany zestaw: smileys, ludzie, zwierzęta, jedzenie, podróże, obiekty, symbole i flagi. Czysty Unicode — działa wszędzie."},
         "ja": {"name": "絵文字ピッカー", "tagline": "名前とキーワードで検索できる絵文字パレット。クリックでコピー。カテゴリ：スマイリー、動物、食べ物、旅行、オブジェクト、記号、国旗。", "description": "キーワード検索付きの無料絵文字ピッカー。クリックして絵文字をコピーできます。スマイリー、人物、動物、食べ物、旅行、オブジェクト、記号、国旗をカバーする厳選セットです。Unicode のみなのでどこでも動作します。"},
         "nl": {"name": "Emoji-picker", "tagline": "Doorzoekbaar emoji-palet op naam en keyword. Klik een emoji om te kopiëren. Categorieën: smileys, dieren, eten, reizen, objecten, symbolen, vlaggen.", "description": "Gratis emoji-picker met keyword-search. Klik om elke emoji te kopiëren. Gecureerde set met smileys, mensen, dieren, eten, reizen, objecten, symbolen en vlaggen. Pure Unicode — werkt overal."},
+        "tr": {"name": "Emoji Seçici", "tagline": "Ad ve anahtar kelimeye göre aranabilir emoji paleti. Kopyalamak için herhangi bir emojiye tıkla. Kategoriler: gülümseyenler, hayvanlar, yiyecekler, seyahat, nesneler, semboller, bayraklar.", "description": "Anahtar kelime aramalı ücretsiz emoji seçici. Herhangi bir emojiyi kopyalamak için tıkla. Gülümseyenler, insanlar, hayvanlar, yiyecekler, seyahat, nesneler, semboller ve bayrakları kapsayan derli toplu set. Saf Unicode — her yerde çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -476,6 +477,30 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Deze tool is gecureerd, niet uitputtend.</strong> Unicode 15 heeft 3.664 emoji inclusief honderden huidstint- en gender-varianten. De picker focust op de ~600 die je waarschijnlijk wil; voor de volle lijst zie Unicode's emoji-data of je OS-picker.</li>
   <li><strong>Sommige karakters lijken op emoji maar renderen als tekst.</strong> De "variation selector" (U+FE0F) zegt tegen de renderer "teken dit als emoji". Zonder dat rendert ☂ misschien als gewone tekst in plaats van 🌂. De tool voegt de selectors toe waar nodig.</li>
   <li><strong>Clipboard-ondersteuning varieert.</strong> Sommige browsers' clipboard-API vereist een user gesture (de klik doet dat), maar een permission denial faalt stil. Als kopiëren niet werkt, gebruik dan de toetsenbord-shortcut om vanuit de adresbalk te kopiëren.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>İşletim sistemlerinin hepsi emoji seçici gönderir (Windows'ta Win+., macOS'ta Cmd+Ctrl+Space, telefonlarda klavye), ama tutarsız, bazen gizli ve sıklıkla yavaştırlar. Bu araç sana kategoriye göre düzenlenmiş ve anahtar kelimeyle aranabilir, en çok kullanılan emojilerin derli toplu ızgarasını verir. Emojiyi panoya kopyalamak için herhangi bir tile'a tıkla. Son kopyalanan emojiler ziyaretler arasında tarayıcı yerel deposunda hatırlanır — sunucuya hiçbir şey gönderilmez.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Hızlı OS seviyesi emoji kısayolu olmayan bir masaüstündesin.</li>
+  <li>OS seçicinin sunduğundan daha geniş anahtar kelime araması istiyorsun.</li>
+  <li>Yerel seçicisi olmayan uzak masaüstü veya eski sistem kullanıyorsun.</li>
+  <li>IME'nin kabul etmediği bir metin alanına yapıştırmak için emoji gerekiyor.</li>
+</ul>
+
+<h3>Render nasıl çalışır</h3>
+<p>Bir emoji sadece bir veya daha fazla Unicode code point'tir. <em>Nasıl</em> göründüğü tarayıcı/OS'in seçtiği fonta bağlıdır: Apple'ın emoji'leri Google'ın Noto'sundan, Microsoft'un Segoe UI Emoji'sinden ve Twitter'ın Twemoji'sinden farklıdır. Byte'lar aynıdır — resim yereldir. Bir emoji kare veya fallback "desteklenmiyor" olarak gösteriliyorsa, sistem fontunda bunun için glyph yok; OS güncellemek veya Noto Color Emoji gibi bir font yüklemek düzeltir.</p>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Cilt tonları ve aile/meslek varyantları dizilerdir.</strong> 👨‍🍳 "adam" + ZWJ + "yemek pişirme"dir — beş code point. Bazı sistemler diziyi desteklemiyorsa bileşenleri ayrı ayrı görüntüler.</li>
+  <li><strong>Bayraklar bölgesel göstergelerdir.</strong> 🇬🇧 "🇬" + "🇧"dir — iki bölgesel-gösterge harfi. Topraklar için diziler (İskoçya, Texas) ek tag karakterleri gerektirir ve her sistemde render olmayabilir.</li>
+  <li><strong>Bu araç derli toplu, kapsamlı değildir.</strong> Unicode 15'te yüzlerce cilt tonu ve cinsiyet varyantı dahil 3.664 emoji vardır. Seçici muhtemelen isteyeceğin ~600'e odaklanır; tam liste için Unicode'un emoji verisini veya OS seçicini gör.</li>
+  <li><strong>Bazı karakterler emoji gibi görünür ama metin olarak render olur.</strong> "Variation selector" (U+FE0F) renderer'a "bunu emoji olarak çiz" der. Onsuz, ☂ düz metin olarak render olabilir 🌂 yerine. Araç gerekli yerlerde seçicileri içerir.</li>
+  <li><strong>Pano desteği değişir.</strong> Bazı tarayıcıların pano API'si kullanıcı hareketi gerektirir (tıklama bunu yapar), ama izin reddi sessizce başarısız olur.</li>
 </ul>
 """,
     },

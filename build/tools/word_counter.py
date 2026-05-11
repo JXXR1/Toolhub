@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Licznik Słów", "tagline": "Licz słowa, znaki, zdania, akapity i estymuj czas czytania + mówienia w trakcie pisania.", "description": "Darmowy online licznik słów. Liczenie na żywo słów, znaków (ze spacjami i bez), zdań, akapitów, sylab plus estymacja czasu czytania i mówienia."},
         "ja": {"name": "ワードカウンター", "tagline": "単語数・文字数・文数・段落数を数え、入力中に読了時間と発話時間を概算。", "description": "オンライン無料のワードカウンター。単語数、文字数（スペース含む／含まない）、文数、段落数、音節数のライブカウントに加え、読了時間と発話時間の概算を提供します。"},
         "nl": {"name": "Woordenteller", "tagline": "Tel woorden, karakters, zinnen, paragrafen en schat lees- + spreektijd terwijl je typt.", "description": "Gratis online woordenteller. Live tellingen voor woorden, karakters (met en zonder spaties), zinnen, paragrafen, lettergrepen, plus lees- en spreektijd-schattingen."},
+        "tr": {"name": "Kelime Sayacı", "tagline": "Kelimeleri, karakterleri, cümleleri, paragrafları say ve yazdıkça okuma + konuşma süresini tahmin et.", "description": "Ücretsiz online kelime sayacı. Kelimeler, karakterler (boşluklu ve boşluksuz), cümleler, paragraflar, heceler için canlı sayım, ayrıca okuma ve konuşma süresi tahminleri."},
     },
     "body": """
 <div class="tool-card">
@@ -256,6 +257,39 @@ document.addEventListener('DOMContentLoaded', wcRun);
   <li><strong>Woord-counts variëren per tool.</strong> Word, Google Docs en journal-submission systems kunnen een paar procent verschillen — ze handelen hyphens, em-dashes en getallen verschillend af. Als een harde limit telt, tel in dezelfde tool die de gatekeeper gebruikt.</li>
   <li><strong>"Meest frequente" filtert geen stop words.</strong> "de" en "een" staan bijna altijd bovenaan. Kijk naar de langere entries voor daadwerkelijk signaal.</li>
   <li><strong>Leestijd-schattingen zijn persoonlijk.</strong> 250 wpm is de mediaan; technische content loopt trager, fictie sneller. Behandel het getal als plannings-leidraad, geen voorspelling.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Kelime ve karakter saymak elle sıkıcı ve hata yapmaya açıktır, ama sayılar her zaman önemlidir: tweet sınırları, SMS segmentleri, deneme kelime sayıları, SEO meta açıklamalar, dergi gönderim uzunlukları. Bu araç sen yazdıkça canlı sayımlar verir — kelimeler, karakterler (boşluklu ve boşluksuz), cümleler, paragraflar, satırlar — artı okuma ve konuşma süresi tahminleri ve en sık geçen beş kelime için hızlı bir kelime frekansı geçişi.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>280 karakterlik bir X/Twitter sınırına, 160 karakterlik bir SMS'e, 155 karakterlik bir SEO meta açıklamaya veya 100 kelimelik bir LinkedIn intro'suna ulaşma.</li>
+  <li>Bir deneme, blog gönderisi, özet veya hibe başvurusunu sert sınıra karşı bütçeleme.</li>
+  <li>Bir script'in yüksek sesle okunması ne kadar sürer tahmin etme (podcast'ler, sunumlar, voice-over'lar).</li>
+  <li>Gönderimden önce "en sık" listesine bakarak çok kullanılan kelimeleri tespit etme.</li>
+  <li>Bir çevirinin kaynakla kabaca aynı uzunlukta gelip gelmediğini kontrol etme.</li>
+</ul>
+
+<h3>Her sayı ne anlama gelir</h3>
+<ul>
+  <li><strong>Kelimeler</strong> — boşlukla ayrılmış boşluk olmayan karakterler grupları. "Twenty-one" tek kelime olarak sayılır; "twenty one" iki olarak sayılır.</li>
+  <li><strong>Karakterler</strong> vs <strong>karakterler (boşluksuz)</strong> — ikisi de Unicode code point'lerini sayar, byte değil. Bir emoji burada 1–2 "karakter" olabilir ama saklandığında daha fazla byte.</li>
+  <li><strong>Cümleler</strong> — <code>.</code>, <code>!</code> veya <code>?</code> ile biten segmentler (veya metnin sonu). Sezgiseldir, sık yapılan hatalara bak.</li>
+  <li><strong>Paragraflar</strong> — boş satırlarla ayrılır.</li>
+  <li><strong>Okuma süresi</strong> 250 wpm varsayar (sessiz yetişkin okuması).</li>
+  <li><strong>Konuşma süresi</strong> 130 wpm varsayar (tipik konuşma temposu; haber okuyucular daha hızlı, sesli kitaplar daha yavaş gider).</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Cümle tespiti naiftir.</strong> "Mr.", "U.S.", "e.g.", "3.14" ve üç nokta cümle sayısını şişirebilir. Rakam kullanışlı bir tahmindir, garanti değil.</li>
+  <li><strong>Twitter/X karakterleri değil, code point'leri sayar.</strong> Bayrak emojisi (🇹🇷) 2 code point'tir ama tek sembol olarak render olur — Twitter bunu 2 karakter olarak ele alır. Bu araç bunu eşleştirir.</li>
+  <li><strong>SMS karakter sınırları kodlamaya bağlıdır.</strong> Düz ASCII segment başına 160 karakter sığar; GSM olmayan bir karakter (em dash, smart quote, aksanlı harf) eklediğinde, tüm mesaj UCS-2'ye geçer ve sınır 70'e düşer. Araç GSM sınırını raporlar; gerçek maliyet için sağlayıcının davranışını kontrol et.</li>
+  <li><strong>Kelime sayıları araca göre değişir.</strong> Word, Google Docs ve dergi gönderim sistemleri birkaç yüzde anlaşmazlık çıkarabilir — tireler, em dash'ler ve sayıları farklı ele alırlar. Sert sınır önemliyse, geçit bekçisinin kullandığı aynı araçta say.</li>
+  <li><strong>"En sık" stop word'leri filtrelemez.</strong> "the" ve "a" neredeyse her zaman listenin başında olur. Gerçek sinyal için daha uzun girdilere bak.</li>
+  <li><strong>Okuma süresi tahminleri kişiseldir.</strong> 250 wpm medyandır; teknik içerik daha yavaş, kurgu daha hızlı gider. Sayıyı bir tahmin değil, bir planlama rehberi olarak ele al.</li>
 </ul>
 """,
     },

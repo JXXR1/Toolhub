@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Konwerter Rozmiaru Plików", "tagline": "Konwertuj między bajtami, KB, MB, GB, TB a binarnymi KiB, MiB, GiB, TiB. Decimal vs binary jasno rozdzielone.", "description": "Darmowy konwerter jednostek rozmiaru pliku. Przelicz dowolną liczbę bajtów między jednostkami dziesiętnymi (B, KB, MB, GB, TB, PB) i binarnymi IEC (KiB, MiB, GiB, TiB, PiB). Zobacz obie naraz, z dokładnym rozróżnieniem."},
         "ja": {"name": "ファイルサイズコンバーター", "tagline": "バイト、KB、MB、GB、TB と、バイナリ系の KiB、MiB、GiB、TiB を相互変換。10 進と 2 進を明確に区別。", "description": "無料のファイルサイズ単位変換ツール。任意のバイト値を、10 進系単位（B、KB、MB、GB、TB、PB）と IEC バイナリ単位（KiB、MiB、GiB、TiB、PiB）の間で変換し、両方を同時に表示します。違いを正確に把握できます。"},
         "nl": {"name": "Bestandsgrootte-converter", "tagline": "Converteer tussen bytes, KB, MB, GB, TB en de binaire KiB, MiB, GiB, TiB. Decimaal vs binair duidelijk gescheiden.", "description": "Gratis converter voor bestandsgrootte-units. Converteer elk aantal bytes tussen decimale units (B, KB, MB, GB, TB, PB) en IEC binaire units (KiB, MiB, GiB, TiB, PiB). Zie beide tegelijk, met het exacte onderscheid."},
+        "tr": {"name": "Dosya Boyutu Dönüştürücü", "tagline": "byte, KB, MB, GB, TB ve ikilik KiB, MiB, GiB, TiB arasında dönüştür. Ondalık - ikilik ayrımı net.", "description": "Ücretsiz dosya boyutu birim dönüştürücü. Herhangi bir byte sayısını ondalık birimler (B, KB, MB, GB, TB, PB) ile IEC ikilik birimleri (KiB, MiB, GiB, TiB, PiB) arasında çevir. İkisini birden, kesin ayrımıyla gör."},
     },
     "body": """
 <div class="tool-card">
@@ -321,6 +322,33 @@ document.addEventListener('DOMContentLoaded', fsRun);
   <li><strong>Netwerksnelheid is in bits, geen bytes.</strong> 100 Mbps = 100 megabit per seconde = 12,5 MB/s piek. Je "100 Mbit glasvezel" downloadt geen 100 MB file in één seconde.</li>
   <li><strong>Sommige tools zijn inconsistent.</strong> macOS Finder schakelde in 10.6 van binair (met KB-labels) naar decimaal, en bleef daar grotendeels. Windows Explorer gebruikt nog steeds binair met KB-labels — verwarrend maar ongewijzigd.</li>
   <li><strong>Browsers' <code>Content-Length</code> is bytes.</strong> Altijd exact, geen SI/IEC-ambiguïteit.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>"4 GB ne kadar büyük?" kime sorduğuna bağlıdır. Sabit disk üreticileri, ağ mühendisleri ve SI standartlarını izleyenler 4.000.000.000 byte (1000'in kuvvetleri) anlamına gelir. İşletim sistemleri, RAM modülleri ve çoğu dosya yöneticisi tarihsel olarak 4.294.967.296 byte (1024'ün kuvvetleri) anlamına geliyordu. İki sayı gigabyte ölçeğinde %7, terabyte ölçeğinde %10 farklıdır — "1 TB"'lık bir sürücü bilgisayarında "931 GiB" olarak göründüğünde aldatılmış hissetmek için yeterli. Bu araç her iki sistem arasında dönüştürür, böylece her zaman hangisine baktığını bilirsin.</p>
+
+<h3>İki sistem</h3>
+<ul>
+  <li><strong>SI / ondalık</strong> — KB, MB, GB, TB. <code>1 KB = 1.000 byte</code>. Depolama üreticileri, ağ hızları (Mbps, Gbps) ve 1960'tan beri SI standardı tarafından kullanılır.</li>
+  <li><strong>IEC / ikilik</strong> — KiB, MiB, GiB, TiB. <code>1 KiB = 1.024 byte</code>. IEC bunları belirsizliği gidermek için 1998'de tanıttı. Linux <code>du</code> <code>-h</code> ile bunları kullanır, bellek için macOS Finder de öyle.</li>
+</ul>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Yedek, upload veya Docker imajını boyutlandırma ve bir aracın raporladığıyla eşleştirme.</li>
+  <li>"150 Mbps" indirme hızını MB/s'ye dönüştürme (8'e böl — bit'ten byte'a).</li>
+  <li>Bir sağlayıcı GB, diğeri GiB belirttiğinde bulut depolama maliyetini tahmin etme.</li>
+  <li>"1 GB" e-postanın diskte aslında ne kadar olduğunu bulma.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Sabit diskler ondalık kullanır.</strong> "1 TB" sürücü 1.000.000.000.000 byte ≈ 931 GiB tutar. OS yalan söylemiyor — pazarlama daha küçük birim kullanıyor.</li>
+  <li><strong>RAM ikilik kullanır.</strong> "8 GB RAM" neredeyse her zaman 8 GiB (8.589.934.592 byte)'dır. RAM ikinin kuvvetlerinde inşa edilir.</li>
+  <li><strong>Ağ hızı bit'tir, byte değil.</strong> 100 Mbps = saniyede 100 megabit = tepe 12,5 MB/s. "100 Mbit fiber"in bir saniyede 100 MB dosya indirmez.</li>
+  <li><strong>Bazı araçlar tutarsızdır.</strong> macOS Finder 10.6'da ikilikten (KB etiketleri ile) ondalığa geçti, sonra çoğunlukla orada kaldı. Windows Explorer hâlâ KB etiketleri ile ikilik kullanır — kafa karıştırıcı ama değişmemiş.</li>
+  <li><strong>Tarayıcıların <code>Content-Length</code>'i byte'tır.</strong> Her zaman kesin, SI/IEC belirsizliği yok.</li>
 </ul>
 """,
     },

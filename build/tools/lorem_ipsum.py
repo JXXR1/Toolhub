@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Generator Lorem Ipsum", "tagline": "Generuj akapity, zdania, słowa albo elementy listy tekstu placeholder po łacinie. Konfigurowalny rozmiar i fraza otwierająca.", "description": "Darmowy generator Lorem Ipsum. Buduj akapity, zdania, słowa albo listy HTML do mockupów i komp designerskich. Opcjonalna klasyczna otwarka 'Lorem ipsum dolor sit amet…'."},
         "ja": {"name": "Lorem Ipsum ジェネレーター", "tagline": "段落・文・単語・リスト項目の単位でラテン語のプレースホルダーテキストを生成。長さと冒頭フレーズを設定可能。", "description": "無料の Lorem Ipsum ジェネレーター。モックアップやデザインカンプ用に、段落・文・単語・HTML リストを生成できます。古典的な「Lorem ipsum dolor sit amet…」で始める設定もオプションで利用可能です。"},
         "nl": {"name": "Lorem Ipsum Generator", "tagline": "Genereer paragrafen, zinnen, woorden of list items van placeholder Latijnse tekst. Configureerbare lengte en startfrase.", "description": "Gratis Lorem Ipsum-generator. Bouw paragrafen, zinnen, woorden of HTML-lijsten voor mockups en design comps. Optionele klassieke 'Lorem ipsum dolor sit amet…'-opener."},
+        "tr": {"name": "Lorem Ipsum Üretici", "tagline": "Placeholder Latince metnin paragraflarını, cümlelerini, kelimelerini veya liste öğelerini üret. Ayarlanabilir uzunluk ve başlangıç ibaresi.", "description": "Ücretsiz Lorem Ipsum üretici. Mockup ve tasarım kompozisyonları için paragraflar, cümleler, kelimeler veya HTML listeleri kur. Opsiyonel klasik 'Lorem ipsum dolor sit amet…' başlangıcı."},
     },
     "body": """
 <div class="tool-card">
@@ -215,6 +216,26 @@ document.addEventListener('DOMContentLoaded', liRun);
   <li><strong>Echte copy is korter of langer dan placeholder.</strong> Echte headlines zijn punchier. Echte body-copy varieert wild. Een layout die met lorem ipsum gebalanceerd lijkt, kan met de daadwerkelijke content uit elkaar vallen; verifieer met echte tekst voor sign-off.</li>
   <li><strong>Internationalisatie onthult wat lorem verbergt.</strong> Designs die alleen met Latijnse filler getest zijn, breken vaak met Duitse samenstellingen of Arabische right-to-left layouts. Test met multilingual placeholders voor i18n-aware designs.</li>
   <li><strong>Conventie doet ertoe.</strong> De eerste paragraaf begint traditioneel met "Lorem ipsum dolor sit amet…" — designers herkennen dat als placeholder. Het uitschakelen kan betekenen dat iemand de swap mist.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Lorem ipsum, Cicero'nun <em>De Finibus Bonorum et Malorum</em>'undan (MÖ 45) türetilen karıştırılmış Latince'dir, karakter frekansları ve kelime uzunlukları gerçek nesirle kabaca eşleştiği ama dikkat dağıtacak kadar okunabilir olmadığı için 1500'lerden beri filler olarak kullanılır. Tasarımcılar beynin metin bloklarını <em>anlam</em> yerine <em>şekil</em> olarak işlemesi için kullanır — tipografiyi, layout'u veya sayfa ritmini değerlendirirken tam olarak istediğin şey.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li><strong>Mockup'lar</strong> — "kelimeler önemli değil, layout önemli" için placeholder.</li>
+  <li><strong>Tasarım comp'ları</strong> — birden fazla boyutta wrapping, satır uzunlukları, font fallback'lerini test etme.</li>
+  <li><strong>CMS / template testi</strong> — gerçek kopya gelmeden önce alanları doldurma.</li>
+  <li><strong>Kapasite planlaması</strong> — bir kartın / önizlemenin / arama sonucunun uzun gövdeleri nasıl ele aldığının sanity check'i.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Production'a gönderme.</strong> Lorem ipsum birden fazla kez canlı yayınlandı çünkü kimse gerçek kopya ile değiştirmedi.</li>
+  <li><strong>Gerçek kopya placeholder'dan daha kısa veya uzundur.</strong> Gerçek başlıklar daha sıkıdır. Gerçek gövde kopyası vahşice değişir. Lorem ipsum ile dengeli görünen bir layout gerçek içerikle dağılabilir; sign-off'tan önce gerçek metinle doğrula.</li>
+  <li><strong>Internationalisation lorem'in gizlediğini ortaya çıkarır.</strong> Sadece Latince filler ile test edilen tasarımlar sıklıkla Almanca bileşik kelimeler veya Arapça sağdan sola düzenlerle bozulur.</li>
+  <li><strong>Gelenek önemlidir.</strong> İlk paragraf geleneksel olarak "Lorem ipsum dolor sit amet…" ile başlar — tasarımcılar bunu placeholder olarak tanır. Kapatmak değişimi birinin kaçırması anlamına gelebilir.</li>
 </ul>
 """,
     },

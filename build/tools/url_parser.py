@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Parser URL", "tagline": "Wklej dowolny URL — zobacz protocol, host, port, path, query parameters (zdekodowane), hash i origin rozłożone na części.", "description": "Darmowy online parser URL. Dekoduje dowolny URL na protocol, host, port, path, query string, hash i origin, z każdym query parameterem wyświetlonym zdekodowanym. Działa w całości w przeglądarce."},
         "ja": {"name": "URL パーサー", "tagline": "URL を貼ると、protocol・host・port・path・query パラメータ（デコード済み）・hash・origin に分解して表示。", "description": "オンライン無料の URL パーサー。任意の URL を protocol、host、port、path、query string、hash、origin に分解し、各クエリパラメータをデコード済みで表示します。すべてブラウザ内で動作します。"},
         "nl": {"name": "URL Parser", "tagline": "Plak elke URL — zie protocol, host, port, path, query parameters (gedecodeerd), hash en origin uitgesplitst.", "description": "Gratis online URL parser. Decodeert elke URL naar protocol, host, port, path, query string, hash en origin, met elke query-parameter gedecodeerd getoond. Draait volledig in je browser."},
+        "tr": {"name": "URL Parser", "tagline": "Herhangi bir URL'i yapıştır — protokolü, host'u, port'u, path'i, query parametrelerini (decoded), hash'i ve origin'i ayrıştırılmış olarak gör.", "description": "Ücretsiz online URL parser. Herhangi bir URL'i protokol, host, port, path, query string, hash ve origin'e çözer; her query parametresi decoded gösterilir. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -298,6 +299,29 @@ document.addEventListener('DOMContentLoaded', upRun);
   <li><strong>Punycode hostnames.</strong> <code>example.中国</code> wordt intern opgeslagen als <code>xn--fiqs8s</code>; <code>hostname</code> kan de ASCII-vorm tonen afhankelijk van de browser.</li>
   <li><strong>Origin is soms "null".</strong> Voor <code>file://</code>, <code>data:</code> of sandboxed contexts is origin opaque.</li>
   <li><strong>Dit is parsing, geen validatie.</strong> Een URL kan schoon parsen en nog steeds verkeerd zijn voor je applicatie (bijv. verkeerde host, missing path).</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir URL, tek bir blob olarak gözle gördüğün yedi iyi tanımlanmış parçaya (scheme, authority, host, port, path, query, fragment) sahip yapılandırılmış bir string'tir. Bir şey yanlış olduğunda — yanlış parametre, beklenmeyen port, fazla kodlanmış karakter — bunu ham string'de değil, parse edilmiş bir tabloda tespit etmek çok daha kolaydır. Bu araç tarayıcının yerel <code>URL</code> nesnesini kullanır, böylece parse JavaScript'in gördüğüyle tam eşleşir, sonra her query parametresini ayırır, böylece çözülmüş değerler ham formla birlikte görünür olur.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li><code>state</code> veya <code>code</code> yanlış görünen bir OAuth callback URL'ini debug etme.</li>
+  <li>Bir takip URL'ini (UTM tag'leri, click-token'lar) inceleme ve kodlanmış blob yerine gerçek değerleri görme.</li>
+  <li>Bir webhook URL'inin alıcı servisin beklediği şekilde parse olduğunu doğrulama — özellikle path ve herhangi bir query.</li>
+  <li>Bir deep link'in neden bir uygulamada çalışıp başkasında çalışmadığını anlama (port? scheme? authority?).</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Tekrarlanan query anahtarları gerçektir.</strong> <code>?a=1&amp;a=2</code> <code>a</code> için iki değerdir; sadece ilkini okuyan araçlar veriyi kaçırır. Parser her anahtar başına tüm değerleri gösterir.</li>
+  <li><strong>Fragment sunucuya asla ulaşmaz.</strong> <code>#</code>'dan sonraki her şey tarayıcıda kalır. Backend'in URL'e koyduğun veriyi görmüyorsa, gerçekten fragment'ta olup olmadığını kontrol et.</li>
+  <li><strong>Kodlama önemlidir.</strong> Bir query değerindeki <code>%20</code> boşluğa çözülür; bir query değerindeki <code>+</code> <em>de</em> boşluğa çözülür (<code>application/x-www-form-urlencoded</code>'a göre). Tarayıcının <code>URL.searchParams</code>'ı her ikisini de işler.</li>
+  <li><strong>Varsayılan port'lar <code>port</code>'ta görünmez.</strong> <code>https://example.com/</code> gibi bir URL'in <code>port</code>'u boştur (varsayılan 443 ima edilir).</li>
+  <li><strong>Punycode hostname'leri.</strong> <code>example.中国</code> dahili olarak <code>xn--fiqs8s</code> olarak saklanır; <code>hostname</code> tarayıcıya bağlı olarak ASCII formu gösterebilir.</li>
+  <li><strong>Origin bazen "null"dur.</strong> <code>file://</code>, <code>data:</code> veya sandbox'lı bağlamlar için origin opaktır.</li>
+  <li><strong>Bu parsing'dir, doğrulama değil.</strong> Bir URL temiz parse edebilir ve hâlâ uygulaman için yanlış olabilir (örn. yanlış host, eksik path).</li>
 </ul>
 """,
     },

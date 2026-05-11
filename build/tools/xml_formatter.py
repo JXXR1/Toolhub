@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Formatter XML", "tagline": "Sformatuj i zminifikuj XML. Waliduj poprawność (well-formed) z linią i kolumną przy błędach.", "description": "Darmowy online formatter i minifikator XML. Pretty-print XML z konfigurowalnym wcięciem albo wycinanie białych znaków do minifikacji. Waliduje well-formedness parserem XML przeglądarki — linia i kolumna błędu pokazane."},
         "ja": {"name": "XML フォーマッター", "tagline": "XML を整形・圧縮。well-formed の検証では行と列でエラー位置を表示。", "description": "オンライン無料の XML フォーマッター／ミニファイア。設定可能なインデントでの整形、または空白除去によるミニファイに対応します。ブラウザの XML パーサで well-formed を検証し、エラー時は行と列を表示します。"},
         "nl": {"name": "XML Formatter", "tagline": "Formatteer en minify XML. Valideer well-formedness met regel en kolom bij fouten.", "description": "Gratis online XML formatter en minifier. Pretty-print XML met configureerbare indent, of strip whitespace om te minify-en. Valideert well-formedness via de XML-parser van de browser — foutregel en -kolom getoond."},
+        "tr": {"name": "XML Formatter", "tagline": "XML'i biçimlendir ve küçült. Hatalarda satır ve sütun ile well-formedness doğrula.", "description": "Ücretsiz online XML formatter ve minifier. XML'i ayarlanabilir indent ile güzel yazdır veya boşlukları temizleyerek küçült. Tarayıcının XML parser'ı ile well-formedness'i doğrular — hata satırı ve sütunu gösterilir."},
     },
     "body": """
 <div class="tool-card">
@@ -422,6 +423,30 @@ document.addEventListener('DOMContentLoaded', xfRun);
   <li><strong>Namespaces overleven.</strong> <code>xmlns:foo</code> declarations en <code>foo:bar</code> qualified names round-trippen zonder wijziging.</li>
   <li><strong>Attribute-volgorde kan verschuiven.</strong> De XML-parser behoudt attribute-volgorde niet strikt tussen tools; als je XML checksumt, canonicaliseer eerst (XML C14N).</li>
   <li><strong>Browser-parser quirks.</strong> Verschillende browsers rapporteren parse-fouten met verschillende formaten. De regel/kolom-extractie is best-effort en toont op sommige browsers alleen het bericht.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>XML hâlâ her yerdedir — SOAP yanıtları, yapılandırma dosyaları, RSS/Atom feed'leri, SVG markup, OOXML iç bileşenleri. Bir XML parçasını okuman, diff'lemen veya paylaşman gerektiğinde, tek satırlık minify edilmiş bir blob ile düzgün indent edilmiş bir ağaç arasındaki fark tahmin etme ile okuma arasındaki farktır. Bu araç herhangi bir well-formed XML'i ayarlanabilir indent ile güzel yazdırır veya taşıma için minify eder ve bozukluğu mümkün olan yerlerde satır ve sütunla işaretlemek için tarayıcının yerel XML parser'ını kullanır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Tek minify edilmiş satır olarak gelen bir SOAP zarfını veya vendor XML config'ini inceleme.</li>
+  <li>Bir SVG'yi temizleme, böylece path verisi satır başına bir element olur.</li>
+  <li>Wire üzerinde XML göndermeden önce güzel-yazdır boşluğunu temizleme.</li>
+  <li>Ürettiğin bir XML dosyasının katı bir parser'a vermeden önce well-formed olduğunun sanity check'i.</li>
+  <li>İki XML belgesini diff'leme — önce güzel yazdır, sonra ağaçları yan yana diff'le.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Well-formed ≠ geçerli.</strong> "Well-formed" sözdiziminin parse ettiği anlamına gelir (tag'ler dengelenir, nitelikler tırnaklı, tek bir kök). "Geçerli" bir DTD veya şemaya uyduğu anlamına gelir. Bu araç yalnızca well-formedness'i kontrol eder — şema doğrulama şema dosyasını gerektirir.</li>
+  <li><strong>Boşluk anlamlı olabilir.</strong> <code>&lt;name&gt; Alice &lt;/name&gt;</code>'da baştaki/sondaki boşluklar değerin parçasıdır (XML varsayılan olarak <code>xml:space="preserve"</code>'dir). Yeniden indent etme onları değiştirir. XML'in boşluk-hassas ise (XHTML <code>&lt;pre&gt;</code>, gömülü kod blokları), güzel-yazdır yanlış araçtır.</li>
+  <li><strong>Self-closing - açık boş.</strong> <code>&lt;br/&gt;</code> ve <code>&lt;br&gt;&lt;/br&gt;</code> XML'de eşdeğerdir ama HTML'de farklıdır. Formatter boş elementleri self-closing forma normalize eder.</li>
+  <li><strong>CDATA, yorumlar ve processing instruction'lar korunur.</strong> İç içerikleri yeniden biçimlendirilmez.</li>
+  <li><strong>Namespace'ler hayatta kalır.</strong> <code>xmlns:foo</code> tanımları ve <code>foo:bar</code> nitelikli adlar değişiklik olmadan round-trip yapar.</li>
+  <li><strong>Nitelik sırası kayabilir.</strong> XML parser araçlar arasında nitelik sırasını katı şekilde korumaz; XML checksum'ı yapıyorsan, önce kanonikleştir (XML C14N).</li>
+  <li><strong>Tarayıcı parser tuhaflıkları.</strong> Farklı tarayıcılar parse hatalarını farklı biçimlerde raporlar. Satır/sütun çıkarımı en iyi çabadır ve bazı tarayıcılarda yalnızca mesajı gösterebilir.</li>
 </ul>
 """,
     },

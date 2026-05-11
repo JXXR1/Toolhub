@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCII Tablosu — Toolhub</title>
+  <meta name="description" content="Ücretsiz ASCII tablo referansı. 128 standart ASCII kodunun tamamı; ondalık, hex, octal, ikilik, karakter, HTML entity ve kontrol karakterleri için açıklama. Yazdıkça filtrele.">
+  <meta property="og:title" content="ASCII Tablosu — Toolhub">
+  <meta property="og:description" content="Ücretsiz ASCII tablo referansı. 128 standart ASCII kodunun tamamı; ondalık, hex, octal, ikilik, karakter, HTML entity ve kontrol karakterleri için açıklama. Yazdıkça filtrele.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/ascii-table/">
+  <meta property="og:image" content="https://toolhub.software/og-images/ascii-table.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/ascii-table.png">
+  <link rel="canonical" href="https://toolhub.software/tr/ascii-table/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/ascii-table/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/ascii-table/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/ascii-table/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/ascii-table/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/ascii-table/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/ascii-table/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/ascii-table/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/ascii-table/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/ascii-table/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/ascii-table/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/ascii-table/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/ascii-table/#tool",
+        "name": "ASCII Tablosu",
+        "description": "Ücretsiz ASCII tablo referansı. 128 standart ASCII kodunun tamamı; ondalık, hex, octal, ikilik, karakter, HTML entity ve kontrol karakterleri için açıklama. Yazdıkça filtrele.",
+        "url": "https://toolhub.software/tr/ascii-table/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "ASCII Tablosu", "item": "https://toolhub.software/tr/ascii-table/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASCII (American Standard Code for Information Interchange), rakamları, harfleri, noktalama işaretlerini ve bir avuç kontrol kodunu 0–127 tam sayıları üzerine eşleyen 128 karakterlik kodlama sistemidir. Her modern metin kodlamasının (UTF-8, Latin-1, Windows-1252) temelinde durur, bu yüzden değerleri bilmek bazen hayati önemde olur — bir ikilik dosyadaki kaçak byte'ı teşhis etmek, \"her yazdırılabilir\" için regex kurmak, hex dump okumak veya 0x0A mı yoksa 0x0D mi yeni satır hatırlamak için."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hex dump okuyup o byte'ların ne dediğini anlamaya çalışırken. Parser yazıp sınır değerlerine ihtiyaç duyduğunda: 0x20 (boşluk), 0x7E (tilde) — yazdırılabilir aralık. 0x09 (Tab) veya 0x1F (Unit Separator) içerdiği için bozulan bir CSV'yi debug ederken. Zorlu bir karakter için HTML entity üretirken — &#65; = A . 'in 0x0D (evet — Carriage Return) ve 'in 0x0A (evet — Line Feed) olduğu konusundaki bir tartışmayı bitirirken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sık yapılan hatalar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASCII 7-bit'tir, 8-bit değil. 128–255 kodları ASCII değildir — belgenin beyan ettiği 8-bit kodlamaya (Latin-1, CP-1252, …) aittirler veya UTF-8 dizisinin lead byte'larıdır. Yeni satırlar platforma göre farklılaşır. Unix/macOS sadece LF (0x0A); eski Mac Classic CR (0x0D) kullandı; Windows CRLF kullanır. Karışık dosyalar naif satır sayımını bozar. Kontrol karakterleri görünmez sabotajcılar olabilir. Terminal veya PDF'ten kopyala/yapıştır 0x1F , 0x07 (BEL — gerçekten terminali ötürür) veya ASCII olmayan sıfır-genişlik Unicode karakterleri yakalayabilir. Metin \"iyi görünüyor\" ama eşit karşılaştırmıyorsa, byte'lara dök. HTML entity'ler her zaman gerekli değildir. Modern UTF-8 belgelerinde, &#65; ve literal A eşdeğerdir. Yalnızca HTML'de sözdizimsel anlamı olan karakterleri escape et: & , < , > ve nitelik içinde \" . NUL ( 0x00 ) C'de string'leri sonlandırır. C-string buffer'larına düşünmeden gömme — birçok API ilk NUL'da sessizce keser."
+      }
+    }
+  ]
+}
+</script>
+  
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/ascii-table/'; else location.href='/ascii-table/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / ASCII Tablosu</div>
+    <h1>ASCII Tablosu</h1>
+    <p class="tagline">0–127 tam ASCII referansı: ondalık, hex, ikilik, karakter ve HTML entity. Filtrelenebilir.</p>
+    
+<div class="tool-card">
+  <label>Filter</label>
+  <input type="text" id="ascii-q" oninput="asciiRun()" placeholder="Type to filter — try 'tab', 'newline', '0x41', '65', 'A'…" autocomplete="off" spellcheck="false">
+  <div class="meta" style="margin-top:0.4rem">
+    <label style="display:inline-flex;gap:0.4rem;align-items:center;color:var(--text-muted);font-size:0.85rem"><input type="checkbox" id="ascii-ctrl" checked onchange="asciiRun()" style="width:auto"> Show control characters (0–31, 127)</label>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Sonuç</label>
+  <div id="ascii-out" class="output" style="padding:0;overflow:auto"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>ASCII (American Standard Code for Information Interchange), rakamları, harfleri, noktalama işaretlerini ve bir avuç kontrol kodunu 0–127 tam sayıları üzerine eşleyen 128 karakterlik kodlama sistemidir. Her modern metin kodlamasının (UTF-8, Latin-1, Windows-1252) temelinde durur, bu yüzden değerleri bilmek bazen hayati önemde olur — bir ikilik dosyadaki kaçak byte'ı teşhis etmek, "her yazdırılabilir" için regex kurmak, hex dump okumak veya 0x0A mı yoksa 0x0D mi yeni satır hatırlamak için.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Hex dump okuyup o byte'ların ne <em>dediğini</em> anlamaya çalışırken.</li>
+  <li>Parser yazıp sınır değerlerine ihtiyaç duyduğunda: <code>0x20</code> (boşluk), <code>0x7E</code> (tilde) — yazdırılabilir aralık.</li>
+  <li><code>0x09</code> (Tab) veya <code>0x1F</code> (Unit Separator) içerdiği için bozulan bir CSV'yi debug ederken.</li>
+  <li>Zorlu bir karakter için HTML entity üretirken — <code>&amp;#65;</code> = <code>A</code>.</li>
+  <li><code></code>'in 0x0D (evet — Carriage Return) ve <code>
+</code>'in 0x0A (evet — Line Feed) olduğu konusundaki bir tartışmayı bitirirken.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>ASCII 7-bit'tir, 8-bit değil.</strong> 128–255 kodları ASCII <em>değildir</em> — belgenin beyan ettiği 8-bit kodlamaya (Latin-1, CP-1252, …) aittirler veya UTF-8 dizisinin lead byte'larıdır.</li>
+  <li><strong>Yeni satırlar platforma göre farklılaşır.</strong> Unix/macOS sadece <code>LF</code> (0x0A); eski Mac Classic <code>CR</code> (0x0D) kullandı; Windows <code>CRLF</code> kullanır. Karışık dosyalar naif satır sayımını bozar.</li>
+  <li><strong>Kontrol karakterleri görünmez sabotajcılar olabilir.</strong> Terminal veya PDF'ten kopyala/yapıştır <code>0x1F</code>, <code>0x07</code> (BEL — gerçekten terminali ötürür) veya ASCII <em>olmayan</em> sıfır-genişlik Unicode karakterleri yakalayabilir. Metin "iyi görünüyor" ama eşit karşılaştırmıyorsa, byte'lara dök.</li>
+  <li><strong>HTML entity'ler her zaman gerekli değildir.</strong> Modern UTF-8 belgelerinde, <code>&amp;#65;</code> ve literal <code>A</code> eşdeğerdir. Yalnızca HTML'de sözdizimsel anlamı olan karakterleri escape et: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code> ve nitelik içinde <code>"</code>.</li>
+  <li><strong>NUL (<code>0x00</code>) C'de string'leri sonlandırır.</strong> C-string buffer'larına düşünmeden gömme — birçok API ilk NUL'da sessizce keser.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/unicode-inspector/">Unicode İnceleyici</a> <a href="/tr/html-encoder/">HTML Encoder / Decoder</a> <a href="/tr/url-encoder/">URL Encoder / Decoder</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.ascii-table{width:100%;border-collapse:collapse;font-family:ui-monospace,monospace;font-size:0.85rem}
+.ascii-table th{position:sticky;top:0;background:var(--surface);color:var(--text-muted);font-weight:600;font-size:0.78rem;text-align:left;padding:0.5rem 0.7rem;border-bottom:1px solid var(--border)}
+.ascii-table td{padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);vertical-align:top}
+.ascii-table tr:hover{background:var(--card-hover)}
+.ascii-ch{font-weight:600;color:var(--accent)}
+.ascii-desc{color:var(--text-muted);font-size:0.78rem}
+.ascii-empty{color:var(--text-muted);text-align:center;padding:1.5rem 0}
+</style>
+<script>
+const ASCII_NAMES = {
+  0:['NUL','Null'],1:['SOH','Start of Heading'],2:['STX','Start of Text'],3:['ETX','End of Text'],
+  4:['EOT','End of Transmission'],5:['ENQ','Enquiry'],6:['ACK','Acknowledge'],7:['BEL','Bell'],
+  8:['BS','Backspace'],9:['HT','Tab (horizontal)'],10:['LF','Line Feed (newline)'],11:['VT','Vertical Tab'],
+  12:['FF','Form Feed'],13:['CR','Carriage Return'],14:['SO','Shift Out'],15:['SI','Shift In'],
+  16:['DLE','Data Link Escape'],17:['DC1','Device Control 1 (XON)'],18:['DC2','Device Control 2'],
+  19:['DC3','Device Control 3 (XOFF)'],20:['DC4','Device Control 4'],21:['NAK','Negative Acknowledge'],
+  22:['SYN','Synchronous Idle'],23:['ETB','End of Transmission Block'],24:['CAN','Cancel'],
+  25:['EM','End of Medium'],26:['SUB','Substitute'],27:['ESC','Escape'],28:['FS','File Separator'],
+  29:['GS','Group Separator'],30:['RS','Record Separator'],31:['US','Unit Separator'],
+  32:['SP','Space'],127:['DEL','Delete']
+};
+function asciiHtmlEntity(n){
+  // Named entities for the few that have one
+  const named = {34:'&amp;quot;',38:'&amp;amp;',39:'&amp;apos;',60:'&amp;lt;',62:'&amp;gt;',160:'&amp;nbsp;'};
+  if(named[n]) return named[n];
+  return '&amp;#' + n + ';';
+}
+function asciiBin(n){ return n.toString(2).padStart(7,'0'); }
+function asciiHex(n){ return '0x' + n.toString(16).toUpperCase().padStart(2,'0'); }
+function asciiOct(n){ return n.toString(8).padStart(3,'0'); }
+function asciiCh(n){
+  if(n < 32 || n === 127) return ASCII_NAMES[n][0];
+  if(n === 32) return '(space)';
+  return String.fromCharCode(n);
+}
+function asciiMatch(n, q){
+  if(!q) return true;
+  q = q.toLowerCase().trim();
+  const ch = asciiCh(n).toLowerCase();
+  const dec = String(n);
+  const hex = asciiHex(n).toLowerCase();
+  const bin = asciiBin(n);
+  const oct = asciiOct(n);
+  const named = ASCII_NAMES[n];
+  const name = named ? (named[0] + ' ' + named[1]).toLowerCase() : '';
+  return ch.includes(q) || dec === q || hex.includes(q) || hex.replace('0x','').includes(q.replace('0x','')) || bin.includes(q) || oct === q || name.includes(q);
+}
+function asciiRun(){
+  const q = document.getElementById('ascii-q').value;
+  const showCtrl = document.getElementById('ascii-ctrl').checked;
+  const rows = [];
+  for(let n=0;n<128;n++){
+    const isCtrl = (n < 32 || n === 127);
+    if(isCtrl && !showCtrl) continue;
+    if(!asciiMatch(n, q)) continue;
+    const named = ASCII_NAMES[n];
+    const desc = named ? `<span class="ascii-desc">${named[0]} — ${named[1]}</span>` : '';
+    const chDisplay = isCtrl ? `<span class="ascii-desc">${named[0]}</span>` : (n === 32 ? '<span class="ascii-desc">(space)</span>' : `<span class="ascii-ch">${String.fromCharCode(n).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}</span>`);
+    rows.push(`<tr><td>${n}</td><td>${asciiHex(n)}</td><td>${asciiOct(n)}</td><td>${asciiBin(n)}</td><td>${chDisplay}</td><td><code>${asciiHtmlEntity(n)}</code></td><td>${desc}</td></tr>`);
+  }
+  const out = document.getElementById('ascii-out');
+  if(rows.length === 0){
+    out.innerHTML = '<div class="ascii-empty">No matches.</div>';
+    return;
+  }
+  out.innerHTML = `<table class="ascii-table">
+    <thead><tr><th>Dec</th><th>Hex</th><th>Oct</th><th>Bin</th><th>Char</th><th>HTML</th><th>Description</th></tr></thead>
+    <tbody>${rows.join('')}</tbody></table>`;
+}
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(asciiRun));
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

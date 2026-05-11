@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Generator Hashy", "tagline": "Hashuj tekst za pomocą SHA-1, SHA-256, SHA-384 lub SHA-512 używając WebCrypto przeglądarki. Liczone lokalnie — input nigdy nie opuszcza strony.", "description": "Darmowy online generator hashy. SHA-1, SHA-256, SHA-384, SHA-512 przez WebCrypto. Wyjście hex, łatwe do skopiowania. Działa w całości w przeglądarce."},
         "ja": {"name": "ハッシュ生成ツール", "tagline": "ブラウザの WebCrypto で SHA-1、SHA-256、SHA-384、SHA-512 のハッシュを生成。ローカル計算で、入力はページから外に出ません。", "description": "オンライン無料のハッシュ生成ツール。WebCrypto を用いて SHA-1、SHA-256、SHA-384、SHA-512 を計算します。hex 出力でコピーしやすく、すべてブラウザ内で動作します。"},
         "nl": {"name": "Hash Generator", "tagline": "Hash tekst met SHA-1, SHA-256, SHA-384 of SHA-512 via WebCrypto in je browser. Lokaal berekend — input verlaat de pagina nooit.", "description": "Gratis online hash generator. SHA-1, SHA-256, SHA-384, SHA-512 via WebCrypto. Hex output, copy-friendly. Draait volledig in je browser."},
+        "tr": {"name": "Hash Üretici", "tagline": "Metni tarayıcının WebCrypto'su ile SHA-1, SHA-256, SHA-384 veya SHA-512 hash'le. Yerel hesaplanır — giriş sayfayı asla terk etmez.", "description": "Ücretsiz online hash üretici. WebCrypto üzerinden SHA-1, SHA-256, SHA-384, SHA-512. Hex çıktı, kopyalanabilir. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -162,6 +163,26 @@ document.addEventListener('DOMContentLoaded', hRun);
   <li><strong>Hash wachtwoorden niet met raw SHA-256.</strong> Plain SHA is snel — dat helpt aanvallers brute-forcen. Gebruik een trage KDF (Argon2id, bcrypt, scrypt) voor wachtwoordopslag.</li>
   <li><strong>MD5 is opzettelijk afwezig.</strong> Gebroken sinds begin jaren 2000. Overal waar je MD5 "nodig" hebt, moet je ook een security review aanvragen.</li>
   <li><strong>Whitespace doet ertoe.</strong> Een trailing newline produceert een andere hash dan dezelfde tekst zonder. Vergelijk hex output exact.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir kriptografik hash herhangi bir girdi alır ve sabit uzunluklu bir parmak izi üretir. Aynı girdiler her zaman aynı digest'e hash'lenir; tek bir bit değiştirmek digest'i tamamen değiştirir. Hash'ler dosya bütünlüğü kontrolleri, içerik adreslenebilir depolama, dijital imzalar ve parola hash'leme pipeline'larının (Argon2 veya bcrypt gibi yavaş bir fonksiyonla birleştirildikleri) temelinde yatar.</p>
+<p>Buradaki tüm hash'leme tarayıcının <code>crypto.subtle.digest</code>'ini kullanır — TLS'i çalıştıran aynı primitive'ler. Girişin sayfayı asla terk etmez.</p>
+
+<h3>Hangisini ne zaman kullanmalı</h3>
+<ul>
+  <li><strong>SHA-256</strong> — bütünlük kontrolleri, içerik adresleme (Git, IPFS-tarzı), HMAC anahtarları ve imzalar için makul varsayılan.</li>
+  <li><strong>SHA-384 / SHA-512</strong> — daha geniş bir digest gerektiğinde kullanışlıdır (PBKDF2/HKDF ince ayarı, daha büyük HMAC anahtarları, post-quantum-marjı alışkanlıkları).</li>
+  <li><strong>SHA-1</strong> — yalnızca uyumluluk için (Git nesne ID'leri, eski CI checksum'ları). Güvenlik sınırları için kullanma — pratik çarpışma saldırıları 2017'den beri vardır.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Hash'leme şifreleme değildir.</strong> Hash'ler tek yönlüdür; orijinali geri alamazsın. Gizlilik gerekiyorsa, şifrele.</li>
+  <li><strong>Parolaları ham SHA-256 ile hash'leme.</strong> Düz SHA hızlıdır — bu saldırganların brute-force yapmasına yardım eder. Parola depolama için yavaş bir KDF (Argon2id, bcrypt, scrypt) kullan.</li>
+  <li><strong>MD5 kasıtlı olarak yok.</strong> 2000'lerin başından beri kırık. MD5'e "ihtiyaç duyduğun" her yerde bir güvenlik incelemesi de işaretlemen gerekir.</li>
+  <li><strong>Boşluk önemlidir.</strong> Sondaki bir yeni satır, onsuz aynı metnin farklı bir hash'ini üretir. Hex çıktısını tam olarak karşılaştır.</li>
 </ul>
 """,
     },

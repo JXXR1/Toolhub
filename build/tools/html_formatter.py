@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Formatter HTML", "tagline": "Sformatuj i upiększ HTML albo zminifikuj. Rozmiar wcięcia, usuwanie komentarzy i świadomość tagów samozamykających.", "description": "Darmowy online formatter i minifikator HTML. Pretty-print z konfigurowalnym wcięciem, opcjonalne usuwanie komentarzy i respektowanie tagów void/samozamykających. Działa w całości w przeglądarce."},
         "ja": {"name": "HTML フォーマッター", "tagline": "HTML を整形・圧縮。インデント幅、コメント除去、自己終了タグの自動認識に対応。", "description": "オンライン無料の HTML フォーマッター / ミニファイア。設定可能なインデントでの整形、コメントの任意除去、void / 自己終了タグの認識に対応。すべてブラウザ内で動作します。"},
         "nl": {"name": "HTML Formatter", "tagline": "Formatteer en beautify HTML of minify het. Indent size, comment stripping en self-closing tag awareness.", "description": "Gratis online HTML formatter en minifier. Pretty-print met configureerbare indentatie, optioneel comments strippen, en void/self-closing tags respecteren. Draait volledig in je browser."},
+        "tr": {"name": "HTML Formatter", "tagline": "HTML'i biçimlendir ve güzelleştir ya da küçült. Indent boyutu, yorum temizleme ve self-closing tag farkındalığı.", "description": "Ücretsiz online HTML formatter ve minifier. Ayarlanabilir indent ile güzel yazdır, opsiyonel olarak yorumları sil, void/self-closing tag'lere uy. Tamamen tarayıcında çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -445,6 +446,28 @@ document.addEventListener('DOMContentLoaded', hfRun);
   <li><strong>"Collapse whitespace" verandert de gerenderde output voor sommige content.</strong> Twee spaties worden één. Als je design afhangt van meerdere spaties of non-breaking sequences, laat het uit.</li>
   <li><strong>Self-closing notatie in HTML is cosmetisch.</strong> <code>&lt;br/&gt;</code> en <code>&lt;br&gt;</code> zijn equivalent in HTML5; deze tool behoudt wat je hebt geschreven.</li>
   <li><strong>Minify is geen security boundary.</strong> Vertrouw niet op comments strippen om secrets te verbergen — die zijn al naar de client verzonden.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>HTML markup editörüne her türlü durumda gelir — production için küçültülmüş, boşluğa aldırmayan template motorları tarafından üretilmiş, tutarsız şekilde elle yazılmış ve girintilenmiş. Bu araç herhangi bir HTML parçasını her iç içe element için tutarlı indent ile yeniden biçimlendirir, void elementleri (<code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;meta&gt;</code>) ve inline elementleri (<code>&lt;a&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;strong&gt;</code>) tanır, böylece çıktı gerçek HTML gibi görünür, kural başına bir düzen değil. Minify modu tag'ler arası boşluğu ve isteğe bağlı yorumları temizler. Her şey tarayıcında kalır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Yapısını okuyabilmen için küçültülmüş bir HTML e-postasını veya bir sayfanın "kaynağı görüntüle" kopyasını güzel yazdırma.</li>
+  <li>Bir kod incelemesine yapıştırmadan önce bir CMS / WYSIWYG'den bir snippet'i temizleme.</li>
+  <li>Deploy etmeden önce statik bir HTML varlığını minify etme — wire üzerinde daha az byte, yorum sızıntısı yok.</li>
+  <li>Yayınlamadan önce bir template'tan yazar yorumlarını çıkarma.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Bu pragmatik bir tokenizer'dır, tam bir HTML5 parser değil.</strong> Gerçek dünya parçaları üzerinde iyi çalışır ama tarayıcıların ciddi şekilde bozuk girdileri kurtardığı gibi kurtarmaz.</li>
+  <li><strong><code>&lt;pre&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> içindeki boşluk korunur.</strong> Bu elementler ham olarak ele alınır ve yeniden indent edilmez.</li>
+  <li><strong>Inline elementler ebeveyn metniyle aynı satırda kalır</strong> — <code>&lt;p&gt;some &lt;b&gt;bold&lt;/b&gt; text&lt;/p&gt;</code> satırlara bölünmez.</li>
+  <li><strong>"Boşluğu daralt" bazı içerik için render edilen çıktıyı değiştirir.</strong> İki boşluk bir olur. Tasarımın birden fazla boşluğa veya non-breaking dizilere dayanıyorsa, kapat.</li>
+  <li><strong>HTML'de self-closing notasyon kozmetiktir.</strong> <code>&lt;br/&gt;</code> ve <code>&lt;br&gt;</code> HTML5'te eşdeğerdir; bu araç ne yazdıysan korur.</li>
+  <li><strong>Minify güvenlik sınırı değildir.</strong> Sırları gizlemek için yorumları temizlemeye güvenme — zaten istemciye gönderilmişlerdi.</li>
 </ul>
 """,
     },

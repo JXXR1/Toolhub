@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verilerini nasıl işliyoruz — Toolhub</title>
+  <meta name="description" content="Toolhub'ın verilerini tam olarak nasıl işlediğinin sade bir dilde açıklaması. Araçlar tarayıcında çalışır, hiçbir şey saklanmaz, üç istisna açıkça adlandırılır.">
+  <meta property="og:title" content="Verilerini nasıl işliyoruz — Toolhub">
+  <meta property="og:description" content="Toolhub'ın verilerini tam olarak nasıl işlediğinin sade bir dilde açıklaması. Araçlar tarayıcında çalışır, hiçbir şey saklanmaz, üç istisna açıkça adlandırılır.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/how-we-handle-your-data/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/tr/how-we-handle-your-data/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://toolhub.software/tr/how-we-handle-your-data/#page",
+        "name": "Verilerini nasıl işliyoruz",
+        "description": "Toolhub'ın verilerini tam olarak nasıl işlediğinin sade bir dilde açıklaması. Araçlar tarayıcında çalışır, hiçbir şey saklanmaz, üç istisna açıkça adlandırılır.",
+        "url": "https://toolhub.software/tr/how-we-handle-your-data/",
+        "inLanguage": "tr",
+        "isPartOf": {"@id": "https://toolhub.software#site"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://toolhub.software#site",
+        "url": "https://toolhub.software",
+        "name": "Toolhub",
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "Verilerini nasıl işliyoruz", "item": "https://toolhub.software/tr/how-we-handle-your-data/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--text); }
+    h2 { font-size: 1.25rem; margin: 2rem 0 0.5rem; color: var(--text); }
+    h3 { font-size: 1.05rem; margin: 1.25rem 0 0.4rem; color: var(--text); }
+    p, li { color: var(--text-muted); margin-bottom: 0.8rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 0.8rem; }
+    li { margin-bottom: 0.4rem; }
+    code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; color: var(--text); }
+    strong { color: var(--text); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.4rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem 1rem; }
+      .header { padding: 0.75rem 1rem; }
+      .logo { font-size: 1.2rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.1rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/how-we-handle-your-data/'; else location.href='/how-we-handle-your-data/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / Verilerini nasıl işliyoruz</div>
+    <h1>Verilerini nasıl işliyoruz</h1>
+    <p><strong>Son güncelleme:</strong> 11 May 2026</p>
+<p>Bu sayfa sade dildeki versiyondur. <a href="/tr/privacy/">Gizlilik politikasını</a> tamamlar; bir yerde çelişiyorlarsa, bu sayfa daha spesifik olandır ve geçerlidir.</p>
+
+<h2>Veriler nereye gider</h2>
+<p>Toolhub'daki araçlar tarayıcında çalışır. Bir araca yapıştırdığın, yazdığın veya yüklediğin şey cihazında kalır — sunucu tarafı araç yürütücüsü yoktur ve araçların arkasında upload endpoint'i yoktur.</p>
+<p>"Hiçbir şey cihazını terk etmez"e tam olarak üç açıkça adlandırılmış istisna vardır:</p>
+<ol>
+<li><strong>YouTube Thumbnail aracı</strong> — bir YouTube URL'i gönderdiğinde, tarayıcın thumbnail'i doğrudan <code>i.ytimg.com</code>'dan (YouTube'un görseller için public CDN'i) çeker. Kimlik doğrulama yok, upload yok, API anahtarı yok. YouTube sadece URL'den video ID'sini görür ve sadece tarayıcın istediği için.</li>
+<li><strong>AdSense (sadece etkinleştirildiğinde ve onayla)</strong> — Google'ın display reklam sistemi. Onayla, Google IP adresini görebilir ve Google'ın politikalarına göre cookie yerleştirebilir. Reddedildiğinde (varsayılan), AdSense hiç yüklenmez.</li>
+<li><strong>Plausible Analytics</strong> — sayfa ziyaretlerini, referrer'ı, ülkeyi ve cihaz sınıfını sayar. Cookie yok, fingerprinting yok, sadece toplu istatistik. Plausible'ın sunucuları EU'dadır.</li>
+</ol>
+
+<h2>Ne sakladığımız</h2>
+<p>Senin hakkında hiçbir şey. Hesap yok, kullanıcı ID'leri yok, e-posta yok, profil yok. Araçlara koyduğun içeriği saklamayız.</p>
+<p>Tarayıcın yalnızca kendi cihazında iki küçük localStorage girişi tutar — her ikisi de tarayıcının developer tool'ları üzerinden okunabilir ve silinebilir:</p>
+<ul>
+<li><code>theme</code> — "light" veya "dark", yaklaşık bir byte tercih.</li>
+<li><code>toolhub:consent</code> — reklam tercihin (evet/hayır/belirsiz). Sana tekrar sormamak için.</li>
+</ul>
+
+<h2>GDPR, UK GDPR, CCPA ve Slovak DPA</h2>
+<p>Toolhub minimal veri işler:</p>
+<ul>
+<li><strong>EU / UK (GDPR / UK GDPR):</strong> Plausible (EU barındırmalı) uyumlu bir analitik temeli sağlar. AdSense aktif olduğunda, Google TCF v2 altında kendi consent katmanını yürütür.</li>
+<li><strong>Kaliforniya (CCPA):</strong> kişisel veri satmıyoruz. Satacak kişisel verimiz yok.</li>
+<li><strong>Slovakya (Slovak veri koruma otoritesi):</strong> Toolhub'ın maintainer'ı Slovakya'dadır. Slovak kuralları fiilen gerçekleşen herhangi bir işlemeye uygulanır — ki pratikte Plausible'ın toplu ölçümlerine ve (etkinleştirildiğinde) AdSense'in kendi consent akışına iner.</li>
+</ul>
+<p>Kişisel verilerin erişimi veya silinmesi hakları pratikte uygulanamaz çünkü erişilecek veya silinecek hiçbir kişisel veri saklanmaz. Spesifik sorular için <a href="/tr/contact/">iletişim sayfası</a> üzerinden e-posta gönder.</p>
+
+<h2>Cookie'ler</h2>
+<ul>
+<li><strong>Plausible:</strong> cookie yok, asla.</li>
+<li><strong>Tema tercihi:</strong> bir localStorage girişi, cookie değil. Cihazında kalır. HTTP isteklerine eklenmez.</li>
+<li><strong>AdSense (etkinse):</strong> Google kendi üçüncü taraf reklam cookie'lerini yerleştirir. Consent banner herhangi bir AdSense scripti yüklenmeden önce görünür ve reddedersen AdSense hiç yüklenmez.</li>
+</ul>
+
+<h2>Çocuklar</h2>
+<p>Toolhub okul dostudur (<a href="/tr/for-schools/">Okullar için Toolhub</a>'a bak). Davranışsal takip yok, hedefli reklamlar yok. 13 yaş altı kullanım bölgeye göre AdSense koşulları içinde kabul edilebilirdir — AdSense'in bölgesel olarak çocuklara yönelik reklamı sınırladığı yerlerde, bu sınırlar Google'ın kendi sistemleri tarafından uygulanır.</p>
+
+<h2>İndirilebilir PDF</h2>
+<p>Bu sayfanın çevrimdışı kullanım için veya bir okulun IT belgelerinin parçası olarak yazdırılması için bir PDF versiyonu mevcuttur:</p>
+<p><a href="/how-we-handle-your-data.pdf">how-we-handle-your-data.pdf</a></p>
+<p>PDF şu anda sadece İngilizcedir; dil başına PDF'ler bu sürümün kapsamı dışındadır.</p>
+
+<h2>Sorular</h2>
+<p>Burada bir şey net değilse, <a href="https://github.com/JXXR1/Toolhub">https://github.com/JXXR1/Toolhub</a> üzerinde bir issue aç veya <a href="/tr/contact/">iletişim sayfası</a>'nı kullan. Açıklayıcı sorular bu sayfayı sonraki okuyucu için daha iyi yapmanın iyi bir yoludur.</p>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

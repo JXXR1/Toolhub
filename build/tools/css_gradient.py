@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Generator Gradientów CSS", "tagline": "Buduj liniowe i radialne gradienty CSS wizualnie. Edytuj color stopy, kopiuj CSS gotowy do wklejenia.", "description": "Darmowy generator gradientów CSS. Buduj linear lub radial gradienty z dowolną liczbą color stopów, dostosuj kąt i kształt, kopiuj produkcyjny CSS jednym kliknięciem."},
         "ja": {"name": "CSS グラデーションジェネレーター", "tagline": "線形・放射状の CSS グラデーションをビジュアルに作成。カラーストップを編集して、貼り付けるだけの CSS をコピー。", "description": "無料の CSS グラデーションジェネレーター。任意の数のカラーストップで線形・放射状グラデーションを作成し、角度と形状を調整して、本番投入できる CSS をワンクリックでコピーできます。"},
         "nl": {"name": "CSS Gradient Generator", "tagline": "Bouw visueel lineaire en radiale CSS-gradients. Bewerk color stops, kopieer ready-to-paste CSS.", "description": "Gratis CSS gradient generator. Bouw lineaire of radiale gradients met zoveel color stops als je wilt, stel hoek en vorm in, kopieer production-ready CSS in één klik."},
+        "tr": {"name": "CSS Gradient Oluşturucu", "tagline": "Lineer ve radial CSS gradient'larını görsel olarak kur. Renk durak noktalarını düzenle, yapıştırılmaya hazır CSS'i kopyala.", "description": "Ücretsiz CSS gradient oluşturucu. İstediğin kadar renk durak noktasıyla lineer veya radial gradient kur, açıyı ve şekli ayarla, üretime hazır CSS'i tek tıkla kopyala."},
     },
     "body": """
 <div class="tool-card">
@@ -272,6 +273,34 @@ document.addEventListener('DOMContentLoaded', () => { grRender(); grRun(); });
   <li><strong>Banding op grote oppervlakken.</strong> Lange, low-contrast gradients kunnen zichtbare "banden" tonen op 8-bit schermen. Voeg een kleine SVG noise-overlay toe (<code>filter: url(#noise)</code>) of verschuif de stops iets.</li>
   <li><strong>Performance.</strong> Browsers schilderen gradients snel, maar <code>background-image</code> animeren triggert paint op elke frame — animeer in plaats daarvan <code>transform</code> op een layer erboven.</li>
   <li><strong>Toegankelijkheid.</strong> Als tekst op een gradient zit, check de contrastratio tegen het <em>slechtste</em> punt langs de gradient waar de tekst verschijnt, niet het gemiddelde.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>CSS gradient'lar herhangi bir görsel varlık olmadan arka planlar, düğmeler, hero paneller ve overlay'ler için pürüzsüz renk geçişleri çizen tek satır CSS'tir. Sözdizimi güçlüdür ama elle yazılması zahmetlidir: açılar, yüzde durakları, tekrarlanan varyantlar, lineer ile radial karıştırma. Bu araç gerçek zamanlı CSS'i yansıtan görsel bir builder sunar, böylece bir durağı yerine sürükleyebilir ve tam <code>linear-gradient(...)</code> veya <code>radial-gradient(...)</code> string'ini kopyalayabilirsin.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir görsele yakmadan hero veya call-to-action bölüm arka planı kurma.</li>
+  <li>Görsel varlık olmadan "modern" görünen düğme veya kart hover durumları oluşturma.</li>
+  <li>Marka renkli overlay mockup'u (gradient + metin okunabilirliği için düşük opaklık solid).</li>
+  <li>Dekoratif divider'lar, mesh stili arka planlar veya animated SVG fill'ler üretme.</li>
+</ul>
+
+<h3>Lineer - radial</h3>
+<ul>
+  <li><strong>Lineer</strong> — renkler seçilen açıda düz bir çizgi boyunca geçer (0° = aşağıdan yukarı, 90° = soldan sağa, 180° = yukarıdan aşağı).</li>
+  <li><strong>Radial</strong> — renkler bir daire veya elips olarak merkez noktasından dışa yayılır. Spotlight veya vinyet efektleri için harika.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong><code>background</code> olarak kullan, <code>background-color</code> değil.</strong> Gradient'lar görsellerdir, renkler değil. <code>background-color</code> yok sayılır.</li>
+  <li><strong>Duraklar sıralı olmalı</strong> öngörülebilir render için. Araç bunları otomatik sıralar — CSS'i kopyalayıp elle düzenliyorsan yüzdeleri monoton tut.</li>
+  <li><strong>Sert duraklar</strong> (aynı yüzdede iki durak) fade yerine keskin sınır yapar — çizgili veya bant efektler için kullanışlı.</li>
+  <li><strong>Büyük alanlarda banding.</strong> Uzun, düşük kontrastlı gradient'lar 8-bit ekranlarda görünür "bantlar" gösterebilir. Küçük bir SVG noise overlay ekle (<code>filter: url(#noise)</code>) veya durakları hafifçe kaydır.</li>
+  <li><strong>Performans.</strong> Tarayıcılar gradient'ları hızlı boyar ama <code>background-image</code>'ı animate etmek her karede paint tetikler — yukarıdaki bir katmanda <code>transform</code>'u animate et.</li>
+  <li><strong>Erişilebilirlik.</strong> Bir gradient üzerinde metin oturuyorsa, kontrast oranını gradient boyunca metnin göründüğü <em>en kötü</em> noktaya karşı kontrol et, ortalamasına değil.</li>
 </ul>
 """,
     },

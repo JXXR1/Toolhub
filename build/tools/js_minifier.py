@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Minifikator JavaScript", "tagline": "Szybka strukturalna minifikacja JavaScriptu — wytnij komentarze, zwiń białe znaki, usuń puste linie. Pokazuje rozmiar przed/po i procent oszczędności.", "description": "Darmowy online minifikator JavaScriptu. Usuwa jedno- i wieloliniowe komentarze, nadmiarowe białe znaki i puste linie, zachowując stringi, literały regex i template literale."},
         "ja": {"name": "JavaScript ミニファイア", "tagline": "高速で構造的な JavaScript ミニファイ — コメント除去、空白圧縮、空行削除。ビフォア／アフターのサイズと節約率を表示。", "description": "オンライン無料の JavaScript ミニファイア。1 行コメント・複数行コメント・冗長な空白・空行を除去しつつ、文字列、正規表現リテラル、テンプレートリテラルは正確に保持します。"},
         "nl": {"name": "JavaScript Minifier", "tagline": "Snelle structurele JavaScript-minify — strip comments, collapseer whitespace, drop blank lines. Zie size voor/na en het besparingspercentage.", "description": "Gratis online JavaScript minifier. Verwijdert single- en multi-line comments, redundante whitespace en blank lines terwijl strings, regex literals en template literals behouden blijven."},
+        "tr": {"name": "JavaScript Minifier", "tagline": "Hızlı yapısal JavaScript minify — yorumları sil, boşlukları daralt, boş satırları at. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.", "description": "Ücretsiz online JavaScript minifier. Tek ve çok satırlı yorumları, gereksiz boşlukları ve boş satırları kaldırırken string'leri, regex literal'larını ve template literal'larını korur."},
     },
     "body": """
 <div class="tool-card">
@@ -271,6 +272,26 @@ document.addEventListener('DOMContentLoaded', jmRun);
   <li><strong>Source maps worden niet gegenereerd.</strong> Als je geminifieerde JS naar productie ship't, genereer source maps met een echte toolchain zodat debuggen werkbaar is.</li>
   <li><strong>Moderne compressie domineert.</strong> Brotli/gzip over de wire doet het meeste van wat minify doet. De grootste winst komt van ongebruikte code verwijderen — dat vereist statische analyse die een structurele minifier niet kan.</li>
   <li><strong>Minify niet wat je commit.</strong> Source gaat netjes erin; minify bij build/deploy.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Bir yapısal JavaScript minifier, kodun ne yaptığını değiştirmeden yorumları ve gereksiz boşluğu temizler. Çıktı girdiyle işlevsel olarak aynıdır — aynı tanımlayıcılar, aynı mantık — sadece daha kısa. Bu araç bu pasajı tarayıcında çalıştırır, zor kısımlar dahil: string içeriklerini ve regex literal'larını dokunulmadan korur ve ASI (Otomatik Noktalı Virgül Yerleştirme) aksi takdirde davranışı değiştireceği yerlerde yeni satırları tutar.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>HTML bookmarklet'i veya tek dosyalı demo için bir snippet'i hızlıca kırpma, build chain'in olmadığında.</li>
+  <li>Gerçek bir optimizer kurulumuna değip değmeyeceğine karar vermeden önce el yazımı bir script'te ne kadar "yağ" olduğunu kontrol etme.</li>
+  <li>Bir bundler sürüklemeden statik bir siteye küçük bir kütüphaneyi inline yapma.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Bu yapısal bir minify, sıkıştırıcı değil.</strong> Değişkenleri yeniden adlandırmaz, ölü kod eliminasyonu yapmaz, özellikleri mangle etmez veya tree-shake yapmaz. Production build'leri için pipeline'ında <code>terser</code>, <code>esbuild</code> veya <code>swc</code> kullan — yapısal minify üstüne %30–60 daha keser.</li>
+  <li><strong>ASI tuzakları.</strong> JavaScript şaşırtıcı yerlere noktalı virgül ekler. Minifier kaldırılması anlamı değiştirecek bir yeni satırı korur (örn. <code>return\n{}</code> ≠ <code>return {}</code>). Mümkünse kaynakta açık noktalı virgüllere bağlı kal — herkes için minification'ı daha güvenli yapar.</li>
+  <li><strong>Source map üretilmez.</strong> Production'a minified JS gönderiyorsan, debug'ın sağlıklı olması için gerçek bir toolchain ile source map üret.</li>
+  <li><strong>Modern sıkıştırma baskın.</strong> Wire üzerindeki Brotli/gzip minify'ın çoğunu yapar. En büyük kazanımlar kullanılmayan kodu çıkarmaktan gelir — bu yapısal minifier'ın yapamadığı statik analiz gerektirir.</li>
+  <li><strong>Commit ettiğini minify etme.</strong> Kaynak güzel girer; build/deploy'da minify et.</li>
 </ul>
 """,
     },

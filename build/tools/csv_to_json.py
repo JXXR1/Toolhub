@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "CSV do JSON", "tagline": "Konwertuj dane CSV na tablice JSON. Wykrywanie nagłówka, własne delimitery, pola w cudzysłowach i osadzone końce linii.", "description": "Darmowy online konwerter CSV do JSON. Auto-wykrywanie nagłówków, wsparcie dla własnych delimiterów i wielowierszowych pól w cudzysłowach. Działa w przeglądarce."},
         "ja": {"name": "CSV から JSON", "tagline": "CSV データを JSON 配列に変換。ヘッダー検出、カスタム区切り文字、引用符付きフィールド、埋め込み改行に対応。", "description": "オンライン無料の CSV → JSON コンバーター。ヘッダーの自動検出、カスタム区切り文字、引用符で囲まれた複数行フィールドに対応。すべてブラウザ内で動作します。"},
         "nl": {"name": "CSV naar JSON", "tagline": "Converteer CSV-data naar JSON-arrays. Header-detectie, custom delimiters, quoted fields en embedded newlines worden afgehandeld.", "description": "Gratis online CSV naar JSON converter. Detecteert headers automatisch, ondersteunt custom delimiters en quoted multi-line fields. Draait in je browser."},
+        "tr": {"name": "CSV'den JSON'a", "tagline": "CSV verisini JSON dizilerine dönüştür. Başlık tespiti, özel sınırlayıcılar, tırnaklı alanlar ve gömülü satır sonları işlenir.", "description": "Ücretsiz online CSV'den JSON'a dönüştürücü. Başlıkları otomatik tespit eder, özel sınırlayıcıları ve tırnaklı çok satırlı alanları destekler. Tarayıcıda çalışır."},
     },
     "body": """
 <div class="tool-card">
@@ -205,6 +206,25 @@ document.addEventListener('DOMContentLoaded', cjRun);
   <li><strong>Type-coercion heeft een mening.</strong> Numerieke strings, <code>true</code>, <code>false</code> en letterlijk <code>null</code> worden geconverteerd naar JSON-types. Dingen die numeriek lijken maar niet zijn (postcodes, ISBN's met leading zeros, telefoonnummers) verliezen leading zeros — schakel coercion uit of post-process.</li>
   <li><strong>Lege cellen worden lege strings, geen <code>null</code>.</strong> De meeste API's behandelen die twee verschillend.</li>
   <li><strong>BOM's in het wild.</strong> Excel slaat UTF-8 op Windows vaak op met een byte-order mark; de parser tolereert het maar andere consumers misschien niet.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>CSV spreadsheet export'larının ortak dilidir; JSON API ve config'lerin ortak dilidir. Bu dönüştürücü düzgün tırnaklı CSV (RFC 4180 uyumlu) alır ve bir JSON dizisi çıkarır — bir başlık satırı olduğunda nesnelerin dizisi veya dizilerin dizisi. Bir sheet export ettiğinde ve onu JSON konuşan bir şeye beslemen gerektiğinde kullanışlıdır.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Tek seferlik bir Google Sheets / Excel export'unu bir API mock veya test fixture için seed verisine dönüştürme.</li>
+  <li>Referans tablolarını (ülkeler, para birimi kodları, lookup verileri) JSON tüketen bir frontend'e yükleme.</li>
+  <li>Gerçek bir RFC 4180 parser dışında her yerde yanlış render edilen gömülü virgül / yeni satırlı bir CSV'yi inceleme.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Sınırlayıcı tespiti sihir değildir.</strong> Dosyan noktalı virgül (AB locale'lerinde yaygın) veya sekme (TSV) kullanıyorsa, sınırlayıcı dropdown'unu değiştir — otomatik tespit tahmin eder ama yanlış karakter içeren veriyle kandırılabilir.</li>
+  <li><strong>Tür dönüşümü tarafsız değildir.</strong> Sayısal string'ler, <code>true</code>, <code>false</code> ve literal <code>null</code> JSON türlerine dönüştürülür. Sayısal görünen ama olmayan şeyler (zip kodları, baştaki sıfırlı ISBN'ler, telefon numaraları) baştaki sıfırları kaybeder — coercion'u kapat veya post-process.</li>
+  <li><strong>Boş hücreler boş string olur, <code>null</code> değil.</strong> Çoğu API ikisini farklı ele alır.</li>
+  <li><strong>Doğadaki BOM'lar.</strong> Excel sıklıkla Windows'ta UTF-8'i byte-order mark ile kaydeder; parser bunu tolere eder ama diğer tüketiciler edemeyebilir.</li>
 </ul>
 """,
     },

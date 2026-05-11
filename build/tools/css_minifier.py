@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Minifikator CSS", "tagline": "Usuń komentarze, białe znaki i nadmiarowość z CSS. Zobacz rozmiar przed/po i procent oszczędności.", "description": "Darmowy online minifikator CSS. Usuwa komentarze, zwija białe znaki, ucina końcowe średniki i jednostki zero. Pokazuje współczynnik kompresji."},
         "ja": {"name": "CSS ミニファイア", "tagline": "CSS からコメント・空白・冗長な記述を除去。ビフォア／アフターのサイズと圧縮率を表示。", "description": "オンライン無料の CSS ミニファイア。コメント除去、空白の圧縮、末尾セミコロンとゼロ単位のトリミングを実施し、圧縮率を表示します。"},
         "nl": {"name": "CSS Minifier", "tagline": "Strip comments, whitespace en redundantie uit CSS. Zie size voor/na en het besparingspercentage.", "description": "Gratis online CSS minifier. Verwijdert comments, collapseert whitespace, trimt trailing semicolons en zero-units. Toont compressieratio."},
+        "tr": {"name": "CSS Minifier", "tagline": "CSS'ten yorumları, boşlukları ve gereksizliği temizle. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.", "description": "Ücretsiz online CSS minifier. Yorumları kaldırır, boşlukları daraltır, sondaki noktalı virgülleri ve sıfır birimlerini keser. Sıkıştırma oranını gösterir."},
     },
     "body": """
 <div class="tool-card">
@@ -234,6 +235,34 @@ document.addEventListener('DOMContentLoaded', cmRun);
   <li><strong>Source maps worden niet gegenereerd.</strong> Als je geminifieerde CSS in productie debugt, ship ze apart.</li>
   <li><strong>Minify niet de CSS die je commit.</strong> Commit pretty source; minify bij build/deploy. De twee mengen maakt diff review ellendig.</li>
   <li><strong>Moderne compressie domineert.</strong> Brotli/gzip over de wire doet veel van wat minification doet. De grootste besparingen komen van ongebruikte rules verwijderen — werk voor tree-shaking, niet voor minification.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>Kaynakta okunabilir olan CSS — yorumlar, indent ve anlamlı boşluklarla — kullanıcılarının indirdiği dosyayı şişirir. Yapısal bir minifier tüm kozmetik byte'ları (yorumlar, boşluk grupları, gereksiz sıfırlar, eşdeğer kısa hex kodları) kuralların anlamını değiştirmeden temizler. Bu araç bu pasajı tarayıcında çalıştırır ve öncesi/sonrası boyutunu gösterir, böylece tasarrufu görebilirsin.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Bir HTML e-postaya veya blog gönderisi şablonuna bir CSS snippet'i tek seferlik inline gönderme, byte'ları küçültmek istediğinde ama build chain yokken.</li>
+  <li>Gerçek bir optimizer'ı kurmaya değip değmeyeceğine karar vermeden önce bir stylesheet'te ne kadar "yağ" olduğunu hızlıca kontrol etme.</li>
+  <li>Üçüncü taraf widget'ında dahil etmek için ince hale getirmek üzere bir vendor'ın güzel basılı CSS'ini yapıştırma.</li>
+</ul>
+
+<h3>Ne yapar</h3>
+<ul>
+  <li>Blok yorumlarını temizler (<code>/* … */</code>) — tek satırlık <code>//</code> zaten geçerli sade CSS değildir.</li>
+  <li><code>{ } : ; ,</code> ve birleştiriciler (<code>&gt; ~ +</code>) etrafındaki boşluğu daraltır.</li>
+  <li><code>}</code> öncesi sondaki noktalı virgülleri düşürür.</li>
+  <li>Önde gelen sıfırları (<code>0.5</code> → <code>.5</code>) keser ve sıfırdan birimleri kaldırır (<code>0px</code> → <code>0</code>).</li>
+  <li>Hex renklerini kısaltır kesinse (<code>#aabbcc</code> → <code>#abc</code>).</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>Bu yapısal bir minify, tam optimizer değil.</strong> Yinelenen selector'ları birleştirmez, kuralları yeniden sıralamaz veya kısaltmayı yeniden yazmaz. Onun için build pipeline'ında <code>cssnano</code> veya <code>esbuild</code> çalıştır.</li>
+  <li><strong>Source map üretilmez.</strong> Production'da minified CSS'i debug ediyorsan, onları ayrıca gönder.</li>
+  <li><strong>Commit ettiğin CSS'i minify etme.</strong> Güzel kaynak commit et; build/deploy'da minify et. İkisini karıştırmak diff incelemesini sefil yapar.</li>
+  <li><strong>Modern sıkıştırma baskın.</strong> Wire üzerindeki Brotli/gzip minification'ın çoğunu yapar. En büyük tasarruflar kullanılmayan kuralları çıkarmaktan gelir — bir tree-shaking işidir, minification değil.</li>
 </ul>
 """,
     },

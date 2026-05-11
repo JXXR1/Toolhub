@@ -17,6 +17,7 @@ TOOL = {
         "pl": {"name": "Kody Statusu HTTP", "tagline": "Sprawdź dowolny kod statusu HTTP (1xx–5xx). Znaczenie, typowe przyczyny i odwołanie do RFC.", "description": "Darmowa referencja kodów statusu HTTP. Wyszukaj dowolny standardowy kod (100–599), zobacz jego znaczenie, typowe przyczyny i RFC, w którym jest zdefiniowany. Filtruj podczas pisania."},
         "ja": {"name": "HTTP ステータスコード", "tagline": "任意の HTTP ステータスコード（1xx–5xx）を検索。意味、よくある原因、RFC 参照を表示。", "description": "無料の HTTP ステータスコードリファレンス。標準のすべての HTTP ステータスコード（100–599）を検索し、意味・よくある原因・定義元の RFC を確認できます。入力に応じてリアルタイムフィルタ。"},
         "nl": {"name": "HTTP-statuscodes", "tagline": "Zoek elke HTTP-statuscode op (1xx–5xx). Betekenis, veelvoorkomende oorzaken en de RFC-referentie.", "description": "Gratis HTTP-statuscode-referentie. Zoek elke standaard HTTP-statuscode (100–599), zie de betekenis, veelvoorkomende oorzaken en de RFC waarin hij is gedefinieerd. Filter tijdens het typen."},
+        "tr": {"name": "HTTP Durum Kodları", "tagline": "Herhangi bir HTTP durum kodunu ara (1xx–5xx). Anlamı, yaygın sebepleri ve RFC referansı.", "description": "Ücretsiz HTTP durum kodu referansı. Her standart HTTP durum kodunu (100–599) ara, anlamını, yaygın sebeplerini ve tanımlandığı RFC'yi gör. Yazdıkça filtrele."},
     },
     "body": """
 <div class="tool-card">
@@ -338,6 +339,29 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>200 met een error-body is niet "RESTful".</strong> Als het request op resource-niveau is mislukt, geef een 4xx terug met de error in de body.</li>
   <li><strong>418 is een grap.</strong> Gebruik I'm-a-teapot niet in productie — clients en proxies behandelen het inconsistent.</li>
   <li><strong>RFC 9110 supersedet RFC 7231/7232/7233/7234/7235.</strong> Als je de spec citeert, gebruik 9110 (juni 2022) tenzij je specifiek een oudere versie nodig hebt.</li>
+</ul>
+""",
+        "tr": """
+<h2>Bu ne işe yarar?</h2>
+<p>HTTP durum kodları bir sunucunun istemciye isteğin nasıl gittiğini söylemek için geri gönderdiği üç basamaklı sayılardır. Beş aileye gruplanırlar: 1xx (bilgi), 2xx (başarı), 3xx (yönlendirme), 4xx (istemci hatası), 5xx (sunucu hatası). Çoğu geliştirici manşet kodlarını bilir — 200, 301, 404, 500 — ama uzun kuyruk (409 Conflict, 422 Unprocessable, 504 Gateway Timeout) gerçek hataların yaşadığı yerdir. Bu araç anlamları ve her birinin tanımlandığı RFC ile tam listeyi verir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li>Tanımadığın bir kod döndüren bir API doc okuma (425? 451?).</li>
+  <li>Kendi API'nden döndürülecek doğru kodu seçme — 404 mü 410 mu, 401 mi 403 mü, 422 mi 400 mü.</li>
+  <li>Bir 502/504'ü teşhis etme — upstream çöktü mü yoksa sadece yavaş mı?</li>
+  <li>200-with-an-error-body mı gerçek bir 4xx mi doğru hamle olduğunu çözme.</li>
+  <li>Bir kod incelemesi veya tasarım belgesi için RFC referansını arama.</li>
+</ul>
+
+<h3>Sık yapılan hatalar</h3>
+<ul>
+  <li><strong>401 kimlik doğrulanmadı, 403 yetkili değil anlamına gelir.</strong> Adlar yanıltıcıdır — 401 "kim olduğunu bilmiyorum" der, 403 "kim olduğunu biliyorum ve buna sahip olamazsın" der. Sadece yeniden kimlik doğrulama yardımcı olmayacaksa 403 kullan.</li>
+  <li><strong>302 method-belirsizdir.</strong> Tarayıcılar tarihsel olarak 302 yönlendirmesinde POST→GET değiştirdi. Açık olmak için 307 (method'u korur) veya 303 (her zaman GET) kullan.</li>
+  <li><strong>404, 410 değildir.</strong> 404 = "bilmiyorum"; 410 = "biliyorum ve sonsuza kadar gitti". Arama motorları URL'yi düşürmeli olduğunda 410 kullan.</li>
+  <li><strong>200 ile hata gövdesi "RESTful" değildir.</strong> İstek kaynak seviyesinde başarısız olduysa, gövdedeki hatayla bir 4xx döndür.</li>
+  <li><strong>418 bir şakadır.</strong> I'm-a-teapot'u production'da kullanma — istemciler ve proxy'ler tutarsız ele alır.</li>
+  <li><strong>RFC 9110, RFC 7231/7232/7233/7234/7235'in yerini alır.</strong> Spec'i alıntılarsan, özellikle daha eski bir sürüme ihtiyacın olmadıkça 9110 (Haziran 2022) kullan.</li>
 </ul>
 """,
     },

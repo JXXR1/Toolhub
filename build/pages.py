@@ -214,6 +214,25 @@ PAGES = {
                     h_no_ai="Geen AI-rommel",
                 ),
             },
+            "tr": {
+                "title": "Toolhub Hakkında",
+                "h1": "Toolhub Hakkında",
+                "description": "Toolhub, tek kişi tarafından inşa edilmiş küçük takipsiz bir araç sitesidir. Tamamen tarayıcında çalışan, kayıt veya veri toplama olmadan ücretsiz geliştirici araçları.",
+                "body": _about_body(
+                    intro_what="Toolhub, tamamen tarayıcında çalışan ücretsiz geliştirici ve günlük araçların bir koleksiyonudur. Kayıt yok, hesap yok, takip yok, sunucu tarafında işleme yok. Verini yapıştır, sonucu al, sekmeyi kapat — hiçbir şey saklanmaz veya iletilmez.",
+                    intro_why="Çoğu online araç sitesi reklamla dolu parking sayfalardır veya bir tıklama yapmadan önce verini on dört üçüncü taraf takipçisinden geçirir. Toolhub alternatiftir: tek sayfa, tek araç, yerel çalışır, seni rahat bırakır.",
+                    intro_who=f'JXXR1, bağımsız maintainer. Şirket yok, finansman turu yok, yatırımcı yok. Toolhub kişisel bir kaşıntıyı gidermek için bir yan proje olarak başladı — bir aracı iyi yapan tek bir sayfa — ve oradan büyüdü. <a href="{REPO_URL}">GitHub</a> üzerinden ulaşılabilir.',
+                    intro_how="Site GitHub Pages üzerinde barındırılan statik HTML'dir. Her araç tarayıcında JavaScript olarak çalışır — API çağrısı yok, sunucu tarafı hesaplama yok, açıkça belirtilmedikçe (örneğin YouTube Thumbnail aracı YouTube'un CDN'inden bir görsel çeker; her şey tamamen yerel) hiçbir veri cihazını terk etmez.",
+                    intro_oss=f'Tüm kaynak <a href="{REPO_URL}">{REPO_URL}</a>\'dadır. Katkılar, hata raporları ve araç fikirleri GitHub Issues üzerinden hoş karşılanır.',
+                    intro_no_ai="Araç yardım blokları ve çeviriler makul ölçüde insanlar tarafından gözden geçirilir, bir LLM\'den yapıştırılmaz. Robotik veya yanlış görünen bir çeviri görürsen, bir issue aç — kolay bir düzeltmedir ve siteyi herkes için daha iyi yapan türden bir katkıdır.",
+                    h_what="Toolhub nedir",
+                    h_why="Neden",
+                    h_who="Kim",
+                    h_how="Nasıl çalışır",
+                    h_oss="Açık kaynak",
+                    h_no_ai="AI saçmalığı yok",
+                ),
+            },
         },
     },
 
@@ -390,6 +409,25 @@ PAGES = {
 
 <h2>Responsetijden</h2>
 <p>Ik probeer alles binnen een week te lezen, maar Toolhub wordt in vrije tijd naast een dagbaan gebouwd en onderhouden. Als iets urgent is (bijvoorbeeld security), zet dat dan in de subject line.</p>
+""".strip(),
+            },
+            "tr": {
+                "title": "İletişim",
+                "h1": "İletişim",
+                "description": "Hata raporları, özellik istekleri ve araç fikirleri için GitHub Issues üzerinden veya gerisi için e-posta ile Toolhub maintainer'ına ulaş.",
+                "body": f"""
+<p>Toolhub tek kişilik bir yan projedir. Best-effort yanıt süreleri, ticari değil. İletişim formu yoktur — bu sitenin kasıtlı olarak backend\'i yok.</p>
+
+<h2>GitHub Issues</h2>
+<p>Hata raporları, özellik istekleri, çeviri düzeltmeleri ve yeni araç fikirleri için — bir issue aç:</p>
+<p><a href="{REPO_ISSUES}">{REPO_ISSUES}</a></p>
+<p>GitHub Issues tercih edilir çünkü tartışmaya aynı soruya sahip diğer insanların daha sonra bulabileceği kalıcı bir URL verir.</p>
+
+<h2>E-posta</h2>
+<p>GitHub Issues'a uymayan konular için — basın, ortaklık, güvenlik açığı raporları, kaldırma talepleri — <code>{CONTACT_EMAIL}</code> adresine e-posta gönder.</p>
+
+<h2>Yanıt süreleri</h2>
+<p>Her şeyi bir hafta içinde okumaya çalışırım, ama Toolhub gündüz işiminin yanında boş zamanlarımda inşa edilir ve sürdürülür. Bir şey acilse (örneğin güvenlik), bunu subject satırına koy.</p>
 """.strip(),
             },
         },
@@ -840,6 +878,56 @@ PAGES = {
 <p>Gebruik je Toolhub in een klas en wil je het me laten weten, een tool voorstellen voor je vak, of bijdragen aan een vertaling voor een taal die we nog slecht dekken — neem dan contact op via de <a href="/contact/">contactpagina</a>. Bulk-vertaalbijdragen van native speakers — vooral voor minder bediende talen — zijn van harte welkom.</p>
 """.strip(),
             },
+            "tr": {
+                "title": "Okullar için Toolhub",
+                "h1": "Okullar için Toolhub",
+                "description": "Sınıf için privacy-first geliştirici ve utility araçları. Kayıt yok, takip yok, çok dilli, self-hostable. Filtre-dostu ve öğrencilerle paylaşmak için güvenli.",
+                "body": f"""
+<h2>Sınıfta Toolhub</h2>
+<p>Toolhub, öğrencilerin hesap oluşturmadan, takip edilmeden ve reklam veya affiliate huni'lerine yönlendirilmeden kullanabilecekleri küçük tarayıcı içi araçlar setidir. Her araç tamamen tarayıcıda çalışır, bu da bir öğrencinin yazdığının okul ağını asla terk etmediği anlamına gelir — çağrılacak bir backend yoktur.</p>
+<p>İlk, orta veya yükseköğretimde ders veriyorsan ve hızla bir utility'e ihtiyacın varsa (bir regex tester, renk dönüştürücü, Base64 encoder, güvenlik dersi için parola oluşturucu), Toolhub projektöre yansıtmak ve sınıfa göndermek için güvenli olacak şekilde inşa edilmiştir.</p>
+
+<h2>Müfredatla uyum</h2>
+<ul>
+<li><strong>Bilgisayar bilimi:</strong> pattern matching için <a href="/tr/regex-tester/">regex tester</a>, veri dersleri için <a href="/tr/base64-encoder/">Base64 encoder</a>, bütünlük hakkında konuşmak için <a href="/tr/hash-generator/">hash üretici</a>, ağ konuları için <a href="/tr/cidr-calculator/">CIDR hesaplayıcı</a>.</li>
+<li><strong>Tasarım ve dijital medya:</strong> renk modelleri hakkında konuşmak için <a href="/tr/color-converter/">renk dönüştürücü</a> ve <a href="/tr/color-picker/">renk seçici</a>, erişilebilirlik için <a href="/tr/wcag-contrast/">WCAG kontrast denetleyici</a>.</li>
+<li><strong>Güvenlik farkındalığı:</strong> entropi ve parola gücü hakkında konuşmak için <a href="/tr/password-generator/">parola üretici</a>, bir token'ın içinde gerçekten ne olduğunu göstermek için <a href="/tr/jwt-decoder/">JWT decoder</a>.</li>
+<li><strong>Matematik ve sağlık:</strong> <a href="/tr/percentage-calculator/">yüzde hesaplayıcı</a>, <a href="/tr/unit-converter/">birim dönüştürücü</a> ve <a href="/tr/bmi-calculator/">BMI hesaplayıcı</a> (BMI sayfasının kendi "tıbbi tavsiye değildir" notu vardır).</li>
+</ul>
+
+<h2>Desteklenen diller</h2>
+<p>Öğrencilerin ana dillerinde çalışabilmesi için her araç on dile çevrildi:</p>
+<ul>
+<li>English (İngilizce)</li>
+<li>Deutsch (Almanca)</li>
+<li>Español (İspanyolca)</li>
+<li>Français (Fransızca)</li>
+<li>Italiano (İtalyanca)</li>
+<li>Português (Portekizce)</li>
+<li>Polski (Lehçe)</li>
+<li>日本語 (Japonca)</li>
+<li>Nederlands (Felemenkçe)</li>
+<li>Türkçe</li>
+</ul>
+
+<h2>Self-hosted seçeneği</h2>
+<p>Okul ağı dış siteleri engelliyorsa veya tam kontrol istiyorsan, tüm site yaklaşık 5 MB'tır ve Progressive Web App olarak çevrimdışı çalışır. Bunu bir okul intranetinde mirror edebilirsin — servis etmek için build adımı olmadan HTML, CSS ve JavaScript içeren statik bir klasördür: dosyaları herhangi bir web sunucusunun arkasına koy.</p>
+<p>Tüm kaynak <a href="{REPO_URL}">{REPO_URL}</a>\'dadır.</p>
+
+<h2>Filtre-dostu</h2>
+<p>Toolhub okul web filtreleriyle iyi çalışacak şekilde tasarlandı:</p>
+<ul>
+<li>Gömülü sosyal medya widget'ları yok.</li>
+<li>Chat widget'ları veya canlı chat overlay'leri yok.</li>
+<li>Diğer sitelere otomatik yönlendirme yok.</li>
+<li>Otomatik oynatılan video veya ses yok.</li>
+<li>SafeSearch-dostu içerik — yetişkin araçları yok, kumar yok, kripto affiliate yerleştirmeleri yok.</li>
+</ul>
+
+<h2>Öğretmenler için iletişim</h2>
+<p>Toolhub'ı bir sınıfta kullanıyorsan ve haberdar etmek istersen, dersine bir araç önermek istersen veya hâlâ zayıf kapsadığımız bir dil için çeviriye katkıda bulunmak istersen — <a href="/tr/contact/">iletişim sayfası</a> üzerinden ulaş. Native konuşurlardan toplu çeviri katkıları — özellikle daha az hizmet verilen diller için — sevinçle karşılanır.</p>
+""".strip(),
+            },
         },
     },
 
@@ -1205,6 +1293,46 @@ PAGES = {
 
 <h2>Contact</h2>
 <p>Vragen over dit beleid? Meld je via de <a href="/nl/contact/">contactpagina</a> of open een issue op <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "tr": {
+                "title": "Gizlilik Politikası",
+                "h1": "Gizlilik Politikası",
+                "description": "Toolhub gizlilik politikası: araçlar tamamen tarayıcında çalışır, kayıt yok, hesap yok, araç verisi cihazını terk etmez. Toplu istatistik için Plausible, sadece açık onayla AdSense.",
+                "body": f"""
+<p><strong>Son güncelleme:</strong> {LAST_UPDATED}</p>
+
+<h2>Kısa versiyon</h2>
+<p>Araçlar tamamen tarayıcında çalışır — içine yazdığın hiçbir şey hiçbir yere gönderilmez. <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> ile toplu, anonim ziyaretler ölçeriz (cookie olmadan). Tercih edersen, cookie kullanan Google AdSense üzerinden display reklam da gösterebiliriz. Reklamları consent banner'da reddedebilirsin; sitenin geri kalanı aynı çalışır.</p>
+
+<h2>Ne topluyoruz</h2>
+<ul>
+<li><strong>Araç girişi:</strong> hiçbir şey. Bir araca yapıştırdığın her şey tarayıcında kalır. Hiçbir araç sunucuya veri göndermez.</li>
+<li><strong>Ziyaret istatistikleri:</strong> Plausible sayfa görüntülemelerini, referrer'ı, ülkeyi ve cihaz türünü sayar — anonim, toplu, cookie olmadan. <a href="https://plausible.io/data-policy" rel="noopener">Plausible'ın veri politikası</a> ne topladıklarını ve toplamadıklarını açıklar.</li>
+<li><strong>Reklamları kabul edersen:</strong> Google AdSense cookie yerleştirir ve reklamları kişiselleştirmek için bunları kullanabilir. Google'ın uygulamaları <a href="https://policies.google.com/technologies/ads" rel="noopener">Google\'ın reklam gizlilik politikasına</a> tabidir.</li>
+<li><strong>Reklamları reddedersen:</strong> reklam scriptleri yüklenmez, reklam cookie'leri yerleştirilmez ve reklam blokları sayfadan kaybolur.</li>
+</ul>
+
+<h2>Cookie'ler</h2>
+<p>Site reklam tercihini hatırlamak için bir localStorage girişi (<code>toolhub:consent</code>) artı koyu/açık tercihin için bir <code>theme</code> girişi kullanır. Hiçbiri tarayıcını terk etmez.</p>
+<p>Plausible cookie kullanmaz. Google AdSense <em>sadece</em> kabul edersen cookie kullanır — footer'daki consent linki üzerinden seçimini her zaman değiştirebilirsin.</p>
+
+<h2>Harici servisler</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — gizlilik dostu, GDPR uyumlu, EU barındırmalı. Kişisel veri yok.</li>
+<li><strong>Google AdSense</strong> — sadece açık onayla. <code>pagead2.googlesyndication.com</code>'u yükler ve reklam cookie'leri yerleştirebilir.</li>
+<li><strong>GitHub Pages</strong> — site host'u. GitHub varsayılan olarak <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">gizlilik beyanlarına</a> göre sunucu logları (IP, timestamp, URL) tutar.</li>
+<li><strong>YouTube Thumbnail aracı</strong> — özellikle bu aracı kullanırsan, tarayıcın görseli doğrudan <code>i.ytimg.com</code> (YouTube\'un CDN'i) üzerinden çeker. Kimlik doğrulama yok, upload yok. Detaylar <a href="/tr/how-we-handle-your-data/">veri işleme</a>\'de.</li>
+</ul>
+
+<h2>Affiliate linkleri</h2>
+<p>Footer'daki bazı linkler affiliate linklerdir — tıklarsan ve önerilen bir servise kayıt olursan (örneğin hosting sağlayıcıları), Toolhub komisyon kazanabilir. Senin ödediğin fiyat değişmez. Affiliate linkler <code>rel="sponsored"</code> ile işaretlenir. Tam liste <a href="/tr/affiliate-disclosure/">affiliate bildirimi</a>\'nde.</p>
+
+<h2>Haklarınız</h2>
+<p>GDPR / UK GDPR / CCPA / Slovak gizlilik yasası altında, hakkında tuttuğumuz kişisel verilerin erişimini veya silinmesini talep edebilirsin. Hiçbir şey saklamıyoruz — backend yok, hesap yok, kullanıcı veritabanı yok. Plausible sadece toplu ziyaret verisi saklar. Google\'ın reklam verisi kendi istek kanalları üzerinden gider.</p>
+
+<h2>İletişim</h2>
+<p>Bu politika hakkında sorular? <a href="/tr/contact/">İletişim sayfası</a> üzerinden ulaş veya <a href="{REPO_URL}">{REPO_URL}</a> üzerinde bir issue aç.</p>
 """.strip(),
             },
         },
@@ -1691,6 +1819,59 @@ PAGES = {
 <p>Als iets hier onduidelijk is, open een issue op <a href="{REPO_URL}">{REPO_URL}</a> of gebruik de <a href="/nl/contact/">contactpagina</a>. Verhelderende vragen zijn een goede manier om deze pagina voor de volgende lezer beter te maken.</p>
 """.strip(),
             },
+            "tr": {
+                "title": "Verilerini nasıl işliyoruz",
+                "h1": "Verilerini nasıl işliyoruz",
+                "description": "Toolhub'ın verilerini tam olarak nasıl işlediğinin sade bir dilde açıklaması. Araçlar tarayıcında çalışır, hiçbir şey saklanmaz, üç istisna açıkça adlandırılır.",
+                "body": f"""
+<p><strong>Son güncelleme:</strong> {LAST_UPDATED}</p>
+<p>Bu sayfa sade dildeki versiyondur. <a href="/tr/privacy/">Gizlilik politikasını</a> tamamlar; bir yerde çelişiyorlarsa, bu sayfa daha spesifik olandır ve geçerlidir.</p>
+
+<h2>Veriler nereye gider</h2>
+<p>Toolhub'daki araçlar tarayıcında çalışır. Bir araca yapıştırdığın, yazdığın veya yüklediğin şey cihazında kalır — sunucu tarafı araç yürütücüsü yoktur ve araçların arkasında upload endpoint'i yoktur.</p>
+<p>"Hiçbir şey cihazını terk etmez"e tam olarak üç açıkça adlandırılmış istisna vardır:</p>
+<ol>
+<li><strong>YouTube Thumbnail aracı</strong> — bir YouTube URL'i gönderdiğinde, tarayıcın thumbnail'i doğrudan <code>i.ytimg.com</code>'dan (YouTube\'un görseller için public CDN'i) çeker. Kimlik doğrulama yok, upload yok, API anahtarı yok. YouTube sadece URL'den video ID'sini görür ve sadece tarayıcın istediği için.</li>
+<li><strong>AdSense (sadece etkinleştirildiğinde ve onayla)</strong> — Google'ın display reklam sistemi. Onayla, Google IP adresini görebilir ve Google'ın politikalarına göre cookie yerleştirebilir. Reddedildiğinde (varsayılan), AdSense hiç yüklenmez.</li>
+<li><strong>Plausible Analytics</strong> — sayfa ziyaretlerini, referrer'ı, ülkeyi ve cihaz sınıfını sayar. Cookie yok, fingerprinting yok, sadece toplu istatistik. Plausible'ın sunucuları EU'dadır.</li>
+</ol>
+
+<h2>Ne sakladığımız</h2>
+<p>Senin hakkında hiçbir şey. Hesap yok, kullanıcı ID'leri yok, e-posta yok, profil yok. Araçlara koyduğun içeriği saklamayız.</p>
+<p>Tarayıcın yalnızca kendi cihazında iki küçük localStorage girişi tutar — her ikisi de tarayıcının developer tool'ları üzerinden okunabilir ve silinebilir:</p>
+<ul>
+<li><code>theme</code> — "light" veya "dark", yaklaşık bir byte tercih.</li>
+<li><code>toolhub:consent</code> — reklam tercihin (evet/hayır/belirsiz). Sana tekrar sormamak için.</li>
+</ul>
+
+<h2>GDPR, UK GDPR, CCPA ve Slovak DPA</h2>
+<p>Toolhub minimal veri işler:</p>
+<ul>
+<li><strong>EU / UK (GDPR / UK GDPR):</strong> Plausible (EU barındırmalı) uyumlu bir analitik temeli sağlar. AdSense aktif olduğunda, Google TCF v2 altında kendi consent katmanını yürütür.</li>
+<li><strong>Kaliforniya (CCPA):</strong> kişisel veri satmıyoruz. Satacak kişisel verimiz yok.</li>
+<li><strong>Slovakya (Slovak veri koruma otoritesi):</strong> Toolhub'ın maintainer'ı Slovakya'dadır. Slovak kuralları fiilen gerçekleşen herhangi bir işlemeye uygulanır — ki pratikte Plausible'ın toplu ölçümlerine ve (etkinleştirildiğinde) AdSense'in kendi consent akışına iner.</li>
+</ul>
+<p>Kişisel verilerin erişimi veya silinmesi hakları pratikte uygulanamaz çünkü erişilecek veya silinecek hiçbir kişisel veri saklanmaz. Spesifik sorular için <a href="/tr/contact/">iletişim sayfası</a> üzerinden e-posta gönder.</p>
+
+<h2>Cookie'ler</h2>
+<ul>
+<li><strong>Plausible:</strong> cookie yok, asla.</li>
+<li><strong>Tema tercihi:</strong> bir localStorage girişi, cookie değil. Cihazında kalır. HTTP isteklerine eklenmez.</li>
+<li><strong>AdSense (etkinse):</strong> Google kendi üçüncü taraf reklam cookie'lerini yerleştirir. Consent banner herhangi bir AdSense scripti yüklenmeden önce görünür ve reddedersen AdSense hiç yüklenmez.</li>
+</ul>
+
+<h2>Çocuklar</h2>
+<p>Toolhub okul dostudur (<a href="/tr/for-schools/">Okullar için Toolhub</a>'a bak). Davranışsal takip yok, hedefli reklamlar yok. 13 yaş altı kullanım bölgeye göre AdSense koşulları içinde kabul edilebilirdir — AdSense'in bölgesel olarak çocuklara yönelik reklamı sınırladığı yerlerde, bu sınırlar Google'ın kendi sistemleri tarafından uygulanır.</p>
+
+<h2>İndirilebilir PDF</h2>
+<p>Bu sayfanın çevrimdışı kullanım için veya bir okulun IT belgelerinin parçası olarak yazdırılması için bir PDF versiyonu mevcuttur:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>PDF şu anda sadece İngilizcedir; dil başına PDF'ler bu sürümün kapsamı dışındadır.</p>
+
+<h2>Sorular</h2>
+<p>Burada bir şey net değilse, <a href="{REPO_URL}">{REPO_URL}</a> üzerinde bir issue aç veya <a href="/tr/contact/">iletişim sayfası</a>\'nı kullan. Açıklayıcı sorular bu sayfayı sonraki okuyucu için daha iyi yapmanın iyi bir yoludur.</p>
+""".strip(),
+            },
         },
     },
 
@@ -2083,6 +2264,49 @@ PAGES = {
 
 <h2>Contact</h2>
 <p>Vragen over een specifieke affiliate, of wil je iets aanwijzen dat hier niet hoort? Open een issue op <a href="{REPO_URL}">{REPO_URL}</a> of gebruik de <a href="/nl/contact/">contactpagina</a>.</p>
+""".strip(),
+            },
+            "tr": {
+                "title": "Affiliate bildirimi",
+                "h1": "Affiliate bildirimi",
+                "description": "FTC ve EU uyumlu Toolhub affiliate ilişkilerinin bildirimi. Sağlayıcı öder, ek bir şey ödemen, ve editöryel içerik affiliate-güdümlü değildir.",
+                "body": f"""
+<p><strong>Son güncelleme:</strong> {LAST_UPDATED}</p>
+
+<h2>Affiliate linkleri ne</h2>
+<p>Bir affiliate link, üzerine eklenmiş bir takip koduyla normal bir linktir. Tıklayıp ardından linkli servise kayıt olursan, servis Toolhub'a küçük bir referans ücreti öder. <em>Senin</em> ödediğin fiyat affiliate olmayan sürümle aynıdır — komisyonu sen ödemiyorsun, sağlayıcı ödüyor.</p>
+
+<h2>Toolhub'da nerede oldukları</h2>
+<p>Şu anda affiliate linkleri iki yerdedir:</p>
+<ul>
+<li>Sitenin footer'ında, küçük bir <code>(affiliate)</code> rozetiyle işaretli.</li>
+<li>Bir aracın yardım bloğu veya "ilgili araçlar" bölümünün önerdiğimiz belirli bir ücretli servisi adlandırdığı her yerde — affiliate yerinde gösterilir.</li>
+</ul>
+<p>Affiliate linkleri HTML'de <code>rel="sponsored"</code> taşır, bu da ticari bir ilişkiyi belirtmek için arama motoru standardıdır.</p>
+
+<h2>Kim öder</h2>
+<p>Komisyonu sağlayıcı öder, sen değil. Affiliate linkini yok sayıp doğrudan sağlayıcının ana sayfasından kayıt olursan, aynı fiyata aynı hizmeti alırsın; biz sadece referansı görmeyiz.</p>
+
+<h2>FTC ve EU uyumluluğu</h2>
+<p>Bu sayfa var çünkü hem ABD Federal Ticaret Komisyonu'nun endorsement kılavuzları hem de tüketici koruması için EU kuralları, içerik üreticilerinin linkli bir ürünle finansal bir ilişkiyi bildirmesini gerektirir. Bildirim açık ve önden olmalıdır — bu yüzden ayrı bir üst düzey sayfa, bu yüzden her sayfa footer'ında link.</p>
+
+<h2>Spesifik affiliate'ler</h2>
+<p>Toolhub şu anda bu affiliate ve destek hesaplarını kullanır (operator: JXXR1):</p>
+<ul>
+<li><strong>DigitalOcean</strong> (cloud hosting) — <a href="https://m.do.co/c/05c01e8aec67" target="_blank" rel="noopener sponsored">m.do.co/c/05c01e8aec67</a></li>
+<li><strong>GitHub Sponsors</strong> — <a href="https://github.com/sponsors/JXXR1" target="_blank" rel="noopener noreferrer">github.com/sponsors/JXXR1</a></li>
+<li><strong>Buy Me a Coffee</strong> — <a href="https://www.buymeacoffee.com/Tool_hub" target="_blank" rel="noopener noreferrer">buymeacoffee.com/Tool_hub</a></li>
+</ul>
+<p>Başka affiliate ilişkileri eklendiğinde, burada listelenirler ve sayfa tarihi güncellenir.</p>
+
+<h2>Ücretli yerleştirme yok</h2>
+<p>Araç incelemeleri, araçların ana sayfada görünme sırası ve her aracın altındaki "ilgili araçlar" linkleri affiliate-güdümlü <strong>değildir</strong>. Bir aracı öne çıkarmak veya bir aracı diğerinin üstüne yerleştirmek için para kabul etmiyoruz. Eğer ücretli bir yerleştirme eklenirse (olmayacak, ama her ihtimale karşı), affiliate linkleri gibi etiketlenir: açık, önden, editöryel içerikten ayırt edilebilir.</p>
+
+<h2>Editöryel bağımsızlık</h2>
+<p>Affiliate ilişkileri hangi araçların inşa edildiğini, yardım bloklarının nasıl yazıldığını veya verilen bir aracın altında hangi "ilgili araçların" göründüğünü etkilemez. Toolhub'daki araçlar affiliate programı olmadan da inşa edeceğimiz araçlardır — program sadece hosting ve bakıma küçük bir katkı sağlar.</p>
+
+<h2>İletişim</h2>
+<p>Belirli bir affiliate hakkında soruların var mı, veya burada olmaması gereken bir şeyi işaret etmek istiyorsan? <a href="{REPO_URL}">{REPO_URL}</a> üzerinde bir issue aç veya <a href="/tr/contact/">iletişim sayfası</a>\'nı kullan.</p>
 """.strip(),
             },
         },
