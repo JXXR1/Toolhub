@@ -160,7 +160,7 @@ function tzRun(){
     'UTC:     ' + instant.toISOString().replace('T',' ').slice(0,19) + 'Z\\n' +
     'Unix:    ' + Math.floor(instant.getTime()/1000);
 }
-document.addEventListener('DOMContentLoaded', () => { tzPopulate(); tzNow(); });
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(() => { tzPopulate(); tzNow(); }));
 </script>
 """,
     "help": {

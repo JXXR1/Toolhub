@@ -274,7 +274,7 @@ function epRun(){
   if(total === 0) html = '<div class="ep-empty">No matching emoji.</div>';
   grid.innerHTML = html;
 }
-document.addEventListener('DOMContentLoaded', () => { epRenderCats(); epRenderRecent(); epRun(); });
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(() => { epRenderCats(); epRenderRecent(); epRun(); }));
 </script>
 """,
     "help": {

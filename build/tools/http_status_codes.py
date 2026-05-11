@@ -141,7 +141,7 @@ function hsRun(){
   }).join('');
   out.innerHTML = `<div class="hs-list">${rows}</div>`;
 }
-document.addEventListener('DOMContentLoaded', hsRun);
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(hsRun));
 </script>
 """,
     "help": {

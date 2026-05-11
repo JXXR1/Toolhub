@@ -102,7 +102,7 @@ function asciiRun(){
     <thead><tr><th>Dec</th><th>Hex</th><th>Oct</th><th>Bin</th><th>Char</th><th>HTML</th><th>Description</th></tr></thead>
     <tbody>${rows.join('')}</tbody></table>`;
 }
-document.addEventListener('DOMContentLoaded', asciiRun);
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(asciiRun));
 </script>
 """,
     "help": {

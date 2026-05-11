@@ -183,7 +183,7 @@ function rcFilter(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', rcRender);
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(rcRender));
 </script>
 """,
     "help": {

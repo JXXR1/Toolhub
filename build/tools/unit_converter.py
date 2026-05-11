@@ -188,7 +188,7 @@ function ucRun(){
   const lines = labels.map(l => `  ${ucFmt(ucConvert(v, f, l)).padStart(15)} ${l}`);
   document.getElementById('uc-summary').textContent = `${ucFmt(v)} ${f} =\\n${lines.join('\\n')}`;
 }
-document.addEventListener('DOMContentLoaded', () => { ucCatChanged(); ucRun(); });
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(() => { ucCatChanged(); ucRun(); }));
 </script>
 """,
     "help": {

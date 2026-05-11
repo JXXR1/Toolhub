@@ -46,6 +46,7 @@ UI = {
         "for_schools": "For Schools",
         "data_handling": "Data Handling",
         "affiliate_disclosure": "Affiliate Disclosure",
+        "language": "Language",
     },
     "de": {
         "all_tools": "Alle Tools",
@@ -91,6 +92,7 @@ UI = {
         "for_schools": "Für Schulen",
         "data_handling": "Datenverarbeitung",
         "affiliate_disclosure": "Affiliate-Offenlegung",
+        "language": "Sprache",
     },
     "es": {
         "all_tools": "Todas las herramientas",
@@ -136,6 +138,7 @@ UI = {
         "for_schools": "Para escuelas",
         "data_handling": "Tratamiento de datos",
         "affiliate_disclosure": "Divulgación de afiliados",
+        "language": "Idioma",
     },
     "fr": {
         "all_tools": "Tous les outils",
@@ -181,6 +184,7 @@ UI = {
         "for_schools": "Pour les écoles",
         "data_handling": "Traitement des données",
         "affiliate_disclosure": "Divulgation des affiliations",
+        "language": "Langue",
     },
     "it": {
         "all_tools": "Tutti gli strumenti",
@@ -226,6 +230,7 @@ UI = {
         "for_schools": "Per le scuole",
         "data_handling": "Trattamento dei dati",
         "affiliate_disclosure": "Divulgazione affiliati",
+        "language": "Lingua",
     },
     "pt": {
         "all_tools": "Todas as ferramentas",
@@ -271,6 +276,7 @@ UI = {
         "for_schools": "Para escolas",
         "data_handling": "Tratamento de dados",
         "affiliate_disclosure": "Divulgação de afiliados",
+        "language": "Idioma",
     },
     "pl": {
         "all_tools": "Wszystkie narzędzia",
@@ -316,6 +322,7 @@ UI = {
         "for_schools": "Dla szkół",
         "data_handling": "Obsługa danych",
         "affiliate_disclosure": "Ujawnienie partnerów",
+        "language": "Język",
     },
     "ja": {
         "all_tools": "すべてのツール",
@@ -361,6 +368,7 @@ UI = {
         "for_schools": "学校向け",
         "data_handling": "データの取り扱い",
         "affiliate_disclosure": "アフィリエイト開示",
+        "language": "言語",
     },
     "nl": {
         "all_tools": "Alle tools",
@@ -406,6 +414,7 @@ UI = {
         "for_schools": "Voor scholen",
         "data_handling": "Dataverwerking",
         "affiliate_disclosure": "Affiliate-disclosure",
+        "language": "Taal",
     },
 }
 

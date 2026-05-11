@@ -222,7 +222,7 @@ function mtImport(){
   mtRender();
 }
 
-document.addEventListener('DOMContentLoaded', mtRender);
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(mtRender));
 </script>
 """,
     "help": {

@@ -203,7 +203,7 @@ function cbBuild(){
     explain.textContent = '';
   }
 }
-document.addEventListener('DOMContentLoaded', cbBuild);
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(cbBuild));
 </script>
 """,
     "help": {

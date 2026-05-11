@@ -176,7 +176,7 @@ function mtRun(){
     `<div class="mt-row"><div class="mt-mime">${m}</div><div class="mt-ext">${ext || '—'}</div><div class="mt-desc">${desc}</div></div>`
   ).join('') + '</div>';
 }
-document.addEventListener('DOMContentLoaded', mtRun);
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(mtRun));
 </script>
 """,
     "help": {
