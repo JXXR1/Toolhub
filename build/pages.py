@@ -1,4 +1,5 @@
-# Static content pages — about, contact, for-schools.
+# Static content pages — about, contact, for-schools, privacy,
+# how-we-handle-your-data, affiliate-disclosure.
 # Each page has:
 #   slug    — URL segment (e.g. "about" => /about/ for EN, /<lang>/about/ for others)
 #   schema  — schema.org @type for the JSON-LD WebPage variant (AboutPage, ContactPage, WebPage)
@@ -10,6 +11,8 @@
 REPO_URL = "https://github.com/JXXR1/Toolhub"
 REPO_ISSUES = "https://github.com/JXXR1/Toolhub/issues"
 CONTACT_EMAIL = "JXXR1@users.noreply.github.com"
+PDF_URL = "/how-we-handle-your-data.pdf"
+LAST_UPDATED = "11 May 2026"
 
 
 def _about_body(intro_what, intro_why, intro_who, intro_how, intro_oss, intro_no_ai,
@@ -835,6 +838,1251 @@ PAGES = {
 
 <h2>Contact voor docenten</h2>
 <p>Gebruik je Toolhub in een klas en wil je het me laten weten, een tool voorstellen voor je vak, of bijdragen aan een vertaling voor een taal die we nog slecht dekken — neem dan contact op via de <a href="/contact/">contactpagina</a>. Bulk-vertaalbijdragen van native speakers — vooral voor minder bediende talen — zijn van harte welkom.</p>
+""".strip(),
+            },
+        },
+    },
+
+    "privacy": {
+        "slug": "privacy",
+        "schema": "WebPage",
+        "i18n": {
+            "en": {
+                "title": "Privacy Policy",
+                "h1": "Privacy Policy",
+                "description": "Toolhub privacy policy: tools run entirely in your browser, no signup, no accounts, no tool data leaves your device. Plausible for aggregate analytics, AdSense only with explicit consent.",
+                "body": f"""
+<p><strong>Last updated:</strong> {LAST_UPDATED}</p>
+
+<h2>The short version</h2>
+<p>Tools run entirely in your browser — nothing you type into them is sent anywhere. We measure aggregate, anonymous visits with <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (no cookies). If you choose to opt in, we may also serve display ads via Google AdSense, which does use cookies. You can decline ads at the consent banner; the rest of the site works identically either way.</p>
+
+<h2>What we collect</h2>
+<ul>
+<li><strong>Tool inputs:</strong> nothing. Everything you paste into a tool stays in your browser. No tool sends data to a server.</li>
+<li><strong>Visit analytics:</strong> Plausible counts page views, referrer, country, and device type — anonymously, in aggregate, without cookies. <a href="https://plausible.io/data-policy" rel="noopener">Plausible's data policy</a> covers what they do and don't collect.</li>
+<li><strong>If you accept ads:</strong> Google AdSense sets cookies and may use them to personalise ads. Google's practices are governed by <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's advertising privacy policy</a>.</li>
+<li><strong>If you decline ads:</strong> no advertising scripts are loaded, no advertising cookies are set, ad slots are removed from the page.</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>The site itself uses one localStorage entry (<code>toolhub:consent</code>) to remember your ad-consent choice, plus a <code>theme</code> entry for your dark/light preference. Neither leaves your browser.</p>
+<p>Plausible uses no cookies. Google AdSense uses cookies <em>only if</em> you accept them — you can change your choice anytime via the consent link in the footer.</p>
+
+<h2>Third-party services</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — privacy-friendly, GDPR-compliant, EU-hosted. No personal data collected.</li>
+<li><strong>Google AdSense</strong> — used only with explicit consent. Loads <code>pagead2.googlesyndication.com</code> and may set advertising cookies.</li>
+<li><strong>GitHub Pages</strong> — site host. Standard server logs (IP, timestamp, URL) are kept by GitHub per <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">their privacy statement</a>.</li>
+<li><strong>YouTube Thumbnail tool</strong> — when you use this one tool, your browser fetches an image directly from <code>i.ytimg.com</code> (YouTube's CDN). No authentication, no upload. See <a href="/how-we-handle-your-data/">data handling</a> for detail.</li>
+</ul>
+
+<h2>Affiliate links</h2>
+<p>Some links in the footer are affiliate links — if you click through and sign up to a service we recommend (e.g. hosting providers), Toolhub may earn a referral. The price you pay is unaffected. Affiliate links are tagged with <code>rel="sponsored"</code>. See <a href="/affiliate-disclosure/">affiliate disclosure</a> for the full list.</p>
+
+<h2>Your rights</h2>
+<p>Under GDPR / UK GDPR / CCPA / the Slovak DPA, you can request access to or deletion of any personal data we hold. We don't hold any — there is no backend, no accounts, no user database. Plausible holds only aggregated visit data. Google's ad data is governed by their own request channels.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy? Reach out via <a href="/contact/">the contact page</a> or open an issue at <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "de": {
+                "title": "Datenschutzerklärung",
+                "h1": "Datenschutzerklärung",
+                "description": "Toolhub-Datenschutzerklärung: Tools laufen komplett im Browser, ohne Anmeldung, ohne Konto, keine Tool-Daten verlassen dein Gerät. Plausible für aggregierte Statistik, AdSense nur mit ausdrücklicher Zustimmung.",
+                "body": f"""
+<p><strong>Zuletzt aktualisiert:</strong> {LAST_UPDATED}</p>
+
+<h2>Die Kurzfassung</h2>
+<p>Tools laufen komplett in deinem Browser — nichts, was du in sie eingibst, wird irgendwo hingeschickt. Wir zählen aggregierte, anonyme Besuche mit <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (keine Cookies). Wenn du explizit zustimmst, schalten wir zusätzlich Display-Anzeigen über Google AdSense, die Cookies verwenden. Du kannst Werbung im Consent-Banner ablehnen; der Rest der Seite funktioniert identisch.</p>
+
+<h2>Was wir erfassen</h2>
+<ul>
+<li><strong>Tool-Eingaben:</strong> nichts. Alles, was du in ein Tool einfügst, bleibt in deinem Browser. Kein Tool schickt Daten an einen Server.</li>
+<li><strong>Besuchs-Statistik:</strong> Plausible zählt Seitenaufrufe, Referrer, Land und Gerätetyp — anonym, aggregiert, ohne Cookies. <a href="https://plausible.io/data-policy" rel="noopener">Plausibles Datenrichtlinie</a> erklärt, was sie erfassen und was nicht.</li>
+<li><strong>Wenn du Werbung akzeptierst:</strong> Google AdSense setzt Cookies und kann sie zur Personalisierung verwenden. Googles Praktiken regelt <a href="https://policies.google.com/technologies/ads" rel="noopener">Googles Werbe-Datenschutzrichtlinie</a>.</li>
+<li><strong>Wenn du Werbung ablehnst:</strong> keine Werbe-Skripte werden geladen, keine Werbe-Cookies gesetzt, Anzeigenflächen werden aus der Seite entfernt.</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>Die Seite selbst nutzt einen localStorage-Eintrag (<code>toolhub:consent</code>), um deine Werbe-Entscheidung zu speichern, plus einen <code>theme</code>-Eintrag für deine Dark/Light-Präferenz. Beides verlässt deinen Browser nicht.</p>
+<p>Plausible nutzt keine Cookies. Google AdSense nutzt Cookies <em>nur wenn</em> du zustimmst — die Entscheidung kannst du jederzeit über den Consent-Link im Footer ändern.</p>
+
+<h2>Drittanbieter-Dienste</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — datenschutzfreundlich, DSGVO-konform, EU-gehostet. Keine personenbezogenen Daten.</li>
+<li><strong>Google AdSense</strong> — nur mit ausdrücklicher Zustimmung. Lädt <code>pagead2.googlesyndication.com</code> und kann Werbe-Cookies setzen.</li>
+<li><strong>GitHub Pages</strong> — Hosting. Standard-Serverlogs (IP, Zeitstempel, URL) bewahrt GitHub gemäß <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">ihrer Datenschutzerklärung</a> auf.</li>
+<li><strong>YouTube-Thumbnail-Tool</strong> — wenn du dieses eine Tool nutzt, lädt dein Browser das Bild direkt von <code>i.ytimg.com</code> (YouTubes CDN). Keine Authentifizierung, kein Upload. Details unter <a href="/de/how-we-handle-your-data/">Datenverarbeitung</a>.</li>
+</ul>
+
+<h2>Affiliate-Links</h2>
+<p>Einige Links im Footer sind Affiliate-Links — wenn du klickst und dich bei einem empfohlenen Dienst registrierst (z. B. Hosting-Anbieter), kann Toolhub eine Provision bekommen. Der Preis, den du zahlst, ändert sich nicht. Affiliate-Links sind mit <code>rel="sponsored"</code> markiert. Die vollständige Liste steht unter <a href="/de/affiliate-disclosure/">Affiliate-Offenlegung</a>.</p>
+
+<h2>Deine Rechte</h2>
+<p>Nach DSGVO / UK GDPR / CCPA / dem slowakischen Datenschutzgesetz kannst du Auskunft über oder Löschung deiner personenbezogenen Daten verlangen. Wir speichern keine — es gibt kein Backend, keine Konten, keine Nutzerdatenbank. Plausible hält nur aggregierte Besuchsdaten. Googles Werbedaten regeln deren eigene Anfragekanäle.</p>
+
+<h2>Kontakt</h2>
+<p>Fragen zu dieser Erklärung? Schreib über die <a href="/de/contact/">Kontaktseite</a> oder öffne ein Issue unter <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "es": {
+                "title": "Política de privacidad",
+                "h1": "Política de privacidad",
+                "description": "Política de privacidad de Toolhub: las herramientas funcionan enteramente en el navegador, sin registro, sin cuentas, ningún dato sale de tu dispositivo. Plausible para analítica agregada, AdSense solo con consentimiento explícito.",
+                "body": f"""
+<p><strong>Última actualización:</strong> {LAST_UPDATED}</p>
+
+<h2>La versión corta</h2>
+<p>Las herramientas funcionan enteramente en tu navegador — lo que escribas en ellas no se envía a ningún sitio. Medimos visitas agregadas y anónimas con <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (sin cookies). Si decides aceptar, también podemos mostrar anuncios de display vía Google AdSense, que sí usa cookies. Puedes rechazar los anuncios en el banner de consentimiento; el resto del sitio funciona igual.</p>
+
+<h2>Qué recogemos</h2>
+<ul>
+<li><strong>Datos que pegas en herramientas:</strong> nada. Todo lo que pegas en una herramienta se queda en tu navegador. Ninguna herramienta envía datos a un servidor.</li>
+<li><strong>Analítica de visitas:</strong> Plausible cuenta páginas vistas, referrer, país y tipo de dispositivo — anónimamente, en agregado, sin cookies. La <a href="https://plausible.io/data-policy" rel="noopener">política de datos de Plausible</a> cubre qué recogen y qué no.</li>
+<li><strong>Si aceptas anuncios:</strong> Google AdSense pone cookies y puede usarlas para personalizar anuncios. Las prácticas de Google están reguladas por la <a href="https://policies.google.com/technologies/ads" rel="noopener">política de privacidad publicitaria de Google</a>.</li>
+<li><strong>Si rechazas anuncios:</strong> no se cargan scripts de publicidad, no se ponen cookies publicitarias, los huecos de anuncio desaparecen de la página.</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>El sitio en sí usa una entrada de localStorage (<code>toolhub:consent</code>) para recordar tu decisión sobre anuncios, más una entrada <code>theme</code> para tu preferencia de modo oscuro/claro. Ninguna sale de tu navegador.</p>
+<p>Plausible no usa cookies. Google AdSense usa cookies <em>solo si</em> las aceptas — puedes cambiar tu decisión cuando quieras desde el enlace de consentimiento en el pie de página.</p>
+
+<h2>Servicios de terceros</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — respetuoso con la privacidad, conforme al RGPD, alojado en la UE. No se recogen datos personales.</li>
+<li><strong>Google AdSense</strong> — solo con consentimiento explícito. Carga <code>pagead2.googlesyndication.com</code> y puede poner cookies publicitarias.</li>
+<li><strong>GitHub Pages</strong> — alojamiento del sitio. GitHub guarda los logs estándar del servidor (IP, timestamp, URL) según <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">su declaración de privacidad</a>.</li>
+<li><strong>Herramienta YouTube Thumbnail</strong> — al usar esta herramienta concreta, tu navegador descarga la imagen directamente desde <code>i.ytimg.com</code> (la CDN de YouTube). Sin autenticación, sin subida. Detalles en <a href="/es/how-we-handle-your-data/">tratamiento de datos</a>.</li>
+</ul>
+
+<h2>Enlaces de afiliado</h2>
+<p>Algunos enlaces del pie son enlaces de afiliado — si haces clic y te registras en un servicio recomendado (por ejemplo, proveedores de hosting), Toolhub puede ganar una comisión. El precio que pagas no cambia. Los enlaces de afiliado llevan la marca <code>rel="sponsored"</code>. Lista completa en <a href="/es/affiliate-disclosure/">divulgación de afiliados</a>.</p>
+
+<h2>Tus derechos</h2>
+<p>Bajo el RGPD / UK GDPR / CCPA / la ley eslovaca de protección de datos, puedes pedir acceso a o borrado de cualquier dato personal que tengamos. No tenemos ninguno — no hay backend, ni cuentas, ni base de datos de usuarios. Plausible guarda solo datos de visita agregados. Los datos publicitarios de Google se gestionan por sus propios canales.</p>
+
+<h2>Contacto</h2>
+<p>¿Dudas sobre esta política? Escríbenos desde la <a href="/es/contact/">página de contacto</a> o abre una issue en <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "fr": {
+                "title": "Politique de confidentialité",
+                "h1": "Politique de confidentialité",
+                "description": "Politique de confidentialité de Toolhub : les outils tournent entièrement dans le navigateur, sans inscription, sans compte, aucune donnée d'outil ne sort de ton appareil. Plausible pour la mesure agrégée, AdSense uniquement avec consentement explicite.",
+                "body": f"""
+<p><strong>Dernière mise à jour :</strong> {LAST_UPDATED}</p>
+
+<h2>La version courte</h2>
+<p>Les outils tournent entièrement dans ton navigateur — rien de ce que tu y tapes n'est envoyé quelque part. On mesure des visites agrégées et anonymes avec <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (sans cookies). Si tu choisis d'accepter, on peut aussi afficher des pubs display via Google AdSense, qui utilise des cookies. Tu peux refuser les pubs au bandeau de consentement ; le reste du site fonctionne à l'identique.</p>
+
+<h2>Ce qu'on collecte</h2>
+<ul>
+<li><strong>Données saisies dans les outils :</strong> rien. Tout ce que tu colles dans un outil reste dans ton navigateur. Aucun outil n'envoie de données à un serveur.</li>
+<li><strong>Analytique de visite :</strong> Plausible compte les pages vues, le referrer, le pays et le type d'appareil — anonymement, en agrégat, sans cookies. La <a href="https://plausible.io/data-policy" rel="noopener">politique de données de Plausible</a> détaille ce qu'ils collectent et ce qu'ils ne collectent pas.</li>
+<li><strong>Si tu acceptes les pubs :</strong> Google AdSense pose des cookies et peut les utiliser pour personnaliser les pubs. Les pratiques de Google sont régies par la <a href="https://policies.google.com/technologies/ads" rel="noopener">politique de confidentialité publicitaire de Google</a>.</li>
+<li><strong>Si tu refuses les pubs :</strong> aucun script publicitaire n'est chargé, aucun cookie publicitaire posé, les emplacements pubs disparaissent de la page.</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>Le site lui-même utilise une entrée localStorage (<code>toolhub:consent</code>) pour retenir ton choix de consentement pub, et une entrée <code>theme</code> pour ta préférence sombre/claire. Ni l'une ni l'autre ne sort de ton navigateur.</p>
+<p>Plausible n'utilise pas de cookies. Google AdSense utilise des cookies <em>uniquement si</em> tu les acceptes — tu peux changer ton choix à tout moment via le lien de consentement dans le pied de page.</p>
+
+<h2>Services tiers</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — respectueux de la vie privée, conforme RGPD, hébergé dans l'UE. Aucune donnée personnelle collectée.</li>
+<li><strong>Google AdSense</strong> — uniquement avec consentement explicite. Charge <code>pagead2.googlesyndication.com</code> et peut poser des cookies publicitaires.</li>
+<li><strong>GitHub Pages</strong> — hébergeur du site. GitHub conserve les logs serveur standard (IP, horodatage, URL) selon <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">sa déclaration de confidentialité</a>.</li>
+<li><strong>Outil YouTube Thumbnail</strong> — quand tu utilises spécifiquement cet outil, ton navigateur télécharge l'image directement depuis <code>i.ytimg.com</code> (le CDN de YouTube). Pas d'authentification, pas d'upload. Détails sur <a href="/fr/how-we-handle-your-data/">traitement des données</a>.</li>
+</ul>
+
+<h2>Liens d'affiliation</h2>
+<p>Certains liens du pied de page sont des liens d'affiliation — si tu cliques et t'inscris à un service recommandé (par exemple un hébergeur), Toolhub peut toucher une commission. Le prix que tu paies est inchangé. Les liens d'affiliation portent la marque <code>rel="sponsored"</code>. Liste complète sur <a href="/fr/affiliate-disclosure/">divulgation des affiliés</a>.</p>
+
+<h2>Tes droits</h2>
+<p>Au titre du RGPD / UK GDPR / CCPA / de la loi slovaque sur la protection des données, tu peux demander l'accès à ou la suppression de toute donnée personnelle qu'on détiendrait. On n'en détient aucune — il n'y a pas de backend, pas de comptes, pas de base utilisateurs. Plausible ne stocke que des données de visite agrégées. Les données publicitaires de Google relèvent de leurs propres canaux de demande.</p>
+
+<h2>Contact</h2>
+<p>Des questions sur cette politique ? Écris depuis la <a href="/fr/contact/">page de contact</a> ou ouvre une issue sur <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "it": {
+                "title": "Informativa sulla privacy",
+                "h1": "Informativa sulla privacy",
+                "description": "Informativa sulla privacy di Toolhub: gli strumenti girano interamente nel browser, niente registrazione, niente account, nessun dato degli strumenti lascia il tuo dispositivo. Plausible per la misurazione aggregata, AdSense solo con consenso esplicito.",
+                "body": f"""
+<p><strong>Ultimo aggiornamento:</strong> {LAST_UPDATED}</p>
+
+<h2>La versione breve</h2>
+<p>Gli strumenti girano interamente nel tuo browser — niente di quello che ci scrivi viene mandato altrove. Misuriamo visite aggregate e anonime con <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (senza cookie). Se scegli di accettare, possiamo anche mostrare annunci display via Google AdSense, che usa cookie. Puoi rifiutare gli annunci nel banner di consenso; il resto del sito funziona identico.</p>
+
+<h2>Cosa raccogliamo</h2>
+<ul>
+<li><strong>Input agli strumenti:</strong> nulla. Tutto ciò che incolli in uno strumento resta nel tuo browser. Nessuno strumento manda dati a un server.</li>
+<li><strong>Analitica di visita:</strong> Plausible conta visualizzazioni di pagina, referrer, paese e tipo di dispositivo — in modo anonimo e aggregato, senza cookie. La <a href="https://plausible.io/data-policy" rel="noopener">data policy di Plausible</a> copre cosa raccolgono e cosa no.</li>
+<li><strong>Se accetti gli annunci:</strong> Google AdSense imposta cookie e può usarli per personalizzare gli annunci. Le pratiche di Google sono regolate dalla <a href="https://policies.google.com/technologies/ads" rel="noopener">privacy policy pubblicitaria di Google</a>.</li>
+<li><strong>Se rifiuti gli annunci:</strong> nessuno script pubblicitario viene caricato, nessun cookie pubblicitario impostato, gli slot pubblicitari spariscono dalla pagina.</li>
+</ul>
+
+<h2>Cookie</h2>
+<p>Il sito stesso usa una voce di localStorage (<code>toolhub:consent</code>) per ricordare la tua scelta sugli annunci, e una voce <code>theme</code> per la preferenza chiaro/scuro. Nessuna delle due lascia il tuo browser.</p>
+<p>Plausible non usa cookie. Google AdSense usa cookie <em>solo se</em> li accetti — puoi cambiare scelta in qualsiasi momento dal link consenso nel footer.</p>
+
+<h2>Servizi di terze parti</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — rispettoso della privacy, conforme GDPR, ospitato in UE. Nessun dato personale raccolto.</li>
+<li><strong>Google AdSense</strong> — solo con consenso esplicito. Carica <code>pagead2.googlesyndication.com</code> e può impostare cookie pubblicitari.</li>
+<li><strong>GitHub Pages</strong> — host del sito. GitHub conserva i log server standard (IP, timestamp, URL) secondo la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">propria informativa sulla privacy</a>.</li>
+<li><strong>Strumento YouTube Thumbnail</strong> — quando usi specificamente questo strumento, il tuo browser scarica l'immagine direttamente da <code>i.ytimg.com</code> (la CDN di YouTube). Niente autenticazione, niente upload. Dettagli in <a href="/it/how-we-handle-your-data/">trattamento dei dati</a>.</li>
+</ul>
+
+<h2>Link affiliati</h2>
+<p>Alcuni link nel footer sono link affiliati — se ci clicchi e ti registri a un servizio consigliato (per es. provider di hosting), Toolhub può guadagnare una commissione. Il prezzo che paghi non cambia. I link affiliati sono marcati con <code>rel="sponsored"</code>. Elenco completo su <a href="/it/affiliate-disclosure/">divulgazione affiliati</a>.</p>
+
+<h2>I tuoi diritti</h2>
+<p>Ai sensi di GDPR / UK GDPR / CCPA / legge slovacca sulla protezione dei dati, puoi richiedere accesso o cancellazione di qualunque dato personale che custodiamo. Non ne custodiamo — non c'è backend, né account, né database utenti. Plausible conserva solo dati di visita aggregati. I dati pubblicitari di Google sono regolati dai loro canali di richiesta.</p>
+
+<h2>Contatti</h2>
+<p>Domande su questa policy? Scrivi dalla <a href="/it/contact/">pagina di contatto</a> o apri una issue su <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "pt": {
+                "title": "Política de privacidade",
+                "h1": "Política de privacidade",
+                "description": "Política de privacidade do Toolhub: as ferramentas rodam inteiramente no navegador, sem cadastro, sem conta, nenhum dado de ferramenta sai do seu dispositivo. Plausible para métricas agregadas, AdSense só com consentimento explícito.",
+                "body": f"""
+<p><strong>Última atualização:</strong> {LAST_UPDATED}</p>
+
+<h2>A versão curta</h2>
+<p>As ferramentas rodam inteiramente no seu navegador — nada do que você digita nelas é enviado pra lugar nenhum. Medimos visitas agregadas e anônimas com <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (sem cookies). Se você optar por aceitar, também podemos exibir anúncios de display via Google AdSense, que usa cookies. Você pode recusar anúncios no banner de consentimento; o resto do site funciona igual.</p>
+
+<h2>O que coletamos</h2>
+<ul>
+<li><strong>Entradas das ferramentas:</strong> nada. Tudo que você cola numa ferramenta fica no seu navegador. Nenhuma ferramenta manda dados pra um servidor.</li>
+<li><strong>Analytics de visita:</strong> o Plausible conta page views, referrer, país e tipo de dispositivo — anonimamente, agregado, sem cookies. A <a href="https://plausible.io/data-policy" rel="noopener">política de dados do Plausible</a> cobre o que coletam e o que não coletam.</li>
+<li><strong>Se você aceitar anúncios:</strong> o Google AdSense define cookies e pode usá-los pra personalizar anúncios. As práticas do Google são regidas pela <a href="https://policies.google.com/technologies/ads" rel="noopener">política de privacidade publicitária do Google</a>.</li>
+<li><strong>Se você recusar anúncios:</strong> nenhum script de publicidade é carregado, nenhum cookie de publicidade é definido, os espaços de anúncio somem da página.</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>O site em si usa uma entrada de localStorage (<code>toolhub:consent</code>) pra lembrar sua decisão sobre anúncios, mais uma entrada <code>theme</code> pra preferência claro/escuro. Nenhuma das duas sai do seu navegador.</p>
+<p>O Plausible não usa cookies. O Google AdSense usa cookies <em>só se</em> você aceitar — você pode mudar sua decisão a qualquer momento pelo link de consentimento no rodapé.</p>
+
+<h2>Serviços de terceiros</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — amigável à privacidade, em conformidade com o GDPR, hospedado na UE. Nenhum dado pessoal coletado.</li>
+<li><strong>Google AdSense</strong> — só com consentimento explícito. Carrega <code>pagead2.googlesyndication.com</code> e pode definir cookies publicitários.</li>
+<li><strong>GitHub Pages</strong> — host do site. O GitHub mantém logs de servidor padrão (IP, timestamp, URL) conforme <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">a declaração de privacidade deles</a>.</li>
+<li><strong>Ferramenta YouTube Thumbnail</strong> — quando você usa especificamente essa ferramenta, seu navegador baixa a imagem direto de <code>i.ytimg.com</code> (a CDN do YouTube). Sem autenticação, sem upload. Detalhes em <a href="/pt/how-we-handle-your-data/">tratamento de dados</a>.</li>
+</ul>
+
+<h2>Links de afiliado</h2>
+<p>Alguns links no rodapé são links de afiliado — se você clica e se cadastra num serviço recomendado (por exemplo, provedores de hospedagem), o Toolhub pode ganhar uma comissão. O preço que você paga não muda. Links de afiliado vêm marcados com <code>rel="sponsored"</code>. Lista completa em <a href="/pt/affiliate-disclosure/">divulgação de afiliados</a>.</p>
+
+<h2>Seus direitos</h2>
+<p>Sob GDPR / UK GDPR / CCPA / lei eslovaca de proteção de dados, você pode pedir acesso a ou exclusão de qualquer dado pessoal que tenhamos. Não temos nenhum — não tem backend, não tem conta, não tem banco de usuários. O Plausible guarda só dados de visita agregados. Os dados publicitários do Google são geridos pelos canais próprios deles.</p>
+
+<h2>Contato</h2>
+<p>Dúvidas sobre essa política? Fala com a gente pela <a href="/pt/contact/">página de contato</a> ou abra uma issue em <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "pl": {
+                "title": "Polityka prywatności",
+                "h1": "Polityka prywatności",
+                "description": "Polityka prywatności Toolhub: narzędzia działają w całości w przeglądarce, bez rejestracji, bez kont, żadne dane z narzędzi nie opuszczają twojego urządzenia. Plausible do zagregowanej statystyki, AdSense tylko za wyraźną zgodą.",
+                "body": f"""
+<p><strong>Ostatnia aktualizacja:</strong> {LAST_UPDATED}</p>
+
+<h2>Wersja skrócona</h2>
+<p>Narzędzia działają w całości w twojej przeglądarce — nic, co w nie wpiszesz, nie jest nigdzie wysyłane. Mierzymy zagregowane, anonimowe odwiedziny przy pomocy <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (bez cookies). Jeśli wyrazisz zgodę, możemy też pokazywać reklamy display przez Google AdSense, który używa cookies. Reklamy możesz odrzucić w bannerze zgody; reszta strony działa tak samo.</p>
+
+<h2>Co zbieramy</h2>
+<ul>
+<li><strong>Dane wpisywane w narzędzia:</strong> nic. Wszystko, co wkleisz do narzędzia, zostaje w twojej przeglądarce. Żadne narzędzie nie wysyła danych na serwer.</li>
+<li><strong>Statystyki odwiedzin:</strong> Plausible liczy odsłony, referrer, kraj i typ urządzenia — anonimowo, w agregacie, bez cookies. <a href="https://plausible.io/data-policy" rel="noopener">Polityka danych Plausible</a> opisuje, co zbierają, a czego nie.</li>
+<li><strong>Jeśli zaakceptujesz reklamy:</strong> Google AdSense ustawia cookies i może ich używać do personalizacji. Praktyki Google'a reguluje <a href="https://policies.google.com/technologies/ads" rel="noopener">polityka prywatności reklamowej Google'a</a>.</li>
+<li><strong>Jeśli odrzucisz reklamy:</strong> żadne skrypty reklamowe nie są ładowane, żadne cookies reklamowe nie są ustawiane, slot reklamowy znika ze strony.</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>Sama strona używa jednego wpisu w localStorage (<code>toolhub:consent</code>), żeby zapamiętać twoją decyzję o reklamach, plus wpisu <code>theme</code> dla preferencji jasny/ciemny. Żaden z nich nie opuszcza twojej przeglądarki.</p>
+<p>Plausible nie używa cookies. Google AdSense używa cookies <em>tylko jeśli</em> się zgodzisz — decyzję możesz zmienić w dowolnym momencie linkiem zgody w stopce.</p>
+
+<h2>Usługi stron trzecich</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — przyjazne prywatności, zgodne z RODO, hostowane w UE. Brak danych osobowych.</li>
+<li><strong>Google AdSense</strong> — wyłącznie za wyraźną zgodą. Ładuje <code>pagead2.googlesyndication.com</code> i może ustawiać cookies reklamowe.</li>
+<li><strong>GitHub Pages</strong> — host strony. GitHub trzyma standardowe logi serwera (IP, znacznik czasu, URL) zgodnie z <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">ich oświadczeniem o prywatności</a>.</li>
+<li><strong>Narzędzie YouTube Thumbnail</strong> — kiedy używasz konkretnie tego narzędzia, twoja przeglądarka pobiera obraz bezpośrednio z <code>i.ytimg.com</code> (CDN YouTube'a). Bez uwierzytelnienia, bez uploadu. Szczegóły w <a href="/pl/how-we-handle-your-data/">obsługa danych</a>.</li>
+</ul>
+
+<h2>Linki partnerskie (affiliate)</h2>
+<p>Niektóre linki w stopce to linki partnerskie — jeśli klikniesz i zarejestrujesz się w polecanym serwisie (np. dostawca hostingu), Toolhub może dostać prowizję. Cena, którą płacisz, się nie zmienia. Linki partnerskie są oznaczone <code>rel="sponsored"</code>. Pełna lista w <a href="/pl/affiliate-disclosure/">ujawnienie partnerów</a>.</p>
+
+<h2>Twoje prawa</h2>
+<p>Zgodnie z RODO / UK GDPR / CCPA / słowacką ustawą o ochronie danych możesz zażądać dostępu do swoich danych osobowych albo ich usunięcia. Żadnych nie przechowujemy — nie ma backendu, kont ani bazy użytkowników. Plausible przechowuje tylko zagregowane dane o odwiedzinach. Dane reklamowe Google'a obsługuje on we własnych kanałach.</p>
+
+<h2>Kontakt</h2>
+<p>Pytania o tę politykę? Pisz przez <a href="/pl/contact/">stronę kontaktową</a> albo otwórz issue na <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "ja": {
+                "title": "プライバシーポリシー",
+                "h1": "プライバシーポリシー",
+                "description": "Toolhub のプライバシーポリシー：ツールはすべてブラウザ内で動作し、登録もアカウントも不要、ツールに入力したデータは端末から出ません。集計用に Plausible、AdSense は明示的な同意がある場合のみ。",
+                "body": f"""
+<p><strong>最終更新:</strong> {LAST_UPDATED}</p>
+
+<h2>要約</h2>
+<p>ツールはすべてあなたのブラウザ内で動作します — そこに入力した内容はどこにも送信されません。集計された匿名のアクセス情報は <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a>（クッキーなし）で計測しています。同意していただいた場合のみ、Google AdSense でディスプレイ広告も配信し、こちらはクッキーを使用します。同意バナーで広告を拒否することもでき、サイトの他の機能はどちらでも同じように動作します。</p>
+
+<h2>収集する情報</h2>
+<ul>
+<li><strong>ツールへの入力内容:</strong> 一切収集しません。ツールに貼り付けた内容はすべてブラウザ内に留まります。どのツールもサーバーへデータを送りません。</li>
+<li><strong>アクセス解析:</strong> Plausible はページビュー、リファラ、国、デバイス種別を匿名・集計・クッキーなしで計測します。具体的に何を収集し何を収集しないかは <a href="https://plausible.io/data-policy" rel="noopener">Plausible のデータポリシー</a> をご覧ください。</li>
+<li><strong>広告を許可した場合:</strong> Google AdSense はクッキーを設定し、広告のパーソナライズに使うことがあります。Google の取り扱いについては <a href="https://policies.google.com/technologies/ads" rel="noopener">Google 広告プライバシーポリシー</a> に従います。</li>
+<li><strong>広告を拒否した場合:</strong> 広告スクリプトは読み込まれず、広告クッキーも設定されず、広告枠はページから削除されます。</li>
+</ul>
+
+<h2>クッキー</h2>
+<p>サイト自体は、広告同意の選択を覚えるための localStorage エントリ (<code>toolhub:consent</code>) と、ダーク/ライトの好みのための <code>theme</code> エントリの 2 つを使っています。どちらもあなたのブラウザから出ません。</p>
+<p>Plausible はクッキーを使いません。Google AdSense は、<em>同意していただいた場合のみ</em>クッキーを使用します — フッターの同意リンクからいつでも選択を変更できます。</p>
+
+<h2>サードパーティサービス</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — プライバシー重視、GDPR 準拠、EU ホスティング。個人データは収集しません。</li>
+<li><strong>Google AdSense</strong> — 明示的な同意がある場合のみ。<code>pagead2.googlesyndication.com</code> を読み込み、広告クッキーを設定する場合があります。</li>
+<li><strong>GitHub Pages</strong> — サイトのホスト。標準的なサーバーログ（IP、タイムスタンプ、URL）は <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">GitHub のプライバシーステートメント</a> に従い GitHub が保持します。</li>
+<li><strong>YouTube Thumbnail ツール</strong> — このツールを使うときに限り、ブラウザが <code>i.ytimg.com</code>（YouTube の CDN）から画像を直接取得します。認証もアップロードもありません。詳細は <a href="/ja/how-we-handle-your-data/">データの取り扱い</a> をご覧ください。</li>
+</ul>
+
+<h2>アフィリエイトリンク</h2>
+<p>フッターのいくつかのリンクはアフィリエイトリンクです — そこから飛んで推奨するサービス（例: ホスティングプロバイダ）に登録していただくと、Toolhub に紹介料が入ることがあります。あなたが支払う価格は変わりません。アフィリエイトリンクには <code>rel="sponsored"</code> を付けています。完全な一覧は <a href="/ja/affiliate-disclosure/">アフィリエイト開示</a> にあります。</p>
+
+<h2>あなたの権利</h2>
+<p>GDPR / UK GDPR / CCPA / スロバキア個人情報保護法に基づき、当方が保持する個人データへのアクセスや削除を請求できます — ただし当方は何も保持していません。バックエンドもアカウントもユーザーデータベースもありません。Plausible は集計されたアクセス情報のみを保持しています。Google の広告データは Google 自身のリクエスト経路で扱われます。</p>
+
+<h2>お問い合わせ</h2>
+<p>本ポリシーについてのご質問は <a href="/ja/contact/">お問い合わせページ</a> から、または <a href="{REPO_URL}">{REPO_URL}</a> で Issue を立ててください。</p>
+""".strip(),
+            },
+            "nl": {
+                "title": "Privacybeleid",
+                "h1": "Privacybeleid",
+                "description": "Toolhub-privacybeleid: tools draaien volledig in je browser, geen registratie, geen accounts, geen tool-data verlaat je apparaat. Plausible voor geaggregeerde statistiek, AdSense alleen met expliciete toestemming.",
+                "body": f"""
+<p><strong>Laatst bijgewerkt:</strong> {LAST_UPDATED}</p>
+
+<h2>De korte versie</h2>
+<p>Tools draaien volledig in je browser — niets wat je erin typt wordt ergens heen gestuurd. We meten geaggregeerde, anonieme bezoeken met <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (zonder cookies). Als je daarvoor kiest, kunnen we ook display-advertenties tonen via Google AdSense, dat wel cookies gebruikt. Advertenties kun je weigeren in de consent-banner; de rest van de site werkt hetzelfde.</p>
+
+<h2>Wat we verzamelen</h2>
+<ul>
+<li><strong>Tool-invoer:</strong> niets. Alles wat je in een tool plakt, blijft in je browser. Geen enkele tool stuurt data naar een server.</li>
+<li><strong>Bezoekstatistieken:</strong> Plausible telt paginaweergaves, referrer, land en apparaattype — anoniem, geaggregeerd, zonder cookies. Het <a href="https://plausible.io/data-policy" rel="noopener">databeleid van Plausible</a> beschrijft wat ze wel en niet verzamelen.</li>
+<li><strong>Als je advertenties accepteert:</strong> Google AdSense plaatst cookies en kan deze gebruiken om advertenties te personaliseren. Google's praktijken vallen onder <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's privacybeleid voor advertenties</a>.</li>
+<li><strong>Als je advertenties weigert:</strong> er worden geen advertentiescripts geladen, geen advertentiecookies geplaatst, en advertentieblokken verdwijnen uit de pagina.</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>De site zelf gebruikt één localStorage-vermelding (<code>toolhub:consent</code>) om je advertentiekeuze te onthouden, plus een <code>theme</code>-vermelding voor je donker/licht-voorkeur. Geen van beide verlaat je browser.</p>
+<p>Plausible gebruikt geen cookies. Google AdSense gebruikt cookies <em>alleen als</em> je ze accepteert — je kunt je keuze altijd wijzigen via de consent-link in de footer.</p>
+
+<h2>Externe diensten</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — privacyvriendelijk, AVG-conform, EU-gehost. Geen persoonsgegevens.</li>
+<li><strong>Google AdSense</strong> — alleen met expliciete toestemming. Laadt <code>pagead2.googlesyndication.com</code> en kan advertentiecookies plaatsen.</li>
+<li><strong>GitHub Pages</strong> — site-host. GitHub bewaart standaard serverlogs (IP, timestamp, URL) volgens <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">hun privacyverklaring</a>.</li>
+<li><strong>YouTube Thumbnail tool</strong> — als je specifiek deze tool gebruikt, haalt je browser de afbeelding rechtstreeks op vanaf <code>i.ytimg.com</code> (de CDN van YouTube). Geen authenticatie, geen upload. Details op <a href="/nl/how-we-handle-your-data/">dataverwerking</a>.</li>
+</ul>
+
+<h2>Affiliate-links</h2>
+<p>Sommige links in de footer zijn affiliate-links — als je doorklikt en je aanmeldt bij een aanbevolen dienst (bijvoorbeeld hostingproviders), kan Toolhub een commissie verdienen. De prijs die jij betaalt verandert niet. Affiliate-links zijn gemarkeerd met <code>rel="sponsored"</code>. Volledige lijst op <a href="/nl/affiliate-disclosure/">affiliate-disclosure</a>.</p>
+
+<h2>Jouw rechten</h2>
+<p>Onder AVG / UK GDPR / CCPA / de Slowaakse privacywet kun je inzage of verwijdering van persoonsgegevens vragen die wij over je bewaren. Wij bewaren niets — er is geen backend, geen account, geen gebruikersdatabase. Plausible bewaart alleen geaggregeerde bezoekdata. Google's advertentiedata loopt via hun eigen verzoekkanalen.</p>
+
+<h2>Contact</h2>
+<p>Vragen over dit beleid? Meld je via de <a href="/nl/contact/">contactpagina</a> of open een issue op <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+        },
+    },
+
+    "how-we-handle-your-data": {
+        "slug": "how-we-handle-your-data",
+        "schema": "WebPage",
+        "i18n": {
+            "en": {
+                "title": "How we handle your data",
+                "h1": "How we handle your data",
+                "description": "Plain-language disclosure of exactly how Toolhub handles your data. Tools run in your browser, nothing is stored, three named exceptions are listed explicitly.",
+                "body": f"""
+<p><strong>Last updated:</strong> {LAST_UPDATED}</p>
+<p>This page is the plain-language version. It complements the <a href="/privacy/">privacy policy</a>; if they appear to disagree on a point, this page is the more specific one and should be treated as authoritative.</p>
+
+<h2>Where data goes</h2>
+<p>Tools on Toolhub run in your browser. Anything you paste, type, or upload into a tool stays on your device — we do not have a server-side tool runner, and there is no upload endpoint behind any of the tools.</p>
+<p>There are exactly three named exceptions to "no data leaves your device":</p>
+<ol>
+<li><strong>YouTube Thumbnail tool</strong> — when you submit a YouTube URL, your browser fetches the thumbnail directly from <code>i.ytimg.com</code> (YouTube's public image CDN). No authentication, no upload, no API key. The video ID in the URL is the only thing YouTube sees, and only because your browser fetched it.</li>
+<li><strong>AdSense (only if enabled and consented)</strong> — Google's display-ad system. When you grant ad consent, Google can see your IP address and may set cookies, governed by Google's policy. When you decline (the default), AdSense is not loaded at all.</li>
+<li><strong>Plausible analytics</strong> — counts page visits, referrer, country and device class. No cookies, no fingerprinting, aggregate statistics only. Plausible's servers are EU-hosted.</li>
+</ol>
+
+<h2>What we store</h2>
+<p>Nothing about you. No accounts, no user IDs, no email, no profile. We do not store the content you put into tools.</p>
+<p>Your browser stores two small localStorage entries on your device only — both readable and clearable from your browser's developer tools:</p>
+<ul>
+<li><code>theme</code> — "light" or "dark", roughly one byte of preference.</li>
+<li><code>toolhub:consent</code> — your ad consent decision (yes/no/unset). Used to avoid asking you again.</li>
+</ul>
+
+<h2>GDPR, UK GDPR, CCPA and the Slovak DPA</h2>
+<p>Toolhub processes minimal data:</p>
+<ul>
+<li><strong>EU / UK (GDPR / UK GDPR):</strong> Plausible (EU-hosted) gives a compliant analytics baseline. When AdSense is active, Google operates its own consent layer under TCF v2.</li>
+<li><strong>California (CCPA):</strong> we do not sell personal information. We do not have personal information to sell.</li>
+<li><strong>Slovakia (Slovak Data Protection Authority):</strong> Toolhub's maintainer is based in Slovakia. The Slovak DPA's rules apply to any processing that does occur — which is essentially limited to Plausible's aggregate metrics and (when enabled) AdSense's own consent-managed flow.</li>
+</ul>
+<p>Rights to access or delete personal data effectively do not apply because no personal data is stored to access or delete. If you have specific questions, contact us via the <a href="/contact/">contact page</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible:</strong> no cookies, ever.</li>
+<li><strong>Theme preference:</strong> one localStorage entry, not a cookie. Stays on your device. Not transmitted with HTTP requests.</li>
+<li><strong>AdSense (when active):</strong> Google sets its own third-party advertising cookies. The consent banner appears before any AdSense script is loaded, and AdSense is not loaded at all if you decline.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Toolhub is school-friendly (see <a href="/for-schools/">Toolhub for schools</a>). There is no behavioral tracking and no targeted advertising. Under-13 use is acceptable within the existing AdSense terms applied per region — meaning if you are in a region where AdSense restricts ads to children, those restrictions are honored by Google's own systems.</p>
+
+<h2>Downloadable PDF</h2>
+<p>A PDF version of this page is available for offline reference or for printing as part of a school's IT documentation:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>The PDF is English only at this stage; per-language PDFs are not in scope for the current release.</p>
+
+<h2>Questions</h2>
+<p>If anything here is unclear, please open an issue at <a href="{REPO_URL}">{REPO_URL}</a> or use the <a href="/contact/">contact page</a>. Clarifying questions are a useful way to make this page better for the next reader.</p>
+""".strip(),
+            },
+            "de": {
+                "title": "Wie wir mit deinen Daten umgehen",
+                "h1": "Wie wir mit deinen Daten umgehen",
+                "description": "Verständliche Offenlegung, wie Toolhub konkret mit deinen Daten umgeht. Tools laufen im Browser, nichts wird gespeichert, drei explizit benannte Ausnahmen.",
+                "body": f"""
+<p><strong>Zuletzt aktualisiert:</strong> {LAST_UPDATED}</p>
+<p>Diese Seite ist die Klartext-Version. Sie ergänzt die <a href="/de/privacy/">Datenschutzerklärung</a>; wenn beide an einer Stelle widersprüchlich wirken, ist diese Seite die spezifischere und gilt vorrangig.</p>
+
+<h2>Wo die Daten landen</h2>
+<p>Tools auf Toolhub laufen in deinem Browser. Was du in ein Tool einfügst, eintippst oder hochlädst, bleibt auf deinem Gerät — wir haben keine serverseitige Tool-Ausführung, und hinter keinem Tool steht ein Upload-Endpunkt.</p>
+<p>Es gibt genau drei namentlich genannte Ausnahmen zu „keine Daten verlassen dein Gerät":</p>
+<ol>
+<li><strong>YouTube-Thumbnail-Tool</strong> — wenn du eine YouTube-URL absendest, lädt dein Browser das Thumbnail direkt von <code>i.ytimg.com</code> (YouTubes öffentlicher Bild-CDN). Keine Authentifizierung, kein Upload, kein API-Key. YouTube sieht ausschließlich die Video-ID aus der URL, und das nur, weil dein Browser sie abruft.</li>
+<li><strong>AdSense (nur wenn aktiviert und zugestimmt)</strong> — Googles Display-Ad-System. Wenn du Werbung zustimmst, kann Google deine IP-Adresse sehen und Cookies setzen, geregelt durch Googles Richtlinien. Wenn du ablehnst (Standard), wird AdSense gar nicht geladen.</li>
+<li><strong>Plausible Analytics</strong> — zählt Besuche, Referrer, Land und Geräteklasse. Keine Cookies, kein Fingerprinting, ausschließlich aggregierte Statistik. Plausibles Server stehen in der EU.</li>
+</ol>
+
+<h2>Was wir speichern</h2>
+<p>Nichts über dich. Keine Konten, keine Nutzer-IDs, keine E-Mail, kein Profil. Wir speichern nicht den Inhalt, den du in die Tools eingibst.</p>
+<p>Dein Browser speichert auf deinem Gerät zwei kleine localStorage-Einträge — beide kannst du in den Browser-Entwicklertools sehen und löschen:</p>
+<ul>
+<li><code>theme</code> — „light" oder „dark", ungefähr ein Byte Präferenz.</li>
+<li><code>toolhub:consent</code> — deine Entscheidung zur Werbung (ja/nein/nicht gesetzt). Damit wir dich nicht nochmal fragen.</li>
+</ul>
+
+<h2>DSGVO, UK GDPR, CCPA und slowakisches Datenschutzgesetz</h2>
+<p>Toolhub verarbeitet minimale Daten:</p>
+<ul>
+<li><strong>EU / UK (DSGVO / UK GDPR):</strong> Plausible (EU-gehostet) liefert eine konforme Analytics-Basis. Wenn AdSense aktiv ist, betreibt Google seinen eigenen Consent-Layer unter TCF v2.</li>
+<li><strong>Kalifornien (CCPA):</strong> wir verkaufen keine personenbezogenen Daten. Wir haben keine personenbezogenen Daten zum Verkaufen.</li>
+<li><strong>Slowakei (Datenschutzbehörde):</strong> der Maintainer von Toolhub sitzt in der Slowakei. Die slowakischen Regeln gelten für jede Verarbeitung, die tatsächlich stattfindet — was sich im Wesentlichen auf Plausibles aggregierte Metriken und (wenn aktiv) AdSenses eigenen Consent-Flow beschränkt.</li>
+</ul>
+<p>Auskunfts- und Löschrechte zu personenbezogenen Daten greifen praktisch nicht, weil nichts gespeichert ist, worüber man Auskunft geben oder was man löschen könnte. Wenn du konkrete Fragen hast, melde dich über die <a href="/de/contact/">Kontaktseite</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible:</strong> nie Cookies.</li>
+<li><strong>Theme-Präferenz:</strong> ein localStorage-Eintrag, kein Cookie. Bleibt auf deinem Gerät. Wird nicht mit HTTP-Requests übertragen.</li>
+<li><strong>AdSense (wenn aktiv):</strong> Google setzt seine eigenen Werbe-Cookies (Drittanbieter). Der Consent-Banner erscheint, bevor irgendein AdSense-Skript geladen wird, und AdSense wird gar nicht geladen, wenn du ablehnst.</li>
+</ul>
+
+<h2>Kinder</h2>
+<p>Toolhub ist schultauglich (siehe <a href="/de/for-schools/">Toolhub für Schulen</a>). Es gibt kein verhaltensbasiertes Tracking und keine personalisierte Werbung. Nutzung durch Unter-13-Jährige ist im Rahmen der regionalen AdSense-Bedingungen in Ordnung — wo AdSense regional Werbung gegenüber Kindern beschränkt, halten Googles eigene Systeme diese Beschränkungen ein.</p>
+
+<h2>PDF zum Herunterladen</h2>
+<p>Eine PDF-Version dieser Seite gibt es zum Offline-Lesen oder zum Ausdrucken als Teil der IT-Dokumentation einer Schule:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>Die PDF ist derzeit nur auf Englisch verfügbar; sprachspezifische PDFs sind in diesem Release nicht enthalten.</p>
+
+<h2>Fragen</h2>
+<p>Wenn hier etwas unklar ist, öffne bitte ein Issue unter <a href="{REPO_URL}">{REPO_URL}</a> oder nutze die <a href="/de/contact/">Kontaktseite</a>. Rückfragen helfen dabei, diese Seite für die nächste Leserin besser zu machen.</p>
+""".strip(),
+            },
+            "es": {
+                "title": "Cómo tratamos tus datos",
+                "h1": "Cómo tratamos tus datos",
+                "description": "Explicación en lenguaje claro de cómo Toolhub trata exactamente tus datos. Las herramientas funcionan en el navegador, no se almacena nada y se nombran tres excepciones explícitas.",
+                "body": f"""
+<p><strong>Última actualización:</strong> {LAST_UPDATED}</p>
+<p>Esta página es la versión en lenguaje claro. Complementa la <a href="/es/privacy/">política de privacidad</a>; si en algún punto parecen contradecirse, esta página es la más específica y prevalece.</p>
+
+<h2>Adónde van los datos</h2>
+<p>Las herramientas de Toolhub corren en tu navegador. Lo que pegues, escribas o subas a una herramienta se queda en tu dispositivo — no tenemos un ejecutor de herramientas en servidor, y ninguna herramienta tiene un endpoint de subida detrás.</p>
+<p>Hay exactamente tres excepciones nombradas al «nada sale de tu dispositivo»:</p>
+<ol>
+<li><strong>Herramienta YouTube Thumbnail</strong> — cuando envías una URL de YouTube, tu navegador descarga la miniatura directamente desde <code>i.ytimg.com</code> (la CDN pública de imágenes de YouTube). Sin autenticación, sin subida, sin clave de API. YouTube solo ve el ID del vídeo de la URL, y solo porque tu navegador lo descarga.</li>
+<li><strong>AdSense (solo si está activo y has dado consentimiento)</strong> — el sistema de anuncios display de Google. Si das consentimiento, Google puede ver tu dirección IP y puede poner cookies, regido por la política de Google. Si rechazas (predeterminado), AdSense ni siquiera se carga.</li>
+<li><strong>Plausible Analytics</strong> — cuenta visitas a páginas, referrer, país y clase de dispositivo. Sin cookies, sin fingerprinting, solo estadísticas agregadas. Los servidores de Plausible están en la UE.</li>
+</ol>
+
+<h2>Qué almacenamos</h2>
+<p>Nada sobre ti. Sin cuentas, sin IDs de usuario, sin email, sin perfil. No almacenamos el contenido que metes en las herramientas.</p>
+<p>Tu navegador guarda dos pequeñas entradas en localStorage en tu propio dispositivo — ambas legibles y borrables desde las DevTools del navegador:</p>
+<ul>
+<li><code>theme</code> — "light" o "dark", más o menos un byte de preferencia.</li>
+<li><code>toolhub:consent</code> — tu decisión sobre anuncios (sí/no/sin definir). Sirve para no volver a preguntarte.</li>
+</ul>
+
+<h2>RGPD, UK GDPR, CCPA y la AEPD eslovaca</h2>
+<p>Toolhub procesa datos mínimos:</p>
+<ul>
+<li><strong>UE / UK (RGPD / UK GDPR):</strong> Plausible (alojado en la UE) ofrece una base de analítica conforme. Cuando AdSense está activo, Google opera su propia capa de consentimiento bajo TCF v2.</li>
+<li><strong>California (CCPA):</strong> no vendemos información personal. No tenemos información personal que vender.</li>
+<li><strong>Eslovaquia (autoridad eslovaca de protección de datos):</strong> el mantenedor de Toolhub está en Eslovaquia. Las normas eslovacas se aplican a cualquier tratamiento que efectivamente ocurra — limitado en esencia a las métricas agregadas de Plausible y (cuando está activo) al flujo de consentimiento del propio AdSense.</li>
+</ul>
+<p>Los derechos de acceso o supresión de datos personales no aplican en la práctica porque no hay datos personales almacenados que acceder o suprimir. Si tienes una pregunta concreta, escríbenos desde la <a href="/es/contact/">página de contacto</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible:</strong> sin cookies, nunca.</li>
+<li><strong>Preferencia de tema:</strong> una entrada en localStorage, no una cookie. Se queda en tu dispositivo. No se envía en las peticiones HTTP.</li>
+<li><strong>AdSense (cuando está activo):</strong> Google pone sus propias cookies publicitarias de terceros. El banner de consentimiento aparece antes de cargar cualquier script de AdSense, y AdSense ni se carga si rechazas.</li>
+</ul>
+
+<h2>Menores</h2>
+<p>Toolhub es apto para entornos escolares (ver <a href="/es/for-schools/">Toolhub para escuelas</a>). No hay seguimiento de comportamiento ni publicidad personalizada. El uso por menores de 13 años es aceptable dentro de los términos de AdSense aplicados por región — donde AdSense restringe regionalmente los anuncios a menores, esas restricciones las cumplen los sistemas del propio Google.</p>
+
+<h2>PDF descargable</h2>
+<p>Hay una versión en PDF de esta página para referencia offline o para imprimirla como parte de la documentación IT de un centro:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>De momento el PDF está solo en inglés; los PDFs por idioma quedan fuera del alcance de esta entrega.</p>
+
+<h2>Preguntas</h2>
+<p>Si algo aquí no está claro, abre una issue en <a href="{REPO_URL}">{REPO_URL}</a> o usa la <a href="/es/contact/">página de contacto</a>. Las dudas que aclaras son una forma útil de mejorar la página para la siguiente persona.</p>
+""".strip(),
+            },
+            "fr": {
+                "title": "Comment on traite tes données",
+                "h1": "Comment on traite tes données",
+                "description": "Présentation en langage clair de la façon dont Toolhub traite tes données. Les outils tournent dans le navigateur, rien n'est stocké, trois exceptions nommées explicitement.",
+                "body": f"""
+<p><strong>Dernière mise à jour :</strong> {LAST_UPDATED}</p>
+<p>Cette page est la version en clair. Elle complète la <a href="/fr/privacy/">politique de confidentialité</a> ; si les deux semblent se contredire quelque part, cette page-ci est la plus spécifique et prévaut.</p>
+
+<h2>Où vont les données</h2>
+<p>Les outils de Toolhub tournent dans ton navigateur. Tout ce que tu colles, tapes ou téléverses dans un outil reste sur ton appareil — il n'y a pas d'exécuteur d'outils côté serveur, et aucun outil n'a d'endpoint d'upload derrière.</p>
+<p>Il y a exactement trois exceptions nommées à « rien ne sort de ton appareil » :</p>
+<ol>
+<li><strong>Outil YouTube Thumbnail</strong> — quand tu soumets une URL YouTube, ton navigateur télécharge la miniature directement depuis <code>i.ytimg.com</code> (le CDN d'images public de YouTube). Pas d'authentification, pas d'upload, pas de clé API. YouTube voit seulement l'ID de la vidéo dans l'URL, et seulement parce que ton navigateur fait la requête.</li>
+<li><strong>AdSense (uniquement si activé et consenti)</strong> — le système d'annonces display de Google. Quand tu donnes ton consentement, Google peut voir ton adresse IP et poser des cookies, régis par la politique de Google. Quand tu refuses (par défaut), AdSense n'est pas chargé du tout.</li>
+<li><strong>Plausible Analytics</strong> — compte les visites de pages, le referrer, le pays et la classe d'appareil. Pas de cookies, pas de fingerprinting, uniquement des statistiques agrégées. Les serveurs de Plausible sont hébergés dans l'UE.</li>
+</ol>
+
+<h2>Ce qu'on stocke</h2>
+<p>Rien à ton sujet. Pas de comptes, pas d'identifiants utilisateur, pas d'e-mail, pas de profil. On ne stocke pas le contenu que tu mets dans les outils.</p>
+<p>Ton navigateur garde deux petites entrées localStorage sur ton appareil seulement — toutes deux lisibles et effaçables depuis les outils de développement du navigateur :</p>
+<ul>
+<li><code>theme</code> — « light » ou « dark », à peu près un octet de préférence.</li>
+<li><code>toolhub:consent</code> — ta décision sur la pub (oui/non/non défini). Pour ne pas te redemander.</li>
+</ul>
+
+<h2>RGPD, UK GDPR, CCPA et l'autorité slovaque</h2>
+<p>Toolhub traite des données minimales :</p>
+<ul>
+<li><strong>UE / UK (RGPD / UK GDPR) :</strong> Plausible (hébergé dans l'UE) fournit une base d'analytique conforme. Quand AdSense est actif, Google opère sa propre couche de consentement sous TCF v2.</li>
+<li><strong>Californie (CCPA) :</strong> on ne vend pas d'informations personnelles. On n'a pas d'informations personnelles à vendre.</li>
+<li><strong>Slovaquie (autorité slovaque de protection des données) :</strong> le mainteneur de Toolhub est basé en Slovaquie. Les règles slovaques s'appliquent à tout traitement qui a effectivement lieu — ce qui se limite essentiellement aux métriques agrégées de Plausible et (quand actif) au flux de consentement propre à AdSense.</li>
+</ul>
+<p>Les droits d'accès ou de suppression de données personnelles ne s'appliquent en pratique pas, parce qu'aucune donnée personnelle n'est stockée à laquelle accéder ou qu'effacer. Pour des questions précises, écris depuis la <a href="/fr/contact/">page de contact</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible :</strong> jamais de cookies.</li>
+<li><strong>Préférence de thème :</strong> une entrée localStorage, pas un cookie. Reste sur ton appareil. N'est pas envoyée avec les requêtes HTTP.</li>
+<li><strong>AdSense (quand actif) :</strong> Google pose ses propres cookies publicitaires tiers. La bannière de consentement apparaît avant qu'aucun script AdSense ne soit chargé, et AdSense n'est pas chargé du tout si tu refuses.</li>
+</ul>
+
+<h2>Enfants</h2>
+<p>Toolhub est adapté à un usage scolaire (voir <a href="/fr/for-schools/">Toolhub pour les écoles</a>). Pas de pistage comportemental, pas de pub ciblée. L'usage par les moins de 13 ans est acceptable dans le cadre des conditions AdSense appliquées par région — là où AdSense restreint régionalement les annonces aux enfants, ces restrictions sont respectées par les systèmes de Google.</p>
+
+<h2>PDF téléchargeable</h2>
+<p>Une version PDF de cette page est disponible pour consultation hors-ligne ou pour impression dans la documentation IT d'un établissement :</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>Le PDF est uniquement en anglais à ce stade ; les PDF par langue ne sont pas dans le périmètre de cette livraison.</p>
+
+<h2>Questions</h2>
+<p>Si quelque chose n'est pas clair ici, ouvre une issue sur <a href="{REPO_URL}">{REPO_URL}</a> ou utilise la <a href="/fr/contact/">page de contact</a>. Les questions de clarification servent à améliorer la page pour la prochaine personne.</p>
+""".strip(),
+            },
+            "it": {
+                "title": "Come trattiamo i tuoi dati",
+                "h1": "Come trattiamo i tuoi dati",
+                "description": "Spiegazione in linguaggio semplice di come esattamente Toolhub tratta i tuoi dati. Gli strumenti girano nel browser, nulla viene memorizzato, vengono nominate tre eccezioni esplicite.",
+                "body": f"""
+<p><strong>Ultimo aggiornamento:</strong> {LAST_UPDATED}</p>
+<p>Questa pagina è la versione in linguaggio semplice. Integra l'<a href="/it/privacy/">informativa sulla privacy</a>; se in un punto sembrano in disaccordo, questa pagina è la più specifica e prevale.</p>
+
+<h2>Dove vanno i dati</h2>
+<p>Gli strumenti di Toolhub girano nel tuo browser. Tutto ciò che incolli, digiti o carichi in uno strumento resta sul tuo dispositivo — non abbiamo un esecutore di strumenti lato server, e nessuno strumento ha dietro un endpoint di upload.</p>
+<p>Ci sono esattamente tre eccezioni nominate al «nulla esce dal tuo dispositivo»:</p>
+<ol>
+<li><strong>Strumento YouTube Thumbnail</strong> — quando invii un URL YouTube, il tuo browser scarica la thumbnail direttamente da <code>i.ytimg.com</code> (la CDN immagini pubblica di YouTube). Nessuna autenticazione, nessun upload, nessuna chiave API. YouTube vede solo l'ID del video dall'URL, e solo perché il tuo browser l'ha richiesto.</li>
+<li><strong>AdSense (solo se attivo e con consenso)</strong> — il sistema di annunci display di Google. Quando dai il consenso, Google può vedere il tuo indirizzo IP e impostare cookie, regolato dalla policy di Google. Quando rifiuti (impostazione predefinita), AdSense non viene proprio caricato.</li>
+<li><strong>Plausible Analytics</strong> — conta le visite alle pagine, il referrer, il paese e la classe di dispositivo. Nessun cookie, nessun fingerprinting, solo statistiche aggregate. I server di Plausible sono ospitati in UE.</li>
+</ol>
+
+<h2>Cosa memorizziamo</h2>
+<p>Nulla che ti riguardi. Nessun account, nessun ID utente, nessuna email, nessun profilo. Non memorizziamo il contenuto che metti negli strumenti.</p>
+<p>Il tuo browser tiene due piccole voci di localStorage solo sul tuo dispositivo — entrambe leggibili e cancellabili dagli strumenti per sviluppatori del browser:</p>
+<ul>
+<li><code>theme</code> — "light" o "dark", più o meno un byte di preferenza.</li>
+<li><code>toolhub:consent</code> — la tua decisione sugli annunci (sì/no/non impostata). Serve a non richiederlo di nuovo.</li>
+</ul>
+
+<h2>GDPR, UK GDPR, CCPA e l'autorità slovacca</h2>
+<p>Toolhub tratta dati minimi:</p>
+<ul>
+<li><strong>UE / UK (GDPR / UK GDPR):</strong> Plausible (ospitato in UE) fornisce una base analitica conforme. Quando AdSense è attivo, Google gestisce il proprio layer di consenso sotto TCF v2.</li>
+<li><strong>California (CCPA):</strong> non vendiamo informazioni personali. Non abbiamo informazioni personali da vendere.</li>
+<li><strong>Slovacchia (autorità slovacca per la protezione dei dati):</strong> il maintainer di Toolhub è basato in Slovacchia. Le regole slovacche si applicano a qualsiasi trattamento effettivamente in atto — limitato in pratica alle metriche aggregate di Plausible e (quando attivo) al flusso di consenso interno di AdSense.</li>
+</ul>
+<p>I diritti di accesso o cancellazione dei dati personali in pratica non si applicano perché non ci sono dati personali memorizzati da consultare o cancellare. Per domande specifiche, scrivici dalla <a href="/it/contact/">pagina di contatto</a>.</p>
+
+<h2>Cookie</h2>
+<ul>
+<li><strong>Plausible:</strong> nessun cookie, mai.</li>
+<li><strong>Preferenza tema:</strong> una voce in localStorage, non un cookie. Resta sul tuo dispositivo. Non viaggia con le richieste HTTP.</li>
+<li><strong>AdSense (quando attivo):</strong> Google imposta i propri cookie pubblicitari di terze parti. Il banner di consenso compare prima che venga caricato qualunque script AdSense, e AdSense non viene caricato per nulla se rifiuti.</li>
+</ul>
+
+<h2>Minori</h2>
+<p>Toolhub è adatto alla scuola (vedi <a href="/it/for-schools/">Toolhub per le scuole</a>). Niente tracciamento comportamentale, niente pubblicità mirata. L'uso da parte di minori di 13 anni è accettabile nell'ambito dei termini AdSense applicati per regione — dove AdSense limita regionalmente la pubblicità ai minori, quei limiti sono rispettati dai sistemi di Google.</p>
+
+<h2>PDF scaricabile</h2>
+<p>È disponibile una versione PDF di questa pagina per consultazione offline o per essere stampata nella documentazione IT di una scuola:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>Il PDF è al momento solo in inglese; i PDF per lingua non rientrano in questa release.</p>
+
+<h2>Domande</h2>
+<p>Se qualcosa qui non è chiaro, apri una issue su <a href="{REPO_URL}">{REPO_URL}</a> o usa la <a href="/it/contact/">pagina di contatto</a>. Le domande di chiarimento aiutano a rendere la pagina migliore per chi legge dopo.</p>
+""".strip(),
+            },
+            "pt": {
+                "title": "Como tratamos seus dados",
+                "h1": "Como tratamos seus dados",
+                "description": "Explicação em linguagem clara de como exatamente o Toolhub trata seus dados. As ferramentas rodam no navegador, nada é armazenado, três exceções nomeadas explicitamente.",
+                "body": f"""
+<p><strong>Última atualização:</strong> {LAST_UPDATED}</p>
+<p>Essa página é a versão em linguagem clara. Ela complementa a <a href="/pt/privacy/">política de privacidade</a>; se em algum ponto parecerem discordar, essa página é a mais específica e prevalece.</p>
+
+<h2>Pra onde os dados vão</h2>
+<p>As ferramentas do Toolhub rodam no seu navegador. Tudo que você cola, digita ou faz upload em uma ferramenta fica no seu dispositivo — não temos executor de ferramenta no servidor, e nenhuma ferramenta tem endpoint de upload por trás.</p>
+<p>Existem exatamente três exceções nomeadas pro "nada sai do seu dispositivo":</p>
+<ol>
+<li><strong>Ferramenta YouTube Thumbnail</strong> — quando você envia uma URL do YouTube, seu navegador baixa a thumbnail direto de <code>i.ytimg.com</code> (a CDN de imagens pública do YouTube). Sem autenticação, sem upload, sem API key. O YouTube só vê o ID do vídeo na URL, e só porque seu navegador fez a requisição.</li>
+<li><strong>AdSense (só se ativo e com consentimento)</strong> — o sistema de anúncios display do Google. Quando você dá consentimento, o Google pode ver seu IP e pode definir cookies, regidos pela política dele. Quando você recusa (padrão), o AdSense nem é carregado.</li>
+<li><strong>Plausible Analytics</strong> — conta visitas, referrer, país e classe de dispositivo. Sem cookies, sem fingerprinting, só estatística agregada. Os servidores do Plausible ficam na UE.</li>
+</ol>
+
+<h2>O que armazenamos</h2>
+<p>Nada sobre você. Sem contas, sem IDs de usuário, sem email, sem perfil. Não armazenamos o conteúdo que você bota nas ferramentas.</p>
+<p>Seu navegador guarda duas pequenas entradas de localStorage só no seu dispositivo — as duas são legíveis e apagáveis pelo DevTools do navegador:</p>
+<ul>
+<li><code>theme</code> — "light" ou "dark", mais ou menos um byte de preferência.</li>
+<li><code>toolhub:consent</code> — sua decisão sobre anúncios (sim/não/não definida). Pra não te perguntar de novo.</li>
+</ul>
+
+<h2>GDPR, UK GDPR, CCPA e a autoridade eslovaca</h2>
+<p>O Toolhub processa dados mínimos:</p>
+<ul>
+<li><strong>UE / UK (GDPR / UK GDPR):</strong> o Plausible (hospedado na UE) dá uma base de analytics conforme. Quando o AdSense está ativo, o Google opera a própria camada de consentimento sob TCF v2.</li>
+<li><strong>Califórnia (CCPA):</strong> não vendemos informação pessoal. Não temos informação pessoal pra vender.</li>
+<li><strong>Eslováquia (autoridade eslovaca de proteção de dados):</strong> o mantenedor do Toolhub está baseado na Eslováquia. As regras eslovacas se aplicam a qualquer processamento que realmente ocorra — limitado essencialmente às métricas agregadas do Plausible e (quando ativo) ao fluxo de consentimento do próprio AdSense.</li>
+</ul>
+<p>Direitos de acesso ou exclusão de dados pessoais na prática não se aplicam porque não há dado pessoal armazenado a acessar ou excluir. Pra dúvidas específicas, fala com a gente pela <a href="/pt/contact/">página de contato</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible:</strong> sem cookies, nunca.</li>
+<li><strong>Preferência de tema:</strong> uma entrada de localStorage, não um cookie. Fica no seu dispositivo. Não vai junto com requisições HTTP.</li>
+<li><strong>AdSense (quando ativo):</strong> o Google define seus próprios cookies publicitários de terceiros. O banner de consentimento aparece antes de qualquer script do AdSense ser carregado, e o AdSense nem é carregado se você recusar.</li>
+</ul>
+
+<h2>Crianças</h2>
+<p>O Toolhub é adequado pra escola (veja <a href="/pt/for-schools/">Toolhub pra escolas</a>). Não tem tracking comportamental nem publicidade direcionada. O uso por menores de 13 anos é aceitável dentro dos termos do AdSense aplicados por região — onde o AdSense restringe regionalmente anúncios pra crianças, essas restrições são respeitadas pelos sistemas do próprio Google.</p>
+
+<h2>PDF pra download</h2>
+<p>Tem uma versão em PDF dessa página pra leitura offline ou pra imprimir como parte da documentação de TI de uma escola:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>O PDF tá só em inglês por enquanto; PDFs por idioma não fazem parte dessa entrega.</p>
+
+<h2>Dúvidas</h2>
+<p>Se algo aqui não está claro, abre uma issue em <a href="{REPO_URL}">{REPO_URL}</a> ou usa a <a href="/pt/contact/">página de contato</a>. Perguntas de esclarecimento ajudam a melhorar a página pra próxima pessoa.</p>
+""".strip(),
+            },
+            "pl": {
+                "title": "Jak obchodzimy się z twoimi danymi",
+                "h1": "Jak obchodzimy się z twoimi danymi",
+                "description": "Wyjaśnienie prostym językiem, jak dokładnie Toolhub obchodzi się z twoimi danymi. Narzędzia działają w przeglądarce, nic nie jest przechowywane, trzy wyjątki wymienione wprost.",
+                "body": f"""
+<p><strong>Ostatnia aktualizacja:</strong> {LAST_UPDATED}</p>
+<p>To jest wersja w prostym języku. Uzupełnia <a href="/pl/privacy/">politykę prywatności</a>; jeśli gdzieś wyglądają na sprzeczne, ta strona jest bardziej szczegółowa i ma pierwszeństwo.</p>
+
+<h2>Dokąd trafiają dane</h2>
+<p>Narzędzia Toolhub działają w twojej przeglądarce. Wszystko, co wklejasz, wpisujesz lub wgrywasz do narzędzia, zostaje na twoim urządzeniu — nie mamy uruchamiania narzędzi po stronie serwera i żadne narzędzie nie ma za sobą endpointu uploadu.</p>
+<p>Są dokładnie trzy nazwane wyjątki od „nic nie opuszcza twojego urządzenia":</p>
+<ol>
+<li><strong>Narzędzie YouTube Thumbnail</strong> — kiedy wysyłasz URL YouTube, twoja przeglądarka pobiera miniaturę bezpośrednio z <code>i.ytimg.com</code> (publiczny obrazkowy CDN YouTube'a). Bez uwierzytelnienia, bez uploadu, bez klucza API. YouTube widzi tylko ID filmu z URL-a i tylko dlatego, że twoja przeglądarka go pobrała.</li>
+<li><strong>AdSense (tylko jeśli włączone i za zgodą)</strong> — system reklam display Google'a. Kiedy wyrażasz zgodę, Google może widzieć twój adres IP i może ustawiać cookies, zgodnie ze swoją polityką. Kiedy odmawiasz (domyślne), AdSense w ogóle nie jest ładowany.</li>
+<li><strong>Plausible Analytics</strong> — liczy odwiedziny, referrer, kraj i klasę urządzenia. Bez cookies, bez fingerprintingu, wyłącznie zagregowane statystyki. Serwery Plausible są hostowane w UE.</li>
+</ol>
+
+<h2>Co przechowujemy</h2>
+<p>Nic na twój temat. Bez kont, bez ID użytkownika, bez maila, bez profilu. Nie przechowujemy treści, którą wkładasz do narzędzi.</p>
+<p>Twoja przeglądarka trzyma na twoim urządzeniu dwa małe wpisy localStorage — oba można odczytać i wyczyścić w narzędziach deweloperskich:</p>
+<ul>
+<li><code>theme</code> — „light" albo „dark", mniej więcej bajt preferencji.</li>
+<li><code>toolhub:consent</code> — twoja decyzja o reklamach (tak/nie/niezdefiniowane). Po to, żeby nie pytać znowu.</li>
+</ul>
+
+<h2>RODO, UK GDPR, CCPA i słowacki organ ochrony danych</h2>
+<p>Toolhub przetwarza dane w minimalnym zakresie:</p>
+<ul>
+<li><strong>UE / UK (RODO / UK GDPR):</strong> Plausible (hostowany w UE) daje zgodną podstawę analityczną. Kiedy AdSense jest aktywny, Google obsługuje własną warstwę zgody pod TCF v2.</li>
+<li><strong>Kalifornia (CCPA):</strong> nie sprzedajemy danych osobowych. Nie mamy danych osobowych do sprzedania.</li>
+<li><strong>Słowacja (słowacki organ ochrony danych):</strong> maintainer Toolhub jest w Słowacji. Słowackie przepisy mają zastosowanie do każdego rzeczywistego przetwarzania — co w praktyce ogranicza się do zagregowanych metryk Plausible i (kiedy aktywne) własnego flow zgody AdSense'a.</li>
+</ul>
+<p>Prawa dostępu lub usunięcia danych osobowych w praktyce nie mają zastosowania, bo nie ma żadnych zapisanych danych osobowych, do których można by sięgnąć czy je usunąć. W konkretnych sprawach pisz przez <a href="/pl/contact/">stronę kontaktową</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible:</strong> żadnych cookies, nigdy.</li>
+<li><strong>Preferencja motywu:</strong> jeden wpis w localStorage, nie cookie. Zostaje na twoim urządzeniu. Nie jest wysyłana z żądaniami HTTP.</li>
+<li><strong>AdSense (gdy aktywny):</strong> Google ustawia własne, zewnętrzne cookies reklamowe. Banner zgody pojawia się przed załadowaniem jakiegokolwiek skryptu AdSense, a AdSense w ogóle nie jest ładowany, jeśli odmówisz.</li>
+</ul>
+
+<h2>Dzieci</h2>
+<p>Toolhub jest przyjazny szkołom (zobacz <a href="/pl/for-schools/">Toolhub dla szkół</a>). Bez śledzenia behawioralnego i bez reklam targetowanych. Korzystanie przez dzieci poniżej 13 lat jest akceptowalne w ramach regionalnych warunków AdSense — tam, gdzie AdSense regionalnie ogranicza reklamy dla dzieci, te ograniczenia są przestrzegane przez systemy Google'a.</p>
+
+<h2>PDF do pobrania</h2>
+<p>Dostępna jest wersja PDF tej strony do offline'owego wglądu albo do druku jako część szkolnej dokumentacji IT:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>PDF jest na razie tylko po angielsku; PDF-y per język nie są częścią tego release'u.</p>
+
+<h2>Pytania</h2>
+<p>Jeśli coś tu jest niejasne, otwórz issue na <a href="{REPO_URL}">{REPO_URL}</a> albo użyj <a href="/pl/contact/">strony kontaktowej</a>. Pytania doprecyzowujące to dobry sposób, żeby zrobić tę stronę lepszą dla kolejnej osoby.</p>
+""".strip(),
+            },
+            "ja": {
+                "title": "データの取り扱いについて",
+                "h1": "データの取り扱いについて",
+                "description": "Toolhub があなたのデータを具体的にどう扱うかを、平易な言葉で説明します。ツールはブラウザ内で動作し、何も保存されず、3 つの例外を明示しています。",
+                "body": f"""
+<p><strong>最終更新:</strong> {LAST_UPDATED}</p>
+<p>このページは平易な言葉版です。<a href="/ja/privacy/">プライバシーポリシー</a> を補足するものです。両者の記述が食い違って見える箇所がある場合は、本ページの方が具体的であり、こちらが優先されます。</p>
+
+<h2>データはどこへ行くか</h2>
+<p>Toolhub のツールはあなたのブラウザ内で動作します。ツールに貼り付けた、入力した、アップロードしたものは、すべてあなたの端末内に留まります — サーバー側のツール実行環境はなく、どのツールにもアップロード用エンドポイントは付いていません。</p>
+<p>「あなたの端末からデータが出ない」ことには、はっきりと名前を付けた例外が 3 つだけあります：</p>
+<ol>
+<li><strong>YouTube Thumbnail ツール</strong> — YouTube の URL を送信したとき、ブラウザが <code>i.ytimg.com</code>（YouTube 公開画像 CDN）から直接サムネイルを取得します。認証もアップロードも API キーも不要です。YouTube が見るのは URL に含まれる動画 ID だけで、それもあなたのブラウザが取得しに行くからにすぎません。</li>
+<li><strong>AdSense（有効かつ同意がある場合のみ）</strong> — Google のディスプレイ広告システム。広告に同意していただいた場合、Google はあなたの IP アドレスを見ることがあり、Cookie を設定する場合があります。これらは Google のポリシーに従います。同意しなかった場合（既定）、AdSense は一切読み込まれません。</li>
+<li><strong>Plausible Analytics</strong> — ページビュー、リファラ、国、デバイス種別を集計します。Cookie もフィンガープリントもなく、集計値のみです。Plausible のサーバーは EU 内にあります。</li>
+</ol>
+
+<h2>当方が保存するもの</h2>
+<p>あなたに関するものは何も保存しません。アカウントも、ユーザー ID も、メールアドレスも、プロフィールもありません。ツールに入れた内容も保存しません。</p>
+<p>ブラウザがあなたの端末内にのみ保持する localStorage エントリは 2 つあり、どちらもブラウザの開発者ツールから閲覧・削除できます：</p>
+<ul>
+<li><code>theme</code> — "light" または "dark"、おおよそ 1 バイトの設定。</li>
+<li><code>toolhub:consent</code> — 広告同意の判断（yes / no / 未設定）。再度尋ねないために使います。</li>
+</ul>
+
+<h2>GDPR・UK GDPR・CCPA・スロバキア個人情報保護法</h2>
+<p>Toolhub が取り扱うデータは最小限です：</p>
+<ul>
+<li><strong>EU / UK（GDPR / UK GDPR）:</strong> Plausible（EU ホスト）が適合する解析基盤を提供します。AdSense が有効な場合、Google が TCF v2 に基づく独自の同意レイヤーを運用します。</li>
+<li><strong>カリフォルニア州（CCPA）:</strong> 当方は個人情報を販売しません。販売する個人情報を保有していません。</li>
+<li><strong>スロバキア（スロバキア個人情報保護機関）:</strong> Toolhub のメンテナーはスロバキアに所在しています。スロバキアの規則は、実際に行われる処理に対して適用されます — 実態としては Plausible の集計メトリクスと、（有効な場合の）AdSense 自身の同意管理フローに限られます。</li>
+</ul>
+<p>個人データへのアクセス・削除請求権は、保持している個人データが存在しない以上、実質的に適用されません。具体的なご質問は <a href="/ja/contact/">お問い合わせページ</a> からどうぞ。</p>
+
+<h2>Cookie</h2>
+<ul>
+<li><strong>Plausible:</strong> Cookie は一切使いません。</li>
+<li><strong>テーマ設定:</strong> localStorage エントリ 1 件で、Cookie ではありません。あなたの端末内に留まり、HTTP リクエストには送信されません。</li>
+<li><strong>AdSense（有効時）:</strong> Google が独自のサードパーティ広告 Cookie を設定します。同意バナーは AdSense のスクリプトが読み込まれる前に表示され、拒否した場合は AdSense は一切読み込まれません。</li>
+</ul>
+
+<h2>子ども</h2>
+<p>Toolhub は学校での利用にも適しています（<a href="/ja/for-schools/">学校向けの Toolhub</a> をご覧ください）。行動追跡やターゲティング広告はありません。13 歳未満の利用は、地域ごとに適用される AdSense の条件の範囲内で問題ありません — AdSense が地域単位で子ども向け広告を制限している場合、その制限は Google 自身のシステムで守られます。</p>
+
+<h2>PDF ダウンロード</h2>
+<p>本ページの PDF 版があり、オフライン参照や、学校 IT 文書の一部として印刷する用途に使えます：</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>現時点では PDF は英語版のみで、各言語版 PDF は今回のリリースの対象外です。</p>
+
+<h2>質問</h2>
+<p>本ページで不明瞭な箇所があれば、<a href="{REPO_URL}">{REPO_URL}</a> で Issue を立てるか、<a href="/ja/contact/">お問い合わせページ</a> をご利用ください。質問は次に読む人にとってもこのページを良くするのに役立ちます。</p>
+""".strip(),
+            },
+            "nl": {
+                "title": "Hoe we met je gegevens omgaan",
+                "h1": "Hoe we met je gegevens omgaan",
+                "description": "Uitleg in gewone taal van hoe Toolhub precies met je gegevens omgaat. Tools draaien in je browser, niets wordt opgeslagen, drie uitzonderingen worden expliciet genoemd.",
+                "body": f"""
+<p><strong>Laatst bijgewerkt:</strong> {LAST_UPDATED}</p>
+<p>Deze pagina is de versie in gewone taal. Ze vult het <a href="/nl/privacy/">privacybeleid</a> aan; als ze ergens lijken te botsen, is deze pagina de specifiekere en geldt die voor.</p>
+
+<h2>Waar gaan de gegevens heen</h2>
+<p>De tools op Toolhub draaien in je browser. Wat je in een tool plakt, typt of uploadt, blijft op je apparaat — er is geen server-side tool-uitvoerder en er zit geen upload-endpoint achter de tools.</p>
+<p>Er zijn precies drie expliciet genoemde uitzonderingen op "niets verlaat je apparaat":</p>
+<ol>
+<li><strong>YouTube Thumbnail tool</strong> — wanneer je een YouTube-URL indient, haalt je browser de thumbnail direct op vanaf <code>i.ytimg.com</code> (YouTube's publieke CDN voor afbeeldingen). Geen authenticatie, geen upload, geen API key. YouTube ziet alleen het video-ID uit de URL, en alleen omdat je browser het opvraagt.</li>
+<li><strong>AdSense (alleen als ingeschakeld en met toestemming)</strong> — Google's display-advertentiesysteem. Bij toestemming kan Google je IP-adres zien en cookies plaatsen, conform Google's beleid. Bij weigering (standaard) wordt AdSense helemaal niet geladen.</li>
+<li><strong>Plausible Analytics</strong> — telt paginabezoeken, referrer, land en apparaatklasse. Geen cookies, geen fingerprinting, alleen geaggregeerde statistieken. Plausible's servers staan in de EU.</li>
+</ol>
+
+<h2>Wat we opslaan</h2>
+<p>Niets over jou. Geen accounts, geen gebruikers-ID's, geen e-mail, geen profiel. We slaan de inhoud die je in tools stopt niet op.</p>
+<p>Je browser bewaart twee kleine localStorage-vermeldingen alleen op je eigen apparaat — beide zijn leesbaar en wisbaar via de developer tools van je browser:</p>
+<ul>
+<li><code>theme</code> — "light" of "dark", ongeveer een byte voorkeur.</li>
+<li><code>toolhub:consent</code> — je advertentiekeuze (ja/nee/onbepaald). Om je niet opnieuw te hoeven vragen.</li>
+</ul>
+
+<h2>AVG, UK GDPR, CCPA en de Slowaakse DPA</h2>
+<p>Toolhub verwerkt minimale gegevens:</p>
+<ul>
+<li><strong>EU / UK (AVG / UK GDPR):</strong> Plausible (EU-gehost) levert een conforme analytics-basis. Wanneer AdSense actief is, voert Google een eigen consent-laag onder TCF v2.</li>
+<li><strong>Californië (CCPA):</strong> we verkopen geen persoonsgegevens. We hebben geen persoonsgegevens te verkopen.</li>
+<li><strong>Slowakije (Slowaakse autoriteit persoonsgegevens):</strong> de maintainer van Toolhub zit in Slowakije. De Slowaakse regels gelden voor elke verwerking die daadwerkelijk plaatsvindt — wat in de praktijk neerkomt op de geaggregeerde metingen van Plausible en (bij activatie) AdSense's eigen consent-flow.</li>
+</ul>
+<p>Rechten op inzage of verwijdering van persoonsgegevens zijn in de praktijk niet van toepassing omdat er geen persoonsgegevens zijn opgeslagen om in te zien of te verwijderen. Voor specifieke vragen, mail via de <a href="/nl/contact/">contactpagina</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible:</strong> geen cookies, nooit.</li>
+<li><strong>Thema-voorkeur:</strong> één localStorage-vermelding, geen cookie. Blijft op je apparaat. Wordt niet meegestuurd met HTTP-verzoeken.</li>
+<li><strong>AdSense (indien actief):</strong> Google plaatst zijn eigen third-party advertentiecookies. De consent-banner verschijnt voordat een AdSense-script geladen wordt, en AdSense wordt helemaal niet geladen als je weigert.</li>
+</ul>
+
+<h2>Kinderen</h2>
+<p>Toolhub is schoolvriendelijk (zie <a href="/nl/for-schools/">Toolhub voor scholen</a>). Geen gedragstracking, geen gerichte advertenties. Gebruik onder 13 jaar is acceptabel binnen de AdSense-voorwaarden per regio — waar AdSense regionaal advertenties richting kinderen beperkt, worden die beperkingen door de systemen van Google zelf nageleefd.</p>
+
+<h2>Downloadbare PDF</h2>
+<p>Er is een PDF-versie van deze pagina beschikbaar voor offline gebruik of om af te drukken als onderdeel van de IT-documentatie van een school:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>De PDF is op dit moment alleen in het Engels; per-taal PDFs vallen buiten de scope van deze release.</p>
+
+<h2>Vragen</h2>
+<p>Als iets hier onduidelijk is, open een issue op <a href="{REPO_URL}">{REPO_URL}</a> of gebruik de <a href="/nl/contact/">contactpagina</a>. Verhelderende vragen zijn een goede manier om deze pagina voor de volgende lezer beter te maken.</p>
+""".strip(),
+            },
+        },
+    },
+
+    "affiliate-disclosure": {
+        "slug": "affiliate-disclosure",
+        "schema": "WebPage",
+        "i18n": {
+            "en": {
+                "title": "Affiliate disclosure",
+                "h1": "Affiliate disclosure",
+                "description": "FTC and EU-compliant disclosure of Toolhub's affiliate relationships. The vendor pays, you pay nothing extra, and editorial coverage is not affiliate-driven.",
+                "body": f"""
+<p><strong>Last updated:</strong> {LAST_UPDATED}</p>
+
+<h2>What affiliate links are</h2>
+<p>An affiliate link is a regular link with a tracking code attached. If you click one and then sign up to the linked service, the service pays Toolhub a small referral commission. The price <em>you</em> pay is identical to the non-affiliate version — you are not paying for the commission, the vendor is.</p>
+
+<h2>Where they appear on Toolhub</h2>
+<p>Currently, affiliate links appear in two places:</p>
+<ul>
+<li>The site footer, marked with a small <code>(affiliate)</code> badge.</li>
+<li>Anywhere a tool's help-block or related-tools section mentions a specific paid service we recommend — in those cases the affiliate is called out inline.</li>
+</ul>
+<p>Affiliate links carry <code>rel="sponsored"</code> in the HTML, which is the search-engine standard for declaring a commercial relationship.</p>
+
+<h2>Who pays</h2>
+<p>The vendor pays the commission, not you. If you ignore the affiliate link and sign up via the vendor's homepage directly, you get the same service at the same price; we just don't see a referral.</p>
+
+<h2>FTC and EU compliance</h2>
+<p>This page exists because the US Federal Trade Commission's endorsement guides and EU consumer-protection rules both require content creators to disclose when they have a financial relationship with a linked product. The disclosure has to be clear and up-front — hence a top-level page, hence linked from every page footer.</p>
+
+<h2>Specific affiliates</h2>
+<p>Toolhub's affiliate accounts are not all live at the time of writing — this is a placeholder list. Once each account is approved, the operator (JXXR1) will populate the link URLs here:</p>
+<ul>
+<li><strong>DigitalOcean</strong> (cloud hosting) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>If/when other affiliate relationships are added, they will be listed here and the page will be redated.</p>
+
+<h2>No paid placement</h2>
+<p>Tool reviews, the order tools appear in on the homepage, and the "related tools" links on each tool are <strong>not</strong> affiliate-driven. We don't accept money to feature a tool, nor to rank one tool above another. If a paid placement ever did get added (it won't, but if), it would be labelled the same way affiliate links are: clearly, up-front, distinguishable from editorial content.</p>
+
+<h2>Editorial independence</h2>
+<p>Affiliate relationships do not influence which tools are built, how help-block copy is written, or which "related tools" appear under a given tool. The tools on Toolhub are the tools we'd build with no affiliate program at all — the program just makes a small contribution toward hosting and maintenance.</p>
+
+<h2>Contact</h2>
+<p>Questions about a specific affiliate, or want to flag something that looks like it shouldn't be here? Open an issue at <a href="{REPO_URL}">{REPO_URL}</a> or use the <a href="/contact/">contact page</a>.</p>
+""".strip(),
+            },
+            "de": {
+                "title": "Affiliate-Offenlegung",
+                "h1": "Affiliate-Offenlegung",
+                "description": "FTC- und EU-konforme Offenlegung der Affiliate-Beziehungen von Toolhub. Der Anbieter zahlt, dich kostet es nichts extra, und redaktionelle Inhalte sind nicht affiliategetrieben.",
+                "body": f"""
+<p><strong>Zuletzt aktualisiert:</strong> {LAST_UPDATED}</p>
+
+<h2>Was Affiliate-Links sind</h2>
+<p>Ein Affiliate-Link ist ein ganz normaler Link mit einem angehängten Tracking-Code. Wenn du draufklickst und dich beim verlinkten Dienst anmeldest, zahlt der Dienst Toolhub eine kleine Vermittlungsprovision. Der Preis, den <em>du</em> zahlst, ist derselbe wie ohne Affiliate-Link — du zahlst nicht die Provision, der Anbieter tut es.</p>
+
+<h2>Wo sie auf Toolhub auftauchen</h2>
+<p>Aktuell tauchen Affiliate-Links an zwei Stellen auf:</p>
+<ul>
+<li>Im Seiten-Footer, mit einem kleinen <code>(affiliate)</code>-Badge.</li>
+<li>Überall dort, wo ein Hilfetext oder „Ähnliche Tools" einen bestimmten kostenpflichtigen Dienst empfiehlt — dort wird der Affiliate inline ausgewiesen.</li>
+</ul>
+<p>Affiliate-Links tragen im HTML <code>rel="sponsored"</code>, was der Suchmaschinen-Standard zur Kennzeichnung einer kommerziellen Beziehung ist.</p>
+
+<h2>Wer zahlt</h2>
+<p>Der Anbieter zahlt die Provision, nicht du. Wenn du den Affiliate-Link ignorierst und dich direkt über die Homepage des Anbieters anmeldest, bekommst du denselben Dienst zum selben Preis; wir sehen dann einfach keine Vermittlung.</p>
+
+<h2>FTC- und EU-Konformität</h2>
+<p>Diese Seite existiert, weil sowohl die Endorsement Guides der US-amerikanischen Federal Trade Commission als auch die EU-Verbraucherschutzregeln verlangen, dass Content-Ersteller offenlegen, wenn sie zu einem verlinkten Produkt eine wirtschaftliche Beziehung haben. Die Offenlegung muss klar und im Voraus erfolgen — daher eine Top-Level-Seite, daher die Verlinkung im Footer jeder Seite.</p>
+
+<h2>Konkrete Affiliates</h2>
+<p>Nicht alle Affiliate-Konten von Toolhub sind zum Zeitpunkt der Erstellung live — das hier ist eine Platzhalter-Liste. Sobald die einzelnen Konten freigegeben sind, trägt der Betreiber (JXXR1) die URLs hier ein:</p>
+<ul>
+<li><strong>DigitalOcean</strong> (Cloud-Hosting) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>Falls weitere Affiliate-Beziehungen hinzukommen, werden sie hier gelistet und die Seite neu datiert.</p>
+
+<h2>Keine bezahlte Platzierung</h2>
+<p>Tool-Besprechungen, die Reihenfolge der Tools auf der Startseite und die „Ähnliche Tools"-Verlinkungen unter jedem Tool sind <strong>nicht</strong> affiliategetrieben. Wir nehmen kein Geld dafür, ein Tool zu featuren oder eines vor einem anderen zu platzieren. Falls jemals eine bezahlte Platzierung hinzukäme (wird es nicht, aber falls), wäre sie genauso gekennzeichnet wie Affiliate-Links: deutlich, im Voraus, klar unterscheidbar vom redaktionellen Inhalt.</p>
+
+<h2>Redaktionelle Unabhängigkeit</h2>
+<p>Affiliate-Beziehungen beeinflussen nicht, welche Tools gebaut werden, wie Hilfetexte geschrieben sind oder welche „Ähnlichen Tools" unter einem bestimmten Tool erscheinen. Die Tools auf Toolhub sind die Tools, die wir auch ohne jedes Affiliate-Programm bauen würden — das Programm trägt nur einen kleinen Teil zu Hosting und Wartung bei.</p>
+
+<h2>Kontakt</h2>
+<p>Fragen zu einem konkreten Affiliate, oder etwas, das hier nicht stehen sollte? Öffne ein Issue unter <a href="{REPO_URL}">{REPO_URL}</a> oder nutze die <a href="/de/contact/">Kontaktseite</a>.</p>
+""".strip(),
+            },
+            "es": {
+                "title": "Divulgación de afiliados",
+                "h1": "Divulgación de afiliados",
+                "description": "Divulgación conforme a la FTC y normas de la UE de las relaciones de afiliados de Toolhub. El proveedor paga, tú no pagas nada extra, y la cobertura editorial no depende de los afiliados.",
+                "body": f"""
+<p><strong>Última actualización:</strong> {LAST_UPDATED}</p>
+
+<h2>Qué es un enlace de afiliado</h2>
+<p>Un enlace de afiliado es un enlace normal con un código de seguimiento añadido. Si haces clic y luego te registras en el servicio enlazado, el servicio paga a Toolhub una pequeña comisión por la referencia. El precio que pagas <em>tú</em> es idéntico al de la versión no afiliada — tú no pagas la comisión, la paga el proveedor.</p>
+
+<h2>Dónde aparecen en Toolhub</h2>
+<p>Actualmente los enlaces de afiliado aparecen en dos sitios:</p>
+<ul>
+<li>En el pie de página, marcados con una pequeña insignia <code>(afiliado)</code>.</li>
+<li>En cualquier sitio donde el bloque de ayuda o el apartado de "herramientas relacionadas" mencione un servicio de pago concreto que recomendemos — en esos casos el afiliado se identifica en línea.</li>
+</ul>
+<p>Los enlaces de afiliado llevan <code>rel="sponsored"</code> en el HTML, que es el estándar para buscadores cuando se declara una relación comercial.</p>
+
+<h2>Quién paga</h2>
+<p>El proveedor paga la comisión, no tú. Si ignoras el enlace de afiliado y te registras directamente desde la home del proveedor, obtienes el mismo servicio al mismo precio; simplemente nosotros no vemos la referencia.</p>
+
+<h2>Cumplimiento FTC y UE</h2>
+<p>Esta página existe porque tanto las guías de la Federal Trade Commission de EE. UU. como las normas de protección al consumidor de la UE exigen que los creadores de contenido divulguen si tienen una relación financiera con un producto enlazado. La divulgación tiene que ser clara y por adelantado — de ahí una página de nivel superior, de ahí el enlace desde el pie de cada página.</p>
+
+<h2>Afiliados concretos</h2>
+<p>No todas las cuentas de afiliado de Toolhub están activas en el momento de escribir esto — esta es una lista de reserva. En cuanto cada cuenta sea aprobada, el operador (JXXR1) rellenará las URL aquí:</p>
+<ul>
+<li><strong>DigitalOcean</strong> (alojamiento en la nube) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>Si se añaden otras relaciones de afiliado, se listarán aquí y se actualizará la fecha de la página.</p>
+
+<h2>Sin colocaciones pagadas</h2>
+<p>Las reseñas de herramientas, el orden en que las herramientas aparecen en la home y los enlaces de "herramientas relacionadas" bajo cada herramienta <strong>no</strong> dependen de afiliados. No aceptamos dinero por destacar una herramienta ni por colocarla por encima de otra. Si alguna vez se añadiera una colocación pagada (no se va a añadir, pero si pasara), iría marcada igual que los enlaces de afiliado: claro, por adelantado, distinguible del contenido editorial.</p>
+
+<h2>Independencia editorial</h2>
+<p>Las relaciones de afiliado no influyen en qué herramientas se construyen, cómo se redactan los bloques de ayuda ni qué "herramientas relacionadas" aparecen bajo una herramienta. Las herramientas de Toolhub son las que construiríamos sin programa de afiliados — el programa solo aporta una pequeña contribución al alojamiento y mantenimiento.</p>
+
+<h2>Contacto</h2>
+<p>¿Dudas sobre un afiliado concreto, o quieres marcar algo que parece que no debería estar aquí? Abre una issue en <a href="{REPO_URL}">{REPO_URL}</a> o usa la <a href="/es/contact/">página de contacto</a>.</p>
+""".strip(),
+            },
+            "fr": {
+                "title": "Divulgation des affiliations",
+                "h1": "Divulgation des affiliations",
+                "description": "Divulgation conforme FTC et UE des relations d'affiliation de Toolhub. Le vendeur paie, tu ne paies rien en plus, et le contenu éditorial n'est pas piloté par l'affiliation.",
+                "body": f"""
+<p><strong>Dernière mise à jour :</strong> {LAST_UPDATED}</p>
+
+<h2>Ce qu'est un lien d'affiliation</h2>
+<p>Un lien d'affiliation est un lien normal avec un code de tracking accolé. Si tu cliques dessus et que tu t'inscris ensuite au service lié, le service verse à Toolhub une petite commission d'apport. Le prix que <em>tu</em> paies est identique à la version sans affiliation — ce n'est pas toi qui paies la commission, c'est le vendeur.</p>
+
+<h2>Où ils apparaissent sur Toolhub</h2>
+<p>Pour l'instant, les liens d'affiliation apparaissent à deux endroits :</p>
+<ul>
+<li>Dans le pied de page du site, marqués d'un petit badge <code>(affiliation)</code>.</li>
+<li>Partout où un bloc d'aide d'outil ou une section « outils similaires » mentionne un service payant précis qu'on recommande — dans ces cas, l'affiliation est annoncée en ligne.</li>
+</ul>
+<p>Les liens d'affiliation portent <code>rel="sponsored"</code> en HTML, qui est le standard moteur de recherche pour déclarer une relation commerciale.</p>
+
+<h2>Qui paie</h2>
+<p>C'est le vendeur qui paie la commission, pas toi. Si tu ignores le lien d'affiliation et que tu t'inscris directement depuis la page d'accueil du vendeur, tu obtiens le même service au même prix ; on ne voit simplement pas l'apport.</p>
+
+<h2>Conformité FTC et UE</h2>
+<p>Cette page existe parce que les <em>endorsement guides</em> de la FTC américaine et les règles européennes de protection du consommateur exigent toutes deux que les créateurs de contenu divulguent une relation financière avec un produit lié. La divulgation doit être claire et en amont — d'où une page de premier niveau, d'où le lien dans le pied de chaque page.</p>
+
+<h2>Affiliations spécifiques</h2>
+<p>Les comptes d'affiliation de Toolhub ne sont pas tous actifs au moment de la rédaction — voici une liste provisoire. Dès que chaque compte sera validé, l'opérateur (JXXR1) renseignera les URLs ici :</p>
+<ul>
+<li><strong>DigitalOcean</strong> (hébergement cloud) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>Si d'autres relations d'affiliation s'ajoutent, elles seront listées ici et la page sera redatée.</p>
+
+<h2>Pas de placement payé</h2>
+<p>Les présentations d'outils, l'ordre dans lequel les outils apparaissent sur la page d'accueil, et les liens « outils similaires » sous chaque outil ne sont <strong>pas</strong> pilotés par l'affiliation. On n'accepte pas d'argent pour mettre un outil en avant, ni pour classer un outil avant un autre. Si un placement payé devait un jour être ajouté (il ne le sera pas, mais imaginons), il serait étiqueté comme les liens d'affiliation : clair, en amont, distinguable du contenu éditorial.</p>
+
+<h2>Indépendance éditoriale</h2>
+<p>Les relations d'affiliation n'influencent pas quels outils sont construits, comment les textes d'aide sont rédigés, ni quels « outils similaires » apparaissent sous tel outil. Les outils sur Toolhub sont ceux qu'on construirait sans aucun programme d'affiliation — le programme contribue juste un peu à l'hébergement et à la maintenance.</p>
+
+<h2>Contact</h2>
+<p>Une question sur une affiliation précise, ou tu veux signaler quelque chose qui te semble déplacé ? Ouvre une issue sur <a href="{REPO_URL}">{REPO_URL}</a> ou utilise la <a href="/fr/contact/">page de contact</a>.</p>
+""".strip(),
+            },
+            "it": {
+                "title": "Divulgazione affiliati",
+                "h1": "Divulgazione affiliati",
+                "description": "Divulgazione conforme a FTC e UE delle relazioni di affiliazione di Toolhub. Paga il fornitore, tu non paghi nulla in più, e la copertura editoriale non è guidata dagli affiliati.",
+                "body": f"""
+<p><strong>Ultimo aggiornamento:</strong> {LAST_UPDATED}</p>
+
+<h2>Cos'è un link affiliato</h2>
+<p>Un link affiliato è un normalissimo link con un codice di tracking attaccato. Se ci clicchi e poi ti registri al servizio collegato, il servizio paga a Toolhub una piccola commissione di segnalazione. Il prezzo che <em>tu</em> paghi è identico alla versione non affiliata — non sei tu a pagare la commissione, è il fornitore.</p>
+
+<h2>Dove appaiono su Toolhub</h2>
+<p>Attualmente i link affiliati appaiono in due posti:</p>
+<ul>
+<li>Nel footer del sito, contrassegnati da un piccolo badge <code>(affiliato)</code>.</li>
+<li>Ovunque un blocco di aiuto o una sezione "strumenti correlati" menzioni un servizio a pagamento specifico che consigliamo — in quei casi l'affiliazione è dichiarata in linea.</li>
+</ul>
+<p>I link affiliati portano <code>rel="sponsored"</code> nell'HTML, che è lo standard motori di ricerca per dichiarare una relazione commerciale.</p>
+
+<h2>Chi paga</h2>
+<p>Paga il fornitore, non tu. Se ignori il link affiliato e ti registri direttamente dalla home del fornitore, ottieni lo stesso servizio allo stesso prezzo; semplicemente noi non vediamo la segnalazione.</p>
+
+<h2>Conformità FTC e UE</h2>
+<p>Questa pagina esiste perché sia le linee guida della Federal Trade Commission statunitense sia le regole di tutela del consumatore della UE richiedono che chi produce contenuti dichiari una relazione finanziaria con un prodotto collegato. La dichiarazione deve essere chiara e in anticipo — da qui una pagina di primo livello, da qui il link nel footer di ogni pagina.</p>
+
+<h2>Affiliati specifici</h2>
+<p>Non tutti gli account affiliato di Toolhub sono attivi al momento — questa è una lista segnaposto. Appena ogni account viene approvato, l'operatore (JXXR1) compilerà gli URL qui:</p>
+<ul>
+<li><strong>DigitalOcean</strong> (hosting cloud) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>Se/quando si aggiungeranno altre relazioni di affiliazione, saranno elencate qui e la pagina verrà ridatata.</p>
+
+<h2>Niente posizionamenti a pagamento</h2>
+<p>Le recensioni di strumenti, l'ordine in cui gli strumenti compaiono in home e i link "strumenti correlati" sotto ogni strumento <strong>non</strong> dipendono da affiliati. Non accettiamo soldi per mettere in evidenza uno strumento, né per posizionarlo sopra un altro. Se un giorno venisse aggiunto un posizionamento a pagamento (non succederà, ma se accadesse), sarebbe etichettato come i link affiliati: chiaro, in anticipo, distinguibile dal contenuto editoriale.</p>
+
+<h2>Indipendenza editoriale</h2>
+<p>Le relazioni di affiliazione non influenzano quali strumenti vengono costruiti, come vengono scritti i blocchi di aiuto, né quali "strumenti correlati" appaiono sotto un determinato strumento. Gli strumenti su Toolhub sono quelli che costruiremmo anche senza programma di affiliazione — il programma contribuisce solo in piccola parte ad hosting e manutenzione.</p>
+
+<h2>Contatti</h2>
+<p>Hai domande su un affiliato specifico, o vuoi segnalare qualcosa che non dovrebbe stare qui? Apri una issue su <a href="{REPO_URL}">{REPO_URL}</a> o usa la <a href="/it/contact/">pagina di contatto</a>.</p>
+""".strip(),
+            },
+            "pt": {
+                "title": "Divulgação de afiliados",
+                "h1": "Divulgação de afiliados",
+                "description": "Divulgação compatível com FTC e UE das relações de afiliado do Toolhub. O fornecedor paga, você não paga nada a mais, e a cobertura editorial não é movida por afiliação.",
+                "body": f"""
+<p><strong>Última atualização:</strong> {LAST_UPDATED}</p>
+
+<h2>O que é um link de afiliado</h2>
+<p>Um link de afiliado é um link normal com um código de rastreio anexado. Se você clica e depois se cadastra no serviço linkado, o serviço paga ao Toolhub uma pequena comissão de indicação. O preço que <em>você</em> paga é idêntico à versão sem afiliação — quem paga a comissão não é você, é o fornecedor.</p>
+
+<h2>Onde aparecem no Toolhub</h2>
+<p>Atualmente, links de afiliado aparecem em dois lugares:</p>
+<ul>
+<li>No rodapé do site, marcados com um pequeno badge <code>(afiliado)</code>.</li>
+<li>Em qualquer ponto onde o bloco de ajuda de uma ferramenta ou a seção "ferramentas relacionadas" mencione um serviço pago específico que a gente recomenda — nesses casos a afiliação é declarada na hora.</li>
+</ul>
+<p>Links de afiliado levam <code>rel="sponsored"</code> no HTML, que é o padrão de mecanismos de busca pra declarar uma relação comercial.</p>
+
+<h2>Quem paga</h2>
+<p>O fornecedor paga a comissão, não você. Se você ignorar o link de afiliado e se cadastrar direto pela home do fornecedor, recebe o mesmo serviço pelo mesmo preço; só que a gente não vê a indicação.</p>
+
+<h2>Conformidade com FTC e UE</h2>
+<p>Essa página existe porque tanto os guias de endosso da FTC dos EUA quanto as regras de defesa do consumidor da UE exigem que criadores de conteúdo divulguem quando têm relação financeira com um produto linkado. A divulgação tem que ser clara e antecipada — daí uma página de primeiro nível, daí o link no rodapé de cada página.</p>
+
+<h2>Afiliados específicos</h2>
+<p>Nem todas as contas de afiliado do Toolhub estão ativas no momento — essa é uma lista placeholder. Assim que cada conta for aprovada, o operador (JXXR1) preenche as URLs aqui:</p>
+<ul>
+<li><strong>DigitalOcean</strong> (hospedagem em nuvem) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>Se / quando outras relações de afiliado forem adicionadas, vão entrar nessa lista e a página vai ser redatada.</p>
+
+<h2>Sem placement pago</h2>
+<p>Resenhas de ferramentas, a ordem em que as ferramentas aparecem na home e os links de "ferramentas relacionadas" sob cada ferramenta <strong>não</strong> são movidos por afiliação. A gente não aceita dinheiro pra destacar ferramenta, nem pra colocar uma ferramenta acima de outra. Se um dia fosse adicionado placement pago (não vai, mas se fosse), ia ser rotulado igual aos links de afiliado: claro, antecipado, distinguível do conteúdo editorial.</p>
+
+<h2>Independência editorial</h2>
+<p>Relações de afiliado não influenciam quais ferramentas são construídas, como o texto de ajuda é escrito ou quais "ferramentas relacionadas" aparecem sob determinada ferramenta. As ferramentas do Toolhub são as ferramentas que a gente construiria sem nenhum programa de afiliado — o programa só dá uma pequena contribuição pra hospedagem e manutenção.</p>
+
+<h2>Contato</h2>
+<p>Dúvidas sobre um afiliado específico, ou quer apontar algo que parece que não devia estar aqui? Abre uma issue em <a href="{REPO_URL}">{REPO_URL}</a> ou usa a <a href="/pt/contact/">página de contato</a>.</p>
+""".strip(),
+            },
+            "pl": {
+                "title": "Ujawnienie partnerów (affiliate)",
+                "h1": "Ujawnienie partnerów (affiliate)",
+                "description": "Ujawnienie partnerów Toolhub zgodne z FTC i przepisami UE. Płaci dostawca, ty nie płacisz nic więcej, a treść redakcyjna nie jest sterowana partnerstwem.",
+                "body": f"""
+<p><strong>Ostatnia aktualizacja:</strong> {LAST_UPDATED}</p>
+
+<h2>Czym jest link partnerski (affiliate)</h2>
+<p>Link partnerski to zwykły link z doczepionym kodem śledzącym. Jeśli go klikniesz i potem zarejestrujesz się w linkowanym serwisie, serwis płaci Toolhub niewielką prowizję za polecenie. Cena, którą płacisz <em>ty</em>, jest identyczna jak w wersji bez affiliate — to nie ty płacisz prowizję, tylko dostawca.</p>
+
+<h2>Gdzie pojawiają się na Toolhub</h2>
+<p>Obecnie linki partnerskie pojawiają się w dwóch miejscach:</p>
+<ul>
+<li>W stopce strony, oznaczone małą plakietką <code>(affiliate)</code>.</li>
+<li>Wszędzie tam, gdzie blok pomocy narzędzia albo sekcja „powiązane narzędzia" wspomina konkretną płatną usługę, którą polecamy — w tych miejscach partnerstwo jest deklarowane na bieżąco.</li>
+</ul>
+<p>Linki partnerskie noszą w HTML <code>rel="sponsored"</code>, co jest standardem wyszukiwarek do oznaczania relacji komercyjnej.</p>
+
+<h2>Kto płaci</h2>
+<p>Prowizję płaci dostawca, nie ty. Jeśli zignorujesz link partnerski i zarejestrujesz się bezpośrednio ze strony dostawcy, dostaniesz tę samą usługę w tej samej cenie; po prostu my nie zobaczymy polecenia.</p>
+
+<h2>Zgodność z FTC i UE</h2>
+<p>Ta strona istnieje, bo zarówno wytyczne dotyczące rekomendacji amerykańskiej Federal Trade Commission, jak i unijne przepisy o ochronie konsumentów wymagają, żeby twórcy treści ujawniali relację finansową z linkowanym produktem. Ujawnienie ma być jasne i z góry — stąd osobna strona najwyższego poziomu i link w stopce na każdej podstronie.</p>
+
+<h2>Konkretni partnerzy</h2>
+<p>Nie wszystkie konta partnerskie Toolhub są aktywne w momencie pisania — to jest lista zastępcza. Po zatwierdzeniu każdego konta operator (JXXR1) uzupełni tu adresy URL:</p>
+<ul>
+<li><strong>DigitalOcean</strong> (hosting w chmurze) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>Jeśli/gdy dojdą kolejne relacje partnerskie, zostaną tu wymienione, a strona dostanie nową datę.</p>
+
+<h2>Bez płatnych umieszczeń</h2>
+<p>Recenzje narzędzi, kolejność narzędzi na stronie głównej i linki „powiązane narzędzia" pod każdym narzędziem <strong>nie</strong> są sterowane partnerstwem. Nie bierzemy pieniędzy za wyróżnianie narzędzia ani za ustawianie jednego nad drugim. Gdyby kiedykolwiek pojawiło się płatne umieszczenie (nie pojawi się, ale gdyby), byłoby oznaczone tak samo jak linki partnerskie: jasno, z góry, odróżnialne od treści redakcyjnej.</p>
+
+<h2>Niezależność redakcyjna</h2>
+<p>Relacje partnerskie nie wpływają na to, jakie narzędzia powstają, jak pisane są bloki pomocy ani jakie „powiązane narzędzia" pojawiają się pod danym narzędziem. Narzędzia w Toolhub to narzędzia, które zbudowalibyśmy i tak — program partnerski to po prostu drobny wkład w hosting i utrzymanie.</p>
+
+<h2>Kontakt</h2>
+<p>Pytania o konkretnego partnera albo widzisz coś, co nie powinno tu być? Otwórz issue na <a href="{REPO_URL}">{REPO_URL}</a> albo użyj <a href="/pl/contact/">strony kontaktowej</a>.</p>
+""".strip(),
+            },
+            "ja": {
+                "title": "アフィリエイト開示",
+                "h1": "アフィリエイト開示",
+                "description": "Toolhub のアフィリエイト関係について、FTC・EU 規制に準拠した開示。費用はベンダー側が負担し、あなたに追加の支払いはなく、編集内容はアフィリエイトに左右されません。",
+                "body": f"""
+<p><strong>最終更新:</strong> {LAST_UPDATED}</p>
+
+<h2>アフィリエイトリンクとは</h2>
+<p>アフィリエイトリンクとは、トラッキングコードを付加した通常のリンクです。あなたがそのリンクをクリックして、リンク先のサービスに登録すると、そのサービスから Toolhub に少額の紹介手数料が支払われます。あなたが支払う金額は、アフィリエイトを通さない場合と同じです — 手数料を払うのはあなたではなく、ベンダー側です。</p>
+
+<h2>Toolhub のどこに出てくるか</h2>
+<p>現時点で、アフィリエイトリンクは 2 か所に登場します：</p>
+<ul>
+<li>サイトのフッター。小さな <code>(affiliate)</code> バッジで示されます。</li>
+<li>ツールのヘルプブロックや「関連ツール」セクションで、特定の有料サービスを推奨している箇所。そこではアフィリエイトであることがその場で明示されます。</li>
+</ul>
+<p>アフィリエイトリンクは HTML 上で <code>rel="sponsored"</code> を付けています。これは、商業的関係を示すための検索エンジン側の標準です。</p>
+
+<h2>誰が支払うか</h2>
+<p>手数料を支払うのはベンダーであって、あなたではありません。アフィリエイトリンクを無視してベンダーの公式トップページから直接登録しても、まったく同じサービスを同じ価格で受けられます — 紹介の事実が当方に届かないだけです。</p>
+
+<h2>FTC および EU 規制への対応</h2>
+<p>本ページは、米連邦取引委員会（FTC）の Endorsement Guides と EU の消費者保護規則が、リンク先製品との金銭的関係があるコンテンツ制作者に対して、その関係を開示することを求めているために用意しています。開示は明確で、かつ事前に行う必要があるため、トップレベルの独立ページを設け、フッターから常にリンクしています。</p>
+
+<h2>個別のアフィリエイト</h2>
+<p>執筆時点で、Toolhub のすべてのアフィリエイトアカウントが有効になっているわけではありません — 以下は仮の一覧です。各アカウントの承認後、運用者（JXXR1）がリンク URL を埋めていきます：</p>
+<ul>
+<li><strong>DigitalOcean</strong>（クラウドホスティング） — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>新たなアフィリエイト関係が追加された場合は、この一覧に追記し、ページの更新日も改訂します。</p>
+
+<h2>有償掲載は行いません</h2>
+<p>ツール紹介の文章、トップページに並ぶ順序、各ツール下の「関連ツール」リンクは、いずれも<strong>アフィリエイトによって動かされていません</strong>。特定のツールを掲載してもらうため、あるいは他のツールより上に並べてもらうための金銭は受け取りません。仮に将来、有償掲載が加わるようなことがあれば（その予定はありませんが）、アフィリエイトリンクと同じく、明示的・事前的・編集コンテンツと識別可能な形で表示します。</p>
+
+<h2>編集面の独立性</h2>
+<p>アフィリエイト関係は、どのツールを作るか、ヘルプブロックの文面、各ツールに表示する「関連ツール」のいずれにも影響しません。Toolhub に並ぶツールは、アフィリエイトプログラムがまったくなくても作るツール群そのものです — プログラムはホスティングと運用にわずかに貢献するだけです。</p>
+
+<h2>お問い合わせ</h2>
+<p>特定のアフィリエイトについてご質問がある、あるいはここに載っているべきでないと感じる箇所がある場合は、<a href="{REPO_URL}">{REPO_URL}</a> で Issue を立てるか、<a href="/ja/contact/">お問い合わせページ</a> をご利用ください。</p>
+""".strip(),
+            },
+            "nl": {
+                "title": "Affiliate-disclosure",
+                "h1": "Affiliate-disclosure",
+                "description": "FTC- en EU-conforme openbaarmaking van Toolhub's affiliate-relaties. De aanbieder betaalt, jij betaalt niets extra, en redactionele inhoud is niet affiliate-gedreven.",
+                "body": f"""
+<p><strong>Laatst bijgewerkt:</strong> {LAST_UPDATED}</p>
+
+<h2>Wat affiliate-links zijn</h2>
+<p>Een affiliate-link is een gewone link met een tracking-code eraan vast. Als je erop klikt en je vervolgens aanmeldt bij de gelinkte dienst, betaalt de dienst Toolhub een kleine verwijzingsvergoeding. De prijs die <em>jij</em> betaalt is identiek aan de niet-affiliate versie — niet jij betaalt de commissie, de aanbieder doet dat.</p>
+
+<h2>Waar ze op Toolhub staan</h2>
+<p>Op dit moment staan affiliate-links op twee plekken:</p>
+<ul>
+<li>In de footer van de site, gemarkeerd met een kleine <code>(affiliate)</code>-badge.</li>
+<li>Overal waar het help-blok van een tool of de "gerelateerde tools"-sectie een specifieke betaalde dienst noemt die we aanbevelen — daar wordt de affiliate ter plekke aangegeven.</li>
+</ul>
+<p>Affiliate-links dragen in de HTML <code>rel="sponsored"</code>, wat de zoekmachine-standaard is om een commerciële relatie aan te geven.</p>
+
+<h2>Wie betaalt</h2>
+<p>De aanbieder betaalt de commissie, niet jij. Als je de affiliate-link negeert en je rechtstreeks via de homepage van de aanbieder aanmeldt, krijg je dezelfde dienst voor dezelfde prijs; wij zien gewoon geen verwijzing.</p>
+
+<h2>FTC- en EU-naleving</h2>
+<p>Deze pagina bestaat omdat zowel de endorsement guides van de Amerikaanse Federal Trade Commission als de EU-regels voor consumentenbescherming vereisen dat contentmakers een financiële relatie met een gelinkt product openbaar maken. De openbaarmaking moet helder en vooraf zijn — vandaar een aparte top-level pagina, vandaar de link in elke pagina-footer.</p>
+
+<h2>Specifieke affiliates</h2>
+<p>Niet alle affiliate-accounts van Toolhub zijn al actief op het moment van schrijven — dit is een placeholder-lijst. Zodra elk account is goedgekeurd, vult de operator (JXXR1) hier de URLs in:</p>
+<ul>
+<li><strong>DigitalOcean</strong> (cloud-hosting) — <code>&lt;DO ref link TBD&gt;</code></li>
+<li><strong>GitHub Sponsors</strong> — <code>&lt;URL TBD&gt;</code></li>
+<li><strong>Buy Me a Coffee</strong> — <code>&lt;URL TBD&gt;</code></li>
+</ul>
+<p>Als/wanneer er andere affiliate-relaties bijkomen, worden ze hier vermeld en wordt de paginadatum bijgewerkt.</p>
+
+<h2>Geen betaalde plaatsingen</h2>
+<p>Tool-reviews, de volgorde waarin tools op de homepage staan en de "gerelateerde tools"-links onder elke tool zijn <strong>niet</strong> affiliate-gedreven. We accepteren geen geld om een tool uit te lichten of een tool boven een ander te plaatsen. Als er ooit een betaalde plaatsing zou worden toegevoegd (dat gaat niet gebeuren, maar voor het geval), zou die net als affiliate-links worden gelabeld: helder, vooraf, onderscheidbaar van redactionele inhoud.</p>
+
+<h2>Redactionele onafhankelijkheid</h2>
+<p>Affiliate-relaties beïnvloeden niet welke tools worden gebouwd, hoe help-blokken zijn geschreven, of welke "gerelateerde tools" onder een gegeven tool verschijnen. De tools op Toolhub zijn de tools die we ook zonder affiliate-programma zouden bouwen — het programma levert alleen een kleine bijdrage aan hosting en onderhoud.</p>
+
+<h2>Contact</h2>
+<p>Vragen over een specifieke affiliate, of wil je iets aanwijzen dat hier niet hoort? Open een issue op <a href="{REPO_URL}">{REPO_URL}</a> of gebruik de <a href="/nl/contact/">contactpagina</a>.</p>
 """.strip(),
             },
         },

@@ -8786,9 +8786,147 @@
   </url>
   <url>
     <loc>https://toolhub.software/privacy/</loc>
-    <lastmod>2026-05-09</lastmod>
-    <priority>0.3</priority>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/privacy/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/privacy/"/>
   </url>
   <url>
     <loc>https://toolhub.software/about/</loc>
@@ -9221,5 +9359,293 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/for-schools/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/for-schools/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/for-schools/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/how-we-handle-your-data/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/affiliate-disclosure/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/affiliate-disclosure/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/affiliate-disclosure/"/>
   </url>
 </urlset>

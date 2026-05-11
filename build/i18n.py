@@ -44,6 +44,8 @@ UI = {
         "about": "About",
         "contact": "Contact",
         "for_schools": "For Schools",
+        "data_handling": "Data Handling",
+        "affiliate_disclosure": "Affiliate Disclosure",
     },
     "de": {
         "all_tools": "Alle Tools",
@@ -87,6 +89,8 @@ UI = {
         "about": "Über uns",
         "contact": "Kontakt",
         "for_schools": "Für Schulen",
+        "data_handling": "Datenverarbeitung",
+        "affiliate_disclosure": "Affiliate-Offenlegung",
     },
     "es": {
         "all_tools": "Todas las herramientas",
@@ -130,6 +134,8 @@ UI = {
         "about": "Acerca de",
         "contact": "Contacto",
         "for_schools": "Para escuelas",
+        "data_handling": "Tratamiento de datos",
+        "affiliate_disclosure": "Divulgación de afiliados",
     },
     "fr": {
         "all_tools": "Tous les outils",
@@ -173,6 +179,8 @@ UI = {
         "about": "À propos",
         "contact": "Contact",
         "for_schools": "Pour les écoles",
+        "data_handling": "Traitement des données",
+        "affiliate_disclosure": "Divulgation des affiliations",
     },
     "it": {
         "all_tools": "Tutti gli strumenti",
@@ -216,6 +224,8 @@ UI = {
         "about": "Chi siamo",
         "contact": "Contatti",
         "for_schools": "Per le scuole",
+        "data_handling": "Trattamento dei dati",
+        "affiliate_disclosure": "Divulgazione affiliati",
     },
     "pt": {
         "all_tools": "Todas as ferramentas",
@@ -259,6 +269,8 @@ UI = {
         "about": "Sobre",
         "contact": "Contato",
         "for_schools": "Para escolas",
+        "data_handling": "Tratamento de dados",
+        "affiliate_disclosure": "Divulgação de afiliados",
     },
     "pl": {
         "all_tools": "Wszystkie narzędzia",
@@ -302,6 +314,8 @@ UI = {
         "about": "O nas",
         "contact": "Kontakt",
         "for_schools": "Dla szkół",
+        "data_handling": "Obsługa danych",
+        "affiliate_disclosure": "Ujawnienie partnerów",
     },
     "ja": {
         "all_tools": "すべてのツール",
@@ -345,6 +359,8 @@ UI = {
         "about": "概要",
         "contact": "お問い合わせ",
         "for_schools": "学校向け",
+        "data_handling": "データの取り扱い",
+        "affiliate_disclosure": "アフィリエイト開示",
     },
     "nl": {
         "all_tools": "Alle tools",
@@ -388,6 +404,8 @@ UI = {
         "about": "Over",
         "contact": "Contact",
         "for_schools": "Voor scholen",
+        "data_handling": "Dataverwerking",
+        "affiliate_disclosure": "Affiliate-disclosure",
     },
 }
 

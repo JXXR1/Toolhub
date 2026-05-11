@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment on traite tes données — Toolhub</title>
+  <meta name="description" content="Présentation en langage clair de la façon dont Toolhub traite tes données. Les outils tournent dans le navigateur, rien n'est stocké, trois exceptions nommées explicitement.">
+  <meta property="og:title" content="Comment on traite tes données — Toolhub">
+  <meta property="og:description" content="Présentation en langage clair de la façon dont Toolhub traite tes données. Les outils tournent dans le navigateur, rien n'est stocké, trois exceptions nommées explicitement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/fr/how-we-handle-your-data/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/fr/how-we-handle-your-data/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/how-we-handle-your-data/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/how-we-handle-your-data/">
+  <meta property="og:locale" content="fr_FR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://toolhub.software/fr/how-we-handle-your-data/#page",
+        "name": "Comment on traite tes données",
+        "description": "Présentation en langage clair de la façon dont Toolhub traite tes données. Les outils tournent dans le navigateur, rien n'est stocké, trois exceptions nommées explicitement.",
+        "url": "https://toolhub.software/fr/how-we-handle-your-data/",
+        "inLanguage": "fr",
+        "isPartOf": {"@id": "https://toolhub.software#site"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://toolhub.software#site",
+        "url": "https://toolhub.software",
+        "name": "Toolhub",
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tous les outils", "item": "https://toolhub.software/fr/"},
+          {"@type": "ListItem", "position": 2, "name": "Comment on traite tes données", "item": "https://toolhub.software/fr/how-we-handle-your-data/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .container { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--text); }
+    h2 { font-size: 1.25rem; margin: 2rem 0 0.5rem; color: var(--text); }
+    h3 { font-size: 1.05rem; margin: 1.25rem 0 0.4rem; color: var(--text); }
+    p, li { color: var(--text-muted); margin-bottom: 0.8rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 0.8rem; }
+    li { margin-bottom: 0.4rem; }
+    code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; color: var(--text); }
+    strong { color: var(--text); }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.4rem; }
+    .footer a:hover { color: var(--accent); }
+    @media (max-width: 600px) {
+      .container { padding: 1.25rem 1rem; }
+      .header { padding: 0.75rem 1rem; }
+      .logo { font-size: 1.2rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.1rem; }
+    }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <link rel="stylesheet" href="/js/monetize.css">
+  <script>
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "",
+      githubSponsorsUrl: ""
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/fr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <select class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/how-we-handle-your-data/'; else location.href='/how-we-handle-your-data/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" selected="selected">🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+      </select>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Changer de thème">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/fr/">Tous les outils</a> / Comment on traite tes données</div>
+    <h1>Comment on traite tes données</h1>
+    <p><strong>Dernière mise à jour :</strong> 11 May 2026</p>
+<p>Cette page est la version en clair. Elle complète la <a href="/fr/privacy/">politique de confidentialité</a> ; si les deux semblent se contredire quelque part, cette page-ci est la plus spécifique et prévaut.</p>
+
+<h2>Où vont les données</h2>
+<p>Les outils de Toolhub tournent dans ton navigateur. Tout ce que tu colles, tapes ou téléverses dans un outil reste sur ton appareil — il n'y a pas d'exécuteur d'outils côté serveur, et aucun outil n'a d'endpoint d'upload derrière.</p>
+<p>Il y a exactement trois exceptions nommées à « rien ne sort de ton appareil » :</p>
+<ol>
+<li><strong>Outil YouTube Thumbnail</strong> — quand tu soumets une URL YouTube, ton navigateur télécharge la miniature directement depuis <code>i.ytimg.com</code> (le CDN d'images public de YouTube). Pas d'authentification, pas d'upload, pas de clé API. YouTube voit seulement l'ID de la vidéo dans l'URL, et seulement parce que ton navigateur fait la requête.</li>
+<li><strong>AdSense (uniquement si activé et consenti)</strong> — le système d'annonces display de Google. Quand tu donnes ton consentement, Google peut voir ton adresse IP et poser des cookies, régis par la politique de Google. Quand tu refuses (par défaut), AdSense n'est pas chargé du tout.</li>
+<li><strong>Plausible Analytics</strong> — compte les visites de pages, le referrer, le pays et la classe d'appareil. Pas de cookies, pas de fingerprinting, uniquement des statistiques agrégées. Les serveurs de Plausible sont hébergés dans l'UE.</li>
+</ol>
+
+<h2>Ce qu'on stocke</h2>
+<p>Rien à ton sujet. Pas de comptes, pas d'identifiants utilisateur, pas d'e-mail, pas de profil. On ne stocke pas le contenu que tu mets dans les outils.</p>
+<p>Ton navigateur garde deux petites entrées localStorage sur ton appareil seulement — toutes deux lisibles et effaçables depuis les outils de développement du navigateur :</p>
+<ul>
+<li><code>theme</code> — « light » ou « dark », à peu près un octet de préférence.</li>
+<li><code>toolhub:consent</code> — ta décision sur la pub (oui/non/non défini). Pour ne pas te redemander.</li>
+</ul>
+
+<h2>RGPD, UK GDPR, CCPA et l'autorité slovaque</h2>
+<p>Toolhub traite des données minimales :</p>
+<ul>
+<li><strong>UE / UK (RGPD / UK GDPR) :</strong> Plausible (hébergé dans l'UE) fournit une base d'analytique conforme. Quand AdSense est actif, Google opère sa propre couche de consentement sous TCF v2.</li>
+<li><strong>Californie (CCPA) :</strong> on ne vend pas d'informations personnelles. On n'a pas d'informations personnelles à vendre.</li>
+<li><strong>Slovaquie (autorité slovaque de protection des données) :</strong> le mainteneur de Toolhub est basé en Slovaquie. Les règles slovaques s'appliquent à tout traitement qui a effectivement lieu — ce qui se limite essentiellement aux métriques agrégées de Plausible et (quand actif) au flux de consentement propre à AdSense.</li>
+</ul>
+<p>Les droits d'accès ou de suppression de données personnelles ne s'appliquent en pratique pas, parce qu'aucune donnée personnelle n'est stockée à laquelle accéder ou qu'effacer. Pour des questions précises, écris depuis la <a href="/fr/contact/">page de contact</a>.</p>
+
+<h2>Cookies</h2>
+<ul>
+<li><strong>Plausible :</strong> jamais de cookies.</li>
+<li><strong>Préférence de thème :</strong> une entrée localStorage, pas un cookie. Reste sur ton appareil. N'est pas envoyée avec les requêtes HTTP.</li>
+<li><strong>AdSense (quand actif) :</strong> Google pose ses propres cookies publicitaires tiers. La bannière de consentement apparaît avant qu'aucun script AdSense ne soit chargé, et AdSense n'est pas chargé du tout si tu refuses.</li>
+</ul>
+
+<h2>Enfants</h2>
+<p>Toolhub est adapté à un usage scolaire (voir <a href="/fr/for-schools/">Toolhub pour les écoles</a>). Pas de pistage comportemental, pas de pub ciblée. L'usage par les moins de 13 ans est acceptable dans le cadre des conditions AdSense appliquées par région — là où AdSense restreint régionalement les annonces aux enfants, ces restrictions sont respectées par les systèmes de Google.</p>
+
+<h2>PDF téléchargeable</h2>
+<p>Une version PDF de cette page est disponible pour consultation hors-ligne ou pour impression dans la documentation IT d'un établissement :</p>
+<p><a href="/how-we-handle-your-data.pdf">how-we-handle-your-data.pdf</a></p>
+<p>Le PDF est uniquement en anglais à ce stade ; les PDF par langue ne sont pas dans le périmètre de cette livraison.</p>
+
+<h2>Questions</h2>
+<p>Si quelque chose n'est pas clair ici, ouvre une issue sur <a href="https://github.com/JXXR1/Toolhub">https://github.com/JXXR1/Toolhub</a> ou utilise la <a href="/fr/contact/">page de contact</a>. Les questions de clarification servent à améliorer la page pour la prochaine personne.</p>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/fr/privacy/">Confidentialité</a> · <a href="/fr/how-we-handle-your-data/">Traitement des données</a> · <a href="/fr/affiliate-disclosure/">Divulgation des affiliations</a> · <a href="/fr/about/">À propos</a> · <a href="/fr/contact/">Contact</a> · <a href="/fr/for-schools/">Pour les écoles</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

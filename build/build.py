@@ -114,7 +114,7 @@ def home_path(lang: str) -> str:
 
 
 def privacy_path(lang: str) -> str:
-    return "/privacy/" if lang == "en" else "/privacy/"
+    return "/privacy/" if lang == "en" else f"/{lang}/privacy/"
 
 
 def page_path(lang: str, slug: str) -> str:
@@ -278,6 +278,10 @@ def render_tool(tool: dict, lang: str) -> str:
         "CONTACT_LBL": ui["contact"],
         "FOR_SCHOOLS": page_path(lang, "for-schools"),
         "FOR_SCHOOLS_LBL": ui["for_schools"],
+        "DATA_HANDLING": page_path(lang, "how-we-handle-your-data"),
+        "DATA_HANDLING_LBL": ui["data_handling"],
+        "AFFILIATE_DISCLOSURE": page_path(lang, "affiliate-disclosure"),
+        "AFFILIATE_DISCLOSURE_LBL": ui["affiliate_disclosure"],
         "ALL_TOOLS": ui["all_tools"],
         "THEME_TIP": ui["theme_tip"],
         "INSTALL_APP": ui["install_app"],
@@ -388,6 +392,10 @@ def render_page(page: dict, lang: str) -> str:
         "CONTACT_LBL": ui["contact"],
         "FOR_SCHOOLS": page_path(lang, "for-schools"),
         "FOR_SCHOOLS_LBL": ui["for_schools"],
+        "DATA_HANDLING": page_path(lang, "how-we-handle-your-data"),
+        "DATA_HANDLING_LBL": ui["data_handling"],
+        "AFFILIATE_DISCLOSURE": page_path(lang, "affiliate-disclosure"),
+        "AFFILIATE_DISCLOSURE_LBL": ui["affiliate_disclosure"],
         "ALL_TOOLS": ui["all_tools"],
         "THEME_TIP": ui["theme_tip"],
         "SLUG": slug,
