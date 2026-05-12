@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "URL Encoder / Decoder", "tagline": "Percent-encode strings voor URLs of decodeer percent-encoded strings terug naar plain text.", "description": "Gratis online URL encoder en decoder. Encodet speciale tekens als percent-escapes voor URLs, query strings en form data. Component-safe."},
         "tr": {"name": "URL Encoder / Decoder", "tagline": "String'leri URL'ler için percent-encode et veya percent-encoded string'leri düz metne çöz.", "description": "Ücretsiz online URL encoder ve decoder. URL'ler, query string'ler ve form verisi için özel karakterleri percent-escape olarak kodlar. Component-safe."},
         "id": {"name": "URL Encoder / Decoder", "tagline": "Percent-encode string untuk URL atau decode string percent-encoded kembali ke teks biasa.", "description": "URL encoder dan decoder gratis. Percent-encode string apa pun untuk penggunaan aman di URL (path, query string, fragment) atau decode string percent-encoded kembali ke karakter aslinya. UTF-8 aman."},
+        "vi": {"name": "URL Encoder / Decoder", "tagline": "Percent-encode chuỗi cho URL hoặc decode chuỗi percent-encoded trở lại văn bản thường.", "description": "URL encoder và decoder miễn phí trực tuyến. Percent-encode chuỗi để dùng an toàn trong query string và path, hoặc decode chuỗi percent-encoded trở lại văn bản thường. UTF-8 an toàn."},
     },
     "body": """
 <div class="tool-card">
@@ -193,6 +194,24 @@ document.addEventListener('DOMContentLoaded', urlRun);
   <li><strong>Spasi tidak selalu <code>%20</code>.</strong> Di body <em>application/x-www-form-urlencoded</em>, spasi adalah <code>+</code>. Tool ini mengikuti konvensi <code>encodeURIComponent</code> JavaScript (selalu <code>%20</code>); decode meng-handle keduanya.</li>
   <li><strong>UTF-8 vs Latin-1.</strong> Browser modern dan <code>encodeURIComponent</code> selalu pakai UTF-8. Beberapa sistem lama masih menghasilkan percent-escape Latin-1 — itu tidak akan round-trip dengan bersih di sini.</li>
   <li><strong>Karakter reserved itu case-insensitive di percent-escape tapi case-sensitive di hasil decoded</strong> — <code>%2F</code> dan <code>%2f</code> keduanya di-decode jadi <code>/</code>, tapi case karakter asli dipertahankan.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>URL có cú pháp đặc biệt — <code>/</code>, <code>?</code>, <code>&amp;</code>, <code>#</code>, space đều có ý nghĩa. Để chèn ký tự đó như văn bản trong path hoặc query string, bạn phải percent-encode chúng: space thành <code>%20</code>, <code>?</code> thành <code>%3F</code>, etc. Tool này thực hiện encoding và decoding theo cả hai chiều — UTF-8 safe.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Xây dựng URL với param chứa space hoặc ký tự đặc biệt.</li>
+  <li>Decode URL từ log để xem param thực.</li>
+  <li>Encode tên file để dùng trong URL (đặc biệt với ký tự không-ASCII).</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>encodeURIComponent vs encodeURI.</strong> Trong JavaScript, dùng <code>encodeURIComponent</code> cho component (giá trị param); <code>encodeURI</code> giữ delimiter URL không-encoded.</li>
+  <li><strong>+ vs %20 cho space.</strong> Trong query string, cả hai thường được chấp nhận; <code>%20</code> ổn định hơn vì <code>+</code> chỉ là space trong query string, không phải trong path.</li>
+  <li><strong>Encode kép gây ra "%2520" — kép-encode <code>%</code>.</strong> Nếu bạn thấy điều đó, decode hai lần để hiểu cái gì có ở đó.</li>
 </ul>
 """,
     },

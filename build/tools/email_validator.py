@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Email-validator", "tagline": "Check of een emailadres syntactisch geldig is (RFC 5322-friendly), met breakdown van local part, domain en veelvoorkomende valkuilen.", "description": "Gratis online email-validator. RFC 5322-aware syntax check, analyse van local part en domain, disposable-domain hint en lengtecontrole."},
         "tr": {"name": "E-posta Doğrulayıcı", "tagline": "Bir e-posta adresinin sözdizimsel olarak geçerli olup olmadığını kontrol et (RFC 5322 uyumlu); local part, domain ve yaygın hataları ayrıştırır.", "description": "Ücretsiz online e-posta doğrulayıcı. RFC 5322 uyumlu sözdizimi kontrolü, local-part ve domain analizi, geçici domain ipucu ve uzunluk doğrulaması."},
         "id": {"name": "Validator Email", "tagline": "Cek apakah alamat email valid secara sintaks (RFC 5322-compliant); mengurai local part, domain, dan kesalahan umum.", "description": "Validator email gratis. Cek apakah alamat email valid secara sintaks per RFC 5322 dan urai local part, domain, dan TLD. Menandai typo umum (gmial.com, gmal.com) dan domain yang kemungkinan typo."},
+        "vi": {"name": "Xác thực Email", "tagline": "Kiểm tra xem một địa chỉ email có hợp lệ về cú pháp không (tuân thủ RFC 5322); phân tích phần local, domain và các lỗi thường gặp.", "description": "Trình xác thực email miễn phí trực tuyến. Kiểm tra xem một địa chỉ có cú pháp hợp lệ theo RFC 5322 không, tách phần local và domain, và đánh dấu các vấn đề thường gặp như khoảng trắng, ký tự không hợp lệ hoặc TLD bị thiếu."},
     },
     "body": """
 <div class="tool-card">
@@ -257,6 +258,25 @@ document.addEventListener('DOMContentLoaded', evRun);
   <li><strong>Internationalised email (IDN).</strong> <code>用户@例.中国</code> secara teknis valid per RFC 6530 tapi belum didukung luas oleh server SMTP. Tool ini mengikuti aturan ASCII konservatif; longgarkan kalau kamu memang butuh IDN.</li>
   <li><strong>Deteksi disposable domain hanya hint.</strong> Daftarnya pasti tidak lengkap dan domain yang di-flag pun masih bisa jadi user sungguhan.</li>
   <li><strong>Jangan tolak perbedaan case.</strong> Local part secara teknis case-sensitive per RFC 5321; dalam praktiknya setiap provider modern memperlakukannya sebagai case-insensitive. Jangan lowercase saat disimpan.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>RFC 5322 định nghĩa cú pháp địa chỉ email — và quy tắc phức tạp một cách đáng ngạc nhiên (dấu cộng, dấu chấm và quote được phép trong phần local; tên miền IDN; bracketed IP). Tool này kiểm tra một địa chỉ theo cú pháp đó, tách phần local và domain, và đánh dấu các vấn đề thông thường mà người dùng vẫn gặp phải khi gõ địa chỉ của họ vào form.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Validation form đăng ký phía client trước khi gửi lên backend.</li>
+  <li>Đánh dấu lỗi gõ trong danh sách email được nhập (ví dụ <code>@gmial.com</code>).</li>
+  <li>Xác nhận một địa chỉ phức tạp (với +alias hoặc dấu chấm) hợp lệ.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Vượt qua cú pháp không có nghĩa là email tồn tại.</strong> Bạn cần một MX lookup để biết miền có nhận thư hay không, và việc gửi xác minh để biết tài khoản có tồn tại hay không.</li>
+  <li><strong>Quote và escape trong phần local thực sự hợp lệ.</strong> <code>"john.doe"@example.com</code> theo kỹ thuật là hợp lệ. Trong thực tế, hầu hết các dịch vụ không chấp nhận chúng.</li>
+  <li><strong>Tên miền IDN.</strong> <code>user@münchen.de</code> hợp lệ — nhưng nhiều validator regex cổ điển từ chối nó. Tool này chấp nhận chúng.</li>
+  <li><strong>Đừng over-validate.</strong> Form đăng ký nên chấp nhận rộng rãi (thậm chí có rủi ro chấp nhận một số địa chỉ không gửi được) — gửi email xác minh, sau đó dọn các địa chỉ không phản hồi.</li>
 </ul>
 """,
     },

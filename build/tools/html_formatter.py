@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "HTML Formatter", "tagline": "Formatteer en beautify HTML of minify het. Indent size, comment stripping en self-closing tag awareness.", "description": "Gratis online HTML formatter en minifier. Pretty-print met configureerbare indentatie, optioneel comments strippen, en void/self-closing tags respecteren. Draait volledig in je browser."},
         "tr": {"name": "HTML Formatter", "tagline": "HTML'i biçimlendir ve güzelleştir ya da küçült. Indent boyutu, yorum temizleme ve self-closing tag farkındalığı.", "description": "Ücretsiz online HTML formatter ve minifier. Ayarlanabilir indent ile güzel yazdır, opsiyonel olarak yorumları sil, void/self-closing tag'lere uy. Tamamen tarayıcında çalışır."},
         "id": {"name": "HTML Formatter", "tagline": "Format dan beautify HTML atau minify-nya. Ukuran indent, pengupasan komentar, dan kesadaran self-closing tag.", "description": "HTML formatter gratis. Beautify HTML berantakan dengan indentasi yang tepat atau minify HTML rapi dengan menghapus whitespace dan komentar. Sadar self-closing tag dan mempertahankan konten pre/code."},
+        "vi": {"name": "HTML Formatter", "tagline": "Format và làm đẹp HTML hoặc minify nó. Kích thước indent, loại bỏ comment và nhận biết self-closing tag.", "description": "HTML formatter miễn phí trực tuyến. Làm đẹp markup lộn xộn với indent có thể cấu hình, hoặc minify để loại bỏ whitespace. Self-closing tag và CSS/JS inline được xử lý đúng."},
     },
     "body": """
 <div class="tool-card">
@@ -491,6 +492,24 @@ document.addEventListener('DOMContentLoaded', hfRun);
   <li><strong>"Collapse whitespace" mengubah output rendered untuk sebagian content.</strong> Dua spasi jadi satu. Kalau desainmu bergantung pada multiple space atau sekuens non-breaking, biarkan off.</li>
   <li><strong>Notasi self-closing di HTML itu kosmetik.</strong> <code>&lt;br/&gt;</code> dan <code>&lt;br&gt;</code> ekuivalen di HTML5; tool ini mempertahankan yang kamu tulis.</li>
   <li><strong>Minify bukan batas keamanan.</strong> Jangan andalkan strip comment untuk menyembunyikan secret — secret itu sudah dikirim ke client.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>HTML hand-edited tích lũy whitespace lộn xộn — indent không nhất quán, dòng dài, thuộc tính trộn lẫn. Tool này pretty-print bất kỳ HTML nào với indent rõ ràng, hoặc minify nó để loại bỏ tất cả whitespace không cần thiết cho production. Nó hiểu các thẻ tự-đóng và inline CSS/JS.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Làm sạch HTML cũ với indent không nhất quán trước khi cam kết.</li>
+  <li>Minify markup tĩnh để giảm kích thước payload.</li>
+  <li>Định dạng response API trả về HTML cho dễ đọc.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Whitespace có thể có ý nghĩa.</strong> Trong <code>&lt;pre&gt;</code>, <code>&lt;textarea&gt;</code>, và một số <code>&lt;span&gt;</code> inline, whitespace là một phần của content. Tool này cố gắng giữ chúng, nhưng kiểm tra output.</li>
+  <li><strong>Minify HTML đơn giản hơn minify CSS/JS.</strong> Đa số tiết kiệm đến từ collapse whitespace; phần khó (chấp nhận attribute không có quote, drop tag tự-đóng tùy chọn) thường không an toàn nếu chưa được phân tích cẩn thận.</li>
+  <li><strong>Đừng format template.</strong> File chứa <code>{{handlebars}}</code>, <code>&lt;?php&gt;</code> hoặc <code>&lt;%erb%&gt;</code> có thể bị phá vỡ bởi formatter HTML — chúng không phải là HTML hợp lệ cho đến khi được render.</li>
 </ul>
 """,
     },

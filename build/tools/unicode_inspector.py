@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Unicode Inspector", "tagline": "Plak tekst → tabel van elke code point. Hex, decimaal, UTF-8 bytes, categorie. Spot onzichtbare tekens.", "description": "Gratis Unicode-inspector. Plak elke tekst en zie elke Unicode code point: hex, decimaal, UTF-8 byte sequence, general category en een naam waar bekend. Highlight onzichtbare en confusable karakters."},
         "tr": {"name": "Unicode İnceleyici", "tagline": "Metni yapıştır → her code point için tablo. Hex, ondalık, UTF-8 byte, kategori. Görünmez karakterleri yakala.", "description": "Ücretsiz Unicode inceleyici. Herhangi bir metni yapıştır ve her Unicode code point'ini gör: hex, ondalık, UTF-8 byte dizisi, genel kategori ve bilinen yerlerde ad. Görünmez ve karıştırılabilir karakterleri vurgular."},
         "id": {"name": "Inspector Unicode", "tagline": "Tempel teks → tabel per code point. Hex, desimal, byte UTF-8, kategori. Tangkap karakter tak terlihat.", "description": "Inspector Unicode gratis. Tempel teks apa pun dan lihat tabel setiap code point dengan hex, desimal, byte UTF-8, dan kategori Unicode. Tangkap karakter tak terlihat seperti zero-width joiner dan non-breaking space."},
+        "vi": {"name": "Trình kiểm tra Unicode", "tagline": "Dán văn bản → bảng theo code point. Hex, decimal, byte UTF-8, danh mục. Bắt các ký tự vô hình.", "description": "Trình kiểm tra Unicode miễn phí trực tuyến. Dán bất kỳ chuỗi nào và xem mỗi code point trong bảng với hex, decimal, byte UTF-8 và danh mục Unicode. Hữu ích để bắt các ký tự ẩn hoặc trông giống nhau."},
     },
     "body": """
 <div class="tool-card">
@@ -482,6 +483,24 @@ document.addEventListener('DOMContentLoaded', uiRun);
   <li><strong>Right-to-left override itu berbahaya.</strong> Nama file yang berisi U+202E bisa membalik urutan tampilan — membuat <code>resu&#x202E;txt.exe</code> terlihat seperti <code>resuexe.txt</code> di file browser. Dipakai dalam phishing.</li>
   <li><strong>Kolom name itu parsial.</strong> Database Unicode sungguhan punya nama untuk setiap code point; inspector ini hanya menyertakan nama untuk control character dan karakter format/whitespace umum di mana nama adalah diagnostik paling berguna.</li>
   <li><strong>Surrogate halves seharusnya tidak muncul sendirian.</strong> Jika kamu melihat U+D800–U+DFFF di output, input-nya adalah string UTF-16 yang malformed (lone surrogate). Sebagian besar API akan menolak meng-encode itu ke UTF-8.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Unicode có 144,000+ code point covering mọi script và emoji. Khi văn bản trông "kỳ lạ" hoặc compare-unequal mặc dù trông giống nhau, thường là một code point ẩn hoặc trông giống nhau gây vấn đề. Tool này dán-văn-bản và xem mỗi code point trong bảng với hex, decimal, byte UTF-8 và danh mục Unicode.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Debug "tại sao string này không khớp với string đó" — thường là zero-width hoặc ký tự look-alike.</li>
+  <li>Kiểm tra emoji được tạo từ chuỗi ZWJ — emoji "family" thực sự là 7+ code point.</li>
+  <li>Phát hiện ký tự homograph attack trong URL hoặc input người dùng.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Glyph vs code point.</strong> Một glyph hiển thị có thể là nhiều code point (chữ tiếng Việt với dấu, emoji family). Tool này hiển thị code point.</li>
+  <li><strong>Encoding khác.</strong> UTF-8 thay đổi từ 1 đến 4 byte; UTF-16 thay đổi từ 2 đến 4 byte; UTF-32 luôn 4 byte. Tool này hiển thị byte UTF-8.</li>
+  <li><strong>Normalization quan trọng.</strong> NFC vs NFD: cùng chữ có thể được lưu trữ dưới dạng một code point hoặc một chuỗi code point cơ sở + combining. Normalize cả hai trước khi so sánh.</li>
 </ul>
 """,
     },

@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "BMI-calculator", "tagline": "Body Mass Index uit lengte en gewicht. Metrisch of imperiaal. Toont de WHO-categorie — geen medisch advies.", "description": "Gratis Body Mass Index-calculator. Voer lengte en gewicht in metrisch (cm + kg) of imperiaal (feet/inches + pounds) in en zie de BMI-waarde plus de WHO-classificatie (ondergewicht, normaal, overgewicht, obesitas). Alleen educatief — geen medisch advies."},
         "tr": {"name": "BMI Hesaplayıcı", "tagline": "Boy ve kilodan vücut kitle indeksi. Metrik veya imperial. DSÖ kategorisini gösterir — tıbbi tavsiye değildir.", "description": "Ücretsiz vücut kitle indeksi hesaplayıcı. Boy ve kiloyu metrik (cm + kg) veya imperial (feet/inç + pound) gir; BMI değeri ve DSÖ sınıflandırmasını (zayıf, normal, fazla kilolu, obez) gör. Sadece bilgilendirme amaçlıdır — tıbbi tavsiye değildir."},
         "id": {"name": "Kalkulator BMI", "tagline": "Body Mass Index dari tinggi dan berat. Metrik atau imperial. Menampilkan kategori WHO — bukan saran medis.", "description": "Kalkulator BMI gratis. Hitung Body Mass Index dari tinggi dan berat dalam satuan metrik atau imperial. Menampilkan kategori klasifikasi WHO. Berjalan di browser-mu — tanpa pelacakan, bukan saran medis."},
+        "vi": {"name": "Máy tính BMI", "tagline": "Chỉ số khối cơ thể từ chiều cao và cân nặng. Hệ mét hoặc imperial. Hiển thị phân loại WHO — không phải lời khuyên y tế.", "description": "Máy tính BMI miễn phí trực tuyến. Tính chỉ số khối cơ thể từ chiều cao và cân nặng theo hệ mét hoặc imperial; hiển thị phân loại WHO. Không phải lời khuyên y tế."},
     },
     "body": """
 <div class="tool-card">
@@ -430,6 +431,25 @@ document.addEventListener('DOMContentLoaded', bmiRun);
   <li><strong>Etnis itu penting.</strong> Beberapa otoritas kesehatan (NHS, panduan WHO Asia-Pasifik) menggunakan ambang lebih rendah (kelebihan ≥23, obesitas ≥27,5) untuk populasi Asia Selatan, Tionghoa, dan lainnya karena risiko kardiovaskular naik di BMI lebih rendah.</li>
   <li><strong>Orang tinggi vs pendek.</strong> Rumus tinggi kuadrat secara sistematis mengklasifikasikan orang tinggi sebagai "kurang berat" dan orang pendek sebagai "kelebihan berat".</li>
   <li><strong>Bukan saran medis.</strong> Jika kamu khawatir tentang beratmu, bicaralah dengan klinisi. Mereka memiliki sisa gambaran (lingkar pinggang, tekanan darah, kerja darah, gaya hidup) yang tidak diberikan oleh satu angka.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>BMI (Body Mass Index — chỉ số khối cơ thể) là cân nặng chia cho chiều cao bình phương, dùng làm proxy thô cho phân loại cân nặng cấp dân số. Đây là số một-trang mà bác sĩ và các nghiên cứu sức khỏe cộng đồng dùng để xếp người trưởng thành vào các nhóm "thiếu cân / cân nặng bình thường / thừa cân / béo phì" theo định nghĩa của WHO. Nó không tinh tế, nhưng dễ tính và đủ tốt cho việc sàng lọc.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Có ý tưởng nhanh về việc cân nặng của bạn rơi vào đâu trong dải tham chiếu của WHO.</li>
+  <li>Theo dõi xu hướng theo thời gian — hai con số BMI cách nhau sáu tháng có ý nghĩa hơn một con số đơn lẻ.</li>
+  <li>So sánh giữa các đơn vị (mét vs imperial) mà không cần chuyển đổi thủ công.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>BMI không đo mỡ cơ thể.</strong> Một vận động viên có nhiều cơ có thể có BMI "thừa cân"; một người ít vận động có thể có BMI "bình thường" mà vẫn có thành phần mỡ cao.</li>
+  <li><strong>Chỉ cho người lớn.</strong> Trẻ em, thanh thiếu niên và phụ nữ mang thai cần biểu đồ và phương pháp riêng — đừng áp dụng các nhóm WHO cho người trưởng thành ở đây.</li>
+  <li><strong>Khác biệt sắc tộc và khu vực.</strong> Các tổ chức y tế Nam Á và Đông Á dùng các ngưỡng thấp hơn cho "thừa cân" so với WHO toàn cầu.</li>
+  <li><strong>Đây không phải lời khuyên y tế.</strong> Dùng để hiểu rõ hơn; gặp bác sĩ thực thụ để đưa ra quyết định.</li>
 </ul>
 """,
     },

@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "CIDR Subnet-calculator", "tagline": "Bereken IPv4-subnetten uit CIDR-notatie. Netwerk, broadcast, mask, hostbereik en binaire weergave.", "description": "Gratis IPv4 CIDR / subnet-calculator. Voer een CIDR in (bijv. 10.0.0.0/16) en zie het netwerkadres, broadcast, subnet mask, hostbereik, totaal aantal adressen en binaire representatie."},
         "tr": {"name": "CIDR Subnet Hesaplayıcı", "tagline": "CIDR notasyonundan IPv4 alt ağlarını hesapla. Network, broadcast, mask, host aralığı ve ikilik görünüm.", "description": "Ücretsiz IPv4 CIDR / subnet hesaplayıcı. Herhangi bir CIDR gir (örn. 10.0.0.0/16) ve network adresi, broadcast, subnet mask, host aralığı, toplam adres sayısı ve ikilik gösterimi gör."},
         "id": {"name": "Kalkulator CIDR Subnet", "tagline": "Hitung subnet IPv4 dari notasi CIDR. Network, broadcast, mask, rentang host, dan tampilan biner.", "description": "Kalkulator CIDR / subnet IPv4 gratis. Masukkan CIDR apa pun (misal 10.0.0.0/16) dan lihat alamat network, broadcast, subnet mask, rentang host, total alamat, dan representasi biner."},
+        "vi": {"name": "Máy tính CIDR Subnet", "tagline": "Tính subnet IPv4 từ notation CIDR. Network, broadcast, mask, dải host và biểu diễn nhị phân.", "description": "Máy tính CIDR / subnet IPv4 miễn phí. Nhập bất kỳ CIDR nào (ví dụ 10.0.0.0/16) và xem network address, broadcast, subnet mask, dải host, tổng số địa chỉ và biểu diễn nhị phân."},
     },
     "body": """
 <div class="tool-card">
@@ -345,6 +346,40 @@ document.addEventListener('DOMContentLoaded', cidrRun);
   <li><strong>Jangan campur class dengan CIDR.</strong> Class A/B/C adalah konsep legacy (sebelum 1993).</li>
   <li><strong>Rentang private RFC 1918:</strong> <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code>. Selain itu routable secara publik (atau direservasi).</li>
   <li><strong>Tool ini hanya IPv4.</strong> CIDR IPv6 secara struktural mirip tapi prefix bisa sampai /128 dan ruang alamat jauh lebih besar; tidak ditangani di sini.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Notation CIDR (Classless Inter-Domain Routing) đóng gói một địa chỉ IPv4 và kích thước subnet của nó thành một chuỗi duy nhất: <code>192.168.1.0/24</code> nghĩa là "địa chỉ 192.168.1.0 với prefix network 24-bit" — cùng một network như mask <code>255.255.255.0</code> cũ, nhưng viết bằng 12 ký tự thay vì 30. Công cụ này giải mã bất kỳ CIDR nào thành các giá trị có ý nghĩa: địa chỉ nào <em>thuộc</em> subnet, broadcast, mask dạng dot và dải host bạn thực sự có thể gán cho thiết bị.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Thiết kế VLAN hoặc VPC và tính xem /22 vs /23 chứa được bao nhiêu host (1022 vs 510).</li>
+  <li>Đọc quy tắc firewall như <code>allow 10.42.0.0/16</code> và xác minh dải chính xác.</li>
+  <li>Chia /24 thành các subnet nhỏ hơn và kiểm tra biên không chồng chéo.</li>
+  <li>Sanity check quy tắc security group cloud trước khi deploy.</li>
+  <li>Chuyển đổi giữa CIDR và mask dot <code>255.x.x.x</code> cũ trong cấu hình router.</li>
+</ul>
+
+<h3>Cheat sheet CIDR</h3>
+<ul>
+  <li><strong>/32</strong> — 1 địa chỉ (route host đơn).</li>
+  <li><strong>/30</strong> — 4 địa chỉ, 2 có thể dùng (link point-to-point).</li>
+  <li><strong>/29</strong> — 8 địa chỉ, 6 có thể dùng (subnet văn phòng nhỏ).</li>
+  <li><strong>/24</strong> — 256 địa chỉ, 254 có thể dùng (Class C cổ điển / LAN điển hình).</li>
+  <li><strong>/16</strong> — 65.536 địa chỉ (network site hoặc VPC điển hình).</li>
+  <li><strong>/8</strong> — 16,7M địa chỉ (toàn tổ chức).</li>
+  <li><strong>/0</strong> — toàn bộ địa chỉ IPv4 (default route).</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>"Có thể dùng" không bao gồm network và broadcast.</strong> /24 có 256 địa chỉ nhưng chỉ 254 cho host — địa chỉ đầu tiên (.0) là network, cuối cùng (.255) là broadcast.</li>
+  <li><strong>/31 và /32 là đặc biệt.</strong> /31 được dùng cho link point-to-point theo RFC 3021 — cả hai địa chỉ đều có thể dùng. /32 là một host đơn (dùng trong entry routing).</li>
+  <li><strong>Phần địa chỉ không phải lúc nào cũng là địa chỉ network.</strong> <code>10.5.7.42/24</code> vẫn nghĩa là cùng /24 như <code>10.5.7.0/24</code> — chỉ độ dài prefix mới quan trọng. Công cụ này chuẩn hóa thành địa chỉ network ở output.</li>
+  <li><strong>Đừng trộn class với CIDR.</strong> Class A/B/C là khái niệm legacy (trước 1993).</li>
+  <li><strong>Dải private RFC 1918:</strong> <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code>. Mọi thứ khác đều có thể route công khai (hoặc dành riêng).</li>
+  <li><strong>Công cụ này chỉ dành cho IPv4.</strong> CIDR IPv6 cấu trúc tương tự nhưng prefix có thể đi đến /128 và không gian địa chỉ lớn hơn nhiều; không được xử lý ở đây.</li>
 </ul>
 """,
     },

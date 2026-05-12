@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Unix Timestamp Converter", "tagline": "Converteer tussen Unix-timestamps en menselijk leesbare datums. Seconds en milliseconds, UTC en lokaal.", "description": "Gratis online Unix timestamp converter. Converteer tussen epoch seconds, milliseconds, ISO 8601 en menselijk leesbare datums in UTC of lokale tijd."},
         "tr": {"name": "Unix Timestamp Dönüştürücü", "tagline": "Unix timestamp'leri ile insan tarafından okunabilir tarihler arasında dönüştür. Saniyeler ve milisaniyeler, UTC ve yerel.", "description": "Ücretsiz online Unix timestamp dönüştürücü. Epoch saniyeleri, milisaniyeler, ISO 8601 ve UTC veya yerel saatte insan tarafından okunabilir tarihler arasında dönüştür."},
         "id": {"name": "Konverter Unix Timestamp", "tagline": "Konversi antara Unix timestamp dan tanggal yang dapat dibaca manusia. Detik dan milidetik, UTC dan lokal.", "description": "Konverter Unix timestamp gratis. Konversi antara timestamp Unix (detik atau milidetik sejak epoch) dan tanggal/waktu yang dapat dibaca manusia. Tampilkan dalam UTC dan zona waktu lokal-mu, dengan format ISO 8601."},
+        "vi": {"name": "Chuyển đổi Unix Timestamp", "tagline": "Chuyển giữa Unix timestamp và ngày-giờ con người đọc được. Giây và mili giây, UTC và local.", "description": "Bộ chuyển Unix timestamp miễn phí trực tuyến. Chuyển epoch seconds hoặc milliseconds sang ngày-giờ con người đọc được trong cả UTC và múi giờ địa phương — và ngược lại."},
     },
     "body": """
 <div class="tool-card">
@@ -307,6 +308,25 @@ document.addEventListener('DOMContentLoaded', tsNow);
   <li><strong>Timestamp negatif</strong> valid dan merepresentasikan tanggal sebelum 1970. Beberapa library menolaknya — tes dulu sebelum bergantung padanya.</li>
   <li><strong>Auto-detection tidak sempurna.</strong> Nilai 10 digit <em>bisa</em> jadi milisecond timestamp dari 1970 — sangat tidak mungkin dalam praktik, tapi kalau kamu tahu unit-nya, jangan andalkan heuristik.</li>
   <li><strong>Selalu simpan UTC.</strong> Timestamp itu bebas timezone; "local time" hanya untuk tampilan. Baris "Local" di output pakai zone browser kamu, tapi integer di baliknya selalu UTC.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Unix timestamp là số giây từ 1970-01-01 UTC, một cách phổ thông để biểu diễn moment trong system. Nhưng <code>1700000000</code> không có ý nghĩa với con người. Tool này chuyển đổi giữa Unix timestamp và ngày-giờ con người đọc được trong cả UTC và múi giờ địa phương — cả giây và mili giây.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Debug log có timestamp dưới dạng số epoch.</li>
+  <li>Tạo timestamp cho test fixture.</li>
+  <li>Convert ngày trong tài liệu thành timestamp để filter API.</li>
+  <li>Confirm token JWT chưa hết hạn (claim <code>exp</code> là epoch seconds).</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Giây vs mili giây.</strong> JavaScript dùng mili giây từ epoch; Unix tools (date, log file) dùng giây. Một timestamp 10 chữ số là giây, 13 chữ số là mili giây.</li>
+  <li><strong>Múi giờ.</strong> Bản thân timestamp là UTC — múi giờ chỉ là cách hiển thị. Khi convert sang local, bao gồm DST.</li>
+  <li><strong>Vấn đề Y2K38.</strong> Signed 32-bit Unix timestamps tràn vào năm 2038. Đa số system hiện đại đã dùng 64-bit, nhưng kiểm tra database và embedded device cũ.</li>
 </ul>
 """,
     },

@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "Wachtwoord-generator", "tagline": "Sterke random wachtwoorden of memorabele passphrases. Lokaal gegenereerd — nergens heen gestuurd.", "description": "Gratis veilige wachtwoord-generator. Custom karakterregels, passphrase-mode en batch-generatie. Draait volledig in je browser."},
         "tr": {"name": "Parola Üretici", "tagline": "Güçlü rastgele parolalar veya akılda kalıcı passphrase'ler. Yerel olarak üretilir — hiçbir yere gönderilmez.", "description": "Ücretsiz güvenli parola üretici. Özel karakter kuralları, passphrase modu ve toplu üretim. Tamamen tarayıcında çalışır."},
         "id": {"name": "Password Generator", "tagline": "Password acak yang kuat atau passphrase yang mudah diingat. Dihasilkan lokal — tidak pernah dikirim ke mana pun.", "description": "Password generator online gratis. Buat password acak kuat atau passphrase yang mudah diingat menggunakan CSPRNG browser. Panjang dan kelas karakter yang dapat dikonfigurasi. Berjalan lokal — password tidak pernah meninggalkan perangkatmu."},
+        "vi": {"name": "Tạo Mật khẩu", "tagline": "Mật khẩu ngẫu nhiên mạnh hoặc passphrase dễ nhớ. Được tạo cục bộ — không bao giờ được gửi đi.", "description": "Trình tạo mật khẩu miễn phí trực tuyến. Tạo mật khẩu mạnh hoặc passphrase dễ nhớ với độ dài và loại ký tự có thể cấu hình. Dùng crypto.getRandomValues của trình duyệt — không có gì được gửi đi đâu cả."},
     },
     "body": """
 <div class="tool-card">
@@ -425,6 +426,25 @@ document.addEventListener('DOMContentLoaded', pwGenerate);
   <li><strong>Jangan menulis password yang dihasilkan tanpa proteksi.</strong> Gunakan password manager (1Password, Bitwarden, KeePass) — bukan app Notes, bukan file teks, bukan draft email.</li>
   <li><strong>Panjang &gt; kompleks.</strong> Password 24 karakter yang hanya pakai huruf kecil punya entropy lebih banyak dibanding 10 karakter dengan setiap kelas simbol. Panjang yang menang.</li>
   <li><strong>Aturan spesifik situs bisa merusak copy-paste.</strong> Beberapa situs melarang simbol tertentu atau membatasi panjang di 16. Menyebalkan tapi nyata — hasilkan, lalu trim/swap agar sesuai jika perlu (dan simpan password aktual yang dipakai di manager kamu).</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Một mật khẩu mạnh là một mật khẩu dài, không thể đoán được, và không tái sử dụng. Tool này tạo mật khẩu ngẫu nhiên (chuỗi ký tự ngẫu nhiên thuần) hoặc passphrase (từ ngẫu nhiên tách bằng dấu gạch ngang) bằng cách dùng <code>crypto.getRandomValues</code> của trình duyệt — nguồn ngẫu nhiên mã hóa, không phải <code>Math.random</code>. Không có gì được gửi đi.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Tạo mật khẩu mới cho tài khoản — lưu vào password manager.</li>
+  <li>Tạo secret cho API key, encryption key, hoặc JWT signing secret.</li>
+  <li>Tạo passphrase dễ nhớ để gõ vào điều khiển TV.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Độ dài quan trọng hơn độ phức tạp.</strong> Một passphrase 16-ký tự với chỉ chữ thường khó crack hơn mật khẩu 8-ký tự với mixed case và ký tự đặc biệt.</li>
+  <li><strong>Đừng tái sử dụng.</strong> Cùng một mật khẩu trên nhiều site có nghĩa là một site bị phá vỡ tất cả. Dùng password manager.</li>
+  <li><strong>2FA đánh bại cracking mật khẩu.</strong> Ngay cả mật khẩu yếu được bảo vệ bởi 2FA. Bật nó ở bất cứ đâu có thể.</li>
+  <li><strong>Một số site có quy tắc kỳ lạ.</strong> "Phải có ký tự đặc biệt nhưng không có $" hoặc "tối đa 12 ký tự". Khi đó dùng tool sinh password manager hoặc generator của tool này với cài đặt phù hợp.</li>
 </ul>
 """,
     },

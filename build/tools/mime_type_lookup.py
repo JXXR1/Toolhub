@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "MIME Type Lookup", "tagline": "Zoek MIME types op extensie of type. ~120 gangbare types — image, video, audio, application, text, font.", "description": "Gratis MIME-type-lookup tool. Zoek op bestandsextensie (.pdf, .png, .json) of op MIME-type (image/jpeg, application/pdf) over ruwweg 120 gangbare Internet media types."},
         "tr": {"name": "MIME Type Arama", "tagline": "MIME type'ları uzantıya veya türe göre ara. ~120 yaygın tür — image, video, audio, application, text, font.", "description": "Ücretsiz MIME type arama aracı. Dosya uzantısı (.pdf, .png, .json) veya MIME type (image/jpeg, application/pdf) ile yaklaşık 120 yaygın internet medya türünü ara."},
         "id": {"name": "Pencarian MIME Type", "tagline": "Cari MIME type berdasarkan ekstensi atau type. ~120 type umum — image, video, audio, application, text, font.", "description": "Pencarian MIME type gratis. Cari MIME type per ekstensi file atau cari ekstensi per MIME type. Mencakup ~120 type umum di seluruh image, video, audio, application, text, dan font."},
+        "vi": {"name": "Tra cứu MIME Type", "tagline": "Tra cứu MIME type theo phần mở rộng hoặc type. ~120 loại phổ biến — image, video, audio, application, text, font.", "description": "Tra cứu MIME type miễn phí trực tuyến. Tìm theo phần mở rộng file hoặc theo chuỗi MIME type trên ~120 loại phổ biến (image, video, audio, application, text, font). Hữu ích để cấu hình server và header Content-Type."},
     },
     "body": """
 <div class="tool-card">
@@ -421,6 +422,24 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong><code>application/octet-stream</code> berarti "saya tidak tahu".</strong> Kalau kamu mengontrol tipenya, pakai tipe yang sebenarnya — browser bisa memaksa download konten octet-stream meski konten itu bisa di-render.</li>
   <li><strong>Charset penting untuk tipe text.</strong> <code>Content-Type: text/html; charset=utf-8</code> — tanpa itu browser akan menebak, dan kadang menebak salah (mojibake).</li>
   <li><strong>Magic-byte sniffing berbeda dari tipe yang dideklarasikan.</strong> Browser bisa men-second-guess <code>Content-Type</code> berdasarkan isi file (<code>X-Content-Type-Options: nosniff</code> menonaktifkan ini — set untuk keamanan).</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Mỗi file trên web có một MIME type — <code>image/png</code>, <code>application/json</code>, <code>text/html</code> — báo cho trình duyệt loại file đó là gì và cách hiển thị. Tool này có một tra cứu hai chiều: cho extension, nhận MIME type; hoặc cho MIME type, nhận extension(s). Hữu ích để cấu hình server và header Content-Type.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Cấu hình NGINX hoặc Apache để serve file mới với type chính xác.</li>
+  <li>Đặt header <code>Content-Type</code> chính xác trong response API.</li>
+  <li>Decide extension dùng cho upload file khi bạn chỉ có MIME type.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Đừng tin MIME type của client.</strong> Trình duyệt và app gửi <code>Content-Type</code> từ user input — kiểm tra file content (magic byte) để bảo mật.</li>
+  <li><strong>Cùng file có thể có nhiều type.</strong> <code>.docx</code> có thể là Office Open XML (chính thức) hoặc tổng hợp ZIP cũ (đáng tin trên Mac). Tool này hiển thị tất cả các loại đã biết.</li>
+  <li><strong>Type tùy chỉnh.</strong> Bạn có thể đăng ký MIME type cho format proprietary (<code>application/vnd.acme-format+json</code>) — IANA quản lý registry.</li>
 </ul>
 """,
     },

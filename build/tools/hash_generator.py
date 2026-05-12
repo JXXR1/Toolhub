@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Hash Generator", "tagline": "Hash tekst met SHA-1, SHA-256, SHA-384 of SHA-512 via WebCrypto in je browser. Lokaal berekend — input verlaat de pagina nooit.", "description": "Gratis online hash generator. SHA-1, SHA-256, SHA-384, SHA-512 via WebCrypto. Hex output, copy-friendly. Draait volledig in je browser."},
         "tr": {"name": "Hash Üretici", "tagline": "Metni tarayıcının WebCrypto'su ile SHA-1, SHA-256, SHA-384 veya SHA-512 hash'le. Yerel hesaplanır — giriş sayfayı asla terk etmez.", "description": "Ücretsiz online hash üretici. WebCrypto üzerinden SHA-1, SHA-256, SHA-384, SHA-512. Hex çıktı, kopyalanabilir. Tamamen tarayıcında çalışır."},
         "id": {"name": "Hash Generator", "tagline": "Hash teks dengan SHA-1, SHA-256, SHA-384, atau SHA-512 menggunakan WebCrypto browser. Dihitung lokal — input tidak pernah meninggalkan halaman.", "description": "Hash generator gratis. Hitung digest SHA-1, SHA-256, SHA-384, dan SHA-512 untuk teks atau file apa pun menggunakan WebCrypto browser. Semuanya berjalan lokal — input tidak pernah meninggalkan perangkatmu."},
+        "vi": {"name": "Tạo Hash", "tagline": "Hash văn bản với SHA-1, SHA-256, SHA-384 hoặc SHA-512 bằng WebCrypto của trình duyệt. Tính cục bộ — đầu vào không bao giờ rời khỏi trang.", "description": "Trình tạo hash miễn phí trực tuyến hỗ trợ SHA-1, SHA-256, SHA-384 và SHA-512. Sử dụng API WebCrypto của trình duyệt — đầu vào của bạn không bao giờ rời khỏi thiết bị."},
     },
     "body": """
 <div class="tool-card">
@@ -204,6 +205,25 @@ document.addEventListener('DOMContentLoaded', hRun);
   <li><strong>Jangan hash password dengan SHA-256 mentah.</strong> Plain SHA itu cepat — itu membantu attacker brute-force. Pakai KDF lambat (Argon2id, bcrypt, scrypt) untuk penyimpanan password.</li>
   <li><strong>MD5 sengaja tidak ada.</strong> Sudah broken sejak awal 2000-an. Di mana pun kamu "butuh" MD5, kamu juga butuh menandai security review.</li>
   <li><strong>Whitespace itu penting.</strong> Newline di akhir menghasilkan hash yang berbeda dari teks yang sama tanpa newline. Bandingkan output hex secara eksak.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Hàm hash mã hóa biến một input có độ dài bất kỳ thành một fingerprint có độ dài cố định. Cùng một input luôn cho cùng một hash; thay đổi nhỏ thay đổi toàn bộ hash; và việc đảo ngược từ hash về input là không khả thi về mặt tính toán (đối với hàm hash tốt). Tool này tính SHA-1, SHA-256, SHA-384 và SHA-512 bằng cách dùng WebCrypto của trình duyệt — không có gì rời khỏi thiết bị của bạn.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Xác minh tính toàn vẹn file: tính hash của download và so sánh với hash được công bố.</li>
+  <li>Tạo cache key xác định từ content.</li>
+  <li>Băm checksum để xác định các bản sao trong dataset.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>SHA-1 bị phá vỡ về mặt mã hóa.</strong> Va chạm đã được tìm thấy. Đừng dùng nó cho chữ ký mới — chỉ chấp nhận được cho kiểm tra tính toàn vẹn không phải bảo mật.</li>
+  <li><strong>MD5 cũng bị phá vỡ.</strong> Vẫn ổn để dùng làm checksum không mật khẩu (kiểm tra một bản download bị hỏng) nhưng không dùng cho bảo mật.</li>
+  <li><strong>Hash mật khẩu không phải hash chung.</strong> Cho mật khẩu, dùng bcrypt, scrypt, hoặc Argon2 — chúng cố ý chậm để chống brute force. SHA-256 quá nhanh.</li>
+  <li><strong>Encoding quan trọng.</strong> Hash của <code>"hello"</code> có thể khác nhau tùy thuộc vào việc bạn coi nó là 5 byte ASCII hay 5 byte UTF-8 (chúng cùng trong trường hợp này, nhưng không khi có Unicode).</li>
 </ul>
 """,
     },

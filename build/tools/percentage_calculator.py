@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Percentage-calculator", "tagline": "Vijf percentage-calculators in één: of, hoeveel %, increase/decrease, change en tip/tax.", "description": "Gratis online percentage-calculator. Bereken X% van Y, welk % is X van Y, percentage-wijziging, percentage-verhoging/-verlaging en tip- of belastingbedragen."},
         "tr": {"name": "Yüzde Hesaplayıcı", "tagline": "Tek araçta beş yüzde hesaplayıcı: of, what %, artış/azalış, değişim ve tip/vergi.", "description": "Ücretsiz online yüzde hesaplayıcı. Y'nin X%'si, X Y'nin yüzde kaçı, yüzde değişim, yüzde artış/azalış ve tip veya vergi tutarlarını hesapla."},
         "id": {"name": "Kalkulator Persentase", "tagline": "Lima kalkulator persentase dalam satu tool: of, what %, increase/decrease, change, dan tip/tax.", "description": "Kalkulator persentase gratis. Lima kalkulator dalam satu: X% dari Y, Y berapa persen dari Z, kenaikan/penurunan, persen perubahan antara dua nilai, dan kalkulator tip/pajak."},
+        "vi": {"name": "Máy tính Phần trăm", "tagline": "Năm máy tính phần trăm trong một công cụ: của, bao nhiêu %, tăng/giảm, thay đổi và tip/thuế.", "description": "Máy tính phần trăm miễn phí trực tuyến. Năm chế độ trong một công cụ: X% của Y, X là bao nhiêu phần trăm của Y, tăng/giảm theo phần trăm, phần trăm thay đổi giữa hai giá trị, và tip/thuế."},
     },
     "body": """
 <div class="tool-card">
@@ -236,6 +237,25 @@ document.addEventListener('DOMContentLoaded', pcSwitch);
   <li><strong>Menumpuk persentase itu compound.</strong> Kenaikan 20% diikuti penurunan 20% tidak mengembalikan kamu ke awal (1,20 × 0,80 = 0,96, net kerugian 4%). Untuk markup/diskon sekuensial, hitung setiap langkah.</li>
   <li><strong>Tip pre-tax vs post-tax.</strong> Konvensi berbeda menurut negara dan tempat. Tool menghitung persentase dari nilai yang kamu masukkan — pilih nilai mana yang benar-benar kamu mau sebagai base.</li>
   <li><strong>Rounding.</strong> Output dibulatkan ke 6 desimal lalu dipangkas; jika kamu butuh presisi legal/akuntansi (banker's rounding, aturan spesifik mata uang), lakukan langkah itu di domain layer kamu, bukan di sini.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Mọi người sai trong toán phần trăm rất nhiều — đặc biệt khi câu hỏi đảo ngược ("X là bao nhiêu phần trăm của Y" vs "X% của Y là gì"). Tool này có năm calculator phổ biến trong một: của, bao nhiêu %, tăng/giảm, thay đổi, và tip/thuế. Mỗi cái xử lý một câu hỏi phổ biến mà người ta tự hỏi.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>"Giảm giá 30% trên $89 là bao nhiêu?" → của: 30% của 89 = $26.70 (bạn trả $62.30).</li>
+  <li>"Tôi đạt 47/60 — đó là điểm gì?" → bao nhiêu %: 47 là 78% của 60.</li>
+  <li>"Tăng 15% mỗi năm trong 5 năm — kết quả?" → tăng/giảm xếp chồng.</li>
+  <li>"Tip 18% cho hóa đơn $42 chia 3 người" → tip/thuế.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Phần trăm không đảo ngược.</strong> Tăng 20% rồi giảm 20% không phải là cùng giá trị — bạn ở 96%.</li>
+  <li><strong>"X% off" so với "X% off, then sales tax"</strong> rất khác. Thuế thường áp lên giá sau giảm.</li>
+  <li><strong>Phần trăm số trên 100.</strong> Có thể có ý nghĩa (tăng 150%), nhưng kiểm tra bạn đang đo từ baseline đúng.</li>
 </ul>
 """,
     },

@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Emoji-picker", "tagline": "Doorzoekbaar emoji-palet op naam en keyword. Klik een emoji om te kopiëren. Categorieën: smileys, dieren, eten, reizen, objecten, symbolen, vlaggen.", "description": "Gratis emoji-picker met keyword-search. Klik om elke emoji te kopiëren. Gecureerde set met smileys, mensen, dieren, eten, reizen, objecten, symbolen en vlaggen. Pure Unicode — werkt overal."},
         "tr": {"name": "Emoji Seçici", "tagline": "Ad ve anahtar kelimeye göre aranabilir emoji paleti. Kopyalamak için herhangi bir emojiye tıkla. Kategoriler: gülümseyenler, hayvanlar, yiyecekler, seyahat, nesneler, semboller, bayraklar.", "description": "Anahtar kelime aramalı ücretsiz emoji seçici. Herhangi bir emojiyi kopyalamak için tıkla. Gülümseyenler, insanlar, hayvanlar, yiyecekler, seyahat, nesneler, semboller ve bayrakları kapsayan derli toplu set. Saf Unicode — her yerde çalışır."},
         "id": {"name": "Pemilih Emoji", "tagline": "Palet emoji yang bisa dicari berdasarkan nama dan kata kunci. Klik emoji mana pun untuk menyalin. Kategori: smiley, hewan, makanan, perjalanan, objek, simbol, bendera.", "description": "Pemilih emoji online gratis. Cari emoji berdasarkan nama atau kata kunci dan salin dengan satu klik. Mencakup smiley, hewan, makanan, perjalanan, objek, simbol, dan bendera. Tanpa pelacakan, tanpa pendaftaran."},
+        "vi": {"name": "Chọn Emoji", "tagline": "Bảng emoji có thể tìm kiếm theo tên và từ khóa. Click vào bất kỳ emoji nào để sao chép. Danh mục: mặt cười, động vật, thức ăn, du lịch, đồ vật, ký hiệu, cờ.", "description": "Bộ chọn emoji miễn phí trực tuyến. Tìm bằng tên hoặc từ khóa trên tất cả các emoji Unicode đã danh mục hóa và click bất kỳ emoji nào để sao chép. Hữu ích cho chat, commit message, README, và bất kỳ nơi nào bạn cần một emoji nhanh chóng."},
     },
     "body": """
 <div class="tool-card">
@@ -526,6 +527,24 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Tool ini terkurasi, tidak exhaustive.</strong> Unicode 15 punya 3.664 emoji termasuk ratusan varian skin tone dan gender. Picker fokus pada ~600 yang paling mungkin kamu inginkan; untuk daftar lengkap, lihat data emoji Unicode atau picker OS kamu.</li>
   <li><strong>Beberapa karakter terlihat seperti emoji tapi di-render sebagai teks.</strong> "Variation selector" (U+FE0F) memberitahu renderer "gambar ini sebagai emoji". Tanpa itu, ☂ mungkin di-render sebagai teks biasa bukan 🌂. Tool ini menyertakan selector di tempat yang dibutuhkan.</li>
   <li><strong>Dukungan clipboard bervariasi.</strong> Clipboard API beberapa browser butuh user gesture (klik melakukan itu), tapi penolakan izin akan gagal secara diam-diam. Kalau copy tidak bekerja, pakai shortcut keyboard untuk menyalin dari address bar.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Có hàng ngàn emoji Unicode được phân loại thành các nhóm (mặt cười, động vật, thức ăn, hoạt động, du lịch, đồ vật, ký hiệu, cờ). Tool này cho phép bạn tìm theo tên hoặc từ khóa, browse theo danh mục, và sao chép bất kỳ emoji nào bằng một click duy nhất — không có quảng cáo, không có popup, không có gì để tải xuống.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Trên hệ điều hành không có bộ chọn emoji tích hợp tốt (Windows cũ, Linux không có IME).</li>
+  <li>Cần copy nhanh một emoji cho commit message, ticket title, hoặc README.</li>
+  <li>Tìm emoji bằng từ khóa khi bạn không nhớ tên của nó.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Hiển thị khác nhau giữa nền tảng.</strong> Cùng một code point Unicode hiển thị khác trên Apple, Google, Microsoft và Twemoji — đôi khi có cảm xúc trái ngược.</li>
+  <li><strong>Một số emoji được biểu diễn bằng nhiều code point.</strong> Cờ là cặp khu vực; biến thể gia đình hoặc da là chuỗi với ZWJ. Khi copy, bạn nhận được chuỗi đầy đủ.</li>
+  <li><strong>Hỗ trợ trình duyệt cho emoji mới chậm hơn Unicode.</strong> Một emoji được tiêu chuẩn hóa năm 2023 có thể hiển thị dưới dạng hình hộp trên thiết bị cũ.</li>
 </ul>
 """,
     },

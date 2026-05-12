@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "XML Formatter", "tagline": "Formatteer en minify XML. Valideer well-formedness met regel en kolom bij fouten.", "description": "Gratis online XML formatter en minifier. Pretty-print XML met configureerbare indent, of strip whitespace om te minify-en. Valideert well-formedness via de XML-parser van de browser — foutregel en -kolom getoond."},
         "tr": {"name": "XML Formatter", "tagline": "XML'i biçimlendir ve küçült. Hatalarda satır ve sütun ile well-formedness doğrula.", "description": "Ücretsiz online XML formatter ve minifier. XML'i ayarlanabilir indent ile güzel yazdır veya boşlukları temizleyerek küçült. Tarayıcının XML parser'ı ile well-formedness'i doğrular — hata satırı ve sütunu gösterilir."},
         "id": {"name": "XML Formatter", "tagline": "Format dan minify XML. Validasi well-formedness dengan baris dan kolom pada error.", "description": "XML formatter dan validator gratis. Beautify XML berantakan dengan indentasi atau minify untuk transport. Validasi well-formedness dan tampilkan error sintaks dengan baris dan kolom. Berjalan di browser-mu."},
+        "vi": {"name": "XML Formatter", "tagline": "Format và minify XML. Xác thực well-formedness với dòng và cột khi có lỗi.", "description": "XML formatter và validator miễn phí trực tuyến. Làm đẹp XML lộn xộn với indent thích hợp hoặc minify để truyền tải. Lỗi well-formedness được làm nổi bật với số dòng và cột."},
     },
     "body": """
 <div class="tool-card">
@@ -472,6 +473,24 @@ document.addEventListener('DOMContentLoaded', xfRun);
   <li><strong>Namespace bertahan.</strong> Deklarasi <code>xmlns:foo</code> dan nama berkualifikasi <code>foo:bar</code> round-trip tanpa perubahan.</li>
   <li><strong>Urutan attribute bisa bergeser.</strong> Parser XML tidak secara ketat mempertahankan urutan attribute lintas tool; jika kamu melakukan checksum XML, kanonikalisasi dulu (XML C14N).</li>
   <li><strong>Keanehan parser browser.</strong> Browser berbeda melaporkan error parse dalam format berbeda. Ekstraksi baris/kolom adalah best-effort dan di beberapa browser hanya akan menampilkan pesannya.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>XML như JSON nhưng dài hơn — tag với attribute, content text, nested element. Tool này pretty-print XML với indent thích hợp hoặc minify nó để loại bỏ whitespace không cần thiết. Lỗi well-formedness được flag với số dòng và cột.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Đọc response SOAP API.</li>
+  <li>Format config file XML cũ.</li>
+  <li>Xác minh well-formedness của XML hand-written.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Well-formed không phải valid.</strong> Well-formed có nghĩa cú pháp XML là OK; valid có nghĩa nó khớp với schema (DTD, XSD). Tool này check well-formed, không validate.</li>
+  <li><strong>Whitespace có thể có ý nghĩa.</strong> Trong text content và một số attribute, whitespace không thể remove an toàn. Tool này thận trọng.</li>
+  <li><strong>Namespace.</strong> Prefix tag (<code>ns:tag</code>) cần khai báo namespace match. Tool này không validate namespace — chỉ format.</li>
 </ul>
 """,
     },

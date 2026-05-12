@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Cron Expression Builder", "tagline": "Bouw visueel een cron-expressie — minuut, uur, dag, maand, weekdag — en preview de volgende 5 fire times.", "description": "Gratis online cron expression builder. Kies velden met dropdowns en presets, krijg de cron-string eruit en zie de volgende 5 fire times in je lokale tijdzone. Standaard 5-veld crontab."},
         "tr": {"name": "Cron İfadesi Oluşturucu", "tagline": "Görsel olarak cron ifadesi kur — dakika, saat, gün, ay, hafta günü — ve sonraki 5 çalışma zamanını önizle.", "description": "Ücretsiz online cron ifadesi oluşturucu. Alanları açılır menü ve hazır ayarlardan seç, cron string'ini al ve yerel saat diliminde sonraki 5 çalışma zamanını gör. Standart 5 alanlı crontab."},
         "id": {"name": "Pembangun Ekspresi Cron", "tagline": "Bangun ekspresi cron secara visual — menit, jam, hari, bulan, hari dalam minggu — dan pratinjau 5 waktu run berikutnya.", "description": "Pembangun ekspresi cron gratis. Susun jadwal cron secara visual dengan dropdown untuk menit, jam, hari, bulan, hari dalam minggu — lalu pratinjau 5 waktu eksekusi berikutnya. Crontab 5-field standar."},
+        "vi": {"name": "Xây dựng Cron Expression", "tagline": "Xây dựng biểu thức cron một cách trực quan — phút, giờ, ngày, tháng, thứ trong tuần — và xem trước 5 lần chạy kế tiếp.", "description": "Trình xây dựng biểu thức cron trực tuyến miễn phí. Chọn phút, giờ, ngày, tháng và thứ trong tuần một cách trực quan, sau đó xem trước 5 lần chạy tiếp theo của lịch của bạn."},
     },
     "body": """
 <div class="tool-card">
@@ -504,6 +505,25 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Kombinasi step + range.</strong> <code>0-30/5</code> hanya mencakup 0,5,10,15,20,25,30.</li>
   <li><strong>Beberapa varian cron menambah field.</strong> Quartz cron punya 6 atau 7 field (dengan detik dan tahun). Timer systemd pakai format totally berbeda. Builder ini menargetkan crontab 5-field standar.</li>
   <li><strong>Jumat tanggal 13 sulit diekspresikan di cron.</strong> Day-of-month dan day-of-week cron berinteraksi via OR, jadi menggabungkan keduanya secara strict butuh wrapper script.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Cron là một mini-language để mô tả lịch trình lặp lại bằng năm trường: phút, giờ, ngày trong tháng, tháng và ngày trong tuần. Cú pháp nhỏ gọn nhưng dày đặc — <code>*/15 9-17 * * 1-5</code> nghĩa là "mỗi 15 phút trong giờ làm việc, từ Thứ Hai đến Thứ Sáu". Trình xây dựng này cho phép bạn chọn các tùy chọn của mình một cách trực quan và xem biểu thức cron tương ứng, cộng với khi nó sẽ chạy tiếp theo.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Lên lịch cron job mới và muốn xác nhận lịch trước khi commit nó.</li>
+  <li>Lên lịch backup hoặc cron sao chép dữ liệu nhẹ trong "thời gian thấp điểm".</li>
+  <li>Đang viết workflow GitHub Actions (dùng cú pháp cron) và muốn nhìn thấy.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Múi giờ.</strong> Cron Unix chạy theo múi giờ máy chủ — không phải UTC trừ khi máy chủ là UTC. Lịch của bạn có thể trôi theo DST. GitHub Actions và một số bộ scheduler đám mây dùng UTC.</li>
+  <li><strong>Phương ngữ năm trường vs sáu trường.</strong> Cron Unix là 5 trường (không có giây). Spring cron là 6 trường (giây trước). Quartz là 6 hoặc 7 (giây + năm tùy chọn). Đừng trộn lẫn.</li>
+  <li><strong>Ngày trong tuần OR ngày trong tháng.</strong> Khi cả hai trường này có sự ràng buộc, cron POSIX khớp nếu hoặc một trong hai đúng, không phải cả hai. Đây là một bất ngờ phổ biến.</li>
+  <li><strong>0 vs 7 cho Chủ Nhật.</strong> Hầu hết các implementation chấp nhận cả 0 và 7 cho Chủ Nhật. Một số chỉ chấp nhận một. Kiểm tra docs của runner.</li>
 </ul>
 """,
     },

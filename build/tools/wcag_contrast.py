@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "WCAG Contrast Checker", "tagline": "Check de contrastratio tussen twee kleuren. Pass/fail-verdict voor WCAG AA en AAA op elke tekstgrootte.", "description": "Gratis WCAG contrastratio-checker. Kies foreground- en background-kleuren, krijg de ratio (1:1 tot 21:1) en pass/fail-verdicts voor WCAG 2.1 AA en AAA — voor normale tekst, grote tekst en UI-componenten."},
         "tr": {"name": "WCAG Kontrast Denetleyici", "tagline": "İki renk arasındaki kontrast oranını kontrol et. Her metin boyutu için WCAG AA ve AAA'da geçer/kalır yargısı.", "description": "Ücretsiz WCAG kontrast oranı denetleyici. Ön plan ve arka plan renklerini seç, oranı (1:1 ile 21:1) ve WCAG 2.1 AA ve AAA için geçer/kalır yargılarını al — normal metin, büyük metin ve UI bileşenleri için."},
         "id": {"name": "Pemeriksa Kontras WCAG", "tagline": "Cek rasio kontras antara dua warna. Penilaian lulus/gagal di WCAG AA dan AAA untuk setiap ukuran teks.", "description": "Pemeriksa kontras WCAG gratis. Cek rasio kontras antara warna teks dan background sesuai WCAG 2.1. Penilaian lulus/gagal untuk AA dan AAA, teks normal dan besar. Penting untuk a11y."},
+        "vi": {"name": "Kiểm tra Tương phản WCAG", "tagline": "Kiểm tra tỷ lệ tương phản giữa hai màu. Đánh giá đạt/không đạt cho WCAG AA và AAA cho mỗi kích thước văn bản.", "description": "Trình kiểm tra tương phản WCAG miễn phí trực tuyến. Nhập hai màu và xem tỷ lệ tương phản tính được với đánh giá đạt/không đạt cho WCAG 2.1 cấp độ AA và AAA cho cả văn bản thường và lớn."},
     },
     "body": """
 <div class="tool-card">
@@ -347,6 +348,24 @@ document.addEventListener('DOMContentLoaded', wcRun);
   <li><strong>State hover dan focus dihitung.</strong> Jika tombolmu lolos AA saat rest tapi gagal saat hover, itu bug accessibility nyata.</li>
   <li><strong>WCAG 2.1 vs APCA.</strong> APCA (Accessible Perceptual Contrast Algorithm) baru yang diusulkan untuk WCAG 3 memberi angka berbeda dan bisa dibilang lebih baik — tapi WCAG 2.1 adalah standar legal yang masih dirujuk sebagian besar yurisdiksi.</li>
   <li><strong>Padding dengan transparansi.</strong> Foreground dengan 50% alpha di atas background yang diketahui punya contrast efektif berbeda — hitung terhadap warna render yang sebenarnya, bukan aslinya.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>WCAG 2.1 (Web Content Accessibility Guidelines) định nghĩa tỷ lệ tương phản tối thiểu giữa văn bản và background để đảm bảo người có thị lực kém vẫn đọc được. AA cần 4.5:1 cho văn bản thường, 3:1 cho văn bản lớn; AAA cần 7:1 và 4.5:1. Tool này tính tỷ lệ và hiển thị đậu/fail cho mỗi cấp độ.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Audit accessibility của design hiện tại.</li>
+  <li>Chọn màu cho design system mới đáp ứng WCAG AA.</li>
+  <li>So sánh nhiều tổ hợp màu sắc nhanh chóng.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>"Văn bản lớn" có nghĩa cụ thể.</strong> 18pt thông thường hoặc 14pt bold. Việc gọi nó "lớn" trong CSS không tự động cho phép giảm tỷ lệ.</li>
+  <li><strong>Tương phản trên image / gradient phức tạp.</strong> Đối với văn bản trên ảnh, tính trên phần xấu nhất của ảnh. Đối với gradient, tính nhiều điểm.</li>
+  <li><strong>Pass AA không đảm bảo "đẹp".</strong> Văn bản pure black trên white pure pass AAA nhưng đôi khi quá cứng — nhiều design dùng dark gray (#1a1a1a) cho cảm giác mềm hơn mà vẫn pass.</li>
 </ul>
 """,
     },

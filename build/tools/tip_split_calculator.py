@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Tip & Split Calculator", "tagline": "Rekeningtotaal + tip % + personen = per-persoon bedrag. Round-up optie, tip en grand total getoond.", "description": "Gratis tip- en rekening-split-calculator. Voer de rekening, tip-percentage en aantal personen in. Zie het tip-bedrag, het grand total en het per-persoon-aandeel. Optionele round-up."},
         "tr": {"name": "Bahşiş & Bölüştürme Hesaplayıcı", "tagline": "Hesap toplamı + bahşiş % + kişi sayısı = kişi başı tutar. Yukarı yuvarlama seçeneği, bahşiş ve genel toplam gösterilir.", "description": "Ücretsiz bahşiş ve hesap bölüştürme hesaplayıcı. Hesabı, bahşiş yüzdesini ve kişi sayısını gir. Bahşiş tutarını, genel toplamı ve kişi başı payı gör. Opsiyonel yukarı yuvarlama."},
         "id": {"name": "Kalkulator Tip & Bagi Tagihan", "tagline": "Total tagihan + % tip + jumlah orang = jumlah per orang. Opsi pembulatan ke atas, menampilkan tip dan grand total.", "description": "Kalkulator tip dan bagi tagihan gratis. Masukkan jumlah tagihan, persentase tip, dan jumlah orang — dapatkan jumlah per orang, total tip, dan grand total. Opsi pembulatan ke atas untuk angka yang rapi."},
+        "vi": {"name": "Máy tính Tip & Chia Hóa đơn", "tagline": "Tổng hóa đơn + % tip + số người = số tiền mỗi người. Tùy chọn làm tròn lên, hiển thị tip và grand total.", "description": "Máy tính tip và chia hóa đơn miễn phí trực tuyến. Nhập tổng hóa đơn, % tip và số người để xem số tiền mỗi người trả, với tùy chọn làm tròn lên đến đồng tiền gần nhất."},
     },
     "body": """
 <div class="tool-card">
@@ -333,6 +334,24 @@ document.addEventListener('DOMContentLoaded', tsRun);
   <li><strong>Service charge ≠ tip.</strong> Jika "service charge" sudah ada di tagihan (umum di grup 6+ orang di UK dan sebagian besar Eropa kontinental), tip tambahan sifatnya opsional. Beberapa tempat membagi service charge dengan dapur; kasih tip cash langsung jika kamu ingin sampai ke server.</li>
   <li><strong>Pembulatan per orang bisa menyembunyikan makan yang tidak setara.</strong> Split rata itu paling cepat tapi tidak adil jika satu orang minum wine dan yang lain minum air — beralih ke itemised splitting dalam kasus itu.</li>
   <li><strong>Cash vs kartu.</strong> Sebagian staf lebih suka tip cash karena tip kartu di-pool, langsung kena pajak, atau dipotong tempat. Jika angka per orang di kalkulator ini sudah termasuk tip, putuskan apakah kamu ingin melunasi tip secara cash di atasnya.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Tính tip và chia hóa đơn nhà hàng giữa nhóm trông đơn giản nhưng dễ sai khi mọi người ăn không đều và có người muốn round-up. Tool này thực hiện toán: tổng hóa đơn + % tip + chia số người, với tùy chọn round-up đến đồng tiền gần nhất.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Chia tab nhà hàng đều giữa nhóm.</li>
+  <li>Tính tip cho dịch vụ với % tip khu vực không quen thuộc.</li>
+  <li>Round-up tip thành số đẹp khi trả mặt.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Tip pre-tax vs post-tax.</strong> Tip theo tradition tính trên subtotal trước thuế; nhiều người mặc định trên total có thuế (mà bao gồm tip nhiều hơn 8-10%).</li>
+  <li><strong>Quy ước tip khác nhau theo quốc gia.</strong> 15-20% chuẩn Mỹ; nhiều nước châu Âu thêm service charge tự động và tip thêm là tùy chọn; Nhật không có tip.</li>
+  <li><strong>Đều khác công bằng.</strong> Nếu một người ăn đắt hơn nhiều, "chia đều" có thể không công bằng. Tool này giả định chia đều — đối với split không đều, tính từng cái một.</li>
 </ul>
 """,
     },

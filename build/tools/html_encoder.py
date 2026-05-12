@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "HTML Encoder / Decoder", "tagline": "Escape HTML-speciale tekens of decodeer entities terug. Nuttig voor veilig embedden van user input of debuggen van encoded markup.", "description": "Gratis online HTML-entity encoder en decoder. Escapet &amp; &lt; &gt; &quot; ' en named entities. Decodeert named, decimal en hex entity references."},
         "tr": {"name": "HTML Encoder / Decoder", "tagline": "HTML özel karakterlerini escape et veya entity'leri geri çöz. Kullanıcı girdisini güvenle gömmek veya kodlanmış işaretlemeyi debug etmek için kullanışlı.", "description": "Ücretsiz online HTML entity encoder ve decoder. &amp; &lt; &gt; &quot; ' ve adlandırılmış entity'leri escape eder. Adlandırılmış, sayısal ve hex entity referanslarını çözer."},
         "id": {"name": "HTML Encoder / Decoder", "tagline": "Escape karakter khusus HTML atau decode entity kembali. Berguna untuk menyematkan input pengguna dengan aman atau debug markup yang ter-encode.", "description": "HTML encoder dan decoder gratis. Escape karakter khusus HTML (<, >, &, \", ') ke entity atau decode entity kembali ke karakter aslinya. Aman untuk menyematkan input pengguna dan mencegah XSS."},
+        "vi": {"name": "HTML Encoder / Decoder", "tagline": "Escape các ký tự đặc biệt HTML hoặc decode entity về dạng ban đầu. Hữu ích để nhúng input người dùng một cách an toàn hoặc debug markup đã được encode.", "description": "Bộ HTML encoder và decoder miễn phí trực tuyến. Escape <, >, &, các ký tự đặc biệt trong attribute và Unicode ngoài-ASCII thành HTML entity, hoặc decode chúng trở lại. Hữu ích để chèn dữ liệu của bạn vào HTML một cách an toàn."},
     },
     "body": """
 <div class="tool-card">
@@ -195,6 +196,24 @@ document.addEventListener('DOMContentLoaded', heRun);
   <li><strong>Attribute vs body.</strong> Kedua konteks butuh lima karakter yang sama di-escape, tapi event handler JavaScript seperti <code>onclick</code> butuh escape tambahan (yang tool ini tidak lakukan — jauhkan data tidak terpercaya dari attribute).</li>
   <li><strong>Decoder permisif.</strong> Named entity (<code>&amp;ldquo;</code>), decimal (<code>&amp;#34;</code>), dan hex (<code>&amp;#x22;</code>) semua di-decode lewat parser browser, jadi ia menerima apa pun yang akan diterima browser sungguhan.</li>
   <li><strong>Jangan double-encode.</strong> Meng-encode value yang sudah di-encode menghasilkan <code>&amp;amp;amp;</code>. Decode dulu kalau kamu melihat entity di input.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>HTML coi <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code> và (trong attribute) <code>"</code> như cú pháp đặc biệt. Để hiển thị các ký tự đó dưới dạng <em>văn bản</em>, bạn phải escape chúng dưới dạng HTML entity: <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;amp;</code>, <code>&amp;quot;</code>. Tool này thực hiện việc dịch theo cả hai chiều — encode văn bản thô thành entity hoặc decode chuỗi entity thành thô.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Hiển thị code snippet trong tài liệu mà không có trình duyệt diễn giải nó là markup.</li>
+  <li>Bao bọc user-supplied content trước khi chèn vào HTML để ngăn XSS.</li>
+  <li>Decode HTML mà bạn nhận được từ một response API để hiển thị nó dưới dạng văn bản thông thường.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Escape không thay thế dọn dẹp sanitization.</strong> Nếu bạn cho phép một số HTML (như <code>&lt;b&gt;</code>) và bỏ phần còn lại, dùng một sanitizer (DOMPurify) thay vì tự rolling.</li>
+  <li><strong>Context attribute khác với context body.</strong> Bên trong <code>&lt;a href="…"&gt;</code>, escape cú pháp khác — đặc biệt với JavaScript URL.</li>
+  <li><strong>Mã hóa kép trông xấu xí.</strong> Nếu bạn HTML-encode một chuỗi đã được encode, bạn sẽ thấy <code>&amp;amp;lt;</code> hiển thị trên trang. Theo dõi xem dữ liệu đã được encode chưa.</li>
 </ul>
 """,
     },

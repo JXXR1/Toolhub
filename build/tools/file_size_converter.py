@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Bestandsgrootte-converter", "tagline": "Converteer tussen bytes, KB, MB, GB, TB en de binaire KiB, MiB, GiB, TiB. Decimaal vs binair duidelijk gescheiden.", "description": "Gratis converter voor bestandsgrootte-units. Converteer elk aantal bytes tussen decimale units (B, KB, MB, GB, TB, PB) en IEC binaire units (KiB, MiB, GiB, TiB, PiB). Zie beide tegelijk, met het exacte onderscheid."},
         "tr": {"name": "Dosya Boyutu Dönüştürücü", "tagline": "byte, KB, MB, GB, TB ve ikilik KiB, MiB, GiB, TiB arasında dönüştür. Ondalık - ikilik ayrımı net.", "description": "Ücretsiz dosya boyutu birim dönüştürücü. Herhangi bir byte sayısını ondalık birimler (B, KB, MB, GB, TB, PB) ile IEC ikilik birimleri (KiB, MiB, GiB, TiB, PiB) arasında çevir. İkisini birden, kesin ayrımıyla gör."},
         "id": {"name": "Konverter Ukuran File", "tagline": "Konversi antara byte, KB, MB, GB, TB dan biner KiB, MiB, GiB, TiB. Pemisahan desimal vs biner yang jelas.", "description": "Konverter ukuran file gratis. Konversi antara satuan desimal (KB, MB, GB, TB) dan biner (KiB, MiB, GiB, TiB) dengan pemisahan yang jelas. Menjelaskan perbedaan 1000 vs 1024 yang membingungkan banyak orang."},
+        "vi": {"name": "Chuyển đổi Kích thước File", "tagline": "Chuyển giữa byte, KB, MB, GB, TB và KiB nhị phân, MiB, GiB, TiB. Phân tách thập phân vs nhị phân rõ ràng.", "description": "Bộ chuyển kích thước file miễn phí trực tuyến giữa byte, KB, MB, GB, TB và KiB nhị phân, MiB, GiB, TiB. Phân biệt đơn vị thập phân (1000) và nhị phân (1024) một cách rõ ràng."},
     },
     "body": """
 <div class="tool-card">
@@ -377,6 +378,24 @@ document.addEventListener('DOMContentLoaded', fsRun);
   <li><strong>Kecepatan jaringan dalam bit, bukan byte.</strong> 100 Mbps = 100 megabit per detik = 12,5 MB/s puncak. "100 Mbit fiber" kamu tidak mendownload file 100 MB dalam satu detik.</li>
   <li><strong>Beberapa tool tidak konsisten.</strong> macOS Finder berganti dari biner (dengan label KB) ke desimal di 10.6, lalu sebagian besar tetap di sana. Windows Explorer masih pakai biner dengan label KB — membingungkan tapi tidak berubah.</li>
   <li><strong><code>Content-Length</code> browser itu byte.</strong> Selalu eksak, tidak ada ambiguitas SI/IEC.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>"1 KB là 1000 byte hay 1024 byte?" Câu trả lời là "có", tùy ngữ cảnh. SI và đa số tiếp thị nhà sản xuất ổ đĩa cứng dùng 1000; OS và hầu hết các tool dev dùng 1024 và gọi nó là kibibyte (KiB). Tool này chuyển đổi giữa cả hai hệ và làm rõ bạn đang nói về cái nào.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Định kích thước phân vùng đĩa khi nhà sản xuất nói "500 GB" và OS hiển thị 465 GiB.</li>
+  <li>Tính budget tải xuống — quota 50 GB của ISP có nghĩa là gì trong giga-octet thực.</li>
+  <li>Chuyển bytes dump của profiler thành KB/MB/GB con người đọc được.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>KB vs KiB.</strong> Đơn vị SI chính thức là kilobyte (KB) = 1000 byte. Đơn vị nhị phân là kibibyte (KiB) = 1024 byte. Hầu hết mọi người vẫn nói "KB" khi họ có ý nói KiB.</li>
+  <li><strong>Tính theo decimal sai cho việc đếm byte.</strong> RAM, kích thước file và độ phân giải mạng đo theo lũy thừa của 2 — phải dùng đơn vị nhị phân.</li>
+  <li><strong>Mạng dùng decimal.</strong> 100 Mbps internet có nghĩa là 100 mega<strong>bit</strong> mỗi giây = 12,5 MB/s decimal, không 12,5 MiB/s.</li>
 </ul>
 """,
     },

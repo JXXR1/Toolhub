@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Markdown naar HTML", "tagline": "Converteer Markdown naar schone HTML met een live preview. Ondersteunt headings, lists, code, tables, images en links.", "description": "Gratis online Markdown-naar-HTML converter. CommonMark-flavoured: headings, lists, fenced code, tables, images, blockquotes, inline formatting. Live preview + copy."},
         "tr": {"name": "Markdown'dan HTML'e", "tagline": "Markdown'u canlı önizlemeyle temiz HTML'e dönüştür. Başlıkları, listeleri, kodu, tabloları, görselleri ve linkleri destekler.", "description": "Ücretsiz online Markdown'dan HTML'e dönüştürücü. CommonMark uyumlu: başlıklar, listeler, çitli kod, tablolar, görseller, blok alıntılar, satır içi biçimlendirme. Canlı önizleme + kopyala."},
         "id": {"name": "Markdown ke HTML", "tagline": "Konversi Markdown ke HTML bersih dengan pratinjau langsung. Mendukung heading, list, kode, tabel, gambar, dan link.", "description": "Konverter Markdown ke HTML gratis. Ketik Markdown dan lihat HTML yang dirender secara real-time. Mendukung heading, list, kode, tabel, gambar, link, blockquote, dan formatting GFM dasar."},
+        "vi": {"name": "Markdown sang HTML", "tagline": "Chuyển Markdown thành HTML sạch với xem trước trực tiếp. Hỗ trợ heading, list, code, bảng, ảnh và link.", "description": "Bộ chuyển Markdown sang HTML miễn phí trực tuyến với xem trước trực tiếp. Hỗ trợ heading, list, code block, blockquote, bảng, ảnh và link. Chuyển đổi chạy hoàn toàn trong trình duyệt của bạn."},
     },
     "body": """
 <div class="md-grid">
@@ -329,6 +330,24 @@ document.addEventListener('DOMContentLoaded', mdRun);
   <li><strong>Tabel vs alignment.</strong> Tabel pipe butuh sebuah row separator (<code>|---|</code>) dan memakai <code>:---:</code> / <code>:---</code> / <code>---:</code> untuk alignment center/left/right. Lupa separator adalah alasan paling umum sebuah "tabel" me-render sebagai satu paragraf.</li>
   <li><strong>Smart punctuation.</strong> Beberapa renderer mengkonversi <code>--</code> jadi en-dash dan straight quote jadi curly. Tool ini tidak — lewatkan melalui typography pass kalau kamu butuh itu.</li>
   <li><strong>Round-tripping tidak lossless.</strong> Markdown → HTML → Markdown akan menormalkan gaya heading, spasi list, dan bentuk link. Semantiknya bertahan; byte persisnya tidak.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Markdown là một cú pháp đơn giản cho văn bản có format — <code># Heading</code>, <code>**bold**</code>, list, link, code block. Trình duyệt nói HTML, không phải Markdown, nên Markdown thường được biên dịch thành HTML cho việc hiển thị. Tool này thực hiện chuyển đổi trên trang, với xem trước trực tiếp.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Soạn email rich-text từ Markdown.</li>
+  <li>Tạo HTML một lần cho một bài blog không có pipeline build.</li>
+  <li>Convert tài liệu Markdown để paste vào CMS không hỗ trợ Markdown.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Đa số dialect.</strong> GitHub Flavored Markdown (GFM), CommonMark, Markdown gốc — có sự khác biệt nhỏ. Tool này theo CommonMark chủ yếu với GFM extension.</li>
+  <li><strong>HTML thô được cho phép.</strong> Markdown cho phép HTML inline. Có thể an toàn (linh hoạt) hoặc rủi ro (XSS nếu output không được sanitize).</li>
+  <li><strong>Code block ngôn ngữ-cụ thể.</strong> ``` followed by language name hint cho syntax highlighter — nhưng cú pháp HTML tạo ra chỉ là <code>&lt;pre&gt;&lt;code class="language-x"&gt;</code>; CSS thực hiện việc tô màu.</li>
 </ul>
 """,
     },

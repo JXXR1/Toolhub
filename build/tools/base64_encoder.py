@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Base64 Encoder / Decoder", "tagline": "Codeer tekst naar Base64 of decodeer Base64 terug naar tekst. UTF-8 safe met base64url-variant.", "description": "Gratis online Base64 encoder en decoder. UTF-8 safe met optionele base64url-variant voor URLs en JWTs. Draait in je browser."},
         "tr": {"name": "Base64 Encoder / Decoder", "tagline": "Metni Base64'e kodla veya Base64'ü metne çöz. UTF-8 güvenli, base64url varyantı destekli.", "description": "Ücretsiz online Base64 encoder ve decoder. UTF-8 güvenli, URL ve JWT'ler için opsiyonel base64url varyantı. Tarayıcıda çalışır."},
         "id": {"name": "Base64 Encoder / Decoder", "tagline": "Encode teks ke Base64 atau decode Base64 kembali ke teks. Aman untuk UTF-8 dengan dukungan varian base64url.", "description": "Encoder dan decoder Base64 online gratis. Aman untuk UTF-8 dengan varian base64url opsional untuk URL dan JWT. Berjalan di browser-mu."},
+        "vi": {"name": "Base64 Encoder / Decoder", "tagline": "Encode văn bản thành Base64 hoặc decode Base64 về văn bản. An toàn UTF-8 và hỗ trợ biến thể base64url.", "description": "Base64 encoder và decoder trực tuyến miễn phí. An toàn UTF-8 với biến thể base64url tùy chọn cho URL và JWT. Chạy trong trình duyệt của bạn."},
     },
     "body": """
 <div class="tool-card">
@@ -260,6 +261,26 @@ document.addEventListener('DOMContentLoaded', b64Run);
   <li><strong>UTF-8 round-trip dengan benar di sini</strong> — non-ASCII (é, 你好, 🚀) lewat <code>TextEncoder</code>/<code>TextDecoder</code>, bukan <code>btoa</code>/<code>atob</code> langsung. <code>btoa(str)</code> naif di JavaScript rusak pada karakter non-Latin.</li>
   <li><strong>Padding</strong> — Base64 standard selalu berakhir dengan 0/1/2 karakter <code>=</code> tergantung panjang input. base64url sering menghilangkannya. Decoder yang butuh padding akan menolak input tanpa padding; tool ini menambahkannya kembali saat decode kalau hilang.</li>
   <li><strong>Whitespace di dalam string yang sudah di-encode</strong> — decoder di sini menghapus spasi dan line break (umum dari copy-paste), tapi beberapa library tidak, jadi encode ulang kalau kamu menyalurkan ke library seperti itu.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Base64 mã hóa dữ liệu nhị phân tùy ý thành 64 ký tự ASCII an toàn (A–Z, a–z, 0–9, + và /) bằng cách nhóm các byte thành các đoạn 6 bit. Điều đó cho phép bạn chèn dữ liệu nhị phân vào các nơi chỉ chấp nhận văn bản: email, JSON, URL, HTML, cấu hình YAML. Việc encode thêm khoảng một phần ba kích thước nhưng làm cho payload tồn tại được qua bất kỳ giao thức text-only nào.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Nhúng ảnh hoặc font nhỏ vào CSS dưới dạng data URI.</li>
+  <li>Đặt token đã encode (như JWT) vào header HTTP hoặc URL.</li>
+  <li>Decode payload Base64 từ API hoặc log để xem nó thực sự chứa gì.</li>
+  <li>Bọc PEM key (RSA, EC) và chứng chỉ X.509 — chúng là DER nhị phân được wrap bằng Base64.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>base64 không phải là mã hóa.</strong> Nó là encoding — bất kỳ ai cũng có thể decode nó. Đừng dùng nó để "bảo vệ" mật khẩu hay secret.</li>
+  <li><strong>base64url khác với base64 chuẩn.</strong> JWT, OAuth và một số API dùng base64url, thay <code>+</code> bằng <code>-</code>, <code>/</code> bằng <code>_</code> và (thường) bỏ <code>=</code> padding. Decode lẫn nhau sẽ thất bại.</li>
+  <li><strong>Padding quan trọng.</strong> Base64 chuẩn cần độ dài đầu vào là bội số của 4, được pad bằng <code>=</code>. Bỏ qua hoặc thêm padding có thể phá vỡ decoder ngặt nghèo.</li>
+  <li><strong>UTF-8 trước, rồi mới base64.</strong> Khi encode chuỗi không-ASCII, chuyển sang byte UTF-8 trước. Mã hóa kép hoặc dùng encoding khác sẽ làm hỏng văn bản.</li>
 </ul>
 """,
     },

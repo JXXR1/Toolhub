@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "JavaScript Minifier", "tagline": "Snelle structurele JavaScript-minify — strip comments, collapseer whitespace, drop blank lines. Zie size voor/na en het besparingspercentage.", "description": "Gratis online JavaScript minifier. Verwijdert single- en multi-line comments, redundante whitespace en blank lines terwijl strings, regex literals en template literals behouden blijven."},
         "tr": {"name": "JavaScript Minifier", "tagline": "Hızlı yapısal JavaScript minify — yorumları sil, boşlukları daralt, boş satırları at. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.", "description": "Ücretsiz online JavaScript minifier. Tek ve çok satırlı yorumları, gereksiz boşlukları ve boş satırları kaldırırken string'leri, regex literal'larını ve template literal'larını korur."},
         "id": {"name": "JavaScript Minifier", "tagline": "Minify JavaScript struktural cepat — strip komentar, kompres whitespace, buang baris kosong. Lihat ukuran sebelum/sesudah dan persen penghematan.", "description": "JavaScript minifier gratis. Strip komentar dan whitespace dari JS tanpa mengubah perilaku. Bukan minifier full-parse — hanya minifikasi struktural yang aman. Lihat persen byte yang dihemat dan diff sebelum/sesudah."},
+        "vi": {"name": "JavaScript Minifier", "tagline": "Minify JavaScript theo cấu trúc nhanh — bỏ comment, nén whitespace, drop dòng trống. Xem kích thước trước/sau và phần trăm tiết kiệm.", "description": "JavaScript minifier miễn phí trực tuyến. Bỏ comment, nén whitespace và drop dòng trống. Một bộ minify theo cấu trúc nhanh — không phải bộ tối ưu mức compiler — chạy hoàn toàn trong trình duyệt."},
     },
     "body": """
 <div class="tool-card">
@@ -313,6 +314,24 @@ document.addEventListener('DOMContentLoaded', jmRun);
   <li><strong>Source map tidak di-generate.</strong> Kalau kamu mengirim JS minified ke production, generate source map dengan toolchain beneran supaya debugging tetap waras.</li>
   <li><strong>Kompresi modern dominan.</strong> Brotli/gzip di kabel melakukan sebagian besar yang minify lakukan. Kemenangan terbesar datang dari menghapus kode yang tidak terpakai — itu butuh static analysis yang structural minifier tidak bisa.</li>
   <li><strong>Jangan minify yang kamu commit.</strong> Source masuk dalam keadaan rapi; minify di tahap build/deploy.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>JavaScript sản xuất thường được minify để cắt giảm kích thước. Tool này thực hiện minify nhanh, theo cấu trúc: bỏ comment, gộp whitespace và drop dòng trống. Nó không đổi tên biến hay tối ưu hóa logic — chỉ làm cho file nhỏ hơn mà không phá vỡ nó.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Chuẩn bị JavaScript hand-written để deploy mà không cần pipeline build.</li>
+  <li>So sánh kích thước trước/sau và phần trăm tiết kiệm.</li>
+  <li>Cleanup script nhỏ để inline vào trang.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Đây không phải Terser hay esbuild.</strong> Bộ minify thực thụ thực hiện rename biến, mangle function name, dead code elimination, và tối ưu hóa nâng cao. Tool này chỉ thực hiện việc dễ.</li>
+  <li><strong>Một số whitespace là cú pháp ASI quan trọng.</strong> Automatic Semicolon Insertion của JavaScript dựa vào newline. Tool này nhận biết và không drop chúng khi có thể phá vỡ code.</li>
+  <li><strong>Đừng minify code đã được minify.</strong> Lợi ích cận biên là không hữu ích và tăng nguy cơ phá vỡ.</li>
 </ul>
 """,
     },

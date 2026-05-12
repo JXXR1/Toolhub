@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "JSON naar CSV", "tagline": "Converteer JSON-arrays van objects naar CSV. Detecteert velden automatisch, ondersteunt custom delimiters, escapet correct voor Excel en Google Sheets.", "description": "Gratis online JSON-naar-CSV converter. Flat arrays van objects naar rows, escapet quotes volgens RFC 4180, ondersteunt komma/puntkomma/tab delimiters."},
         "tr": {"name": "JSON'dan CSV'ye", "tagline": "Nesne JSON dizilerini CSV'ye dönüştür. Alanları otomatik tespit eder, özel sınırlayıcıları destekler, Excel ve Google Sheets için doğru escape yapar.", "description": "Ücretsiz online JSON'dan CSV'ye dönüştürücü. Nesne dizilerini satırlara düzleştirir, tırnakları RFC 4180'e göre escape eder, virgül/noktalı virgül/sekme sınırlayıcılarını destekler."},
         "id": {"name": "JSON ke CSV", "tagline": "Konversi array JSON berisi objek ke CSV. Mendeteksi field otomatis, mendukung delimiter custom, escape yang benar untuk Excel dan Google Sheets.", "description": "Konverter JSON ke CSV gratis. Tempel array JSON berisi objek dan dapatkan CSV bersih siap diimpor ke Excel, Google Sheets, atau database apa pun. Deteksi field otomatis dengan delimiter dan quoting yang dapat dikonfigurasi."},
+        "vi": {"name": "JSON sang CSV", "tagline": "Chuyển mảng JSON các object thành CSV. Phát hiện trường tự động, hỗ trợ delimiter tùy chỉnh, escape chính xác cho Excel và Google Sheets.", "description": "Bộ chuyển JSON sang CSV miễn phí trực tuyến. Phát hiện trường tự động trên các object, hỗ trợ delimiter tùy chỉnh và escape chính xác cho Excel và Google Sheets. Chuyển đổi chạy cục bộ."},
     },
     "body": """
 <div class="tool-card">
@@ -230,6 +231,24 @@ document.addEventListener('DOMContentLoaded', jcRun);
   <li><strong>Object/array nested di-stringify.</strong> Kalau kamu butuh CSV yang flat (satu kolom per nested key), flatten dulu JSON-nya sebelum dimasukkan.</li>
   <li><strong>Excel + delimiter.</strong> Locale Eropa default-nya pakai titik koma; ganti delimiter supaya file terbuka dalam kolom, bukan satu baris raksasa. Escaping RFC 4180 tetap diterapkan apa pun pilihannya.</li>
   <li><strong>UTF-8 BOM.</strong> Excel di macOS kadang mengacaukan non-ASCII tanpa BOM. Tool ini TIDAK menambahkan BOM — alirkan output melalui langkah penambah BOM kalau kamu lihat mojibake.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>JSON đa cấp không map gọn gàng vào CSV phẳng. Tool này phẳng hóa mảng object thành các hàng và cột — auto-detect các field từ object đầu tiên, hoặc thu thập union của tất cả các key. Xuất CSV được escape chính xác cho Excel và Google Sheets.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Export dữ liệu API thành bảng tính cho stakeholder không-tech.</li>
+  <li>Cấp tài liệu cho công cụ BI mong đợi CSV.</li>
+  <li>Lưu trữ archived data — CSV nén tốt và dễ truy vấn bằng tool dòng lệnh.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Nested object không thể đại diện gọn.</strong> Tool này flatten cấp 1 (object.field becomes field) nhưng để lại array dưới dạng JSON-stringified. Đối với nested sâu, cân nhắc một format khác như Parquet hoặc tự rolling.</li>
+  <li><strong>Excel ăn UTF-8 BOM.</strong> Mở CSV thô trong Excel mà không có BOM có thể hiển thị ký tự đặc biệt như rác. Tool này thêm BOM theo mặc định để Excel friendly.</li>
+  <li><strong>Excel cũng ăn số dài.</strong> ID 16+ chữ số có thể bị Excel chuyển thành scientific notation. Tiền tố với apostrophe hoặc dùng tab delimiter để workaround.</li>
 </ul>
 """,
     },

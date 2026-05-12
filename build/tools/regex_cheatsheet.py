@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Regex Spiekbrief", "tagline": "Snelle referentie: anchors, character classes, quantifiers, groups, lookarounds, flags. Klik elk patroon om te kopiëren.", "description": "Gratis regex (regular expression)-spiekbrief. Anchors, character classes, quantifiers, groups, lookarounds en flags — met click-to-copy patronen en een live filter. PCRE / JavaScript flavour."},
         "tr": {"name": "Regex Çetel", "tagline": "Hızlı referans: çapalar, karakter sınıfları, niceleyiciler, gruplar, lookaround'lar, bayraklar. Kopyalamak için herhangi bir desene tıkla.", "description": "Ücretsiz regex (düzenli ifade) çeteli. Çapalar, karakter sınıfları, niceleyiciler, gruplar, lookaround'lar ve bayraklar — tıkla-kopyala desenler ve canlı filtre ile. PCRE / JavaScript lehçesi."},
         "id": {"name": "Cheatsheet Regex", "tagline": "Referensi cepat: anchor, character class, quantifier, group, lookaround, flag. Klik pattern mana pun untuk menyalin.", "description": "Cheatsheet regex gratis. Referensi pattern regex umum: anchor, character class, quantifier, group, lookaround, dan flag. Klik pattern mana pun untuk menyalin. Cocok untuk yang baru belajar regex atau yang perlu refresh."},
+        "vi": {"name": "Cheatsheet Regex", "tagline": "Tham chiếu nhanh: anchor, character class, quantifier, group, lookaround, flag. Click bất kỳ pattern nào để sao chép.", "description": "Tham chiếu nhanh regex miễn phí trực tuyến. Cú pháp anchor, character class, quantifier, group và lookaround với ví dụ. Click bất kỳ pattern nào để sao chép."},
     },
     "body": """
 <div class="tool-card">
@@ -421,6 +422,24 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Regex bukan parser HTML atau JSON.</strong> "Common pattern" di sini bagus untuk scraping sekali pakai atau hint validasi, bukan untuk memperlakukan input terstruktur sebagai string.</li>
   <li><strong>Regex email selalu salah.</strong> Contoh di sini adalah shape-check kasar; untuk validasi production, kirim email konfirmasi sebagai gantinya.</li>
   <li><strong>Jangan percaya regex "sempurna" hasil copy-paste.</strong> Test terhadap data nyata kamu dengan Regex Tester sebelum deploy.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Regex có syntax dày đặc — <code>\b</code>, <code>(?:...)</code>, <code>\s</code>, <code>+?</code>, lookahead — và dễ quên một detail giữa các session. Tool này là cheat sheet được tổ chức theo category: anchor, character class, quantifier, group, lookaround và flag. Click bất kỳ pattern nào để sao chép.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Khôi phục syntax sau một thời gian xa regex.</li>
+  <li>Nhắc nhanh "lookbehind là <code>(?&lt;=...)</code> hay <code>(?&lt;!...)</code>" mà không cần Google.</li>
+  <li>So sánh cách flag dialect khác nhau (i, m, s, u, g, y) hoạt động.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Dialect khác biệt.</strong> JavaScript regex thiếu một số tính năng có trong PCRE (Perl) — đặc biệt là <code>(?P&lt;name&gt;...)</code> dùng <code>?&lt;name&gt;</code> trong JS hiện đại.</li>
+  <li><strong>Greedy vs lazy.</strong> <code>.*</code> match nhiều nhất có thể; <code>.*?</code> match ít nhất. Một detail nhỏ với hệ quả lớn.</li>
+  <li><strong>Anchor đa dòng.</strong> <code>^</code> và <code>$</code> mặc định khớp đầu/cuối chuỗi — flag <code>m</code> làm cho chúng khớp đầu/cuối dòng.</li>
 </ul>
 """,
     },

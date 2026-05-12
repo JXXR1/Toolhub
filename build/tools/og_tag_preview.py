@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "OG Tag Preview", "tagline": "Plak OG meta tags of vul title/description/image — preview share cards zoals ze er op Twitter/X, Facebook, LinkedIn en Discord uitzien.", "description": "Gratis Open Graph tag preview. Plak je <meta>-tags of vul gewoon title/description/image in en zie hoe je link zal renderen in Twitter/X, Facebook, LinkedIn en Discord share-previews. Draait volledig in je browser."},
         "tr": {"name": "OG Tag Önizleme", "tagline": "OG meta tag'lerini yapıştır veya title/description/image doldur — paylaşım kartlarını Twitter/X, Facebook, LinkedIn ve Discord'da nasıl görüneceği gibi önizle.", "description": "Ücretsiz Open Graph tag önizleme. <meta> tag'lerini yapıştır veya sadece title/description/image doldur ve linkinin Twitter/X, Facebook, LinkedIn ve Discord paylaşım önizlemelerinde nasıl görüneceğini gör. Tamamen tarayıcında çalışır."},
         "id": {"name": "Pratinjau OG Tag", "tagline": "Tempel meta tag OG atau isi title/description/image — pratinjau kartu sosial seperti yang muncul di Twitter/X, Facebook, LinkedIn, dan Discord.", "description": "Pratinjau tag Open Graph gratis. Tempel meta tag dari HTML atau isi field, dan lihat seperti apa pratinjau link-mu di Twitter/X, Facebook, LinkedIn, dan Discord. Bantu pastikan kartu sosial-mu terlihat benar sebelum dipublikasikan."},
+        "vi": {"name": "Xem trước OG Tag", "tagline": "Dán OG meta tag hoặc điền title/description/image — xem trước social card như chúng xuất hiện trên Twitter/X, Facebook, LinkedIn và Discord.", "description": "Trình xem trước Open Graph miễn phí trực tuyến. Dán OG meta tag hoặc điền các trường thủ công và xem chính xác cách thẻ social-share xuất hiện trên Twitter/X, Facebook, LinkedIn và Discord."},
     },
     "body": """
 <div class="tool-card">
@@ -523,6 +524,24 @@ document.addEventListener('DOMContentLoaded', ogRender);
   <li><strong>Cache invalidation itu nyata.</strong> Begitu sebuah platform men-scrape URL kamu, ia akan men-cache card-nya. Pakai debugger platform untuk memaksa re-scrape.</li>
   <li><strong>Batas panjang title/description berbeda-beda.</strong> Twitter/X memotong title sekitar 70 karakter; Facebook sekitar 88; LinkedIn sekitar 100. Letakkan kata-kata penting di depan.</li>
   <li><strong>Discord menyukai <code>theme-color</code>.</strong> Menambahkan <code>&lt;meta name="theme-color" content="#xxxxxx"&gt;</code> mengatur warna border kiri di embed Discord.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Open Graph (OG) tag điều khiển cách link được hiển thị khi share trên Twitter/X, Facebook, LinkedIn, Discord và các nền tảng social khác. Title, description và image là ba thẻ quan trọng nhất. Tool này cho phép bạn dán meta tag hoặc điền field thủ công, sau đó xem chính xác cách social card sẽ trông trên các nền tảng chính.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Trước khi launch một trang mới — kiểm tra OG image render đúng kích thước.</li>
+  <li>Debug trang chia sẻ với link preview vỡ.</li>
+  <li>So sánh trang của bạn với competitor để xem social card của họ trông như thế nào.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Twitter dùng <code>twitter:*</code> tag riêng.</strong> Nó fall back về OG, nhưng nếu bạn muốn kiểm soát chính xác kích thước card (summary_large_image vs summary), dùng twitter:card.</li>
+  <li><strong>Kích thước image quan trọng.</strong> 1200×630 là sweet spot — quá nhỏ và scaler làm xấu nó; quá lớn và bị crop khó đoán.</li>
+  <li><strong>Cache rất lâu.</strong> Khi bạn cập nhật OG tag, Facebook và Twitter có thể vẫn show phiên bản cũ. Dùng <a href="https://developers.facebook.com/tools/debug/">Facebook Sharing Debugger</a> để force refresh.</li>
 </ul>
 """,
     },

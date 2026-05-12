@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "CSS Gradient Generator", "tagline": "Bouw visueel lineaire en radiale CSS-gradients. Bewerk color stops, kopieer ready-to-paste CSS.", "description": "Gratis CSS gradient generator. Bouw lineaire of radiale gradients met zoveel color stops als je wilt, stel hoek en vorm in, kopieer production-ready CSS in één klik."},
         "tr": {"name": "CSS Gradient Oluşturucu", "tagline": "Lineer ve radial CSS gradient'larını görsel olarak kur. Renk durak noktalarını düzenle, yapıştırılmaya hazır CSS'i kopyala.", "description": "Ücretsiz CSS gradient oluşturucu. İstediğin kadar renk durak noktasıyla lineer veya radial gradient kur, açıyı ve şekli ayarla, üretime hazır CSS'i tek tıkla kopyala."},
         "id": {"name": "Pembangun CSS Gradient", "tagline": "Susun gradient linear dan radial CSS secara visual. Edit color stop, salin CSS siap-tempel.", "description": "Pembangun CSS gradient gratis. Buat gradient linear dan radial dengan stop warna yang dapat di-drag, kontrol sudut, dan pratinjau langsung. Salin CSS siap-tempel."},
+        "vi": {"name": "CSS Gradient Builder", "tagline": "Soạn gradient linear và radial CSS một cách trực quan. Chỉnh sửa color stop, sao chép CSS sẵn-dùng.", "description": "Trình xây dựng CSS gradient miễn phí trực tuyến. Soạn linear hoặc radial gradient với nhiều color stop, sau đó sao chép CSS sẵn-dùng."},
     },
     "body": """
 <div class="tool-card">
@@ -330,6 +331,25 @@ document.addEventListener('DOMContentLoaded', () => { grRender(); grRun(); });
   <li><strong>Banding di area besar.</strong> Gradient panjang dengan kontras rendah bisa menampilkan "band" yang terlihat di layar 8-bit. Tambahkan SVG noise overlay kecil (<code>filter: url(#noise)</code>) atau geser stop sedikit.</li>
   <li><strong>Performance.</strong> Browser meng-paint gradient dengan cepat, tapi meng-animate <code>background-image</code> memicu paint di tiap frame — animate <code>transform</code> di layer di atasnya sebagai gantinya.</li>
   <li><strong>Aksesibilitas.</strong> Kalau ada teks di atas gradient, cek rasio kontras terhadap titik <em>terburuk</em> sepanjang gradient di mana teks muncul, bukan rata-rata.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>CSS hỗ trợ gradient linear và radial dưới dạng hàm: <code>linear-gradient(to right, red, blue)</code> tạo ra một dải đỏ-sang-xanh từ trái sang phải. Cú pháp linh hoạt — bạn có thể đặt nhiều color stop, kiểm soát góc, và xếp lớp gradient — nhưng dễ gõ sai. Trình xây dựng này cho phép bạn chỉnh sửa color stop một cách trực quan và sao chép CSS hoàn thành.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Tạo background gradient mượt cho hero section hoặc card.</li>
+  <li>Tạo "rainbow" hoặc gradient ý nghĩa với nhiều color stop chính xác.</li>
+  <li>Thiết kế gradient radial cho hiệu ứng spotlight hoặc background trang trí.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Color stop có thể chồng lên nhau hoặc nhảy bậc.</strong> Hai stop ở cùng vị trí tạo ra một viền cứng — hữu ích để tạo các vùng ranh giới rõ ràng, nhầm lẫn khi bạn không có ý đó.</li>
+  <li><strong>Hướng "to right" vs "90deg".</strong> Chúng tương đương trong CSS hiện đại. Trình duyệt cũ chỉ chấp nhận "to right".</li>
+  <li><strong>Banding với gradient.</strong> Gradient từ đen đến xám đậm rất hay hiển thị các dải khi không gian màu 8-bit không đủ chính xác. Thêm một chút noise hoặc dùng OKLCH để giảm thiểu.</li>
+  <li><strong>Gradient con không phải là image.</strong> Chúng được tính toán mỗi lần render. Một background-image với một file PNG có thể nhanh hơn cho gradient cực kỳ phức tạp.</li>
 </ul>
 """,
     },

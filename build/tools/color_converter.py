@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Kleur-converter", "tagline": "Converteer elke kleur tussen hex, RGB, HSL en OKLCH. Live preview, kopieer in één klik.", "description": "Gratis online kleurconverter. Vertaal tussen hex (#3498db), rgb(), hsl() en het moderne oklch()-formaat. Live swatch-preview, kopieer elke waarde in één klik."},
         "tr": {"name": "Renk Dönüştürücü", "tagline": "Herhangi bir rengi hex, RGB, HSL ve OKLCH arasında dönüştür. Canlı önizleme, tek tıkla kopyala.", "description": "Ücretsiz online renk dönüştürücü. hex (#3498db), rgb(), hsl() ve modern oklch() biçimi arasında çevir. Canlı renk önizlemesi, herhangi bir değeri tek tıkla kopyala."},
         "id": {"name": "Konverter Warna", "tagline": "Konversi warna apa pun antara hex, RGB, HSL, dan OKLCH. Pratinjau langsung, salin sekali klik.", "description": "Konverter warna online gratis. Konversi antara hex, RGB, HSL, dan OKLCH dengan pratinjau langsung. Cocok untuk desain web, CSS, dan sistem desain."},
+        "vi": {"name": "Chuyển đổi Màu", "tagline": "Chuyển bất kỳ màu nào giữa hex, RGB, HSL và OKLCH. Xem trước trực tiếp, sao chép một-cú-click.", "description": "Bộ chuyển đổi màu trực tuyến miễn phí giữa hex, RGB, HSL và OKLCH với xem trước trực tiếp. Hữu ích cho CSS, design và quy trình thiết kế."},
     },
     "body": """
 <div class="tool-card">
@@ -376,6 +377,25 @@ document.addEventListener('DOMContentLoaded', () => ccUpdate([52,152,219]));
   <li><strong>HSL tidak sama dengan HSV.</strong> "Value" HSV adalah channel paling terang; "lightness" HSL adalah titik tengah antara paling terang dan paling gelap.</li>
   <li><strong>Round-tripping tidak selalu lossless.</strong> hex → hsl → hex bisa menggeser satu integer karena pembulatan. Untuk reproduksi persis, simpan hex.</li>
   <li><strong>Hex dan RGB default sRGB,</strong> bukan Display P3 atau Rec. 2020. Kalau tool desain-mu di profil wide-gamut, hex yang sama tampak berbeda.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Cùng một màu có thể được viết theo bốn hoặc nhiều cách trong CSS: hex (<code>#3498db</code>), RGB (<code>rgb(52 152 219)</code>), HSL (<code>hsl(204 70% 53%)</code>) và OKLCH (<code>oklch(67% 0.13 240)</code>). Công cụ này dịch giữa các định dạng và hiển thị xem trước trực tiếp để bạn có thể chỉnh và sao chép vào CSS của mình.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Lấy hex từ một bảng màu design và cần RGB hoặc HSL tương đương cho gradient.</li>
+  <li>Chuyển sang OKLCH để có không gian màu đồng đều theo nhận thức cho ngữ nghĩa "đậm hơn / nhạt hơn".</li>
+  <li>Lấy mẫu màu từ một ảnh chụp màn hình và chuẩn hóa thành định dạng dự án của bạn.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>HSL không phải là HSV/HSB.</strong> CSS dùng HSL; nhiều tool design dùng HSV. Giá trị saturation và lightness/value khác nhau giữa các không gian.</li>
+  <li><strong>Hex 8 chữ số là RGBA.</strong> <code>#3498dbcc</code> là <code>#3498db</code> với alpha 80%. Hai chữ số cuối là alpha tính theo hex (00–FF).</li>
+  <li><strong>OKLCH có gamut rộng hơn sRGB.</strong> Một số giá trị OKLCH không có hex tương đương — chúng nằm ngoài gamut. Tool sẽ kẹp hoặc cảnh báo.</li>
+  <li><strong>Round-trip mất chính xác.</strong> Chuyển hex → HSL → hex có thể đẩy giá trị đi một bit do làm tròn. Để giữ chính xác, giữ ở một định dạng làm canonical.</li>
 </ul>
 """,
     },

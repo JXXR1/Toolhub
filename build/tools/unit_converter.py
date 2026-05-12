@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Unit Converter", "tagline": "Converteer tussen metrische en imperiale eenheden van lengte, gewicht, temperatuur, volume en oppervlakte.", "description": "Gratis online unit-converter. Converteer lengte (mm, cm, m, km, in, ft, yd, mi), gewicht (g, kg, lb, oz), temperatuur (C, F, K), volume (mL, L, gal, fl oz) en oppervlakte (m², ft², acre, ha)."},
         "tr": {"name": "Birim Dönüştürücü", "tagline": "Uzunluk, ağırlık, sıcaklık, hacim ve alan için metrik ve imperial birimler arasında dönüştür.", "description": "Ücretsiz online birim dönüştürücü. Uzunluk (mm, cm, m, km, in, ft, yd, mi), ağırlık (g, kg, lb, oz), sıcaklık (C, F, K), hacim (mL, L, gal, fl oz) ve alan (m², ft², acre, ha) dönüşümleri."},
         "id": {"name": "Konverter Satuan", "tagline": "Konversi antara satuan metrik dan imperial untuk panjang, berat, suhu, volume, dan luas.", "description": "Konverter satuan gratis. Konversi antara satuan metrik dan imperial untuk panjang (mm, cm, m, km, in, ft, yd, mi), berat (g, kg, oz, lb), suhu (°C, °F, K), volume, dan luas."},
+        "vi": {"name": "Chuyển đổi Đơn vị", "tagline": "Chuyển giữa đơn vị mét và imperial cho chiều dài, trọng lượng, nhiệt độ, thể tích và diện tích.", "description": "Bộ chuyển đổi đơn vị miễn phí trực tuyến giữa hệ mét và imperial cho chiều dài, trọng lượng, nhiệt độ, thể tích và diện tích. Xử lý các đơn vị thường dùng (mét/feet, kg/lb, °C/°F, lít/gallon, m²/ft²) với độ chính xác đầy đủ."},
     },
     "body": """
 <div class="tool-card">
@@ -409,6 +410,24 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Massa vs berat.</strong> Secara ketat, kg itu massa dan pound juga massa (meski sehari-hari "berat saya 70 kg"). Tool memperlakukannya sebagai konversi mass-to-mass. Untuk gaya (newton, pound-force), kamu butuh kategori berbeda.</li>
   <li><strong>Bulatkan di akhir, bukan di tengah.</strong> Jangan konversi m → ft, bulatkan, lalu ft → in — error akan akumulasi. Langsung ke unit target.</li>
   <li><strong>Stone &amp; pound.</strong> Berat Inggris: 1 stone = 14 lb. Tool punya stone (st) tapi kamu perlu melakukan bagian lb secara terpisah untuk entry gaya "11 st 4 lb".</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Đa số thế giới đo theo hệ mét; Mỹ, Liberia và Myanmar dùng hệ imperial. Khi đọc tài liệu, công thức nấu ăn hoặc dữ liệu từ nguồn không quen thuộc, bạn cần chuyển đổi. Tool này chuyển giữa các đơn vị thông thường trong sáu trục: chiều dài, trọng lượng, nhiệt độ, thể tích, diện tích.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Đọc tài liệu API quốc tế với mét và bạn cần feet.</li>
+  <li>Công thức nấu ăn ngoại quốc với gram và bạn nghĩ theo cup.</li>
+  <li>Mua đất hoặc nhà với hectare ở một nước và acre ở nước khác.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Nhiệt độ không phải scale tuyến tính qua zero.</strong> 0°C ≠ 0°F. 0K (Kelvin) là không tuyệt đối, -273.15°C.</li>
+  <li><strong>Imperial fluid ounce ≠ US fluid ounce.</strong> UK pint là 568 mL; US pint là 473 mL. Đáng nhớ khi pha cocktail từ công thức.</li>
+  <li><strong>Mass vs weight.</strong> Kilogram là đơn vị khối lượng; pound đo lực ở Trái đất bình thường. Trên Mặt trăng, kilogram cùng, pound khác.</li>
 </ul>
 """,
     },

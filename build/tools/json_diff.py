@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "JSON Diff", "tagline": "Structurele diff voor twee JSON-documenten — keys toegevoegd, verwijderd, gewijzigd en waarde-wijzigingen naast elkaar getoond.", "description": "Gratis online JSON-diff. Berekent een structurele delta tussen twee JSON-documenten — toegevoegde/verwijderde keys, gewijzigde waarden en een schone side-by-side view. Draait volledig in je browser."},
         "tr": {"name": "JSON Diff", "tagline": "İki JSON belgesi için yapısal diff — eklenen, silinen, değişen anahtarlar ve değer değişiklikleri yan yana gösterilir.", "description": "Ücretsiz online JSON diff. İki JSON belgesi arasında yapısal delta hesaplar — eklenen/silinen anahtarlar, değişen değerler ve temiz yan yana görünüm. Tamamen tarayıcında çalışır."},
         "id": {"name": "JSON Diff", "tagline": "Diff struktural dua dokumen JSON — kunci yang ditambah, dihapus, diubah, dan perubahan nilai ditampilkan berdampingan.", "description": "Tool JSON diff gratis. Bandingkan dua dokumen JSON secara struktural dan lihat kunci yang ditambah, dihapus, diubah, dan perubahan nilai berdampingan. Tidak peduli urutan kunci, fokus pada struktur."},
+        "vi": {"name": "JSON Diff", "tagline": "Diff theo cấu trúc của hai tài liệu JSON — key được thêm, bị xóa, được thay đổi và thay đổi giá trị hiển thị cạnh nhau.", "description": "JSON diff miễn phí trực tuyến. So sánh hai tài liệu JSON theo cấu trúc, hiển thị key được thêm, bị xóa, được thay đổi và thay đổi giá trị một cách trực quan. Chạy hoàn toàn trong trình duyệt."},
     },
     "body": """
 <div class="tool-card">
@@ -321,6 +322,24 @@ document.addEventListener('DOMContentLoaded', jdRun);
   <li><strong>Number-vs-string bukan struktural.</strong> <code>{"id": 1}</code> dan <code>{"id": "1"}</code> muncul sebagai perubahan karena type-nya beda. Normalisasi type sebelum diff jika itu penting.</li>
   <li><strong>RFC 6902 adalah patch satu arah, bukan merge.</strong> Apply dengan implementasi RFC 6902 asli, bukan dengan string-replacement.</li>
   <li><strong>Tree besar jadi noisy.</strong> Kalau diff-nya ratusan operasi, kemungkinan kamu membandingkan dua dokumen yang tidak berkaitan — periksa lagi input-nya.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>So sánh hai tài liệu JSON dòng-by-dòng dưới dạng văn bản hiếm khi cho bạn câu trả lời bạn muốn — thứ tự key có thể khác, indent có thể khác, và một thay đổi nhỏ ở giá trị có thể trông như nhiều khác biệt. Diff theo cấu trúc cho bạn cảm giác về thay đổi ngữ nghĩa: key nào được thêm, bị xóa hoặc được cập nhật, và từ giá trị nào sang giá trị nào.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Review thay đổi config trong code review — JSON config trước vs sau.</li>
+  <li>Debug response API khác nhau giữa staging và production.</li>
+  <li>Audit thay đổi schema giữa các phiên bản API.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Thứ tự mảng quan trọng.</strong> JSON treat mảng là sắp xếp; <code>[1, 2]</code> ≠ <code>[2, 1]</code>. Tool này đánh dấu reorder dưới dạng thay đổi.</li>
+  <li><strong>Thứ tự key không quan trọng (đối với JSON đúng).</strong> Tool diff bỏ qua thứ tự key trên object — chỉ key tồn tại và giá trị mới quan trọng.</li>
+  <li><strong>Kiểu quan trọng.</strong> <code>"123"</code> (string) khác <code>123</code> (number) và sẽ hiển thị dưới dạng thay đổi.</li>
 </ul>
 """,
     },

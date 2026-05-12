@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Lorem Ipsum Generator", "tagline": "Genereer paragrafen, zinnen, woorden of list items van placeholder Latijnse tekst. Configureerbare lengte en startfrase.", "description": "Gratis Lorem Ipsum-generator. Bouw paragrafen, zinnen, woorden of HTML-lijsten voor mockups en design comps. Optionele klassieke 'Lorem ipsum dolor sit amet…'-opener."},
         "tr": {"name": "Lorem Ipsum Üretici", "tagline": "Placeholder Latince metnin paragraflarını, cümlelerini, kelimelerini veya liste öğelerini üret. Ayarlanabilir uzunluk ve başlangıç ibaresi.", "description": "Ücretsiz Lorem Ipsum üretici. Mockup ve tasarım kompozisyonları için paragraflar, cümleler, kelimeler veya HTML listeleri kur. Opsiyonel klasik 'Lorem ipsum dolor sit amet…' başlangıcı."},
         "id": {"name": "Lorem Ipsum Generator", "tagline": "Hasilkan paragraf, kalimat, kata, atau item list dengan teks placeholder Latin. Panjang dan frasa awal dapat dikustomisasi.", "description": "Generator Lorem Ipsum gratis. Hasilkan placeholder Latin klasik dengan panjang yang dapat dikonfigurasi — paragraf, kalimat, kata, atau item list. Mulai dengan frasa klasik 'Lorem ipsum dolor sit amet' atau acak."},
+        "vi": {"name": "Lorem Ipsum Generator", "tagline": "Tạo đoạn văn, câu, từ hoặc mục danh sách của văn bản placeholder Latin. Tùy chỉnh độ dài và cụm từ mở đầu.", "description": "Trình tạo Lorem Ipsum miễn phí trực tuyến. Tạo đoạn, câu, từ hoặc mục danh sách của văn bản placeholder Latin cổ điển cho mockup, design và bản demo."},
     },
     "body": """
 <div class="tool-card">
@@ -257,6 +258,24 @@ document.addEventListener('DOMContentLoaded', liRun);
   <li><strong>Copy asli lebih pendek atau lebih panjang dari placeholder.</strong> Headline asli lebih punchy. Body copy asli sangat bervariasi. Layout yang terlihat seimbang dengan lorem ipsum bisa berantakan dengan konten sebenarnya; verifikasi dengan teks asli sebelum sign-off.</li>
   <li><strong>Internasionalisasi mengungkap apa yang disembunyikan lorem.</strong> Design yang hanya diuji dengan filler Latin sering rusak dengan kata majemuk Jerman atau layout right-to-left Arab. Uji dengan placeholder multibahasa untuk design yang sadar i18n.</li>
   <li><strong>Konvensi itu penting.</strong> Paragraf pertama secara tradisional dimulai dengan "Lorem ipsum dolor sit amet…" — designer mengenalinya sebagai placeholder. Mematikannya bisa berarti seseorang melewatkan pertukarannya.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Lorem ipsum là văn bản placeholder kinh điển — pseudo-Latin được dùng để fill mockup mà không phân tâm. Tool này tạo bất kỳ số đoạn văn, câu, từ hoặc mục list nào với phong cách Lorem ipsum cổ điển — sẵn sàng để paste vào design hoặc layout test.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Fill mockup hoặc wireframe với văn bản trông tự nhiên.</li>
+  <li>Test layout với độ dài văn bản khác nhau (1 từ vs 1 đoạn dài).</li>
+  <li>Tạo dữ liệu trông realistic cho seed database.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Lorem không có nghĩa.</strong> Đó là tính năng — designer và client nhìn vào layout, không phải content. Đừng dịch nó hoặc cố gắng hiểu nó.</li>
+  <li><strong>Đừng ship Lorem ipsum.</strong> Đã có nhiều site sản xuất nổi tiếng release với placeholder content. Có lint rule cho điều đó nếu bạn lo lắng.</li>
+  <li><strong>Lorem rất "đặc". </strong> Văn bản thực sự thường có khoảng trắng và hệ thống dấu câu khác — Lorem có thể che giấu vấn đề về typography.</li>
 </ul>
 """,
     },

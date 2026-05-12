@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Text Diff", "tagline": "Vergelijk twee blokken tekst en zie regel-voor-regel additions, removals en unchanged context. Side-by-side of unified view.", "description": "Gratis online text-diff tool. Line-level Myers-diff met side-by-side en unified views, ignore-whitespace en ignore-case toggles. Draait in je browser."},
         "tr": {"name": "Metin Diff", "tagline": "İki metin bloğunu karşılaştır ve satır satır eklemeleri, silmeleri ve değişmeyen bağlamı gör. Yan yana veya birleşik görünüm.", "description": "Ücretsiz online metin diff aracı. Yan yana ve birleşik görünümlü, ignore-whitespace ve ignore-case anahtarlı satır seviyesi Myers diff. Tarayıcında çalışır."},
         "id": {"name": "Text Diff", "tagline": "Bandingkan dua blok teks dan lihat penambahan, penghapusan, dan konteks tak berubah baris demi baris. Tampilan side-by-side atau unified.", "description": "Tool diff teks gratis. Bandingkan dua blok teks dan lihat perbedaannya baris demi baris dengan penambahan, penghapusan, dan konteks tak berubah disorot. Beralih antara tampilan side-by-side dan unified."},
+        "vi": {"name": "Diff Văn bản", "tagline": "So sánh hai khối văn bản và xem các thêm, xóa và ngữ cảnh không thay đổi từng dòng. Chế độ xem cạnh nhau hoặc thống nhất.", "description": "Trình so sánh văn bản miễn phí trực tuyến. Hiển thị các thêm, xóa và ngữ cảnh không thay đổi giữa hai khối văn bản từng dòng trong chế độ xem cạnh nhau hoặc thống nhất."},
     },
     "body": """
 <div class="td-grid">
@@ -351,6 +352,24 @@ document.addEventListener('DOMContentLoaded', tdRun);
   <li><strong>Urutan penting.</strong> Jika kamu menukar dua baris, diff akan menunjukkan keduanya sebagai removed-and-re-added, bukan sebagai pasangan "moved". Tidak ada deteksi pemindahan.</li>
   <li><strong>Input besar (10k+ baris) bisa lambat.</strong> Algoritma LCS itu O(m·n) — oke untuk file biasa, lambat untuk yang sangat besar. Diff potongan kecil satu per satu.</li>
   <li><strong>Trailing newline</strong> dihitung sebagai baris. Dua input yang hanya berbeda di apakah berakhir dengan newline akan menampilkan satu penambahan atau penghapusan di akhir.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>So sánh hai khối văn bản để xem chính xác chúng khác nhau như thế nào — dòng nào được thêm, dòng nào bị xóa, dòng nào không thay đổi. Tool này hiển thị diff trong chế độ xem cạnh nhau hoặc thống nhất (unified, kiểu git), tô màu phần thêm xanh và phần xóa đỏ.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>So sánh hai phiên bản của một config file hoặc README.</li>
+  <li>Xem những gì thay đổi giữa hai response API.</li>
+  <li>Code review nhỏ mà không cần git.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Diff theo dòng vs character.</strong> Tool này diff theo dòng (kiểu git diff cổ điển). Đối với thay đổi character-level trong một dòng dài, dùng tool diff khác.</li>
+  <li><strong>Whitespace có thể đánh dấu thay đổi giả.</strong> Tab vs space, CR/LF vs LF, trailing whitespace — chúng đăng ký dưới dạng thay đổi. Tool này có thể có tùy chọn để bỏ qua chúng.</li>
+  <li><strong>Diff không phải là sự khác biệt ngữ nghĩa.</strong> Reorder hai dòng hiển thị dưới dạng "xóa 2 + thêm 2" mặc dù không có gì thay đổi về nội dung.</li>
 </ul>
 """,
     },

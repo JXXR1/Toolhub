@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "CSV naar JSON", "tagline": "Converteer CSV-data naar JSON-arrays. Header-detectie, custom delimiters, quoted fields en embedded newlines worden afgehandeld.", "description": "Gratis online CSV naar JSON converter. Detecteert headers automatisch, ondersteunt custom delimiters en quoted multi-line fields. Draait in je browser."},
         "tr": {"name": "CSV'den JSON'a", "tagline": "CSV verisini JSON dizilerine dönüştür. Başlık tespiti, özel sınırlayıcılar, tırnaklı alanlar ve gömülü satır sonları işlenir.", "description": "Ücretsiz online CSV'den JSON'a dönüştürücü. Başlıkları otomatik tespit eder, özel sınırlayıcıları ve tırnaklı çok satırlı alanları destekler. Tarayıcıda çalışır."},
         "id": {"name": "CSV ke JSON", "tagline": "Konversi data CSV ke array JSON. Menangani deteksi header, delimiter custom, field yang di-quote, dan newline tersisip.", "description": "Konverter CSV ke JSON gratis. Tempel CSV apa pun dan dapatkan array JSON dari objek. Menangani deteksi header, delimiter custom, field yang di-quote, dan newline tersisip. Berjalan di browser-mu."},
+        "vi": {"name": "CSV sang JSON", "tagline": "Chuyển dữ liệu CSV thành mảng JSON. Xử lý phát hiện header, delimiter tùy chỉnh, trường được quote và newline lồng nhau.", "description": "Bộ chuyển CSV sang JSON miễn phí trực tuyến. Phát hiện header tự động, hỗ trợ delimiter tùy chỉnh, trường được quote và newline trong giá trị. Toàn bộ chuyển đổi chạy cục bộ."},
     },
     "body": """
 <div class="tool-card">
@@ -245,6 +246,25 @@ document.addEventListener('DOMContentLoaded', cjRun);
   <li><strong>Type coercion punya opini.</strong> String numerik, <code>true</code>, <code>false</code>, dan literal <code>null</code> dikonversi ke tipe JSON. Hal-hal yang terlihat numerik tapi sebenarnya bukan (kode pos, ISBN dengan leading zero, nomor telepon) kehilangan leading zero — matikan coercion atau post-process.</li>
   <li><strong>Sel kosong jadi string kosong, bukan <code>null</code>.</strong> Sebagian besar API memperlakukan keduanya secara berbeda.</li>
   <li><strong>BOM di dunia nyata.</strong> Excel sering menyimpan UTF-8 dengan byte-order mark di Windows; parser mentoleransinya tapi consumer lain mungkin tidak.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>CSV là định dạng dữ liệu lingua franca — Excel, Google Sheets, dump cơ sở dữ liệu, file export — nhưng nó khó để chương trình xử lý so với JSON. Tool này phân tích CSV và xuất ra JSON tương ứng (mảng các object, một object trên mỗi hàng) sẵn sàng để fetch, console.log, hoặc đặt vào schema validator.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Chuyển một export CSV nhỏ thành JSON để seed cơ sở dữ liệu hoặc dùng làm test fixture.</li>
+  <li>Khám phá một file CSV — JSON dễ filter và truy vấn bằng tool dòng lệnh hơn.</li>
+  <li>Đưa dữ liệu CSV vào một API kỳ vọng JSON.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Delimiter không chỉ là dấu phẩy.</strong> CSV châu Âu thường dùng dấu chấm phẩy vì dấu phẩy là dấu thập phân trong các locale đó. Tool này cho phép bạn chọn delimiter.</li>
+  <li><strong>Field được quote có thể chứa newline.</strong> Một CSV well-formed quote các field chứa dấu phẩy hoặc newline. Đảm bảo parser hiểu điều đó — đừng split chỉ trên newline.</li>
+  <li><strong>Encoding nhập nhằng.</strong> File CSV có thể là UTF-8, Latin-1, Windows-1252, hoặc thậm chí UTF-16. Nếu ký tự đặc biệt trông xấu xí, encoding sai. Convert sang UTF-8 trước khi parse.</li>
+  <li><strong>Number trông giống chuỗi.</strong> CSV không có kiểu — mọi thứ là văn bản. Tool có thể auto-detect số, nhưng kiểm tra xem ID dài (snowflake, mã sản phẩm có 0 ở đầu) có bị hỏng không.</li>
 </ul>
 """,
     },

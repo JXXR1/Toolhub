@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Formatter — Toolhub</title>
+  <meta name="description" content="SQL formatter miễn phí trực tuyến. Làm đẹp truy vấn SQL với indent thích hợp hoặc minify thành một dòng. Hỗ trợ phương ngữ ANSI, MySQL và Postgres với từ khóa và quy tắc của chúng.">
+  <meta property="og:title" content="SQL Formatter — Toolhub">
+  <meta property="og:description" content="SQL formatter miễn phí trực tuyến. Làm đẹp truy vấn SQL với indent thích hợp hoặc minify thành một dòng. Hỗ trợ phương ngữ ANSI, MySQL và Postgres với từ khóa và quy tắc của chúng.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/vi/sql-formatter/">
+  <meta property="og:image" content="https://toolhub.software/og-images/sql-formatter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/sql-formatter.png">
+  <link rel="canonical" href="https://toolhub.software/vi/sql-formatter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/sql-formatter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/sql-formatter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/sql-formatter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/sql-formatter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/sql-formatter/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/sql-formatter/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/sql-formatter/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/sql-formatter/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/sql-formatter/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/sql-formatter/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/sql-formatter/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/sql-formatter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/sql-formatter/">
+  <meta property="og:locale" content="vi_VN">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/vi/sql-formatter/#tool",
+        "name": "SQL Formatter",
+        "description": "SQL formatter miễn phí trực tuyến. Làm đẹp truy vấn SQL với indent thích hợp hoặc minify thành một dòng. Hỗ trợ phương ngữ ANSI, MySQL và Postgres với từ khóa và quy tắc của chúng.",
+        "url": "https://toolhub.software/vi/sql-formatter/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "vi",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["sql", "format", "beautify", "minify", "indent", "mysql", "postgres", "ansi"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tất cả công cụ", "item": "https://toolhub.software/vi/"},
+          {"@type": "ListItem", "position": 2, "name": "SQL Formatter", "item": "https://toolhub.software/vi/sql-formatter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Công cụ này để làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Truy vấn SQL được viết một dòng hoặc copy-paste từ chương trình thường khó đọc. Tool này pretty-print SQL với indent thích hợp — keyword viết hoa, mệnh đề mỗi dòng, JOIN thẳng hàng — hoặc minify thành một dòng cho lưu trữ chặt chẽ. Có nhận biết phương ngữ (ANSI / MySQL / Postgres)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khi nào nên dùng",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Review truy vấn dài trong code review. Pretty-print SQL từ log ứng dụng để debug. Minify truy vấn tham số hóa trước khi paste vào string literal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lưu ý thường gặp",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dialect khác biệt. Backtick MySQL khác double quote Postgres. LIMIT không phải SQL chuẩn (đó là MySQL/Postgres ext). Đảm bảo phương ngữ tool khớp với của bạn. String literal có thể chứa cú pháp SQL. WHERE name = 'O'Brien' chứa apostrophe escaped — đừng nhầm với end của string. Formatter không phải validator. Một truy vấn được format đẹp vẫn có thể có lỗi cú pháp hoặc tham chiếu sai column."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "SQL Formatter",
+  "description": "Format và làm đẹp SQL với indent thích hợp, hoặc minify thành một dòng. Có nhận biết phương ngữ (ANSI / MySQL / Postgres).",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Dán SQL của bạn",
+      "text": "Đưa SQL của bạn vào ô Đầu vào."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Nhấn Định dạng",
+      "text": "Bấm nút Định dạng để chạy công cụ."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sao chép kết quả",
+      "text": "Bấm Sao chép để sao chép Đầu ra."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/vi/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Ngôn ngữ</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/sql-formatter/'; else location.href='/sql-formatter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" selected="selected">🇻🇳 VI</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Cài Toolhub như một ứng dụng trên thiết bị của bạn — hoạt động offline, không cần app store" aria-label="Cài Toolhub như một ứng dụng trên thiết bị của bạn — hoạt động offline, không cần app store">Cài ứng dụng</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/vi/">Tất cả công cụ</a> / SQL Formatter</div>
+    <h1>SQL Formatter</h1>
+    <p class="tagline">Format và làm đẹp SQL với indent thích hợp, hoặc minify thành một dòng. Có nhận biết phương ngữ (ANSI / MySQL / Postgres).</p>
+    
+<div class="tool-card">
+  <label>Đầu vào</label>
+  <textarea id="sf-in" oninput="sfRun()" spellcheck="false" placeholder="select * from users u join orders o on o.user_id=u.id where u.active=1 and o.total>100 order by o.total desc limit 10;" style="min-height:160px">select u.id, u.email, count(o.id) as order_count, sum(o.total) as total_spent from users u left join orders o on o.user_id = u.id where u.signup_date >= '2025-01-01' and u.active = true group by u.id, u.email having count(o.id) > 5 order by total_spent desc limit 100;</textarea>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Mode</label>
+      <select id="sf-mode" onchange="sfRun()">
+        <option value="pretty" selected>Làm đẹp</option>
+        <option value="minify">Rút gọn</option>
+      </select>
+    </div>
+    <div>
+      <label>Dialect</label>
+      <select id="sf-dialect" onchange="sfRun()">
+        <option value="ansi" selected>ANSI / standard</option>
+        <option value="mysql">MySQL</option>
+        <option value="postgres">PostgreSQL</option>
+      </select>
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Indent</label>
+      <select id="sf-indent" onchange="sfRun()">
+        <option value="2" selected>2 spaces</option>
+        <option value="4">4 spaces</option>
+        <option value="tab">Tab</option>
+      </select>
+    </div>
+    <div>
+      <label>Keyword case</label>
+      <select id="sf-case" onchange="sfRun()">
+        <option value="upper" selected>UPPERCASE</option>
+        <option value="lower">lowercase</option>
+        <option value="keep">Keep as typed</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Đầu ra</label>
+  <div class="output-row">
+    <pre class="output" id="sf-out" style="margin:0;flex:1">Nhập dữ liệu ở trên để xem kết quả.</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('sf-out', this)">Sao chép</button>
+  </div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Công cụ này để làm gì?</h2>
+<p>Truy vấn SQL được viết một dòng hoặc copy-paste từ chương trình thường khó đọc. Tool này pretty-print SQL với indent thích hợp — keyword viết hoa, mệnh đề mỗi dòng, JOIN thẳng hàng — hoặc minify thành một dòng cho lưu trữ chặt chẽ. Có nhận biết phương ngữ (ANSI / MySQL / Postgres).</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Review truy vấn dài trong code review.</li>
+  <li>Pretty-print SQL từ log ứng dụng để debug.</li>
+  <li>Minify truy vấn tham số hóa trước khi paste vào string literal.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Dialect khác biệt.</strong> Backtick MySQL khác double quote Postgres. <code>LIMIT</code> không phải SQL chuẩn (đó là MySQL/Postgres ext). Đảm bảo phương ngữ tool khớp với của bạn.</li>
+  <li><strong>String literal có thể chứa cú pháp SQL.</strong> <code>WHERE name = 'O'Brien'</code> chứa apostrophe escaped — đừng nhầm với end của string.</li>
+  <li><strong>Formatter không phải validator.</strong> Một truy vấn được format đẹp vẫn có thể có lỗi cú pháp hoặc tham chiếu sai column.</li>
+</ul>
+<div class="related"><span class="meta">Công cụ liên quan:</span> <a href="/vi/json-formatter/">JSON Formatter</a> <a href="/vi/xml-formatter/">XML Formatter</a> <a href="/vi/regex-tester/">Regex Tester</a> <a href="/vi/css-minifier/">CSS Minifier</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/vi/privacy/">Quyền riêng tư</a> · <a href="/vi/how-we-handle-your-data/">Xử lý dữ liệu</a> · <a href="/vi/affiliate-disclosure/">Tiết lộ affiliate</a> · <a href="/vi/about/">Giới thiệu</a> · <a href="/vi/contact/">Liên hệ</a> · <a href="/vi/for-schools/">Dành cho trường học</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const SF_TOP = ['SELECT','FROM','WHERE','GROUP BY','HAVING','ORDER BY','LIMIT','OFFSET','UNION','UNION ALL','INTERSECT','EXCEPT','VALUES','RETURNING','WITH'];
+const SF_JOINS = ['LEFT JOIN','RIGHT JOIN','INNER JOIN','FULL JOIN','LEFT OUTER JOIN','RIGHT OUTER JOIN','FULL OUTER JOIN','CROSS JOIN','JOIN'];
+const SF_NEWLINE_BEFORE = ['ON','AND','OR'];
+const SF_KW_BASE = ['SELECT','FROM','WHERE','GROUP','BY','HAVING','ORDER','LIMIT','OFFSET','UNION','ALL','INTERSECT','EXCEPT','VALUES','RETURNING','WITH','AS','ON','AND','OR','NOT','IN','LIKE','ILIKE','BETWEEN','IS','NULL','TRUE','FALSE','CASE','WHEN','THEN','ELSE','END','DISTINCT','INSERT','INTO','UPDATE','SET','DELETE','CREATE','TABLE','INDEX','VIEW','DROP','ALTER','ADD','COLUMN','PRIMARY','KEY','FOREIGN','REFERENCES','CONSTRAINT','UNIQUE','DEFAULT','CHECK','LEFT','RIGHT','INNER','OUTER','FULL','CROSS','JOIN','USING','ASC','DESC','EXISTS','ANY','SOME','BEGIN','COMMIT','ROLLBACK','TRANSACTION','EXPLAIN','ANALYZE','CAST','COUNT','SUM','AVG','MIN','MAX','COALESCE','NULLIF','IF','REPLACE'];
+const SF_DIALECT_KW = {
+  mysql: ['DUAL','LIMIT','OFFSET','IGNORE','LOW_PRIORITY','HIGH_PRIORITY','STRAIGHT_JOIN','SQL_CALC_FOUND_ROWS','LOCK','SHARE','UPDATE','SEPARATOR','GROUP_CONCAT'],
+  postgres: ['ILIKE','RETURNING','LATERAL','MATERIALIZED','USING','CONFLICT','DO','NOTHING','ARRAY','UNNEST','OVER','PARTITION'],
+  ansi: ['LATERAL','OVER','PARTITION','WINDOW','ROWS','RANGE','PRECEDING','FOLLOWING','UNBOUNDED','CURRENT','ROW']
+};
+
+function sfTokenize(sql){
+  const out = [];
+  let i = 0;
+  while(i < sql.length){
+    const c = sql[i];
+    // line comment
+    if(c === '-' && sql[i+1] === '-'){
+      const end = sql.indexOf('\n', i);
+      const stop = end === -1 ? sql.length : end;
+      out.push({t:'comment', v: sql.slice(i, stop)});
+      i = stop;
+      continue;
+    }
+    // block comment
+    if(c === '/' && sql[i+1] === '*'){
+      const end = sql.indexOf('*/', i+2);
+      const stop = end === -1 ? sql.length : end+2;
+      out.push({t:'comment', v: sql.slice(i, stop)});
+      i = stop;
+      continue;
+    }
+    // strings: ' or "
+    if(c === "'" || c === '"' || c === '`'){
+      let j = i+1;
+      while(j < sql.length){
+        if(sql[j] === c && sql[j-1] !== '\\'){ if(sql[j+1] === c){ j += 2; continue; } break; }
+        j++;
+      }
+      out.push({t:'str', v: sql.slice(i, j+1)});
+      i = j+1;
+      continue;
+    }
+    // whitespace
+    if(/\s/.test(c)){ i++; continue; }
+    // numbers
+    if(/[0-9]/.test(c)){
+      let j = i;
+      while(j < sql.length && /[0-9.eE+\-]/.test(sql[j]) && !(sql[j] === '-' && sql[j-1] !== 'e' && sql[j-1] !== 'E')) j++;
+      out.push({t:'num', v: sql.slice(i, j)});
+      i = j;
+      continue;
+    }
+    // identifier / keyword
+    if(/[A-Za-z_$]/.test(c)){
+      let j = i;
+      while(j < sql.length && /[A-Za-z0-9_$.]/.test(sql[j])) j++;
+      const v = sql.slice(i, j);
+      out.push({t:'word', v});
+      i = j;
+      continue;
+    }
+    // operators / punctuation
+    const two = sql.slice(i, i+2);
+    if(['<=','>=','<>','!=','||','::'].includes(two)){
+      out.push({t:'op', v: two}); i += 2; continue;
+    }
+    out.push({t:'punc', v: c});
+    i++;
+  }
+  return out;
+}
+
+function sfApplyCase(word, mode){
+  if(mode === 'upper') return word.toUpperCase();
+  if(mode === 'lower') return word.toLowerCase();
+  return word;
+}
+
+function sfFormat(sql, opts){
+  const indent = opts.indent;
+  const caseMode = opts.case;
+  const dialectKW = new Set([...SF_KW_BASE, ...(SF_DIALECT_KW[opts.dialect] || [])].map(k => k.toUpperCase()));
+  const tokens = sfTokenize(sql);
+  // Pre-pass: combine multi-word keywords (LEFT JOIN, GROUP BY, ORDER BY, UNION ALL, etc.)
+  const combined = [];
+  for(let i = 0; i < tokens.length; i++){
+    const t = tokens[i];
+    if(t.t === 'word'){
+      const u = t.v.toUpperCase();
+      const next = tokens[i+1];
+      const next2 = tokens[i+2];
+      const tryThree = next && next.t === 'word' && next2 && next2.t === 'word'
+        ? (u + ' ' + next.v.toUpperCase() + ' ' + next2.v.toUpperCase()) : null;
+      const tryTwo = next && next.t === 'word' ? (u + ' ' + next.v.toUpperCase()) : null;
+      const all = [...SF_TOP, ...SF_JOINS];
+      if(tryThree && all.includes(tryThree)){
+        combined.push({t:'kw', v: tryThree, isTop: SF_TOP.includes(tryThree), isJoin: SF_JOINS.includes(tryThree)});
+        i += 2; continue;
+      }
+      if(tryTwo && all.includes(tryTwo)){
+        combined.push({t:'kw', v: tryTwo, isTop: SF_TOP.includes(tryTwo), isJoin: SF_JOINS.includes(tryTwo)});
+        i += 1; continue;
+      }
+      if(dialectKW.has(u)){
+        combined.push({t:'kw', v: u, isTop: false, isJoin: false});
+      } else {
+        combined.push({t:'ident', v: t.v});
+      }
+      continue;
+    }
+    combined.push(t);
+  }
+
+  // Render
+  let out = '';
+  let depth = 0; // paren depth — affects sub-clause indent
+  let needSpace = false;
+  let lastChar = '';
+  const pad = () => indent.repeat(depth);
+
+  function write(s){ out += s; lastChar = s.slice(-1); needSpace = !/\s$/.test(s) && s !== ''; }
+  function nl(extraIndent){ out = out.replace(/[ \t]+$/, ''); out += '\n' + indent.repeat(depth) + (extraIndent ? indent : ''); needSpace = false; }
+
+  for(let i = 0; i < combined.length; i++){
+    const t = combined[i];
+    if(t.t === 'kw'){
+      const upper = t.v;
+      const display = caseMode === 'keep' ? sql.slice(0,0) /* fallback */ : sfApplyCase(t.v, caseMode);
+      // Top-level clause: line break before, no indent inside parens beyond depth
+      if(t.isTop){
+        if(out.trim() !== '') nl(false);
+        write((caseMode === 'keep' ? upper : display));
+        // Force newline+indent after top keyword in many cases:
+        // SELECT/FROM/WHERE/etc — items after will be inline; we just leave one space
+        continue;
+      }
+      if(t.isJoin){
+        if(out.trim() !== '') nl(false);
+        write(caseMode === 'keep' ? upper : display);
+        continue;
+      }
+      if(SF_NEWLINE_BEFORE.includes(upper) && depth === 0){
+        nl(true);
+        write(caseMode === 'keep' ? upper : display);
+        continue;
+      }
+      // keyword inline
+      if(needSpace) write(' ');
+      write(caseMode === 'keep' ? upper : display);
+      continue;
+    }
+    if(t.t === 'comment'){
+      if(out.trim() !== ''){ nl(false); }
+      write(t.v);
+      nl(false);
+      continue;
+    }
+    if(t.t === 'punc'){
+      if(t.v === '('){
+        write('(');
+        depth++;
+        continue;
+      }
+      if(t.v === ')'){
+        depth = Math.max(0, depth-1);
+        out = out.replace(/[ \t]+$/, '');
+        write(')');
+        continue;
+      }
+      if(t.v === ','){
+        out = out.replace(/[ \t]+$/, '');
+        write(',');
+        // newline-after-comma inside SELECT list when at depth 0 only
+        if(depth === 0){ nl(true); }
+        else { write(' '); }
+        continue;
+      }
+      if(t.v === ';'){ write(';'); continue; }
+      // other punc: just write
+      if(needSpace && !'.'.includes(t.v) && !')'.includes(t.v)) write('');
+      write(t.v);
+      continue;
+    }
+    if(t.t === 'op'){
+      if(needSpace) write(' ');
+      write(t.v);
+      write(' ');
+      continue;
+    }
+    if(t.t === 'str' || t.t === 'num' || t.t === 'ident'){
+      if(needSpace && !/^[).,;]/.test(t.v) && lastChar !== '.' && lastChar !== '(' && lastChar !== '') write(' ');
+      write(t.v);
+      continue;
+    }
+  }
+  return out.split('\n').map(l => l.replace(/\s+$/, '')).join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+function sfMinify(sql){
+  const tokens = sfTokenize(sql);
+  const parts = [];
+  for(const t of tokens){
+    if(t.t === 'comment') continue;
+    parts.push(t.v);
+  }
+  // Re-join with single spaces, but no space before punctuation
+  let s = '';
+  for(let i = 0; i < parts.length; i++){
+    const cur = parts[i];
+    const prev = parts[i-1] || '';
+    const noSpaceBefore = /^[),;.]$/.test(cur);
+    const noSpaceAfter = /[(.]$/.test(prev);
+    if(s && !noSpaceBefore && !noSpaceAfter) s += ' ';
+    s += cur;
+  }
+  return s.replace(/\s+/g, ' ').trim();
+}
+
+function sfRun(){
+  const inp = document.getElementById('sf-in').value;
+  const out = document.getElementById('sf-out');
+  out.classList.remove('error');
+  if(!inp.trim()){ out.textContent = 'Nhập dữ liệu ở trên để xem kết quả.'; return; }
+  try {
+    const mode = document.getElementById('sf-mode').value;
+    if(mode === 'minify'){ out.textContent = sfMinify(inp); return; }
+    const indentChoice = document.getElementById('sf-indent').value;
+    const indent = indentChoice === 'tab' ? '\t' : ' '.repeat(parseInt(indentChoice, 10));
+    const opts = {
+      indent,
+      case: document.getElementById('sf-case').value,
+      dialect: document.getElementById('sf-dialect').value
+    };
+    out.textContent = sfFormat(inp, opts);
+  } catch(e){
+    out.classList.add('error');
+    out.textContent = '✗ ' + e.message;
+  }
+}
+document.addEventListener('DOMContentLoaded', sfRun);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

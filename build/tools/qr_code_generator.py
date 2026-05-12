@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "QR Code Generator", "tagline": "Genereer QR codes voor elke tekst, URL, Wi-Fi of vCard. Custom size, kleuren en error correction. Export PNG of SVG.", "description": "Gratis online QR code generator. Custom size, foreground/background-kleuren, error correction levels. Download als PNG of SVG. Geen watermerken."},
         "tr": {"name": "QR Kod Üretici", "tagline": "Herhangi bir metin, URL, Wi-Fi veya vCard için QR kod üret. Özel boyut, renkler ve hata düzeltme. PNG veya SVG olarak dışa aktar.", "description": "Ücretsiz online QR kod üretici. Özel boyut, ön plan/arka plan renkleri, hata düzeltme seviyeleri. PNG veya SVG olarak indir. Filigran yok."},
         "id": {"name": "Generator Kode QR", "tagline": "Hasilkan kode QR untuk teks, URL, Wi-Fi, atau vCard apa pun. Ukuran custom, warna, dan koreksi error. Export sebagai PNG atau SVG.", "description": "Generator kode QR online gratis. Hasilkan kode QR untuk URL, teks, Wi-Fi, vCard, email, telepon, dan SMS. Ukuran, warna, level error correction yang dapat dikonfigurasi. Export PNG atau SVG. Berjalan offline di browser-mu."},
+        "vi": {"name": "Tạo Mã QR", "tagline": "Tạo mã QR cho bất kỳ văn bản, URL, Wi-Fi hoặc vCard nào. Kích thước tùy chỉnh, màu và mức sửa lỗi. Xuất dưới dạng PNG hoặc SVG.", "description": "Trình tạo mã QR miễn phí trực tuyến. Encode văn bản, URL, thông tin đăng nhập Wi-Fi hoặc vCard thành mã QR có thể xuất dưới dạng PNG hoặc SVG với màu và mức sửa lỗi tùy chỉnh."},
     },
     "body": """
 <div class="tool-card">
@@ -290,6 +291,25 @@ document.addEventListener('DOMContentLoaded', () => { setTimeout(qrRender, 100);
   <li><strong>Konten panjang memaksa code lebih padat.</strong> Jika kamu harus encode URL 200 karakter, hasilnya padat dan lebih sulit di-scan dari jauh. Persingkat lewat redirect dulu jika ukuran penting.</li>
   <li><strong>SVG vs PNG.</strong> SVG scale tanpa kehilangan kualitas — terbaik untuk cetak atau display besar. PNG diterima universal tapi piksel jika di-scale ke atas; export di ukuran yang akan kamu pakai.</li>
   <li><strong>Format preset Wi-Fi.</strong> <code>WIFI:T:WPA;S:&lt;SSID&gt;;P:&lt;password&gt;;;</code> — iOS/Android modern men-scan dan join otomatis; ponsel sangat lama mungkin tidak mendukung.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>QR code mã hóa văn bản dưới dạng pattern đen-trắng có thể đọc bằng camera. Hữu ích cho mọi thứ từ URL ngắn đến vCard chứa thông tin liên hệ đến mật khẩu Wi-Fi mà khách có thể quét. Tool này tạo QR code cho văn bản, URL, Wi-Fi, hoặc vCard với màu và mức sửa lỗi tùy chỉnh; xuất dưới dạng PNG hoặc SVG.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Treo poster với URL đến trang đăng ký event.</li>
+  <li>Chia sẻ mật khẩu Wi-Fi với khách mà không cần đọc to.</li>
+  <li>In vCard QR code trên business card.</li>
+  <li>Test login token một-lần qua QR code.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Mức sửa lỗi tăng kích thước.</strong> Cao hơn = QR phục hồi từ damage tốt hơn nhưng dày hơn. L (7%) cho điều kiện in tốt, H (30%) khi nó có thể được phủ logo.</li>
+  <li><strong>Tương phản quan trọng.</strong> Đen trên trắng là an toàn nhất. Color reverse (trắng trên đen) thường ổn nhưng kiểm tra với phone.</li>
+  <li><strong>Test trên phone trước khi in.</strong> Một số scanner cũ kén chọn — kiểm tra QR với app camera tiêu chuẩn iOS và Android trước khi đặt hàng 10.000 bản in.</li>
 </ul>
 """,
     },

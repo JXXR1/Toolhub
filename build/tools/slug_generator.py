@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Slug Generator", "tagline": "Maak van elke titel een schone URL-slug — translitereert accenten, strijkt punctuation, voegt met hyphens samen.", "description": "Gratis online URL slug generator. Maakt lowercase, translitereert accenten (à → a, ñ → n), strijkt punctuation en voegt woorden samen met een gekozen separator. Stop-word removal optioneel."},
         "tr": {"name": "Slug Üretici", "tagline": "Herhangi bir başlığı temiz URL slug'a dönüştür — aksanları transliter eder, noktalama temizler, tirelerle birleştirir.", "description": "Ücretsiz online URL slug üretici. Küçük harfe çevirir, aksanlı karakterleri transliter eder (à → a, ñ → n), noktalama işaretlerini temizler ve kelimeleri seçilen ayraçla birleştirir. Stop-word kaldırma opsiyoneldir."},
         "id": {"name": "Slug Generator", "tagline": "Ubah judul apa pun menjadi URL slug bersih — transliterate aksen, strip tanda baca, satukan dengan tanda hubung.", "description": "Slug generator gratis. Ubah judul apa pun menjadi slug URL ramah-SEO: lowercase, transliterate aksen (café → cafe), strip tanda baca, dan gabungkan kata dengan tanda hubung. Sempurna untuk permalink dan path konten."},
+        "vi": {"name": "Tạo Slug", "tagline": "Biến bất kỳ tiêu đề nào thành URL slug sạch — chuyển tự chữ có dấu, bỏ dấu câu, nối bằng dấu gạch ngang.", "description": "Trình tạo slug miễn phí trực tuyến. Biến tiêu đề thành URL slug thân thiện với SEO — chuyển tự chữ có dấu sang ASCII, bỏ dấu câu, viết thường tất cả và nối các từ bằng dấu gạch ngang."},
     },
     "body": """
 <div class="tool-card">
@@ -313,6 +314,24 @@ document.addEventListener('DOMContentLoaded', sgRun);
   <li><strong>Truncation bisa mengubah makna.</strong> "introduction-to-rust-programming" dipotong ke 20 karakter jadi "introduction-to-rust" — oke; dipotong ke 16 jadi "introduction-to" — jelas lebih buruk. Atur limit manual untuk konten di mana ekor penting.</li>
   <li><strong>Slug tidak unik.</strong> Dua judul berbeda bisa collapse ke slug yang sama ("Café" dan "Cafe" keduanya → <code>cafe</code>). Jika kamu memakai slug sebagai URL key, append ID pendek atau suffix saat tabrakan.</li>
   <li><strong>Jangan ubah slug yang sudah di-ship.</strong> Setelah URL live dan terindeks, regenerasi slug-nya merusak link dan SEO. Jika judul berubah, pertahankan slug lama atau setup 301 redirect.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>URL slug là phần URL chứa keyword: <code>/blog/my-great-post</code>. Slug nên là chữ thường, không có space, không có dấu câu, và không có dấu (accent). Tool này biến bất kỳ tiêu đề nào thành slug đẹp — chuyển tự chữ có dấu sang ASCII, bỏ dấu câu, viết thường tất cả và nối các từ bằng dấu gạch ngang.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Bài blog mới — biến tiêu đề thành URL slug.</li>
+  <li>Trang sản phẩm — tạo slug từ tên sản phẩm.</li>
+  <li>Anchor heading trong tài liệu — slug heading tạo anchor ID.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Slug nên là duy nhất.</strong> Hai bài "My Day" sẽ tạo cùng slug — backend nên thêm hậu tố hoặc append ID.</li>
+  <li><strong>Đừng đổi slug đã ship.</strong> Slug là phần permalink — đổi nó vỡ link. Nếu bạn phải, set up redirect.</li>
+  <li><strong>Chữ tiếng Việt và châu Á.</strong> Chuyển tự (transliteration) loại bỏ dấu thì OK cho Việt nhưng tiếng Trung và tiếng Nhật cần pinyin/romaji — không có quy tắc chung. Tool này keep ASCII chữ cái thông qua các quy tắc tiêu chuẩn.</li>
 </ul>
 """,
     },

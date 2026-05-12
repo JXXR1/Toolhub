@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "Tijdzone-converter", "tagline": "Converteer een datum en tijd tussen IANA-tijdzones. Zie offsets, DST-status en weekdag voor beide kanten.", "description": "Gratis online tijdzone-converter. Converteer tussen elke IANA-tijdzone met DST-awareness. Kies uit veelgebruikte zones of een van de ~400+ die je browser ondersteunt."},
         "tr": {"name": "Saat Dilimi Dönüştürücü", "tagline": "Bir tarih ve saati IANA saat dilimleri arasında dönüştür. Her iki uç için offset, DST durumu ve haftanın gününü gör.", "description": "Ücretsiz online saat dilimi dönüştürücü. DST farkındalığıyla herhangi bir IANA saat dilimleri arasında dönüştür. Yaygın dilimlerden veya tarayıcının desteklediği ~400+ taneden birini seç."},
         "id": {"name": "Konverter Zona Waktu", "tagline": "Konversi tanggal dan waktu antara zona waktu IANA. Lihat offset, status DST, dan hari dalam minggu untuk kedua ujung.", "description": "Konverter zona waktu gratis. Konversi waktu apa pun antara zona waktu IANA (Asia/Jakarta, America/New_York, Europe/London, dll). Menampilkan offset UTC, status DST, dan hari dalam minggu untuk zona sumber dan zona target."},
+        "vi": {"name": "Chuyển đổi Múi giờ", "tagline": "Chuyển ngày-giờ giữa các múi giờ IANA. Xem offset, trạng thái DST và thứ trong tuần cho cả hai đầu.", "description": "Bộ chuyển múi giờ miễn phí trực tuyến. Chuyển bất kỳ ngày-giờ nào giữa các múi giờ IANA, hiển thị UTC offset, trạng thái DST và thứ trong tuần cho cả múi giờ nguồn và đích."},
     },
     "body": """
 <div class="tool-card">
@@ -339,6 +340,24 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Singkatan negara bukan zona.</strong> "EST" ambigu (US vs Australia); "IST" bisa berarti India, Irlandia, atau Israel. Selalu pilih IANA zone, bukan singkatan.</li>
   <li><strong>Akurasi historis</strong> bagus untuk era modern tapi rusak untuk tanggal yang sangat lama. Timestamp pra-1970 mungkin pakai offset perkiraan di beberapa browser.</li>
   <li><strong>Menyimpan tanggal: selalu pakai UTC.</strong> Konversi saat display. Baris UTC di output memberi kamu nilai kanonik untuk ditulis ke database.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>"3pm London thứ Năm là mấy giờ ở Tokyo?" Câu trả lời phụ thuộc vào DST và quy ước múi giờ địa phương. Tool này dùng database múi giờ IANA tích hợp của trình duyệt để chuyển bất kỳ ngày-giờ nào giữa các múi giờ, hiển thị UTC offset, trạng thái DST và thứ trong tuần cho cả hai đầu.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Lên lịch họp với đồng nghiệp ở múi giờ khác.</li>
+  <li>Hiểu log có timestamp UTC trong khi system của bạn ở múi giờ địa phương.</li>
+  <li>Đặt cron job UTC trong khi nghĩ theo múi giờ địa phương.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>DST làm gấp đôi và bỏ qua giờ.</strong> Vào "spring forward", một giờ không tồn tại; "fall back", một giờ xảy ra hai lần. Lưu trữ ở UTC và convert chỉ ở display để tránh xung đột.</li>
+  <li><strong>Tên múi giờ thay đổi.</strong> "GMT" không cập nhật DST; "BST" làm. "EST" không cập nhật DST; "EDT" làm. Để tránh lẫn lộn, dùng tên IANA (<code>Europe/London</code>, <code>America/New_York</code>) khi có thể.</li>
+  <li><strong>Chính phủ thay đổi quy tắc.</strong> Múi giờ là chính trị. Brazil, Mexico và một số bang Mỹ đã thay đổi quy tắc DST gần đây — đảm bảo OS của bạn cập nhật.</li>
 </ul>
 """,
     },

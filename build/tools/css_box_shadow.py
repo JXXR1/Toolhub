@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "CSS Box-Shadow Generator", "tagline": "Bouw visueel single- of multi-layer CSS box shadows. Stel offset, blur, spread en kleur in en kopieer CSS.", "description": "Gratis CSS box-shadow generator. Stack meerdere shadows voor realistische elevation, toggle inset, fine-tune blur en spread en kopieer production-ready CSS in één klik."},
         "tr": {"name": "CSS Box Shadow Oluşturucu", "tagline": "Tek veya çok katmanlı CSS box shadow'ları görsel olarak kur. Offset, blur, spread, renk ayarla ve CSS'i kopyala.", "description": "Ücretsiz CSS box-shadow oluşturucu. Gerçekçi yükseklik için birden fazla gölgeyi üst üste bin, inset'i aç/kapa, blur ve spread'i ince ayarla ve üretime hazır CSS'i tek tıkla kopyala."},
         "id": {"name": "Pembangun CSS Box Shadow", "tagline": "Susun box-shadow CSS tunggal atau berlapis secara visual. Atur offset, blur, spread, warna, dan salin CSS-nya.", "description": "Pembangun CSS box shadow gratis. Susun shadow tunggal atau berlapis secara visual dengan kontrol offset, blur, spread, warna, dan inset. Pratinjau langsung dan CSS siap-salin."},
+        "vi": {"name": "CSS Box Shadow Builder", "tagline": "Soạn box-shadow CSS đơn hoặc xếp lớp một cách trực quan. Điều chỉnh offset, blur, spread, màu và sao chép CSS.", "description": "Trình xây dựng CSS box-shadow miễn phí trực tuyến. Soạn shadow đơn hoặc nhiều lớp; điều chỉnh offset, blur, spread, màu và inset, sau đó sao chép CSS sẵn-dùng."},
     },
     "body": """
 <div class="tool-card">
@@ -333,6 +334,26 @@ document.addEventListener('DOMContentLoaded', () => { bsRender(); bsRun(); });
   <li><strong>Shadow di background transparan.</strong> Kalau kotak tidak punya <code>background</code>, shadow akan menembus kotaknya sendiri — biasanya mengagetkan.</li>
   <li><strong>Performance:</strong> blur sangat besar di banyak elemen bisa mahal di mobile low-end. Test di device sungguhan sebelum ship glow yang mewah.</li>
   <li><strong>Dark mode.</strong> Shadow dark-on-dark yang subtle hampir hilang; pertimbangkan inner border terang atau shadow ber-tint terang di tema gelap.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Thuộc tính CSS <code>box-shadow</code> nhận một danh sách các shadow, mỗi shadow có offset, blur, spread, màu và cờ inset tùy chọn. Cú pháp ngắn gọn nhưng cảm giác khó tinh chỉnh số một cách trực quan. Trình xây dựng này cho phép bạn kéo các thanh trượt cho từng tham số, xếp lớp nhiều shadow để có hiệu ứng phức tạp, và sao chép CSS hoàn thành.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Tạo hiệu ứng nâng "card" cổ điển — shadow nhỏ phía dưới và bên phải.</li>
+  <li>Xếp lớp shadow để có hiệu ứng nâng chân thực (gần và xa) như trong Material Design.</li>
+  <li>Tạo glow xung quanh element bằng cách dùng blur cao, spread thấp và shadow màu.</li>
+  <li>Thiết kế highlight inset và "vết nứt" của neumorphism.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Spread không phải là blur.</strong> Spread mở rộng (hoặc thu nhỏ với giá trị âm) vùng phủ shadow trước khi blur. Hai tham số này thường bị lẫn lộn.</li>
+  <li><strong>Inset đảo ngược shadow.</strong> Inset shadow ở bên trong element thay vì bên ngoài. Hữu ích cho hiệu ứng punched-in, nhưng nó vẽ <em>bên trong</em> phần background, không phải overlay lên nội dung.</li>
+  <li><strong>Hiệu suất bị ảnh hưởng bởi blur lớn và shadow xếp lớp.</strong> Trên các trang dày đặc, shadow lớn có thể ảnh hưởng đến framerate. Hãy giữ chúng vừa phải hoặc dùng filter SVG cho hiệu ứng phức tạp.</li>
+  <li><strong>Border-radius cắt shadow.</strong> Box-shadow theo đường viền của element, bao gồm cả góc bo. Nếu bạn muốn shadow là chữ nhật trong khi element là tròn, cần một wrapper.</li>
 </ul>
 """,
     },

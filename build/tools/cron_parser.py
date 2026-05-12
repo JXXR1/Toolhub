@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "Cron Expression Parser", "tagline": "Parse cron-expressies en zie de volgende 10 fire times. Standaard 5-veld crontab.", "description": "Gratis online cron expression parser. Valideert 5-veld crontab-syntax en lijst de volgende 10 geplande fire times in je lokale tijdzone."},
         "tr": {"name": "Cron İfadesi Parser", "tagline": "Cron ifadelerini parse et ve sonraki 10 çalışma zamanını gör. Standart 5 alanlı crontab.", "description": "Ücretsiz online cron ifadesi parser. 5 alanlı crontab sözdizimini doğrular ve yerel saat diliminde planlanan sonraki 10 çalışma zamanını listeler."},
         "id": {"name": "Cron Expression Parser", "tagline": "Parse ekspresi cron dan lihat 10 waktu run berikutnya. Crontab 5-field standar.", "description": "Parser ekspresi cron gratis. Tempel ekspresi cron apa pun dan lihat 10 waktu eksekusi berikutnya dengan zona waktu yang dapat dipilih. Mendukung crontab 5-field standar dengan steps, ranges, dan list."},
+        "vi": {"name": "Cron Expression Parser", "tagline": "Phân tích biểu thức cron và xem 10 lần chạy kế tiếp. Crontab 5-trường chuẩn.", "description": "Cron parser miễn phí trực tuyến. Dán biểu thức crontab 5-trường chuẩn và xem 10 lần chạy kế tiếp được tính theo múi giờ của bạn."},
     },
     "body": """
 <div class="tool-card">
@@ -381,6 +382,24 @@ document.addEventListener('DOMContentLoaded', cronRun);
   <li><strong>Kombinasi step + range.</strong> <code>0-30/5</code> = 0,5,10,15,20,25,30. Step hanya berlaku dalam range.</li>
   <li><strong>Timezone di sini adalah zona lokal browser.</strong> Daemon cron sungguhan jalan di server time (sering UTC). Schedule yang tampak baik di browser-mu bisa jalan di waktu wall-clock berbeda di server.</li>
   <li><strong>Beberapa dialek cron menambah field.</strong> Quartz cron punya 6 atau 7 field (dengan detik dan tahun). systemd timer pakai format yang sama sekali berbeda. Tool ini mem-parse crontab standar 5-field.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Một biểu thức cron như <code>0 2 * * 1-5</code> không cho bạn biết khi nào nó sẽ chạy tiếp theo — chỉ là khi nào nó <em>khớp</em>. Để biết các lần chạy thực tế bạn cần kết hợp cú pháp với một múi giờ và lịch dương lịch. Tool này phân tích bất kỳ biểu thức crontab 5-trường tiêu chuẩn nào và liệt kê 10 lần khớp tiếp theo bắt đầu từ "bây giờ".</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Xác nhận cron job mới sẽ kích hoạt khi bạn nghĩ — đặc biệt khi giáp ranh DST.</li>
+  <li>Diễn giải cron không quen thuộc trong codebase được kế thừa.</li>
+  <li>Cảnh báo trên oncall rotation gặp một cron bí ẩn và bạn cần biết "tôi có bao nhiêu thời gian trước lần chạy tiếp theo?"</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Lần chạy tiếp theo phụ thuộc vào múi giờ.</strong> Cron không có múi giờ tích hợp; máy chủ điều hành nó quyết định. Tool này hiển thị lần chạy trong múi giờ trình duyệt cục bộ của bạn — kiểm tra cài đặt của runner.</li>
+  <li><strong>Phương ngữ năm trường.</strong> Cron POSIX là 5 trường (phút giờ ngày tháng dow). Spring/Quartz/AWS thêm trường giây hoặc năm. Đảm bảo phương ngữ bạn dán khớp.</li>
+  <li><strong>Trường tháng và ngày-trong-tuần OR.</strong> Khi cả hai được hạn chế, cron POSIX khớp <em>hoặc</em> — không phải cả hai. Vì vậy <code>0 0 1 * 0</code> chạy vào ngày 1 của mỗi tháng <em>và</em> mỗi Chủ Nhật.</li>
 </ul>
 """,
     },

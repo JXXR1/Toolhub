@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra cứu MIME Type — Toolhub</title>
+  <meta name="description" content="Tra cứu MIME type miễn phí trực tuyến. Tìm theo phần mở rộng file hoặc theo chuỗi MIME type trên ~120 loại phổ biến (image, video, audio, application, text, font). Hữu ích để cấu hình server và header Content-Type.">
+  <meta property="og:title" content="Tra cứu MIME Type — Toolhub">
+  <meta property="og:description" content="Tra cứu MIME type miễn phí trực tuyến. Tìm theo phần mở rộng file hoặc theo chuỗi MIME type trên ~120 loại phổ biến (image, video, audio, application, text, font). Hữu ích để cấu hình server và header Content-Type.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/vi/mime-type-lookup/">
+  <meta property="og:image" content="https://toolhub.software/og-images/mime-type-lookup.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/mime-type-lookup.png">
+  <link rel="canonical" href="https://toolhub.software/vi/mime-type-lookup/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/mime-type-lookup/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/mime-type-lookup/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/mime-type-lookup/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/mime-type-lookup/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/mime-type-lookup/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/mime-type-lookup/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/mime-type-lookup/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/mime-type-lookup/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/mime-type-lookup/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/mime-type-lookup/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/mime-type-lookup/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/mime-type-lookup/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/mime-type-lookup/">
+  <meta property="og:locale" content="vi_VN">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/vi/mime-type-lookup/#tool",
+        "name": "Tra cứu MIME Type",
+        "description": "Tra cứu MIME type miễn phí trực tuyến. Tìm theo phần mở rộng file hoặc theo chuỗi MIME type trên ~120 loại phổ biến (image, video, audio, application, text, font). Hữu ích để cấu hình server và header Content-Type.",
+        "url": "https://toolhub.software/vi/mime-type-lookup/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "vi",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["mime", "type", "extension", "content-type", "file", "media"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tất cả công cụ", "item": "https://toolhub.software/vi/"},
+          {"@type": "ListItem", "position": 2, "name": "Tra cứu MIME Type", "item": "https://toolhub.software/vi/mime-type-lookup/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Công cụ này để làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mỗi file trên web có một MIME type — image/png , application/json , text/html — báo cho trình duyệt loại file đó là gì và cách hiển thị. Tool này có một tra cứu hai chiều: cho extension, nhận MIME type; hoặc cho MIME type, nhận extension(s). Hữu ích để cấu hình server và header Content-Type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Khi nào nên dùng",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cấu hình NGINX hoặc Apache để serve file mới với type chính xác. Đặt header Content-Type chính xác trong response API. Decide extension dùng cho upload file khi bạn chỉ có MIME type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lưu ý thường gặp",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đừng tin MIME type của client. Trình duyệt và app gửi Content-Type từ user input — kiểm tra file content (magic byte) để bảo mật. Cùng file có thể có nhiều type. .docx có thể là Office Open XML (chính thức) hoặc tổng hợp ZIP cũ (đáng tin trên Mac). Tool này hiển thị tất cả các loại đã biết. Type tùy chỉnh. Bạn có thể đăng ký MIME type cho format proprietary ( application/vnd.acme-format+json ) — IANA quản lý registry."
+      }
+    }
+  ]
+}
+</script>
+  
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/vi/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Ngôn ngữ</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/mime-type-lookup/'; else location.href='/mime-type-lookup/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" selected="selected">🇻🇳 VI</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Cài Toolhub như một ứng dụng trên thiết bị của bạn — hoạt động offline, không cần app store" aria-label="Cài Toolhub như một ứng dụng trên thiết bị của bạn — hoạt động offline, không cần app store">Cài ứng dụng</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/vi/">Tất cả công cụ</a> / Tra cứu MIME Type</div>
+    <h1>Tra cứu MIME Type</h1>
+    <p class="tagline">Tra cứu MIME type theo phần mở rộng hoặc type. ~120 loại phổ biến — image, video, audio, application, text, font.</p>
+    
+<div class="tool-card">
+  <label>Filter</label>
+  <input type="text" id="mt-q" oninput="mtRun()" placeholder="Type an extension or a MIME type — '.pdf', 'png', 'image/', 'video', 'json'…" autocomplete="off" spellcheck="false">
+  <div class="meta" id="mt-count" style="margin-top:0.4rem"></div>
+</div>
+<div class="tool-card">
+  <label>Kết quả</label>
+  <div id="mt-out"></div>
+</div>
+
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Công cụ này để làm gì?</h2>
+<p>Mỗi file trên web có một MIME type — <code>image/png</code>, <code>application/json</code>, <code>text/html</code> — báo cho trình duyệt loại file đó là gì và cách hiển thị. Tool này có một tra cứu hai chiều: cho extension, nhận MIME type; hoặc cho MIME type, nhận extension(s). Hữu ích để cấu hình server và header Content-Type.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Cấu hình NGINX hoặc Apache để serve file mới với type chính xác.</li>
+  <li>Đặt header <code>Content-Type</code> chính xác trong response API.</li>
+  <li>Decide extension dùng cho upload file khi bạn chỉ có MIME type.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Đừng tin MIME type của client.</strong> Trình duyệt và app gửi <code>Content-Type</code> từ user input — kiểm tra file content (magic byte) để bảo mật.</li>
+  <li><strong>Cùng file có thể có nhiều type.</strong> <code>.docx</code> có thể là Office Open XML (chính thức) hoặc tổng hợp ZIP cũ (đáng tin trên Mac). Tool này hiển thị tất cả các loại đã biết.</li>
+  <li><strong>Type tùy chỉnh.</strong> Bạn có thể đăng ký MIME type cho format proprietary (<code>application/vnd.acme-format+json</code>) — IANA quản lý registry.</li>
+</ul>
+<div class="related"><span class="meta">Công cụ liên quan:</span> <a href="/vi/http-status-codes/">Mã trạng thái HTTP</a> <a href="/vi/image-to-base64/">Ảnh sang Base64</a> <a href="/vi/url-encoder/">URL Encoder / Decoder</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/vi/privacy/">Quyền riêng tư</a> · <a href="/vi/how-we-handle-your-data/">Xử lý dữ liệu</a> · <a href="/vi/affiliate-disclosure/">Tiết lộ affiliate</a> · <a href="/vi/about/">Giới thiệu</a> · <a href="/vi/contact/">Liên hệ</a> · <a href="/vi/for-schools/">Dành cho trường học</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.mt-list{display:grid;gap:0.4rem}
+.mt-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.7rem;padding:0.55rem 0.8rem;border:1px solid var(--border);background:var(--bg-elev);border-radius:6px;align-items:center;font-family:ui-monospace,monospace;font-size:0.85rem}
+.mt-mime{font-weight:600;color:var(--text)}
+.mt-ext{color:var(--accent)}
+.mt-desc{color:var(--text-muted);font-size:0.8rem;font-family:-apple-system,sans-serif}
+.mt-empty{color:var(--text-muted);text-align:center;padding:1.5rem 0}
+@media (max-width:700px){.mt-row{grid-template-columns:1fr}}
+</style>
+<script>
+const MIME_TYPES = [
+  ['text/plain', '.txt', 'Plain text'],
+  ['text/html', '.html .htm', 'HyperText Markup Language'],
+  ['text/css', '.css', 'Cascading Style Sheets'],
+  ['text/csv', '.csv', 'Comma-separated values'],
+  ['text/javascript', '.js .mjs', 'JavaScript (text/javascript is preferred over application/javascript per RFC 9239)'],
+  ['text/markdown', '.md .markdown', 'Markdown source'],
+  ['text/calendar', '.ics', 'iCalendar event'],
+  ['text/vcard', '.vcf', 'vCard contact'],
+  ['text/xml', '.xml', 'XML (text/xml; prefer application/xml for new code)'],
+  ['text/tab-separated-values', '.tsv', 'Tab-separated values'],
+  ['text/yaml', '.yaml .yml', 'YAML (de facto — no IANA registration)'],
+  ['application/json', '.json', 'JSON document'],
+  ['application/ld+json', '.jsonld', 'JSON-LD linked-data'],
+  ['application/xml', '.xml', 'XML document'],
+  ['application/xhtml+xml', '.xhtml', 'XHTML'],
+  ['application/javascript', '.js', 'JavaScript (legacy — use text/javascript)'],
+  ['application/wasm', '.wasm', 'WebAssembly module'],
+  ['application/pdf', '.pdf', 'Portable Document Format'],
+  ['application/zip', '.zip', 'ZIP archive'],
+  ['application/gzip', '.gz', 'gzip compressed'],
+  ['application/x-bzip2', '.bz2', 'bzip2 compressed'],
+  ['application/x-7z-compressed', '.7z', '7-Zip archive'],
+  ['application/x-tar', '.tar', 'TAR archive'],
+  ['application/x-rar-compressed', '.rar', 'RAR archive'],
+  ['application/zstd', '.zst', 'Zstandard compressed'],
+  ['application/octet-stream', '.bin', 'Generic binary — fallback when type is unknown'],
+  ['application/sql', '.sql', 'SQL script'],
+  ['application/rtf', '.rtf', 'Rich Text Format'],
+  ['application/msword', '.doc', 'Microsoft Word 97-2003'],
+  ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', '.docx', 'Microsoft Word (OOXML)'],
+  ['application/vnd.ms-excel', '.xls', 'Microsoft Excel 97-2003'],
+  ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '.xlsx', 'Microsoft Excel (OOXML)'],
+  ['application/vnd.ms-powerpoint', '.ppt', 'Microsoft PowerPoint 97-2003'],
+  ['application/vnd.openxmlformats-officedocument.presentationml.presentation', '.pptx', 'Microsoft PowerPoint (OOXML)'],
+  ['application/vnd.oasis.opendocument.text', '.odt', 'OpenDocument Text'],
+  ['application/vnd.oasis.opendocument.spreadsheet', '.ods', 'OpenDocument Spreadsheet'],
+  ['application/vnd.oasis.opendocument.presentation', '.odp', 'OpenDocument Presentation'],
+  ['application/epub+zip', '.epub', 'EPUB e-book'],
+  ['application/vnd.android.package-archive', '.apk', 'Android package'],
+  ['application/x-msdownload', '.exe .dll', 'Windows executable'],
+  ['application/x-shockwave-flash', '.swf', 'Adobe Flash (deprecated)'],
+  ['application/x-httpd-php', '.php', 'PHP script'],
+  ['application/x-www-form-urlencoded', '', 'URL-encoded form data (HTTP body)'],
+  ['multipart/form-data', '', 'Multipart form upload (HTTP body)'],
+  ['multipart/byteranges', '', 'HTTP partial-content with multiple ranges'],
+  ['application/manifest+json', '.webmanifest', 'Web App Manifest'],
+  ['application/atom+xml', '.atom', 'Atom syndication feed'],
+  ['application/rss+xml', '.rss', 'RSS feed'],
+  ['image/jpeg', '.jpg .jpeg', 'JPEG image'],
+  ['image/png', '.png', 'PNG image'],
+  ['image/gif', '.gif', 'GIF image'],
+  ['image/webp', '.webp', 'WebP image'],
+  ['image/avif', '.avif', 'AVIF image (AV1-based)'],
+  ['image/heic', '.heic', 'HEIC image (iOS default)'],
+  ['image/heif', '.heif', 'HEIF image'],
+  ['image/svg+xml', '.svg', 'Scalable Vector Graphics'],
+  ['image/x-icon', '.ico', 'Windows icon — also commonly served as image/vnd.microsoft.icon'],
+  ['image/vnd.microsoft.icon', '.ico', 'Windows icon (IANA registered)'],
+  ['image/bmp', '.bmp', 'Windows Bitmap'],
+  ['image/tiff', '.tif .tiff', 'TIFF image'],
+  ['image/apng', '.apng', 'Animated PNG'],
+  ['image/jxl', '.jxl', 'JPEG XL'],
+  ['video/mp4', '.mp4 .m4v', 'MP4 video (H.264/H.265)'],
+  ['video/webm', '.webm', 'WebM video (VP8/VP9/AV1)'],
+  ['video/ogg', '.ogv', 'Ogg video (Theora)'],
+  ['video/quicktime', '.mov', 'QuickTime video'],
+  ['video/x-msvideo', '.avi', 'AVI video'],
+  ['video/x-matroska', '.mkv', 'Matroska video'],
+  ['video/3gpp', '.3gp', '3GPP mobile video'],
+  ['video/mpeg', '.mpg .mpeg', 'MPEG-1/MPEG-2 video'],
+  ['application/vnd.apple.mpegurl', '.m3u8', 'HLS playlist (HTTP Live Streaming)'],
+  ['application/dash+xml', '.mpd', 'MPEG-DASH manifest'],
+  ['audio/mpeg', '.mp3', 'MP3 audio'],
+  ['audio/mp4', '.m4a', 'AAC audio in MP4 container'],
+  ['audio/aac', '.aac', 'AAC audio (raw stream)'],
+  ['audio/ogg', '.ogg .oga', 'Ogg Vorbis / Opus audio'],
+  ['audio/opus', '.opus', 'Opus audio'],
+  ['audio/webm', '.weba', 'WebM audio'],
+  ['audio/flac', '.flac', 'FLAC lossless audio'],
+  ['audio/wav', '.wav', 'WAV / RIFF audio'],
+  ['audio/x-aiff', '.aiff .aif', 'AIFF audio'],
+  ['audio/midi', '.mid .midi', 'MIDI sequence'],
+  ['font/woff', '.woff', 'WOFF web font'],
+  ['font/woff2', '.woff2', 'WOFF2 web font'],
+  ['font/ttf', '.ttf', 'TrueType font'],
+  ['font/otf', '.otf', 'OpenType font'],
+  ['font/collection', '.ttc', 'TrueType collection'],
+  ['application/vnd.ms-fontobject', '.eot', 'Embedded OpenType (legacy IE)'],
+  ['model/gltf+json', '.gltf', 'glTF JSON 3D model'],
+  ['model/gltf-binary', '.glb', 'glTF binary 3D model'],
+  ['model/obj', '.obj', 'Wavefront OBJ 3D model'],
+  ['model/stl', '.stl', 'STL 3D model'],
+  ['application/vnd.google-earth.kml+xml', '.kml', 'Google Earth KML'],
+  ['application/vnd.google-earth.kmz', '.kmz', 'Google Earth KMZ archive'],
+  ['application/geo+json', '.geojson', 'GeoJSON'],
+  ['application/x-protobuf', '', 'Protocol Buffers binary (de facto)'],
+  ['application/grpc', '', 'gRPC payload'],
+  ['application/cbor', '.cbor', 'Concise Binary Object Representation (RFC 8949)'],
+  ['application/msgpack', '', 'MessagePack (de facto)'],
+  ['application/x-yaml', '.yaml .yml', 'YAML (de facto)'],
+  ['application/toml', '.toml', 'TOML config'],
+  ['application/x-pkcs12', '.p12 .pfx', 'PKCS #12 certificate bundle'],
+  ['application/pkcs7-mime', '.p7m', 'PKCS #7 / S/MIME'],
+  ['application/x-pem-file', '.pem', 'PEM-encoded certificate or key'],
+  ['application/jwt', '', 'JSON Web Token'],
+  ['application/problem+json', '', 'Problem Details for HTTP APIs (RFC 7807)'],
+  ['application/vnd.api+json', '', 'JSON:API'],
+  ['application/hal+json', '', 'HAL — Hypertext Application Language'],
+  ['application/x-ndjson', '.ndjson', 'Newline-delimited JSON'],
+  ['application/x-jsonlines', '.jsonl', 'JSON Lines (de facto)'],
+  ['text/event-stream', '', 'Server-Sent Events stream'],
+  ['application/octet-stream', '.dat', 'Generic binary'],
+  ['application/x-iso9660-image', '.iso', 'ISO 9660 disk image'],
+  ['application/x-bittorrent', '.torrent', 'BitTorrent metadata'],
+  ['application/vnd.debian.binary-package', '.deb', 'Debian package'],
+  ['application/x-rpm', '.rpm', 'RPM package'],
+  ['application/vnd.docker.image.rootfs.diff.tar.gzip', '', 'Docker image layer'],
+  ['application/dicom', '.dcm', 'Medical imaging — DICOM'],
+  ['application/x-x509-ca-cert', '.crt .cer', 'X.509 certificate (DER)'],
+  ['image/x-portable-pixmap', '.ppm', 'Portable Pixmap']
+];
+function mtRun(){
+  const q = (document.getElementById('mt-q').value || '').toLowerCase().trim();
+  const out = document.getElementById('mt-out');
+  const cnt = document.getElementById('mt-count');
+  const matches = MIME_TYPES.filter(([m, ext, desc]) => {
+    if(!q) return true;
+    return m.toLowerCase().includes(q) || ext.toLowerCase().includes(q) || desc.toLowerCase().includes(q);
+  });
+  cnt.textContent = matches.length + ' / ' + MIME_TYPES.length + ' types';
+  if(matches.length === 0){ out.innerHTML = '<div class="mt-empty">No matches.</div>'; return; }
+  out.innerHTML = '<div class="mt-list">' + matches.map(([m, ext, desc]) =>
+    `<div class="mt-row"><div class="mt-mime">${m}</div><div class="mt-ext">${ext || '—'}</div><div class="mt-desc">${desc}</div></div>`
+  ).join('') + '</div>';
+}
+document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback || ((cb)=>setTimeout(cb,0)))(mtRun));
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

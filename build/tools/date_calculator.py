@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Datum-calculator", "tagline": "Dagen tussen twee datums · dagen/weken/maanden/jaren optellen of aftrekken · leeftijd in jaren, maanden en dagen.", "description": "Gratis online datum-calculator. Bereken de duur tussen twee datums, tel een span op of trek af van een datum, en bepaal exacte leeftijd in jaren/maanden/dagen. Alle berekeningen draaien in je browser."},
         "tr": {"name": "Tarih Hesaplayıcı", "tagline": "İki tarih arasındaki gün sayısı · bir tarihe gün/hafta/ay/yıl ekle veya çıkar · yıl, ay ve gün cinsinden yaş.", "description": "Ücretsiz online tarih hesaplayıcı. İki tarih arasındaki süreyi hesapla, bir tarihten ekle veya çıkar, yıl/ay/gün cinsinden tam yaş bul. Tüm hesaplamalar tarayıcında çalışır."},
         "id": {"name": "Kalkulator Tanggal", "tagline": "Hari antara dua tanggal · tambah/kurang hari/minggu/bulan/tahun ke tanggal · umur dalam tahun, bulan, dan hari.", "description": "Kalkulator tanggal gratis. Hitung hari antara dua tanggal, tambah atau kurangi hari/minggu/bulan/tahun ke tanggal apa pun, atau hitung umur dalam tahun, bulan, dan hari. Mendukung hari dalam minggu dan output presisi durasi."},
+        "vi": {"name": "Máy tính Ngày", "tagline": "Số ngày giữa hai ngày · cộng/trừ ngày/tuần/tháng/năm vào một ngày · tuổi tính theo năm, tháng và ngày.", "description": "Máy tính ngày miễn phí trực tuyến. Tính khoảng cách giữa hai ngày, cộng hoặc trừ ngày/tuần/tháng/năm vào một ngày, hoặc tính tuổi chính xác theo năm-tháng-ngày."},
     },
     "body": """
 <div class="tool-card">
@@ -372,6 +373,25 @@ document.addEventListener('DOMContentLoaded', dcMode);
   <li><strong>Hari kerja tidak termasuk hari libur.</strong> Perhitungan ini tahu akhir pekan tapi tidak tahu hari libur nasional — sesuaikan manual kalau itu penting.</li>
   <li><strong>"Total bulan" itu perkiraan</strong> di tampilan umur (tahun × 12 + bulan) — mengabaikan sisa hari. Angka Y/M/D itu eksak.</li>
   <li><strong>Penambatan UTC trade-off dengan locale.</strong> Tanggal di timezone lokal kamu mungkin map ke hari UTC yang sedikit berbeda. Untuk sebagian besar penggunaan (deadline, umur) UTC tengah hari adalah anchor yang lebih aman; untuk pekerjaan timezone presisi menit pakai timezone converter.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Số học ngày tháng dễ dàng cho đến khi bạn nhớ rằng tháng có 28–31 ngày, năm có 365 hoặc 366 ngày, và một số quốc gia bỏ qua các ngày khi chuyển lịch. Tool này thực hiện ba thao tác phổ biến mà không có những lỗi đó: số ngày giữa hai ngày, cộng/trừ một khoảng thời gian khỏi một ngày, và tính tuổi từ ngày sinh.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>"Hợp đồng có 365 ngày, bắt đầu từ ngày X, ngày kết thúc là ngày nào?"</li>
+  <li>"Bao nhiêu ngày từ giờ đến deadline?"</li>
+  <li>"Đó là Thứ mấy?"</li>
+  <li>"Tôi bao nhiêu tuổi tính theo năm, tháng và ngày?"</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Cộng tháng không phải là cộng 30 ngày.</strong> Cộng 1 tháng vào ngày 31 tháng 1 — có nghĩa là 28 hay 29 hay 1 tháng 3? Quy tắc khác nhau giữa các thư viện và ngôn ngữ. Tool này dùng quy tắc "kẹp" thông thường: kẹp xuống ngày cuối cùng của tháng đích.</li>
+  <li><strong>Tuổi có nghĩa rời rạc.</strong> Tuổi tính theo năm là số nguyên (không phải năm thập phân) — bạn 30 cho đến khi sinh nhật của bạn, sau đó là 31. Hữu hạn vế tuổi (32 năm, 5 tháng, 12 ngày) chính xác hơn.</li>
+  <li><strong>Múi giờ ẩn.</strong> Tool này coi đầu vào là ngày local không có múi giờ — không phải timestamps. Đối với thao tác giờ-trong-ngày, dùng tool múi giờ.</li>
 </ul>
 """,
     },

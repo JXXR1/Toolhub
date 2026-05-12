@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "Regex Tester", "tagline": "Test JavaScript regular expressions live. Zie matches, capture groups, en pas replacements toe terwijl je typt.", "description": "Gratis online JavaScript regex tester met live highlighting, capture groups en replace mode. PCRE-compatible flags (g/i/m/s/u/y)."},
         "tr": {"name": "Regex Tester", "tagline": "JavaScript düzenli ifadelerini canlı test et. Eşleşmeleri, capture gruplarını gör ve yazdıkça değiştirme uygula.", "description": "Canlı vurgulama, capture grupları ve değiştirme moduyla ücretsiz online JavaScript regex tester. PCRE uyumlu bayraklar (g/i/m/s/u/y)."},
         "id": {"name": "Regex Tester", "tagline": "Tes regex JavaScript secara langsung. Lihat match, capture group, dan terapkan replace sambil mengetik.", "description": "Regex tester online gratis. Tes regular expression JavaScript secara real-time terhadap teks sampel. Sorot semua match, lihat capture group dengan nomor dan nama, dan terapkan operasi replace sambil mengetik."},
+        "vi": {"name": "Regex Tester", "tagline": "Test regex JavaScript trực tiếp. Xem match, capture group và áp dụng replace khi bạn gõ.", "description": "Regex tester miễn phí trực tuyến cho regex JavaScript. Xem match, capture group và áp dụng replace theo thời gian thực khi bạn gõ pattern và mẫu thử."},
     },
     "body": """
 <div class="tool-card">
@@ -365,6 +366,24 @@ document.addEventListener('DOMContentLoaded', reRun);
   <li><strong>Anchor di batas baris vs string.</strong> <code>^</code> dan <code>$</code> default cocok dengan ujung string; dengan flag <code>m</code> mereka cocok dengan tiap baris.</li>
   <li><strong>Replacement special.</strong> <code>$&amp;</code> adalah seluruh match; <code>$1</code>, <code>$2</code>, … adalah capture group; <code>$$</code> adalah literal <code>$</code>. Lupa ini adalah sumber umum "kenapa regex saya memakan dolar saya".</li>
   <li><strong>Jangan parse HTML dengan regex</strong> untuk apa pun yang serius. Peringatan klasik itu benar: nested tag, comment, dan CDATA butuh parser asli. Regex oke untuk scraping log sekali pakai atau input terkontrol.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Viết regex là trial-and-error. Tool này cho phép bạn gõ pattern, gõ văn bản test và xem ngay match nào (cộng với capture group) trên mỗi keystroke. Cũng cho phép áp dụng replace với pattern thay thế. Tất cả chạy trong trình duyệt — không có server-side regex engine.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Tinh chỉnh pattern cho input form validation hoặc URL routing.</li>
+  <li>Test một pattern khó với nhiều input mẫu trước khi commit nó.</li>
+  <li>Áp dụng replace global trên text để clean up data trước khi import.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Catastrophic backtracking.</strong> Một số pattern (như <code>(a+)+</code> trên string không match) có thể hang trình duyệt với input lớn. Cảnh giác với nested quantifier.</li>
+  <li><strong>Flag matter.</strong> Không có flag <code>g</code>, replace chỉ thay match đầu tiên. Không có <code>i</code>, regex case-sensitive.</li>
+  <li><strong>Regex JS khác Java/Python.</strong> Lookbehind chỉ là ES2018+. Một số escape khác (như <code>\d</code>, <code>\w</code>) khớp khác nhau với Unicode tùy flag.</li>
 </ul>
 """,
     },

@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "HTTP-statuscodes", "tagline": "Zoek elke HTTP-statuscode op (1xx–5xx). Betekenis, veelvoorkomende oorzaken en de RFC-referentie.", "description": "Gratis HTTP-statuscode-referentie. Zoek elke standaard HTTP-statuscode (100–599), zie de betekenis, veelvoorkomende oorzaken en de RFC waarin hij is gedefinieerd. Filter tijdens het typen."},
         "tr": {"name": "HTTP Durum Kodları", "tagline": "Herhangi bir HTTP durum kodunu ara (1xx–5xx). Anlamı, yaygın sebepleri ve RFC referansı.", "description": "Ücretsiz HTTP durum kodu referansı. Her standart HTTP durum kodunu (100–599) ara, anlamını, yaygın sebeplerini ve tanımlandığı RFC'yi gör. Yazdıkça filtrele."},
         "id": {"name": "Kode Status HTTP", "tagline": "Cari kode status HTTP apa pun (1xx–5xx). Maknanya, alasan umum, dan referensi RFC.", "description": "Referensi kode status HTTP gratis. Cari kode status apa pun (1xx informational, 2xx success, 3xx redirect, 4xx client error, 5xx server error) dengan maknanya, alasan umum, dan referensi RFC."},
+        "vi": {"name": "Mã trạng thái HTTP", "tagline": "Tra cứu bất kỳ mã trạng thái HTTP nào (1xx–5xx). Ý nghĩa, lý do thường gặp và tham chiếu RFC.", "description": "Tham chiếu mã trạng thái HTTP miễn phí trực tuyến. Tra cứu bất kỳ mã 1xx–5xx nào với ý nghĩa, ngữ cảnh sử dụng phổ biến và RFC định nghĩa nó. Có thể tìm kiếm."},
     },
     "body": """
 <div class="tool-card">
@@ -386,6 +387,25 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>200 dengan error body bukan "RESTful".</strong> Kalau request gagal di level resource, return 4xx dengan error di body.</li>
   <li><strong>418 adalah lelucon.</strong> Jangan gunakan I'm-a-teapot di production — client dan proxy memperlakukannya tidak konsisten.</li>
   <li><strong>RFC 9110 menggantikan RFC 7231/7232/7233/7234/7235.</strong> Kalau mengutip spec, gunakan 9110 (Juni 2022) kecuali kamu spesifik butuh versi lama.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Mã trạng thái HTTP là từ vựng API: 200 OK, 404 Not Found, 500 Internal Server Error. Có khoảng 70 mã được tiêu chuẩn hóa qua các RFC, mỗi mã có ý nghĩa cụ thể. Tool này cho phép bạn tra cứu bất kỳ mã 1xx–5xx nào, xem ý nghĩa, lý do thông thường và RFC định nghĩa nó.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Debug API và bạn nhận được mã không quen thuộc như 422 hoặc 451.</li>
+  <li>Quyết định mã nào trả về từ endpoint của riêng bạn ("405 hay 501?").</li>
+  <li>Đọc giao thức cũ và bạn cần xem nó tham chiếu RFC nào.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>200 không có nghĩa là không có lỗi.</strong> Một API có thể trả về 200 với <code>{"error": "..."}</code> trong body. Status code mô tả HTTP, không phải nghĩa nghiệp vụ.</li>
+  <li><strong>4xx vs 5xx.</strong> 4xx là client error (request không hợp lệ — sửa request của bạn); 5xx là server error (request có thể đã ok — vấn đề ở phía server).</li>
+  <li><strong>200 cho 301.</strong> Một số reverse proxy biến redirect thành 200. Hãy luôn cấu hình nó để truyền lại status code thực.</li>
+  <li><strong>418 I'm a Teapot</strong> là một joke RFC, nhưng vẫn được dùng đôi khi như một status placeholder.</li>
 </ul>
 """,
     },

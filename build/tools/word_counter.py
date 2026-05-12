@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Woordenteller", "tagline": "Tel woorden, karakters, zinnen, paragrafen en schat lees- + spreektijd terwijl je typt.", "description": "Gratis online woordenteller. Live tellingen voor woorden, karakters (met en zonder spaties), zinnen, paragrafen, lettergrepen, plus lees- en spreektijd-schattingen."},
         "tr": {"name": "Kelime Sayacı", "tagline": "Kelimeleri, karakterleri, cümleleri, paragrafları say ve yazdıkça okuma + konuşma süresini tahmin et.", "description": "Ücretsiz online kelime sayacı. Kelimeler, karakterler (boşluklu ve boşluksuz), cümleler, paragraflar, heceler için canlı sayım, ayrıca okuma ve konuşma süresi tahminleri."},
         "id": {"name": "Penghitung Kata", "tagline": "Hitung kata, karakter, kalimat, paragraf, dan estimasi waktu baca + bicara saat mengetik.", "description": "Penghitung kata online gratis. Hitung kata, karakter (dengan dan tanpa spasi), kalimat, dan paragraf secara real-time saat mengetik. Estimasi waktu baca dan waktu bicara untuk teks panjang."},
+        "vi": {"name": "Đếm Từ", "tagline": "Đếm từ, ký tự, câu, đoạn và thời gian đọc + nói ước tính khi bạn gõ.", "description": "Bộ đếm từ miễn phí trực tuyến. Cập nhật trực tiếp số lượng từ, ký tự (có và không có khoảng trắng), câu, đoạn và thời gian đọc/nói ước tính khi bạn gõ hoặc dán văn bản."},
     },
     "body": """
 <div class="tool-card">
@@ -324,6 +325,25 @@ document.addEventListener('DOMContentLoaded', wcRun);
   <li><strong>Jumlah kata berbeda antar tool.</strong> Word, Google Docs, dan sistem submission majalah bisa beda beberapa persen — mereka menangani tanda hubung, em dash, dan angka secara berbeda. Jika batas keras penting, hitung di tool yang sama dengan yang dipakai gatekeeper.</li>
   <li><strong>"Paling sering" tidak memfilter stop word.</strong> "the" dan "a" hampir selalu di atas. Lihat input yang lebih panjang untuk sinyal nyata.</li>
   <li><strong>Estimasi waktu baca itu personal.</strong> 250 wpm adalah median; konten teknis lebih lambat, fiksi lebih cepat. Perlakukan angka sebagai panduan planning, bukan prediksi.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Đếm từ và ký tự là vấn đề hàng ngày — bài tweet, bài viết essay limit, blog post target. Tool này thực hiện live tính khi bạn gõ: từ, ký tự (có và không có space), câu, đoạn, và ước lượng thời gian đọc + nói.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Bài essay với limit từ ("không quá 500 từ").</li>
+  <li>Tweet hoặc microblog với ký tự limit.</li>
+  <li>Soạn nội dung blog đến target từ.</li>
+  <li>Ước tính thời gian đọc cho article của bạn.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>"Từ" không có định nghĩa toàn cầu.</strong> Tiếng Trung và tiếng Nhật không tách từ bằng khoảng trắng — đếm từ giả định tách bằng khoảng trắng. Đối với CJK, đếm ký tự có ý nghĩa hơn.</li>
+  <li><strong>Thời gian đọc là gần đúng.</strong> Đọc trung bình ~250 từ/phút. Đọc kỹ chậm hơn (~150 wpm); đọc lướt nhanh hơn (~700 wpm).</li>
+  <li><strong>Đếm ký tự bao gồm Unicode "ký tự" — đôi khi là 1, đôi khi là 2.</strong> Đếm code point trong tool này. Một emoji family có thể là 7 code point nhưng 1 glyph hiển thị.</li>
 </ul>
 """,
     },

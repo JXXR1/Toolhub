@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Placeholder Image Generator", "tagline": "Genereer inline-SVG placeholder images op elke size met custom tekst en kleuren. Output als data URI of downloadbaar SVG.", "description": "Gratis placeholder image-generator. Specificeer width × height, labeltekst en kleuren; krijg een inline SVG die je overal kunt plakken — data URI, raw markup of download. Draait volledig in je browser."},
         "tr": {"name": "Placeholder Görsel Üretici", "tagline": "Özel metin ve renklerle her boyutta inline-SVG placeholder görseller üret. Data URI veya indirilebilir SVG olarak çıkar.", "description": "Ücretsiz placeholder görsel üretici. Genişlik × yükseklik, etiket metni ve renkleri belirle; her yere yapıştırabileceğin inline SVG al — data URI, ham işaretleme veya indirme. Tamamen tarayıcında çalışır."},
         "id": {"name": "Generator Placeholder Image", "tagline": "Hasilkan placeholder image SVG inline ukuran apa pun dengan teks dan warna custom. Output sebagai data URI atau SVG yang dapat diunduh.", "description": "Generator placeholder image gratis. Buat placeholder image SVG inline ukuran apa pun dengan teks, warna background, dan warna foreground custom. Output sebagai data URI atau SVG yang dapat diunduh — sempurna untuk mockup dan wireframe."},
+        "vi": {"name": "Tạo Placeholder Image", "tagline": "Tạo placeholder image SVG inline với bất kỳ kích thước nào với văn bản và màu tùy chỉnh. Xuất ra dưới dạng data URI hoặc SVG có thể tải về.", "description": "Trình tạo placeholder image miễn phí trực tuyến. Tạo SVG inline ở bất kỳ kích thước nào với văn bản và màu tùy chỉnh — sao chép dưới dạng data URI để dùng inline hoặc tải file SVG về. Hữu ích cho mockup và wireframe."},
     },
     "body": """
 <div class="tool-card">
@@ -352,6 +353,24 @@ document.addEventListener('DOMContentLoaded', phRun);
   <li><strong>Warna hanya HTML hex.</strong> Color picker menghasilkan <code>#rrggbb</code>. Jika kamu butuh <code>rgba()</code>, edit markup SVG langsung setelah menyalin.</li>
   <li><strong>Width/height bersifat intrinsic, bukan display.</strong> Mengatur CSS ke ukuran berbeda akan men-scale SVG — secara visual oke, tapi teks yang ter-embed mungkin terlihat melar jika aspect ratio berubah; kami pakai <code>preserveAspectRatio="none"</code> untuk scaling yang predictable.</li>
   <li><strong>Jangan ship placeholder.</strong> Mudah terlupa — ganti dengan asset asli sebelum go live.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Mockup và wireframe cần placeholder image — không phải nội dung thực, chỉ là khối với kích thước đúng. Tool này tạo SVG inline ở bất kỳ kích thước nào với text và màu tùy chỉnh — copy dưới dạng data URI để dùng inline trong CSS/HTML, hoặc tải file SVG để chèn vào tài liệu.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Mockup wireframe cần "ảnh ở đây" placeholder.</li>
+  <li>Test layout responsive với placeholder kích thước khác nhau.</li>
+  <li>Storybook hoặc component lib stub cần dữ liệu giả.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>SVG có thể inline.</strong> Vì SVG là XML text, bạn có thể nhúng nó trực tiếp vào HTML — không cần tag <code>&lt;img&gt;</code>. Tốt cho icon hoặc decoration.</li>
+  <li><strong>Đừng ship placeholder.</strong> Khi build production, replace placeholder image bằng asset thực hoặc lazy-load.</li>
+  <li><strong>SVG hỗ trợ alpha và gradient.</strong> Đối với placeholder phức tạp hơn (gradient, pattern), SVG vẫn nhỏ hơn PNG.</li>
 </ul>
 """,
     },

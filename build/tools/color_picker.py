@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Kleur-picker", "tagline": "Kies een kleur en zie 'm direct in HEX, RGB, RGBA, HSL, HSLA, HSV en CMYK. Stel transparantie in en kopieer elke waarde.", "description": "Gratis online color picker. Converteer tussen HEX, RGB(A), HSL(A), HSV en CMYK met live preview, opacity-slider en kopieerknoppen."},
         "tr": {"name": "Renk Seçici", "tagline": "Bir renk seç; HEX, RGB, RGBA, HSL, HSLA, HSV ve CMYK olarak anında gör. Opaklığı ayarla ve istediğin değeri kopyala.", "description": "Ücretsiz online renk seçici. HEX, RGB(A), HSL(A), HSV ve CMYK arasında canlı önizleme, opaklık kaydırıcısı ve kopyala düğmeleriyle dönüştür."},
         "id": {"name": "Pemilih Warna", "tagline": "Pilih warna; lihat HEX, RGB, RGBA, HSL, HSLA, HSV, dan CMYK secara instan. Atur opasitas dan salin nilai yang kamu butuhkan.", "description": "Pemilih warna online gratis. Pilih warna apa pun dan lihat instan dalam HEX, RGB, RGBA, HSL, HSLA, HSV, dan CMYK. Atur opasitas, salin nilai mana pun dengan satu klik."},
+        "vi": {"name": "Chọn Màu", "tagline": "Chọn một màu; xem HEX, RGB, RGBA, HSL, HSLA, HSV và CMYK ngay lập tức. Điều chỉnh opacity và sao chép giá trị bạn cần.", "description": "Công cụ chọn màu trực tuyến miễn phí. Chọn bất kỳ màu nào và sao chép giá trị của nó trong HEX, RGB, RGBA, HSL, HSLA, HSV hoặc CMYK với hỗ trợ alpha. Chạy hoàn toàn trong trình duyệt."},
     },
     "body": """
 <div class="tool-card">
@@ -249,6 +250,24 @@ document.addEventListener('DOMContentLoaded', cpRun);
   <li><strong>HSL hue dalam derajat.</strong> 0 = merah, 120 = hijau, 240 = biru. CSS juga menerima <code>turn</code>, <code>rad</code>, <code>grad</code> tapi output di sini dalam derajat.</li>
   <li><strong>Konversi CMYK itu naif.</strong> Cetak sungguhan butuh profil ICC (sRGB → CMYK dengan rendering intent). Output tool ini cocok untuk mockup brand deck, bukan file siap cetak.</li>
   <li><strong>OKLCH dan OKLAB</strong> (space modern yang seragam perseptual) tidak ditampilkan di sini — masih baru dan belum didukung luas. Tetap pakai HSL/HSV untuk tooling design system saat ini.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Đôi khi bạn không muốn chuyển đổi giữa các định dạng — bạn muốn chọn một màu một cách trực quan và lấy giá trị của nó trong bất kỳ định dạng nào CSS hoặc tool design của bạn mong đợi. Công cụ này cho phép bạn kéo, gõ hoặc dán một màu và sao chép giá trị trong HEX, RGB, RGBA, HSL, HSLA, HSV hoặc CMYK — bao gồm điều khiển alpha cho các định dạng hỗ trợ độ trong suốt.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Lấy mẫu màu từ một mockup hoặc ảnh chụp và lấy giá trị HEX cho CSS.</li>
+  <li>Tinh chỉnh độ trong suốt và sao chép RGBA hoặc HSLA cho overlay.</li>
+  <li>Cung cấp giá trị CMYK cho designer in ấn nếu bạn cần.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>CMYK là gam in ấn, không phải gam màn hình.</strong> Chuyển đổi từ RGB sang CMYK chỉ là gần đúng — máy in thực dùng ICC profile cho việc chuyển đổi chính xác.</li>
+  <li><strong>HSV vs HSL.</strong> HSV (còn gọi là HSB) phổ biến trong Photoshop và Figma; HSL là cú pháp CSS gốc. Saturation và brightness/lightness là <em>các trục khác nhau</em>, mặc dù gọi là cùng tên.</li>
+  <li><strong>Alpha hex giả định pre-multiplied.</strong> CSS <code>#rrggbbaa</code> dùng straight alpha — đặt nó vào canvas API kỳ vọng pre-multiplied có thể tạo ra rìa nhợt nhạt.</li>
 </ul>
 """,
     },

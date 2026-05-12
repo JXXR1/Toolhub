@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "JWT Decoder", "tagline": "Plak een JWT om header en payload te decoderen. Alle decodering draait in je browser — tokens verlaten de pagina nooit.", "description": "Gratis online JSON Web Token decoder. Decodeer header en payload, verifieer expiry-timestamps, inspecteer signature. Werkt volledig offline in je browser."},
         "tr": {"name": "JWT Decoder", "tagline": "JWT'yi yapıştır, header ve payload'ı çöz. Tüm decode tarayıcında çalışır — token'lar sayfayı asla terk etmez.", "description": "Ücretsiz online JSON Web Token decoder. Header ve payload'ı çöz, expiry timestamp'leri doğrula, imzayı incele. Tarayıcında tamamen çevrimdışı çalışır."},
         "id": {"name": "JWT Decoder", "tagline": "Tempel JWT, decode header dan payload. Semua decoding terjadi di browser-mu — token tidak pernah meninggalkan halaman.", "description": "JWT decoder gratis. Tempel JSON Web Token apa pun dan lihat header dan payload yang di-decode dengan format yang dapat dibaca. Semua decoding lokal — token tidak pernah dikirim ke server kami atau server mana pun."},
+        "vi": {"name": "JWT Decoder", "tagline": "Dán một JWT, decode header và payload. Toàn bộ decode xảy ra trong trình duyệt — token không bao giờ rời khỏi trang.", "description": "JWT decoder miễn phí trực tuyến. Dán token và xem header, payload và claim được giải mã. Toàn bộ decode chạy trong trình duyệt — token không bao giờ rời khỏi thiết bị của bạn."},
     },
     "body": """
 <div class="tool-card">
@@ -341,6 +342,25 @@ document.addEventListener('DOMContentLoaded', jwtDecode);
   <li><strong>Jangan paste token production di mana pun.</strong> Siapa pun yang punya JWT yang masih hidup bisa menyamar sebagai user sampai <code>exp</code>. Browser tidak mengirimnya keluar dari tool ini, tapi extension, screen-recording, dan dev tools bisa. Pakai token baru dari environment test jika kamu harus berbagi.</li>
   <li><strong>Token <code>alg: none</code> adalah kelas serangan yang dikenal.</strong> Kalau sebuah header punya <code>alg: none</code> dan library kamu menerimanya, attacker bisa memalsukan token. Tolak ini di server.</li>
   <li><strong>Time skew itu penting.</strong> <code>exp</code> sebuah token dicek terhadap jam verifier. Server yang drift akan menolak token yang di sini terlihat valid.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Một JWT (JSON Web Token) gồm ba phần được phân tách bằng dấu chấm: header.payload.signature — mỗi phần là base64url-encoded JSON (signature là binary). Tool này tách ba phần, decode JSON, và hiển thị header và payload với syntax highlighting. Signature được hiển thị nguyên trạng (không thể verify mà không có key).</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Debug auth flow và muốn xem claim trong token (sub, exp, scope, custom claim).</li>
+  <li>Inspect provider token (Google, Auth0, Cognito) để xem cấu trúc của nó.</li>
+  <li>Confirm token chưa hết hạn — claim <code>exp</code> là epoch seconds.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>JWT không phải mã hóa, chỉ là encode + sign.</strong> Bất kỳ ai cũng có thể đọc payload. Đừng bao giờ đặt secret hoặc PII vào claim.</li>
+  <li><strong>Signature verification cần key.</strong> Tool này decode nhưng không verify. Để verify, bạn cần public key của issuer hoặc shared secret.</li>
+  <li><strong>JWT không phải session.</strong> Token có claim hết hạn nhưng không thể revoke trừ khi backend của bạn maintain danh sách revocation. Đối với session, dùng cookie.</li>
+  <li><strong>Token chạy hoàn toàn local trong tool này.</strong> Không có gì được upload — nhưng đừng paste token sản xuất vào tool ngẫu nhiên dù sao đi nữa.</li>
 </ul>
 """,
     },

@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "CSS Minifier", "tagline": "Strip comments, whitespace en redundantie uit CSS. Zie size voor/na en het besparingspercentage.", "description": "Gratis online CSS minifier. Verwijdert comments, collapseert whitespace, trimt trailing semicolons en zero-units. Toont compressieratio."},
         "tr": {"name": "CSS Minifier", "tagline": "CSS'ten yorumları, boşlukları ve gereksizliği temizle. Öncesi/sonrası boyutunu ve tasarruf yüzdesini gör.", "description": "Ücretsiz online CSS minifier. Yorumları kaldırır, boşlukları daraltır, sondaki noktalı virgülleri ve sıfır birimlerini keser. Sıkıştırma oranını gösterir."},
         "id": {"name": "CSS Minifier", "tagline": "Strip komentar, whitespace, dan redundansi dari CSS. Lihat ukuran sebelum/sesudah dan persen penghematan.", "description": "CSS minifier gratis. Strip komentar, whitespace, dan stylesheet kosong dari CSS-mu. Lihat ukuran sebelum/sesudah dan persen byte yang dihemat — semuanya di browser-mu."},
+        "vi": {"name": "CSS Minifier", "tagline": "Bỏ comment, whitespace và phần dư thừa khỏi CSS. Xem kích thước trước/sau và phần trăm tiết kiệm.", "description": "CSS minifier miễn phí trực tuyến. Bỏ comment và whitespace, hợp nhất các quy tắc và hiển thị tiết kiệm byte. Chạy hoàn toàn trong trình duyệt."},
     },
     "body": """
 <div class="tool-card">
@@ -292,6 +293,24 @@ document.addEventListener('DOMContentLoaded', cmRun);
   <li><strong>Source map tidak dihasilkan.</strong> Jika kamu mendebug CSS minified di production, kirim mereka secara terpisah.</li>
   <li><strong>Jangan minify CSS yang kamu commit.</strong> Commit source yang pretty; minify saat build/deploy. Mencampur keduanya membuat review diff jadi menderita.</li>
   <li><strong>Kompresi modern dominan.</strong> Brotli/gzip di wire melakukan sebagian besar pekerjaan minification. Penghematan terbesar datang dari menghapus rule yang tidak terpakai — itu pekerjaan tree-shaking, bukan minification.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>CSS sản xuất thường được minified — bỏ comment, whitespace và đôi khi quy tắc dư thừa để file nhỏ hơn và nhanh hơn để tải xuống. Tool này thực hiện minify nhanh, structural: bỏ comment, gộp khoảng trắng và drop dòng trống. Nó không trộn quy tắc hay tối ưu hóa selector — chỉ làm cho file nhỏ hơn mà không thay đổi cách trình duyệt diễn giải nó.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Chuẩn bị CSS hand-written để deploy mà không cần pipeline build.</li>
+  <li>So sánh kích thước trước/sau để chứng minh cho tiết kiệm.</li>
+  <li>Minify nhanh một snippet để inline vào <code>&lt;style&gt;</code> tag.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Minify ≠ tối ưu hóa.</strong> Bộ tối ưu thực thụ (cssnano, csso) sẽ gộp các quy tắc, drop selector chết và xếp lại giá trị shorthand. Tool này chỉ làm việc dễ nhất: whitespace và comment.</li>
+  <li><strong>Comment có thể là cấp phép quan trọng.</strong> Đừng tự động bỏ tất cả comment khỏi CSS chứa header license — kiểm tra trước.</li>
+  <li><strong>Một số whitespace là quan trọng.</strong> Trong selector phức tạp (như <code>div > p</code>), tool này giữ lại khoảng trắng có ý nghĩa và chỉ bỏ phần trang trí.</li>
 </ul>
 """,
     },

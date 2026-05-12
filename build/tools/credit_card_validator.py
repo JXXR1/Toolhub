@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Creditcard-validator", "tagline": "Valideer een kaartnummer met de Luhn-check en detecteer het kaartmerk. Draait lokaal — je nummer wordt nooit verzonden.", "description": "Gratis online creditcard-validator. Luhn (mod-10) checksum, brand-detectie (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) en lengtecontrole. 100% client-side."},
         "tr": {"name": "Kredi Kartı Doğrulayıcı", "tagline": "Kart numarasını Luhn kontrolü ile doğrula ve kart markasını tespit et. Yerel çalışır — numaran asla iletilmez.", "description": "Ücretsiz online kredi kartı doğrulayıcı. Luhn (mod-10) checksum, marka tespiti (Visa, Mastercard, Amex, Discover, JCB, Diners, UnionPay) ve uzunluk doğrulaması. %100 istemci tarafında çalışır."},
         "id": {"name": "Validator Kartu Kredit", "tagline": "Validasi nomor kartu dengan cek Luhn dan deteksi brand kartu. Berjalan lokal — nomormu tidak pernah dikirim.", "description": "Validator kartu kredit gratis. Cek nomor kartu dengan algoritma Luhn dan deteksi brand (Visa, Mastercard, Amex, Discover, JCB, Diners). Berjalan sepenuhnya di browser-mu — tanpa pelacakan, tanpa upload."},
+        "vi": {"name": "Xác thực Thẻ Tín dụng", "tagline": "Xác thực số thẻ bằng kiểm tra Luhn và phát hiện brand. Chạy cục bộ — số thẻ của bạn không bao giờ được gửi đi.", "description": "Xác thực số thẻ tín dụng miễn phí trực tuyến. Kiểm tra Luhn checksum và phát hiện brand thẻ (Visa, Mastercard, Amex, Discover, JCB và các loại khác). Toàn bộ kiểm tra chạy trong trình duyệt của bạn — số thẻ không bao giờ được gửi đi."},
     },
     "body": """
 <div class="tool-card">
@@ -242,6 +243,25 @@ document.addEventListener('DOMContentLoaded', cvRun);
 
 <h3>Nomor test (aman ditempel)</h3>
 <p>Visa <code>4242 4242 4242 4242</code> · Mastercard <code>5555 5555 5555 4444</code> · Amex <code>3782 822463 10005</code> · Discover <code>6011 1111 1111 1117</code></p>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Số thẻ tín dụng có một checksum tích hợp gọi là Luhn algorithm. Mọi nhà phát hành — Visa, Mastercard, Amex, Discover, JCB — phát hành số mà chữ số cuối làm cho toàn bộ chuỗi vượt qua Luhn. Sai số <em>do người gõ</em> hầu như luôn fail Luhn, nên kiểm tra ở phía client (trước khi gửi lên cổng thanh toán) bắt được hầu hết các lỗi gõ thông thường ngay tại nguồn.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Validation form checkout — bắt lỗi gõ trước khi gọi cổng thanh toán.</li>
+  <li>Phát hiện brand từ tiền tố BIN — hữu ích để hiển thị logo nhà phát hành phù hợp.</li>
+  <li>Sanity check một số test trong dataset trước khi import.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Vượt qua Luhn không có nghĩa là thẻ có thật.</strong> Bất kỳ ai cũng có thể tạo số "hợp lệ" về Luhn. Chỉ cổng thanh toán biết liệu thẻ có tồn tại và đã được duyệt hay không.</li>
+  <li><strong>Đừng bao giờ lưu PAN không cần thiết.</strong> PCI DSS có quy tắc nghiêm ngặt về lưu trữ dữ liệu thẻ. Tốt nhất là dùng token hóa và không bao giờ chạm vào PAN ngoài cổng.</li>
+  <li><strong>Phát hiện brand không thay thế kiểm tra của cổng.</strong> Tiền tố BIN có thể thay đổi và một số dải overlap; coi việc đoán brand là gợi ý UX, không phải sự thật.</li>
+  <li><strong>Công cụ này chạy hoàn toàn cục bộ.</strong> Số bạn nhập không bao giờ rời khỏi trình duyệt — nhưng đừng dán PAN sản xuất vào bất kỳ tool ngẫu nhiên nào dù sao đi nữa. Dùng <a href="https://www.payments-cards.com/test-cards.html">số test</a> để demo.</li>
+</ul>
 """,
     },
     "related": ["email-validator", "hash-generator", "regex-tester"],

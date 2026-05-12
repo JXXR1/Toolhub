@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "YAML ↔ JSON Converter", "tagline": "Converteer tussen YAML en JSON in beide richtingen. Nuttig voor Kubernetes manifests, CI-configs en OpenAPI-specs.", "description": "Gratis online YAML-naar-JSON en JSON-naar-YAML converter. Bidirectioneel, draait volledig in je browser. Handelt anchors, aliases en multi-document YAML af."},
         "tr": {"name": "YAML ↔ JSON Dönüştürücü", "tagline": "YAML ve JSON arasında her iki yöne dönüştür. Kubernetes manifest'leri, CI config'leri ve OpenAPI spec'leri için kullanışlı.", "description": "Ücretsiz online YAML'den JSON'a ve JSON'dan YAML'a dönüştürücü. Çift yönlü, tamamen tarayıcında çalışır. Anchor'ları, alias'ları ve çoklu belge YAML'ı işler."},
         "id": {"name": "Konverter YAML ↔ JSON", "tagline": "Konversi antara YAML dan JSON ke kedua arah. Berguna untuk manifest Kubernetes, config CI, dan spec OpenAPI.", "description": "Konverter YAML ke JSON gratis (dan sebaliknya). Konversi antara YAML dan JSON ke kedua arah dengan validasi. Berguna untuk manifest Kubernetes, GitHub Actions, spec OpenAPI, dan format config apa pun."},
+        "vi": {"name": "Chuyển đổi YAML ↔ JSON", "tagline": "Chuyển giữa YAML và JSON cả hai chiều. Hữu ích cho manifest Kubernetes, config CI và spec OpenAPI.", "description": "Bộ chuyển YAML ↔ JSON miễn phí trực tuyến. Round-trip giữa hai định dạng với indent thích hợp. Hữu ích cho manifest Kubernetes, config CI/CD, spec OpenAPI và config Docker Compose."},
     },
     "body": """
 <div class="tool-card">
@@ -256,6 +257,24 @@ document.addEventListener('DOMContentLoaded', yjConv);
   <li><strong>Tag kustom</strong> (<code>!!python/object</code>, <code>!Ref</code>, dll.) melanggar YAML 1.2 ketat. YAML CloudFormation dan dump pickle PyYAML akan gagal; bersihkan tag-nya dulu.</li>
   <li><strong>Anchor dan alias di-expand di YAML→JSON.</strong> Tidak ada reference di JSON, jadi node <code>*ref</code> jadi inline. Round-trip memberi YAML yang value-equivalent tapi secara tekstual lebih besar.</li>
   <li><strong>Number vs string.</strong> YAML tanpa quote <code>3.14</code> adalah float; <code>"3.14"</code> adalah string.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>YAML và JSON là cả hai format cấu hình; YAML dễ đọc hơn cho con người, JSON dễ đọc hơn cho machine. Tool này convert giữa hai chiều. Đặc biệt hữu ích cho người làm việc với Kubernetes manifest (YAML), CI config (YAML hoặc JSON), hoặc OpenAPI spec (cả hai).</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Convert tài liệu OpenAPI từ JSON sang YAML cho dễ đọc.</li>
+  <li>Migrate config Kubernetes thành JSON cho tool không hỗ trợ YAML.</li>
+  <li>Inspect YAML phức tạp bằng cách convert sang JSON nơi cấu trúc rõ ràng hơn.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>YAML có quirks.</strong> Strings không quote có thể được parse là boolean (<code>yes</code>/<code>no</code>) hoặc null. Hãy quote string đáng ngờ.</li>
+  <li><strong>Indent quan trọng trong YAML.</strong> Trộn tab và space sẽ phá vỡ parser. Stick với 2 hoặc 4 space.</li>
+  <li><strong>JSON không cho phép comment; YAML cho phép.</strong> Convert YAML có comment sang JSON sẽ mất comment.</li>
 </ul>
 """,
     },

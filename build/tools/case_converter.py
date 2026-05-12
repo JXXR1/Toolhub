@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Case Converter", "tagline": "Converteer tekst tussen UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE en dot.case.", "description": "Gratis online case converter. Schakel tekst tussen upper, lower, title, sentence, camel, pascal, snake, kebab, constant en dot case in één klik."},
         "tr": {"name": "Case Converter", "tagline": "Metni UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE ve dot.case arasında dönüştür.", "description": "Ücretsiz online büyük/küçük harf dönüştürücü. Metni tek tıkla upper, lower, title, sentence, camel, pascal, snake, kebab, constant ve dot case arasında değiştir."},
         "id": {"name": "Pengubah Case", "tagline": "Ubah teks antara UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dan dot.case.", "description": "Pengubah case teks gratis. Konversi antara UPPER, lower, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dan dot.case. Sadar-Unicode dan cepat."},
+        "vi": {"name": "Chuyển đổi Case", "tagline": "Chuyển văn bản giữa UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE và dot.case.", "description": "Công cụ chuyển đổi case văn bản miễn phí trực tuyến. Chuyển bất kỳ chuỗi nào sang UPPER, lower, Title, Sentence, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE hoặc dot.case ngay lập tức."},
     },
     "body": """
 <div class="tool-card">
@@ -230,6 +231,26 @@ document.addEventListener('DOMContentLoaded', ccRun);
   <li><strong>Angka menempel ke kata sebelumnya.</strong> "Item2" jadi satu kata "item2", bukan dua. Tambahkan separator jika kamu ingin memisahkannya.</li>
   <li><strong>"Huruf pertama camelCase"</strong> selalu lowercase meski input mulai dengan kapital. PascalCase mempertahankan kapital.</li>
   <li><strong>Round-tripping tidak selalu lossless.</strong> Beralih camelCase → kebab-case → camelCase kehilangan petunjuk kapitalisasi asli di batas kata.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Văn bản trong code và content thường cần được biểu diễn ở các "case" cụ thể: tên class trong PascalCase, biến trong camelCase, slug URL trong kebab-case, hằng số trong CONSTANT_CASE. Việc chuyển đổi thủ công thì dễ sai — đặc biệt với các từ viết tắt và dấu chấm câu. Công cụ này thực hiện việc chuyển đổi cho bạn với các quy tắc nhất quán cho mỗi case.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Đổi tên: chuyển <code>UserAccount</code> thành <code>user_account</code> cho Python hoặc <code>user-account</code> cho URL.</li>
+  <li>Chuyển dữ liệu giữa API có quy ước đặt tên khác nhau.</li>
+  <li>Làm sạch heading của tài liệu thành slug hoặc anchor.</li>
+  <li>Tạo nhanh CONSTANT_CASE cho hằng số môi trường hoặc enum.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Viết tắt phá vỡ camelCase ngây thơ.</strong> <code>XMLHTTPRequest</code> hay <code>XmlHttpRequest</code>? Quy ước Google JavaScript thiên về cái sau; thư viện cũ dùng cái trước. Hãy nhất quán.</li>
+  <li><strong>Title Case không phải là viết hoa từng từ.</strong> Title Case tiếng Anh chân chính giữ chữ thường cho mạo từ, giới từ ngắn và liên từ — nhưng các framework thường dùng "Capitalize Each Word" rồi gọi nó là title case.</li>
+  <li><strong>Dấu câu trong slug.</strong> Một bộ tạo kebab-case tốt sẽ bỏ dấu câu, chuyển khoảng trắng thành dấu gạch ngang và viết thường mọi thứ — đừng để dấu nháy hay dấu chấm than rơi vào.</li>
+  <li><strong>Không phải tất cả ngôn ngữ đều có case.</strong> Tiếng Trung, tiếng Nhật và tiếng Hàn không có khái niệm chữ hoa/chữ thường — chuyển đổi case của chúng là no-op.</li>
 </ul>
 """,
     },

@@ -252,6 +252,25 @@ PAGES = {
                     h_no_ai="Tanpa omong kosong AI",
                 ),
             },
+            "vi": {
+                "title": "Giới thiệu Toolhub",
+                "h1": "Giới thiệu Toolhub",
+                "description": "Toolhub là một site tiện ích nhỏ không theo dõi do một người xây dựng. Công cụ dev miễn phí chạy hoàn toàn trong trình duyệt của bạn, không cần đăng ký, không thu thập dữ liệu.",
+                "body": _about_body(
+                    intro_what="Toolhub là một bộ sưu tập công cụ dev và tiện ích hằng ngày miễn phí, chạy hoàn toàn trong trình duyệt của bạn. Không cần đăng ký, không có tài khoản, không theo dõi, không xử lý phía server. Dán dữ liệu vào, lấy kết quả, đóng tab — không có gì được lưu hoặc truyền đi.",
+                    intro_why="Hầu hết các site tiện ích online đều là các trang đỗ đầy quảng cáo, hoặc đẩy dữ liệu của bạn qua mười bốn trình theo dõi của bên thứ ba trước khi bạn kịp click bất kỳ thứ gì. Toolhub là phương án thay thế: một trang, một công cụ, chạy cục bộ, và để bạn yên.",
+                    intro_who=f'JXXR1, maintainer độc lập. Không có công ty, không có vòng gọi vốn, không có nhà đầu tư. Toolhub bắt đầu như một dự án phụ để giải quyết một nhu cầu cá nhân — một trang duy nhất làm tốt một công cụ — và phát triển từ đó. Có thể liên hệ qua <a href="{REPO_URL}">GitHub</a>.',
+                    intro_how="Site này là HTML tĩnh được host trên GitHub Pages. Mỗi công cụ chạy dưới dạng JavaScript trong trình duyệt của bạn — không có lời gọi API, không có tính toán phía server, không có dữ liệu nào rời khỏi thiết bị của bạn trừ khi được ghi rõ ràng (ví dụ công cụ YouTube Thumbnail fetch một ảnh từ CDN của YouTube; mọi thứ khác hoàn toàn cục bộ).",
+                    intro_oss=f'Toàn bộ source code ở <a href="{REPO_URL}">{REPO_URL}</a>. Đóng góp, báo lỗi và ý tưởng công cụ được hoan nghênh qua GitHub Issues.',
+                    intro_no_ai="Block trợ giúp công cụ và bản dịch được con người xem xét trong khả năng, không được paste từ LLM. Nếu bạn thấy bản dịch nghe có vẻ máy móc hoặc sai, hãy mở issue — đó là một sửa chữa dễ và là loại đóng góp làm cho site tốt hơn cho mọi người.",
+                    h_what="Toolhub là gì",
+                    h_why="Tại sao",
+                    h_who="Ai",
+                    h_how="Hoạt động ra sao",
+                    h_oss="Open source",
+                    h_no_ai="Không xài rác AI",
+                ),
+            },
         },
     },
 
@@ -466,6 +485,25 @@ PAGES = {
 
 <h2>Waktu respons</h2>
 <p>Saya berusaha membaca semuanya dalam waktu seminggu, tetapi Toolhub dibangun dan dirawat di waktu luang di samping pekerjaan utama. Jika sesuatu mendesak (misalnya keamanan), tulis itu di baris subjek.</p>
+""".strip(),
+            },
+            "vi": {
+                "title": "Liên hệ",
+                "h1": "Liên hệ",
+                "description": "Liên hệ với maintainer Toolhub qua GitHub Issues để báo lỗi, yêu cầu tính năng và ý tưởng công cụ — hoặc qua email cho các vấn đề khác.",
+                "body": f"""
+<p>Toolhub là dự án phụ một-người. Thời gian phản hồi best-effort, không phải thương mại. Không có form liên hệ — site này cố ý không có backend.</p>
+
+<h2>GitHub Issues</h2>
+<p>Cho báo lỗi, yêu cầu tính năng, sửa bản dịch, và ý tưởng công cụ mới — mở một issue:</p>
+<p><a href="{REPO_ISSUES}">{REPO_ISSUES}</a></p>
+<p>GitHub Issues được ưu tiên vì nó cho thảo luận một URL vĩnh viễn mà người khác có cùng câu hỏi có thể tìm thấy sau này.</p>
+
+<h2>Email</h2>
+<p>Cho những thứ không phù hợp với GitHub Issues — báo chí, hợp tác, báo cáo lỗ hổng bảo mật, yêu cầu takedown — gửi email tới <code>{CONTACT_EMAIL}</code>.</p>
+
+<h2>Thời gian phản hồi</h2>
+<p>Tôi cố gắng đọc mọi thứ trong vòng một tuần, nhưng Toolhub được xây dựng và bảo trì vào thời gian rảnh ngoài công việc chính. Nếu có gì khẩn cấp (ví dụ bảo mật), hãy ghi vào dòng chủ đề.</p>
 """.strip(),
             },
         },
@@ -1017,6 +1055,58 @@ PAGES = {
 <p>Jika kamu menggunakan Toolhub di kelas dan ingin memberi tahu, menyarankan alat untuk pelajaranmu, atau berkontribusi terjemahan untuk bahasa yang masih kami cakup buruk — hubungi melalui <a href="/id/contact/">halaman kontak</a>. Kontribusi terjemahan massal dari penutur asli — terutama untuk bahasa yang kurang terlayani — sangat diterima.</p>
 """.strip(),
             },
+            "vi": {
+                "title": "Toolhub cho Trường học",
+                "h1": "Toolhub cho Trường học",
+                "description": "Công cụ dev và tiện ích ưu tiên quyền riêng tư cho lớp học. Không cần đăng ký, không theo dõi, đa ngôn ngữ, có thể tự host. Thân thiện với bộ lọc và an toàn để chia sẻ cho học sinh.",
+                "body": f"""
+<h2>Toolhub trong lớp học</h2>
+<p>Toolhub là một bộ công cụ nhỏ trong trình duyệt mà học sinh có thể dùng mà không cần tạo tài khoản, không bị theo dõi và không bị chuyển hướng đến phễu quảng cáo hoặc affiliate. Mỗi công cụ chạy hoàn toàn trong trình duyệt, nghĩa là bất kỳ điều gì học sinh gõ không bao giờ rời khỏi mạng trường học — không có backend để gọi.</p>
+<p>Nếu bạn dạy ở trường tiểu học, trung học hoặc đại học và cần một tiện ích nhanh (regex tester, bộ chuyển màu, encoder Base64, trình tạo mật khẩu cho bài học bảo mật), Toolhub được xây dựng để an toàn khi chiếu lên máy chiếu và an toàn để chia sẻ với lớp.</p>
+
+<h2>Liên kết với chương trình</h2>
+<ul>
+<li><strong>Khoa học máy tính:</strong> <a href="/vi/regex-tester/">regex tester</a> cho pattern matching, <a href="/vi/base64-encoder/">Base64 encoder</a> cho bài học dữ liệu, <a href="/vi/hash-generator/">trình tạo hash</a> để nói về tính toàn vẹn, <a href="/vi/cidr-calculator/">máy tính CIDR</a> cho chủ đề mạng.</li>
+<li><strong>Thiết kế và truyền thông số:</strong> <a href="/vi/color-converter/">bộ chuyển màu</a> và <a href="/vi/color-picker/">bộ chọn màu</a> để nói về mô hình màu, <a href="/vi/wcag-contrast/">kiểm tra tương phản WCAG</a> cho khả năng tiếp cận.</li>
+<li><strong>Nhận thức bảo mật:</strong> <a href="/vi/password-generator/">trình tạo mật khẩu</a> để nói về entropy và độ mạnh mật khẩu, <a href="/vi/jwt-decoder/">JWT decoder</a> để cho thấy thực sự có gì bên trong một token.</li>
+<li><strong>Toán và sức khỏe:</strong> <a href="/vi/percentage-calculator/">máy tính phần trăm</a>, <a href="/vi/unit-converter/">bộ chuyển đơn vị</a>, và <a href="/vi/bmi-calculator/">máy tính BMI</a> (trang BMI có thông báo "không phải lời khuyên y tế" riêng).</li>
+</ul>
+
+<h2>Ngôn ngữ được hỗ trợ</h2>
+<p>Mỗi công cụ được dịch sang mười hai ngôn ngữ để học sinh có thể làm việc bằng tiếng mẹ đẻ:</p>
+<ul>
+<li>English (Anh)</li>
+<li>Deutsch (Đức)</li>
+<li>Español (Tây Ban Nha)</li>
+<li>Français (Pháp)</li>
+<li>Italiano (Ý)</li>
+<li>Português (Bồ Đào Nha)</li>
+<li>Polski (Ba Lan)</li>
+<li>日本語 (Nhật)</li>
+<li>Nederlands (Hà Lan)</li>
+<li>Türkçe (Thổ Nhĩ Kỳ)</li>
+<li>Bahasa Indonesia</li>
+<li>Tiếng Việt</li>
+</ul>
+
+<h2>Tùy chọn self-host</h2>
+<p>Nếu mạng trường học chặn các site ngoài hoặc bạn muốn toàn quyền kiểm soát, toàn bộ site khoảng 5 MB và hoạt động offline dưới dạng Progressive Web App. Bạn có thể mirror trên intranet trường học — đây là thư mục tĩnh gồm HTML, CSS và JavaScript, không có bước build để phục vụ: chỉ cần đặt file phía sau bất kỳ web server nào.</p>
+<p>Toàn bộ source code ở <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+
+<h2>Thân thiện với bộ lọc</h2>
+<p>Toolhub được thiết kế để hoạt động tốt với bộ lọc web trường học:</p>
+<ul>
+<li>Không có widget mạng xã hội nhúng.</li>
+<li>Không có widget chat hoặc overlay chat trực tiếp.</li>
+<li>Không có chuyển hướng tự động đến site khác.</li>
+<li>Không có video hoặc âm thanh tự phát.</li>
+<li>Nội dung thân thiện với SafeSearch — không có công cụ người lớn, không có cờ bạc, không có quảng cáo affiliate crypto.</li>
+</ul>
+
+<h2>Liên hệ cho giáo viên</h2>
+<p>Nếu bạn dùng Toolhub trong lớp và muốn cho biết, đề xuất công cụ cho môn học của bạn, hoặc đóng góp bản dịch cho ngôn ngữ mà chúng tôi vẫn chưa cover tốt — hãy liên hệ qua <a href="/vi/contact/">trang liên hệ</a>. Đóng góp dịch hàng loạt từ người bản xứ — đặc biệt cho các ngôn ngữ ít được phục vụ — được hoan nghênh.</p>
+""".strip(),
+            },
         },
     },
 
@@ -1462,6 +1552,46 @@ PAGES = {
 
 <h2>Kontak</h2>
 <p>Pertanyaan tentang kebijakan ini? Hubungi via <a href="/id/contact/">halaman kontak</a> atau buka issue di <a href="{REPO_URL}">{REPO_URL}</a>.</p>
+""".strip(),
+            },
+            "vi": {
+                "title": "Chính sách bảo mật",
+                "h1": "Chính sách bảo mật",
+                "description": "Chính sách bảo mật của Toolhub: công cụ chạy hoàn toàn trong trình duyệt, không cần đăng ký, không có tài khoản, dữ liệu công cụ không rời khỏi thiết bị của bạn. Plausible cho thống kê tổng hợp, AdSense chỉ với sự đồng ý rõ ràng.",
+                "body": f"""
+<p><strong>Cập nhật lần cuối:</strong> {LAST_UPDATED}</p>
+
+<h2>Phiên bản ngắn</h2>
+<p>Công cụ chạy hoàn toàn trong trình duyệt của bạn — bất cứ điều gì bạn gõ vào chúng đều không được gửi đi đâu cả. Chúng tôi đo lường lượt truy cập một cách tổng hợp và ẩn danh bằng <a href="https://plausible.io/data-policy" rel="noopener">Plausible Analytics</a> (không có cookie). Nếu bạn chọn, chúng tôi cũng có thể hiển thị quảng cáo display thông qua Google AdSense vốn sử dụng cookie. Bạn có thể từ chối quảng cáo ở banner đồng ý; phần còn lại của site hoạt động như nhau.</p>
+
+<h2>Những gì chúng tôi thu thập</h2>
+<ul>
+<li><strong>Input công cụ:</strong> không gì cả. Bất cứ điều gì bạn dán vào một công cụ đều ở lại trong trình duyệt của bạn. Không có công cụ nào gửi dữ liệu lên server.</li>
+<li><strong>Thống kê lượt truy cập:</strong> Plausible đếm lượt xem trang, referrer, quốc gia, và loại thiết bị — ẩn danh, tổng hợp, không cookie. <a href="https://plausible.io/data-policy" rel="noopener">Chính sách dữ liệu của Plausible</a> giải thích chính xác họ thu thập và không thu thập gì.</li>
+<li><strong>Nếu bạn chấp nhận quảng cáo:</strong> Google AdSense đặt cookie và có thể dùng chúng để cá nhân hóa quảng cáo. Hoạt động của Google tuân theo <a href="https://policies.google.com/technologies/ads" rel="noopener">chính sách quyền riêng tư về quảng cáo của Google</a>.</li>
+<li><strong>Nếu bạn từ chối quảng cáo:</strong> script quảng cáo không tải, cookie quảng cáo không được đặt, và các block quảng cáo biến mất khỏi trang.</li>
+</ul>
+
+<h2>Cookie</h2>
+<p>Site này dùng một entry localStorage (<code>toolhub:consent</code>) để ghi nhớ tùy chọn quảng cáo của bạn, cộng với một entry <code>theme</code> cho tùy chọn dark/light. Không có gì rời khỏi trình duyệt của bạn.</p>
+<p>Plausible không dùng cookie. Google AdSense dùng cookie <em>chỉ</em> khi bạn chấp nhận — bạn luôn có thể thay đổi lựa chọn của mình qua link đồng ý ở footer.</p>
+
+<h2>Dịch vụ bên ngoài</h2>
+<ul>
+<li><strong>Plausible Analytics</strong> — thân thiện quyền riêng tư, tuân thủ GDPR, host ở EU. Không có dữ liệu cá nhân.</li>
+<li><strong>Google AdSense</strong> — chỉ khi có sự đồng ý rõ ràng. Tải <code>pagead2.googlesyndication.com</code> và có thể đặt cookie quảng cáo.</li>
+<li><strong>GitHub Pages</strong> — host site. GitHub mặc định lưu trữ log server (IP, timestamp, URL) theo <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">tuyên bố bảo mật</a> của họ.</li>
+<li><strong>Công cụ YouTube Thumbnail</strong> — riêng nếu bạn dùng công cụ này, trình duyệt của bạn fetch ảnh trực tiếp từ <code>i.ytimg.com</code> (CDN của YouTube). Không có xác thực, không có upload. Chi tiết ở <a href="/vi/how-we-handle-your-data/">xử lý dữ liệu</a>.</li>
+</ul>
+
+<h2>Link affiliate</h2>
+<p>Một số link ở footer là link affiliate — nếu bạn click và đăng ký dịch vụ được giới thiệu (ví dụ nhà cung cấp hosting), Toolhub có thể nhận hoa hồng nhỏ. Giá bạn trả không thay đổi. Link affiliate được đánh dấu bằng <code>rel="sponsored"</code>. Danh sách đầy đủ ở <a href="/vi/affiliate-disclosure/">tiết lộ affiliate</a>.</p>
+
+<h2>Quyền của bạn</h2>
+<p>Theo GDPR / UK GDPR / CCPA / luật bảo mật Slovakia, bạn có thể yêu cầu truy cập hoặc xóa dữ liệu cá nhân mà chúng tôi giữ về bạn. Chúng tôi không giữ gì cả — không có backend, không có tài khoản, không có database người dùng. Plausible chỉ lưu dữ liệu lượt truy cập tổng hợp. Dữ liệu quảng cáo của Google đi qua kênh yêu cầu riêng của họ.</p>
+
+<h2>Liên hệ</h2>
+<p>Câu hỏi về chính sách này? Liên hệ qua <a href="/vi/contact/">trang liên hệ</a> hoặc mở issue ở <a href="{REPO_URL}">{REPO_URL}</a>.</p>
 """.strip(),
             },
         },
@@ -2054,6 +2184,59 @@ PAGES = {
 <p>Jika ada yang tidak jelas di sini, buka issue di <a href="{REPO_URL}">{REPO_URL}</a> atau gunakan <a href="/id/contact/">halaman kontak</a>. Pertanyaan klarifikasi adalah cara yang baik untuk membuat halaman ini lebih baik bagi pembaca berikutnya.</p>
 """.strip(),
             },
+            "vi": {
+                "title": "Cách chúng tôi xử lý dữ liệu của bạn",
+                "h1": "Cách chúng tôi xử lý dữ liệu của bạn",
+                "description": "Giải thích bằng ngôn ngữ thông thường chính xác cách Toolhub xử lý dữ liệu của bạn. Công cụ chạy trong trình duyệt, không có gì được lưu, ba ngoại lệ được liệt kê rõ ràng.",
+                "body": f"""
+<p><strong>Cập nhật lần cuối:</strong> {LAST_UPDATED}</p>
+<p>Trang này là phiên bản ngôn ngữ thông thường. Nó bổ sung cho <a href="/vi/privacy/">chính sách bảo mật</a>; nếu cả hai mâu thuẫn ở đâu đó, trang này cụ thể hơn và sẽ áp dụng.</p>
+
+<h2>Dữ liệu đi về đâu</h2>
+<p>Công cụ trên Toolhub chạy trong trình duyệt của bạn. Bất cứ điều gì bạn dán, gõ, hoặc tải lên một công cụ đều ở lại trên thiết bị của bạn — không có executor công cụ phía server, và không có endpoint upload đằng sau các công cụ.</p>
+<p>Có chính xác ba ngoại lệ được nêu rõ ràng cho "không có gì rời khỏi thiết bị của bạn":</p>
+<ol>
+<li><strong>Công cụ YouTube Thumbnail</strong> — khi bạn gửi URL YouTube, trình duyệt của bạn fetch thumbnail trực tiếp từ <code>i.ytimg.com</code> (CDN công khai của YouTube cho ảnh). Không có xác thực, không có upload, không có API key. YouTube chỉ thấy video ID từ URL, và chỉ vì trình duyệt của bạn yêu cầu nó.</li>
+<li><strong>AdSense (chỉ khi bật và có sự đồng ý)</strong> — hệ thống quảng cáo display của Google. Với sự đồng ý, Google có thể thấy địa chỉ IP của bạn và đặt cookie theo chính sách của họ. Khi từ chối (mặc định), AdSense không tải gì cả.</li>
+<li><strong>Plausible Analytics</strong> — đếm lượt xem trang, referrer, quốc gia, và loại thiết bị. Không có cookie, không có fingerprinting, chỉ có thống kê tổng hợp. Server Plausible ở EU.</li>
+</ol>
+
+<h2>Những gì chúng tôi lưu</h2>
+<p>Không gì về bạn cả. Không có tài khoản, không có ID người dùng, không có email, không có hồ sơ. Chúng tôi không lưu nội dung bạn đưa vào công cụ.</p>
+<p>Trình duyệt của bạn lưu hai entry localStorage nhỏ chỉ trên thiết bị của bạn — cả hai có thể đọc và xóa qua developer tools của trình duyệt:</p>
+<ul>
+<li><code>theme</code> — "light" hoặc "dark", tùy chọn khoảng một byte.</li>
+<li><code>toolhub:consent</code> — tùy chọn quảng cáo của bạn (có/không/chưa quyết định). Để chúng tôi không hỏi lại.</li>
+</ul>
+
+<h2>GDPR, UK GDPR, CCPA, và DPA Slovakia</h2>
+<p>Toolhub xử lý dữ liệu tối thiểu:</p>
+<ul>
+<li><strong>EU / UK (GDPR / UK GDPR):</strong> Plausible (host ở EU) cung cấp cơ sở analytics tuân thủ. Khi AdSense bật, Google chạy lớp đồng ý riêng dưới TCF v2.</li>
+<li><strong>California (CCPA):</strong> chúng tôi không bán dữ liệu cá nhân. Không có dữ liệu cá nhân để bán.</li>
+<li><strong>Slovakia (cơ quan bảo vệ dữ liệu Slovakia):</strong> maintainer Toolhub đặt tại Slovakia. Quy tắc Slovakia áp dụng cho bất kỳ xử lý nào thực sự xảy ra — mà trong thực tế chỉ có nghĩa là phép đo tổng hợp của Plausible và (khi bật) luồng đồng ý AdSense của chính nó.</li>
+</ul>
+<p>Quyền truy cập hoặc xóa dữ liệu cá nhân trong thực tế không áp dụng vì không có dữ liệu cá nhân nào được lưu để truy cập hoặc xóa. Đối với câu hỏi cụ thể, gửi email qua <a href="/vi/contact/">trang liên hệ</a>.</p>
+
+<h2>Cookie</h2>
+<ul>
+<li><strong>Plausible:</strong> không có cookie, không bao giờ.</li>
+<li><strong>Tùy chọn theme:</strong> một entry localStorage, không phải cookie. Ở lại trên thiết bị của bạn. Không được đính kèm vào HTTP request.</li>
+<li><strong>AdSense (nếu bật):</strong> Google đặt cookie quảng cáo bên thứ ba của riêng họ. Banner đồng ý xuất hiện trước khi script AdSense tải, và nếu bạn từ chối, AdSense không tải gì cả.</li>
+</ul>
+
+<h2>Trẻ em</h2>
+<p>Toolhub thân thiện với trường học (xem <a href="/vi/for-schools/">Toolhub cho Trường học</a>). Không có theo dõi hành vi, không có quảng cáo nhắm mục tiêu. Việc sử dụng dưới 13 tuổi được cho phép trong điều khoản AdSense theo khu vực — ở nơi AdSense hạn chế quảng cáo nhắm vào trẻ em theo khu vực, các giới hạn đó được thực thi bởi chính hệ thống của Google.</p>
+
+<h2>PDF có thể tải xuống</h2>
+<p>Phiên bản PDF của trang này có sẵn cho việc sử dụng offline hoặc để in như một phần của tài liệu IT trường học:</p>
+<p><a href="{PDF_URL}">how-we-handle-your-data.pdf</a></p>
+<p>PDF hiện chỉ có bản tiếng Anh; PDF theo từng ngôn ngữ nằm ngoài phạm vi của bản phát hành này.</p>
+
+<h2>Câu hỏi</h2>
+<p>Nếu có gì không rõ ở đây, mở issue ở <a href="{REPO_URL}">{REPO_URL}</a> hoặc dùng <a href="/vi/contact/">trang liên hệ</a>. Câu hỏi làm rõ là cách tốt để làm cho trang này tốt hơn cho người đọc tiếp theo.</p>
+""".strip(),
+            },
         },
     },
 
@@ -2532,6 +2715,49 @@ PAGES = {
 
 <h2>Kontak</h2>
 <p>Punya pertanyaan tentang afiliasi tertentu, atau ingin menunjukkan sesuatu yang seharusnya tidak ada di sini? Buka issue di <a href="{REPO_URL}">{REPO_URL}</a> atau gunakan <a href="/id/contact/">halaman kontak</a>.</p>
+""".strip(),
+            },
+            "vi": {
+                "title": "Tiết lộ affiliate",
+                "h1": "Tiết lộ affiliate",
+                "description": "Tiết lộ về các quan hệ affiliate của Toolhub tuân thủ FTC và EU. Vendor trả tiền, bạn không trả thêm gì, và việc viết nội dung biên tập không bị chi phối bởi affiliate.",
+                "body": f"""
+<p><strong>Cập nhật lần cuối:</strong> {LAST_UPDATED}</p>
+
+<h2>Link affiliate là gì</h2>
+<p>Link affiliate là một link bình thường với mã theo dõi đính kèm. Nếu bạn click vào nó và sau đó đăng ký dịch vụ được liên kết, dịch vụ đó trả Toolhub một khoản hoa hồng giới thiệu nhỏ. Giá <em>bạn</em> trả giống hệt với phiên bản không-affiliate — bạn không trả hoa hồng, vendor trả.</p>
+
+<h2>Chúng ở đâu trên Toolhub</h2>
+<p>Hiện tại link affiliate có ở hai chỗ:</p>
+<ul>
+<li>Trong footer của site, được đánh dấu bằng badge <code>(affiliate)</code> nhỏ.</li>
+<li>Bất cứ nơi nào block trợ giúp công cụ hoặc phần "công cụ liên quan" đề cập đến một dịch vụ trả phí cụ thể mà chúng tôi giới thiệu — affiliate xuất hiện trong vị trí.</li>
+</ul>
+<p>Link affiliate mang <code>rel="sponsored"</code> trong HTML, đó là tiêu chuẩn của công cụ tìm kiếm để báo hiệu quan hệ thương mại.</p>
+
+<h2>Ai trả tiền</h2>
+<p>Vendor trả hoa hồng, không phải bạn. Nếu bạn bỏ qua link affiliate và đăng ký trực tiếp từ trang chủ của vendor, bạn nhận được cùng dịch vụ với cùng giá; chúng tôi chỉ không thấy giới thiệu.</p>
+
+<h2>Tuân thủ FTC và EU</h2>
+<p>Trang này tồn tại vì cả hướng dẫn xác nhận của Federal Trade Commission Hoa Kỳ và quy tắc EU về bảo vệ người tiêu dùng đều yêu cầu người tạo nội dung tiết lộ mối quan hệ tài chính với sản phẩm được liên kết. Việc tiết lộ phải rõ ràng và trả trước — đó là lý do có một trang riêng cấp cao, và đó là lý do có một link ở footer của mọi trang.</p>
+
+<h2>Affiliate cụ thể</h2>
+<p>Toolhub hiện tại dùng các affiliate và tài khoản hỗ trợ sau (operator: JXXR1):</p>
+<ul>
+<li><strong>DigitalOcean</strong> (cloud hosting) — <a href="https://m.do.co/c/05c01e8aec67" target="_blank" rel="noopener sponsored">m.do.co/c/05c01e8aec67</a></li>
+<li><strong>GitHub Sponsors</strong> — <a href="https://github.com/sponsors/JXXR1" target="_blank" rel="noopener noreferrer">github.com/sponsors/JXXR1</a></li>
+<li><strong>Buy Me a Coffee</strong> — <a href="https://www.buymeacoffee.com/Tool_hub" target="_blank" rel="noopener noreferrer">buymeacoffee.com/Tool_hub</a></li>
+</ul>
+<p>Khi quan hệ affiliate khác được thêm, chúng sẽ được liệt kê ở đây và ngày của trang sẽ được cập nhật.</p>
+
+<h2>Không có vị trí trả phí</h2>
+<p>Đánh giá công cụ, thứ tự xuất hiện của công cụ trên trang chủ, và link "công cụ liên quan" dưới mỗi công cụ <strong>không</strong> bị chi phối bởi affiliate. Chúng tôi không nhận tiền để giới thiệu công cụ hoặc đặt một công cụ trên công cụ khác. Nếu vị trí trả phí được thêm vào (sẽ không, nhưng đề phòng), nó sẽ được dán nhãn như link affiliate: rõ ràng, trả trước, phân biệt được với nội dung biên tập.</p>
+
+<h2>Độc lập biên tập</h2>
+<p>Quan hệ affiliate không ảnh hưởng đến công cụ nào được xây dựng, block trợ giúp được viết như thế nào, hoặc "công cụ liên quan" nào xuất hiện dưới một công cụ cụ thể. Công cụ trên Toolhub là những công cụ chúng tôi sẽ xây dựng ngay cả khi không có chương trình affiliate — chương trình chỉ đóng góp một chút vào hosting và bảo trì.</p>
+
+<h2>Liên hệ</h2>
+<p>Có câu hỏi về một affiliate cụ thể, hoặc muốn chỉ ra điều gì đó không nên ở đây? Mở issue ở <a href="{REPO_URL}">{REPO_URL}</a> hoặc dùng <a href="/vi/contact/">trang liên hệ</a>.</p>
 """.strip(),
             },
         },

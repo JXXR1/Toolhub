@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "JSONPath Tester", "tagline": "Voer JSONPath-queries uit op elk JSON-document. Zie matched nodes en hun paden real-time.", "description": "Gratis online JSONPath-tester. Query genest JSON met $.., wildcards, array slices en filter-expressies. Live resultaten, plak je JSON en begin met queryen."},
         "tr": {"name": "JSONPath Tester", "tagline": "Herhangi bir JSON belgesine JSONPath sorgusu çalıştır. Eşleşen düğümleri ve yollarını gerçek zamanlı gör.", "description": "Ücretsiz online JSONPath tester. İç içe JSON'u $.., joker karakterler, dizi dilimleri ve filtre ifadeleriyle sorgula. Canlı sonuçlar, JSON'unu yapıştır ve sorgulamaya başla."},
         "id": {"name": "JSONPath Tester", "tagline": "Jalankan query JSONPath terhadap dokumen JSON apa pun. Lihat node yang cocok dan path-nya secara real-time.", "description": "JSONPath tester gratis. Tempel JSON apa pun, ketik query JSONPath, dan lihat node yang cocok beserta path-nya secara real-time. Mendukung notasi titik dan kurung, wildcard, slice, dan filter."},
+        "vi": {"name": "JSONPath Tester", "tagline": "Chạy query JSONPath trên bất kỳ tài liệu JSON nào. Xem các node khớp và path của chúng theo thời gian thực.", "description": "JSONPath tester miễn phí trực tuyến. Dán JSON, gõ query JSONPath và xem các node khớp và path của chúng được cập nhật theo thời gian thực."},
     },
     "body": """
 <div class="tool-card">
@@ -447,6 +448,24 @@ document.addEventListener('DOMContentLoaded', jpRun);
   <li><strong><code>$..*</code></strong> mengembalikan setiap node di tree (depth-first), yang bisa sangat banyak. Berguna untuk mengeksplorasi dokumen yang belum dikenal.</li>
   <li><strong>String key numerik.</strong> <code>{"1": "a"}</code> — akses dengan <code>$['1']</code> bekerja; <code>$.1</code> tidak (angka bukan nama dot-property yang valid).</li>
   <li><strong>Ordering.</strong> Urutan property object tidak dijamin oleh JSON. Kalau filtermu bergantung pada urutan, sort dulu.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>JSONPath là một ngôn ngữ truy vấn nhỏ cho JSON — giống như XPath cho XML. Truy vấn <code>$.users[*].email</code> chọn email của mọi user trong array users. Tool này cho phép bạn dán JSON, gõ truy vấn JSONPath và xem các node khớp và đường dẫn của chúng theo thời gian thực — hữu ích để xây dựng selector mà bạn sẽ dùng trong app của mình.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Trích xuất giá trị cụ thể từ response API nested.</li>
+  <li>Xây dựng selector mà bạn sẽ dùng trong Postman, Insomnia, hoặc CI để assert.</li>
+  <li>Khám phá cấu trúc của JSON không quen thuộc bằng cách thử nhiều truy vấn.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Có nhiều dialect.</strong> JSONPath gốc của Goessner, được implement bởi nhiều thư viện, có sự khác biệt. Spec RFC 9535 đang chuẩn hóa nó — đảm bảo dialect tool của bạn khớp với target.</li>
+  <li><strong>Filter có thể chậm.</strong> Trên tài liệu lớn, filter phức tạp (<code>?(@.price > 10)</code>) có thể scan toàn bộ — không phải vấn đề với tool này nhưng đáng nhớ trong production.</li>
+  <li><strong>Wildcard và recursive descent.</strong> <code>$..</code> là descent đệ quy mà có thể match nhiều hơn bạn nghĩ. Hãy dùng cẩn thận.</li>
 </ul>
 """,
     },

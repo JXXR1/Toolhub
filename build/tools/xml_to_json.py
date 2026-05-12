@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "XML ↔ JSON Converter", "tagline": "Converteer XML naar JSON of JSON terug naar XML. Handelt attributes, text-nodes en arrays verstandig af.", "description": "Gratis online XML-naar-JSON converter (en JSON terug naar XML). Gebruikt de native XML-parser van de browser; attributes krijgen een configureerbaar prefix; herhaalde elementen storten in arrays. Draait volledig in je browser."},
         "tr": {"name": "XML ↔ JSON Dönüştürücü", "tagline": "XML'i JSON'a veya JSON'u XML'e geri dönüştür. Attribute'ları, text node'ları ve dizileri akıllıca işler.", "description": "Ücretsiz online XML'den JSON'a dönüştürücü (ve JSON'dan XML'e geri). Tarayıcının yerel XML parser'ını kullanır; attribute'lar ayarlanabilir bir önek alır; tekrarlayan elementler dizilere indirgenir. Tamamen tarayıcında çalışır."},
         "id": {"name": "Konverter XML ↔ JSON", "tagline": "Konversi XML ke JSON atau JSON kembali ke XML. Menangani attribute, text node, dan array secara cerdas.", "description": "Konverter XML ke JSON gratis (dan sebaliknya). Konversi XML ke representasi JSON yang dapat dibaca, menangani attribute, text node, dan element berulang sebagai array. Konversi balik JSON ke XML juga didukung."},
+        "vi": {"name": "Chuyển đổi XML ↔ JSON", "tagline": "Chuyển XML thành JSON hoặc JSON thành XML. Xử lý attribute, text node và mảng một cách thông minh.", "description": "Bộ chuyển XML ↔ JSON miễn phí trực tuyến. Chuyển một chiều hoặc chiều khác với xử lý thông minh cho attribute, text node và phần tử lặp lại biến thành mảng. Chạy hoàn toàn trong trình duyệt."},
     },
     "body": """
 <div class="tool-card">
@@ -432,6 +433,24 @@ document.addEventListener('DOMContentLoaded', xjRun);
   <li><strong>Namespace dipertahankan apa adanya.</strong> <code>ns:tag</code> tetap <code>"ns:tag"</code> sebagai JSON key. Demikian juga attribute <code>xmlns:</code>.</li>
   <li><strong>Number dan boolean tidak auto-cast.</strong> Teks XML selalu string; <code>"1"</code> tetap <code>"1"</code> di JSON. Cast type di kode aplikasi jika perlu.</li>
   <li><strong>JSON → XML butuh root key tunggal.</strong> XML butuh tepat satu element root; input JSON harus berupa object dengan satu key top-level.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>XML và JSON là cả hai data format, nhưng XML có concept (attribute, namespace, mixed content) không tồn tại trong JSON. Tool này map giữa chúng theo cách "good enough": attribute thành <code>@</code>-prefixed key, text content thành <code>#text</code>, element lặp lại thành array.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Đưa response SOAP cũ vào pipeline JS hiện đại.</li>
+  <li>Migrate cấu hình XML thành JSON.</li>
+  <li>So sánh hai cấu trúc dữ liệu nhanh chóng dạng JSON.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Round-trip không lossless.</strong> XML → JSON → XML có thể không tạo lại XML byte-identical do attribute order, whitespace, comment.</li>
+  <li><strong>Namespace phẳng hóa.</strong> XML có namespace; JSON không. Tool này hoặc bỏ qua namespace hoặc thêm chúng dưới dạng prefix trong key.</li>
+  <li><strong>Mixed content khó.</strong> Một element XML có cả text và child element ánh xạ awkwardly vào JSON. Trường hợp đó nên được biểu diễn dưới dạng array với object xen kẽ.</li>
 </ul>
 """,
     },

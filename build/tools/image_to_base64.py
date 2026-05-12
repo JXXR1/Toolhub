@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Afbeelding naar Base64", "tagline": "Converteer elke afbeelding naar een Base64-data-URI klaar voor inline gebruik in HTML, CSS of Markdown. Bestanden blijven in je browser.", "description": "Gratis online afbeelding-naar-Base64-data-URI encoder. Drop of kies een afbeelding en krijg een ready-to-paste data: URL voor inline HTML, CSS background-image of email."},
         "tr": {"name": "Görsel'den Base64'e", "tagline": "Herhangi bir görseli HTML, CSS veya Markdown'da inline kullanım için Base64 data URI'a dönüştür. Dosyalar tarayıcında kalır.", "description": "Ücretsiz online görselden Base64 data URI encoder. Bir görseli bırak veya seç, inline HTML, CSS background-image veya e-posta için yapıştırılmaya hazır data: URL al."},
         "id": {"name": "Gambar ke Base64", "tagline": "Konversi gambar apa pun ke Base64 data URI untuk penggunaan inline di HTML, CSS, atau Markdown. File tetap di browser-mu.", "description": "Konverter gambar ke Base64 gratis. Drop gambar apa pun dan dapatkan Base64 data URI siap pakai untuk disematkan di HTML, CSS, atau Markdown. File tetap di browser-mu — tanpa upload, tanpa pelacakan."},
+        "vi": {"name": "Ảnh sang Base64", "tagline": "Chuyển bất kỳ ảnh nào thành Base64 data URI để dùng inline trong HTML, CSS hoặc Markdown. File ở lại trong trình duyệt của bạn.", "description": "Bộ chuyển ảnh sang Base64 miễn phí trực tuyến. Thả bất kỳ file ảnh nào và nhận data URI sẵn-dùng cho CSS, HTML hoặc Markdown. File không bao giờ rời khỏi trình duyệt của bạn."},
     },
     "body": """
 <div class="tool-card">
@@ -207,6 +208,24 @@ function i2bRun(){
   <li><strong>Tidak ada deduplikasi antar halaman.</strong> Setiap halaman yang menyematkan URI itu mengirim byte-nya lagi. Untuk apa pun yang dipakai ulang, simpan sebagai URL asli supaya browser meng-cache-nya sekali.</li>
   <li><strong>Email client berbeda-beda.</strong> Kebanyakan client modern me-render data URI, tapi Outlook di Windows secara historis memblokirnya di <code>&lt;img src&gt;</code>. CID attachment masih lebih aman untuk mass email.</li>
   <li><strong>SVG ≠ raster.</strong> Untuk SVG, menyematkan markup langsung (atau url-encode SVG-nya) biasanya lebih kecil dibanding Base64.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Một data URI nhúng dữ liệu nhị phân trực tiếp vào CSS, HTML hoặc Markdown dưới dạng chuỗi base64. <code>background-image: url('data:image/png;base64,iVBORw...')</code> tải ảnh mà không cần fetch HTTP riêng. Hữu ích cho icon nhỏ trong CSS, ảnh inline trong email, hoặc ảnh thumbnail trong PDF được tạo. Tool này chuyển bất kỳ file ảnh nào thành một data URI sẵn sàng để paste.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Inline một icon nhỏ vào CSS để giảm số request HTTP.</li>
+  <li>Nhúng một ảnh vào email HTML (mặc dù nhiều client email không bật cái này theo mặc định).</li>
+  <li>Thử nhanh ảnh trong một CodeSandbox mà không upload nó.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Base64 thêm khoảng 33% kích thước.</strong> Một ảnh 10 KB trở thành ~13.4 KB chuỗi. Đối với ảnh nhỏ (&lt; 1 KB), tiết kiệm fetch worth it; đối với ảnh lớn hơn, dùng URL riêng và để trình duyệt cache.</li>
+  <li><strong>Hỗ trợ email client thay đổi.</strong> Một số client (Outlook 2007–2013) không hỗ trợ data URI inline.</li>
+  <li><strong>Đừng quá lớn.</strong> Một số trình duyệt và database có giới hạn về kích thước chuỗi data URI.</li>
 </ul>
 """,
     },

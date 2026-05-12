@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "YouTube Thumbnail Downloader", "tagline": "Plak elke YouTube-URL of video-ID en grijp elke beschikbare thumbnail-size — directe downloadlinks, geen upload, geen registratie.", "description": "Gratis YouTube thumbnail downloader. Extraheert de video-ID uit elke YouTube-URL (watch, youtu.be, shorts, embed, /v/) en toont alle beschikbare thumbnail-resoluties met directe downloadlinks."},
         "tr": {"name": "YouTube Thumbnail İndirici", "tagline": "Herhangi bir YouTube URL'i veya video ID'sini yapıştır ve mevcut her thumbnail boyutunu yakala — doğrudan indirme linkleri, upload yok, kayıt yok.", "description": "Ücretsiz YouTube thumbnail indirici. Herhangi bir YouTube URL'inden (watch, youtu.be, shorts, embed, /v/) video ID'sini çıkarır ve doğrudan indirme linkleriyle mevcut tüm thumbnail çözünürlüklerini gösterir."},
         "id": {"name": "Pengunduh Thumbnail YouTube", "tagline": "Tempel URL YouTube atau ID video, dan ambil setiap ukuran thumbnail yang tersedia — link unduh langsung, tanpa upload, tanpa pendaftaran.", "description": "Pengunduh thumbnail YouTube gratis. Tempel URL YouTube atau ID video dan dapatkan link unduh langsung untuk setiap ukuran thumbnail yang tersedia (default, medium, high, standard, maxres). Tanpa upload, tanpa pelacakan."},
+        "vi": {"name": "Tải Thumbnail YouTube", "tagline": "Dán URL YouTube hoặc ID video, và lấy mọi kích thước thumbnail có sẵn — link tải trực tiếp, không upload, không đăng ký.", "description": "Trình tải thumbnail YouTube miễn phí trực tuyến. Dán bất kỳ URL YouTube nào hoặc ID video và lấy tất cả các kích thước thumbnail có sẵn (mặc định, hq, mq, sd, maxres). Trình duyệt của bạn fetch trực tiếp từ CDN của YouTube — không có upload."},
     },
     "body": """
 <div class="tool-card">
@@ -320,6 +321,24 @@ document.addEventListener('DOMContentLoaded', ytRun);
   <li><strong>Tetap image milik YouTube.</strong> Hot-linking baik-baik saja; meng-host ulang di CDN sendiri secara teknis boleh tapi cek lisensi jika kamu menggunakannya secara komersial. Pembuat video mungkin punya copyright atas konten visual frame.</li>
   <li><strong>WebP tidak didukung di sini.</strong> YouTube juga menyajikan versi <code>.webp</code> (file lebih kecil), tapi disajikan dari path CDN berbeda dan tidak di-expose oleh tool ini.</li>
   <li><strong>Live stream dan Shorts</strong> bekerja dengan baik — URL parser menangani semua bentuk modern — tapi thumbnail live stream berubah selama broadcast.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>YouTube tự động sinh thumbnail cho mỗi video ở nhiều kích thước (default, hq, mq, sd, maxres). Bạn có thể fetch chúng trực tiếp từ CDN của YouTube mà không cần API key, login hoặc upload — chỉ cần biết video ID. Tool này dán URL YouTube hoặc ID, hiển thị từng thumbnail có sẵn với link tải trực tiếp.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Tạo content cover với thumbnail của video YouTube được embed.</li>
+  <li>Lấy ảnh archive của thumbnail trước khi creator update nó.</li>
+  <li>Build công cụ liệt kê hiển thị thumbnail video.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>maxres không phải lúc nào cũng có.</strong> YouTube tạo maxresdefault.jpg chỉ cho video độ phân giải đủ cao. Đối với video cũ hoặc thấp, fetch return 404.</li>
+  <li><strong>Thumbnail thay đổi.</strong> Creator có thể update thumbnail bất cứ lúc nào. URL ổn định nhưng image bytes thay đổi — nếu bạn cần lock version cụ thể, download và lưu trữ.</li>
+  <li><strong>Đừng share trái phép.</strong> Thumbnail có copyright. OK để embed video YouTube; xem điều khoản trước khi dùng thumbnail trong context khác.</li>
 </ul>
 """,
     },

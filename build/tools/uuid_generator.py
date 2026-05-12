@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "UUID Generator", "tagline": "Genereer RFC 4122 UUIDs (v4 random of v7 time-ordered). Batch tot 100. Cryptografisch veilig.", "description": "Gratis online UUID-generator. RFC 4122 v4 (random) en v7 (time-ordered, sorteerbaar). Genereer er één of veel tegelijk, allemaal in je browser."},
         "tr": {"name": "UUID Üretici", "tagline": "RFC 4122 UUID üret (v4 rastgele veya v7 zaman sıralı). 100'e kadar toplu. Kriptografik olarak güvenli.", "description": "Ücretsiz online UUID üretici. RFC 4122 v4 (rastgele) ve v7 (zaman sıralı, sıralanabilir). Bir veya birden fazlasını üret, hepsi tarayıcında."},
         "id": {"name": "UUID Generator", "tagline": "Hasilkan UUID RFC 4122 (v4 acak atau v7 time-sortable). Bulk hingga 100. Kripto-aman.", "description": "UUID generator gratis. Hasilkan UUID RFC 4122 dalam jumlah berapa pun (hingga 100 sekaligus). Pilih antara UUID v4 acak atau v7 time-sortable. Menggunakan crypto.getRandomValues — kripto-aman."},
+        "vi": {"name": "Tạo UUID", "tagline": "Tạo UUID RFC 4122 (v4 ngẫu nhiên hoặc v7 sắp xếp được theo thời gian). Tạo hàng loạt lên đến 100. An toàn về mật mã.", "description": "Trình tạo UUID miễn phí trực tuyến. Tạo UUID v4 (ngẫu nhiên) hoặc v7 (sắp xếp được theo thời gian) tuân thủ RFC 4122 bằng cách dùng RNG an toàn về mật mã của trình duyệt. Tạo hàng loạt lên đến 100 cùng lúc."},
     },
     "body": """
 <div class="tool-card">
@@ -309,6 +310,24 @@ document.addEventListener('DOMContentLoaded', uuidGen);
   <li><strong>v4 memfragmentasi index database.</strong> ID random menyebarkan write ke seluruh index, menyakiti page cache hit rate dan write throughput. Ini argumen orisinal untuk v7.</li>
   <li><strong>Jangan pakai v1.</strong> Varian time-and-MAC lama membocorkan MAC address mesin yang men-generate. v7 adalah pengganti modern.</li>
   <li><strong>Pakai randomness crypto-secure.</strong> Tool ini pakai <code>crypto.getRandomValues</code>; jangan pernah bikin sendiri dengan <code>Math.random</code> — tidak cukup random dan ID jadi bisa diprediksi.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>UUID (Universally Unique Identifier) là ID 128-bit thực tế không xung đột giữa các system. Tốt cho primary key, request ID, file name. Có nhiều phiên bản — v4 là ngẫu nhiên thuần (dùng cho hầu hết các trường hợp), v7 là time-sortable (mới hơn, hữu ích khi bạn muốn keys mới chèn cuối index database).</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Primary key cho table không có ID tự nhiên.</li>
+  <li>Request ID hoặc correlation ID để theo dõi qua microservice.</li>
+  <li>Tên file tạm thời không xung đột.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>UUID v4 không index tốt.</strong> Vì các UUID v4 ngẫu nhiên về mặt vũ trụ, chúng phân tán insert qua B-tree index trong PostgreSQL/MySQL — gây page split. v7 (time-sortable) giải quyết điều này.</li>
+  <li><strong>UUID là 36 ký tự kiểu UUID, hoặc 16 byte.</strong> Hiển thị thường có dash; binary form ngắn hơn nhiều.</li>
+  <li><strong>UUID có thể dự đoán được nếu sloppy.</strong> RNG yếu hoặc sequencer broken có thể tạo ra UUID dự đoán được. Tool này dùng crypto.getRandomValues — an toàn.</li>
 </ul>
 """,
     },

@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Markdown Table Editor", "tagline": "Bewerk visueel een tabel — rows, kolommen, alignment per kolom — en kopieer de GitHub-flavoured Markdown.", "description": "Gratis online Markdown table editor. Klik cellen om te bewerken, voeg rows en kolommen toe of verwijder, stel per-kolom alignment in en kopieer de GitHub-flavoured Markdown output. Draait volledig in je browser."},
         "tr": {"name": "Markdown Tablo Editörü", "tagline": "Bir tabloyu görsel olarak düzenle — satırlar, sütunlar, sütun başına hizalama — ve GitHub uyumlu Markdown'u kopyala.", "description": "Ücretsiz online Markdown tablo editörü. Düzenlemek için hücrelere tıkla, satır/sütun ekle/kaldır, sütun başına hizalama ayarla ve GitHub uyumlu Markdown çıktısını kopyala. Tamamen tarayıcında çalışır."},
         "id": {"name": "Editor Tabel Markdown", "tagline": "Edit tabel secara visual — baris, kolom, alignment per kolom — dan salin Markdown yang kompatibel dengan GitHub.", "description": "Editor tabel Markdown gratis. Edit tabel di antarmuka spreadsheet, atur alignment kolom, tambah/hapus baris dan kolom, dan dapatkan Markdown GFM siap-tempel. Tempel CSV/TSV untuk import cepat."},
+        "vi": {"name": "Trình chỉnh sửa Bảng Markdown", "tagline": "Chỉnh sửa bảng trực quan — hàng, cột, căn lề theo cột — và sao chép Markdown tương thích GitHub.", "description": "Trình chỉnh sửa bảng Markdown miễn phí trực tuyến. Thêm/bớt hàng và cột, đặt căn lề theo cột, chỉnh sửa nội dung cell, và sao chép Markdown sẵn-dùng tương thích GitHub."},
     },
     "body": """
 <div class="tool-card">
@@ -460,6 +461,24 @@ document.addEventListener('DOMContentLoaded', () => (window.requestIdleCallback 
   <li><strong>Row pertama selalu diperlakukan sebagai header.</strong> Tabel GFM memiliki header yang wajib. Kalau data kamu tidak punya header natural, pakai sel kosong di row 1.</li>
   <li><strong>Beberapa flavour Markdown lebih ketat dari GFM.</strong> CommonMark sendiri tidak mendefinisikan tabel; GFM, MultiMarkdown, dan beberapa yang lain mendukung varian yang sedikit berbeda. Output di sini menargetkan GFM (GitHub, GitLab, kebanyakan renderer modern).</li>
   <li><strong>Paste CSV mentah tidak akan bekerja.</strong> Textarea "import" mengharapkan tabel Markdown (dengan separator <code>|---|</code>). Untuk CSV → Markdown, pakai tool CSV-to-JSON dulu atau paste row secara manual.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Bảng Markdown nhanh đọc nhưng đau viết — căn lề cell với pipe và dash bằng tay khó. Tool này cho phép bạn chỉnh sửa bảng một cách trực quan (thêm/bớt hàng và cột, đặt căn lề cột) và sao chép Markdown sẵn-dùng tương thích GitHub.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Tạo bảng so sánh trong README.</li>
+  <li>Chèn bảng dữ liệu vào pull request hoặc issue.</li>
+  <li>Chỉnh sửa bảng phức tạp mà không phải đếm pipe.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>GFM khác Markdown cổ điển.</strong> Bảng không phải là một phần của Markdown gốc của John Gruber — chúng là extension của GFM. Một số renderer (kindle, một số e-reader) không xử lý chúng.</li>
+  <li><strong>Pipe trong cell cần escape.</strong> <code>\|</code> sẽ render là pipe literal. Tool này xử lý điều đó tự động.</li>
+  <li><strong>Bảng không hỗ trợ rowspan/colspan.</strong> Đối với layout phức tạp, dùng HTML trực tiếp.</li>
 </ul>
 """,
     },

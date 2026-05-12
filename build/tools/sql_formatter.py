@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "SQL Formatter", "tagline": "Formatteer en beautify SQL met goede indentatie, of minify naar een enkele regel. Dialect-aware (ANSI / MySQL / Postgres).", "description": "Gratis online SQL-formatter. Pretty-print elke SELECT/INSERT/UPDATE/DDL met consistente indentatie, keyword-casing en clause-alignment. Minify ook naar een enkele regel. Draait volledig in je browser."},
         "tr": {"name": "SQL Formatter", "tagline": "SQL'i düzgün indent ile biçimlendir ve güzelleştir veya tek satıra küçült. Lehçe farkında (ANSI / MySQL / Postgres).", "description": "Ücretsiz online SQL formatter. Herhangi bir SELECT/INSERT/UPDATE/DDL'yi tutarlı indent, anahtar kelime büyük/küçük harf ve clause hizalaması ile güzel yazdırır. Aynı zamanda tek satıra küçültür. Tamamen tarayıcında çalışır."},
         "id": {"name": "SQL Formatter", "tagline": "Format dan beautify SQL dengan indentasi yang tepat, atau minify ke satu baris. Sadar dialek (ANSI / MySQL / Postgres).", "description": "SQL formatter gratis. Beautify SQL berantakan dengan indentasi dan baris baru yang tepat, atau minify ke satu baris. Sadar dialek untuk ANSI SQL, MySQL, PostgreSQL, dan SQLite. Berjalan di browser-mu."},
+        "vi": {"name": "SQL Formatter", "tagline": "Format và làm đẹp SQL với indent thích hợp, hoặc minify thành một dòng. Có nhận biết phương ngữ (ANSI / MySQL / Postgres).", "description": "SQL formatter miễn phí trực tuyến. Làm đẹp truy vấn SQL với indent thích hợp hoặc minify thành một dòng. Hỗ trợ phương ngữ ANSI, MySQL và Postgres với từ khóa và quy tắc của chúng."},
     },
     "body": """
 <div class="tool-card">
@@ -547,6 +548,24 @@ document.addEventListener('DOMContentLoaded', sfRun);
   <li><strong>Komentar tetap ada tapi diisolasi di baris sendiri.</strong> Jika kamu punya <code>-- inline comment</code> di tengah baris, itu akan pindah ke barisnya sendiri saat pretty-print.</li>
   <li><strong>Minify menghapus komentar.</strong> Jika kamu butuh komentar, jangan minify.</li>
   <li><strong>Ini bukan linter.</strong> Pakai parser SQL sungguhan (misalnya <code>sqlfluff</code>) untuk validasi, penegakan style, dan pengecekan dialek di CI.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Truy vấn SQL được viết một dòng hoặc copy-paste từ chương trình thường khó đọc. Tool này pretty-print SQL với indent thích hợp — keyword viết hoa, mệnh đề mỗi dòng, JOIN thẳng hàng — hoặc minify thành một dòng cho lưu trữ chặt chẽ. Có nhận biết phương ngữ (ANSI / MySQL / Postgres).</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Review truy vấn dài trong code review.</li>
+  <li>Pretty-print SQL từ log ứng dụng để debug.</li>
+  <li>Minify truy vấn tham số hóa trước khi paste vào string literal.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Dialect khác biệt.</strong> Backtick MySQL khác double quote Postgres. <code>LIMIT</code> không phải SQL chuẩn (đó là MySQL/Postgres ext). Đảm bảo phương ngữ tool khớp với của bạn.</li>
+  <li><strong>String literal có thể chứa cú pháp SQL.</strong> <code>WHERE name = 'O\'Brien'</code> chứa apostrophe escaped — đừng nhầm với end của string.</li>
+  <li><strong>Formatter không phải validator.</strong> Một truy vấn được format đẹp vẫn có thể có lỗi cú pháp hoặc tham chiếu sai column.</li>
 </ul>
 """,
     },

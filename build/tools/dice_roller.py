@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Dobbelsteen-roller", "tagline": "Gooi dobbelstenen met standaard D&D-notatie — 2d6+3, 1d20, 4d6 keep highest 3. Crypto-secure RNG.", "description": "Gratis online dobbelsteen-roller met standaard tabletop-notatie: 1d20, 2d6+3, 4d6kh3, 3d8-1. Zie elke individuele worp plus het totaal. Gebruikt crypto.getRandomValues voor eerlijke, onvoorspelbare worpen."},
         "tr": {"name": "Zar Atıcı", "tagline": "Standart D&D notasyonuyla zar at — 2d6+3, 1d20, 4d6 en yüksek 3'ü tut. Kripto-güvenli RNG.", "description": "Standart masaüstü notasyonuyla ücretsiz online zar atıcı: 1d20, 2d6+3, 4d6kh3, 3d8-1. Her tek atışı ve toplamı gör. Adil, öngörülemez atışlar için crypto.getRandomValues kullanır."},
         "id": {"name": "Pelempar Dadu", "tagline": "Lempar dadu dengan notasi D&D standar — 2d6+3, 1d20, 4d6 ambil 3 tertinggi. RNG kripto-aman.", "description": "Pelempar dadu online gratis. Mendukung notasi D&D standar (2d6+3, 1d20, 4d6kh3, 3d6!), advantage/disadvantage, eksplosi, dan keep-highest/lowest. Menggunakan crypto.getRandomValues — RNG kripto-aman."},
+        "vi": {"name": "Tung Xúc xắc", "tagline": "Tung xúc xắc với notation D&D chuẩn — 2d6+3, 1d20, 4d6 lấy 3 cao nhất. RNG an toàn về mật mã.", "description": "Trình tung xúc xắc trực tuyến miễn phí. Hỗ trợ notation D&D chuẩn (1d20, 2d6+3, 4d6kh3, v.v.) bằng cách dùng crypto.getRandomValues của trình duyệt để các lần tung là công bằng và không thể đoán trước."},
     },
     "body": """
 <div class="tool-card">
@@ -492,6 +493,24 @@ document.addEventListener('DOMContentLoaded', drValidate);
   <li><strong>Ini bukan exploding dice.</strong> Tidak ada explosion gaya <code>!</code>, tidak ada reroll (<code>r1</code>), tidak ada penghitungan sukses (<code>3d10>=7</code>). Notasi di sini adalah subset sederhana "sum and modify" yang menutupi ~95% roll umum.</li>
   <li><strong>Crit ditandai hanya untuk d20.</strong> Angka 20 di-highlight hijau, angka 1 di-highlight merah. Ukuran dice lain tidak mendapat pewarnaan.</li>
   <li><strong>Cap 1000 dice per roll.</strong> Batas atas yang masuk akal untuk menjaga halaman tetap responsif.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Notation xúc xắc D&D đóng gói "tung X xúc xắc Y mặt và làm Z với chúng" thành một chuỗi nhỏ: <code>2d6+3</code> là tung hai d6 và cộng 3, <code>4d6kh3</code> là tung bốn d6 và giữ ba cao nhất. Tool này phân tích notation, sử dụng <code>crypto.getRandomValues</code> để có ngẫu nhiên thực sự không thể đoán trước, và hiển thị từng kết quả tung cộng với tổng.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Chơi RPG bàn hoặc PBP và cần tung công bằng mà GM của bạn không thể chỉnh.</li>
+  <li>Test xác suất — chạy 1000 lần tung <code>2d6</code> và kiểm tra phân phối.</li>
+  <li>Chọn ngẫu nhiên — <code>1d20</code> để chọn một mục từ 20 lựa chọn.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>RNG mã hóa không phải là "chống gian lận".</strong> Trừ khi bạn ngồi bên cạnh người tung, không có RNG nào có thể chứng minh được không bị giả mạo. Đối với chơi nghiêm túc, dùng tool tung được ký bằng mã hóa hoặc tung trực tiếp.</li>
+  <li><strong>"Drop the lowest" và "keep the highest" không giống nhau với tổng số xúc xắc khác nhau.</strong> 4d6 keep highest 3 ≠ 4d6 drop lowest 1 chỉ khi notation rõ ràng về việc khớp.</li>
+  <li><strong>Notation D&D không phổ thông.</strong> Một số hệ thống chơi (Storyteller, World of Darkness, dicepool games) dùng cú pháp khác. Tool này tập trung vào notation D&D / Pathfinder.</li>
 </ul>
 """,
     },

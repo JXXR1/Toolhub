@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "URL Parser", "tagline": "Plak elke URL — zie protocol, host, port, path, query parameters (gedecodeerd), hash en origin uitgesplitst.", "description": "Gratis online URL parser. Decodeert elke URL naar protocol, host, port, path, query string, hash en origin, met elke query-parameter gedecodeerd getoond. Draait volledig in je browser."},
         "tr": {"name": "URL Parser", "tagline": "Herhangi bir URL'i yapıştır — protokolü, host'u, port'u, path'i, query parametrelerini (decoded), hash'i ve origin'i ayrıştırılmış olarak gör.", "description": "Ücretsiz online URL parser. Herhangi bir URL'i protokol, host, port, path, query string, hash ve origin'e çözer; her query parametresi decoded gösterilir. Tamamen tarayıcında çalışır."},
         "id": {"name": "URL Parser", "tagline": "Tempel URL apa pun — lihat protokol, host, port, path, parameter query (di-decode), hash, dan origin yang sudah diurai.", "description": "URL parser gratis. Tempel URL apa pun dan lihat protokol, host, port, path, parameter query yang di-decode, hash, dan origin-nya. Bantu debug masalah routing dan inspeksi link yang kompleks."},
+        "vi": {"name": "Trình phân tích URL", "tagline": "Dán bất kỳ URL nào — xem protocol, host, port, path, tham số query (đã decode), hash và origin đã phân tích.", "description": "Trình phân tích URL miễn phí trực tuyến. Tách bất kỳ URL nào thành protocol, host, port, path, tham số query (đã decode), hash và origin để debug API và tích hợp."},
     },
     "body": """
 <div class="tool-card">
@@ -346,6 +347,24 @@ document.addEventListener('DOMContentLoaded', upRun);
   <li><strong>Hostname punycode.</strong> <code>example.中国</code> disimpan secara internal sebagai <code>xn--fiqs8s</code>; <code>hostname</code> bisa menampilkan bentuk ASCII tergantung browser.</li>
   <li><strong>Origin kadang-kadang "null".</strong> Untuk <code>file://</code>, <code>data:</code>, atau konteks sandbox, origin bersifat opaque.</li>
   <li><strong>Ini parsing, bukan validasi.</strong> URL bisa ter-parse bersih dan tetap salah untuk aplikasimu (mis. host keliru, path hilang).</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Một URL như <code>https://api.example.com:8443/v2/users?id=42#section</code> có nhiều phần: protocol, host, port, path, query, hash. Khi debug, bạn thường muốn nhìn vào các phần đó tách biệt. Tool này dùng <code>URL</code> API tích hợp của trình duyệt để phân tích chính xác bất kỳ URL nào, hiển thị các phần và param query đã decode.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Debug API integration — kiểm tra URL có tất cả các param dự kiến không.</li>
+  <li>Tách host từ URL cấu hình.</li>
+  <li>Decode param query phức tạp được encoded nhiều lớp.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>URL không phải URI.</strong> URI là superset; URL là tập con cụ thể có scheme và authority.</li>
+  <li><strong>Hash không gửi đến server.</strong> Phần sau <code>#</code> chỉ tồn tại trong trình duyệt — server không thấy. Web app SPA dùng nó cho client-side routing.</li>
+  <li><strong>Port mặc định không xuất hiện.</strong> <code>https://example.com</code> dùng port 443 nhưng bạn không thấy nó trong URL. Tool này hiển thị nó.</li>
 </ul>
 """,
     },

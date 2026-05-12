@@ -19,6 +19,7 @@ TOOL = {
         "nl": {"name": "Query String Builder", "tagline": "Voeg key/value-rijen toe; krijg een correct URL-encoded query-string. Ondersteunt array (a[]=1) en bracket-loze herhaalde keys.", "description": "Gratis online query string builder. Voeg rijen van key/value-paren toe en krijg een correct percent-encoded ?a=1&b=hello%20world string uit, met optionele array bracket-notatie. Draait volledig in je browser."},
         "tr": {"name": "Query String Builder", "tagline": "key/value satırları ekle; doğru URL-encoded query string çıkar. Dizi (a[]=1) ve braket'siz tekrarlayan anahtarları destekler.", "description": "Ücretsiz online query string builder. key/value çiftleri satırları ekle ve düzgün percent-encoded ?a=1&b=hello%20world string çıkar, opsiyonel dizi braket notasyonu ile. Tamamen tarayıcında çalışır."},
         "id": {"name": "Query String Builder", "tagline": "Tambahkan baris key/value; dapatkan output query string yang di-URL-encode dengan benar. Mendukung array (a[]=1) dan kunci berulang tanpa kurung.", "description": "Query string builder gratis. Tambahkan key/value secara visual dan dapatkan query string yang di-URL-encode dengan benar. Mendukung notasi array (a[]=1) atau kunci berulang sederhana. Sempurna untuk testing API."},
+        "vi": {"name": "Trình xây dựng Query String", "tagline": "Thêm dòng key/value; nhận query string được URL-encode đúng cách. Hỗ trợ mảng (a[]=1) và key lặp lại không có dấu ngoặc.", "description": "Trình xây dựng query string miễn phí trực tuyến. Soạn URL parameter cặp key/value, với encoding chính xác cho ký tự đặc biệt và hỗ trợ ký hiệu mảng (a[]=1) cũng như key lặp lại không có dấu ngoặc."},
     },
     "body": """
 <div class="tool-card">
@@ -382,6 +383,24 @@ document.addEventListener('DOMContentLoaded', () => { qsRender(); qsBuild(); });
   <li><strong>Urutan bisa penting.</strong> Beberapa skema signed-URL (S3, webhook Stripe, OAuth 1.0) mensyaratkan parameter dalam urutan tertentu sebelum signing. Tool mempertahankan urutan baris kamu.</li>
   <li><strong>Batas panjang.</strong> Browser dan server membatasi panjang query-string sekitar 2–8 KB. Menjejalkan JSON ke parameter query adalah code smell.</li>
   <li><strong>Jangan menaruh secret di query string.</strong> Secret akan muncul di log server, history browser, dan header Referer. Gunakan request body atau header Authorization sebagai gantinya.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>URL có thể mang dữ liệu trong query string — phần sau dấu <code>?</code>. Cú pháp đơn giản về cơ bản (<code>key=value&amp;k2=v2</code>) nhưng có cạnh nhọn: ký tự đặc biệt cần escape, mảng có vài convention khác nhau, và rất dễ quên một ký tự. Tool này cho phép bạn xây dựng query string theo cặp key/value có ordered và xuất chuỗi được URL-encode đúng cách.</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Build URL test với param đặc biệt cho debug API.</li>
+  <li>Mã hóa search query hoặc filter param đúng cách.</li>
+  <li>Tạo link share với pre-filled form param.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Convention mảng khác nhau.</strong> <code>tags=a&amp;tags=b</code> vs <code>tags[]=a&amp;tags[]=b</code> vs <code>tags=a,b</code>. Express/Node, Rails và Python dùng convention khác — đảm bảo khớp với backend.</li>
+  <li><strong>Encoding URL kỹ chứ đừng quá kỹ.</strong> Encode <code>=</code> và <code>&amp;</code> trong giá trị (chúng có ý nghĩa cú pháp), nhưng <code>+</code> và space tinh tế — <code>+</code> ánh xạ thành space khi decode. Dùng <code>%20</code> cho space để rõ ràng.</li>
+  <li><strong>Đừng PII trong query string.</strong> Query string bị log bởi web server, cached bởi proxy, và xuất hiện trong analytics. Không phải nơi cho mật khẩu hay token.</li>
 </ul>
 """,
     },

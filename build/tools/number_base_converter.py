@@ -47,6 +47,7 @@ TOOL = {
         "nl": {"name": "Getalstelsel-converter", "tagline": "Converteer tussen binair, octaal, decimaal, hexadecimaal en elk grondtal van 2 tot 36.", "description": "Gratis online converter voor getalstelsels. Converteer tussen binair, octaal, decimaal, hex en willekeurige grondtallen 2-36. Verwerkt negatieve getallen en grote integers via BigInt."},
         "tr": {"name": "Sayı Tabanı Dönüştürücü", "tagline": "İkilik, sekizlik, ondalık, onaltılık ve 2'den 36'ya kadar her taban arasında dönüştür.", "description": "Ücretsiz online sayı tabanı dönüştürücü. İkilik, sekizlik, ondalık, hex ve 2-36 arası rastgele tabanlar arasında dönüştür. BigInt üzerinden negatif sayıları ve büyük tamsayıları işler."},
         "id": {"name": "Konverter Basis Angka", "tagline": "Konversi antara biner, oktal, desimal, heksadesimal, dan basis 2 sampai 36.", "description": "Konverter basis angka gratis. Konversi antara biner (basis-2), oktal (basis-8), desimal (basis-10), heksadesimal (basis-16), dan basis arbitrer 2 sampai 36. Pengubah basis-N umum untuk programmer."},
+        "vi": {"name": "Chuyển đổi Hệ cơ số", "tagline": "Chuyển giữa nhị phân, bát phân, thập phân, thập lục phân và các hệ cơ số 2 đến 36.", "description": "Bộ chuyển đổi hệ cơ số miễn phí trực tuyến. Chuyển bất kỳ số nào giữa nhị phân, bát phân, thập phân, thập lục phân và các hệ cơ số 2 đến 36. Bao gồm hỗ trợ số âm."},
     },
     "body": """
 <div class="tool-card">
@@ -343,6 +344,24 @@ document.addEventListener('DOMContentLoaded', nbRun);
   <li><strong>Angka besar tidak kehilangan presisi di sini.</strong> <code>Number</code> JavaScript dibatasi pada 2<sup>53</sup>; tool ini memakai <code>BigInt</code>, jadi integer 64-bit, hash besar, dan nilai crypto semua round-trip dengan akurat.</li>
   <li><strong>Jangan campur base dengan case.</strong> Huruf base-16 bisa upper- atau lowercase; tool ini menerima keduanya dan menghasilkan uppercase. Output base-32 / base-36 adalah lowercase secara konvensi.</li>
   <li><strong>Leading zero dibuang.</strong> <code>0x000F</code> jadi <code>F</code>. Kalau kamu butuh hex dengan fixed-width (misal untuk representasi byte), pad di kode kamu setelahnya.</li>
+</ul>
+""",
+        "vi": """
+<h2>Công cụ này để làm gì?</h2>
+<p>Cùng một con số có thể được viết theo nhiều hệ — thập phân (62), nhị phân (111110), thập lục phân (3E), bát phân (76). Lập trình viên thường cần chuyển giữa chúng để debug, đọc dump bộ nhớ, hoặc thiết lập bitmask. Tool này chuyển bất kỳ số nào giữa hệ 2 và 36 (sau đó các chữ số bao gồm A–Z).</p>
+
+<h3>Khi nào nên dùng</h3>
+<ul>
+  <li>Convert địa chỉ bộ nhớ hex sang decimal khi đọc log.</li>
+  <li>Tính bitmask trong binary, nhập nó vào C dưới dạng hex.</li>
+  <li>Debug protocol cấp thấp với binary và hex offset.</li>
+</ul>
+
+<h3>Lưu ý thường gặp</h3>
+<ul>
+  <li><strong>Số âm cần convention.</strong> Two's complement là tiêu chuẩn cho integer máy tính, nhưng tool có thể hiển thị dấu trừ literal cho input người đọc.</li>
+  <li><strong>Floating point khác.</strong> Tool này xử lý integer; chuyển đổi float thập lục phân (như IEEE 754) cần một tool riêng.</li>
+  <li><strong>Hệ trên 36 cần ký hiệu đặc biệt.</strong> Base64 dùng nguyên tắc khác (giá trị 0–63 với A–Z, a–z, 0–9, +, /). Tool này dừng ở 36 (chữ số 0–9 + chữ cái A–Z).</li>
 </ul>
 """,
     },
