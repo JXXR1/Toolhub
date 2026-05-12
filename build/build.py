@@ -26,6 +26,7 @@ TEMPLATE = (BUILD / "template.html").read_text()
 PAGE_TEMPLATE = (BUILD / "page_template.html").read_text()
 
 ADSENSE_CLIENT_RE = re.compile(r"^ca-pub-\d{16}$")
+CF_ANALYTICS_TOKEN_RE = re.compile(r"^[a-f0-9]{32,}$", re.IGNORECASE)
 
 
 def assert_deploy_config_coherent():
@@ -35,7 +36,9 @@ def assert_deploy_config_coherent():
     deploy_env=="production", asserts:
       - adsenseClientId matches /^ca-pub-\\d{16}$/
       - at least one of adSlotIds.content/footer/indexTop/indexBottom is set
+      - cloudflareAnalyticsToken (if set) matches /^[a-f0-9]{32,}$/i
 
+    Analytics is optional: empty token in production is a warning, not a fail.
     sandbox mode is always allowed regardless of AdSense fields.
     """
     m = re.search(
@@ -55,8 +58,11 @@ def assert_deploy_config_coherent():
     if deploy_env not in ("sandbox", "production"):
         print(f'ERROR: TOOLHUB_CONFIG.deploy_env="{deploy_env}" — expected "sandbox" or "production"')
         sys.exit(1)
+    cf_token = field("cloudflareAnalyticsToken")
     if deploy_env == "sandbox":
         print(f'  ✓ deploy_env="sandbox" — AdSense gated off, ad slots will render as placeholders')
+        if cf_token:
+            print('  ℹ Cloudflare Analytics token is set but deploy_env="sandbox" — beacon will still render in sandbox builds')
         return
 
     client = field("adsenseClientId")
@@ -74,6 +80,14 @@ def assert_deploy_config_coherent():
             print('  - adSlotIds.{content,footer,indexTop,indexBottom} are all empty')
         sys.exit(1)
     print(f'  ✓ deploy_env="production" — AdSense config validated ({client})')
+
+    if cf_token:
+        if not CF_ANALYTICS_TOKEN_RE.match(cf_token):
+            print(f'ERROR: cloudflareAnalyticsToken="{cf_token}" does not match /^[a-f0-9]{{32,}}$/i')
+            sys.exit(1)
+        print(f'  ✓ Cloudflare Web Analytics token validated ({cf_token[:8]}…)')
+    else:
+        print('  ⚠ cloudflareAnalyticsToken is empty — analytics beacon will not render (optional)')
 
 # Load i18n
 spec = importlib.util.spec_from_file_location("i18n", BUILD / "i18n.py")

@@ -153,6 +153,7 @@
       deploy_env: "sandbox",
       adsenseClientId: "",
       adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
       digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
       githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
       buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
@@ -213,6 +214,10 @@
 <li><strong>Outil YouTube Thumbnail</strong> — quand tu utilises spécifiquement cet outil, ton navigateur télécharge l'image directement depuis <code>i.ytimg.com</code> (le CDN de YouTube). Pas d'authentification, pas d'upload. Détails sur <a href="/fr/how-we-handle-your-data/">traitement des données</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>On utilise Cloudflare Web Analytics pour compter les visites sur Toolhub. C'est un service d'analyse respectueux de la vie privée qui n'utilise PAS de cookies, ne fait PAS d'empreinte de ton navigateur et ne collecte PAS de données personnelles. Cloudflare agrège les pages vues, le pays approximatif et la source du referrer. Aucun visiteur ne peut être suivi d'une session à l'autre. Les données servent uniquement à comprendre quels outils sont utiles et quelles langues touchent leur audience.</p>
+<p>Si tu préfères, tu peux bloquer le beacon au niveau réseau — ça n'affecte aucun outil. Le script est chargé depuis <code>static.cloudflareinsights.com</code> et conditionné par un flag de configuration ; si l'opérateur du site n'a pas encore configuré l'analyse, aucune requête n'est faite.</p>
+
 <h2>Liens d'affiliation</h2>
 <p>Certains liens du pied de page sont des liens d'affiliation — si tu cliques et t'inscris à un service recommandé (par exemple un hébergeur), Toolhub peut toucher une commission. Le prix que tu paies est inchangé. Les liens d'affiliation portent la marque <code>rel="sponsored"</code>. Liste complète sur <a href="/fr/affiliate-disclosure/">divulgation des affiliés</a>.</p>
 
@@ -243,6 +248,17 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>

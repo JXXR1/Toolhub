@@ -153,6 +153,7 @@
       deploy_env: "sandbox",
       adsenseClientId: "",
       adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
       digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
       githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
       buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
@@ -213,6 +214,10 @@
 <li><strong>Alat YouTube Thumbnail</strong> — khusus jika kamu menggunakan alat ini, browser-mu mengambil gambar langsung dari <code>i.ytimg.com</code> (CDN YouTube). Tanpa otentikasi, tanpa upload. Detail di <a href="/id/how-we-handle-your-data/">penanganan data</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>Kami menggunakan Cloudflare Web Analytics untuk menghitung kunjungan ke Toolhub. Ini adalah layanan analitik yang menghargai privasi: TIDAK menggunakan cookie, TIDAK melakukan fingerprinting browser, dan TIDAK mengumpulkan data pribadi. Cloudflare mengagregasi tampilan halaman, perkiraan negara, dan sumber referrer saja. Tidak ada pengunjung individual yang bisa dilacak antar sesi. Data hanya digunakan untuk memahami alat mana yang berguna dan bahasa mana yang menjangkau audiensnya.</p>
+<p>Jika kamu lebih suka, kamu bisa memblokir beacon di tingkat jaringan — tidak ada alat yang terdampak. Script dimuat dari <code>static.cloudflareinsights.com</code> dan diberi pagar dengan config flag; jika operator situs belum menyetel analytics, tidak ada permintaan apa pun yang dikirim.</p>
+
 <h2>Tautan afiliasi</h2>
 <p>Beberapa tautan di footer adalah tautan afiliasi — jika kamu mengklik dan mendaftar ke layanan yang direkomendasikan (misalnya penyedia hosting), Toolhub bisa mendapat komisi. Harga yang kamu bayar tidak berubah. Tautan afiliasi ditandai dengan <code>rel="sponsored"</code>. Daftar lengkap di <a href="/id/affiliate-disclosure/">pengungkapan afiliasi</a>.</p>
 
@@ -243,6 +248,17 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>

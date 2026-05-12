@@ -153,6 +153,7 @@
       deploy_env: "sandbox",
       adsenseClientId: "",
       adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
       digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
       githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
       buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
@@ -224,6 +225,16 @@
 <li><strong>AdSense (jika aktif):</strong> Google menempatkan cookie iklan pihak ketiganya sendiri. Banner persetujuan muncul sebelum skrip AdSense dimuat, dan jika kamu menolak, AdSense tidak dimuat sama sekali.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Apa yang dikumpulkan:</strong> tampilan halaman agregat, negara kasar, sumber referrer.</li>
+<li><strong>Apa yang TIDAK dikumpulkan:</strong> cookie, fingerprint, pelacakan pengunjung individual, data pribadi.</li>
+<li><strong>Di mana berjalan:</strong> beacon <code>static.cloudflareinsights.com</code> milik Cloudflare.</li>
+<li><strong>Status GDPR:</strong> sesuai; tanpa banner persetujuan.</li>
+<li><strong>Cara opt out:</strong> blokir beacon di tingkat jaringan — situs tetap berfungsi sama tanpa itu.</li>
+</ul>
+<p>Beacon diberi pagar di belakang sebuah config flag di <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: token kosong berarti tidak ada permintaan ke Cloudflare. Saat disetel, satu script ber-<code>defer</code> disisipkan tepat sebelum <code>&lt;/body&gt;</code> dengan token publik operator.</p>
+
 <h2>Anak-anak</h2>
 <p>Toolhub ramah sekolah (lihat <a href="/id/for-schools/">Toolhub untuk Sekolah</a>). Tanpa pelacakan perilaku, tanpa iklan tertarget. Penggunaan di bawah 13 tahun diperbolehkan dalam syarat AdSense menurut wilayah — di tempat AdSense membatasi iklan yang ditujukan untuk anak-anak secara regional, batas-batas itu ditegakkan oleh sistem Google sendiri.</p>
 
@@ -256,6 +267,17 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>

@@ -153,6 +153,7 @@
       deploy_env: "sandbox",
       adsenseClientId: "",
       adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
       digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
       githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
       buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
@@ -224,6 +225,16 @@
 <li><strong>AdSense (quando attivo):</strong> Google imposta i propri cookie pubblicitari di terze parti. Il banner di consenso compare prima che venga caricato qualunque script AdSense, e AdSense non viene caricato per nulla se rifiuti.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Cosa raccoglie:</strong> visualizzazioni di pagina aggregate, paese approssimativo, fonte del referrer.</li>
+<li><strong>Cosa NON raccoglie:</strong> cookie, fingerprint, tracciamento dei singoli visitatori, dati personali.</li>
+<li><strong>Dove gira:</strong> il beacon <code>static.cloudflareinsights.com</code> di Cloudflare.</li>
+<li><strong>Stato GDPR:</strong> conforme; nessun banner di consenso necessario.</li>
+<li><strong>Come escludersi:</strong> bloccare il beacon a livello di rete — il sito funziona identico senza.</li>
+</ul>
+<p>Il beacon è gated dietro una flag di configurazione in <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: un token vuoto significa che a Cloudflare non viene fatta alcuna richiesta. Quando è impostato, viene iniettato un singolo script caricato in <code>defer</code> appena prima di <code>&lt;/body&gt;</code> con il token pubblico dell'operatore.</p>
+
 <h2>Minori</h2>
 <p>Toolhub è adatto alla scuola (vedi <a href="/it/for-schools/">Toolhub per le scuole</a>). Niente tracciamento comportamentale, niente pubblicità mirata. L'uso da parte di minori di 13 anni è accettabile nell'ambito dei termini AdSense applicati per regione — dove AdSense limita regionalmente la pubblicità ai minori, quei limiti sono rispettati dai sistemi di Google.</p>
 
@@ -256,6 +267,17 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>

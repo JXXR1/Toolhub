@@ -153,6 +153,7 @@
       deploy_env: "sandbox",
       adsenseClientId: "",
       adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
       digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
       githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
       buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
@@ -224,6 +225,16 @@
 <li><strong>AdSense（有効時）:</strong> Google が独自のサードパーティ広告 Cookie を設定します。同意バナーは AdSense のスクリプトが読み込まれる前に表示され、拒否した場合は AdSense は一切読み込まれません。</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>収集するもの:</strong> 集計されたページビュー、おおまかな国、リファラ元。</li>
+<li><strong>収集しないもの:</strong> クッキー、フィンガープリント、個別の訪問者追跡、個人データ。</li>
+<li><strong>動作場所:</strong> Cloudflare の <code>static.cloudflareinsights.com</code> ビーコン。</li>
+<li><strong>GDPR ステータス:</strong> 準拠。同意バナーは不要。</li>
+<li><strong>オプトアウト:</strong> ネットワークレベルでビーコンをブロックすればよい — サイトはそれなしでも同じように動きます。</li>
+</ul>
+<p>ビーコンは <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code> のコンフィグフラグでゲートされています。トークンが空ならば、Cloudflare へのリクエストは一切発生しません。設定されている場合は、運営者の公開トークンを持つ <code>defer</code> 付きスクリプトが <code>&lt;/body&gt;</code> の直前に一つだけ挿入されます。</p>
+
 <h2>子ども</h2>
 <p>Toolhub は学校での利用にも適しています（<a href="/ja/for-schools/">学校向けの Toolhub</a> をご覧ください）。行動追跡やターゲティング広告はありません。13 歳未満の利用は、地域ごとに適用される AdSense の条件の範囲内で問題ありません — AdSense が地域単位で子ども向け広告を制限している場合、その制限は Google 自身のシステムで守られます。</p>
 
@@ -256,6 +267,17 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>

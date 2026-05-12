@@ -153,6 +153,7 @@
       deploy_env: "sandbox",
       adsenseClientId: "",
       adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
       digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
       githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
       buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
@@ -213,6 +214,10 @@
 <li><strong>YouTube Thumbnail ツール</strong> — このツールを使うときに限り、ブラウザが <code>i.ytimg.com</code>（YouTube の CDN）から画像を直接取得します。認証もアップロードもありません。詳細は <a href="/ja/how-we-handle-your-data/">データの取り扱い</a> をご覧ください。</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>Toolhub のアクセスを集計するために Cloudflare Web Analytics を使っています。これはプライバシーに配慮した解析サービスで、クッキーは使わず、ブラウザのフィンガープリントも取らず、個人データも収集しません。Cloudflare はページビュー、おおまかな国、リファラ元を集計するだけです。個別のユーザーをセッションをまたいで追跡することはできません。データはどのツールが役立っているか、どの言語が読者に届いているかを把握するためだけに使います。</p>
+<p>もしお望みなら、ネットワークレベルでビーコンをブロックしても構いません — どのツールにも影響しません。スクリプトは <code>static.cloudflareinsights.com</code> から読み込まれ、設定フラグでゲートされています。サイト運営者がまだ解析を設定していなければ、リクエストは一切送信されません。</p>
+
 <h2>アフィリエイトリンク</h2>
 <p>フッターのいくつかのリンクはアフィリエイトリンクです — そこから飛んで推奨するサービス（例: ホスティングプロバイダ）に登録していただくと、Toolhub に紹介料が入ることがあります。あなたが支払う価格は変わりません。アフィリエイトリンクには <code>rel="sponsored"</code> を付けています。完全な一覧は <a href="/ja/affiliate-disclosure/">アフィリエイト開示</a> にあります。</p>
 
@@ -243,6 +248,17 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>

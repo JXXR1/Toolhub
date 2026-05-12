@@ -1657,6 +1657,10 @@ PAGES = {
 <li><strong>YouTube Thumbnail tool</strong> — when you use this one tool, your browser fetches an image directly from <code>i.ytimg.com</code> (YouTube's CDN). No authentication, no upload. See <a href="/how-we-handle-your-data/">data handling</a> for detail.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>We use Cloudflare Web Analytics to count visits to Toolhub. It's a privacy-preserving analytics service that does NOT use cookies, does NOT fingerprint your browser, and does NOT collect personal data. Cloudflare aggregates page views, rough country, and referrer source. No individual visitor can be tracked across sessions. The data is used only to understand which tools are useful and which languages are reaching their audience.</p>
+<p>If you prefer, you can block the beacon at the network level — it does not affect any tool's functionality. The script is loaded from <code>static.cloudflareinsights.com</code> and gated behind a config flag; if the site operator hasn't set up analytics yet, no request is made at all.</p>
+
 <h2>Affiliate links</h2>
 <p>Some links in the footer are affiliate links — if you click through and sign up to a service we recommend (e.g. hosting providers), Toolhub may earn a referral. The price you pay is unaffected. Affiliate links are tagged with <code>rel="sponsored"</code>. See <a href="/affiliate-disclosure/">affiliate disclosure</a> for the full list.</p>
 
@@ -1696,6 +1700,10 @@ PAGES = {
 <li><strong>GitHub Pages</strong> — Hosting. Standard-Serverlogs (IP, Zeitstempel, URL) bewahrt GitHub gemäß <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">ihrer Datenschutzerklärung</a> auf.</li>
 <li><strong>YouTube-Thumbnail-Tool</strong> — wenn du dieses eine Tool nutzt, lädt dein Browser das Bild direkt von <code>i.ytimg.com</code> (YouTubes CDN). Keine Authentifizierung, kein Upload. Details unter <a href="/de/how-we-handle-your-data/">Datenverarbeitung</a>.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<p>Wir nutzen Cloudflare Web Analytics, um Besuche auf Toolhub zu zählen. Es ist ein datenschutzfreundlicher Analytics-Dienst, der KEINE Cookies setzt, deinen Browser NICHT fingerprintet und KEINE personenbezogenen Daten erfasst. Cloudflare aggregiert Seitenaufrufe, grobes Land und Referrer-Quelle. Einzelne Besucher können nicht über Sitzungen hinweg verfolgt werden. Die Daten dienen nur dazu zu verstehen, welche Tools nützlich sind und welche Sprachen ihre Zielgruppe erreichen.</p>
+<p>Wenn du das nicht möchtest, kannst du den Beacon auf Netzwerkebene blockieren — die Funktion irgendeines Tools ist davon nicht betroffen. Das Skript wird von <code>static.cloudflareinsights.com</code> geladen und ist hinter einem Config-Flag gegated; wenn der Site-Betreiber Analytics noch nicht eingerichtet hat, wird gar keine Anfrage gestellt.</p>
 
 <h2>Affiliate-Links</h2>
 <p>Einige Links im Footer sind Affiliate-Links — wenn du klickst und dich bei einem empfohlenen Dienst registrierst (z. B. Hosting-Anbieter), kann Toolhub eine Provision bekommen. Der Preis, den du zahlst, ändert sich nicht. Affiliate-Links sind mit <code>rel="sponsored"</code> markiert. Die vollständige Liste steht unter <a href="/de/affiliate-disclosure/">Affiliate-Offenlegung</a>.</p>
@@ -1737,6 +1745,10 @@ PAGES = {
 <li><strong>Herramienta YouTube Thumbnail</strong> — al usar esta herramienta concreta, tu navegador descarga la imagen directamente desde <code>i.ytimg.com</code> (la CDN de YouTube). Sin autenticación, sin subida. Detalles en <a href="/es/how-we-handle-your-data/">tratamiento de datos</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>Usamos Cloudflare Web Analytics para contar visitas a Toolhub. Es un servicio de analítica respetuoso con la privacidad que NO usa cookies, NO huella tu navegador y NO recoge datos personales. Cloudflare agrega páginas vistas, país aproximado y origen del referrer. Ningún visitante puede ser rastreado entre sesiones. Los datos sirven solo para entender qué herramientas son útiles y qué idiomas llegan a su público.</p>
+<p>Si prefieres, puedes bloquear el beacon a nivel de red — no afecta a la funcionalidad de ninguna herramienta. El script se carga desde <code>static.cloudflareinsights.com</code> y está protegido por un flag de configuración; si el operador del sitio aún no ha configurado la analítica, no se hace ninguna petición.</p>
+
 <h2>Enlaces de afiliado</h2>
 <p>Algunos enlaces del pie son enlaces de afiliado — si haces clic y te registras en un servicio recomendado (por ejemplo, proveedores de hosting), Toolhub puede ganar una comisión. El precio que pagas no cambia. Los enlaces de afiliado llevan la marca <code>rel="sponsored"</code>. Lista completa en <a href="/es/affiliate-disclosure/">divulgación de afiliados</a>.</p>
 
@@ -1776,6 +1788,10 @@ PAGES = {
 <li><strong>GitHub Pages</strong> — hébergeur du site. GitHub conserve les logs serveur standard (IP, horodatage, URL) selon <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">sa déclaration de confidentialité</a>.</li>
 <li><strong>Outil YouTube Thumbnail</strong> — quand tu utilises spécifiquement cet outil, ton navigateur télécharge l'image directement depuis <code>i.ytimg.com</code> (le CDN de YouTube). Pas d'authentification, pas d'upload. Détails sur <a href="/fr/how-we-handle-your-data/">traitement des données</a>.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<p>On utilise Cloudflare Web Analytics pour compter les visites sur Toolhub. C'est un service d'analyse respectueux de la vie privée qui n'utilise PAS de cookies, ne fait PAS d'empreinte de ton navigateur et ne collecte PAS de données personnelles. Cloudflare agrège les pages vues, le pays approximatif et la source du referrer. Aucun visiteur ne peut être suivi d'une session à l'autre. Les données servent uniquement à comprendre quels outils sont utiles et quelles langues touchent leur audience.</p>
+<p>Si tu préfères, tu peux bloquer le beacon au niveau réseau — ça n'affecte aucun outil. Le script est chargé depuis <code>static.cloudflareinsights.com</code> et conditionné par un flag de configuration ; si l'opérateur du site n'a pas encore configuré l'analyse, aucune requête n'est faite.</p>
 
 <h2>Liens d'affiliation</h2>
 <p>Certains liens du pied de page sont des liens d'affiliation — si tu cliques et t'inscris à un service recommandé (par exemple un hébergeur), Toolhub peut toucher une commission. Le prix que tu paies est inchangé. Les liens d'affiliation portent la marque <code>rel="sponsored"</code>. Liste complète sur <a href="/fr/affiliate-disclosure/">divulgation des affiliés</a>.</p>
@@ -1817,6 +1833,10 @@ PAGES = {
 <li><strong>Strumento YouTube Thumbnail</strong> — quando usi specificamente questo strumento, il tuo browser scarica l'immagine direttamente da <code>i.ytimg.com</code> (la CDN di YouTube). Niente autenticazione, niente upload. Dettagli in <a href="/it/how-we-handle-your-data/">trattamento dei dati</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>Usiamo Cloudflare Web Analytics per contare le visite a Toolhub. È un servizio di analytics rispettoso della privacy che NON usa cookie, NON fa fingerprinting del browser e NON raccoglie dati personali. Cloudflare aggrega visualizzazioni di pagina, paese approssimativo e referrer. Nessun singolo visitatore può essere tracciato tra sessioni. I dati servono solo a capire quali strumenti sono utili e quali lingue stanno raggiungendo il loro pubblico.</p>
+<p>Se preferisci, puoi bloccare il beacon a livello di rete — non incide su nessuno strumento. Lo script viene caricato da <code>static.cloudflareinsights.com</code> ed è gated dietro un flag di configurazione; se l'operatore del sito non ha ancora configurato gli analytics, non viene fatta alcuna richiesta.</p>
+
 <h2>Link affiliati</h2>
 <p>Alcuni link nel footer sono link affiliati — se ci clicchi e ti registri a un servizio consigliato (per es. provider di hosting), Toolhub può guadagnare una commissione. Il prezzo che paghi non cambia. I link affiliati sono marcati con <code>rel="sponsored"</code>. Elenco completo su <a href="/it/affiliate-disclosure/">divulgazione affiliati</a>.</p>
 
@@ -1856,6 +1876,10 @@ PAGES = {
 <li><strong>GitHub Pages</strong> — host do site. O GitHub mantém logs de servidor padrão (IP, timestamp, URL) conforme <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">a declaração de privacidade deles</a>.</li>
 <li><strong>Ferramenta YouTube Thumbnail</strong> — quando você usa especificamente essa ferramenta, seu navegador baixa a imagem direto de <code>i.ytimg.com</code> (a CDN do YouTube). Sem autenticação, sem upload. Detalhes em <a href="/pt/how-we-handle-your-data/">tratamento de dados</a>.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<p>Usamos o Cloudflare Web Analytics para contar visitas ao Toolhub. É um serviço de analytics que respeita a privacidade: NÃO usa cookies, NÃO faz fingerprint do navegador e NÃO coleta dados pessoais. O Cloudflare agrega page views, país aproximado e origem do referrer. Nenhum visitante individual pode ser rastreado entre sessões. Os dados servem só para entender quais ferramentas estão sendo úteis e quais idiomas alcançam o público.</p>
+<p>Se preferir, você pode bloquear o beacon a nível de rede — isso não afeta nenhuma ferramenta. O script é carregado de <code>static.cloudflareinsights.com</code> e está atrás de uma flag de configuração; se o operador do site ainda não configurou o analytics, nenhuma requisição é feita.</p>
 
 <h2>Links de afiliado</h2>
 <p>Alguns links no rodapé são links de afiliado — se você clica e se cadastra num serviço recomendado (por exemplo, provedores de hospedagem), o Toolhub pode ganhar uma comissão. O preço que você paga não muda. Links de afiliado vêm marcados com <code>rel="sponsored"</code>. Lista completa em <a href="/pt/affiliate-disclosure/">divulgação de afiliados</a>.</p>
@@ -1897,6 +1921,10 @@ PAGES = {
 <li><strong>Narzędzie YouTube Thumbnail</strong> — kiedy używasz konkretnie tego narzędzia, twoja przeglądarka pobiera obraz bezpośrednio z <code>i.ytimg.com</code> (CDN YouTube'a). Bez uwierzytelnienia, bez uploadu. Szczegóły w <a href="/pl/how-we-handle-your-data/">obsługa danych</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>Używamy Cloudflare Web Analytics do zliczania odwiedzin Toolhuba. To usługa analityczna przyjazna prywatności, która NIE używa cookies, NIE robi fingerprintingu przeglądarki i NIE zbiera danych osobowych. Cloudflare agreguje odsłony, przybliżony kraj i źródło referrera. Pojedynczego odwiedzającego nie da się śledzić między sesjami. Dane służą tylko do zrozumienia, które narzędzia są przydatne i jakie języki docierają do swoich odbiorców.</p>
+<p>Jeśli wolisz, możesz zablokować beacon na poziomie sieci — to nie wpływa na działanie żadnego narzędzia. Skrypt ładuje się z <code>static.cloudflareinsights.com</code> i jest gated za config flagą; jeśli operator strony jeszcze nie skonfigurował analytics, nie jest wykonywane żadne zapytanie.</p>
+
 <h2>Linki partnerskie (affiliate)</h2>
 <p>Niektóre linki w stopce to linki partnerskie — jeśli klikniesz i zarejestrujesz się w polecanym serwisie (np. dostawca hostingu), Toolhub może dostać prowizję. Cena, którą płacisz, się nie zmienia. Linki partnerskie są oznaczone <code>rel="sponsored"</code>. Pełna lista w <a href="/pl/affiliate-disclosure/">ujawnienie partnerów</a>.</p>
 
@@ -1936,6 +1964,10 @@ PAGES = {
 <li><strong>GitHub Pages</strong> — サイトのホスト。標準的なサーバーログ（IP、タイムスタンプ、URL）は <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">GitHub のプライバシーステートメント</a> に従い GitHub が保持します。</li>
 <li><strong>YouTube Thumbnail ツール</strong> — このツールを使うときに限り、ブラウザが <code>i.ytimg.com</code>（YouTube の CDN）から画像を直接取得します。認証もアップロードもありません。詳細は <a href="/ja/how-we-handle-your-data/">データの取り扱い</a> をご覧ください。</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<p>Toolhub のアクセスを集計するために Cloudflare Web Analytics を使っています。これはプライバシーに配慮した解析サービスで、クッキーは使わず、ブラウザのフィンガープリントも取らず、個人データも収集しません。Cloudflare はページビュー、おおまかな国、リファラ元を集計するだけです。個別のユーザーをセッションをまたいで追跡することはできません。データはどのツールが役立っているか、どの言語が読者に届いているかを把握するためだけに使います。</p>
+<p>もしお望みなら、ネットワークレベルでビーコンをブロックしても構いません — どのツールにも影響しません。スクリプトは <code>static.cloudflareinsights.com</code> から読み込まれ、設定フラグでゲートされています。サイト運営者がまだ解析を設定していなければ、リクエストは一切送信されません。</p>
 
 <h2>アフィリエイトリンク</h2>
 <p>フッターのいくつかのリンクはアフィリエイトリンクです — そこから飛んで推奨するサービス（例: ホスティングプロバイダ）に登録していただくと、Toolhub に紹介料が入ることがあります。あなたが支払う価格は変わりません。アフィリエイトリンクには <code>rel="sponsored"</code> を付けています。完全な一覧は <a href="/ja/affiliate-disclosure/">アフィリエイト開示</a> にあります。</p>
@@ -1977,6 +2009,10 @@ PAGES = {
 <li><strong>YouTube Thumbnail tool</strong> — als je specifiek deze tool gebruikt, haalt je browser de afbeelding rechtstreeks op vanaf <code>i.ytimg.com</code> (de CDN van YouTube). Geen authenticatie, geen upload. Details op <a href="/nl/how-we-handle-your-data/">dataverwerking</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>We gebruiken Cloudflare Web Analytics om bezoeken aan Toolhub te tellen. Het is een privacy-vriendelijke analytics-dienst die GEEN cookies plaatst, GEEN fingerprint van je browser maakt en GEEN persoonsgegevens verzamelt. Cloudflare aggregeert paginaweergaves, ruwe land, en referrer-bron. Een individuele bezoeker kan niet tussen sessies gevolgd worden. De data wordt alleen gebruikt om te begrijpen welke tools nuttig zijn en welke talen hun publiek bereiken.</p>
+<p>Als je liever niet meedoet, kun je de beacon op netwerkniveau blokkeren — geen enkele tool wordt daardoor minder. Het script wordt geladen van <code>static.cloudflareinsights.com</code> en zit achter een config-flag; als de site-beheerder analytics nog niet heeft ingesteld, wordt er helemaal geen verzoek gedaan.</p>
+
 <h2>Affiliate-links</h2>
 <p>Sommige links in de footer zijn affiliate-links — als je doorklikt en je aanmeldt bij een aanbevolen dienst (bijvoorbeeld hostingproviders), kan Toolhub een commissie verdienen. De prijs die jij betaalt verandert niet. Affiliate-links zijn gemarkeerd met <code>rel="sponsored"</code>. Volledige lijst op <a href="/nl/affiliate-disclosure/">affiliate-disclosure</a>.</p>
 
@@ -2016,6 +2052,10 @@ PAGES = {
 <li><strong>GitHub Pages</strong> — site host'u. GitHub varsayılan olarak <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">gizlilik beyanlarına</a> göre sunucu logları (IP, timestamp, URL) tutar.</li>
 <li><strong>YouTube Thumbnail aracı</strong> — özellikle bu aracı kullanırsan, tarayıcın görseli doğrudan <code>i.ytimg.com</code> (YouTube\'un CDN'i) üzerinden çeker. Kimlik doğrulama yok, upload yok. Detaylar <a href="/tr/how-we-handle-your-data/">veri işleme</a>\'de.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<p>Toolhub ziyaretlerini saymak için Cloudflare Web Analytics kullanıyoruz. Gizliliğe saygılı bir analytics servisi: cookie KULLANMAZ, tarayıcıyı fingerprint ETMEZ ve kişisel veri TOPLAMAZ. Cloudflare yalnızca sayfa görüntülemeleri, kaba ülke ve referrer kaynağını toplar. Hiçbir ziyaretçi oturumlar arasında izlenemez. Veri yalnızca hangi araçların işe yaradığını ve hangi dillerin kitlesine ulaştığını anlamak için kullanılır.</p>
+<p>Tercih edersen beacon'u ağ seviyesinde engelleyebilirsin — hiçbir aracın işlevini etkilemez. Script <code>static.cloudflareinsights.com</code>'dan yüklenir ve bir config flag arkasında gated'dir; site operatörü analytics'i henüz kurmadıysa, hiçbir istek atılmaz.</p>
 
 <h2>Affiliate linkleri</h2>
 <p>Footer'daki bazı linkler affiliate linklerdir — tıklarsan ve önerilen bir servise kayıt olursan (örneğin hosting sağlayıcıları), Toolhub komisyon kazanabilir. Senin ödediğin fiyat değişmez. Affiliate linkler <code>rel="sponsored"</code> ile işaretlenir. Tam liste <a href="/tr/affiliate-disclosure/">affiliate bildirimi</a>\'nde.</p>
@@ -2057,6 +2097,10 @@ PAGES = {
 <li><strong>Alat YouTube Thumbnail</strong> — khusus jika kamu menggunakan alat ini, browser-mu mengambil gambar langsung dari <code>i.ytimg.com</code> (CDN YouTube). Tanpa otentikasi, tanpa upload. Detail di <a href="/id/how-we-handle-your-data/">penanganan data</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>Kami menggunakan Cloudflare Web Analytics untuk menghitung kunjungan ke Toolhub. Ini adalah layanan analitik yang menghargai privasi: TIDAK menggunakan cookie, TIDAK melakukan fingerprinting browser, dan TIDAK mengumpulkan data pribadi. Cloudflare mengagregasi tampilan halaman, perkiraan negara, dan sumber referrer saja. Tidak ada pengunjung individual yang bisa dilacak antar sesi. Data hanya digunakan untuk memahami alat mana yang berguna dan bahasa mana yang menjangkau audiensnya.</p>
+<p>Jika kamu lebih suka, kamu bisa memblokir beacon di tingkat jaringan — tidak ada alat yang terdampak. Script dimuat dari <code>static.cloudflareinsights.com</code> dan diberi pagar dengan config flag; jika operator situs belum menyetel analytics, tidak ada permintaan apa pun yang dikirim.</p>
+
 <h2>Tautan afiliasi</h2>
 <p>Beberapa tautan di footer adalah tautan afiliasi — jika kamu mengklik dan mendaftar ke layanan yang direkomendasikan (misalnya penyedia hosting), Toolhub bisa mendapat komisi. Harga yang kamu bayar tidak berubah. Tautan afiliasi ditandai dengan <code>rel="sponsored"</code>. Daftar lengkap di <a href="/id/affiliate-disclosure/">pengungkapan afiliasi</a>.</p>
 
@@ -2096,6 +2140,10 @@ PAGES = {
 <li><strong>GitHub Pages</strong> — host site. GitHub mặc định lưu trữ log server (IP, timestamp, URL) theo <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">tuyên bố bảo mật</a> của họ.</li>
 <li><strong>Công cụ YouTube Thumbnail</strong> — riêng nếu bạn dùng công cụ này, trình duyệt của bạn fetch ảnh trực tiếp từ <code>i.ytimg.com</code> (CDN của YouTube). Không có xác thực, không có upload. Chi tiết ở <a href="/vi/how-we-handle-your-data/">xử lý dữ liệu</a>.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<p>Chúng tôi dùng Cloudflare Web Analytics để đếm lượt truy cập Toolhub. Đây là dịch vụ phân tích tôn trọng quyền riêng tư: KHÔNG dùng cookie, KHÔNG fingerprint trình duyệt và KHÔNG thu thập dữ liệu cá nhân. Cloudflare chỉ tổng hợp lượt xem trang, quốc gia ước lượng và nguồn referrer. Không người dùng cá nhân nào có thể bị theo dõi qua các phiên. Dữ liệu chỉ dùng để hiểu công cụ nào hữu ích và ngôn ngữ nào đang đến được với khán giả của nó.</p>
+<p>Nếu bạn muốn, bạn có thể chặn beacon ở mức mạng — không công cụ nào bị ảnh hưởng. Script được tải từ <code>static.cloudflareinsights.com</code> và bị khóa sau một config flag; nếu người vận hành site chưa cấu hình analytics, không yêu cầu nào được gửi đi cả.</p>
 
 <h2>Link affiliate</h2>
 <p>Một số link ở footer là link affiliate — nếu bạn click và đăng ký dịch vụ được giới thiệu (ví dụ nhà cung cấp hosting), Toolhub có thể nhận hoa hồng nhỏ. Giá bạn trả không thay đổi. Link affiliate được đánh dấu bằng <code>rel="sponsored"</code>. Danh sách đầy đủ ở <a href="/vi/affiliate-disclosure/">tiết lộ affiliate</a>.</p>
@@ -2137,6 +2185,10 @@ PAGES = {
 <li><strong>Nástroj YouTube Thumbnail</strong> — keď použiješ konkrétne tento nástroj, tvoj prehliadač si načíta obrázok priamo z <code>i.ytimg.com</code> (YouTube CDN). Bez autentifikácie, bez uploadu. Detail v <a href="/sk/how-we-handle-your-data/">spracovaní údajov</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>Na počítanie návštev Toolhubu používame Cloudflare Web Analytics. Je to privacy-friendly analytická služba, ktorá NEpoužíva cookies, NEvytvára fingerprint prehliadača a NEzbiera osobné údaje. Cloudflare iba agreguje page views, hrubo krajinu a zdroj referrera. Žiadnu jednotlivú návštevu nemožno sledovať naprieč session-mi. Dáta slúžia len na to, aby sme pochopili, ktoré nástroje sú užitočné a ktoré jazyky sa dostávajú k svojmu publiku.</p>
+<p>Ak chceš, môžeš beacon zablokovať na úrovni siete — žiadny nástroj tým neutrpí. Skript sa načítava z <code>static.cloudflareinsights.com</code> a je gated config flagom; ak prevádzkovateľ stránky ešte analytics nenastavil, neodošle sa žiadny request.</p>
+
 <h2>Affiliate odkazy</h2>
 <p>Niektoré odkazy v päte sú affiliate — ak cez ne klikneš a zaregistruješ sa do služby, ktorú odporúčame (napr. hostingu), Toolhub môže dostať referral. Cena, ktorú platíš, sa nemení. Affiliate odkazy sú označené <code>rel="sponsored"</code>. Plný zoznam v <a href="/sk/affiliate-disclosure/">affiliate disclosure</a>.</p>
 
@@ -2177,6 +2229,10 @@ PAGES = {
 <li><strong>Nástroj YouTube Thumbnail</strong> — když použiješ zrovna tento nástroj, tvůj prohlížeč si stáhne obrázek přímo z <code>i.ytimg.com</code> (YouTube CDN). Bez autentifikace, bez uploadu. Detail v <a href="/cs/how-we-handle-your-data/">zpracování dat</a>.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<p>K počítání návštěv Toolhubu používáme Cloudflare Web Analytics. Je to privacy-friendly analytická služba, která NEpoužívá cookies, NEvytváří fingerprint prohlížeče a NEsbírá osobní údaje. Cloudflare jen agreguje page views, hrubou zemi a zdroj referreru. Jednotlivého návštěvníka nelze sledovat napříč sessions. Data slouží jen k tomu, abychom rozuměli, které nástroje jsou užitečné a které jazyky se dostávají ke svému publiku.</p>
+<p>Pokud chceš, můžeš beacon zablokovat na úrovni sítě — žádný nástroj tím neutrpí. Skript se načítá z <code>static.cloudflareinsights.com</code> a je gated config flagem; pokud provozovatel stránky ještě analytics nenastavil, neodešle se vůbec žádný request.</p>
+
 <h2>Affiliate odkazy</h2>
 <p>Některé odkazy v patičce jsou affiliate — pokud na ně klikneš a zaregistruješ se k službě, kterou doporučujeme (např. hostingu), Toolhub může dostat referral. Cena, kterou platíš, se nemění. Affiliate odkazy jsou označeny <code>rel="sponsored"</code>. Úplný seznam v <a href="/cs/affiliate-disclosure/">affiliate disclosure</a>.</p>
 
@@ -2216,6 +2272,10 @@ PAGES = {
 <li><strong>GitHub Pages</strong> — साइट host। मानक server logs (IP, timestamp, URL) GitHub द्वारा अपनी <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener">गोपनीयता वक्तव्य</a> के अनुसार रखे जाते हैं।</li>
 <li><strong>YouTube Thumbnail tool</strong> — जब आप विशेष रूप से इस एक tool का उपयोग करते हैं, तो आपका browser सीधे <code>i.ytimg.com</code> (YouTube के CDN) से एक image fetch करता है। कोई प्रमाणीकरण नहीं, कोई upload नहीं। विवरण के लिए <a href="/hi/how-we-handle-your-data/">data handling</a> देखें।</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<p>हम Toolhub पर विज़िट गिनने के लिए Cloudflare Web Analytics का उपयोग करते हैं। यह एक गोपनीयता-संरक्षित analytics सेवा है जो cookies उपयोग नहीं करती, आपके browser का fingerprint नहीं लेती, और कोई व्यक्तिगत डेटा एकत्र नहीं करती। Cloudflare केवल page views, मोटे तौर पर देश, और referrer स्रोत को aggregate करता है। किसी व्यक्तिगत visitor को sessions के बीच ट्रैक नहीं किया जा सकता। डेटा का उपयोग केवल यह समझने के लिए होता है कि कौन से tools उपयोगी हैं और कौन सी भाषाएँ अपने audience तक पहुँच रही हैं।</p>
+<p>अगर आप चाहें तो आप network level पर beacon को block कर सकते हैं — किसी भी tool की कार्यक्षमता पर असर नहीं पड़ता। Script <code>static.cloudflareinsights.com</code> से load होता है और एक config flag के पीछे gated है; अगर साइट operator ने अभी तक analytics सेट अप नहीं किया है, तो कोई request भी नहीं भेजी जाती।</p>
 
 <h2>Affiliate links</h2>
 <p>Footer के कुछ links affiliate links हैं — अगर आप उनके माध्यम से click करते हैं और हमारे द्वारा सुझाई गई सेवा (जैसे hosting providers) के लिए sign up करते हैं, तो Toolhub को एक referral मिल सकता है। आप जो क़ीमत चुकाते हैं वह नहीं बदलती। Affiliate links <code>rel="sponsored"</code> से tag किए जाते हैं। पूरी सूची के लिए <a href="/hi/affiliate-disclosure/">affiliate disclosure</a> देखें।</p>
@@ -2275,6 +2335,16 @@ PAGES = {
 <li><strong>AdSense (when active):</strong> Google sets its own third-party advertising cookies. The consent banner appears before any AdSense script is loaded, and AdSense is not loaded at all if you decline.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>What it collects:</strong> aggregate page views, rough country, referrer source.</li>
+<li><strong>What it does NOT collect:</strong> cookies, fingerprints, individual visitor tracking, PII.</li>
+<li><strong>Where it runs:</strong> Cloudflare's <code>static.cloudflareinsights.com</code> beacon.</li>
+<li><strong>GDPR status:</strong> compliant; no consent banner required.</li>
+<li><strong>Opt out:</strong> block the beacon at your network level — the site works identically without it.</li>
+</ul>
+<p>The beacon is gated behind a config flag in <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: an empty token means no request is made to Cloudflare at all. When set, a single <code>defer</code>-loaded script is injected just before <code>&lt;/body&gt;</code> with the operator's public token.</p>
+
 <h2>Children</h2>
 <p>Toolhub is school-friendly (see <a href="/for-schools/">Toolhub for schools</a>). There is no behavioral tracking and no targeted advertising. Under-13 use is acceptable within the existing AdSense terms applied per region — meaning if you are in a region where AdSense restricts ads to children, those restrictions are honored by Google's own systems.</p>
 
@@ -2327,6 +2397,16 @@ PAGES = {
 <li><strong>Theme-Präferenz:</strong> ein localStorage-Eintrag, kein Cookie. Bleibt auf deinem Gerät. Wird nicht mit HTTP-Requests übertragen.</li>
 <li><strong>AdSense (wenn aktiv):</strong> Google setzt seine eigenen Werbe-Cookies (Drittanbieter). Der Consent-Banner erscheint, bevor irgendein AdSense-Skript geladen wird, und AdSense wird gar nicht geladen, wenn du ablehnst.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Was erfasst wird:</strong> aggregierte Seitenaufrufe, grobes Land, Referrer-Quelle.</li>
+<li><strong>Was NICHT erfasst wird:</strong> Cookies, Fingerprints, Tracking einzelner Besucher, personenbezogene Daten.</li>
+<li><strong>Wo es läuft:</strong> Cloudflares <code>static.cloudflareinsights.com</code>-Beacon.</li>
+<li><strong>DSGVO-Status:</strong> konform; kein Consent-Banner nötig.</li>
+<li><strong>Opt-out:</strong> Beacon auf Netzwerkebene blockieren — die Seite funktioniert identisch ohne ihn.</li>
+</ul>
+<p>Der Beacon ist hinter einem Config-Flag in <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code> gegated: ein leerer Token bedeutet, dass gar keine Anfrage an Cloudflare gestellt wird. Ist er gesetzt, wird kurz vor <code>&lt;/body&gt;</code> ein einzelnes <code>defer</code>-geladenes Skript mit dem öffentlichen Token des Betreibers eingefügt.</p>
 
 <h2>Kinder</h2>
 <p>Toolhub ist schultauglich (siehe <a href="/de/for-schools/">Toolhub für Schulen</a>). Es gibt kein verhaltensbasiertes Tracking und keine personalisierte Werbung. Nutzung durch Unter-13-Jährige ist im Rahmen der regionalen AdSense-Bedingungen in Ordnung — wo AdSense regional Werbung gegenüber Kindern beschränkt, halten Googles eigene Systeme diese Beschränkungen ein.</p>
@@ -2381,6 +2461,16 @@ PAGES = {
 <li><strong>AdSense (cuando está activo):</strong> Google pone sus propias cookies publicitarias de terceros. El banner de consentimiento aparece antes de cargar cualquier script de AdSense, y AdSense ni se carga si rechazas.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Qué recoge:</strong> páginas vistas agregadas, país aproximado, fuente del referrer.</li>
+<li><strong>Qué NO recoge:</strong> cookies, fingerprints, rastreo de visitantes individuales, datos personales.</li>
+<li><strong>Dónde corre:</strong> el beacon <code>static.cloudflareinsights.com</code> de Cloudflare.</li>
+<li><strong>Estado RGPD:</strong> conforme; no requiere banner de consentimiento.</li>
+<li><strong>Cómo evitarlo:</strong> bloquea el beacon a nivel de red — el sitio funciona igual sin él.</li>
+</ul>
+<p>El beacon está protegido por un flag de configuración en <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: un token vacío significa que no se hace ninguna petición a Cloudflare. Cuando está configurado, justo antes de <code>&lt;/body&gt;</code> se inyecta un único script con <code>defer</code> que lleva el token público del operador.</p>
+
 <h2>Menores</h2>
 <p>Toolhub es apto para entornos escolares (ver <a href="/es/for-schools/">Toolhub para escuelas</a>). No hay seguimiento de comportamiento ni publicidad personalizada. El uso por menores de 13 años es aceptable dentro de los términos de AdSense aplicados por región — donde AdSense restringe regionalmente los anuncios a menores, esas restricciones las cumplen los sistemas del propio Google.</p>
 
@@ -2433,6 +2523,16 @@ PAGES = {
 <li><strong>Préférence de thème :</strong> une entrée localStorage, pas un cookie. Reste sur ton appareil. N'est pas envoyée avec les requêtes HTTP.</li>
 <li><strong>AdSense (quand actif) :</strong> Google pose ses propres cookies publicitaires tiers. La bannière de consentement apparaît avant qu'aucun script AdSense ne soit chargé, et AdSense n'est pas chargé du tout si tu refuses.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Ce qui est collecté :</strong> pages vues agrégées, pays approximatif, source du referrer.</li>
+<li><strong>Ce qui n'est PAS collecté :</strong> cookies, empreintes, suivi d'un visiteur individuel, données personnelles.</li>
+<li><strong>Où ça tourne :</strong> le beacon <code>static.cloudflareinsights.com</code> de Cloudflare.</li>
+<li><strong>Statut RGPD :</strong> conforme ; pas de bandeau de consentement requis.</li>
+<li><strong>Pour s'en passer :</strong> bloquer le beacon au niveau réseau — le site fonctionne à l'identique sans lui.</li>
+</ul>
+<p>Le beacon est conditionné par un flag de configuration dans <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code> : un token vide signifie qu'aucune requête n'est faite vers Cloudflare. Une fois renseigné, un seul script chargé en <code>defer</code> est injecté juste avant <code>&lt;/body&gt;</code> avec le token public de l'opérateur.</p>
 
 <h2>Enfants</h2>
 <p>Toolhub est adapté à un usage scolaire (voir <a href="/fr/for-schools/">Toolhub pour les écoles</a>). Pas de pistage comportemental, pas de pub ciblée. L'usage par les moins de 13 ans est acceptable dans le cadre des conditions AdSense appliquées par région — là où AdSense restreint régionalement les annonces aux enfants, ces restrictions sont respectées par les systèmes de Google.</p>
@@ -2487,6 +2587,16 @@ PAGES = {
 <li><strong>AdSense (quando attivo):</strong> Google imposta i propri cookie pubblicitari di terze parti. Il banner di consenso compare prima che venga caricato qualunque script AdSense, e AdSense non viene caricato per nulla se rifiuti.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Cosa raccoglie:</strong> visualizzazioni di pagina aggregate, paese approssimativo, fonte del referrer.</li>
+<li><strong>Cosa NON raccoglie:</strong> cookie, fingerprint, tracciamento dei singoli visitatori, dati personali.</li>
+<li><strong>Dove gira:</strong> il beacon <code>static.cloudflareinsights.com</code> di Cloudflare.</li>
+<li><strong>Stato GDPR:</strong> conforme; nessun banner di consenso necessario.</li>
+<li><strong>Come escludersi:</strong> bloccare il beacon a livello di rete — il sito funziona identico senza.</li>
+</ul>
+<p>Il beacon è gated dietro una flag di configurazione in <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: un token vuoto significa che a Cloudflare non viene fatta alcuna richiesta. Quando è impostato, viene iniettato un singolo script caricato in <code>defer</code> appena prima di <code>&lt;/body&gt;</code> con il token pubblico dell'operatore.</p>
+
 <h2>Minori</h2>
 <p>Toolhub è adatto alla scuola (vedi <a href="/it/for-schools/">Toolhub per le scuole</a>). Niente tracciamento comportamentale, niente pubblicità mirata. L'uso da parte di minori di 13 anni è accettabile nell'ambito dei termini AdSense applicati per regione — dove AdSense limita regionalmente la pubblicità ai minori, quei limiti sono rispettati dai sistemi di Google.</p>
 
@@ -2539,6 +2649,16 @@ PAGES = {
 <li><strong>Preferência de tema:</strong> uma entrada de localStorage, não um cookie. Fica no seu dispositivo. Não vai junto com requisições HTTP.</li>
 <li><strong>AdSense (quando ativo):</strong> o Google define seus próprios cookies publicitários de terceiros. O banner de consentimento aparece antes de qualquer script do AdSense ser carregado, e o AdSense nem é carregado se você recusar.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>O que coleta:</strong> page views agregadas, país aproximado, origem do referrer.</li>
+<li><strong>O que NÃO coleta:</strong> cookies, fingerprints, rastreio de visitante individual, dados pessoais.</li>
+<li><strong>Onde roda:</strong> o beacon <code>static.cloudflareinsights.com</code> da Cloudflare.</li>
+<li><strong>Status GDPR:</strong> em conformidade; sem banner de consentimento.</li>
+<li><strong>Como sair:</strong> bloqueie o beacon no nível de rede — o site funciona igual sem ele.</li>
+</ul>
+<p>O beacon está atrás de uma flag de configuração em <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: token vazio significa que nenhuma requisição é feita à Cloudflare. Quando definido, um único script com <code>defer</code> é injetado logo antes de <code>&lt;/body&gt;</code> com o token público do operador.</p>
 
 <h2>Crianças</h2>
 <p>O Toolhub é adequado pra escola (veja <a href="/pt/for-schools/">Toolhub pra escolas</a>). Não tem tracking comportamental nem publicidade direcionada. O uso por menores de 13 anos é aceitável dentro dos termos do AdSense aplicados por região — onde o AdSense restringe regionalmente anúncios pra crianças, essas restrições são respeitadas pelos sistemas do próprio Google.</p>
@@ -2593,6 +2713,16 @@ PAGES = {
 <li><strong>AdSense (gdy aktywny):</strong> Google ustawia własne, zewnętrzne cookies reklamowe. Banner zgody pojawia się przed załadowaniem jakiegokolwiek skryptu AdSense, a AdSense w ogóle nie jest ładowany, jeśli odmówisz.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Co zbiera:</strong> zagregowane odsłony, przybliżony kraj, źródło referrera.</li>
+<li><strong>Czego NIE zbiera:</strong> cookies, fingerprintów, śledzenia pojedynczego użytkownika, danych osobowych.</li>
+<li><strong>Gdzie działa:</strong> beacon <code>static.cloudflareinsights.com</code> Cloudflare'a.</li>
+<li><strong>Status RODO:</strong> zgodny; banner zgody niepotrzebny.</li>
+<li><strong>Jak nie używać:</strong> zablokuj beacon na poziomie sieci — strona działa identycznie bez niego.</li>
+</ul>
+<p>Beacon jest gated za config flagą w <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: pusty token oznacza, że do Cloudflare'a nie jest wysyłane żadne zapytanie. Gdy ustawiony, tuż przed <code>&lt;/body&gt;</code> wstrzykiwany jest jeden skrypt z atrybutem <code>defer</code> i publicznym tokenem operatora.</p>
+
 <h2>Dzieci</h2>
 <p>Toolhub jest przyjazny szkołom (zobacz <a href="/pl/for-schools/">Toolhub dla szkół</a>). Bez śledzenia behawioralnego i bez reklam targetowanych. Korzystanie przez dzieci poniżej 13 lat jest akceptowalne w ramach regionalnych warunków AdSense — tam, gdzie AdSense regionalnie ogranicza reklamy dla dzieci, te ograniczenia są przestrzegane przez systemy Google'a.</p>
 
@@ -2645,6 +2775,16 @@ PAGES = {
 <li><strong>テーマ設定:</strong> localStorage エントリ 1 件で、Cookie ではありません。あなたの端末内に留まり、HTTP リクエストには送信されません。</li>
 <li><strong>AdSense（有効時）:</strong> Google が独自のサードパーティ広告 Cookie を設定します。同意バナーは AdSense のスクリプトが読み込まれる前に表示され、拒否した場合は AdSense は一切読み込まれません。</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>収集するもの:</strong> 集計されたページビュー、おおまかな国、リファラ元。</li>
+<li><strong>収集しないもの:</strong> クッキー、フィンガープリント、個別の訪問者追跡、個人データ。</li>
+<li><strong>動作場所:</strong> Cloudflare の <code>static.cloudflareinsights.com</code> ビーコン。</li>
+<li><strong>GDPR ステータス:</strong> 準拠。同意バナーは不要。</li>
+<li><strong>オプトアウト:</strong> ネットワークレベルでビーコンをブロックすればよい — サイトはそれなしでも同じように動きます。</li>
+</ul>
+<p>ビーコンは <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code> のコンフィグフラグでゲートされています。トークンが空ならば、Cloudflare へのリクエストは一切発生しません。設定されている場合は、運営者の公開トークンを持つ <code>defer</code> 付きスクリプトが <code>&lt;/body&gt;</code> の直前に一つだけ挿入されます。</p>
 
 <h2>子ども</h2>
 <p>Toolhub は学校での利用にも適しています（<a href="/ja/for-schools/">学校向けの Toolhub</a> をご覧ください）。行動追跡やターゲティング広告はありません。13 歳未満の利用は、地域ごとに適用される AdSense の条件の範囲内で問題ありません — AdSense が地域単位で子ども向け広告を制限している場合、その制限は Google 自身のシステムで守られます。</p>
@@ -2699,6 +2839,16 @@ PAGES = {
 <li><strong>AdSense (indien actief):</strong> Google plaatst zijn eigen third-party advertentiecookies. De consent-banner verschijnt voordat een AdSense-script geladen wordt, en AdSense wordt helemaal niet geladen als je weigert.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Wat het verzamelt:</strong> geaggregeerde paginaweergaves, ruwe land, referrer-bron.</li>
+<li><strong>Wat het NIET verzamelt:</strong> cookies, fingerprints, individuele bezoekerstracking, persoonsgegevens.</li>
+<li><strong>Waar het draait:</strong> de <code>static.cloudflareinsights.com</code>-beacon van Cloudflare.</li>
+<li><strong>AVG-status:</strong> conform; geen consent-banner nodig.</li>
+<li><strong>Uitschakelen:</strong> blokkeer de beacon op netwerkniveau — de site werkt zonder hem precies hetzelfde.</li>
+</ul>
+<p>De beacon zit achter een config-flag in <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: een lege token betekent dat er helemaal geen verzoek naar Cloudflare gaat. Als hij ingesteld is, wordt vlak voor <code>&lt;/body&gt;</code> één <code>defer</code>-geladen script geïnjecteerd met de publieke token van de beheerder.</p>
+
 <h2>Kinderen</h2>
 <p>Toolhub is schoolvriendelijk (zie <a href="/nl/for-schools/">Toolhub voor scholen</a>). Geen gedragstracking, geen gerichte advertenties. Gebruik onder 13 jaar is acceptabel binnen de AdSense-voorwaarden per regio — waar AdSense regionaal advertenties richting kinderen beperkt, worden die beperkingen door de systemen van Google zelf nageleefd.</p>
 
@@ -2751,6 +2901,16 @@ PAGES = {
 <li><strong>Tema tercihi:</strong> bir localStorage girişi, cookie değil. Cihazında kalır. HTTP isteklerine eklenmez.</li>
 <li><strong>AdSense (etkinse):</strong> Google kendi üçüncü taraf reklam cookie'lerini yerleştirir. Consent banner herhangi bir AdSense scripti yüklenmeden önce görünür ve reddedersen AdSense hiç yüklenmez.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Ne toplar:</strong> toplu sayfa görüntülemeleri, kaba ülke, referrer kaynağı.</li>
+<li><strong>Ne TOPLAMAZ:</strong> cookie, fingerprint, bireysel ziyaretçi takibi, kişisel veri.</li>
+<li><strong>Nerede çalışır:</strong> Cloudflare'in <code>static.cloudflareinsights.com</code> beacon'ı.</li>
+<li><strong>GDPR durumu:</strong> uyumlu; consent banner gerekmiyor.</li>
+<li><strong>Opt-out:</strong> beacon'u ağ seviyesinde engelle — site onsuz da aynen çalışır.</li>
+</ul>
+<p>Beacon, <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code> içindeki bir config flag arkasında gated'dir: boş token, Cloudflare'e hiçbir istek atılmaması demektir. Ayarlandığında <code>&lt;/body&gt;</code>'nin hemen öncesinde operatörün public token'ını taşıyan tek bir <code>defer</code>'lı script enjekte edilir.</p>
 
 <h2>Çocuklar</h2>
 <p>Toolhub okul dostudur (<a href="/tr/for-schools/">Okullar için Toolhub</a>'a bak). Davranışsal takip yok, hedefli reklamlar yok. 13 yaş altı kullanım bölgeye göre AdSense koşulları içinde kabul edilebilirdir — AdSense'in bölgesel olarak çocuklara yönelik reklamı sınırladığı yerlerde, bu sınırlar Google'ın kendi sistemleri tarafından uygulanır.</p>
@@ -2805,6 +2965,16 @@ PAGES = {
 <li><strong>AdSense (jika aktif):</strong> Google menempatkan cookie iklan pihak ketiganya sendiri. Banner persetujuan muncul sebelum skrip AdSense dimuat, dan jika kamu menolak, AdSense tidak dimuat sama sekali.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Apa yang dikumpulkan:</strong> tampilan halaman agregat, negara kasar, sumber referrer.</li>
+<li><strong>Apa yang TIDAK dikumpulkan:</strong> cookie, fingerprint, pelacakan pengunjung individual, data pribadi.</li>
+<li><strong>Di mana berjalan:</strong> beacon <code>static.cloudflareinsights.com</code> milik Cloudflare.</li>
+<li><strong>Status GDPR:</strong> sesuai; tanpa banner persetujuan.</li>
+<li><strong>Cara opt out:</strong> blokir beacon di tingkat jaringan — situs tetap berfungsi sama tanpa itu.</li>
+</ul>
+<p>Beacon diberi pagar di belakang sebuah config flag di <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: token kosong berarti tidak ada permintaan ke Cloudflare. Saat disetel, satu script ber-<code>defer</code> disisipkan tepat sebelum <code>&lt;/body&gt;</code> dengan token publik operator.</p>
+
 <h2>Anak-anak</h2>
 <p>Toolhub ramah sekolah (lihat <a href="/id/for-schools/">Toolhub untuk Sekolah</a>). Tanpa pelacakan perilaku, tanpa iklan tertarget. Penggunaan di bawah 13 tahun diperbolehkan dalam syarat AdSense menurut wilayah — di tempat AdSense membatasi iklan yang ditujukan untuk anak-anak secara regional, batas-batas itu ditegakkan oleh sistem Google sendiri.</p>
 
@@ -2857,6 +3027,16 @@ PAGES = {
 <li><strong>Tùy chọn theme:</strong> một entry localStorage, không phải cookie. Ở lại trên thiết bị của bạn. Không được đính kèm vào HTTP request.</li>
 <li><strong>AdSense (nếu bật):</strong> Google đặt cookie quảng cáo bên thứ ba của riêng họ. Banner đồng ý xuất hiện trước khi script AdSense tải, và nếu bạn từ chối, AdSense không tải gì cả.</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Thu thập gì:</strong> lượt xem trang tổng hợp, quốc gia ước lượng, nguồn referrer.</li>
+<li><strong>KHÔNG thu thập:</strong> cookie, fingerprint, theo dõi từng người, dữ liệu cá nhân.</li>
+<li><strong>Chạy ở đâu:</strong> beacon <code>static.cloudflareinsights.com</code> của Cloudflare.</li>
+<li><strong>Trạng thái GDPR:</strong> tuân thủ; không cần banner đồng ý.</li>
+<li><strong>Cách bỏ:</strong> chặn beacon ở mức mạng — site vẫn hoạt động giống hệt khi không có nó.</li>
+</ul>
+<p>Beacon bị khóa sau một config flag trong <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: token rỗng nghĩa là không có yêu cầu nào được gửi tới Cloudflare. Khi đã đặt, một script <code>defer</code> duy nhất được tiêm ngay trước <code>&lt;/body&gt;</code> với public token của người vận hành.</p>
 
 <h2>Trẻ em</h2>
 <p>Toolhub thân thiện với trường học (xem <a href="/vi/for-schools/">Toolhub cho Trường học</a>). Không có theo dõi hành vi, không có quảng cáo nhắm mục tiêu. Việc sử dụng dưới 13 tuổi được cho phép trong điều khoản AdSense theo khu vực — ở nơi AdSense hạn chế quảng cáo nhắm vào trẻ em theo khu vực, các giới hạn đó được thực thi bởi chính hệ thống của Google.</p>
@@ -2911,6 +3091,16 @@ PAGES = {
 <li><strong>AdSense (keď aktívny):</strong> Google nastavuje vlastné third-party reklamné cookies. Consent banner sa zobrazí pred načítaním AdSense skriptu a ak odmietneš, AdSense sa vôbec nenačíta.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Čo zbiera:</strong> agregované page views, hrubo krajinu, zdroj referrera.</li>
+<li><strong>Čo NEzbiera:</strong> cookies, fingerprints, sledovanie jednotlivého návštevníka, osobné údaje.</li>
+<li><strong>Kde beží:</strong> Cloudflare beacon <code>static.cloudflareinsights.com</code>.</li>
+<li><strong>GDPR status:</strong> v súlade; consent banner netreba.</li>
+<li><strong>Ako sa odhlásiť:</strong> zablokuj beacon na úrovni siete — stránka funguje rovnako aj bez neho.</li>
+</ul>
+<p>Beacon je gated za config flagom v <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: prázdny token znamená, že do Cloudflare sa neodošle žiadny request. Keď je nastavený, tesne pred <code>&lt;/body&gt;</code> sa vloží jeden <code>defer</code>-loaded skript s public tokenom prevádzkovateľa.</p>
+
 <h2>Deti</h2>
 <p>Toolhub je školsky priateľský (pozri <a href="/sk/for-schools/">Toolhub pre školy</a>). Žiadny behavioral tracking, žiadna cielená reklama. Použitie deťmi pod 13 rokov je v poriadku v rámci existujúcich AdSense podmienok podľa regiónu — ak si v regióne, kde AdSense obmedzuje reklamy voči deťom, tieto obmedzenia rešpektujú vlastné systémy Google.</p>
 
@@ -2964,6 +3154,16 @@ PAGES = {
 <li><strong>AdSense (když aktivní):</strong> Google nastavuje vlastní third-party reklamní cookies. Consent banner se objeví před načtením AdSense skriptu a pokud odmítneš, AdSense se vůbec nenačte.</li>
 </ul>
 
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>Co sbírá:</strong> agregované page views, hrubou zemi, zdroj referreru.</li>
+<li><strong>Co NEsbírá:</strong> cookies, fingerprints, sledování jednotlivého návštěvníka, osobní údaje.</li>
+<li><strong>Kde běží:</strong> Cloudflare beacon <code>static.cloudflareinsights.com</code>.</li>
+<li><strong>GDPR status:</strong> v souladu; consent banner netřeba.</li>
+<li><strong>Jak se odhlásit:</strong> zablokuj beacon na úrovni sítě — stránka funguje stejně i bez něj.</li>
+</ul>
+<p>Beacon je gated za config flagem v <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code>: prázdný token znamená, že do Cloudflare se neodešle žádný request. Když je nastavený, těsně před <code>&lt;/body&gt;</code> se vloží jeden <code>defer</code>-loaded skript s public tokenem provozovatele.</p>
+
 <h2>Děti</h2>
 <p>Toolhub je školsky přátelský (viz <a href="/cs/for-schools/">Toolhub pro školy</a>). Žádný behavioral tracking, žádná cílená reklama. Použití dětmi pod 13 let je v pořádku v rámci existujících AdSense podmínek podle regionu — pokud jsi v regionu, kde AdSense omezuje reklamy vůči dětem, tato omezení respektují vlastní systémy Google.</p>
 
@@ -3016,6 +3216,16 @@ PAGES = {
 <li><strong>Theme वरीयता:</strong> एक localStorage entry, cookie नहीं। आपके device पर रहती है। HTTP requests के साथ नहीं भेजी जाती।</li>
 <li><strong>AdSense (जब सक्रिय):</strong> Google अपनी स्वयं की तृतीय-पक्ष विज्ञापन cookies set करता है। AdSense script load होने से पहले consent banner दिखता है, और अगर आप अस्वीकार करते हैं तो AdSense बिल्कुल load नहीं होता।</li>
 </ul>
+
+<h2>Cloudflare Web Analytics</h2>
+<ul>
+<li><strong>क्या एकत्र होता है:</strong> समग्र page views, मोटे तौर पर देश, referrer स्रोत।</li>
+<li><strong>क्या एकत्र नहीं होता:</strong> cookies, fingerprints, व्यक्तिगत visitor tracking, व्यक्तिगत डेटा।</li>
+<li><strong>कहाँ चलता है:</strong> Cloudflare का <code>static.cloudflareinsights.com</code> beacon।</li>
+<li><strong>GDPR स्थिति:</strong> अनुपालन; consent banner की आवश्यकता नहीं।</li>
+<li><strong>Opt out:</strong> network level पर beacon को block करें — साइट इसके बिना भी समान रूप से काम करती है।</li>
+</ul>
+<p>Beacon <code>TOOLHUB_CONFIG.cloudflareAnalyticsToken</code> में एक config flag के पीछे gated है: खाली token का मतलब है कि Cloudflare को कोई request नहीं भेजी जाती। जब set हो, तो operator के public token के साथ <code>defer</code>-loaded एक script <code>&lt;/body&gt;</code> से ठीक पहले inject किया जाता है।</p>
 
 <h2>बच्चे</h2>
 <p>Toolhub स्कूल-friendly है (देखें <a href="/hi/for-schools/">स्कूलों के लिए Toolhub</a>)। कोई behavioral tracking नहीं और कोई targeted विज्ञापन नहीं। 13 साल से कम आयु का उपयोग AdSense की क्षेत्रवार लागू मौजूदा शर्तों के अंतर्गत स्वीकार्य है — मतलब अगर आप ऐसे क्षेत्र में हैं जहाँ AdSense बच्चों के लिए विज्ञापनों पर प्रतिबंध लगाता है, तो उन प्रतिबंधों का पालन Google के अपने सिस्टम द्वारा किया जाता है।</p>
