@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>साथी टूल्स — Toolhub</title>
-  <meta name="description" content="Toolhub के in-browser utilities के पूरक बाहरी host-side सुरक्षा टूल्स। sentinel-v2 और skill-scanner-v2 — दोनों MIT-licensed open source।">
+  <meta name="description" content="Toolhub के in-browser utilities के पूरक बाहरी host-side सुरक्षा टूल्स। sentinel और skill-scanner — दोनों MIT-licensed open source।">
   <meta property="og:title" content="साथी टूल्स — Toolhub">
-  <meta property="og:description" content="Toolhub के in-browser utilities के पूरक बाहरी host-side सुरक्षा टूल्स। sentinel-v2 और skill-scanner-v2 — दोनों MIT-licensed open source।">
+  <meta property="og:description" content="Toolhub के in-browser utilities के पूरक बाहरी host-side सुरक्षा टूल्स। sentinel और skill-scanner — दोनों MIT-licensed open source।">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolhub.software/hi/companion-tools/">
   <meta property="og:image" content="https://toolhub.software/og-image.png">
@@ -48,7 +48,7 @@
         "@type": "WebPage",
         "@id": "https://toolhub.software/hi/companion-tools/#page",
         "name": "साथी टूल्स",
-        "description": "Toolhub के in-browser utilities के पूरक बाहरी host-side सुरक्षा टूल्स। sentinel-v2 और skill-scanner-v2 — दोनों MIT-licensed open source।",
+        "description": "Toolhub के in-browser utilities के पूरक बाहरी host-side सुरक्षा टूल्स। sentinel और skill-scanner — दोनों MIT-licensed open source।",
         "url": "https://toolhub.software/hi/companion-tools/",
         "inLanguage": "hi",
         "isPartOf": {"@id": "https://toolhub.software#site"},
@@ -197,9 +197,9 @@
 <h2>🤖 AI एजेंट और हार्नेस</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
-<p class="tagline">AI एजेंट skills (OpenClaw / Claude Code / Hermes ecosystem) के लिए security scanner। 38 detection modules जो pattern matching, AST taint tracking, YARA rules, LLM semantic analysis, supply-chain provenance, hash-pinning और PGP release-signature verification को कवर करते हैं।</p>
-<p>AI एजेंट harnesses के बढ़ने के साथ, डाउनलोड किए जाने वाले एजेंट „skills" की supply chain malware injection की अगली सीमा बन रही है। skill-scanner-v2 38 detection modules — pattern matching, AST taint tracking, LLM semantic analysis, YARA rules और typo-squat detection — के ज़रिए skill packages का statically विश्लेषण करता है।</p>
+<h3><a href="https://github.com/JXXR1/skill-scanner" target="_blank" rel="noopener noreferrer">skill-scanner <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">AI एजेंट skills के लिए security scanner — credential चोरी, supply-chain हमलों, prompt injection और runtime दुरुपयोग का पता लगाने वाले 38 modules; किसी भी skill bundle पर काम करता है।</p>
+<p>किसी भी ऐसे skill bundle पर काम करता है जिसमें SKILL.md या manifest शामिल हो — Claude Code, OpenClaw, AgentPress, Hermes Skills Hub, MCP toolkits। AI एजेंट harnesses के बढ़ने के साथ, डाउनलोड किए जाने वाले एजेंट „skills" की supply chain malware injection की अगली सीमा बन रही है। skill-scanner 38 detection modules — pattern matching, AST taint tracking, LLM semantic analysis, YARA rules और typo-squat detection — के ज़रिए skill packages का statically विश्लेषण करता है।</p>
 <p>हालिया supply-chain wave (v3.4 + v3.5) जोड़ता है: RAG corpora के लिए bundled-content provenance, बाहरी मॉडल downloads का पता लगाना (HuggingFace / replicate / आदि), in-flight tampering के विरुद्ध hash-pinning verification और PGP release-signature verification।</p>
 <p class="meta">Stack: bash + JavaScript + Python wrapper + YARA। Host-side execution आवश्यक। Open source, MIT।</p>
 </div>
@@ -207,9 +207,11 @@
 <h2>🛡️ सुरक्षा</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
-<p class="tagline">Linux servers के लिए हल्का bash security monitor। तीन-परत वाली architecture: file-watch (sub-second), watchdog (हर 2 मिनट), पूर्ण audit + intel (हर 6 घंटे)।</p>
+<h3><a href="https://github.com/JXXR1/sentinel" target="_blank" rel="noopener noreferrer">sentinel <span class="version">v1.9.0</span> ↗</a></h3>
+<p class="tagline">Linux servers के लिए हल्का bash security monitor — file access, port exposure, egress allowlist, full audit, stack health और रात्रिकालीन deep scan को कवर करने वाली छह-परत वाली रक्षा। शून्य निर्भरताएँ।</p>
+<p>छह विलंब स्तर: file-watch (&lt;1s) · watchdog (&lt;2 मिनट) · outbound-guard (&lt;2 मिनट) · check-v2+intel (6 घंटे) · stack-health (&lt;4 घंटे) · daily (24 घंटे)।</p>
 <p>खुले पोर्ट allowlist · संवेदनशील सेवा एक्सपोज़र का पता लगाना · root-process audit · world-writable scan · SSH-key delta · failed-login spike detection · cron/systemd delta · security-stack health (ClamAV / CrowdSec / Wazuh / fail2ban) · CVE-feed intel · skill-scanner के साथ supply-chain integration · LLM-vendor egress audit · backup integrity verification · Tailscale posture audit।</p>
+<p>v1.9.0 (आज) दो नई परतें जोड़ता है: outbound-guard निगरानी की जा रही प्रक्रियाओं पर egress allowlist लागू करता है, और stack-health सत्यापित करता है कि security stack खुद जीवित, ताज़ा और स्वर वाला हो — सिर्फ़ „चल रहा" नहीं।</p>
 <p class="meta">Stack: शुद्ध bash + inotify + standard Linux utilities। localhost services को probe करता है + /etc को पढ़ता है। Host-side execution आवश्यक। Open source, MIT।</p>
 </div>
 

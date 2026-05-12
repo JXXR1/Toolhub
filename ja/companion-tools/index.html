@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>コンパニオンツール — Toolhub</title>
-  <meta name="description" content="Toolhubのブラウザユーティリティを補完するホスト側のセキュリティツール群。sentinel-v2 と skill-scanner-v2 — どちらも MITライセンスのオープンソース。">
+  <meta name="description" content="Toolhubのブラウザユーティリティを補完するホスト側のセキュリティツール群。sentinel と skill-scanner — どちらも MITライセンスのオープンソース。">
   <meta property="og:title" content="コンパニオンツール — Toolhub">
-  <meta property="og:description" content="Toolhubのブラウザユーティリティを補完するホスト側のセキュリティツール群。sentinel-v2 と skill-scanner-v2 — どちらも MITライセンスのオープンソース。">
+  <meta property="og:description" content="Toolhubのブラウザユーティリティを補完するホスト側のセキュリティツール群。sentinel と skill-scanner — どちらも MITライセンスのオープンソース。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolhub.software/ja/companion-tools/">
   <meta property="og:image" content="https://toolhub.software/og-image.png">
@@ -48,7 +48,7 @@
         "@type": "WebPage",
         "@id": "https://toolhub.software/ja/companion-tools/#page",
         "name": "コンパニオンツール",
-        "description": "Toolhubのブラウザユーティリティを補完するホスト側のセキュリティツール群。sentinel-v2 と skill-scanner-v2 — どちらも MITライセンスのオープンソース。",
+        "description": "Toolhubのブラウザユーティリティを補完するホスト側のセキュリティツール群。sentinel と skill-scanner — どちらも MITライセンスのオープンソース。",
         "url": "https://toolhub.software/ja/companion-tools/",
         "inLanguage": "ja",
         "isPartOf": {"@id": "https://toolhub.software#site"},
@@ -197,9 +197,9 @@
 <h2>🤖 AIエージェントとハーネス</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
-<p class="tagline">AI エージェントのスキル向けセキュリティスキャナ（OpenClaw / Claude Code / Hermes 各エコシステム対応）。パターンマッチ、AST テイントトラッキング、YARA ルール、LLM 意味解析、サプライチェーン由来検証、ハッシュピン、PGP リリース署名検証など 38 の検出モジュールを搭載。</p>
-<p>AI エージェントハーネスが普及するにつれて、ダウンロード可能なエージェント「スキル」のサプライチェーンはマルウェア注入の次のフロンティアになっています。skill-scanner-v2 はスキルパッケージを 38 の検出モジュール — パターンマッチ、AST テイントトラッキング、LLM 意味解析、YARA ルール、タイポスクワット検出 — で静的解析します。</p>
+<h3><a href="https://github.com/JXXR1/skill-scanner" target="_blank" rel="noopener noreferrer">skill-scanner <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">AI エージェントのスキル向けセキュリティスキャナ — 認証情報窃取、サプライチェーン攻撃、プロンプトインジェクション、ランタイム不正利用を検出する 38 モジュール。あらゆるスキルバンドルに対応。</p>
+<p>SKILL.md やマニフェストを同梱するあらゆるスキルバンドルで動作します — Claude Code、OpenClaw、AgentPress、Hermes Skills Hub、MCP ツールキットなど。AI エージェントハーネスが普及するにつれて、ダウンロード可能なエージェント「スキル」のサプライチェーンはマルウェア注入の次のフロンティアになっています。skill-scanner はスキルパッケージを 38 の検出モジュール — パターンマッチ、AST テイントトラッキング、LLM 意味解析、YARA ルール、タイポスクワット検出 — で静的解析します。</p>
 <p>直近のサプライチェーン対応波（v3.4 + v3.5）で追加されたもの: RAG コーパス向けバンドルコンテンツの由来検証、外部モデルダウンロード検出（HuggingFace / replicate ほか）、ハッシュピン検証による転送中改ざん検知、PGP リリース署名検証。</p>
 <p class="meta">スタック: bash + JavaScript + Python ラッパー + YARA。ホスト側実行が必要です。オープンソース、MIT ライセンス。</p>
 </div>
@@ -207,9 +207,11 @@
 <h2>🛡️ セキュリティ</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
-<p class="tagline">Linux サーバー向けの軽量 bash セキュリティモニター。3 層アーキテクチャ: file-watch（サブ秒）、watchdog（2 分ごと）、フル監査 + インテル（6 時間ごと）。</p>
+<h3><a href="https://github.com/JXXR1/sentinel" target="_blank" rel="noopener noreferrer">sentinel <span class="version">v1.9.0</span> ↗</a></h3>
+<p class="tagline">Linux サーバー向けの軽量 bash セキュリティモニター — ファイルアクセス、ポート露出、egress 許可リスト、フル監査、スタック健全性、夜間ディープスキャンを 6 層で防御。ゼロ依存。</p>
+<p>6 段階のレイテンシ: file-watch (&lt;1s) ・ watchdog (&lt;2 分) ・ outbound-guard (&lt;2 分) ・ check-v2+intel (6 h) ・ stack-health (&lt;4 h) ・ daily (24 h)。</p>
 <p>開放ポート許可リスト ・ 機微サービス露出検出 ・ root プロセス監査 ・ world-writable スキャン ・ SSH 鍵差分 ・ ログイン失敗スパイク検出 ・ cron/systemd 差分 ・ セキュリティスタック健全性（ClamAV / CrowdSec / Wazuh / fail2ban） ・ CVE フィードインテル ・ skill-scanner との供給網連携 ・ LLM ベンダーへの egress 監査 ・ バックアップ整合性検証 ・ Tailscale ポスチャ監査。</p>
+<p>v1.9.0（本日リリース）は 2 つの新レイヤーを追加します: outbound-guard は監視対象プロセスに egress 許可リストを強制し、stack-health はセキュリティスタック自体が「動いている」だけでなく、生きていて、新鮮で、声を出している（=アラート可能な）状態であることを確認します。</p>
 <p class="meta">スタック: 純 bash + inotify + 標準 Linux ユーティリティ。localhost サービスをプローブし /etc を読みます。ホスト側実行が必要です。オープンソース、MIT。</p>
 </div>
 

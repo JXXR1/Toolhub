@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Công cụ bổ sung — Toolhub</title>
-  <meta name="description" content="Các công cụ bảo mật host-side bên ngoài bổ sung cho các tiện ích chạy trên trình duyệt của Toolhub. sentinel-v2 và skill-scanner-v2 — cả hai đều mã nguồn mở MIT.">
+  <meta name="description" content="Các công cụ bảo mật host-side bên ngoài bổ sung cho các tiện ích chạy trên trình duyệt của Toolhub. sentinel và skill-scanner — cả hai đều mã nguồn mở MIT.">
   <meta property="og:title" content="Công cụ bổ sung — Toolhub">
-  <meta property="og:description" content="Các công cụ bảo mật host-side bên ngoài bổ sung cho các tiện ích chạy trên trình duyệt của Toolhub. sentinel-v2 và skill-scanner-v2 — cả hai đều mã nguồn mở MIT.">
+  <meta property="og:description" content="Các công cụ bảo mật host-side bên ngoài bổ sung cho các tiện ích chạy trên trình duyệt của Toolhub. sentinel và skill-scanner — cả hai đều mã nguồn mở MIT.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolhub.software/vi/companion-tools/">
   <meta property="og:image" content="https://toolhub.software/og-image.png">
@@ -48,7 +48,7 @@
         "@type": "WebPage",
         "@id": "https://toolhub.software/vi/companion-tools/#page",
         "name": "Công cụ bổ sung",
-        "description": "Các công cụ bảo mật host-side bên ngoài bổ sung cho các tiện ích chạy trên trình duyệt của Toolhub. sentinel-v2 và skill-scanner-v2 — cả hai đều mã nguồn mở MIT.",
+        "description": "Các công cụ bảo mật host-side bên ngoài bổ sung cho các tiện ích chạy trên trình duyệt của Toolhub. sentinel và skill-scanner — cả hai đều mã nguồn mở MIT.",
         "url": "https://toolhub.software/vi/companion-tools/",
         "inLanguage": "vi",
         "isPartOf": {"@id": "https://toolhub.software#site"},
@@ -197,9 +197,9 @@
 <h2>🤖 AI agent và harness</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
-<p class="tagline">Trình quét bảo mật cho skill của AI agent (các hệ sinh thái OpenClaw / Claude Code / Hermes). 38 module phát hiện gồm pattern matching, AST taint tracking, luật YARA, phân tích ngữ nghĩa LLM, provenance supply-chain, hash-pinning và xác minh chữ ký PGP của bản phát hành.</p>
-<p>Khi các harness AI agent ngày càng nhiều, supply chain của các „skill" có thể tải xuống trở thành chiến tuyến tiếp theo cho việc tiêm malware. skill-scanner-v2 phân tích tĩnh các gói skill qua 38 module phát hiện — pattern matching, AST taint tracking, phân tích ngữ nghĩa LLM, luật YARA và phát hiện typo-squat.</p>
+<h3><a href="https://github.com/JXXR1/skill-scanner" target="_blank" rel="noopener noreferrer">skill-scanner <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Trình quét bảo mật cho skill của AI agent — 38 module phát hiện đánh cắp thông tin xác thực, tấn công supply-chain, prompt injection và lạm dụng tại runtime trên bất kỳ skill bundle nào.</p>
+<p>Hoạt động trên bất kỳ skill bundle nào có sẵn SKILL.md hoặc manifest — Claude Code, OpenClaw, AgentPress, Hermes Skills Hub, các MCP toolkit. Khi các harness AI agent ngày càng nhiều, supply chain của các „skill" có thể tải xuống trở thành chiến tuyến tiếp theo cho việc tiêm malware. skill-scanner phân tích tĩnh các gói skill qua 38 module phát hiện — pattern matching, AST taint tracking, phân tích ngữ nghĩa LLM, luật YARA và phát hiện typo-squat.</p>
 <p>Đợt supply-chain gần đây nhất (v3.4 + v3.5) bổ sung: provenance nội dung được bundle cho corpus RAG, phát hiện tải mô hình bên ngoài (HuggingFace / replicate / v.v.), xác minh hash-pinning chống can thiệp trong khi truyền và xác minh chữ ký PGP của bản phát hành.</p>
 <p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Yêu cầu thực thi host-side. Mã nguồn mở, MIT.</p>
 </div>
@@ -207,9 +207,11 @@
 <h2>🛡️ Bảo mật</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
-<p class="tagline">Monitor bảo mật bash nhẹ cho máy chủ Linux. Kiến trúc ba lớp: file-watch (dưới giây), watchdog (mỗi 2 phút), audit đầy đủ + intel (mỗi 6 giờ).</p>
+<h3><a href="https://github.com/JXXR1/sentinel" target="_blank" rel="noopener noreferrer">sentinel <span class="version">v1.9.0</span> ↗</a></h3>
+<p class="tagline">Monitor bảo mật bash nhẹ cho máy chủ Linux — phòng thủ sáu lớp bao trùm truy cập tệp, phơi nhiễm cổng, egress allowlist, audit đầy đủ, sức khỏe stack và quét sâu hằng đêm. Không phụ thuộc.</p>
+<p>Sáu mức độ trễ: file-watch (&lt;1s) · watchdog (&lt;2 phút) · outbound-guard (&lt;2 phút) · check-v2+intel (6 giờ) · stack-health (&lt;4 giờ) · daily (24 giờ).</p>
 <p>Allowlist cổng mở · phát hiện phơi nhiễm dịch vụ nhạy cảm · audit tiến trình root · quét world-writable · delta khóa SSH · phát hiện đợt tăng đột biến đăng nhập thất bại · delta cron/systemd · sức khỏe stack bảo mật (ClamAV / CrowdSec / Wazuh / fail2ban) · intel feed CVE · tích hợp supply-chain với skill-scanner · audit egress nhà cung cấp LLM · xác minh tính toàn vẹn backup · audit tư thế Tailscale.</p>
+<p>v1.9.0 (hôm nay) bổ sung hai lớp mới: outbound-guard thực thi egress allowlist trên các tiến trình được giám sát, và stack-health xác minh rằng stack bảo mật còn sống, còn mới và còn „lên tiếng" được — không chỉ đang chạy.</p>
 <p class="meta">Stack: bash thuần + inotify + tiện ích Linux tiêu chuẩn. Thăm dò các dịch vụ localhost + đọc /etc. Yêu cầu thực thi host-side. Mã nguồn mở, MIT.</p>
 </div>
 

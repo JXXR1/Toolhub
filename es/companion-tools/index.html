@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Herramientas complementarias — Toolhub</title>
-  <meta name="description" content="Herramientas de seguridad host-side externas que complementan las utilidades browser de Toolhub. sentinel-v2 y skill-scanner-v2 — ambas open source MIT.">
+  <meta name="description" content="Herramientas de seguridad host-side externas que complementan las utilidades browser de Toolhub. sentinel y skill-scanner — ambas open source MIT.">
   <meta property="og:title" content="Herramientas complementarias — Toolhub">
-  <meta property="og:description" content="Herramientas de seguridad host-side externas que complementan las utilidades browser de Toolhub. sentinel-v2 y skill-scanner-v2 — ambas open source MIT.">
+  <meta property="og:description" content="Herramientas de seguridad host-side externas que complementan las utilidades browser de Toolhub. sentinel y skill-scanner — ambas open source MIT.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolhub.software/es/companion-tools/">
   <meta property="og:image" content="https://toolhub.software/og-image.png">
@@ -48,7 +48,7 @@
         "@type": "WebPage",
         "@id": "https://toolhub.software/es/companion-tools/#page",
         "name": "Herramientas complementarias",
-        "description": "Herramientas de seguridad host-side externas que complementan las utilidades browser de Toolhub. sentinel-v2 y skill-scanner-v2 — ambas open source MIT.",
+        "description": "Herramientas de seguridad host-side externas que complementan las utilidades browser de Toolhub. sentinel y skill-scanner — ambas open source MIT.",
         "url": "https://toolhub.software/es/companion-tools/",
         "inLanguage": "es",
         "isPartOf": {"@id": "https://toolhub.software#site"},
@@ -197,9 +197,9 @@
 <h2>🤖 Agentes IA y harnesses</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
-<p class="tagline">Escáner de seguridad para skills de agentes IA (ecosistemas OpenClaw / Claude Code / Hermes). 38 módulos de detección que cubren pattern matching, taint tracking AST, reglas YARA, análisis semántico LLM, provenance de supply chain, hash-pinning y verificación de firma PGP de releases.</p>
-<p>Con la proliferación de harnesses de agentes IA, la supply chain de "skills" descargables se convierte en la siguiente frontera para inyección de malware. skill-scanner-v2 analiza estáticamente paquetes de skills a través de 38 módulos de detección — pattern matching, taint tracking AST, análisis semántico LLM, reglas YARA y detección de typo-squat.</p>
+<h3><a href="https://github.com/JXXR1/skill-scanner" target="_blank" rel="noopener noreferrer">skill-scanner <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Escáner de seguridad para skills de agentes IA — 38 módulos que detectan robo de credenciales, ataques supply-chain, prompt injection y abuso en runtime en cualquier skill bundle.</p>
+<p>Funciona en cualquier skill bundle que traiga un SKILL.md o un manifiesto — Claude Code, OpenClaw, AgentPress, Hermes Skills Hub, kits MCP. Con la proliferación de harnesses de agentes IA, la supply chain de "skills" descargables se convierte en la siguiente frontera para inyección de malware. skill-scanner analiza estáticamente paquetes de skills a través de 38 módulos de detección — pattern matching, taint tracking AST, análisis semántico LLM, reglas YARA y detección de typo-squat.</p>
 <p>La última oleada supply-chain (v3.4 + v3.5) añade: provenance de contenido empaquetado para corpora RAG, detección de descargas externas de modelos (HuggingFace / replicate / etc.), verificación de hash-pinning contra manipulación en tránsito y verificación de firma PGP de releases.</p>
 <p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Requiere ejecución host-side. Open source, MIT.</p>
 </div>
@@ -207,9 +207,11 @@
 <h2>🛡️ Seguridad</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
-<p class="tagline">Monitor de seguridad bash ligero para servidores Linux. Arquitectura en tres capas: file-watch (sub-segundo), watchdog (cada 2 min), auditoría completa + inteligencia (cada 6 horas).</p>
+<h3><a href="https://github.com/JXXR1/sentinel" target="_blank" rel="noopener noreferrer">sentinel <span class="version">v1.9.0</span> ↗</a></h3>
+<p class="tagline">Monitor de seguridad bash ligero para servidores Linux — defensa en seis capas que cubre acceso a ficheros, exposición de puertos, egress allowlist, auditoría completa, salud del stack y escaneo profundo nocturno. Cero dependencias.</p>
+<p>Seis niveles de latencia: file-watch (&lt;1s) · watchdog (&lt;2 min) · outbound-guard (&lt;2 min) · check-v2+intel (6h) · stack-health (&lt;4h) · daily (24h).</p>
 <p>Allowlist de puertos abiertos · detección de exposición de servicios sensibles · auditoría de procesos root · escaneo world-writable · delta de claves SSH · detección de picos de logins fallidos · delta cron/systemd · salud del stack de seguridad (ClamAV / CrowdSec / Wazuh / fail2ban) · inteligencia de feed CVE · integración supply-chain con skill-scanner · auditoría egress de proveedores LLM · verificación de integridad de backups · auditoría de postura Tailscale.</p>
+<p>v1.9.0 (hoy) añade dos nuevas capas: outbound-guard impone la egress allowlist en los procesos monitorizados, y stack-health verifica que el propio stack de seguridad esté vivo, fresco y vocal — no solo "corriendo".</p>
 <p class="meta">Stack: bash puro + inotify + utilidades Linux estándar. Sondea servicios en localhost + lee /etc. Requiere ejecución host-side. Open source, MIT.</p>
 </div>
 

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alat pendamping — Toolhub</title>
-  <meta name="description" content="Alat keamanan host-side eksternal yang melengkapi utilitas berbasis browser Toolhub. sentinel-v2 dan skill-scanner-v2 — keduanya open source MIT.">
+  <meta name="description" content="Alat keamanan host-side eksternal yang melengkapi utilitas berbasis browser Toolhub. sentinel dan skill-scanner — keduanya open source MIT.">
   <meta property="og:title" content="Alat pendamping — Toolhub">
-  <meta property="og:description" content="Alat keamanan host-side eksternal yang melengkapi utilitas berbasis browser Toolhub. sentinel-v2 dan skill-scanner-v2 — keduanya open source MIT.">
+  <meta property="og:description" content="Alat keamanan host-side eksternal yang melengkapi utilitas berbasis browser Toolhub. sentinel dan skill-scanner — keduanya open source MIT.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolhub.software/id/companion-tools/">
   <meta property="og:image" content="https://toolhub.software/og-image.png">
@@ -48,7 +48,7 @@
         "@type": "WebPage",
         "@id": "https://toolhub.software/id/companion-tools/#page",
         "name": "Alat pendamping",
-        "description": "Alat keamanan host-side eksternal yang melengkapi utilitas berbasis browser Toolhub. sentinel-v2 dan skill-scanner-v2 — keduanya open source MIT.",
+        "description": "Alat keamanan host-side eksternal yang melengkapi utilitas berbasis browser Toolhub. sentinel dan skill-scanner — keduanya open source MIT.",
         "url": "https://toolhub.software/id/companion-tools/",
         "inLanguage": "id",
         "isPartOf": {"@id": "https://toolhub.software#site"},
@@ -197,9 +197,9 @@
 <h2>🤖 AI Agent &amp; Harness</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
-<p class="tagline">Security scanner untuk skill agen AI (ekosistem OpenClaw / Claude Code / Hermes). 38 modul deteksi yang mencakup pattern matching, AST taint tracking, aturan YARA, analisis semantik LLM, provenance supply-chain, hash-pinning, dan verifikasi tanda tangan PGP rilis.</p>
-<p>Seiring meluasnya harness agen AI, supply chain untuk „skill" agen yang dapat diunduh menjadi medan berikutnya untuk injeksi malware. skill-scanner-v2 menganalisis paket skill secara statis melalui 38 modul deteksi — pattern matching, AST taint tracking, analisis semantik LLM, aturan YARA, dan deteksi typo-squat.</p>
+<h3><a href="https://github.com/JXXR1/skill-scanner" target="_blank" rel="noopener noreferrer">skill-scanner <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Pemindai keamanan untuk skill agen AI — 38 modul mendeteksi pencurian kredensial, serangan supply-chain, prompt injection, dan penyalahgunaan runtime di skill bundle apa pun.</p>
+<p>Bekerja di skill bundle apa pun yang menyertakan SKILL.md atau manifest — Claude Code, OpenClaw, AgentPress, Hermes Skills Hub, MCP toolkit. Seiring meluasnya harness agen AI, supply chain untuk „skill" agen yang dapat diunduh menjadi medan berikutnya untuk injeksi malware. skill-scanner menganalisis paket skill secara statis melalui 38 modul deteksi — pattern matching, AST taint tracking, analisis semantik LLM, aturan YARA, dan deteksi typo-squat.</p>
 <p>Gelombang supply-chain terbaru (v3.4 + v3.5) menambahkan: provenance konten bundled untuk korpus RAG, deteksi unduhan model eksternal (HuggingFace / replicate / dll.), verifikasi hash-pinning terhadap perubahan dalam transit, dan verifikasi tanda tangan PGP rilis.</p>
 <p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Eksekusi host-side diperlukan. Open source, MIT.</p>
 </div>
@@ -207,9 +207,11 @@
 <h2>🛡️ Keamanan</h2>
 
 <div class="companion-tool">
-<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
-<p class="tagline">Monitor keamanan bash yang ringan untuk server Linux. Arsitektur tiga lapis: file-watch (sub-detik), watchdog (tiap 2 menit), audit penuh + intel (tiap 6 jam).</p>
+<h3><a href="https://github.com/JXXR1/sentinel" target="_blank" rel="noopener noreferrer">sentinel <span class="version">v1.9.0</span> ↗</a></h3>
+<p class="tagline">Monitor keamanan bash yang ringan untuk server Linux — pertahanan enam lapis mencakup akses berkas, paparan port, egress allowlist, audit penuh, kesehatan stack, dan pemindaian dalam malam hari. Tanpa dependensi.</p>
+<p>Enam tingkat latensi: file-watch (&lt;1d) · watchdog (&lt;2 mnt) · outbound-guard (&lt;2 mnt) · check-v2+intel (6 jam) · stack-health (&lt;4 jam) · daily (24 jam).</p>
 <p>Allowlist port terbuka · deteksi paparan layanan sensitif · audit proses root · pemindaian world-writable · delta kunci SSH · deteksi lonjakan login gagal · delta cron/systemd · kesehatan stack keamanan (ClamAV / CrowdSec / Wazuh / fail2ban) · intel feed CVE · integrasi supply-chain dengan skill-scanner · audit egress vendor LLM · verifikasi integritas backup · audit postur Tailscale.</p>
+<p>v1.9.0 (hari ini) menambah dua lapis baru: outbound-guard menegakkan egress allowlist pada proses yang dipantau, dan stack-health memverifikasi bahwa stack keamanan itu sendiri hidup, segar, dan vokal — bukan sekadar „berjalan".</p>
 <p class="meta">Stack: bash murni + inotify + utilitas Linux standar. Memeriksa layanan localhost + membaca /etc. Eksekusi host-side diperlukan. Open source, MIT.</p>
 </div>
 
