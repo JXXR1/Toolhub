@@ -208,9 +208,10 @@
   </footer>
 
   <script>
-                                                                                                    const TOOLS = [
+                                                                                                        const TOOLS = [
       {"slug": "ascii-table", "name": "ASCII テーブル", "desc": "ASCII 0–127 の完全リファレンス。10 進・16 進・2 進・文字・HTML エンティティを表示。フィルタ可能。", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
       {"slug": "base64-encoder", "name": "Base64 エンコーダー / デコーダー", "desc": "テキストを Base64 にエンコード、または Base64 をテキストにデコード。UTF-8 対応で base64url バリアントもサポート。", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
+      {"slug": "base64-to-image", "name": "Base64 から画像へ", "desc": "Base64 画像や data URI をファイルに戻すデコーダー。文字列を貼り付け、プレビューしてダウンロード。image-to-Base64 ツールの逆方向。", "icon": "🔓", "cat": "encoding", "tags": ["base64", "data-uri", "decode", "image", "convert"]},
       {"slug": "bmi-calculator", "name": "BMI 計算機", "desc": "身長と体重から BMI を計算。メートル法・ヤード・ポンド法対応。WHO 区分を表示 — 医療助言ではありません。", "icon": "⚖️", "cat": "math", "tags": ["bmi", "body mass index", "health", "weight", "height", "metric", "imperial"]},
       {"slug": "case-converter", "name": "ケース変換ツール", "desc": "テキストを大文字、小文字、タイトル、文、camelCase、PascalCase、snake_case、kebab-case、CONSTANT_CASE、dot.case の間で変換。", "icon": "Aa", "cat": "text", "tags": ["case", "convert", "camel", "snake", "kebab", "pascal", "title", "upper", "lower"]},
       {"slug": "cidr-calculator", "name": "CIDR / サブネット計算機", "desc": "CIDR 表記から IPv4 サブネットを計算。ネットワーク、ブロードキャスト、マスク、ホスト範囲、バイナリ表示。", "icon": "🌐", "cat": "developer", "tags": ["cidr", "subnet", "ipv4", "network", "mask", "ip", "calculator"]},
@@ -235,6 +236,7 @@
       {"slug": "http-status-codes", "name": "HTTP ステータスコード", "desc": "任意の HTTP ステータスコード（1xx–5xx）を検索。意味、よくある原因、RFC 参照を表示。", "icon": "🌐", "cat": "developer", "tags": ["http", "status", "code", "rest", "api", "response", "rfc"]},
       {"slug": "image-compress", "name": "画像圧縮ツール", "desc": "PNG・JPG・WebP の画像をブラウザだけで圧縮。品質を調整し、前後のサイズを比較してダウンロード。ファイルは端末から出ません。", "icon": "🗜️", "cat": "media", "tags": ["image", "compress", "png", "jpg", "jpeg", "webp", "optimize", "reduce", "size"]},
       {"slug": "image-convert", "name": "画像フォーマット変換", "desc": "PNG・JPG・WebP の相互変換をブラウザ内で実行。画像を選び、出力形式を指定してダウンロード。アップロードもサーバーも不要です。", "icon": "🔄", "cat": "media", "tags": ["image", "convert", "png", "jpg", "jpeg", "webp", "format", "transform"]},
+      {"slug": "image-resize", "name": "画像リサイズ", "desc": "ブラウザだけで画像を任意の幅・高さにリサイズ。アスペクト比を固定でき、SNS 用サイズへの縮小も即ダウンロード。アップロード不要。", "icon": "📐", "cat": "media", "tags": ["image", "resize", "scale", "dimensions", "width", "height", "crop"]},
       {"slug": "image-to-base64", "name": "画像から Base64 へ", "desc": "任意の画像を Base64 データ URI に変換し、HTML・CSS・Markdown へインライン挿入。ファイルはブラウザ内のみ。", "icon": "🖼️", "cat": "encoding", "tags": ["image", "base64", "data-uri", "convert", "embed"]},
       {"slug": "js-minifier", "name": "JavaScript ミニファイア", "desc": "高速で構造的な JavaScript ミニファイ — コメント除去、空白圧縮、空行削除。ビフォア／アフターのサイズと節約率を表示。", "icon": "{}", "cat": "developer", "tags": ["javascript", "js", "minify", "compress", "optimize"]},
       {"slug": "json-diff", "name": "JSON 差分", "desc": "2 つの JSON ドキュメントの構造的差分 — 追加・削除・変更されたキーと値の変化を並べて表示。", "icon": "{}±", "cat": "developer", "tags": ["json", "diff", "compare", "structural", "delta", "merge"]},
@@ -257,6 +259,7 @@
       {"slug": "regex-tester", "name": "正規表現テスター", "desc": "JavaScript の正規表現をライブテスト。マッチ、キャプチャグループ、置換結果を入力に応じて表示。", "icon": ".*", "cat": "developer", "tags": ["regex", "regular expression", "test", "match", "replace", "javascript"]},
       {"slug": "slug-generator", "name": "スラグ生成ツール", "desc": "任意のタイトルからクリーンな URL スラグを生成。アクセントを翻字し、句読点を取り除き、ハイフンで連結。", "icon": "/-", "cat": "text", "tags": ["slug", "url", "seo", "kebab", "permalink", "transliterate"]},
       {"slug": "sql-formatter", "name": "SQL フォーマッター", "desc": "SQL をきちんとインデントして整形、または 1 行に圧縮。ANSI / MySQL / Postgres の方言に対応。", "icon": "🗄", "cat": "developer", "tags": ["sql", "format", "beautify", "minify", "indent", "mysql", "postgres", "ansi"]},
+      {"slug": "svg-optimizer", "name": "SVG オプティマイザー", "desc": "SVG ファイルをブラウザだけで圧縮。コメント・無駄な空白・デフォルト属性を削除し、長い小数を丸めます。ファイルは端末から出ません。", "icon": "🪶", "cat": "media", "tags": ["svg", "optimizer", "minify", "compress", "icon", "vector"]},
       {"slug": "text-diff", "name": "テキスト差分", "desc": "2 つのテキストブロックを比較し、行単位で追加・削除・変更されない部分を表示。並列または統合表示。", "icon": "±", "cat": "text", "tags": ["diff", "compare", "text", "lines", "patch", "changes"]},
       {"slug": "timestamp-converter", "name": "Unix タイムスタンプ変換", "desc": "Unix タイムスタンプと人間可読な日時を相互変換。秒・ミリ秒、UTC・ローカルに対応。", "icon": "🕐", "cat": "developer", "tags": ["timestamp", "unix", "epoch", "date", "convert", "iso8601"]},
       {"slug": "timezone-converter", "name": "タイムゾーン変換", "desc": "IANA タイムゾーン間で日時を変換。両端のオフセット、DST の有無、曜日も表示。", "icon": "🌍", "cat": "data", "tags": ["timezone", "tz", "convert", "utc", "date", "time", "iana"]},

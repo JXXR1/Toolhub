@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimiseur SVG — Toolhub</title>
+  <meta name="description" content="Optimiseur SVG gratuit qui tourne entièrement dans votre navigateur. Collez ou téléchargez un SVG et récupérez une version minifiée avec des valeurs par défaut raisonnables : commentaires supprimés, espaces réduits, attributs redondants retirés, coordonnées arrondies à 2 décimales. Affiche la taille avant/après.">
+  <meta property="og:title" content="Optimiseur SVG — Toolhub">
+  <meta property="og:description" content="Optimiseur SVG gratuit qui tourne entièrement dans votre navigateur. Collez ou téléchargez un SVG et récupérez une version minifiée avec des valeurs par défaut raisonnables : commentaires supprimés, espaces réduits, attributs redondants retirés, coordonnées arrondies à 2 décimales. Affiche la taille avant/après.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/fr/svg-optimizer/">
+  <meta property="og:image" content="https://toolhub.software/og-images/svg-optimizer.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/svg-optimizer.png">
+  <link rel="canonical" href="https://toolhub.software/fr/svg-optimizer/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/svg-optimizer/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/svg-optimizer/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/svg-optimizer/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/svg-optimizer/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/svg-optimizer/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/svg-optimizer/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/svg-optimizer/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/svg-optimizer/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/svg-optimizer/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/svg-optimizer/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/svg-optimizer/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/svg-optimizer/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/svg-optimizer/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/svg-optimizer/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/svg-optimizer/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/svg-optimizer/">
+  <meta property="og:locale" content="fr_FR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/fr/svg-optimizer/#tool",
+        "name": "Optimiseur SVG",
+        "description": "Optimiseur SVG gratuit qui tourne entièrement dans votre navigateur. Collez ou téléchargez un SVG et récupérez une version minifiée avec des valeurs par défaut raisonnables : commentaires supprimés, espaces réduits, attributs redondants retirés, coordonnées arrondies à 2 décimales. Affiche la taille avant/après.",
+        "url": "https://toolhub.software/fr/svg-optimizer/",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Media Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "fr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["svg", "optimizer", "minify", "compress", "icon", "vector"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tous les outils", "item": "https://toolhub.software/fr/"},
+          {"@type": "ListItem", "position": 2, "name": "Optimiseur SVG", "item": "https://toolhub.software/fr/svg-optimizer/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "À quoi ça sert ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cet outil exécute une petite série de passes regex faites à la main sur un SVG pour réduire sa taille en octets : suppression des commentaires XML, regroupement des blancs entre balises, retrait d'une poignée d'attributs qui valent déjà leur valeur par défaut, et arrondi des coordonnées décimales longues à 2 chiffres. Chaque passe est une case que vous pouvez désactiver. Tout se passe dans le navigateur — aucun upload, aucun serveur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quand l'utiliser",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nettoyer une icône SVG exportée depuis Figma, Illustrator ou Sketch avant de l'archiver dans un dépôt. Réduire le payload <svg> avant de l'inliner dans HTML ou CSS (où chaque octet voyage avec chaque page). Retirer les commentaires XML que certains outils de design laissent (\"Generator: Adobe Illustrator…\"). Passe rapide avant d'encoder un SVG en data: URL."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pièges courants",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas aussi agressif que SVGO. La vraie librairie SVGO peut optimiser les paths, nettoyer le viewBox et faire des dizaines d'autres passes. Cet outil ne fait délibérément que les passes sûres et évidentes — pour rester sans dépendance et 100 % navigateur. La suppression d'attributs par défaut est conservatrice. Elle ne retire qu'une courte liste connue ( stroke=\"none\" , fill-rule=\"nonzero\" , etc.). Si votre SVG en dépend explicitement, décochez l'option. L'arrondi des coordonnées est avec perte. Arrondir à 2 décimales est sûr pour icônes et logos ; pour des diagrammes haute précision, pensez à le désactiver. Le regroupement des blancs peut casser <text> . Les éléments <text> qui dépendent de plusieurs espaces les perdront. Pour des SVG d'icônes (sans texte), aucun souci."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Optimiseur SVG",
+  "description": "Minifiez vos fichiers SVG dans le navigateur. Supprime commentaires, espaces inutiles, attributs par défaut et arrondit les décimales longues. Le fichier ne quitte jamais votre appareil.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Collez votre SVG",
+      "text": "Placez votre SVG dans le champ Entrée."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cliquez sur Minifier",
+      "text": "Appuyez sur le bouton Minifier pour exécuter l'outil."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copiez le résultat",
+      "text": "Appuyez sur Copier pour copier la Sortie."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/fr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Langue</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/svg-optimizer/'; else location.href='/svg-optimizer/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" selected="selected">🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Installer Toolhub comme app sur ton appareil — fonctionne hors-ligne, sans app store" aria-label="Installer Toolhub comme app sur ton appareil — fonctionne hors-ligne, sans app store">Installer l'app</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Changer de thème">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/fr/">Tous les outils</a> / Optimiseur SVG</div>
+    <h1>Optimiseur SVG</h1>
+    <p class="tagline">Minifiez vos fichiers SVG dans le navigateur. Supprime commentaires, espaces inutiles, attributs par défaut et arrondit les décimales longues. Le fichier ne quitte jamais votre appareil.</p>
+    
+<div class="tool-card">
+  <label>SVG input</label>
+  <textarea id="svgo-in" spellcheck="false" oninput="svgoRun()" placeholder="Paste SVG markup here, or pick a file below…" style="width:100%;min-height:160px;font-family:var(--font-mono);font-size:0.85rem"></textarea>
+  <input type="file" id="svgo-file" accept=".svg,image/svg+xml" onchange="svgoLoadFile()" style="margin-top:0.5rem;padding:0.5rem;background:var(--code-bg);border:1px dashed var(--border);border-radius:6px;width:100%">
+  <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.4rem">🔒 Files never leave your browser — no upload, no server, no tracking.</div>
+</div>
+<div class="tool-card">
+  <label>Options</label>
+  <div style="display:flex;flex-wrap:wrap;gap:0.9rem;font-size:0.92rem">
+    <label style="font-weight:normal"><input type="checkbox" id="svgo-comments" checked onchange="svgoRun()"> Remove comments</label>
+    <label style="font-weight:normal"><input type="checkbox" id="svgo-ws" checked onchange="svgoRun()"> Collapse whitespace</label>
+    <label style="font-weight:normal"><input type="checkbox" id="svgo-defaults" checked onchange="svgoRun()"> Drop default attrs</label>
+    <label style="font-weight:normal"><input type="checkbox" id="svgo-round" checked onchange="svgoRun()"> Round coords (2 dp)</label>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Optimized SVG</label>
+  <div class="output-row">
+    <pre class="output" id="svgo-out" style="max-height:240px;overflow:auto;font-size:0.82rem">Saisissez une entrée ci-dessus pour voir le résultat.</pre>
+    <button class="copy-btn secondary" onclick="copyOutput('svgo-out', this)">Copier</button>
+  </div>
+  <div class="meta" id="svgo-stats" style="margin-top:0.5rem"></div>
+  <div class="button-row" style="margin-top:0.6rem"><button id="svgo-dl-btn" onclick="svgoDownload()" disabled>Télécharger</button></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>À quoi ça sert ?</h2>
+<p>Cet outil exécute une petite série de passes regex faites à la main sur un SVG pour réduire sa taille en octets : suppression des commentaires XML, regroupement des blancs entre balises, retrait d'une poignée d'attributs qui valent déjà leur valeur par défaut, et arrondi des coordonnées décimales longues à 2 chiffres. Chaque passe est une case que vous pouvez désactiver. Tout se passe dans le navigateur — aucun upload, aucun serveur.</p>
+
+<h3>Quand l'utiliser</h3>
+<ul>
+  <li>Nettoyer une icône SVG exportée depuis Figma, Illustrator ou Sketch avant de l'archiver dans un dépôt.</li>
+  <li>Réduire le payload &lt;svg&gt; avant de l'inliner dans HTML ou CSS (où chaque octet voyage avec chaque page).</li>
+  <li>Retirer les commentaires XML que certains outils de design laissent ("Generator: Adobe Illustrator…").</li>
+  <li>Passe rapide avant d'encoder un SVG en data: URL.</li>
+</ul>
+
+<h3>Pièges courants</h3>
+<ul>
+  <li><strong>Pas aussi agressif que SVGO.</strong> La vraie librairie <a href="https://github.com/svg/svgo">SVGO</a> peut optimiser les paths, nettoyer le viewBox et faire des dizaines d'autres passes. Cet outil ne fait délibérément que les passes sûres et évidentes — pour rester sans dépendance et 100 % navigateur.</li>
+  <li><strong>La suppression d'attributs par défaut est conservatrice.</strong> Elle ne retire qu'une courte liste connue (<code>stroke="none"</code>, <code>fill-rule="nonzero"</code>, etc.). Si votre SVG en dépend explicitement, décochez l'option.</li>
+  <li><strong>L'arrondi des coordonnées est avec perte.</strong> Arrondir à 2 décimales est sûr pour icônes et logos ; pour des diagrammes haute précision, pensez à le désactiver.</li>
+  <li><strong>Le regroupement des blancs peut casser <code>&lt;text&gt;</code>.</strong> Les éléments <code>&lt;text&gt;</code> qui dépendent de plusieurs espaces les perdront. Pour des SVG d'icônes (sans texte), aucun souci.</li>
+</ul>
+<div class="related"><span class="meta">Outils similaires:</span> <a href="/fr/image-compress/">Compresseur d'images</a> <a href="/fr/image-convert/">Convertisseur de format d'image</a> <a href="/fr/css-minifier/">Minificateur CSS</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/fr/privacy/">Confidentialité</a> · <a href="/fr/how-we-handle-your-data/">Traitement des données</a> · <a href="/fr/affiliate-disclosure/">Divulgation des affiliations</a> · <a href="/fr/companion-tools/">Outils complémentaires</a> · <a href="/fr/about/">À propos</a> · <a href="/fr/contact/">Contact</a> · <a href="/fr/for-schools/">Pour les écoles</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+function svgoLoadFile(){
+  const f = document.getElementById('svgo-file').files[0];
+  if (!f) return;
+  const r = new FileReader();
+  r.onload = () => { document.getElementById('svgo-in').value = r.result; svgoRun(); };
+  r.readAsText(f);
+}
+function svgoRun(){
+  let s = document.getElementById('svgo-in').value;
+  const out = document.getElementById('svgo-out');
+  const stats = document.getElementById('svgo-stats');
+  const btn = document.getElementById('svgo-dl-btn');
+  if (!s.trim()){ out.textContent = 'Saisissez une entrée ci-dessus pour voir le résultat.'; stats.textContent = ''; btn.disabled = true; return; }
+  const opts = {
+    comments: document.getElementById('svgo-comments').checked,
+    whitespace: document.getElementById('svgo-ws').checked,
+    defaults: document.getElementById('svgo-defaults').checked,
+    roundCoords: document.getElementById('svgo-round').checked,
+  };
+  const before = new Blob([s]).size;
+  if (opts.comments) s = s.replace(/<!--[\s\S]*?-->/g, '');
+  if (opts.whitespace) s = s.replace(/>\s+</g, '><').replace(/\s{2,}/g, ' ').trim();
+  if (opts.defaults){
+    s = s.replace(/\s+(stroke|fill-rule|fill-opacity|stroke-opacity|stroke-linejoin|stroke-linecap)="(?:none|nonzero|1|miter|butt)"/g, '');
+    s = s.replace(/\s+xmlns:xlink="http:\/\/www\.w3\.org\/1999\/xlink"(?![\s\S]*xlink:)/g, '');
+  }
+  if (opts.roundCoords){
+    s = s.replace(/(\d+\.\d{3,})/g, (m) => {
+      const n = parseFloat(m).toFixed(2);
+      return n.replace(/\.?0+$/, '') || '0';
+    });
+  }
+  const after = new Blob([s]).size;
+  out.textContent = s;
+  const saved = before > 0 ? ((1 - after/before) * 100).toFixed(1) : '0.0';
+  stats.textContent = before + ' → ' + after + ' bytes  (saved ' + saved + '%)';
+  btn.disabled = false;
+  window.__svgoLast = s;
+}
+function svgoDownload(){
+  const s = window.__svgoLast || '';
+  if (!s) return;
+  const blob = new Blob([s], {type: 'image/svg+xml'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'optimized.svg';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>
