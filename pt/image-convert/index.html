@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de formato de imagem — Toolhub</title>
+  <meta name="description" content="Conversor gratuito de formato de imagem no browser. Alterne entre PNG, JPG e WebP. Os arquivos ficam no seu dispositivo — nada é enviado. Útil pra encolher JPGs pra WebP, ou pra adicionar suporte a transparência indo pra PNG.">
+  <meta property="og:title" content="Conversor de formato de imagem — Toolhub">
+  <meta property="og:description" content="Conversor gratuito de formato de imagem no browser. Alterne entre PNG, JPG e WebP. Os arquivos ficam no seu dispositivo — nada é enviado. Útil pra encolher JPGs pra WebP, ou pra adicionar suporte a transparência indo pra PNG.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pt/image-convert/">
+  <meta property="og:image" content="https://toolhub.software/og-images/image-convert.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/image-convert.png">
+  <link rel="canonical" href="https://toolhub.software/pt/image-convert/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/image-convert/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/image-convert/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/image-convert/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/image-convert/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/image-convert/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/image-convert/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/image-convert/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/image-convert/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/image-convert/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/image-convert/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/image-convert/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/image-convert/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/image-convert/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/image-convert/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/image-convert/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/image-convert/">
+  <meta property="og:locale" content="pt_BR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pt/image-convert/#tool",
+        "name": "Conversor de formato de imagem",
+        "description": "Conversor gratuito de formato de imagem no browser. Alterne entre PNG, JPG e WebP. Os arquivos ficam no seu dispositivo — nada é enviado. Útil pra encolher JPGs pra WebP, ou pra adicionar suporte a transparência indo pra PNG.",
+        "url": "https://toolhub.software/pt/image-convert/",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Media Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pt",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["image", "convert", "png", "jpg", "jpeg", "webp", "format", "transform"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Todas as ferramentas", "item": "https://toolhub.software/pt/"},
+          {"@type": "ListItem", "position": 2, "name": "Conversor de formato de imagem", "item": "https://toolhub.software/pt/image-convert/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Para que serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Converte o formato container de uma imagem — PNG ↔ JPG ↔ WebP — inteiramente no seu browser via Canvas API. A imagem é decodificada em pixels e recodificada no formato alvo. O arquivo nunca sai do dispositivo; sem upload, sem processamento no servidor. Use pra fazer um WebP pra web, um JPG pra um destinatário que não lê WebP, ou um PNG pra introduzir transparência."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando usar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Um site ou app rejeita WebP e exige JPG/PNG. Você está publicando na web e quer WebP pra payload menor com mesma qualidade. Você precisa de um PNG pra manter bordas transparentes (ex.: um logo sobre fundo colorido). Você está coletando screenshots — JPG geralmente é menor que PNG pra conteúdo fotográfico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cuidados comuns",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JPG não tem canal alpha. Ao converter um PNG transparente pra JPG, pixels transparentes viram branco (essa ferramenta preenche o fundo de branco antes de desenhar). Recodificar texto ou screenshot pra JPG fica embaçado. Bordas nítidas e blocos de cor plana comprimem mal em JPEG. Mantenha PNG (ou WebP lossless) pra screenshots de UI. Suporte a encoding WebP varia. Chromium e Firefox têm há anos; Safari só desde a 14. Se seu browser não encoda WebP, a conversão falha em silêncio — tente outro alvo. Slider de qualidade não se aplica ao PNG. PNG é lossless e ignora o argumento. Metadados são removidos. Recodificação via Canvas strippa EXIF, perfis ICC e copyright. Bom pra privacidade, mas atente se seu workflow precisa preservar perfis de cor."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Conversor de formato de imagem",
+  "description": "Converta imagens entre PNG, JPG e WebP no seu browser. Solte, escolha o formato alvo, baixe. Sem upload, sem servidor.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Cole seu imagem",
+      "text": "Coloque seu imagem no campo Entrada."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Clique em Converter",
+      "text": "Pressione o botão Converter para rodar a ferramenta."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copie o resultado",
+      "text": "Pressione Copiar para copiar a Saída."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pt/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Idioma</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/image-convert/'; else location.href='/image-convert/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" selected="selected">🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Instalar Toolhub como app no seu dispositivo — funciona offline, sem app store" aria-label="Instalar Toolhub como app no seu dispositivo — funciona offline, sem app store">Instalar app</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pt/">Todas as ferramentas</a> / Conversor de formato de imagem</div>
+    <h1>Conversor de formato de imagem</h1>
+    <p class="tagline">Converta imagens entre PNG, JPG e WebP no seu browser. Solte, escolha o formato alvo, baixe. Sem upload, sem servidor.</p>
+    
+<div class="tool-card">
+  <label>Pick or drop an image</label>
+  <input type="file" id="icv-file" accept="image/*" onchange="icvRun()" style="padding:0.5rem;background:var(--code-bg);border:1px dashed var(--border);border-radius:6px">
+  <div class="row-2col" style="margin-top:0.9rem">
+    <div>
+      <label>Target format</label>
+      <select id="icv-format" onchange="icvRun()">
+        <option value="jpeg">JPG</option>
+        <option value="png">PNG</option>
+        <option value="webp">WebP</option>
+      </select>
+    </div>
+    <div>
+      <label>Quality (JPG / WebP) <span id="icv-quality-val" style="color:var(--text-muted);font-weight:normal">0.92</span></label>
+      <input type="range" id="icv-quality" min="0.1" max="1.0" step="0.02" value="0.92" oninput="icvRun()">
+    </div>
+  </div>
+  <div class="meta" id="icv-stats" style="margin-top:0.6rem"></div>
+  <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.4rem">🔒 Files never leave your browser — no upload, no server, no tracking.</div>
+</div>
+<div class="tool-card">
+  <label>Preview</label>
+  <div id="icv-preview" style="text-align:center;padding:1rem;background:var(--code-bg);border:1px solid var(--border);border-radius:6px;min-height:80px"><span style="color:var(--text-muted)">No image yet.</span></div>
+</div>
+<div class="tool-card">
+  <div class="button-row"><button id="icv-dl-btn" onclick="icvDownload()" disabled>Baixar</button></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Para que serve?</h2>
+<p>Converte o formato container de uma imagem — PNG ↔ JPG ↔ WebP — inteiramente no seu browser via Canvas API. A imagem é decodificada em pixels e recodificada no formato alvo. O arquivo nunca sai do dispositivo; sem upload, sem processamento no servidor. Use pra fazer um WebP pra web, um JPG pra um destinatário que não lê WebP, ou um PNG pra introduzir transparência.</p>
+
+<h3>Quando usar</h3>
+<ul>
+  <li>Um site ou app rejeita WebP e exige JPG/PNG.</li>
+  <li>Você está publicando na web e quer WebP pra payload menor com mesma qualidade.</li>
+  <li>Você precisa de um PNG pra manter bordas transparentes (ex.: um logo sobre fundo colorido).</li>
+  <li>Você está coletando screenshots — JPG geralmente é menor que PNG pra conteúdo fotográfico.</li>
+</ul>
+
+<h3>Cuidados comuns</h3>
+<ul>
+  <li><strong>JPG não tem canal alpha.</strong> Ao converter um PNG transparente pra JPG, pixels transparentes viram branco (essa ferramenta preenche o fundo de branco antes de desenhar).</li>
+  <li><strong>Recodificar texto ou screenshot pra JPG fica embaçado.</strong> Bordas nítidas e blocos de cor plana comprimem mal em JPEG. Mantenha PNG (ou WebP lossless) pra screenshots de UI.</li>
+  <li><strong>Suporte a encoding WebP varia.</strong> Chromium e Firefox têm há anos; Safari só desde a 14. Se seu browser não encoda WebP, a conversão falha em silêncio — tente outro alvo.</li>
+  <li><strong>Slider de qualidade não se aplica ao PNG.</strong> PNG é lossless e ignora o argumento.</li>
+  <li><strong>Metadados são removidos.</strong> Recodificação via Canvas strippa EXIF, perfis ICC e copyright. Bom pra privacidade, mas atente se seu workflow precisa preservar perfis de cor.</li>
+</ul>
+<div class="related"><span class="meta">Ferramentas relacionadas:</span> <a href="/pt/image-compress/">Compressor de imagens</a> <a href="/pt/exif-stripper/">Removedor de EXIF</a> <a href="/pt/image-to-base64/">Imagem para Base64</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/pt/privacy/">Privacidade</a> · <a href="/pt/how-we-handle-your-data/">Tratamento de dados</a> · <a href="/pt/affiliate-disclosure/">Divulgação de afiliados</a> · <a href="/pt/companion-tools/">Ferramentas complementares</a> · <a href="/pt/about/">Sobre</a> · <a href="/pt/contact/">Contato</a> · <a href="/pt/for-schools/">Para escolas</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+let icvBlobUrl = null;
+let icvExt = 'jpg';
+function icvRun(){
+  const file = document.getElementById('icv-file').files[0];
+  const preview = document.getElementById('icv-preview');
+  const stats = document.getElementById('icv-stats');
+  const btn = document.getElementById('icv-dl-btn');
+  if (!file){ preview.innerHTML='<span style="color:var(--text-muted)">No image yet.</span>'; stats.textContent=''; btn.disabled=true; return; }
+  const target = document.getElementById('icv-format').value;
+  const quality = parseFloat(document.getElementById('icv-quality').value);
+  document.getElementById('icv-quality-val').textContent = quality.toFixed(2);
+  const mime = 'image/' + target;
+  icvExt = target === 'jpeg' ? 'jpg' : target;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      // JPG has no alpha — fill white background so transparency doesn't go black.
+      if (target === 'jpeg'){
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      ctx.drawImage(img, 0, 0);
+      canvas.toBlob((blob) => {
+        if (!blob){ stats.textContent='Conversion failed — your browser may not support this output format.'; return; }
+        if (icvBlobUrl) URL.revokeObjectURL(icvBlobUrl);
+        icvBlobUrl = URL.createObjectURL(blob);
+        preview.innerHTML = '<img src="' + icvBlobUrl + '" style="max-width:100%;max-height:300px;border-radius:4px">';
+        const origKB = (file.size/1024).toFixed(1);
+        const newKB = (blob.size/1024).toFixed(1);
+        stats.innerHTML = '<strong>' + img.width + '×' + img.height + '</strong> · ' + file.type + ' → ' + mime + ' · ' + origKB + ' KB → ' + newKB + ' KB';
+        btn.disabled = false;
+      }, mime, quality);
+    };
+    img.onerror = () => { stats.textContent='Could not decode this image.'; };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+function icvDownload(){
+  if (!icvBlobUrl) return;
+  const a = document.createElement('a');
+  a.href = icvBlobUrl;
+  a.download = 'converted.' + icvExt;
+  a.click();
+}
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

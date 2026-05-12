@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penghapus EXIF — Toolhub</title>
+  <meta name="description" content="Viewer dan penghapus metadata EXIF online gratis. Drop atau pilih JPG dan lihat data tersembunyi: lokasi GPS (presisi meter), merek dan model kamera, timestamp persis, info lensa, bahkan software editing. Lalu unduh versi bersih tanpa metadata. Semua terjadi di browser-mu — tanpa upload, tanpa log.">
+  <meta property="og:title" content="Penghapus EXIF — Toolhub">
+  <meta property="og:description" content="Viewer dan penghapus metadata EXIF online gratis. Drop atau pilih JPG dan lihat data tersembunyi: lokasi GPS (presisi meter), merek dan model kamera, timestamp persis, info lensa, bahkan software editing. Lalu unduh versi bersih tanpa metadata. Semua terjadi di browser-mu — tanpa upload, tanpa log.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/id/exif-stripper/">
+  <meta property="og:image" content="https://toolhub.software/og-images/exif-stripper.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/exif-stripper.png">
+  <link rel="canonical" href="https://toolhub.software/id/exif-stripper/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/exif-stripper/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/exif-stripper/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/exif-stripper/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/exif-stripper/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/exif-stripper/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/exif-stripper/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/exif-stripper/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/exif-stripper/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/exif-stripper/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/exif-stripper/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/exif-stripper/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/exif-stripper/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/exif-stripper/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/exif-stripper/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/exif-stripper/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/exif-stripper/">
+  <meta property="og:locale" content="id_ID">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/id/exif-stripper/#tool",
+        "name": "Penghapus EXIF",
+        "description": "Viewer dan penghapus metadata EXIF online gratis. Drop atau pilih JPG dan lihat data tersembunyi: lokasi GPS (presisi meter), merek dan model kamera, timestamp persis, info lensa, bahkan software editing. Lalu unduh versi bersih tanpa metadata. Semua terjadi di browser-mu — tanpa upload, tanpa log.",
+        "url": "https://toolhub.software/id/exif-stripper/",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Media Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "id",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["exif", "metadata", "privacy", "strip", "remove", "gps", "location", "photo"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Semua alat", "item": "https://toolhub.software/id/"},
+          {"@type": "ListItem", "position": 2, "name": "Penghapus EXIF", "item": "https://toolhub.software/id/exif-stripper/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa itu EXIF dan kenapa peduli?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setiap foto yang kamu ambil dengan ponsel atau kamera membawa blok data tersembunyi — metadata EXIF — yang tertanam di file di samping piksel. Kebanyakan orang tidak pernah melihatnya. Tapi ada di sana: koordinat GPS tempat foto diambil (sering akurat sampai beberapa meter), detik tepat di jam ponselmu saat rana terlepas, merek dan model perangkat, lensa, kadang namamu dari kolom \"owner\" kamera. Upload JPG itu ke forum, kirim lewat WhatsApp, post ke blog pribadi, dan data itu ikut — kecuali platform-nya kebetulan membersihkannya. Tool ini membaca EXIF langsung di browser-mu (tanpa upload — JavaScript di halaman mem-parse byte-nya), menunjukkan apa yang ada, dan menawarkan unduhan satu klik foto yang sama tanpa metadata. File asli tidak pernah meninggalkan perangkatmu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa yang sebenarnya terekspos",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Koordinat GPS. Kalau location services menyala saat memotret, lintang/bujur tertanam. Enam digit desimal ≈ 11 cm presisi — cukup untuk mengidentifikasi alamat rumah. Tanggal dan waktu. Sampai detik, di zona waktu lokal kamera. Model kamera + serial. Beberapa kamera menanam serial unik yang menghubungkan banyak foto ke body fisik yang sama. Lensa, bukaan, ISO, focal length. Berguna untuk fotografer; tidak berbahaya. Software editing. \"Photoshop CC 2023\" mengungkap bahwa gambar telah diproses, kadang dengan identitas editor. Field owner / artist / copyright. Beberapa kamera memungkinkan default nama. Ia ikut setiap foto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kapan harus strip EXIF",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sebelum posting foto rumah, tempat kerja, atau lokasi yang tidak ingin tertanda di peta. Sebelum publik berbagi foto \"di sini aku ambil\" saat kamu lebih suka tidak mengungkap di mana tinggal. Saat mengirim foto ke jurnalis, pengacara, support group, atau siapa pun dalam konteks sensitif. Workflow whistleblower / perlindungan sumber — strip metadata sebelum upload bukti gambar. Saat mendaftarkan di marketplace (OLX, Facebook Marketplace) — foto sofa-mu bisa mengungkap alamat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa yang tool ini lakukan dan tidak lakukan",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lakukan: Membaca EXIF dari file JPG. Menampilkan GPS, kamera, timestamp, lensa, software. Memancarkan ulang JPG tanpa segmen APP1 (EXIF), APP13 (Photoshop IRB / IPTC), atau APP14 (Adobe). Lakukan: Berjalan sepenuhnya di browser-mu. Tidak ada yang di-upload. Tidak pernah ada log server file ini. Tidak lakukan: Menangani EXIF di format RAW (CR2, NEF, ARW) — itu butuh tool desktop. PNG dan WebP jarang membawa EXIF. Tidak lakukan: Menghapus metadata yang terbakar di piksel (mis. timestamp terlihat di gambar, atau watermark). Tidak lakukan: Meng-encode ulang JPG. Data piksel byte-identik; hanya segmen metadata yang dihapus, jadi kualitas tidak berubah."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kesalahan umum",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jejaring sosial berbeda-beda. Facebook dan Twitter strip EXIF saat upload; Instagram secara historis juga. Tapi situs image hosting, forum, dan blog pribadi sering tidak. Perlakukan setiap platform sebagai untrusted sampai kamu menguji. Screenshot biasanya tidak punya EXIF. Tool akan memberi tahu kalau sudah bersih. Cloud sync menyimpan aslinya. Strip EXIF dari JPG yang kamu unduh tidak mengubah salinan yang masih di iCloud / Google Photos. Thumbnail bisa bertahan. Beberapa software menyimpan preview JPEG kecil di dalam blok EXIF; tool ini membuang segmen EXIF utuh, jadi preview itu juga hilang."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Penghapus EXIF",
+  "description": "Lihat apa yang fotomu ungkapkan tentangmu — koordinat GPS, model kamera, timestamp persis — lalu hapus semuanya. 100 % di browser. File tidak pernah meninggalkan perangkat.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Tempel gambar-mu",
+      "text": "Letakkan gambar-mu di kolom Input."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Klik Hapus",
+      "text": "Tekan tombol Hapus untuk menjalankan alat."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Salin hasilnya",
+      "text": "Tekan Salin untuk menyalin Output."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/id/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Bahasa</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/exif-stripper/'; else location.href='/exif-stripper/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" selected="selected">🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Pasang Toolhub sebagai aplikasi di perangkatmu — bekerja offline, tanpa app store" aria-label="Pasang Toolhub sebagai aplikasi di perangkatmu — bekerja offline, tanpa app store">Pasang aplikasi</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Ganti tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/id/">Semua alat</a> / Penghapus EXIF</div>
+    <h1>Penghapus EXIF</h1>
+    <p class="tagline">Lihat apa yang fotomu ungkapkan tentangmu — koordinat GPS, model kamera, timestamp persis — lalu hapus semuanya. 100 % di browser. File tidak pernah meninggalkan perangkat.</p>
+    
+<div class="tool-card">
+  <label>Pick or drop a JPG</label>
+  <input type="file" id="exif-file" accept="image/jpeg" onchange="exifRun()" style="padding:0.5rem;background:var(--code-bg);border:1px dashed var(--border);border-radius:6px">
+  <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.4rem">🔒 Everything happens in your browser — no upload, no server, no log.</div>
+</div>
+<div class="tool-card" id="exif-results" style="display:none">
+  <label>Found in your photo</label>
+  <div id="exif-list" style="font-size:0.92rem"></div>
+</div>
+<div class="tool-card" id="exif-empty" style="display:none">
+  <div class="meta" style="text-align:center;padding:1rem">✓ No EXIF metadata found in this image — it's already clean.</div>
+</div>
+<div class="tool-card" id="exif-actions" style="display:none">
+  <div class="button-row">
+    <button id="exif-strip-btn" onclick="exifStripDownload()">Unduh clean copy</button>
+  </div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Apa itu EXIF dan kenapa peduli?</h2>
+<p>Setiap foto yang kamu ambil dengan ponsel atau kamera membawa blok data tersembunyi — <strong>metadata EXIF</strong> — yang tertanam di file di samping piksel. Kebanyakan orang tidak pernah melihatnya. Tapi ada di sana: koordinat GPS tempat foto diambil (sering akurat sampai beberapa meter), detik tepat di jam ponselmu saat rana terlepas, merek dan model perangkat, lensa, kadang namamu dari kolom "owner" kamera. Upload JPG itu ke forum, kirim lewat WhatsApp, post ke blog pribadi, dan data itu ikut — kecuali platform-nya kebetulan membersihkannya.</p>
+<p>Tool ini membaca EXIF langsung di browser-mu (tanpa upload — JavaScript di halaman mem-parse byte-nya), menunjukkan apa yang ada, dan menawarkan unduhan satu klik foto yang sama tanpa metadata. File asli tidak pernah meninggalkan perangkatmu.</p>
+
+<h3>Apa yang sebenarnya terekspos</h3>
+<ul>
+  <li><strong>Koordinat GPS.</strong> Kalau location services menyala saat memotret, lintang/bujur tertanam. Enam digit desimal ≈ 11 cm presisi — cukup untuk mengidentifikasi alamat rumah.</li>
+  <li><strong>Tanggal dan waktu.</strong> Sampai detik, di zona waktu lokal kamera.</li>
+  <li><strong>Model kamera + serial.</strong> Beberapa kamera menanam serial unik yang menghubungkan banyak foto ke body fisik yang sama.</li>
+  <li><strong>Lensa, bukaan, ISO, focal length.</strong> Berguna untuk fotografer; tidak berbahaya.</li>
+  <li><strong>Software editing.</strong> "Photoshop CC 2023" mengungkap bahwa gambar telah diproses, kadang dengan identitas editor.</li>
+  <li><strong>Field owner / artist / copyright.</strong> Beberapa kamera memungkinkan default nama. Ia ikut setiap foto.</li>
+</ul>
+
+<h3>Kapan harus strip EXIF</h3>
+<ul>
+  <li>Sebelum posting foto rumah, tempat kerja, atau lokasi yang tidak ingin tertanda di peta.</li>
+  <li>Sebelum publik berbagi foto "di sini aku ambil" saat kamu lebih suka tidak mengungkap di mana tinggal.</li>
+  <li>Saat mengirim foto ke jurnalis, pengacara, support group, atau siapa pun dalam konteks sensitif.</li>
+  <li>Workflow whistleblower / perlindungan sumber — strip metadata sebelum upload bukti gambar.</li>
+  <li>Saat mendaftarkan di marketplace (OLX, Facebook Marketplace) — foto sofa-mu bisa mengungkap alamat.</li>
+</ul>
+
+<h3>Apa yang tool ini lakukan dan tidak lakukan</h3>
+<ul>
+  <li><strong>Lakukan:</strong> Membaca EXIF dari file JPG. Menampilkan GPS, kamera, timestamp, lensa, software. Memancarkan ulang JPG tanpa segmen APP1 (EXIF), APP13 (Photoshop IRB / IPTC), atau APP14 (Adobe).</li>
+  <li><strong>Lakukan:</strong> Berjalan sepenuhnya di browser-mu. Tidak ada yang di-upload. Tidak pernah ada log server file ini.</li>
+  <li><strong>Tidak lakukan:</strong> Menangani EXIF di format RAW (CR2, NEF, ARW) — itu butuh tool desktop. PNG dan WebP jarang membawa EXIF.</li>
+  <li><strong>Tidak lakukan:</strong> Menghapus metadata yang terbakar di piksel (mis. timestamp terlihat di gambar, atau watermark).</li>
+  <li><strong>Tidak lakukan:</strong> Meng-encode ulang JPG. Data piksel byte-identik; hanya segmen metadata yang dihapus, jadi kualitas tidak berubah.</li>
+</ul>
+
+<h3>Kesalahan umum</h3>
+<ul>
+  <li><strong>Jejaring sosial berbeda-beda.</strong> Facebook dan Twitter strip EXIF saat upload; Instagram secara historis juga. Tapi situs image hosting, forum, dan blog pribadi sering tidak. Perlakukan setiap platform sebagai untrusted sampai kamu menguji.</li>
+  <li><strong>Screenshot biasanya tidak punya EXIF.</strong> Tool akan memberi tahu kalau sudah bersih.</li>
+  <li><strong>Cloud sync menyimpan aslinya.</strong> Strip EXIF dari JPG yang kamu unduh tidak mengubah salinan yang masih di iCloud / Google Photos.</li>
+  <li><strong>Thumbnail bisa bertahan.</strong> Beberapa software menyimpan preview JPEG kecil di dalam blok EXIF; tool ini membuang segmen EXIF utuh, jadi preview itu juga hilang.</li>
+</ul>
+<div class="related"><span class="meta">Alat terkait:</span> <a href="/id/image-compress/">Kompresor gambar</a> <a href="/id/image-convert/">Konverter format gambar</a> <a href="/id/image-to-base64/">Gambar ke Base64</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/id/privacy/">Privasi</a> · <a href="/id/how-we-handle-your-data/">Penanganan data</a> · <a href="/id/affiliate-disclosure/">Pengungkapan afiliasi</a> · <a href="/id/companion-tools/">Alat pendamping</a> · <a href="/id/about/">Tentang</a> · <a href="/id/contact/">Kontak</a> · <a href="/id/for-schools/">Untuk sekolah</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<script>
+const EXIF_TAGS = {
+  0x010F: 'Make',
+  0x0110: 'Model',
+  0x0131: 'Software',
+  0x0132: 'DateTime (modified)',
+  0x013B: 'Artist',
+  0x8298: 'Copyright',
+  0x011A: 'XResolution',
+  0x011B: 'YResolution',
+};
+const EXIF_SUB_TAGS = {
+  0x9003: 'DateTimeOriginal',
+  0x9004: 'DateTimeDigitized',
+  0x9209: 'Flash',
+  0x920A: 'FocalLength',
+  0x829A: 'ExposureTime',
+  0x829D: 'FNumber',
+  0x8827: 'ISO',
+  0xA002: 'PixelXDimension',
+  0xA003: 'PixelYDimension',
+  0xA432: 'LensSpecification',
+  0xA433: 'LensMake',
+  0xA434: 'LensModel',
+};
+const GPS_TAGS = {
+  0x0001: 'GPSLatitudeRef',
+  0x0002: 'GPSLatitude',
+  0x0003: 'GPSLongitudeRef',
+  0x0004: 'GPSLongitude',
+  0x0005: 'GPSAltitudeRef',
+  0x0006: 'GPSAltitude',
+  0x0007: 'GPSTimeStamp',
+  0x001D: 'GPSDateStamp',
+};
+
+let exifFileBuf = null;
+let exifFileName = '';
+
+function exifGet(view, off, type, count, base, le){
+  const sz = ({1:1,2:1,3:2,4:4,5:8,7:1,9:4,10:8}[type] || 1) * count;
+  let p = off;
+  if (sz > 4){
+    p = base + view.getUint32(off, le);
+  }
+  if (type === 2){
+    let s = '';
+    for (let i = 0; i < count; i++){
+      const c = view.getUint8(p + i);
+      if (c === 0) break;
+      s += String.fromCharCode(c);
+    }
+    return s.trim();
+  }
+  if (type === 1 || type === 7) return view.getUint8(p);
+  if (type === 3) return view.getUint16(p, le);
+  if (type === 4) return view.getUint32(p, le);
+  if (type === 5 || type === 10){
+    const arr = [];
+    for (let i = 0; i < count; i++){
+      const num = type === 5 ? view.getUint32(p + i*8, le) : view.getInt32(p + i*8, le);
+      const den = type === 5 ? view.getUint32(p + i*8 + 4, le) : view.getInt32(p + i*8 + 4, le);
+      arr.push(den ? num / den : 0);
+    }
+    return count === 1 ? arr[0] : arr;
+  }
+  return null;
+}
+
+function exifReadIfd(view, base, ifd, le){
+  const out = {};
+  const count = view.getUint16(ifd, le);
+  for (let i = 0; i < count; i++){
+    const e = ifd + 2 + i * 12;
+    if (e + 12 > view.byteLength) break;
+    const tag = view.getUint16(e, le);
+    const type = view.getUint16(e + 2, le);
+    const ct = view.getUint32(e + 4, le);
+    const val = exifGet(view, e + 8, type, ct, base, le);
+    out[tag] = val;
+  }
+  return out;
+}
+
+function exifParse(buffer){
+  const view = new DataView(buffer);
+  if (view.byteLength < 4 || view.getUint16(0) !== 0xFFD8) return null;
+  let pos = 2;
+  while (pos < view.byteLength - 4){
+    if (view.getUint8(pos) !== 0xFF) break;
+    const marker = view.getUint16(pos);
+    if (marker === 0xFFDA || marker === 0xFFD9) break;
+    const segLen = view.getUint16(pos + 2);
+    if (marker === 0xFFE1 && pos + 10 < view.byteLength){
+      const s = String.fromCharCode(view.getUint8(pos+4), view.getUint8(pos+5), view.getUint8(pos+6), view.getUint8(pos+7));
+      if (s === 'Exif'){
+        const base = pos + 10;
+        if (base + 8 > view.byteLength) return null;
+        const bom = view.getUint16(base);
+        const le = bom === 0x4949;
+        const magic = view.getUint16(base + 2, le);
+        if (magic !== 0x002A) return null;
+        const ifd0 = base + view.getUint32(base + 4, le);
+        const ifd0Data = exifReadIfd(view, base, ifd0, le);
+        const result = { ifd0: ifd0Data };
+        if (ifd0Data[0x8769]){
+          result.exif = exifReadIfd(view, base, base + ifd0Data[0x8769], le);
+        }
+        if (ifd0Data[0x8825]){
+          result.gps = exifReadIfd(view, base, base + ifd0Data[0x8825], le);
+        }
+        return result;
+      }
+    }
+    pos += segLen + 2;
+  }
+  return null;
+}
+
+function exifGpsToDecimal(dms, ref){
+  if (!Array.isArray(dms) || dms.length < 3) return null;
+  let dd = dms[0] + dms[1]/60 + dms[2]/3600;
+  if (ref === 'S' || ref === 'W') dd = -dd;
+  return dd;
+}
+
+function exifFmtRow(label, value, danger){
+  const cls = danger ? 'background:rgba(239,68,68,0.12);border-left:3px solid rgba(239,68,68,0.6)' : 'background:var(--code-bg)';
+  return '<div style="padding:0.5rem 0.7rem;margin-bottom:0.35rem;border-radius:4px;' + cls + '"><strong>' + label + ':</strong> ' + value + '</div>';
+}
+
+function exifRender(meta, fileSize){
+  const out = [];
+  const ifd0 = meta.ifd0 || {};
+  const sub = meta.exif || {};
+  const gps = meta.gps || {};
+  if (gps[0x0002] && gps[0x0004]){
+    const lat = exifGpsToDecimal(gps[0x0002], gps[0x0001]);
+    const lon = exifGpsToDecimal(gps[0x0004], gps[0x0003]);
+    const label = '📍 GPS location (PRIVACY RISK)';
+    const mapLink = 'https://www.openstreetmap.org/?mlat=' + lat.toFixed(6) + '&mlon=' + lon.toFixed(6) + '#map=16/' + lat.toFixed(6) + '/' + lon.toFixed(6);
+    out.push(exifFmtRow(label, lat.toFixed(6) + ', ' + lon.toFixed(6) + ' &nbsp;·&nbsp; <a href="' + mapLink + '" target="_blank" rel="noopener">view on map ↗</a>', true));
+    if (gps[0x0006] !== undefined){
+      out.push(exifFmtRow('GPS altitude', gps[0x0006].toFixed(1) + ' m'));
+    }
+  }
+  for (const [tag, name] of Object.entries(EXIF_TAGS)){
+    const v = ifd0[parseInt(tag, 10)];
+    if (v !== undefined && v !== null && v !== '') out.push(exifFmtRow(name, v));
+  }
+  for (const [tag, name] of Object.entries(EXIF_SUB_TAGS)){
+    const v = sub[parseInt(tag, 10)];
+    if (v === undefined || v === null || v === '') continue;
+    let formatted = v;
+    if (name === 'FocalLength' && typeof v === 'number') formatted = v.toFixed(1) + ' mm';
+    if (name === 'ExposureTime' && typeof v === 'number') formatted = v >= 1 ? v + ' s' : '1/' + Math.round(1/v) + ' s';
+    if (name === 'FNumber' && typeof v === 'number') formatted = 'f/' + v.toFixed(1);
+    out.push(exifFmtRow(name, formatted));
+  }
+  if (!out.length) return null;
+  return out.join('');
+}
+
+function exifRun(){
+  const file = document.getElementById('exif-file').files[0];
+  const results = document.getElementById('exif-results');
+  const list = document.getElementById('exif-list');
+  const empty = document.getElementById('exif-empty');
+  const actions = document.getElementById('exif-actions');
+  if (!file){ results.style.display='none'; empty.style.display='none'; actions.style.display='none'; exifFileBuf=null; return; }
+  exifFileName = file.name;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    exifFileBuf = e.target.result;
+    const meta = exifParse(exifFileBuf);
+    let html = null;
+    if (meta) html = exifRender(meta, file.size);
+    if (html){
+      list.innerHTML = html;
+      results.style.display = 'block';
+      empty.style.display = 'none';
+      actions.style.display = 'block';
+    } else {
+      results.style.display = 'none';
+      empty.style.display = 'block';
+      actions.style.display = 'block';
+    }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function exifStrip(buffer){
+  const view = new DataView(buffer);
+  if (view.getUint16(0) !== 0xFFD8) throw new Error('Not a JPEG');
+  const chunks = [new Uint8Array([0xFF, 0xD8])];
+  let pos = 2;
+  while (pos < view.byteLength){
+    if (view.getUint8(pos) !== 0xFF) break;
+    const marker = view.getUint16(pos);
+    if (marker === 0xFFD9){
+      chunks.push(new Uint8Array([0xFF, 0xD9]));
+      pos += 2;
+      break;
+    }
+    if (marker === 0xFFDA){
+      chunks.push(new Uint8Array(buffer, pos));
+      pos = view.byteLength;
+      break;
+    }
+    const segLen = view.getUint16(pos + 2);
+    const total = segLen + 2;
+    let drop = false;
+    if (marker === 0xFFE1 && pos + 10 < view.byteLength){
+      const s = String.fromCharCode(view.getUint8(pos+4), view.getUint8(pos+5), view.getUint8(pos+6), view.getUint8(pos+7));
+      if (s === 'Exif' || s === 'http') drop = true; // also drop XMP
+    }
+    // Drop the Adobe Photoshop IRB (FFED) which often carries IPTC metadata, and any APP* with comments
+    if (marker === 0xFFED || marker === 0xFFEE) drop = true;
+    if (!drop) chunks.push(new Uint8Array(buffer, pos, total));
+    pos += total;
+  }
+  let totalLen = 0;
+  for (const c of chunks) totalLen += c.length;
+  const out = new Uint8Array(totalLen);
+  let o = 0;
+  for (const c of chunks){ out.set(c, o); o += c.length; }
+  return out;
+}
+
+function exifStripDownload(){
+  if (!exifFileBuf) return;
+  try {
+    const stripped = exifStrip(exifFileBuf);
+    const blob = new Blob([stripped], { type: 'image/jpeg' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    const base = exifFileName.replace(/\.(jpe?g)$/i, '');
+    a.download = 'clean-' + (base || 'image') + '.jpg';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch (err) {
+    alert('Could not strip metadata: ' + err.message);
+  }
+}
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+</body>
+</html>

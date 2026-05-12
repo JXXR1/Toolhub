@@ -208,7 +208,7 @@
   </footer>
 
   <script>
-                                                                                            const TOOLS = [
+                                                                                                const TOOLS = [
       {"slug": "ascii-table", "name": "ASCII テーブル", "desc": "ASCII 0–127 の完全リファレンス。10 進・16 進・2 進・文字・HTML エンティティを表示。フィルタ可能。", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
       {"slug": "base64-encoder", "name": "Base64 エンコーダー / デコーダー", "desc": "テキストを Base64 にエンコード、または Base64 をテキストにデコード。UTF-8 対応で base64url バリアントもサポート。", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
       {"slug": "bmi-calculator", "name": "BMI 計算機", "desc": "身長と体重から BMI を計算。メートル法・ヤード・ポンド法対応。WHO 区分を表示 — 医療助言ではありません。", "icon": "⚖️", "cat": "math", "tags": ["bmi", "body mass index", "health", "weight", "height", "metric", "imperial"]},
@@ -227,11 +227,14 @@
       {"slug": "dice-roller", "name": "ダイスローラー", "desc": "標準 D&D 記法でダイスをロール — 2d6+3、1d20、4d6 keep highest 3 など。暗号論的に安全な RNG。", "icon": "🎲", "cat": "utility", "tags": ["dice", "roll", "d20", "rpg", "dnd", "random", "tabletop", "notation"]},
       {"slug": "email-validator", "name": "メールアドレス検証ツール", "desc": "メールアドレスが構文的に有効か（RFC 5322 準拠）を確認。ローカル部・ドメイン・よくある落とし穴も解析。", "icon": "✉", "cat": "validation", "tags": ["email", "validate", "rfc", "syntax", "mx", "domain"]},
       {"slug": "emoji-picker", "name": "絵文字ピッカー", "desc": "名前とキーワードで検索できる絵文字パレット。クリックでコピー。カテゴリ：スマイリー、動物、食べ物、旅行、オブジェクト、記号、国旗。", "icon": "😀", "cat": "text", "tags": ["emoji", "picker", "search", "copy", "unicode", "smiley", "symbol"]},
+      {"slug": "exif-stripper", "name": "EXIF メタデータ削除", "desc": "あなたの写真が何を語っているかを可視化 — GPS 座標、カメラ機種、正確な撮影時刻 — そしてすべて削除。100 % ブラウザ内処理。ファイルは端末から出ません。", "icon": "🛡️", "cat": "media", "tags": ["exif", "metadata", "privacy", "strip", "remove", "gps", "location", "photo"]},
       {"slug": "file-size-converter", "name": "ファイルサイズコンバーター", "desc": "バイト、KB、MB、GB、TB と、バイナリ系の KiB、MiB、GiB、TiB を相互変換。10 進と 2 進を明確に区別。", "icon": "📦", "cat": "math", "tags": ["file size", "convert", "byte", "kilobyte", "megabyte", "gigabyte", "kib", "mib", "binary", "decimal"]},
       {"slug": "hash-generator", "name": "ハッシュ生成ツール", "desc": "ブラウザの WebCrypto で SHA-1、SHA-256、SHA-384、SHA-512 のハッシュを生成。ローカル計算で、入力はページから外に出ません。", "icon": "🔑", "cat": "security", "tags": ["hash", "md5", "sha", "sha-256", "sha-512", "checksum"]},
       {"slug": "html-encoder", "name": "HTML エンコーダー / デコーダー", "desc": "HTML 特殊文字をエスケープ、またはエンティティをデコード。ユーザー入力の安全な埋め込みや、エスケープ済みマークアップのデバッグに便利。", "icon": "&lt;&gt;", "cat": "encoding", "tags": ["html", "encode", "entities", "escape", "xss"]},
       {"slug": "html-formatter", "name": "HTML フォーマッター", "desc": "HTML を整形・圧縮。インデント幅、コメント除去、自己終了タグの自動認識に対応。", "icon": "</>", "cat": "developer", "tags": ["html", "format", "beautify", "minify", "indent", "tidy"]},
       {"slug": "http-status-codes", "name": "HTTP ステータスコード", "desc": "任意の HTTP ステータスコード（1xx–5xx）を検索。意味、よくある原因、RFC 参照を表示。", "icon": "🌐", "cat": "developer", "tags": ["http", "status", "code", "rest", "api", "response", "rfc"]},
+      {"slug": "image-compress", "name": "画像圧縮ツール", "desc": "PNG・JPG・WebP の画像をブラウザだけで圧縮。品質を調整し、前後のサイズを比較してダウンロード。ファイルは端末から出ません。", "icon": "🗜️", "cat": "media", "tags": ["image", "compress", "png", "jpg", "jpeg", "webp", "optimize", "reduce", "size"]},
+      {"slug": "image-convert", "name": "画像フォーマット変換", "desc": "PNG・JPG・WebP の相互変換をブラウザ内で実行。画像を選び、出力形式を指定してダウンロード。アップロードもサーバーも不要です。", "icon": "🔄", "cat": "media", "tags": ["image", "convert", "png", "jpg", "jpeg", "webp", "format", "transform"]},
       {"slug": "image-to-base64", "name": "画像から Base64 へ", "desc": "任意の画像を Base64 データ URI に変換し、HTML・CSS・Markdown へインライン挿入。ファイルはブラウザ内のみ。", "icon": "🖼️", "cat": "encoding", "tags": ["image", "base64", "data-uri", "convert", "embed"]},
       {"slug": "js-minifier", "name": "JavaScript ミニファイア", "desc": "高速で構造的な JavaScript ミニファイ — コメント除去、空白圧縮、空行削除。ビフォア／アフターのサイズと節約率を表示。", "icon": "{}", "cat": "developer", "tags": ["javascript", "js", "minify", "compress", "optimize"]},
       {"slug": "json-diff", "name": "JSON 差分", "desc": "2 つの JSON ドキュメントの構造的差分 — 追加・削除・変更されたキーと値の変化を並べて表示。", "icon": "{}±", "cat": "developer", "tags": ["json", "diff", "compare", "structural", "delta", "merge"]},
