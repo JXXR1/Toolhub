@@ -47,6 +47,7 @@ UI = {
         "for_schools": "For Schools",
         "data_handling": "Data Handling",
         "affiliate_disclosure": "Affiliate Disclosure",
+        "companion_tools": "Companion Tools",
         "language": "Language",
     },
     "de": {
@@ -94,6 +95,7 @@ UI = {
         "for_schools": "Für Schulen",
         "data_handling": "Datenverarbeitung",
         "affiliate_disclosure": "Affiliate-Offenlegung",
+        "companion_tools": "Begleit-Tools",
         "language": "Sprache",
     },
     "es": {
@@ -141,6 +143,7 @@ UI = {
         "for_schools": "Para escuelas",
         "data_handling": "Tratamiento de datos",
         "affiliate_disclosure": "Divulgación de afiliados",
+        "companion_tools": "Herramientas complementarias",
         "language": "Idioma",
     },
     "fr": {
@@ -188,6 +191,7 @@ UI = {
         "for_schools": "Pour les écoles",
         "data_handling": "Traitement des données",
         "affiliate_disclosure": "Divulgation des affiliations",
+        "companion_tools": "Outils complémentaires",
         "language": "Langue",
     },
     "it": {
@@ -235,6 +239,7 @@ UI = {
         "for_schools": "Per le scuole",
         "data_handling": "Trattamento dei dati",
         "affiliate_disclosure": "Divulgazione affiliati",
+        "companion_tools": "Strumenti complementari",
         "language": "Lingua",
     },
     "pt": {
@@ -282,6 +287,7 @@ UI = {
         "for_schools": "Para escolas",
         "data_handling": "Tratamento de dados",
         "affiliate_disclosure": "Divulgação de afiliados",
+        "companion_tools": "Ferramentas complementares",
         "language": "Idioma",
     },
     "pl": {
@@ -329,6 +335,7 @@ UI = {
         "for_schools": "Dla szkół",
         "data_handling": "Obsługa danych",
         "affiliate_disclosure": "Ujawnienie partnerów",
+        "companion_tools": "Narzędzia uzupełniające",
         "language": "Język",
     },
     "ja": {
@@ -376,6 +383,7 @@ UI = {
         "for_schools": "学校向け",
         "data_handling": "データの取り扱い",
         "affiliate_disclosure": "アフィリエイト開示",
+        "companion_tools": "コンパニオンツール",
         "language": "言語",
     },
     "nl": {
@@ -423,6 +431,7 @@ UI = {
         "for_schools": "Voor scholen",
         "data_handling": "Dataverwerking",
         "affiliate_disclosure": "Affiliate-disclosure",
+        "companion_tools": "Aanvullende tools",
         "language": "Taal",
     },
     "tr": {
@@ -470,6 +479,7 @@ UI = {
         "for_schools": "Okullar için",
         "data_handling": "Veri işleme",
         "affiliate_disclosure": "Affiliate bildirimi",
+        "companion_tools": "Tamamlayıcı araçlar",
         "language": "Dil",
     },
     "id": {
@@ -517,6 +527,7 @@ UI = {
         "for_schools": "Untuk sekolah",
         "data_handling": "Penanganan data",
         "affiliate_disclosure": "Pengungkapan afiliasi",
+        "companion_tools": "Alat pendamping",
         "language": "Bahasa",
     },
     "vi": {
@@ -564,6 +575,7 @@ UI = {
         "for_schools": "Dành cho trường học",
         "data_handling": "Xử lý dữ liệu",
         "affiliate_disclosure": "Tiết lộ affiliate",
+        "companion_tools": "Công cụ bổ sung",
         "language": "Ngôn ngữ",
     },
     "sk": {
@@ -611,6 +623,7 @@ UI = {
         "for_schools": "Pre školy",
         "data_handling": "Spracovanie údajov",
         "affiliate_disclosure": "Affiliate zverejnenie",
+        "companion_tools": "Doplnkové nástroje",
         "language": "Jazyk",
     },
     "cs": {
@@ -658,6 +671,7 @@ UI = {
         "for_schools": "Pro školy",
         "data_handling": "Zpracování dat",
         "affiliate_disclosure": "Affiliate zveřejnění",
+        "companion_tools": "Doplňkové nástroje",
         "language": "Jazyk",
     },
     "hi": {
@@ -705,6 +719,7 @@ UI = {
         "for_schools": "स्कूलों के लिए",
         "data_handling": "डेटा हैंडलिंग",
         "affiliate_disclosure": "Affiliate डिस्क्लोज़र",
+        "companion_tools": "साथी टूल्स",
         "language": "भाषा",
     },
 }

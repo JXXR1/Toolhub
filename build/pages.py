@@ -3683,4 +3683,565 @@ PAGES = {
             },
         },
     },
+    "companion-tools": {
+        "slug": "companion-tools",
+        "schema": "WebPage",
+        "i18n": {
+            "en": {
+                "title": "Companion Tools",
+                "h1": "Companion Tools",
+                "description": "External host-side security tools that complement Toolhub's in-browser utilities. sentinel-v2 and skill-scanner-v2 — both MIT-licensed open source.",
+                "body": f"""
+<p class="tagline">Host-side security tools that complement Toolhub's in-browser utilities.</p>
+
+<p>Toolhub is fully browser-based — nothing runs server-side, nothing needs install. These external tools are different: they run on your own machine or server. We list them here because they fit Toolhub's privacy-first ethos and address use cases that genuinely require host-side execution.</p>
+
+<p>All are <strong>built by JXXR1</strong>, the same maintainer as Toolhub. <strong>MIT licensed.</strong> Self-host them. Audit the source. They're not affiliate links — just companion utilities.</p>
+
+<h2>🤖 AI Agents &amp; Harnesses</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Security scanner for AI agent skills (OpenClaw / Claude Code / Hermes ecosystems). 38 detection modules covering pattern matching, AST taint tracking, YARA rules, LLM semantic analysis, supply-chain provenance, hash-pinning, and release-signature verification (PGP).</p>
+<p>With AI agent harnesses proliferating, the supply chain for downloadable agent "skills" is the next frontier for malware injection. skill-scanner-v2 statically analyses skill packages across 38 detection modules — pattern matching, AST taint tracking, LLM semantic analysis, YARA rules, and typo-squat detection.</p>
+<p>Recent supply-chain wave (v3.4 + v3.5) adds: bundled-content provenance for RAG corpora, external-model-download detection (HuggingFace / replicate / etc.), hash-pinning verification against in-flight tampering, and PGP release-signature verification.</p>
+<p class="meta">Stack: bash + JavaScript + Python wrapper + YARA. Host-side execution required. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Security</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Lightweight bash security monitor for Linux servers. Three-layer architecture: file-watch (sub-second), watchdog (every 2 min), full audit + intel (every 6 hours).</p>
+<p>Open-port allowlist · sensitive-service exposure detection · root-process audit · world-writable scan · SSH-key delta · failed-login spike detection · cron/systemd delta · security-stack health (ClamAV / CrowdSec / Wazuh / fail2ban) · CVE-feed intel · supply-chain skill-scanner integration · LLM-vendor egress audit · backup integrity verification · Tailscale posture audit.</p>
+<p class="meta">Stack: pure bash + inotify + standard Linux utilities. Probes localhost services + reads /etc. Host-side execution required. Open source, MIT.</p>
+</div>
+
+<h2>Why these and not just "a list of cool tools"?</h2>
+
+<p>Both are JXXR1's own work. We recommend tools we've built or audited ourselves. Toolhub doesn't publish a "best Linux security tools" listicle — there are plenty of those, and most are SEO farms. This page is a curated handoff for the specific audiences who arrive at Toolhub and need a host-side companion: school IT admins, agent-builders, sysadmins.</p>
+
+<p>If you'd like a tool added: open an issue on the <a href="{REPO_URL}">Toolhub repo</a>. We won't accept paid placements.</p>
+""".strip(),
+            },
+            "de": {
+                "title": "Begleit-Tools",
+                "h1": "Begleit-Tools",
+                "description": "Externe Host-seitige Security-Tools, die Toolhubs Browser-Utilities ergänzen. sentinel-v2 und skill-scanner-v2 — beide MIT-Open-Source.",
+                "body": f"""
+<p class="tagline">Host-seitige Security-Tools, die Toolhubs Browser-Utilities ergänzen.</p>
+
+<p>Toolhub läuft komplett im Browser — nichts auf dem Server, keine Installation. Diese externen Tools sind anders: sie laufen auf deinem eigenen Rechner oder Server. Wir listen sie hier, weil sie zu Toolhubs Privacy-First-Haltung passen und Anwendungsfälle abdecken, die wirklich Host-seitige Ausführung brauchen.</p>
+
+<p>Alle sind <strong>von JXXR1 gebaut</strong>, demselben Maintainer wie Toolhub. <strong>MIT-lizenziert.</strong> Self-hoste sie. Prüf den Quellcode. Das sind keine Affiliate-Links — einfach nur Begleit-Werkzeuge.</p>
+
+<h2>🤖 KI-Agenten &amp; Harnesses</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Security-Scanner für KI-Agenten-Skills (OpenClaw / Claude Code / Hermes Ökosysteme). 38 Detection-Module für Pattern-Matching, AST-Taint-Tracking, YARA-Regeln, LLM-Semantik-Analyse, Supply-Chain-Provenance, Hash-Pinning und PGP-Signaturprüfung.</p>
+<p>Da KI-Agenten-Harnesses sich weiter verbreiten, wird die Supply Chain für herunterladbare Agenten-„Skills" zur nächsten Front für Malware-Injektion. skill-scanner-v2 analysiert Skill-Pakete statisch über 38 Detection-Module — Pattern-Matching, AST-Taint-Tracking, LLM-Semantik-Analyse, YARA-Regeln und Typo-Squat-Erkennung.</p>
+<p>Die letzte Supply-Chain-Welle (v3.4 + v3.5) ergänzt: Provenance für gebündelte RAG-Corpora, Erkennung externer Modell-Downloads (HuggingFace / replicate / etc.), Hash-Pinning gegen In-Flight-Tampering und PGP-Release-Signaturprüfung.</p>
+<p class="meta">Stack: bash + JavaScript + Python-Wrapper + YARA. Host-seitige Ausführung nötig. Open Source, MIT.</p>
+</div>
+
+<h2>🛡️ Security</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Leichtgewichtiger Bash-Security-Monitor für Linux-Server. Drei-Schicht-Architektur: File-Watch (Sekundenbruchteile), Watchdog (alle 2 Min), Full-Audit + Intel (alle 6 Stunden).</p>
+<p>Offen-Port-Allowlist · Erkennung exponierter sensibler Dienste · Root-Prozess-Audit · World-Writable-Scan · SSH-Key-Delta · Spike-Erkennung fehlgeschlagener Logins · Cron/systemd-Delta · Security-Stack-Health (ClamAV / CrowdSec / Wazuh / fail2ban) · CVE-Feed-Intel · Supply-Chain-Integration mit skill-scanner · LLM-Vendor-Egress-Audit · Backup-Integritätsprüfung · Tailscale-Posture-Audit.</p>
+<p class="meta">Stack: reines bash + inotify + Standard-Linux-Utilities. Prüft Localhost-Dienste + liest /etc. Host-seitige Ausführung nötig. Open Source, MIT.</p>
+</div>
+
+<h2>Warum genau diese und nicht einfach „eine Liste cooler Tools"?</h2>
+
+<p>Beide sind JXXR1s eigene Arbeit. Wir empfehlen Tools, die wir selbst gebaut oder geprüft haben. Toolhub veröffentlicht keine „Best Linux Security Tools"-Liste — davon gibt's reichlich, und die meisten sind SEO-Farmen. Diese Seite ist eine kuratierte Übergabe für die konkreten Zielgruppen, die bei Toolhub landen und einen Host-seitigen Begleiter brauchen: Schul-IT-Admins, Agent-Builder, Sysadmins.</p>
+
+<p>Möchtest du ein Tool ergänzt haben? Öffne ein Issue im <a href="{REPO_URL}">Toolhub-Repo</a>. Bezahlte Platzierungen nehmen wir nicht an.</p>
+""".strip(),
+            },
+            "es": {
+                "title": "Herramientas complementarias",
+                "h1": "Herramientas complementarias",
+                "description": "Herramientas de seguridad host-side externas que complementan las utilidades browser de Toolhub. sentinel-v2 y skill-scanner-v2 — ambas open source MIT.",
+                "body": f"""
+<p class="tagline">Herramientas de seguridad host-side que complementan las utilidades browser de Toolhub.</p>
+
+<p>Toolhub funciona enteramente en el navegador — nada se ejecuta en servidor, nada hay que instalar. Estas herramientas externas son distintas: se ejecutan en tu propio equipo o servidor. Las listamos aquí porque encajan con la ética privacy-first de Toolhub y cubren casos de uso que realmente requieren ejecución host-side.</p>
+
+<p>Todas están <strong>construidas por JXXR1</strong>, el mismo mantenedor que Toolhub. <strong>Licenciadas MIT.</strong> Hospédalas tú. Audita el código. No son enlaces de afiliado — solo utilidades complementarias.</p>
+
+<h2>🤖 Agentes IA y harnesses</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Escáner de seguridad para skills de agentes IA (ecosistemas OpenClaw / Claude Code / Hermes). 38 módulos de detección que cubren pattern matching, taint tracking AST, reglas YARA, análisis semántico LLM, provenance de supply chain, hash-pinning y verificación de firma PGP de releases.</p>
+<p>Con la proliferación de harnesses de agentes IA, la supply chain de "skills" descargables se convierte en la siguiente frontera para inyección de malware. skill-scanner-v2 analiza estáticamente paquetes de skills a través de 38 módulos de detección — pattern matching, taint tracking AST, análisis semántico LLM, reglas YARA y detección de typo-squat.</p>
+<p>La última oleada supply-chain (v3.4 + v3.5) añade: provenance de contenido empaquetado para corpora RAG, detección de descargas externas de modelos (HuggingFace / replicate / etc.), verificación de hash-pinning contra manipulación en tránsito y verificación de firma PGP de releases.</p>
+<p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Requiere ejecución host-side. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Seguridad</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Monitor de seguridad bash ligero para servidores Linux. Arquitectura en tres capas: file-watch (sub-segundo), watchdog (cada 2 min), auditoría completa + inteligencia (cada 6 horas).</p>
+<p>Allowlist de puertos abiertos · detección de exposición de servicios sensibles · auditoría de procesos root · escaneo world-writable · delta de claves SSH · detección de picos de logins fallidos · delta cron/systemd · salud del stack de seguridad (ClamAV / CrowdSec / Wazuh / fail2ban) · inteligencia de feed CVE · integración supply-chain con skill-scanner · auditoría egress de proveedores LLM · verificación de integridad de backups · auditoría de postura Tailscale.</p>
+<p class="meta">Stack: bash puro + inotify + utilidades Linux estándar. Sondea servicios en localhost + lee /etc. Requiere ejecución host-side. Open source, MIT.</p>
+</div>
+
+<h2>¿Por qué estas y no simplemente "una lista de herramientas chulas"?</h2>
+
+<p>Las dos son obra del propio JXXR1. Recomendamos herramientas que hemos construido o auditado nosotros mismos. Toolhub no publica un listicle de "las mejores herramientas de seguridad Linux" — de esos hay de sobra, y la mayoría son granjas SEO. Esta página es una entrega curada para los públicos concretos que llegan a Toolhub y necesitan un complemento host-side: administradores IT de centros educativos, constructores de agentes, sysadmins.</p>
+
+<p>¿Quieres que añadamos alguna herramienta? Abre una issue en el <a href="{REPO_URL}">repo de Toolhub</a>. No aceptamos colocaciones pagadas.</p>
+""".strip(),
+            },
+            "fr": {
+                "title": "Outils complémentaires",
+                "h1": "Outils complémentaires",
+                "description": "Outils de sécurité host-side externes qui complètent les utilitaires navigateur de Toolhub. sentinel-v2 et skill-scanner-v2 — open source MIT tous les deux.",
+                "body": f"""
+<p class="tagline">Outils de sécurité host-side qui complètent les utilitaires navigateur de Toolhub.</p>
+
+<p>Toolhub tourne entièrement dans le navigateur — rien côté serveur, rien à installer. Ces outils externes sont différents : ils tournent sur ta propre machine ou ton propre serveur. On les liste ici parce qu'ils collent à l'éthique privacy-first de Toolhub et qu'ils répondent à des usages qui exigent vraiment une exécution côté hôte.</p>
+
+<p>Tous sont <strong>construits par JXXR1</strong>, le même mainteneur que Toolhub. <strong>Sous licence MIT.</strong> Auto-héberge-les. Audite le code. Ce ne sont pas des liens d'affiliation — juste des utilitaires complémentaires.</p>
+
+<h2>🤖 Agents IA et harnesses</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Scanner de sécurité pour skills d'agents IA (écosystèmes OpenClaw / Claude Code / Hermes). 38 modules de détection couvrant pattern matching, taint tracking AST, règles YARA, analyse sémantique LLM, provenance supply-chain, hash-pinning et vérification de signature PGP des releases.</p>
+<p>Avec la prolifération des harnesses d'agents IA, la supply chain des « skills » téléchargeables devient la prochaine frontière pour l'injection de malware. skill-scanner-v2 analyse statiquement les paquets de skills via 38 modules de détection — pattern matching, taint tracking AST, analyse sémantique LLM, règles YARA et détection de typo-squat.</p>
+<p>La dernière vague supply-chain (v3.4 + v3.5) ajoute : provenance du contenu embarqué pour les corpora RAG, détection des téléchargements externes de modèles (HuggingFace / replicate / etc.), hash-pinning contre les altérations en transit et vérification de signature PGP des releases.</p>
+<p class="meta">Stack : bash + JavaScript + wrapper Python + YARA. Exécution côté hôte requise. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Sécurité</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Moniteur de sécurité bash léger pour serveurs Linux. Architecture en trois couches : file-watch (sous la seconde), watchdog (toutes les 2 min), audit complet + intel (toutes les 6 heures).</p>
+<p>Allowlist des ports ouverts · détection d'exposition de services sensibles · audit des processus root · scan world-writable · delta des clés SSH · détection de pics de logins échoués · delta cron/systemd · santé du stack de sécurité (ClamAV / CrowdSec / Wazuh / fail2ban) · intel de feed CVE · intégration supply-chain avec skill-scanner · audit de sortie des fournisseurs LLM · vérification d'intégrité des sauvegardes · audit de posture Tailscale.</p>
+<p class="meta">Stack : bash pur + inotify + utilitaires Linux standard. Sonde les services localhost + lit /etc. Exécution côté hôte requise. Open source, MIT.</p>
+</div>
+
+<h2>Pourquoi ceux-là et pas juste « une liste d'outils sympas » ?</h2>
+
+<p>Les deux sont le travail propre de JXXR1. On recommande des outils qu'on a construits ou audités nous-mêmes. Toolhub ne publie pas de listicle « meilleurs outils de sécurité Linux » — il y en a déjà à la pelle, et la plupart sont des fermes SEO. Cette page est une passation soignée pour les publics précis qui atterrissent sur Toolhub et ont besoin d'un complément côté hôte : admins IT scolaires, constructeurs d'agents, sysadmins.</p>
+
+<p>Tu veux qu'un outil soit ajouté ? Ouvre une issue sur le <a href="{REPO_URL}">repo Toolhub</a>. On n'accepte pas de placements payés.</p>
+""".strip(),
+            },
+            "it": {
+                "title": "Strumenti complementari",
+                "h1": "Strumenti complementari",
+                "description": "Strumenti di sicurezza host-side esterni che completano le utility browser di Toolhub. sentinel-v2 e skill-scanner-v2 — entrambi open source MIT.",
+                "body": f"""
+<p class="tagline">Strumenti di sicurezza host-side che completano le utility browser di Toolhub.</p>
+
+<p>Toolhub gira interamente nel browser — niente lato server, niente da installare. Questi strumenti esterni sono diversi: girano sulla tua macchina o sul tuo server. Li elenchiamo qui perché si allineano all'etica privacy-first di Toolhub e coprono casi d'uso che richiedono davvero l'esecuzione host-side.</p>
+
+<p>Sono tutti <strong>costruiti da JXXR1</strong>, lo stesso maintainer di Toolhub. <strong>Licenza MIT.</strong> Self-hostali. Controlla il codice. Non sono link affiliati — solo utility complementari.</p>
+
+<h2>🤖 Agenti IA e harness</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Scanner di sicurezza per skill di agenti IA (ecosistemi OpenClaw / Claude Code / Hermes). 38 moduli di rilevamento che coprono pattern matching, taint tracking AST, regole YARA, analisi semantica LLM, provenance supply-chain, hash-pinning e verifica firma PGP delle release.</p>
+<p>Con il proliferare degli harness per agenti IA, la supply chain delle "skill" scaricabili diventa la prossima frontiera per l'iniezione di malware. skill-scanner-v2 analizza staticamente i pacchetti di skill attraverso 38 moduli di rilevamento — pattern matching, taint tracking AST, analisi semantica LLM, regole YARA e rilevamento typo-squat.</p>
+<p>L'ultima ondata supply-chain (v3.4 + v3.5) aggiunge: provenance dei contenuti bundlati per i corpora RAG, rilevamento dei download esterni di modelli (HuggingFace / replicate / ecc.), verifica hash-pinning contro le manomissioni in transito e verifica firma PGP delle release.</p>
+<p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Richiede esecuzione host-side. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Sicurezza</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Monitor di sicurezza bash leggero per server Linux. Architettura a tre livelli: file-watch (sub-secondo), watchdog (ogni 2 min), audit completo + intel (ogni 6 ore).</p>
+<p>Allowlist delle porte aperte · rilevamento esposizione servizi sensibili · audit dei processi root · scansione world-writable · delta delle chiavi SSH · rilevamento picchi di login falliti · delta cron/systemd · salute dello stack di sicurezza (ClamAV / CrowdSec / Wazuh / fail2ban) · intel CVE feed · integrazione supply-chain con skill-scanner · audit egress dei vendor LLM · verifica integrità dei backup · audit di postura Tailscale.</p>
+<p class="meta">Stack: bash puro + inotify + utility Linux standard. Sonda i servizi localhost + legge /etc. Richiede esecuzione host-side. Open source, MIT.</p>
+</div>
+
+<h2>Perché proprio questi e non semplicemente "una lista di tool fighi"?</h2>
+
+<p>Entrambi sono lavoro proprio di JXXR1. Consigliamo strumenti che abbiamo costruito o auditato noi stessi. Toolhub non pubblica un listicle "i migliori strumenti di sicurezza Linux" — ce ne sono già a bizzeffe, e la maggior parte sono SEO farm. Questa pagina è una consegna curata per i pubblici specifici che arrivano su Toolhub e hanno bisogno di un complemento host-side: admin IT scolastici, agent-builder, sysadmin.</p>
+
+<p>Vuoi che venga aggiunto uno strumento? Apri una issue sul <a href="{REPO_URL}">repo di Toolhub</a>. Non accettiamo posizionamenti a pagamento.</p>
+""".strip(),
+            },
+            "pt": {
+                "title": "Ferramentas complementares",
+                "h1": "Ferramentas complementares",
+                "description": "Ferramentas de segurança host-side externas que complementam as utilidades browser do Toolhub. sentinel-v2 e skill-scanner-v2 — ambas open source MIT.",
+                "body": f"""
+<p class="tagline">Ferramentas de segurança host-side que complementam as utilidades browser do Toolhub.</p>
+
+<p>O Toolhub roda inteiramente no browser — nada do lado servidor, nada precisa instalar. Essas ferramentas externas são diferentes: rodam na sua própria máquina ou servidor. A gente lista elas aqui porque combinam com a ética privacy-first do Toolhub e cobrem casos de uso que realmente exigem execução host-side.</p>
+
+<p>Todas foram <strong>feitas pelo JXXR1</strong>, o mesmo mantenedor do Toolhub. <strong>Licença MIT.</strong> Hospede você mesmo. Audite o código. Não são links de afiliado — são só utilitários complementares.</p>
+
+<h2>🤖 Agentes IA e harnesses</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Scanner de segurança para skills de agentes IA (ecossistemas OpenClaw / Claude Code / Hermes). 38 módulos de detecção cobrindo pattern matching, taint tracking AST, regras YARA, análise semântica LLM, provenance de supply chain, hash-pinning e verificação de assinatura PGP de releases.</p>
+<p>Com a proliferação dos harnesses de agentes IA, a supply chain das "skills" baixáveis vira a próxima fronteira para injeção de malware. O skill-scanner-v2 analisa estaticamente pacotes de skill em 38 módulos de detecção — pattern matching, taint tracking AST, análise semântica LLM, regras YARA e detecção de typo-squat.</p>
+<p>A última leva supply-chain (v3.4 + v3.5) adiciona: provenance de conteúdo bundlado pra corpora RAG, detecção de downloads externos de modelos (HuggingFace / replicate / etc.), verificação de hash-pinning contra adulteração em trânsito e verificação de assinatura PGP de release.</p>
+<p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Execução host-side necessária. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Segurança</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Monitor de segurança bash leve para servidores Linux. Arquitetura em três camadas: file-watch (sub-segundo), watchdog (a cada 2 min), auditoria completa + intel (a cada 6 horas).</p>
+<p>Allowlist de portas abertas · detecção de exposição de serviços sensíveis · auditoria de processos root · varredura world-writable · delta de chaves SSH · detecção de picos de logins falhos · delta cron/systemd · saúde do stack de segurança (ClamAV / CrowdSec / Wazuh / fail2ban) · intel de feed CVE · integração supply-chain com skill-scanner · auditoria de egress de vendors LLM · verificação de integridade de backup · auditoria de postura Tailscale.</p>
+<p class="meta">Stack: bash puro + inotify + utilitários Linux padrão. Sonda serviços localhost + lê /etc. Execução host-side necessária. Open source, MIT.</p>
+</div>
+
+<h2>Por que essas e não só "uma lista de ferramentas legais"?</h2>
+
+<p>As duas são trabalho do próprio JXXR1. Recomendamos ferramentas que a gente mesmo construiu ou auditou. O Toolhub não publica listicle "melhores ferramentas de segurança Linux" — disso já tem aos montes e a maioria é fazenda de SEO. Essa página é uma passagem curada pros públicos específicos que chegam ao Toolhub e precisam de um complemento host-side: admins de TI escolar, agent-builders, sysadmins.</p>
+
+<p>Quer que alguma ferramenta seja adicionada? Abra uma issue no <a href="{REPO_URL}">repo do Toolhub</a>. Não aceitamos colocações pagas.</p>
+""".strip(),
+            },
+            "pl": {
+                "title": "Narzędzia uzupełniające",
+                "h1": "Narzędzia uzupełniające",
+                "description": "Zewnętrzne narzędzia bezpieczeństwa host-side uzupełniające utility przeglądarkowe Toolhub. sentinel-v2 i skill-scanner-v2 — oba open source MIT.",
+                "body": f"""
+<p class="tagline">Narzędzia bezpieczeństwa host-side, które uzupełniają utility przeglądarkowe Toolhub.</p>
+
+<p>Toolhub działa w całości w przeglądarce — nic po stronie serwera, nic do instalowania. Te zewnętrzne narzędzia są inne: działają na twojej własnej maszynie albo serwerze. Wymieniamy je tu, bo pasują do privacy-first etosu Toolhub i obsługują przypadki, które naprawdę wymagają wykonania po stronie hosta.</p>
+
+<p>Wszystkie <strong>zbudowane przez JXXR1</strong>, tego samego maintainera co Toolhub. <strong>Licencja MIT.</strong> Hostuj je sam. Audytuj kod. To nie linki afiliacyjne — po prostu narzędzia towarzyszące.</p>
+
+<h2>🤖 Agenci AI i harnesy</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Skaner bezpieczeństwa dla skille agentów AI (ekosystemy OpenClaw / Claude Code / Hermes). 38 modułów detekcji obejmujących pattern matching, taint tracking AST, reguły YARA, analizę semantyczną LLM, provenance supply-chain, hash-pinning i weryfikację podpisu PGP wydań.</p>
+<p>Wraz z rozprzestrzenianiem się harnesów agentów AI, supply chain pobieranych „skilli" staje się następną granicą dla wstrzykiwania malware'u. skill-scanner-v2 analizuje statycznie pakiety skille przez 38 modułów detekcji — pattern matching, taint tracking AST, analiza semantyczna LLM, reguły YARA i detekcja typo-squatów.</p>
+<p>Ostatnia fala supply-chain (v3.4 + v3.5) dodaje: provenance bundlowanej zawartości dla korporów RAG, detekcję zewnętrznych pobrań modeli (HuggingFace / replicate / itp.), weryfikację hash-pinning przeciw manipulacji w locie oraz weryfikację podpisu PGP wydań.</p>
+<p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Wymagane wykonanie host-side. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Bezpieczeństwo</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Lekki bashowy monitor bezpieczeństwa do serwerów Linux. Trójwarstwowa architektura: file-watch (sub-sekundowy), watchdog (co 2 min), pełny audyt + intel (co 6 godzin).</p>
+<p>Allowlist otwartych portów · detekcja ekspozycji wrażliwych usług · audyt procesów root · skan world-writable · delta kluczy SSH · detekcja skoków nieudanych logowań · delta cron/systemd · zdrowie stacka bezpieczeństwa (ClamAV / CrowdSec / Wazuh / fail2ban) · intel feedu CVE · integracja supply-chain ze skill-scannerem · audyt egress dostawców LLM · weryfikacja integralności backupów · audyt postury Tailscale.</p>
+<p class="meta">Stack: czysty bash + inotify + standardowe utility Linux. Sonduje usługi localhost + czyta /etc. Wymagane wykonanie host-side. Open source, MIT.</p>
+</div>
+
+<h2>Dlaczego akurat te, a nie po prostu „lista fajnych narzędzi"?</h2>
+
+<p>Oba to praca JXXR1-a. Polecamy narzędzia, które sami zbudowaliśmy lub audytowaliśmy. Toolhub nie publikuje listicle „najlepsze narzędzia bezpieczeństwa Linux" — takich już jest mnóstwo, a większość to farmy SEO. Ta strona to skuratorowany handoff dla konkretnych odbiorców, którzy trafiają do Toolhub i potrzebują host-side towarzysza: szkolni admini IT, agent-builderzy, sysadmini.</p>
+
+<p>Chcesz, żebyśmy dodali jakieś narzędzie? Otwórz issue w <a href="{REPO_URL}">repozytorium Toolhub</a>. Płatnych pozycjonowań nie przyjmujemy.</p>
+""".strip(),
+            },
+            "ja": {
+                "title": "コンパニオンツール",
+                "h1": "コンパニオンツール",
+                "description": "Toolhubのブラウザユーティリティを補完するホスト側のセキュリティツール群。sentinel-v2 と skill-scanner-v2 — どちらも MITライセンスのオープンソース。",
+                "body": f"""
+<p class="tagline">Toolhub のブラウザ内ユーティリティを補完するホスト側セキュリティツール。</p>
+
+<p>Toolhub は完全にブラウザベースで動作します — サーバー側で動くものは何もなく、インストールも不要です。ここで紹介する外部ツールは事情が異なります。あなた自身のマシンやサーバー上で動作するツールです。これらをここに掲載するのは、Toolhub のプライバシーファースト姿勢と合致し、なおかつ本当にホスト側実行が必要な用途をカバーしているからです。</p>
+
+<p>すべて <strong>JXXR1 が開発</strong>しました — Toolhub と同じメンテナーです。<strong>MIT ライセンス。</strong>セルフホストしてください。ソースを監査してください。これらはアフィリエイトリンクではありません — 純粋なコンパニオンユーティリティです。</p>
+
+<h2>🤖 AIエージェントとハーネス</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">AI エージェントのスキル向けセキュリティスキャナ（OpenClaw / Claude Code / Hermes 各エコシステム対応）。パターンマッチ、AST テイントトラッキング、YARA ルール、LLM 意味解析、サプライチェーン由来検証、ハッシュピン、PGP リリース署名検証など 38 の検出モジュールを搭載。</p>
+<p>AI エージェントハーネスが普及するにつれて、ダウンロード可能なエージェント「スキル」のサプライチェーンはマルウェア注入の次のフロンティアになっています。skill-scanner-v2 はスキルパッケージを 38 の検出モジュール — パターンマッチ、AST テイントトラッキング、LLM 意味解析、YARA ルール、タイポスクワット検出 — で静的解析します。</p>
+<p>直近のサプライチェーン対応波（v3.4 + v3.5）で追加されたもの: RAG コーパス向けバンドルコンテンツの由来検証、外部モデルダウンロード検出（HuggingFace / replicate ほか）、ハッシュピン検証による転送中改ざん検知、PGP リリース署名検証。</p>
+<p class="meta">スタック: bash + JavaScript + Python ラッパー + YARA。ホスト側実行が必要です。オープンソース、MIT ライセンス。</p>
+</div>
+
+<h2>🛡️ セキュリティ</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Linux サーバー向けの軽量 bash セキュリティモニター。3 層アーキテクチャ: file-watch（サブ秒）、watchdog（2 分ごと）、フル監査 + インテル（6 時間ごと）。</p>
+<p>開放ポート許可リスト ・ 機微サービス露出検出 ・ root プロセス監査 ・ world-writable スキャン ・ SSH 鍵差分 ・ ログイン失敗スパイク検出 ・ cron/systemd 差分 ・ セキュリティスタック健全性（ClamAV / CrowdSec / Wazuh / fail2ban） ・ CVE フィードインテル ・ skill-scanner との供給網連携 ・ LLM ベンダーへの egress 監査 ・ バックアップ整合性検証 ・ Tailscale ポスチャ監査。</p>
+<p class="meta">スタック: 純 bash + inotify + 標準 Linux ユーティリティ。localhost サービスをプローブし /etc を読みます。ホスト側実行が必要です。オープンソース、MIT。</p>
+</div>
+
+<h2>なぜ「クールなツールのリスト」ではなく、この 2 つなのか</h2>
+
+<p>どちらも JXXR1 自身の作品です。Toolhub は自分たちが作ったか監査したツールしか勧めません。「Linux セキュリティツール ベスト n」のような listicle は出しません — そういう記事は山ほどあり、ほとんどが SEO ファームです。このページは、Toolhub に辿り着いてホスト側コンパニオンを必要とする特定の層 — 学校 IT 管理者、エージェント開発者、システム管理者 — への厳選された受け渡しです。</p>
+
+<p>追加してほしいツールがありますか？ <a href="{REPO_URL}">Toolhub リポジトリ</a>で issue を開いてください。有料掲載は受け付けません。</p>
+""".strip(),
+            },
+            "nl": {
+                "title": "Aanvullende tools",
+                "h1": "Aanvullende tools",
+                "description": "Externe host-side security-tools die de browser-utilities van Toolhub aanvullen. sentinel-v2 en skill-scanner-v2 — beide MIT-open-source.",
+                "body": f"""
+<p class="tagline">Host-side security-tools die de browser-utilities van Toolhub aanvullen.</p>
+
+<p>Toolhub draait volledig in de browser — niks aan de serverkant, niks te installeren. Deze externe tools zijn anders: ze draaien op je eigen machine of server. We zetten ze hier omdat ze passen bij de privacy-first-ethos van Toolhub en omdat ze use cases dekken waarvoor host-side uitvoering écht nodig is.</p>
+
+<p>Alle zijn <strong>gebouwd door JXXR1</strong>, dezelfde maintainer als Toolhub. <strong>MIT-licentie.</strong> Self-host ze. Audit de broncode. Het zijn geen affiliate links — gewoon aanvullende utilities.</p>
+
+<h2>🤖 AI-agents &amp; harnesses</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Security-scanner voor AI-agent skills (OpenClaw / Claude Code / Hermes-ecosystemen). 38 detectiemodules voor pattern matching, AST taint tracking, YARA-regels, LLM-semantische analyse, supply-chain provenance, hash-pinning en PGP-release-handtekeningverificatie.</p>
+<p>Nu AI-agent harnesses zich verder verspreiden wordt de supply chain voor downloadbare agent-„skills" het volgende slagveld voor malware-injectie. skill-scanner-v2 analyseert skill-pakketten statisch met 38 detectiemodules — pattern matching, AST taint tracking, LLM-semantische analyse, YARA-regels en typo-squat-detectie.</p>
+<p>De laatste supply-chain-golf (v3.4 + v3.5) voegt toe: provenance van gebundelde content voor RAG-corpora, detectie van externe modeldownloads (HuggingFace / replicate / etc.), hash-pinning-verificatie tegen manipulatie onderweg en PGP-release-handtekeningverificatie.</p>
+<p class="meta">Stack: bash + JavaScript + Python-wrapper + YARA. Host-side uitvoering vereist. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Security</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Lichtgewicht bash-security-monitor voor Linux-servers. Drielaags architectuur: file-watch (sub-seconde), watchdog (elke 2 min), volledige audit + intel (elke 6 uur).</p>
+<p>Open-port-allowlist · detectie van blootgestelde gevoelige services · root-procesaudit · world-writable-scan · SSH-key-delta · spike-detectie van mislukte logins · cron/systemd-delta · gezondheid van de security-stack (ClamAV / CrowdSec / Wazuh / fail2ban) · CVE-feed-intel · supply-chain-integratie met skill-scanner · LLM-vendor egress-audit · backup-integriteitscontrole · Tailscale-posture-audit.</p>
+<p class="meta">Stack: puur bash + inotify + standaard Linux-utilities. Polt localhost-services + leest /etc. Host-side uitvoering vereist. Open source, MIT.</p>
+</div>
+
+<h2>Waarom deze en niet gewoon „een lijstje met coole tools"?</h2>
+
+<p>Beide zijn werk van JXXR1 zelf. We bevelen tools aan die we zelf hebben gebouwd of geauditeerd. Toolhub publiceert geen „beste Linux security-tools"-listicle — daarvan zijn er meer dan genoeg, en de meeste zijn SEO-farms. Deze pagina is een doordachte overdracht naar de specifieke doelgroepen die op Toolhub landen en een host-side aanvulling nodig hebben: school-IT-admins, agent-bouwers, sysadmins.</p>
+
+<p>Wil je dat we een tool toevoegen? Open een issue op de <a href="{REPO_URL}">Toolhub-repo</a>. Betaalde plaatsingen accepteren we niet.</p>
+""".strip(),
+            },
+            "tr": {
+                "title": "Tamamlayıcı araçlar",
+                "h1": "Tamamlayıcı araçlar",
+                "description": "Toolhub'ın tarayıcı tabanlı araçlarını tamamlayan harici, host-side güvenlik araçları. sentinel-v2 ve skill-scanner-v2 — ikisi de MIT lisanslı açık kaynak.",
+                "body": f"""
+<p class="tagline">Toolhub'ın tarayıcı içi araçlarını tamamlayan host-side güvenlik araçları.</p>
+
+<p>Toolhub tamamen tarayıcıda çalışır — sunucu tarafında hiçbir şey yok, kurulum gerekmez. Bu harici araçlar farklıdır: kendi makinende ya da sunucunda çalışırlar. Onları burada listeliyoruz çünkü Toolhub'ın privacy-first anlayışıyla örtüşüyorlar ve gerçekten host-side yürütme isteyen kullanım durumlarını karşılıyorlar.</p>
+
+<p>Hepsi <strong>JXXR1 tarafından inşa edildi</strong>, Toolhub'ın maintainer'ıyla aynı kişi. <strong>MIT lisanslı.</strong> Sen kendin host et. Kaynağı denetle. Bunlar affiliate link değil — sadece tamamlayıcı araçlar.</p>
+
+<h2>🤖 AI ajanlar ve harness'lar</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">AI ajan skill'leri için güvenlik tarayıcı (OpenClaw / Claude Code / Hermes ekosistemleri). 38 detection modülü; pattern matching, AST taint tracking, YARA kuralları, LLM semantik analiz, supply-chain provenance, hash-pinning ve PGP release imza doğrulamasını kapsar.</p>
+<p>AI ajan harness'ları yaygınlaştıkça, indirilebilir ajan „skill"lerinin supply chain'i malware enjeksiyonu için bir sonraki cephe haline geliyor. skill-scanner-v2, skill paketlerini 38 detection modülü üzerinden statik olarak analiz ediyor — pattern matching, AST taint tracking, LLM semantik analiz, YARA kuralları ve typo-squat tespiti.</p>
+<p>Son supply-chain dalgası (v3.4 + v3.5) şunları ekliyor: RAG corpus'ları için bundle'lanmış içerik provenance'ı, dış model indirme tespiti (HuggingFace / replicate / vs.), aktarım sırasında oynamaya karşı hash-pinning doğrulaması ve PGP release imza doğrulaması.</p>
+<p class="meta">Stack: bash + JavaScript + Python wrapper + YARA. Host-side yürütme gerektirir. Açık kaynak, MIT.</p>
+</div>
+
+<h2>🛡️ Güvenlik</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Linux sunucuları için hafif bash güvenlik monitörü. Üç katmanlı mimari: file-watch (alt saniye), watchdog (her 2 dk), tam audit + intel (her 6 saat).</p>
+<p>Açık port allowlist · hassas servis maruziyet tespiti · root süreç denetimi · world-writable taraması · SSH key delta · başarısız giriş sıçraması tespiti · cron/systemd delta · güvenlik stack sağlığı (ClamAV / CrowdSec / Wazuh / fail2ban) · CVE feed intel · skill-scanner ile supply-chain entegrasyonu · LLM vendor egress denetimi · yedek bütünlük doğrulaması · Tailscale postur denetimi.</p>
+<p class="meta">Stack: saf bash + inotify + standart Linux araçları. Localhost servislerini prob eder, /etc'yi okur. Host-side yürütme gerektirir. Açık kaynak, MIT.</p>
+</div>
+
+<h2>Neden bunlar, neden „havalı araçlar listesi" değil?</h2>
+
+<p>İkisi de JXXR1'ın kendi işi. Sadece kendimizin inşa ettiği ya da denetlediği araçları öneriyoruz. Toolhub „en iyi Linux güvenlik araçları" türünden bir listicle yayımlamıyor — bunlardan zaten bol var ve çoğu SEO çiftliği. Bu sayfa, Toolhub'a gelip host-side bir tamamlayıcıya ihtiyacı olan belirli kitlelere yapılmış kürate bir aktarım: okul IT yöneticileri, ajan geliştiricileri, sistem yöneticileri.</p>
+
+<p>Bir aracın eklenmesini ister misin? <a href="{REPO_URL}">Toolhub repo</a>'sunda bir issue aç. Ücretli yerleşimleri kabul etmiyoruz.</p>
+""".strip(),
+            },
+            "id": {
+                "title": "Alat pendamping",
+                "h1": "Alat pendamping",
+                "description": "Alat keamanan host-side eksternal yang melengkapi utilitas berbasis browser Toolhub. sentinel-v2 dan skill-scanner-v2 — keduanya open source MIT.",
+                "body": f"""
+<p class="tagline">Alat keamanan host-side yang melengkapi utilitas dalam-browser Toolhub.</p>
+
+<p>Toolhub berjalan sepenuhnya di browser — tidak ada yang berjalan di sisi server, tidak perlu instalasi. Alat-alat eksternal ini berbeda: mereka berjalan di mesin atau server kamu sendiri. Kami daftarkan di sini karena cocok dengan etos privacy-first Toolhub dan menangani use case yang benar-benar membutuhkan eksekusi host-side.</p>
+
+<p>Semuanya <strong>dibangun oleh JXXR1</strong>, maintainer yang sama dengan Toolhub. <strong>Lisensi MIT.</strong> Hosting sendiri. Audit kodenya. Ini bukan link afiliasi — hanya utilitas pendamping.</p>
+
+<h2>🤖 AI Agent &amp; Harness</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Security scanner untuk skill agen AI (ekosistem OpenClaw / Claude Code / Hermes). 38 modul deteksi yang mencakup pattern matching, AST taint tracking, aturan YARA, analisis semantik LLM, provenance supply-chain, hash-pinning, dan verifikasi tanda tangan PGP rilis.</p>
+<p>Seiring meluasnya harness agen AI, supply chain untuk „skill" agen yang dapat diunduh menjadi medan berikutnya untuk injeksi malware. skill-scanner-v2 menganalisis paket skill secara statis melalui 38 modul deteksi — pattern matching, AST taint tracking, analisis semantik LLM, aturan YARA, dan deteksi typo-squat.</p>
+<p>Gelombang supply-chain terbaru (v3.4 + v3.5) menambahkan: provenance konten bundled untuk korpus RAG, deteksi unduhan model eksternal (HuggingFace / replicate / dll.), verifikasi hash-pinning terhadap perubahan dalam transit, dan verifikasi tanda tangan PGP rilis.</p>
+<p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Eksekusi host-side diperlukan. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Keamanan</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Monitor keamanan bash yang ringan untuk server Linux. Arsitektur tiga lapis: file-watch (sub-detik), watchdog (tiap 2 menit), audit penuh + intel (tiap 6 jam).</p>
+<p>Allowlist port terbuka · deteksi paparan layanan sensitif · audit proses root · pemindaian world-writable · delta kunci SSH · deteksi lonjakan login gagal · delta cron/systemd · kesehatan stack keamanan (ClamAV / CrowdSec / Wazuh / fail2ban) · intel feed CVE · integrasi supply-chain dengan skill-scanner · audit egress vendor LLM · verifikasi integritas backup · audit postur Tailscale.</p>
+<p class="meta">Stack: bash murni + inotify + utilitas Linux standar. Memeriksa layanan localhost + membaca /etc. Eksekusi host-side diperlukan. Open source, MIT.</p>
+</div>
+
+<h2>Kenapa dua ini dan bukan sekadar „daftar alat keren"?</h2>
+
+<p>Keduanya karya JXXR1 sendiri. Kami merekomendasikan alat yang kami bangun atau audit sendiri. Toolhub tidak menerbitkan listicle „alat keamanan Linux terbaik" — sudah banyak yang seperti itu dan sebagian besar adalah SEO farm. Halaman ini adalah serah-terima kurasi untuk audiens spesifik yang mendarat di Toolhub dan butuh pendamping host-side: admin IT sekolah, pembangun agen, sysadmin.</p>
+
+<p>Ingin alat tertentu ditambahkan? Buka issue di <a href="{REPO_URL}">repo Toolhub</a>. Kami tidak menerima placement berbayar.</p>
+""".strip(),
+            },
+            "vi": {
+                "title": "Công cụ bổ sung",
+                "h1": "Công cụ bổ sung",
+                "description": "Các công cụ bảo mật host-side bên ngoài bổ sung cho các tiện ích chạy trên trình duyệt của Toolhub. sentinel-v2 và skill-scanner-v2 — cả hai đều mã nguồn mở MIT.",
+                "body": f"""
+<p class="tagline">Công cụ bảo mật host-side bổ sung cho các tiện ích chạy trong trình duyệt của Toolhub.</p>
+
+<p>Toolhub chạy hoàn toàn trên trình duyệt — không có gì chạy ở phía máy chủ, không cần cài đặt. Các công cụ bên ngoài này thì khác: chúng chạy trên máy hoặc máy chủ của chính bạn. Chúng tôi liệt kê chúng ở đây vì chúng phù hợp với tinh thần privacy-first của Toolhub và đáp ứng những trường hợp sử dụng thực sự đòi hỏi thực thi phía host.</p>
+
+<p>Tất cả đều <strong>do JXXR1 xây dựng</strong>, cùng một maintainer với Toolhub. <strong>Giấy phép MIT.</strong> Tự host. Tự audit mã nguồn. Đây không phải liên kết affiliate — chỉ là các tiện ích đi kèm.</p>
+
+<h2>🤖 AI agent và harness</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Trình quét bảo mật cho skill của AI agent (các hệ sinh thái OpenClaw / Claude Code / Hermes). 38 module phát hiện gồm pattern matching, AST taint tracking, luật YARA, phân tích ngữ nghĩa LLM, provenance supply-chain, hash-pinning và xác minh chữ ký PGP của bản phát hành.</p>
+<p>Khi các harness AI agent ngày càng nhiều, supply chain của các „skill" có thể tải xuống trở thành chiến tuyến tiếp theo cho việc tiêm malware. skill-scanner-v2 phân tích tĩnh các gói skill qua 38 module phát hiện — pattern matching, AST taint tracking, phân tích ngữ nghĩa LLM, luật YARA và phát hiện typo-squat.</p>
+<p>Đợt supply-chain gần đây nhất (v3.4 + v3.5) bổ sung: provenance nội dung được bundle cho corpus RAG, phát hiện tải mô hình bên ngoài (HuggingFace / replicate / v.v.), xác minh hash-pinning chống can thiệp trong khi truyền và xác minh chữ ký PGP của bản phát hành.</p>
+<p class="meta">Stack: bash + JavaScript + wrapper Python + YARA. Yêu cầu thực thi host-side. Mã nguồn mở, MIT.</p>
+</div>
+
+<h2>🛡️ Bảo mật</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Monitor bảo mật bash nhẹ cho máy chủ Linux. Kiến trúc ba lớp: file-watch (dưới giây), watchdog (mỗi 2 phút), audit đầy đủ + intel (mỗi 6 giờ).</p>
+<p>Allowlist cổng mở · phát hiện phơi nhiễm dịch vụ nhạy cảm · audit tiến trình root · quét world-writable · delta khóa SSH · phát hiện đợt tăng đột biến đăng nhập thất bại · delta cron/systemd · sức khỏe stack bảo mật (ClamAV / CrowdSec / Wazuh / fail2ban) · intel feed CVE · tích hợp supply-chain với skill-scanner · audit egress nhà cung cấp LLM · xác minh tính toàn vẹn backup · audit tư thế Tailscale.</p>
+<p class="meta">Stack: bash thuần + inotify + tiện ích Linux tiêu chuẩn. Thăm dò các dịch vụ localhost + đọc /etc. Yêu cầu thực thi host-side. Mã nguồn mở, MIT.</p>
+</div>
+
+<h2>Tại sao là hai cái này chứ không phải „một danh sách công cụ ngầu"?</h2>
+
+<p>Cả hai đều là tác phẩm của chính JXXR1. Chúng tôi chỉ giới thiệu những công cụ mà chính chúng tôi đã xây dựng hoặc audit. Toolhub không xuất bản listicle „công cụ bảo mật Linux tốt nhất" — kiểu đó đã quá nhiều và phần lớn là trang trại SEO. Trang này là một bàn giao được tuyển chọn cho các đối tượng cụ thể đến với Toolhub và cần một bạn đồng hành phía host: quản trị IT trường học, người dựng agent, sysadmin.</p>
+
+<p>Bạn muốn thêm một công cụ? Hãy mở một issue trên <a href="{REPO_URL}">repo Toolhub</a>. Chúng tôi không nhận đặt chỗ trả phí.</p>
+""".strip(),
+            },
+            "hi": {
+                "title": "साथी टूल्स",
+                "h1": "साथी टूल्स",
+                "description": "Toolhub के in-browser utilities के पूरक बाहरी host-side सुरक्षा टूल्स। sentinel-v2 और skill-scanner-v2 — दोनों MIT-licensed open source।",
+                "body": f"""
+<p class="tagline">Toolhub के in-browser utilities के पूरक host-side सुरक्षा टूल्स।</p>
+
+<p>Toolhub पूरी तरह browser-based है — server-side कुछ नहीं चलता, install करने की ज़रूरत नहीं। ये बाहरी टूल्स अलग हैं: ये आपकी अपनी मशीन या server पर चलते हैं। हम इन्हें यहाँ इसलिए सूचीबद्ध करते हैं क्योंकि ये Toolhub के privacy-first दर्शन से मेल खाते हैं और ऐसे use cases को संबोधित करते हैं जिनके लिए वास्तव में host-side execution की ज़रूरत होती है।</p>
+
+<p>सभी <strong>JXXR1 द्वारा बनाए गए</strong> हैं, वही maintainer जो Toolhub का है। <strong>MIT लाइसेंस।</strong> इन्हें खुद host करें। source का audit करें। ये affiliate links नहीं हैं — बस साथी utilities हैं।</p>
+
+<h2>🤖 AI एजेंट और हार्नेस</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">AI एजेंट skills (OpenClaw / Claude Code / Hermes ecosystem) के लिए security scanner। 38 detection modules जो pattern matching, AST taint tracking, YARA rules, LLM semantic analysis, supply-chain provenance, hash-pinning और PGP release-signature verification को कवर करते हैं।</p>
+<p>AI एजेंट harnesses के बढ़ने के साथ, डाउनलोड किए जाने वाले एजेंट „skills" की supply chain malware injection की अगली सीमा बन रही है। skill-scanner-v2 38 detection modules — pattern matching, AST taint tracking, LLM semantic analysis, YARA rules और typo-squat detection — के ज़रिए skill packages का statically विश्लेषण करता है।</p>
+<p>हालिया supply-chain wave (v3.4 + v3.5) जोड़ता है: RAG corpora के लिए bundled-content provenance, बाहरी मॉडल downloads का पता लगाना (HuggingFace / replicate / आदि), in-flight tampering के विरुद्ध hash-pinning verification और PGP release-signature verification।</p>
+<p class="meta">Stack: bash + JavaScript + Python wrapper + YARA। Host-side execution आवश्यक। Open source, MIT।</p>
+</div>
+
+<h2>🛡️ सुरक्षा</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Linux servers के लिए हल्का bash security monitor। तीन-परत वाली architecture: file-watch (sub-second), watchdog (हर 2 मिनट), पूर्ण audit + intel (हर 6 घंटे)।</p>
+<p>खुले पोर्ट allowlist · संवेदनशील सेवा एक्सपोज़र का पता लगाना · root-process audit · world-writable scan · SSH-key delta · failed-login spike detection · cron/systemd delta · security-stack health (ClamAV / CrowdSec / Wazuh / fail2ban) · CVE-feed intel · skill-scanner के साथ supply-chain integration · LLM-vendor egress audit · backup integrity verification · Tailscale posture audit।</p>
+<p class="meta">Stack: शुद्ध bash + inotify + standard Linux utilities। localhost services को probe करता है + /etc को पढ़ता है। Host-side execution आवश्यक। Open source, MIT।</p>
+</div>
+
+<h2>ये क्यों और सिर्फ़ „cool tools की सूची" क्यों नहीं?</h2>
+
+<p>दोनों JXXR1 का अपना काम हैं। हम वही टूल्स suggest करते हैं जिन्हें हमने खुद बनाया या audit किया है। Toolhub „best Linux security tools" listicle नहीं publish करता — वैसे बहुत हैं और ज़्यादातर SEO farms हैं। यह page एक curated handoff है उन specific audiences के लिए जो Toolhub पर पहुँचते हैं और एक host-side साथी की ज़रूरत महसूस करते हैं: school IT admins, agent-builders, sysadmins।</p>
+
+<p>क्या आप कोई टूल जुड़वाना चाहते हैं? <a href="{REPO_URL}">Toolhub repo</a> पर issue खोलें। हम paid placements स्वीकार नहीं करते।</p>
+""".strip(),
+            },
+            "sk": {
+                "title": "Doplnkové nástroje",
+                "h1": "Doplnkové nástroje",
+                "description": "Externé host-side bezpečnostné nástroje, ktoré dopĺňajú in-browser utility Toolhub-u. sentinel-v2 a skill-scanner-v2 — oba open source MIT.",
+                "body": f"""
+<p class="tagline">Host-side bezpečnostné nástroje, ktoré dopĺňajú in-browser utility Toolhub-u.</p>
+
+<p>Toolhub beží celý v prehliadači — nič na strane servera, nič netreba inštalovať. Tieto externé nástroje sú iné: bežia na tvojom vlastnom stroji alebo serveri. Uvádzame ich tu, lebo pasujú k privacy-first prístupu Toolhub-u a riešia prípady použitia, ktoré naozaj vyžadujú host-side beh.</p>
+
+<p>Všetky sú <strong>postavené JXXR1-om</strong>, tým istým maintainerom ako Toolhub. <strong>MIT licencia.</strong> Self-hostuj si ich. Audituj zdroj. Nie sú to affiliate odkazy — len doplnkové utility.</p>
+
+<h2>🤖 AI agenti a harnessy</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Bezpečnostný skener pre skille AI agentov (ekosystémy OpenClaw / Claude Code / Hermes). 38 detekčných modulov pokrýva pattern matching, AST taint tracking, YARA pravidlá, LLM sémantickú analýzu, supply-chain provenance, hash-pinning a verifikáciu PGP podpisu vydania.</p>
+<p>S rozmachom AI agent harnessov sa supply chain pre stiahnuteľné agentské „skille" stáva ďalšou frontou pre injekciu malware-u. skill-scanner-v2 staticky analyzuje skill balíky cez 38 detekčných modulov — pattern matching, AST taint tracking, LLM sémantická analýza, YARA pravidlá a detekcia typo-squat.</p>
+<p>Posledná supply-chain vlna (v3.4 + v3.5) pridáva: provenance bundlovaného obsahu pre RAG korpusy, detekciu sťahovania externých modelov (HuggingFace / replicate / atď.), verifikáciu hash-pinning-u proti manipulácii počas prenosu a verifikáciu PGP podpisu vydania.</p>
+<p class="meta">Stack: bash + JavaScript + Python wrapper + YARA. Vyžaduje host-side beh. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Bezpečnosť</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Ľahký bashový bezpečnostný monitor pre Linux servery. Trojvrstvová architektúra: file-watch (sub-sekundový), watchdog (každé 2 min), plný audit + intel (každých 6 hodín).</p>
+<p>Allowlist otvorených portov · detekcia expozície citlivých služieb · audit root procesov · world-writable scan · delta SSH kľúčov · detekcia spike-u neúspešných prihlásení · delta cron/systemd · zdravie security stacku (ClamAV / CrowdSec / Wazuh / fail2ban) · intel CVE feedu · supply-chain integrácia so skill-scannerom · audit egress-u LLM dodávateľov · verifikácia integrity záloh · audit posture-y Tailscale.</p>
+<p class="meta">Stack: čistý bash + inotify + štandardné Linux utility. Sondá localhost služby + číta /etc. Vyžaduje host-side beh. Open source, MIT.</p>
+</div>
+
+<h2>Prečo práve tieto a nie len „zoznam cool nástrojov"?</h2>
+
+<p>Oba sú vlastné dielo JXXR1-a. Odporúčame nástroje, ktoré sme sami postavili alebo auditovali. Toolhub nepublikuje listicle „najlepšie Linux security nástroje" — takých je už dosť a väčšina sú SEO farmy. Táto stránka je kurátorovaný handoff pre konkrétne publikum, ktoré príde na Toolhub a potrebuje host-side spoločníka: školských IT adminov, agent-builderov, sysadminov.</p>
+
+<p>Chceš, aby sme pridali nejaký nástroj? Otvor issue v <a href="{REPO_URL}">Toolhub repu</a>. Platené umiestnenia neprijímame.</p>
+""".strip(),
+            },
+            "cs": {
+                "title": "Doplňkové nástroje",
+                "h1": "Doplňkové nástroje",
+                "description": "Externí host-side bezpečnostní nástroje, které doplňují in-browser utility Toolhubu. sentinel-v2 a skill-scanner-v2 — obě open source MIT.",
+                "body": f"""
+<p class="tagline">Host-side bezpečnostní nástroje, které doplňují in-browser utility Toolhubu.</p>
+
+<p>Toolhub běží celý v prohlížeči — nic na straně serveru, nic se neinstaluje. Tyhle externí nástroje jsou jiné: běží na tvém vlastním stroji nebo serveru. Uvádíme je tady, protože sedí k privacy-first přístupu Toolhubu a řeší případy použití, které opravdu vyžadují běh na straně hostitele.</p>
+
+<p>Všechny jsou <strong>postavené JXXR1-em</strong>, tím samým maintainerem jako Toolhub. <strong>MIT licence.</strong> Hostuj si je sám. Audituj zdroj. Nejsou to affiliate odkazy — jen doprovodné utility.</p>
+
+<h2>🤖 AI agenti a harnessy</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/skill-scanner-v2" target="_blank" rel="noopener noreferrer">skill-scanner-v2 <span class="version">v3.5.0</span> ↗</a></h3>
+<p class="tagline">Bezpečnostní skener pro skilly AI agentů (ekosystémy OpenClaw / Claude Code / Hermes). 38 detekčních modulů pokrývajících pattern matching, AST taint tracking, YARA pravidla, LLM sémantickou analýzu, supply-chain provenance, hash-pinning a verifikaci PGP podpisu vydání.</p>
+<p>S rozmachem AI agent harnessů se supply chain stahovatelných agentských „skillů" stává další frontou pro injekci malwaru. skill-scanner-v2 staticky analyzuje balíčky skill napříč 38 detekčními moduly — pattern matching, AST taint tracking, LLM sémantická analýza, YARA pravidla a detekce typo-squat.</p>
+<p>Poslední supply-chain vlna (v3.4 + v3.5) přidává: provenance bundlovaného obsahu pro RAG korpusy, detekci stahování externích modelů (HuggingFace / replicate / atd.), verifikaci hash-pinningu proti manipulaci za běhu a verifikaci PGP podpisu vydání.</p>
+<p class="meta">Stack: bash + JavaScript + Python wrapper + YARA. Vyžaduje host-side běh. Open source, MIT.</p>
+</div>
+
+<h2>🛡️ Bezpečnost</h2>
+
+<div class="companion-tool">
+<h3><a href="https://github.com/JXXR1/sentinel-v2" target="_blank" rel="noopener noreferrer">sentinel-v2 <span class="version">v1.8.0</span> ↗</a></h3>
+<p class="tagline">Lehký bashový bezpečnostní monitor pro Linux servery. Třívrstvá architektura: file-watch (sub-sekundový), watchdog (každé 2 min), plný audit + intel (každých 6 hodin).</p>
+<p>Allowlist otevřených portů · detekce expozice citlivých služeb · audit root procesů · world-writable sken · delta SSH klíčů · detekce skoku neúspěšných přihlášení · delta cron/systemd · zdraví security stacku (ClamAV / CrowdSec / Wazuh / fail2ban) · intel CVE feedu · supply-chain integrace se skill-scannerem · audit egress-u LLM dodavatelů · verifikace integrity záloh · audit postury Tailscale.</p>
+<p class="meta">Stack: čistý bash + inotify + standardní Linux utility. Sonduje localhost služby + čte /etc. Vyžaduje host-side běh. Open source, MIT.</p>
+</div>
+
+<h2>Proč zrovna tyhle a ne jen „seznam cool nástrojů"?</h2>
+
+<p>Oba jsou vlastní dílo JXXR1-a. Doporučujeme nástroje, které jsme sami postavili nebo auditovali. Toolhub nevydává listicle „nejlepší Linux security nástroje" — takových je už dost a většinou jsou to SEO farmy. Tahle stránka je kurátorovaný handoff pro konkrétní publikum, které dorazí na Toolhub a potřebuje host-side společníka: školní IT adminy, agent-buildery, sysadminy.</p>
+
+<p>Chceš, abychom přidali nějaký nástroj? Otevři issue v <a href="{REPO_URL}">Toolhub repu</a>. Placené umístění nepřijímáme.</p>
+""".strip(),
+            },
+        },
+    },
 }
