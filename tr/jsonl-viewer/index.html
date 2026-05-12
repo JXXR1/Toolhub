@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSONL Görüntüleyici — Toolhub</title>
+  <meta name="description" content="Ücretsiz online JSONL / NDJSON görüntüleyici. İçeriği yapıştır veya dosya yükle; her JSON nesnesi bir satır olan sıralanabilir / aranabilir bir tablo al. LLM eğitim verisi, audit log'ları, event stream'leri, OpenAI/Anthropic batch çıktıları için yararlı. Şema ilk 100 satırdan otomatik algılanır; eksik alanlar boş hücre olarak gösterilir. Tarayıcında saf JS — yükleme yok, sunucu yok.">
+  <meta property="og:title" content="JSONL Görüntüleyici — Toolhub">
+  <meta property="og:description" content="Ücretsiz online JSONL / NDJSON görüntüleyici. İçeriği yapıştır veya dosya yükle; her JSON nesnesi bir satır olan sıralanabilir / aranabilir bir tablo al. LLM eğitim verisi, audit log'ları, event stream'leri, OpenAI/Anthropic batch çıktıları için yararlı. Şema ilk 100 satırdan otomatik algılanır; eksik alanlar boş hücre olarak gösterilir. Tarayıcında saf JS — yükleme yok, sunucu yok.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/jsonl-viewer/">
+  <meta property="og:image" content="https://toolhub.software/og-images/jsonl-viewer.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/jsonl-viewer.png">
+  <link rel="canonical" href="https://toolhub.software/tr/jsonl-viewer/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/jsonl-viewer/#tool",
+        "name": "JSONL Görüntüleyici",
+        "description": "Ücretsiz online JSONL / NDJSON görüntüleyici. İçeriği yapıştır veya dosya yükle; her JSON nesnesi bir satır olan sıralanabilir / aranabilir bir tablo al. LLM eğitim verisi, audit log'ları, event stream'leri, OpenAI/Anthropic batch çıktıları için yararlı. Şema ilk 100 satırdan otomatik algılanır; eksik alanlar boş hücre olarak gösterilir. Tarayıcında saf JS — yükleme yok, sunucu yok.",
+        "url": "https://toolhub.software/tr/jsonl-viewer/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Data Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["jsonl", "ndjson", "json", "viewer", "llm", "training", "log", "stream"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "JSONL Görüntüleyici", "item": "https://toolhub.software/tr/jsonl-viewer/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JSONL (NDJSON da denir — yeni satırlarla ayrılmış JSON), LLM eğitim verisi, audit log'ları, event stream'leri ve batch API çıktıları için fiili formattır. Satır başına bir JSON nesnesi, dış sarmalayıcı array yok. Append-dostu, satır satır parse edilir, kısmi bozulmaya dayanır. Ama insan olarak okumak acı verici — süslü parantez duvarı yerine tablo istiyorsun. Bu araç o tabloyu tarayıcında verir. Hiçbir şey yüklenmez; dosya tarayıcının FileReader'ı ile okunur ve yerinde parse edilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne zaman kullanılır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LLM eğitim verisini inceleme. Bir fine-tuning dataset'i tipik olarak satır başına {\"messages\": [...]} 'dur. Külliyatı tarayıp sınıf dengesini kontrol et, trainer'ını çökerten o tek aykırı satırı bul. OpenAI / Anthropic batch çıktılarını okuma. İkisi de batch sonuçlarını JSONL olarak döner — istek başına bir satır, statü ve içerik. Hangi isteklerin başardığını bir bakışta gör. Audit log'ları gözden geçirme. JSONL'daki uygulama log'ları yaygındır; bu araç onları tarayıcıdan çıkmadan, ad hoc analiz için tabloda gösterir. Event stream sanity check. Kafka / Kinesis dump'ları sık sık JSONL gelir. Hızlı sayfalı görüntü, jq olmadan. JSONL → CSV dönüşümü. Veriyi bir hesap tablosuna atmak istediğinde export düğmesini kullan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Parsing nasıl çalışır",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Boş olmayan her satır JSON olarak bağımsız parse edilir. Boş satırlar yok sayılır. Bir satır başarısız olursa parse hatasıyla kırmızı satır olarak görünür — dosyanın geri kalanı devam eder. Bilinçli: bir bozuk satır seni diğer binini kaybetmemeli. Sütunlar, ilk 100 geçerli satırdaki anahtarların birleşiminden, görülme sıklığına göre sıralanarak otomatik tespit edilir. 100. satırdan sonraki nadir anahtarlar veride kalır ama kendi sütununu almaz. İç içe nesneler ve diziler hücrelerinde kırpılmış JSON parçası olarak gösterilir. Satıra tıkla, tam pretty-printed JSON'u gör."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yaygın tuzaklar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JSON dizisi ≠ JSONL. Dosyan [{...}, {...}, {...}] gibi virgüllü görünüyorsa, bu bir JSON dizisidir, JSONL değil. Dış parantezleri kaldır ve virgülleri yeni satırla değiştir — veya bir JSON görüntüleyici kullan. Pretty-printed JSON, JSONL değildir. Her \"nesne\" birden fazla satıra yayılırsa, parser kırık parçalar görür. JSONL kesinlikle satır başına bir nesnedir. Karışık şekilli satırlar olur ama dağınık görünür. Satırlarının yarısı content , diğer yarısı text içeriyorsa, iki sütun ve çok boşluk alacaksın. Çoğu zaman istediğin budur; bazen veri temizleme bug'ının işaretidir. Çok büyük dosyalar. Her şey bellekte parse edilir; modern dizüstülerde ~50–100 MB sorun değil, ötesinde yavaşlar. Çoklu GB log'lar için bir streaming CLI aracı kullan. Gizlilik. Dosyalar sayfayı asla terk etmez. FileReader byte'ları JS belleğine okur; ağ isteği yapılmaz."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "JSONL Görüntüleyici",
+  "description": "JSONL (satır ayrılmış JSON) dosyalarını sayfalı tabloda görüntüle. Binlerce satıra kadar yapıştır, ara, filtrele, kayıtları ayrı ayrı genişlet. Dosyalar tarayıcından asla çıkmaz.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "metin verisini yapıştır",
+      "text": "metin verisini Giriş alanına bırak."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Biçimlendir düğmesine tıkla",
+      "text": "Aracı çalıştırmak için Biçimlendir düğmesine bas."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kopyala",
+      "text": "Çıktı alanını kopyalamak için Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/jsonl-viewer/'; else location.href='/jsonl-viewer/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/tr/">Tüm araçlar</a> / JSONL Görüntüleyici</div>
+    <h1>JSONL Görüntüleyici</h1>
+    <p class="tagline">JSONL (satır ayrılmış JSON) dosyalarını sayfalı tabloda görüntüle. Binlerce satıra kadar yapıştır, ara, filtrele, kayıtları ayrı ayrı genişlet. Dosyalar tarayıcından asla çıkmaz.</p>
+    
+<div class="tool-card">
+  <label for="jl-input">Paste JSONL (one JSON object per line) or upload a file</label>
+  <textarea id="jl-input" oninput="jlParse()" spellcheck="false" placeholder='{"id": 1, "role": "user", "content": "Hello"}
+{"id": 2, "role": "assistant", "content": "Hi there"}'>{"id": 1, "role": "user", "content": "What is JSONL?", "tokens": 6}
+{"id": 2, "role": "assistant", "content": "JSONL is newline-delimited JSON.", "tokens": 8}
+{"id": 3, "role": "user", "content": "Where is it used?", "tokens": 5}
+{"id": 4, "role": "assistant", "content": "LLM training data, audit logs, OpenAI/Anthropic batch APIs.", "tokens": 12, "meta": {"finish_reason": "stop"}}
+{"id": 5, "role": "user", "content": "Nice."}</textarea>
+  <div class="button-row" style="margin-top:0.5rem">
+    <label class="secondary" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 0.9rem;border:1px solid var(--border);border-radius:6px;cursor:pointer">
+      📂 Upload .jsonl / .ndjson
+      <input type="file" id="jl-file" accept=".jsonl,.ndjson,application/x-ndjson,text/plain" onchange="jlLoadFile(event)" style="display:none">
+    </label>
+    <button class="secondary" onclick="document.getElementById('jl-input').value='';jlParse()">Temizle</button>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="jl-toolbar">
+    <input type="text" id="jl-search" oninput="jlRender()" placeholder="🔍 Search any field (case-insensitive)…">
+    <select id="jl-pagesize" onchange="jlRender()">
+      <option value="50">50 / page</option>
+      <option value="100" selected>100 / page</option>
+      <option value="250">250 / page</option>
+      <option value="500">500 / page</option>
+    </select>
+    <button class="secondary" onclick="jlExport('csv')">⬇ CSV</button>
+    <button class="secondary" onclick="jlExport('json')">⬇ JSON array</button>
+  </div>
+  <div class="meta" id="jl-stats" style="margin-top:0.4rem"></div>
+</div>
+<div class="tool-card">
+  <div id="jl-table-wrap" class="jl-tablewrap"></div>
+  <div class="jl-pager" id="jl-pager"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>JSONL (NDJSON da denir — yeni satırlarla ayrılmış JSON), LLM eğitim verisi, audit log'ları, event stream'leri ve batch API çıktıları için fiili formattır. Satır başına bir JSON nesnesi, dış sarmalayıcı array yok. Append-dostu, satır satır parse edilir, kısmi bozulmaya dayanır. Ama insan olarak okumak acı verici — süslü parantez duvarı yerine tablo istiyorsun. Bu araç o tabloyu tarayıcında verir. Hiçbir şey yüklenmez; dosya tarayıcının FileReader'ı ile okunur ve yerinde parse edilir.</p>
+
+<h3>Ne zaman kullanılır</h3>
+<ul>
+  <li><strong>LLM eğitim verisini inceleme.</strong> Bir fine-tuning dataset'i tipik olarak satır başına <code>{"messages": [...]}</code>'dur. Külliyatı tarayıp sınıf dengesini kontrol et, trainer'ını çökerten o tek aykırı satırı bul.</li>
+  <li><strong>OpenAI / Anthropic batch çıktılarını okuma.</strong> İkisi de batch sonuçlarını JSONL olarak döner — istek başına bir satır, statü ve içerik. Hangi isteklerin başardığını bir bakışta gör.</li>
+  <li><strong>Audit log'ları gözden geçirme.</strong> JSONL'daki uygulama log'ları yaygındır; bu araç onları tarayıcıdan çıkmadan, ad hoc analiz için tabloda gösterir.</li>
+  <li><strong>Event stream sanity check.</strong> Kafka / Kinesis dump'ları sık sık JSONL gelir. Hızlı sayfalı görüntü, jq olmadan.</li>
+  <li><strong>JSONL → CSV dönüşümü.</strong> Veriyi bir hesap tablosuna atmak istediğinde export düğmesini kullan.</li>
+</ul>
+
+<h3>Parsing nasıl çalışır</h3>
+<ul>
+  <li>Boş olmayan her satır JSON olarak bağımsız parse edilir. Boş satırlar yok sayılır.</li>
+  <li>Bir satır başarısız olursa parse hatasıyla kırmızı satır olarak görünür — dosyanın geri kalanı devam eder. Bilinçli: bir bozuk satır seni diğer binini kaybetmemeli.</li>
+  <li>Sütunlar, ilk 100 geçerli satırdaki anahtarların birleşiminden, görülme sıklığına göre sıralanarak otomatik tespit edilir. 100. satırdan sonraki nadir anahtarlar veride kalır ama kendi sütununu almaz.</li>
+  <li>İç içe nesneler ve diziler hücrelerinde kırpılmış JSON parçası olarak gösterilir. Satıra tıkla, tam pretty-printed JSON'u gör.</li>
+</ul>
+
+<h3>Yaygın tuzaklar</h3>
+<ul>
+  <li><strong>JSON dizisi ≠ JSONL.</strong> Dosyan <code>[{...}, {...}, {...}]</code> gibi virgüllü görünüyorsa, bu bir JSON dizisidir, JSONL değil. Dış parantezleri kaldır ve virgülleri yeni satırla değiştir — veya bir JSON görüntüleyici kullan.</li>
+  <li><strong>Pretty-printed JSON, JSONL değildir.</strong> Her "nesne" birden fazla satıra yayılırsa, parser kırık parçalar görür. JSONL kesinlikle satır başına bir nesnedir.</li>
+  <li><strong>Karışık şekilli satırlar olur ama dağınık görünür.</strong> Satırlarının yarısı <code>content</code>, diğer yarısı <code>text</code> içeriyorsa, iki sütun ve çok boşluk alacaksın. Çoğu zaman istediğin budur; bazen veri temizleme bug'ının işaretidir.</li>
+  <li><strong>Çok büyük dosyalar.</strong> Her şey bellekte parse edilir; modern dizüstülerde ~50–100 MB sorun değil, ötesinde yavaşlar. Çoklu GB log'lar için bir streaming CLI aracı kullan.</li>
+  <li><strong>Gizlilik.</strong> Dosyalar sayfayı asla terk etmez. FileReader byte'ları JS belleğine okur; ağ isteği yapılmaz.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/json-formatter/">JSON Formatter</a> <a href="/tr/csv-to-json/">CSV'den JSON'a</a> <a href="/tr/json-to-csv/">JSON'dan CSV'ye</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/companion-tools/">Tamamlayıcı araçlar</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.jl-toolbar{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
+.jl-toolbar input[type=text]{flex:1;min-width:200px}
+.jl-tablewrap{overflow:auto;max-height:600px;border:1px solid var(--border);border-radius:8px}
+.jl-table{width:100%;border-collapse:collapse;font-size:0.85rem;font-family:ui-monospace,monospace}
+.jl-table th,.jl-table td{padding:0.4rem 0.6rem;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;white-space:nowrap}
+.jl-table th{background:var(--bg-elev);position:sticky;top:0;z-index:1;cursor:pointer;user-select:none}
+.jl-table th:hover{color:var(--accent)}
+.jl-table td{max-width:320px;overflow:hidden;text-overflow:ellipsis}
+.jl-table tr:hover{background:rgba(99,102,241,0.06)}
+.jl-row-err{background:rgba(239,68,68,0.08)}
+.jl-row-err td{color:#ef4444;white-space:normal}
+.jl-cell-obj{color:var(--accent);cursor:pointer;text-decoration:underline dotted}
+.jl-detail{background:var(--bg-elev);padding:0.6rem 0.8rem;white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:0.82rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.jl-pager{display:flex;gap:0.5rem;align-items:center;justify-content:center;margin-top:0.6rem;flex-wrap:wrap}
+.jl-pager button{padding:0.3rem 0.7rem}
+.jl-pager .jl-page-num{color:var(--text-muted);font-size:0.88rem;font-variant-numeric:tabular-nums}
+.jl-null{color:var(--text-muted);font-style:italic}
+</style>
+<script>
+let jlRows = [];
+let jlCols = [];
+let jlErrors = [];
+let jlPage = 0;
+let jlSort = {col: null, dir: 1};
+let jlExpanded = new Set();
+function jlEsc(s){ return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function jlParse(){
+  const raw = document.getElementById('jl-input').value;
+  jlRows = []; jlErrors = []; jlExpanded = new Set();
+  if (!raw.trim()){ jlCols = []; jlRender(); return; }
+  const lines = raw.split('\n');
+  lines.forEach((line, i) => {
+    const trimmed = line.trim();
+    if (!trimmed) return;
+    try {
+      const obj = JSON.parse(trimmed);
+      jlRows.push({_line: i+1, _data: obj, _err: null});
+    } catch(e){
+      jlRows.push({_line: i+1, _data: null, _err: e.message});
+      jlErrors.push({line: i+1, msg: e.message});
+    }
+  });
+  // Auto-detect columns from first 100 valid rows
+  const keys = new Map();
+  let scanned = 0;
+  for (const r of jlRows){
+    if (!r._data || typeof r._data !== 'object' || Array.isArray(r._data)) continue;
+    Object.keys(r._data).forEach(k => keys.set(k, (keys.get(k) || 0) + 1));
+    scanned++;
+    if (scanned >= 100) break;
+  }
+  jlCols = Array.from(keys.entries()).sort((a,b) => b[1] - a[1]).map(e => e[0]);
+  jlPage = 0;
+  jlRender();
+}
+function jlLoadFile(ev){
+  const f = ev.target.files[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('jl-input').value = e.target.result;
+    jlParse();
+  };
+  reader.readAsText(f);
+}
+function jlFiltered(){
+  const q = document.getElementById('jl-search').value.toLowerCase();
+  if (!q) return jlRows;
+  return jlRows.filter(r => {
+    if (r._err) return r._err.toLowerCase().includes(q);
+    try { return JSON.stringify(r._data).toLowerCase().includes(q); }
+    catch(_) { return false; }
+  });
+}
+function jlCellRender(val){
+  if (val === undefined) return '<span class="jl-null">—</span>';
+  if (val === null) return '<span class="jl-null">null</span>';
+  if (typeof val === 'object'){
+    const s = JSON.stringify(val);
+    const short = s.length > 60 ? s.slice(0, 60) + '…' : s;
+    return '<span class="jl-cell-obj" title="click row to expand">' + jlEsc(short) + '</span>';
+  }
+  if (typeof val === 'boolean') return '<span style="color:var(--accent)">' + val + '</span>';
+  if (typeof val === 'number') return '<span style="font-variant-numeric:tabular-nums">' + val + '</span>';
+  const s = String(val);
+  return jlEsc(s.length > 200 ? s.slice(0, 200) + '…' : s);
+}
+function jlRender(){
+  const filtered = jlFiltered();
+  const sortCol = jlSort.col;
+  if (sortCol){
+    filtered.sort((a, b) => {
+      const va = a._data ? a._data[sortCol] : null;
+      const vb = b._data ? b._data[sortCol] : null;
+      if (va === vb) return 0;
+      if (va == null) return 1;
+      if (vb == null) return -1;
+      if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * jlSort.dir;
+      return String(va).localeCompare(String(vb)) * jlSort.dir;
+    });
+  }
+  const size = parseInt(document.getElementById('jl-pagesize').value, 10);
+  const total = filtered.length;
+  const pages = Math.max(1, Math.ceil(total / size));
+  if (jlPage >= pages) jlPage = pages - 1;
+  if (jlPage < 0) jlPage = 0;
+  const start = jlPage * size;
+  const slice = filtered.slice(start, start + size);
+  // Stats
+  let stats = total + ' row' + (total === 1 ? '' : 's');
+  if (jlRows.length !== total) stats += ' (of ' + jlRows.length + ')';
+  stats += ' · ' + jlCols.length + ' column' + (jlCols.length === 1 ? '' : 's');
+  if (jlErrors.length) stats += ' · <span style="color:#ef4444">' + jlErrors.length + ' parse error' + (jlErrors.length === 1 ? '' : 's') + '</span>';
+  document.getElementById('jl-stats').innerHTML = stats;
+  // Table
+  if (jlRows.length === 0){
+    document.getElementById('jl-table-wrap').innerHTML = '<div style="padding:1rem;color:var(--text-muted)">No data. Paste JSONL above or upload a file.</div>';
+    document.getElementById('jl-pager').innerHTML = '';
+    return;
+  }
+  const headCells = ['<th style="width:60px">#</th>'].concat(
+    jlCols.map(c => {
+      const arrow = jlSort.col === c ? (jlSort.dir > 0 ? ' ▲' : ' ▼') : '';
+      return '<th onclick="jlSortBy(\'' + c.replace(/'/g, "\\'") + '\')">' + jlEsc(c) + arrow + '</th>';
+    })
+  ).join('');
+  const bodyRows = slice.map((r, idx) => {
+    const realIdx = start + idx;
+    if (r._err){
+      return '<tr class="jl-row-err"><td>' + r._line + '</td><td colspan="' + (jlCols.length || 1) + '">✗ parse error: ' + jlEsc(r._err) + '</td></tr>';
+    }
+    const cells = jlCols.map(c => '<td>' + jlCellRender(r._data ? r._data[c] : undefined) + '</td>').join('');
+    const main = '<tr onclick="jlToggle(' + realIdx + ')" style="cursor:pointer"><td>' + r._line + '</td>' + cells + '</tr>';
+    if (jlExpanded.has(realIdx)){
+      const detail = '<tr><td colspan="' + (jlCols.length + 1) + '" style="padding:0"><div class="jl-detail">' + jlEsc(JSON.stringify(r._data, null, 2)) + '</div></td></tr>';
+      return main + detail;
+    }
+    return main;
+  }).join('');
+  document.getElementById('jl-table-wrap').innerHTML = '<table class="jl-table"><thead><tr>' + headCells + '</tr></thead><tbody>' + bodyRows + '</tbody></table>';
+  // Pager
+  if (pages <= 1){
+    document.getElementById('jl-pager').innerHTML = '';
+  } else {
+    document.getElementById('jl-pager').innerHTML =
+      '<button class="secondary" onclick="jlGoto(0)" ' + (jlPage === 0 ? 'disabled' : '') + '>« First</button>' +
+      '<button class="secondary" onclick="jlGoto(' + (jlPage - 1) + ')" ' + (jlPage === 0 ? 'disabled' : '') + '>‹ Prev</button>' +
+      '<span class="jl-page-num">Page ' + (jlPage + 1) + ' of ' + pages + '</span>' +
+      '<button class="secondary" onclick="jlGoto(' + (jlPage + 1) + ')" ' + (jlPage >= pages - 1 ? 'disabled' : '') + '>Next ›</button>' +
+      '<button class="secondary" onclick="jlGoto(' + (pages - 1) + ')" ' + (jlPage >= pages - 1 ? 'disabled' : '') + '>Last »</button>';
+  }
+}
+function jlSortBy(col){
+  if (jlSort.col === col) jlSort.dir = -jlSort.dir;
+  else { jlSort.col = col; jlSort.dir = 1; }
+  jlRender();
+}
+function jlToggle(idx){
+  if (jlExpanded.has(idx)) jlExpanded.delete(idx);
+  else jlExpanded.add(idx);
+  jlRender();
+}
+function jlGoto(p){ jlPage = p; jlRender(); }
+function jlExport(kind){
+  const rows = jlFiltered().filter(r => !r._err).map(r => r._data);
+  if (rows.length === 0){ alert('Nothing to export.'); return; }
+  let blob, ext;
+  if (kind === 'json'){
+    blob = new Blob([JSON.stringify(rows, null, 2)], {type:'application/json'});
+    ext = 'json';
+  } else {
+    // CSV — use union of jlCols
+    const escCsv = v => {
+      if (v === null || v === undefined) return '';
+      const s = typeof v === 'object' ? JSON.stringify(v) : String(v);
+      return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    };
+    const lines = [jlCols.map(escCsv).join(',')];
+    rows.forEach(r => lines.push(jlCols.map(c => escCsv(r[c])).join(',')));
+    blob = new Blob([lines.join('\n')], {type:'text/csv'});
+    ext = 'csv';
+  }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'jsonl-export.' + ext;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+document.addEventListener('DOMContentLoaded', jlParse);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extrator Regex de Saída LLM — Toolhub</title>
+  <meta name="description" content="Builder regex grátis pra extrair saída de LLM. Casos comuns prontos: JSON dentro de fences ```json, objeto JSON puro, lista numerada, pares key: value, labels de classificação. Cole uma resposta de LLM, escolha um template (ou escreva sua própria regex), veja os grupos capturados ao vivo. A ferramenta que ninguém admite precisar mas todo mundo reescreve pra cada projeto.">
+  <meta property="og:title" content="Extrator Regex de Saída LLM — Toolhub">
+  <meta property="og:description" content="Builder regex grátis pra extrair saída de LLM. Casos comuns prontos: JSON dentro de fences ```json, objeto JSON puro, lista numerada, pares key: value, labels de classificação. Cole uma resposta de LLM, escolha um template (ou escreva sua própria regex), veja os grupos capturados ao vivo. A ferramenta que ninguém admite precisar mas todo mundo reescreve pra cada projeto.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pt/regex-llm-output/">
+  <meta property="og:image" content="https://toolhub.software/og-images/regex-llm-output.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/regex-llm-output.png">
+  <link rel="canonical" href="https://toolhub.software/pt/regex-llm-output/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/">
+  <meta property="og:locale" content="pt_BR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pt/regex-llm-output/#tool",
+        "name": "Extrator Regex de Saída LLM",
+        "description": "Builder regex grátis pra extrair saída de LLM. Casos comuns prontos: JSON dentro de fences ```json, objeto JSON puro, lista numerada, pares key: value, labels de classificação. Cole uma resposta de LLM, escolha um template (ou escreva sua própria regex), veja os grupos capturados ao vivo. A ferramenta que ninguém admite precisar mas todo mundo reescreve pra cada projeto.",
+        "url": "https://toolhub.software/pt/regex-llm-output/",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Developer Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pt",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["regex", "llm", "extract", "parse", "output", "ai", "structured", "code-fence", "markdown"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Todas as ferramentas", "item": "https://toolhub.software/pt/"},
+          {"@type": "ListItem", "position": 2, "name": "Extrator Regex de Saída LLM", "item": "https://toolhub.software/pt/regex-llm-output/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Para que serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Você pediu JSON pro LLM. Ele te deu JSON envolvido em fences ```json com um preâmbulo \"Claro, aqui está!\". Ou te deu \"a resposta é 42\" quando você queria só 42. Ou te deu uma lista numerada quando você pediu uma string separada por vírgulas. Bem-vindo ao problema de parsing que ninguém resolve direito. Esta ferramenta mantém uma pequena biblioteca de patterns comuns de extração mais um editor de regex livre, pra você iterar o pattern com seu texto de resposta real no browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando usar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desenhar um parser de output pra uma pipeline de agente. Joga umas respostas reais dentro, monta uma regex que cobre todas, cola no código. Debugar um parser quebrado. Sua pipeline de prod começou a falhar porque o modelo adicionou \"Aqui está o JSON:\" antes do fence. Veja exatamente onde sua regex para de matchear. Extração rápida pontual. Você tem dez respostas de LLM num doc; precisa extrair a parte estruturada de cada uma. Colar, matchear, copiar, seguir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Os templates",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JSON em fence ```json — o caso mais comum. Captura grupo 1 = o corpo. Use g se pode ter vários fences. JSON em qualquer fence — mesma ideia mas o tag de linguagem é opcional, e só capturamos se o corpo parece { … } ou [ … ] . YAML em fence — igual JSON-fence mas matcha ```yaml / ```yml . Qualquer bloco fenced — captura tag de linguagem + corpo. Use quando não sabe o que tem dentro. Objeto JSON puro — match guloso do primeiro { até o último } . Frágil mas funciona pra respostas \"só JSON\". Itens de lista numerada — ^\\s*\\d+[.)]\\s*(.+)$ com gm . Captura o texto de cada item, sem numeração. Pares key: value — linha a linha. Grupo 1 = chave, grupo 2 = valor. Para no primeiro dois-pontos. Label de classificação único — útil pra classificadores de sentimento / safety que respondem com uma palavra só. Regex custom — limpe o pattern e escreva o seu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A linha \"Parsed JSON\"",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se o primeiro grupo capturado (ou, na falta, o match completo) parseia como JSON, a ferramenta imprime o resultado parseado embaixo dos grupos. Isso te diz não só \"a regex matcheou\" mas \"matcheou a parte que você queria, de jeito JSON-decodable\". Se o parsing falha, essa linha fica em branco."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pegadinhas comuns",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regex JavaScript, não PCRE. Sem \\K , sem patterns recursivos. Lookbehind precisa de browsers modernos (pós-2018 — ok aqui, mas atenção se copiar pra outro lugar). O modelo embrulha o JSON dele em comentário. Não tente buscar { no início da string — encontre o fence ou use um capture não-guloso tolerante. Trailing commas no \"JSON\" de saída. Alguns modelos enfiam trailing commas apesar do training. A regex vai matchear; JSON.parse vai falhar. Tire as trailing commas antes de parsear. \"JSON\" com aspas simples. Mesma história — parece JSON, não é JSON válido, a regex não liga, JSON.parse liga. Fences aninhados. Se o modelo coloca um exemplo de fence markdown dentro da resposta, dá pra ter falso-positivo no fence interno. Teste com dados realistas. Não use regex pra extração séria de brackets aninhados. Se o modelo retorna um objeto contendo um objeto contendo um array de objetos, escreve um extrator JSON-aware — ou peça a forma fence e parseie o corpo. Privacidade. Texto e pattern ficam na página. Sem upload, sem chamada de API."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Extrator Regex de Saída LLM",
+  "description": "Extraia dados estruturados (JSON, blocos de código, pares chave-valor) de respostas confusas de LLM. Escolha entre templates comuns ou escreva sua própria regex. Preview ao vivo.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Cole seu texto",
+      "text": "Coloque seu texto no campo Entrada."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Clique em Formatar",
+      "text": "Pressione o botão Formatar para rodar a ferramenta."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copie o resultado",
+      "text": "Pressione Copiar para copiar a Saída."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pt/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Idioma</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/regex-llm-output/'; else location.href='/regex-llm-output/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" selected="selected">🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Instalar Toolhub como app no seu dispositivo — funciona offline, sem app store" aria-label="Instalar Toolhub como app no seu dispositivo — funciona offline, sem app store">Instalar app</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pt/">Todas as ferramentas</a> / Extrator Regex de Saída LLM</div>
+    <h1>Extrator Regex de Saída LLM</h1>
+    <p class="tagline">Extraia dados estruturados (JSON, blocos de código, pares chave-valor) de respostas confusas de LLM. Escolha entre templates comuns ou escreva sua própria regex. Preview ao vivo.</p>
+    
+<div class="tool-card">
+  <label for="rlo-input">LLM response</label>
+  <textarea id="rlo-input" oninput="rloRun()" spellcheck="false" placeholder="Paste an LLM response here…">Sure, here is the result you asked for:
+
+```json
+{
+  "title": "Toolhub",
+  "category": "developer-tools",
+  "languages": 15,
+  "tools": 76
+}
+```
+
+Let me know if you need anything else!</textarea>
+</div>
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label for="rlo-template">Template</label>
+      <select id="rlo-template" onchange="rloTemplate()">
+        <option value="json-fence">JSON in ```json code fence</option>
+        <option value="json-any-fence">JSON in any code fence</option>
+        <option value="yaml-fence">YAML in ```yaml code fence</option>
+        <option value="any-fence">Any fenced code block</option>
+        <option value="plain-json">Plain JSON object (no fence)</option>
+        <option value="numbered-list">Numbered list items</option>
+        <option value="kv-pairs">key: value pairs</option>
+        <option value="classification">Single classification label</option>
+        <option value="custom">Custom regex</option>
+      </select>
+    </div>
+    <div>
+      <label for="rlo-flags">Flags</label>
+      <input type="text" id="rlo-flags" value="gs" oninput="rloRun()" placeholder="gimsuy">
+    </div>
+  </div>
+  <label style="margin-top:0.6rem">Regex</label>
+  <input type="text" id="rlo-pattern" oninput="rloRun()" style="font-family:ui-monospace,monospace">
+  <div class="meta" id="rlo-template-hint" style="margin-top:0.4rem"></div>
+</div>
+<div class="tool-card">
+  <label>Resultado</label>
+  <pre class="output" id="rlo-highlight" style="white-space:pre-wrap;word-break:break-word;max-height:300px;overflow:auto"></pre>
+  <div class="meta" id="rlo-meta" style="margin-top:0.4rem"></div>
+</div>
+<div class="tool-card">
+  <label>Captured groups</label>
+  <pre class="output" id="rlo-groups" style="font-size:0.85rem;white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto">Digite uma entrada acima para ver o resultado.</pre>
+  <div class="button-row" style="margin-top:0.5rem">
+    <button class="secondary" onclick="rloCopy('regex')">Copy regex</button>
+    <button class="secondary" onclick="rloCopy('match')">Copy first match</button>
+    <button class="secondary" onclick="rloCopy('json')">Copy parsed JSON</button>
+    <button class="secondary" onclick="rloCopy('js')">Copy as JS code</button>
+  </div>
+  <div class="meta" id="rlo-copied" style="margin-top:0.4rem"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Para que serve?</h2>
+<p>Você pediu JSON pro LLM. Ele te deu JSON envolvido em fences <code>```json</code> com um preâmbulo "Claro, aqui está!". Ou te deu "a resposta é 42" quando você queria só 42. Ou te deu uma lista numerada quando você pediu uma string separada por vírgulas. Bem-vindo ao problema de parsing que ninguém resolve direito. Esta ferramenta mantém uma pequena biblioteca de patterns comuns de extração mais um editor de regex livre, pra você iterar o pattern com seu texto de resposta real no browser.</p>
+
+<h3>Quando usar</h3>
+<ul>
+  <li><strong>Desenhar um parser de output pra uma pipeline de agente.</strong> Joga umas respostas reais dentro, monta uma regex que cobre todas, cola no código.</li>
+  <li><strong>Debugar um parser quebrado.</strong> Sua pipeline de prod começou a falhar porque o modelo adicionou "Aqui está o JSON:" antes do fence. Veja exatamente onde sua regex para de matchear.</li>
+  <li><strong>Extração rápida pontual.</strong> Você tem dez respostas de LLM num doc; precisa extrair a parte estruturada de cada uma. Colar, matchear, copiar, seguir.</li>
+</ul>
+
+<h3>Os templates</h3>
+<ul>
+  <li><strong>JSON em fence ```json</strong> — o caso mais comum. Captura grupo 1 = o corpo. Use <code>g</code> se pode ter vários fences.</li>
+  <li><strong>JSON em qualquer fence</strong> — mesma ideia mas o tag de linguagem é opcional, e só capturamos se o corpo parece <code>{ … }</code> ou <code>[ … ]</code>.</li>
+  <li><strong>YAML em fence</strong> — igual JSON-fence mas matcha <code>```yaml</code> / <code>```yml</code>.</li>
+  <li><strong>Qualquer bloco fenced</strong> — captura tag de linguagem + corpo. Use quando não sabe o que tem dentro.</li>
+  <li><strong>Objeto JSON puro</strong> — match guloso do primeiro <code>{</code> até o último <code>}</code>. Frágil mas funciona pra respostas "só JSON".</li>
+  <li><strong>Itens de lista numerada</strong> — <code>^\s*\d+[.)]\s*(.+)$</code> com <code>gm</code>. Captura o texto de cada item, sem numeração.</li>
+  <li><strong>Pares key: value</strong> — linha a linha. Grupo 1 = chave, grupo 2 = valor. Para no primeiro dois-pontos.</li>
+  <li><strong>Label de classificação único</strong> — útil pra classificadores de sentimento / safety que respondem com uma palavra só.</li>
+  <li><strong>Regex custom</strong> — limpe o pattern e escreva o seu.</li>
+</ul>
+
+<h3>A linha "Parsed JSON"</h3>
+<p>Se o primeiro grupo capturado (ou, na falta, o match completo) parseia como JSON, a ferramenta imprime o resultado parseado embaixo dos grupos. Isso te diz não só "a regex matcheou" mas "matcheou a parte que você queria, de jeito JSON-decodable". Se o parsing falha, essa linha fica em branco.</p>
+
+<h3>Pegadinhas comuns</h3>
+<ul>
+  <li><strong>Regex JavaScript, não PCRE.</strong> Sem <code>\K</code>, sem patterns recursivos. Lookbehind precisa de browsers modernos (pós-2018 — ok aqui, mas atenção se copiar pra outro lugar).</li>
+  <li><strong>O modelo embrulha o JSON dele em comentário.</strong> Não tente buscar <code>{</code> no início da string — encontre o fence ou use um capture não-guloso tolerante.</li>
+  <li><strong>Trailing commas no "JSON" de saída.</strong> Alguns modelos enfiam trailing commas apesar do training. A regex vai matchear; <code>JSON.parse</code> vai falhar. Tire as trailing commas antes de parsear.</li>
+  <li><strong>"JSON" com aspas simples.</strong> Mesma história — parece JSON, não é JSON válido, a regex não liga, <code>JSON.parse</code> liga.</li>
+  <li><strong>Fences aninhados.</strong> Se o modelo coloca um exemplo de fence markdown dentro da resposta, dá pra ter falso-positivo no fence interno. Teste com dados realistas.</li>
+  <li><strong>Não use regex pra extração séria de brackets aninhados.</strong> Se o modelo retorna um objeto contendo um objeto contendo um array de objetos, escreve um extrator JSON-aware — ou peça a forma fence e parseie o corpo.</li>
+  <li><strong>Privacidade.</strong> Texto e pattern ficam na página. Sem upload, sem chamada de API.</li>
+</ul>
+<div class="related"><span class="meta">Ferramentas relacionadas:</span> <a href="/pt/regex-tester/">Testador de Regex</a> <a href="/pt/regex-cheatsheet/">Cheatsheet de Regex</a> <a href="/pt/json-formatter/">Formatador JSON</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/pt/privacy/">Privacidade</a> · <a href="/pt/how-we-handle-your-data/">Tratamento de dados</a> · <a href="/pt/affiliate-disclosure/">Divulgação de afiliados</a> · <a href="/pt/companion-tools/">Ferramentas complementares</a> · <a href="/pt/about/">Sobre</a> · <a href="/pt/contact/">Contato</a> · <a href="/pt/for-schools/">Para escolas</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.rlo-mark{background:rgba(99,102,241,0.18);border:1px solid var(--accent);border-radius:3px;padding:0 2px}
+.rlo-mark-num{color:var(--accent);font-weight:600;font-size:0.78em;vertical-align:super}
+</style>
+<script>
+const RLO_TEMPLATES = {
+  'json-fence': {
+    pattern: '```json\\s*([\\s\\S]*?)```',
+    flags: 'g',
+    hint: 'Captures group 1 = the JSON content inside ```json … ``` fences. Use the gs flags so . matches newlines (or use the [\\s\\S] form, which always does).'
+  },
+  'json-any-fence': {
+    pattern: '```(?:json|JSON)?\\s*(\\{[\\s\\S]*?\\}|\\[[\\s\\S]*?\\])\\s*```',
+    flags: 'g',
+    hint: 'Captures the first { … } or [ … ] block inside a fenced code section, language tag optional.'
+  },
+  'yaml-fence': {
+    pattern: '```ya?ml\\s*([\\s\\S]*?)```',
+    flags: 'gi',
+    hint: 'Captures group 1 = YAML inside ```yaml or ```yml fences.'
+  },
+  'any-fence': {
+    pattern: '```([a-zA-Z0-9_-]*)\\n([\\s\\S]*?)```',
+    flags: 'g',
+    hint: 'Captures group 1 = language tag (may be empty), group 2 = code body.'
+  },
+  'plain-json': {
+    pattern: '\\{[\\s\\S]*\\}',
+    flags: '',
+    hint: 'Greedy match for a top-level JSON object — first { to last }. Beware: this fails if the response contains multiple JSON objects or stray braces. For multiple, switch to a non-greedy form and use the g flag.'
+  },
+  'numbered-list': {
+    pattern: '^\\s*\\d+[\\.)]\\s*(.+)$',
+    flags: 'gm',
+    hint: 'Captures group 1 = the text of each "1. foo", "2) bar" item. Use the m flag so ^/$ match per line.'
+  },
+  'kv-pairs': {
+    pattern: '^\\s*([A-Za-z][\\w\\s-]*)\\s*:\\s*(.+?)\\s*$',
+    flags: 'gm',
+    hint: 'Captures group 1 = key, group 2 = value, line by line. Skips lines that don\'t start with a letter.'
+  },
+  'classification': {
+    pattern: '\\b(POSITIVE|NEGATIVE|NEUTRAL|YES|NO|TRUE|FALSE|SAFE|UNSAFE)\\b',
+    flags: 'i',
+    hint: 'Common single-label classifier outputs. Edit the alternation to fit your labels.'
+  },
+  'custom': {
+    pattern: '',
+    flags: 'g',
+    hint: 'Write your own pattern. The default flag g enables findAll; add i for case-insensitive, m for per-line anchors, s for dotAll.'
+  }
+};
+let RLO_LAST = {first: '', all: [], json: null, regex: ''};
+function rloEsc(s){ return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function rloTemplate(){
+  const key = document.getElementById('rlo-template').value;
+  const t = RLO_TEMPLATES[key];
+  if (t){
+    document.getElementById('rlo-pattern').value = t.pattern;
+    document.getElementById('rlo-flags').value = t.flags;
+    document.getElementById('rlo-template-hint').textContent = t.hint;
+  }
+  rloRun();
+}
+function rloRun(){
+  const pat = document.getElementById('rlo-pattern').value;
+  const flags = document.getElementById('rlo-flags').value;
+  const text = document.getElementById('rlo-input').value;
+  const hi = document.getElementById('rlo-highlight');
+  const meta = document.getElementById('rlo-meta');
+  const groupsEl = document.getElementById('rlo-groups');
+  if (!pat){
+    hi.innerHTML = rloEsc(text);
+    meta.textContent = '(enter a regex above)';
+    groupsEl.textContent = '';
+    RLO_LAST = {first: '', all: [], json: null, regex: ''};
+    return;
+  }
+  let regex;
+  try { regex = new RegExp(pat, flags); }
+  catch(e){
+    hi.textContent = '✗ ' + e.message;
+    hi.classList.add('error');
+    meta.textContent = '';
+    groupsEl.textContent = '';
+    return;
+  }
+  hi.classList.remove('error');
+  const matches = [];
+  if (regex.global){
+    let m;
+    let safety = 0;
+    while ((m = regex.exec(text)) !== null){
+      matches.push({index: m.index, full: m[0], groups: m.slice(1)});
+      if (m[0] === '') regex.lastIndex++;
+      if (++safety > 5000) break;
+    }
+  } else {
+    const m = regex.exec(text);
+    if (m) matches.push({index: m.index, full: m[0], groups: m.slice(1)});
+  }
+  // Highlight in text
+  let out = '';
+  let last = 0;
+  matches.forEach((m, i) => {
+    out += rloEsc(text.slice(last, m.index));
+    out += '<span class="rlo-mark">' + rloEsc(m.full) + '<span class="rlo-mark-num">' + (i+1) + '</span></span>';
+    last = m.index + m.full.length;
+  });
+  out += rloEsc(text.slice(last));
+  hi.innerHTML = out || '<span style="color:var(--text-muted)">(no matches)</span>';
+  meta.textContent = matches.length + ' match' + (matches.length === 1 ? '' : 'es');
+  // Groups
+  if (matches.length === 0){
+    groupsEl.textContent = '(no matches)';
+    RLO_LAST = {first: '', all: matches, json: null, regex: '/' + pat + '/' + flags};
+  } else {
+    const lines = matches.slice(0, 50).map((m, i) => {
+      let s = '── Match ' + (i+1) + ' at index ' + m.index + ' ──\n';
+      s += 'full: ' + (m.full.length > 200 ? m.full.slice(0,200) + '…' : m.full);
+      m.groups.forEach((g, j) => {
+        const val = g == null ? '<undefined>' : (g.length > 200 ? g.slice(0,200) + '…' : g);
+        s += '\n  $' + (j+1) + ': ' + val;
+      });
+      return s;
+    });
+    if (matches.length > 50) lines.push('… (' + (matches.length - 50) + ' more)');
+    groupsEl.textContent = lines.join('\n\n');
+    // Try parse first capture group (or full match) as JSON
+    let parsed = null;
+    const first = matches[0];
+    const tryStrings = [];
+    for (let j = 0; j < first.groups.length; j++){
+      if (first.groups[j]) tryStrings.push(first.groups[j]);
+    }
+    tryStrings.push(first.full);
+    for (const s of tryStrings){
+      try { parsed = JSON.parse(s.trim()); break; }
+      catch(_) {}
+    }
+    RLO_LAST = {first: first.full, all: matches, json: parsed, regex: '/' + pat + '/' + flags};
+    if (parsed !== null){
+      groupsEl.textContent += '\n\n── Parsed JSON ──\n' + JSON.stringify(parsed, null, 2);
+    }
+  }
+}
+function rloCopy(kind){
+  let text = '';
+  if (kind === 'regex'){ text = RLO_LAST.regex; }
+  else if (kind === 'match'){ text = RLO_LAST.first; }
+  else if (kind === 'json'){
+    if (RLO_LAST.json === null){ rloMsg('Parsed JSON is empty.'); return; }
+    text = JSON.stringify(RLO_LAST.json, null, 2);
+  }
+  else if (kind === 'js'){
+    const pat = document.getElementById('rlo-pattern').value;
+    const flags = document.getElementById('rlo-flags').value;
+    text = 'const match = text.match(/' + pat + '/' + flags + ');';
+  }
+  if (!text){ rloMsg('Nothing to copy yet.'); return; }
+  navigator.clipboard.writeText(text).then(() => rloMsg('✓ Copied (' + text.length + ' chars)'));
+}
+function rloMsg(s){
+  const el = document.getElementById('rlo-copied');
+  el.textContent = s;
+  setTimeout(() => { if (el.textContent === s) el.textContent = ''; }, 2000);
+}
+document.addEventListener('DOMContentLoaded', rloTemplate);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>

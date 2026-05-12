@@ -26730,4 +26730,994 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/json-schema-to-pydantic/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/json-schema-to-pydantic/"/>
   </url>
+  <url>
+    <loc>https://toolhub.software/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/jsonl-viewer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/jsonl-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/jsonl-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/regex-llm-output/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/regex-llm-output/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/regex-llm-output/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/system-prompt-linter/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/system-prompt-linter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/system-prompt-linter/"/>
+  </url>
 </urlset>
