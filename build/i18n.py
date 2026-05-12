@@ -48,9 +48,6 @@ UI = {
         "data_handling": "Data Handling",
         "affiliate_disclosure": "Affiliate Disclosure",
         "language": "Language",
-        "built_by": "Built by JXXR1",
-        "sponsor_short": "Sponsor",
-        "tip_short": "Buy me a coffee",
     },
     "de": {
         "all_tools": "Alle Tools",
@@ -98,9 +95,6 @@ UI = {
         "data_handling": "Datenverarbeitung",
         "affiliate_disclosure": "Affiliate-Offenlegung",
         "language": "Sprache",
-        "built_by": "Gebaut von JXXR1",
-        "sponsor_short": "Sponsern",
-        "tip_short": "Spendier mir einen Kaffee",
     },
     "es": {
         "all_tools": "Todas las herramientas",
@@ -148,9 +142,6 @@ UI = {
         "data_handling": "Tratamiento de datos",
         "affiliate_disclosure": "Divulgación de afiliados",
         "language": "Idioma",
-        "built_by": "Hecho por JXXR1",
-        "sponsor_short": "Patrocinar",
-        "tip_short": "Invítame un café",
     },
     "fr": {
         "all_tools": "Tous les outils",
@@ -198,9 +189,6 @@ UI = {
         "data_handling": "Traitement des données",
         "affiliate_disclosure": "Divulgation des affiliations",
         "language": "Langue",
-        "built_by": "Créé par JXXR1",
-        "sponsor_short": "Sponsoriser",
-        "tip_short": "Offre-moi un café",
     },
     "it": {
         "all_tools": "Tutti gli strumenti",
@@ -248,9 +236,6 @@ UI = {
         "data_handling": "Trattamento dei dati",
         "affiliate_disclosure": "Divulgazione affiliati",
         "language": "Lingua",
-        "built_by": "Creato da JXXR1",
-        "sponsor_short": "Sponsorizza",
-        "tip_short": "Offrimi un caffè",
     },
     "pt": {
         "all_tools": "Todas as ferramentas",
@@ -298,9 +283,6 @@ UI = {
         "data_handling": "Tratamento de dados",
         "affiliate_disclosure": "Divulgação de afiliados",
         "language": "Idioma",
-        "built_by": "Criado por JXXR1",
-        "sponsor_short": "Apoiar",
-        "tip_short": "Me paga um café",
     },
     "pl": {
         "all_tools": "Wszystkie narzędzia",
@@ -348,9 +330,6 @@ UI = {
         "data_handling": "Obsługa danych",
         "affiliate_disclosure": "Ujawnienie partnerów",
         "language": "Język",
-        "built_by": "Stworzone przez JXXR1",
-        "sponsor_short": "Wesprzyj",
-        "tip_short": "Postaw mi kawę",
     },
     "ja": {
         "all_tools": "すべてのツール",
@@ -398,9 +377,6 @@ UI = {
         "data_handling": "データの取り扱い",
         "affiliate_disclosure": "アフィリエイト開示",
         "language": "言語",
-        "built_by": "JXXR1 が制作",
-        "sponsor_short": "スポンサー",
-        "tip_short": "コーヒーをおごる",
     },
     "nl": {
         "all_tools": "Alle tools",
@@ -448,9 +424,6 @@ UI = {
         "data_handling": "Dataverwerking",
         "affiliate_disclosure": "Affiliate-disclosure",
         "language": "Taal",
-        "built_by": "Gemaakt door JXXR1",
-        "sponsor_short": "Sponsor",
-        "tip_short": "Trakteer me op een koffie",
     },
     "tr": {
         "all_tools": "Tüm araçlar",
@@ -498,9 +471,6 @@ UI = {
         "data_handling": "Veri işleme",
         "affiliate_disclosure": "Affiliate bildirimi",
         "language": "Dil",
-        "built_by": "JXXR1 tarafından yapıldı",
-        "sponsor_short": "Sponsor ol",
-        "tip_short": "Bana bir kahve ısmarla",
     },
     "id": {
         "all_tools": "Semua alat",
@@ -548,9 +518,6 @@ UI = {
         "data_handling": "Penanganan data",
         "affiliate_disclosure": "Pengungkapan afiliasi",
         "language": "Bahasa",
-        "built_by": "Dibuat oleh JXXR1",
-        "sponsor_short": "Jadi sponsor",
-        "tip_short": "Belikan saya kopi",
     },
     "vi": {
         "all_tools": "Tất cả công cụ",
@@ -598,9 +565,6 @@ UI = {
         "data_handling": "Xử lý dữ liệu",
         "affiliate_disclosure": "Tiết lộ affiliate",
         "language": "Ngôn ngữ",
-        "built_by": "Tạo bởi JXXR1",
-        "sponsor_short": "Tài trợ",
-        "tip_short": "Mời tôi một ly cà phê",
     },
     "sk": {
         "all_tools": "Všetky nástroje",
@@ -648,9 +612,6 @@ UI = {
         "data_handling": "Spracovanie údajov",
         "affiliate_disclosure": "Affiliate zverejnenie",
         "language": "Jazyk",
-        "built_by": "Vytvoril JXXR1",
-        "sponsor_short": "Sponzorovať",
-        "tip_short": "Kúp mi kávu",
     },
     "cs": {
         "all_tools": "Všechny nástroje",
@@ -698,9 +659,6 @@ UI = {
         "data_handling": "Zpracování dat",
         "affiliate_disclosure": "Affiliate zveřejnění",
         "language": "Jazyk",
-        "built_by": "Vytvořil JXXR1",
-        "sponsor_short": "Sponzorovat",
-        "tip_short": "Kup mi kávu",
     },
     "hi": {
         "all_tools": "सभी टूल्स",
@@ -748,9 +706,6 @@ UI = {
         "data_handling": "डेटा हैंडलिंग",
         "affiliate_disclosure": "Affiliate डिस्क्लोज़र",
         "language": "भाषा",
-        "built_by": "JXXR1 द्वारा बनाया गया",
-        "sponsor_short": "स्पॉन्सर करें",
-        "tip_short": "मुझे coffee दिलाएं",
     },
 }
 

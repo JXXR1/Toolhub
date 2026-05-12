@@ -262,9 +262,6 @@
     .support-callout a:hover { color: var(--accent); text-decoration: none; }
     .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
     .support-callout-dismiss:hover { background: transparent; color: var(--text); }
-    .built-by { margin: 1.25rem 0 -0.5rem; font-size: 0.8rem; color: var(--text-muted); text-align: center; opacity: 0.85; }
-    .built-by a { color: var(--text-muted); text-decoration: underline; }
-    .built-by a:hover { color: var(--accent); text-decoration: none; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
   <script>
@@ -337,7 +334,6 @@
 
     <div class="support-callout" hidden></div>
     <div class="ad-slot" data-slot="content"></div>
-    <p class="built-by">JXXR1 द्वारा बनाया गया · <a href="https://github.com/sponsors/JXXR1" target="_blank" rel="noopener noreferrer">♥ स्पॉन्सर करें</a> · <a href="https://www.buymeacoffee.com/Tool_hub" target="_blank" rel="noopener noreferrer">☕ मुझे coffee दिलाएं</a></p>
     <div class="help">
 <h2>यह किसके लिए है?</h2>
 <p>"यह string equal क्यों नहीं compare कर रही?" "यह username पहले से लिया हुआ क्यों दिखाया जा रहा है जबकि यह free लगता है?" "यह filename मेरे shell को क्यों तोड़ रही है?" उत्तर लगभग हमेशा यही होता है: bytes वो नहीं हैं जो आपकी आँखें देखती हैं। दो अक्षर <em>एक जैसे दिख सकते हैं</em> लेकिन अलग codepoint हो सकते हैं (Latin "a" बनाम Cyrillic "а"); whitespace में non-breaking space, zero-width joiner, या right-to-left override छिपे हो सकते हैं; एक emoji एक codepoint भी हो सकता है या चार। यह टूल किसी भी टेक्स्ट को उसके अलग-अलग Unicode codepoints में विघटित कर देता है, साथ में hex, decimal, UTF-8 byte क्रम, श्रेणी और ज्ञात होने पर नाम।</p>

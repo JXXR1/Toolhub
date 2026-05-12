@@ -262,9 +262,6 @@
     .support-callout a:hover { color: var(--accent); text-decoration: none; }
     .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
     .support-callout-dismiss:hover { background: transparent; color: var(--text); }
-    .built-by { margin: 1.25rem 0 -0.5rem; font-size: 0.8rem; color: var(--text-muted); text-align: center; opacity: 0.85; }
-    .built-by a { color: var(--text-muted); text-decoration: underline; }
-    .built-by a:hover { color: var(--accent); text-decoration: none; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
   <script>
@@ -346,7 +343,6 @@
 
     <div class="support-callout" hidden></div>
     <div class="ad-slot" data-slot="content"></div>
-    <p class="built-by">Créé par JXXR1 · <a href="https://github.com/sponsors/JXXR1" target="_blank" rel="noopener noreferrer">♥ Sponsoriser</a> · <a href="https://www.buymeacoffee.com/Tool_hub" target="_blank" rel="noopener noreferrer">☕ Offre-moi un café</a></p>
     <div class="help">
 <h2>What is this for?</h2>
 <p>A JWT (JSON Web Token) is three base64url-encoded parts joined by dots: <code>header.payload.signature</code>. The header and payload are JSON objects you can inspect; the signature proves the token wasn't tampered with after issuance. This tool decodes the first two parts so you can see what's inside without the noise of base64 — useful when debugging auth flows, expired sessions, or "which user is this token for, exactly?".</p>
