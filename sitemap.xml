@@ -31681,4 +31681,994 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/markup-margin-calculator/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/markup-margin-calculator/"/>
   </url>
+  <url>
+    <loc>https://toolhub.software/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/chat-thread-viewer/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/openai-anthropic-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/rag-text-chunker/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/"/>
+  </url>
 </urlset>

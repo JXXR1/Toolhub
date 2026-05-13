@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チャットスレッドビューア — Toolhub</title>
+  <meta name="description" content="LLM 会話履歴のためのブラウザ完結ビューア（無料）。messages の JSON 配列（OpenAI Chat Completions 形式、Anthropic Messages API 形式、または LangChain のダンプ）を貼り付けると、見やすいチャットスレッドにレンダリングします。ロール別に色分けされたバブル、展開可能なツールコール引数、コードブロックのシンタックスハイライト、画像参照を表示。長い会話のデバッグや、プロンプトの事後監査に便利です。">
+  <meta property="og:title" content="チャットスレッドビューア — Toolhub">
+  <meta property="og:description" content="LLM 会話履歴のためのブラウザ完結ビューア（無料）。messages の JSON 配列（OpenAI Chat Completions 形式、Anthropic Messages API 形式、または LangChain のダンプ）を貼り付けると、見やすいチャットスレッドにレンダリングします。ロール別に色分けされたバブル、展開可能なツールコール引数、コードブロックのシンタックスハイライト、画像参照を表示。長い会話のデバッグや、プロンプトの事後監査に便利です。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/ja/chat-thread-viewer/">
+  <meta property="og:image" content="https://toolhub.software/og-images/chat-thread-viewer.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/chat-thread-viewer.png">
+  <link rel="canonical" href="https://toolhub.software/ja/chat-thread-viewer/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/chat-thread-viewer/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/chat-thread-viewer/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/chat-thread-viewer/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/chat-thread-viewer/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/chat-thread-viewer/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/chat-thread-viewer/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/chat-thread-viewer/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/chat-thread-viewer/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/chat-thread-viewer/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/chat-thread-viewer/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/chat-thread-viewer/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/chat-thread-viewer/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/chat-thread-viewer/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/chat-thread-viewer/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/chat-thread-viewer/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/chat-thread-viewer/">
+  <meta property="og:locale" content="ja_JP">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/ja/chat-thread-viewer/#tool",
+        "name": "チャットスレッドビューア",
+        "description": "LLM 会話履歴のためのブラウザ完結ビューア（無料）。messages の JSON 配列（OpenAI Chat Completions 形式、Anthropic Messages API 形式、または LangChain のダンプ）を貼り付けると、見やすいチャットスレッドにレンダリングします。ロール別に色分けされたバブル、展開可能なツールコール引数、コードブロックのシンタックスハイライト、画像参照を表示。長い会話のデバッグや、プロンプトの事後監査に便利です。",
+        "url": "https://toolhub.software/ja/chat-thread-viewer/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Ai",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["chat", "messages", "openai", "anthropic", "viewer", "thread", "llm", "conversation", "render"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "すべてのツール", "item": "https://toolhub.software/ja/"},
+          {"@type": "ListItem", "position": 2, "name": "チャットスレッドビューア", "item": "https://toolhub.software/ja/chat-thread-viewer/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "これは何のため？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LLM アプリは会話を JSON のメッセージ配列としてログ化します — API に送られるのも、監査ログ・評価トレース・ファインチューニング用データセット・SDK のデバッグ出力に現れるのも、同じ形です。これを人間が直接読むのは辛い：エスケープされた文字列の壁、JSON in JSON でエスケープされたツール呼び出し引数、システムプロンプトが他のメッセージと混ざっている。このツールはそれをチャットバブルとして素早くレンダリングして、実際の会話を眺め、どのメッセージにツール呼び出しが含まれていたか確認し、おかしくなったプロンプトを特定できるようにします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "対応フォーマット",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenAI Chat Completions。 [{role, content}, ...] 形式。assistant メッセージにはオプションで tool_calls 、ツール結果は role: \"tool\" 。最も一般的な形式です。 Anthropic Messages API。 [{role, content: [...]}] で、 content はブロック配列（ text 、 tool_use 、 tool_result 、 image ）。システムプロンプトは通常トップレベル — 表示したい場合は system メッセージとして貼り付けてください。 LangChain のメッセージダンプ。 [{type: \"human\" | \"ai\" | \"system\", content: ...}] — 古めの LangChain 形式ですが、保存されたトレースでは今もよく使われます。 ラッパーオブジェクト。 {\"messages\": [...]} や {\"input\": [...]} を貼り付けると、ラッパーは自動でアンラップされます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "表示内容",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ロール別の色分けバブル。 system = 中央寄せのグレー、user = 右寄せのインディゴ、assistant = 左寄せのニュートラル、tool result = グリーン。 ツール呼び出し。 既定で展開され、引数は整形表示。OpenAI の tool_calls と Anthropic の tool_use ブロックの両方に対応。ツール結果メッセージは別バブルで表示されます。 コードフェンスとインラインコード。 トリプルバッククォートは <pre> 等幅でレンダリング、シングルバッククォートはインラインコード。シンタックスハイライトはありません（そのためのトークナイザを同梱していません）が、インデントは保持されます。 画像参照。 Anthropic の image ブロックは、ソース URL またはメディアタイプを示す小さなピル状の UI で表示 — 画像自体は読み込みません（オフライン動作のため）。 統計行。 検出されたフォーマット、メッセージ数、ツール呼び出し数、Token Counter と同じヒューリスティックによる概算トークン数。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "よくある落とし穴",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "末尾カンマ。 標準 JSON では許されません。デバッガや REPL の出力からコピーした場合は、貼り付け前に {...},] → {...}] を整える必要があるかもしれません。 シングルクォート。 Python の repr はシングルクォートを使います。 json.dumps を通すか、Python リテラル → JSON 変換ツールを使ってください。 Anthropic のシステムプロンプト。 Anthropic API ではシステム指示はトップレベルのフィールドで、メッセージではありません。messages 配列だけのダンプにはシステムプロンプトが含まれないので、先頭に {\"role\": \"system\", \"content\": \"...\"} として貼り付けてください。 エスケープされた JSON のツール引数。 OpenAI は arguments を JSON 文字列で返します。これをアンエスケープして整形します。文字列内 JSON が壊れている場合は生の文字列を表示します。 プライバシー。 何もページ外に出ません。レンダリングはすべて、貼り付けた JSON 上で JS が処理します。メモ帳に貼り付けたくないものは貼り付けないでください。"
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "チャットスレッドビューア",
+  "description": "OpenAI または Anthropic の messages 配列（JSON）を貼り付けると、読みやすいチャットスレッドとして表示。ロール別に色分け。ツールコールの引数も展開可能。ブラウザ完結・アップロードなし。",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "messages を貼り付け",
+      "text": "messages を 入力 欄に貼り付けます。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "整形 をクリック",
+      "text": "整形 ボタンを押してツールを実行します。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "結果をコピー",
+      "text": "コピー を押して 出力 をコピーします。"
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/ja/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">言語</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/chat-thread-viewer/'; else location.href='/chat-thread-viewer/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" selected="selected">🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhubをアプリとしてインストール — オフラインで動作、ストア不要" aria-label="Toolhubをアプリとしてインストール — オフラインで動作、ストア不要">アプリをインストール</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="テーマを切り替え">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/ja/">すべてのツール</a> / チャットスレッドビューア</div>
+    <h1>チャットスレッドビューア</h1>
+    <p class="tagline">OpenAI または Anthropic の messages 配列（JSON）を貼り付けると、読みやすいチャットスレッドとして表示。ロール別に色分け。ツールコールの引数も展開可能。ブラウザ完結・アップロードなし。</p>
+    
+<div class="tool-card">
+  <label for="ctv-input">Paste messages JSON (OpenAI / Anthropic / LangChain)</label>
+  <textarea id="ctv-input" oninput="ctvRun()" spellcheck="false" placeholder='[{"role": "user", "content": "Hello"}, {"role": "assistant", "content": "Hi there!"}]'>[
+  {"role": "system", "content": "You are a helpful assistant. Answer concisely."},
+  {"role": "user", "content": "What is the capital of France?"},
+  {"role": "assistant", "content": "The capital of France is Paris."},
+  {"role": "user", "content": "What's the weather there?"},
+  {"role": "assistant", "content": null, "tool_calls": [{"id": "call_abc123", "type": "function", "function": {"name": "get_weather", "arguments": "{\"city\": \"Paris\"}"}}]},
+  {"role": "tool", "tool_call_id": "call_abc123", "content": "{\"temp_c\": 14, \"condition\": \"cloudy\"}"},
+  {"role": "assistant", "content": "It's currently 14°C and cloudy in Paris."}
+]</textarea>
+  <div class="button-row" style="margin-top:0.5rem">
+    <input type="text" id="ctv-search" oninput="ctvRender()" placeholder="🔍 Search within thread…" style="flex:1;min-width:200px">
+    <button class="secondary" onclick="document.getElementById('ctv-input').value='';ctvRun()">クリア</button>
+  </div>
+  <div class="meta" id="ctv-stats" style="margin-top:0.5rem"></div>
+</div>
+<div class="tool-card">
+  <div id="ctv-thread" class="ctv-thread"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>これは何のため？</h2>
+<p>LLM アプリは会話を JSON のメッセージ配列としてログ化します — API に送られるのも、監査ログ・評価トレース・ファインチューニング用データセット・SDK のデバッグ出力に現れるのも、同じ形です。これを人間が直接読むのは辛い：エスケープされた文字列の壁、JSON in JSON でエスケープされたツール呼び出し引数、システムプロンプトが他のメッセージと混ざっている。このツールはそれをチャットバブルとして素早くレンダリングして、実際の会話を眺め、どのメッセージにツール呼び出しが含まれていたか確認し、おかしくなったプロンプトを特定できるようにします。</p>
+
+<h3>対応フォーマット</h3>
+<ul>
+  <li><strong>OpenAI Chat Completions。</strong> <code>[{role, content}, ...]</code> 形式。assistant メッセージにはオプションで <code>tool_calls</code>、ツール結果は <code>role: "tool"</code>。最も一般的な形式です。</li>
+  <li><strong>Anthropic Messages API。</strong> <code>[{role, content: [...]}]</code> で、<code>content</code> はブロック配列（<code>text</code>、<code>tool_use</code>、<code>tool_result</code>、<code>image</code>）。システムプロンプトは通常トップレベル — 表示したい場合は system メッセージとして貼り付けてください。</li>
+  <li><strong>LangChain のメッセージダンプ。</strong> <code>[{type: "human" | "ai" | "system", content: ...}]</code> — 古めの LangChain 形式ですが、保存されたトレースでは今もよく使われます。</li>
+  <li><strong>ラッパーオブジェクト。</strong> <code>{"messages": [...]}</code> や <code>{"input": [...]}</code> を貼り付けると、ラッパーは自動でアンラップされます。</li>
+</ul>
+
+<h3>表示内容</h3>
+<ul>
+  <li><strong>ロール別の色分けバブル。</strong> system = 中央寄せのグレー、user = 右寄せのインディゴ、assistant = 左寄せのニュートラル、tool result = グリーン。</li>
+  <li><strong>ツール呼び出し。</strong> 既定で展開され、引数は整形表示。OpenAI の <code>tool_calls</code> と Anthropic の <code>tool_use</code> ブロックの両方に対応。ツール結果メッセージは別バブルで表示されます。</li>
+  <li><strong>コードフェンスとインラインコード。</strong> トリプルバッククォートは <code>&lt;pre&gt;</code> 等幅でレンダリング、シングルバッククォートはインラインコード。シンタックスハイライトはありません（そのためのトークナイザを同梱していません）が、インデントは保持されます。</li>
+  <li><strong>画像参照。</strong> Anthropic の image ブロックは、ソース URL またはメディアタイプを示す小さなピル状の UI で表示 — 画像自体は読み込みません（オフライン動作のため）。</li>
+  <li><strong>統計行。</strong> 検出されたフォーマット、メッセージ数、ツール呼び出し数、Token Counter と同じヒューリスティックによる概算トークン数。</li>
+</ul>
+
+<h3>よくある落とし穴</h3>
+<ul>
+  <li><strong>末尾カンマ。</strong> 標準 JSON では許されません。デバッガや REPL の出力からコピーした場合は、貼り付け前に <code>{...},]</code> → <code>{...}]</code> を整える必要があるかもしれません。</li>
+  <li><strong>シングルクォート。</strong> Python の <code>repr</code> はシングルクォートを使います。<code>json.dumps</code> を通すか、Python リテラル → JSON 変換ツールを使ってください。</li>
+  <li><strong>Anthropic のシステムプロンプト。</strong> Anthropic API ではシステム指示はトップレベルのフィールドで、メッセージではありません。messages 配列だけのダンプにはシステムプロンプトが含まれないので、先頭に <code>{"role": "system", "content": "..."}</code> として貼り付けてください。</li>
+  <li><strong>エスケープされた JSON のツール引数。</strong> OpenAI は <code>arguments</code> を JSON 文字列で返します。これをアンエスケープして整形します。文字列内 JSON が壊れている場合は生の文字列を表示します。</li>
+  <li><strong>プライバシー。</strong> 何もページ外に出ません。レンダリングはすべて、貼り付けた JSON 上で JS が処理します。メモ帳に貼り付けたくないものは貼り付けないでください。</li>
+</ul>
+<div class="related"><span class="meta">関連ツール:</span> <a href="/ja/jsonl-viewer/">JSONL ビューア</a> <a href="/ja/token-counter/">トークンカウンター</a> <a href="/ja/system-prompt-linter/">システムプロンプト Linter</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/ja/privacy/">プライバシー</a> · <a href="/ja/how-we-handle-your-data/">データの取り扱い</a> · <a href="/ja/affiliate-disclosure/">アフィリエイト開示</a> · <a href="/ja/companion-tools/">コンパニオンツール</a> · <a href="/ja/about/">概要</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/for-schools/">学校向け</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.ctv-thread{display:flex;flex-direction:column;gap:0.7rem;max-height:760px;overflow-y:auto;padding:0.4rem}
+.ctv-empty{padding:1.5rem;color:var(--text-muted);text-align:center}
+.ctv-msg{display:flex;flex-direction:column;max-width:88%;border-radius:10px;padding:0.65rem 0.85rem;border:1px solid var(--border);font-size:0.92rem;line-height:1.5}
+.ctv-msg-system{background:rgba(148,163,184,0.10);border-color:rgba(148,163,184,0.3);align-self:center;max-width:96%;font-size:0.86rem;color:var(--text-muted)}
+.ctv-msg-user{background:rgba(99,102,241,0.10);border-color:rgba(99,102,241,0.35);align-self:flex-end}
+.ctv-msg-assistant{background:var(--bg-elev);align-self:flex-start}
+.ctv-msg-tool{background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.35);align-self:flex-start;font-family:ui-monospace,monospace;font-size:0.82rem}
+.ctv-msg-error{background:rgba(239,68,68,0.10);border-color:rgba(239,68,68,0.4);align-self:center;color:#ef4444}
+.ctv-role{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;margin-bottom:0.35rem;opacity:0.75}
+.ctv-msg-user .ctv-role{color:#6366f1}
+.ctv-msg-assistant .ctv-role{color:var(--accent)}
+.ctv-msg-tool .ctv-role{color:#22c55e}
+.ctv-content{white-space:pre-wrap;word-break:break-word}
+.ctv-content code{background:rgba(0,0,0,0.08);padding:0.05rem 0.3rem;border-radius:3px;font-size:0.9em}
+.ctv-content pre{background:rgba(0,0,0,0.10);padding:0.55rem 0.75rem;border-radius:6px;overflow:auto;margin:0.35rem 0;font-size:0.82rem;border:1px solid var(--border)}
+.ctv-toolcall{margin-top:0.4rem;padding:0.45rem 0.6rem;background:rgba(0,0,0,0.06);border:1px dashed var(--border);border-radius:6px;font-family:ui-monospace,monospace;font-size:0.8rem}
+.ctv-toolcall summary{cursor:pointer;font-weight:600;color:#22c55e}
+.ctv-toolcall pre{margin:0.4rem 0 0 0;background:transparent;padding:0;border:none}
+.ctv-img{display:inline-block;margin-top:0.4rem;padding:0.35rem 0.55rem;background:rgba(0,0,0,0.06);border:1px solid var(--border);border-radius:6px;font-family:ui-monospace,monospace;font-size:0.78rem;color:var(--text-muted)}
+.ctv-mark{background:rgba(251,191,36,0.45);color:inherit;padding:0 2px;border-radius:2px}
+.ctv-fmt{display:inline-block;padding:0.15rem 0.5rem;border-radius:99px;background:rgba(99,102,241,0.15);color:#6366f1;font-size:0.72rem;font-weight:600;font-family:ui-monospace,monospace}
+.ctv-stat{display:inline-block;margin-right:1rem}
+.ctv-stat strong{color:var(--text)}
+</style>
+<script>
+let ctvMessages = [];
+let ctvFormat = '—';
+let ctvError = null;
+function ctvEsc(s){ return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function ctvDetectFormat(arr){
+  if (!Array.isArray(arr) || arr.length === 0) return 'empty';
+  const first = arr[0];
+  if (first && typeof first.type === 'string' && !first.role) return 'langchain';
+  for (const m of arr){
+    if (m && Array.isArray(m.content)){
+      for (const block of m.content){
+        if (block && typeof block === 'object' && (block.type === 'tool_use' || block.type === 'tool_result' || block.type === 'text' || block.type === 'image')) return 'anthropic';
+      }
+    }
+  }
+  for (const m of arr){
+    if (m && (m.tool_calls || m.role === 'tool' || (m.role === 'system'))) return 'openai';
+  }
+  return 'openai';
+}
+function ctvRun(){
+  const raw = document.getElementById('ctv-input').value.trim();
+  ctvError = null;
+  if (!raw){ ctvMessages = []; ctvFormat = '—'; ctvRender(); return; }
+  let parsed;
+  try { parsed = JSON.parse(raw); }
+  catch(e){ ctvError = 'Invalid JSON: ' + e.message; ctvMessages = []; ctvRender(); return; }
+  // Accept either an array, or an object with .messages
+  let arr = parsed;
+  if (!Array.isArray(parsed)){
+    if (parsed && Array.isArray(parsed.messages)) arr = parsed.messages;
+    else if (parsed && Array.isArray(parsed.input)) arr = parsed.input;
+    else { ctvError = 'Expected a JSON array of messages, or an object with a "messages" array.'; ctvMessages = []; ctvRender(); return; }
+  }
+  ctvFormat = ctvDetectFormat(arr);
+  ctvMessages = arr;
+  ctvRender();
+}
+function ctvRenderMarkdown(text){
+  if (text == null) return '';
+  let s = ctvEsc(text);
+  // fenced code blocks
+  s = s.replace(/```(\w*)\n([\s\S]*?)```/g, function(_, lang, code){
+    return '<pre><code>' + code.replace(/\n$/, '') + '</code></pre>';
+  });
+  // inline code
+  s = s.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+  return s;
+}
+function ctvHighlight(html, q){
+  if (!q) return html;
+  const lower = html.toLowerCase();
+  const needle = q.toLowerCase();
+  let out = '';
+  let i = 0;
+  while (i < html.length){
+    const j = lower.indexOf(needle, i);
+    if (j === -1){ out += html.slice(i); break; }
+    // skip if inside a tag (rough heuristic)
+    const lastLt = html.lastIndexOf('<', j);
+    const lastGt = html.lastIndexOf('>', j);
+    if (lastLt > lastGt){
+      out += html.slice(i, j + needle.length);
+      i = j + needle.length;
+      continue;
+    }
+    out += html.slice(i, j) + '<span class="ctv-mark">' + html.slice(j, j + needle.length) + '</span>';
+    i = j + needle.length;
+  }
+  return out;
+}
+function ctvEstimateTokens(text){
+  if (!text) return 0;
+  const s = typeof text === 'string' ? text : JSON.stringify(text);
+  const cjk = (s.match(/[぀-ヿ㐀-䶿一-鿿가-힯]/g) || []).length;
+  const len = s.length;
+  return Math.ceil((len - cjk) / 3.8 + cjk);
+}
+function ctvRenderOne(m, q){
+  const role = (m && m.role) || (m && m.type) || 'unknown';
+  let cls = 'ctv-msg-' + role;
+  if (role === 'human') cls = 'ctv-msg-user';
+  if (role === 'ai') cls = 'ctv-msg-assistant';
+  if (!['user','assistant','system','tool','human','ai'].includes(role)) cls = 'ctv-msg-assistant';
+  const displayRole = role === 'human' ? 'user' : (role === 'ai' ? 'assistant' : role);
+  let bodyHtml = '';
+  let toolCalls = 0;
+  // Anthropic-style content array
+  if (Array.isArray(m.content)){
+    for (const block of m.content){
+      if (!block || typeof block !== 'object'){
+        bodyHtml += '<div class="ctv-content">' + ctvHighlight(ctvRenderMarkdown(String(block)), q) + '</div>';
+        continue;
+      }
+      if (block.type === 'text'){
+        bodyHtml += '<div class="ctv-content">' + ctvHighlight(ctvRenderMarkdown(block.text || ''), q) + '</div>';
+      } else if (block.type === 'tool_use'){
+        toolCalls++;
+        const inputPretty = JSON.stringify(block.input ?? {}, null, 2);
+        bodyHtml += '<details class="ctv-toolcall" open><summary>🔧 tool_use: ' + ctvEsc(block.name || '?') + ' (' + ctvEsc(block.id || '') + ')</summary><pre>' + ctvHighlight(ctvEsc(inputPretty), q) + '</pre></details>';
+      } else if (block.type === 'tool_result'){
+        const content = typeof block.content === 'string' ? block.content : JSON.stringify(block.content, null, 2);
+        bodyHtml += '<details class="ctv-toolcall" open><summary>📤 tool_result (' + ctvEsc(block.tool_use_id || '') + ')</summary><pre>' + ctvHighlight(ctvEsc(content), q) + '</pre></details>';
+      } else if (block.type === 'image'){
+        const src = block.source && (block.source.url || block.source.media_type || '[base64]');
+        bodyHtml += '<div class="ctv-img">🖼 image — ' + ctvEsc(src || '?') + '</div>';
+      } else {
+        bodyHtml += '<details class="ctv-toolcall" open><summary>' + ctvEsc(block.type || 'block') + '</summary><pre>' + ctvHighlight(ctvEsc(JSON.stringify(block, null, 2)), q) + '</pre></details>';
+      }
+    }
+  } else if (typeof m.content === 'string'){
+    bodyHtml += '<div class="ctv-content">' + ctvHighlight(ctvRenderMarkdown(m.content), q) + '</div>';
+  } else if (m.content == null && Array.isArray(m.tool_calls)){
+    // OpenAI assistant tool calls
+    // body rendered below
+  } else if (m.content != null){
+    bodyHtml += '<div class="ctv-content">' + ctvHighlight(ctvEsc(JSON.stringify(m.content)), q) + '</div>';
+  }
+  // OpenAI-style tool_calls field on assistant message
+  if (Array.isArray(m.tool_calls)){
+    for (const tc of m.tool_calls){
+      toolCalls++;
+      const name = tc.function && tc.function.name || tc.name || '?';
+      let args = tc.function && tc.function.arguments || tc.arguments || '';
+      let argsPretty = args;
+      if (typeof args === 'string'){
+        try { argsPretty = JSON.stringify(JSON.parse(args), null, 2); } catch(_){}
+      } else {
+        argsPretty = JSON.stringify(args, null, 2);
+      }
+      bodyHtml += '<details class="ctv-toolcall" open><summary>🔧 tool_call: ' + ctvEsc(name) + ' (' + ctvEsc(tc.id || '') + ')</summary><pre>' + ctvHighlight(ctvEsc(argsPretty), q) + '</pre></details>';
+    }
+  }
+  // OpenAI-style tool result message
+  if (m.role === 'tool' && typeof m.content === 'string' && m.tool_call_id){
+    bodyHtml = '<div class="ctv-role">tool · ' + ctvEsc(m.tool_call_id) + '</div>' +
+               '<div class="ctv-content">' + ctvHighlight(ctvEsc(m.content), q) + '</div>';
+    return { html: '<div class="ctv-msg ctv-msg-tool">' + bodyHtml + '</div>', toolCalls };
+  }
+  const header = '<div class="ctv-role">' + ctvEsc(displayRole) + (m.name ? ' · ' + ctvEsc(m.name) : '') + '</div>';
+  return { html: '<div class="ctv-msg ' + cls + '">' + header + bodyHtml + '</div>', toolCalls };
+}
+function ctvRender(){
+  const container = document.getElementById('ctv-thread');
+  const statsEl = document.getElementById('ctv-stats');
+  if (ctvError){
+    container.innerHTML = '<div class="ctv-msg ctv-msg-error">' + ctvEsc(ctvError) + '</div>';
+    statsEl.innerHTML = '';
+    return;
+  }
+  if (!ctvMessages.length){
+    container.innerHTML = '<div class="ctv-empty">Paste a JSON messages array above to render the chat thread.</div>';
+    statsEl.innerHTML = '';
+    return;
+  }
+  const q = document.getElementById('ctv-search').value;
+  let toolCalls = 0;
+  let totalTokens = 0;
+  const pieces = ctvMessages.map(m => {
+    const { html, toolCalls: tc } = ctvRenderOne(m, q);
+    toolCalls += tc;
+    totalTokens += ctvEstimateTokens(JSON.stringify(m));
+    return html;
+  });
+  container.innerHTML = pieces.join('');
+  const fmtLabel = ctvFormat === 'openai' ? 'OpenAI' : ctvFormat === 'anthropic' ? 'Anthropic' : ctvFormat === 'langchain' ? 'LangChain' : ctvFormat;
+  statsEl.innerHTML =
+    '<span class="ctv-stat"><span class="ctv-fmt">' + ctvEsc(fmtLabel) + '</span></span>' +
+    '<span class="ctv-stat"><strong>' + ctvMessages.length + '</strong> messages</span>' +
+    '<span class="ctv-stat"><strong>' + toolCalls + '</strong> tool calls</span>' +
+    '<span class="ctv-stat">~<strong>' + totalTokens.toLocaleString() + '</strong> tokens (est)</span>';
+}
+document.addEventListener('DOMContentLoaded', ctvRun);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>

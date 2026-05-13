@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Text Chunker — Toolhub</title>
+  <meta name="description" content="Bezplatný text chunker v prehliadači pre RAG a embedding pipeliny. Vlož dokument, vyber veľkosť chunku (v tokenoch, heuristický odhad), vyber stratégiu (recursive character / sentence-aware / paragraph / semantic-boundary) a dostaneš zoznam chunkov s voliteľným overlapom. Užitočné na prípravu dokumentov na ingest do vector store bez nahrávania kdekoľvek. Páruje sa s naším token-counterom pre sizing usmernenie.">
+  <meta property="og:title" content="RAG Text Chunker — Toolhub">
+  <meta property="og:description" content="Bezplatný text chunker v prehliadači pre RAG a embedding pipeliny. Vlož dokument, vyber veľkosť chunku (v tokenoch, heuristický odhad), vyber stratégiu (recursive character / sentence-aware / paragraph / semantic-boundary) a dostaneš zoznam chunkov s voliteľným overlapom. Užitočné na prípravu dokumentov na ingest do vector store bez nahrávania kdekoľvek. Páruje sa s naším token-counterom pre sizing usmernenie.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/sk/rag-text-chunker/">
+  <meta property="og:image" content="https://toolhub.software/og-images/rag-text-chunker.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/rag-text-chunker.png">
+  <link rel="canonical" href="https://toolhub.software/sk/rag-text-chunker/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/rag-text-chunker/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/rag-text-chunker/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/rag-text-chunker/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/rag-text-chunker/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/rag-text-chunker/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/rag-text-chunker/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/rag-text-chunker/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/rag-text-chunker/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/rag-text-chunker/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/rag-text-chunker/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/rag-text-chunker/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/rag-text-chunker/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/rag-text-chunker/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/rag-text-chunker/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/rag-text-chunker/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/rag-text-chunker/">
+  <meta property="og:locale" content="sk_SK">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/sk/rag-text-chunker/#tool",
+        "name": "RAG Text Chunker",
+        "description": "Bezplatný text chunker v prehliadači pre RAG a embedding pipeliny. Vlož dokument, vyber veľkosť chunku (v tokenoch, heuristický odhad), vyber stratégiu (recursive character / sentence-aware / paragraph / semantic-boundary) a dostaneš zoznam chunkov s voliteľným overlapom. Užitočné na prípravu dokumentov na ingest do vector store bez nahrávania kdekoľvek. Páruje sa s naším token-counterom pre sizing usmernenie.",
+        "url": "https://toolhub.software/sk/rag-text-chunker/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Ai",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "sk",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["rag", "chunk", "split", "text", "embeddings", "retrieval", "llm", "tokens", "chunker"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Všetky nástroje", "item": "https://toolhub.software/sk/"},
+          {"@type": "ListItem", "position": 2, "name": "RAG Text Chunker", "item": "https://toolhub.software/sk/rag-text-chunker/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Načo to slúži?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RAG (Retrieval-Augmented Generation) a vyhľadávanie založené na embeddingoch oba závisia od rozdelenia korpusu na chunky : malé kúsky, ktoré sú jednotlivo embednuté a uložené vo vector DB. Rozdelenie sa deje pred akoukoľvek AI mašinériou, ale kvalita tvojho retrievalu na tom potichu závisí viac, než si väčšina uvedomuje. Príliš malé chunky strácajú kontext; príliš veľké rozriedia relevanciu; chunky rozdelené uprostred vety zle retrievujú, lebo embedding pristane v zvláštnom sémantickom bode. Tento nástroj je rýchle ihrisko v prehliadači na experimentovanie s veľkosťou chunku, overlapom a stratégiou pred tým, než pipeline zafixuješ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Štyri stratégie",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "recursive-char (predvolené). Pokúsi sa rozdeliť najprv na odsekoch, potom nových riadkoch, potom hraniciach viet ( . ), potom medzerách. Každý kúsok sa hltavo zabalí do rozpočtu veľkosti. Spadne na tvrdé delenie po znakoch len ak nič iné nesedí. Predvolené v LangChain, LlamaIndex a väčšine produkčných RAG stackov; rozumné východisko pre takmer každý prózový korpus. sentence . Delí na hraniciach viet a nikdy vnútri vety — aj keď je veta kratšia než rozpočet, ostane celá. Lepšie ako recursive-char keď budú chunky citované ako dôkaz (QA, citácie), lebo žiadny chunk nekončí uprostred myšlienky. Veľkosti chunkov variabilnejšie, lebo dĺžky viet sú. paragraph . Spracúva každý odsek ako jednotku. Dva susedné krátke odseky môžu byť zabalené spolu, ale dlhý odsek nikdy nie je rozdelený. Užitočné pre dokumentáciu, KB články a dobre formátované long-form, kde každý odsek je súdržná myšlienka. semantic . Pridáva detekciu nadpisov nad paragraph: riadky začínajúce # , ## atď., alebo krátke veľkomi-písmenkové riadky, sú spracované ako začiatok novej sekcie. Dobré pre technickú dokumentáciu, kde hranice sekcií zaberajú viac než vizuálny odsadenie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Overlap — prečo a koľko",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prečo. Ak relevantný úsek padne presne na hranicu medzi dvoma chunkmi, oba retrievujú zle, lebo každý má len polovicu. Overlap skopíruje posledných N tokenov predchádzajúceho chunku na začiatok ďalšieho, dáva obom šancu zachytiť úsek. Koľko. 10–20% veľkosti chunku ako pravidlo. Pre 500-tokenové chunky 50–100 tokenov overlapu. Predvolené tu je 50, v praxi funguje dobre. Trade-off. Viac overlapu = viac celkových embeddingov (viac storage, viac nákladov, pomalší build indexu, viac kandidátov retrievalu). Nechoď nad 30% bez konkrétneho dôvodu; zbytočne míňaš peniaze bez veľkého zlepšenia retrievalu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Odhad tokenov",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Je to heuristika. znaky / 3.8 pre angličtinu-podobný text a 1 token na znak CJK. ±5–10% pre prózu, horšie pre code-heavy alebo štruktúrovaný text. Prečo nie skutočný tokenizer? tiktoken je ~1 MB WASM — príliš ťažký len pre sizing. Ak má tvoj downstream model tvrdý limit tokenov na chunky (niektoré majú, napr. cohere/embed-v3 je capnutý na 512), stavaj s bezpečnostnou rezervou alebo spusti skutočný tokenizer v pipeline. Pre sizing je to fajn. Presný počet tokenov na chunk veľa neznamená pre kvalitu RAG — embedding model príliš veľké vstupy aj tak skráti. Čo sa počíta je konzistencia: rovnaká heuristika pre chunking aj pre budgetovanie downstream promptov."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Časté pasce",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Štruktúrované dáta (JSON, CSV) nechunkuj textovým chunkerom. Hranice padnú doprostred záznamov a embeddingy stratia zmysel. Najprv rozdeľ na hraniciach záznamov, alebo použi tool-špecifický RAG prístup. Kód nechunkuj prózovým chunkerom. Pre retrieval kódu sú dôležité hranice funkcií, nie počty znakov. Existujú chunkery založené na tree-sitter. Whitespace a BOM. Vložený text môže niesť skryté whitespace, ktoré skresľuje odhad tokenov. Trimni a normalizuj pred vložením, ak na tom záleží. Súkromie. Všetko beží v prehliadači. Dokumenty vložené sem nikdy neopustia stránku; môžeš to používať na dôverný alebo PII obsahujúci materiál tak isto, ako by si použil lokálny skript."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "RAG Text Chunker",
+  "description": "Rozdeľ text na token-veľké chunky pre prípravu RAG / embeddingov. Viac stratégií: recursive char, sentence-aware, semantic boundaries. Konfigurovateľný overlap. Všetko v prehliadači.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Vlož svoj text",
+      "text": "Vlož svoj text do poľa Vstup."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Klikni na Formátovať",
+      "text": "Stlač tlačidlo Formátovať, aby si spustil nástroj."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Skopíruj výsledok",
+      "text": "Stlač Kopírovať, aby si skopíroval Výstup."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/sk/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Jazyk</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/rag-text-chunker/'; else location.href='/rag-text-chunker/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" selected="selected">🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Nainštaluj Toolhub ako aplikáciu na svoje zariadenie — funguje offline, bez obchodu s aplikáciami" aria-label="Nainštaluj Toolhub ako aplikáciu na svoje zariadenie — funguje offline, bez obchodu s aplikáciami">Nainštalovať aplikáciu</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Prepnúť tému">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/sk/">Všetky nástroje</a> / RAG Text Chunker</div>
+    <h1>RAG Text Chunker</h1>
+    <p class="tagline">Rozdeľ text na token-veľké chunky pre prípravu RAG / embeddingov. Viac stratégií: recursive char, sentence-aware, semantic boundaries. Konfigurovateľný overlap. Všetko v prehliadači.</p>
+    
+<div class="tool-card">
+  <label for="rtc-input">Paste your document</label>
+  <textarea id="rtc-input" oninput="rtcRun()" spellcheck="false" placeholder="Paste the text you want to chunk for RAG / embedding…">RAG (Retrieval-Augmented Generation) is a technique that pairs an LLM with an external knowledge base. Instead of relying only on the model's parametric memory, the system retrieves relevant passages at query time and concatenates them into the prompt.
+
+The retrieval step depends on a vector store. Documents are split into chunks, each chunk gets an embedding vector, and those vectors are stored in a database that supports approximate nearest-neighbour search.
+
+# Chunk size matters
+
+Chunks that are too small lose context — a single sentence might not contain enough information to answer the question. Chunks that are too large dilute relevance — the embedding becomes an average of many unrelated topics, and retrieval gets noisy.
+
+A common starting point is 500 tokens per chunk with 50 tokens of overlap. Overlap lets a chunk see a bit of context from its neighbours, which helps when a relevant span happens to fall across a chunk boundary.
+
+# Strategy choice
+
+Recursive character splitting is the most general: it tries paragraph breaks first, then line breaks, then sentence boundaries, then spaces. This is the default in most frameworks and works well for prose.
+
+Sentence-aware splitting respects sentence boundaries and never breaks mid-sentence. It produces cleaner chunks for QA over articles and books, at the cost of more variable chunk sizes.
+
+Paragraph chunking treats each paragraph as its own chunk (subject to the size limit). This is useful for structured documents like documentation or knowledge-base articles where each section is already a coherent unit.
+
+Semantic chunking goes one step further: it tries to keep semantically related content together by respecting headings and topic boundaries, even when those don't align with paragraph breaks.</textarea>
+  <div class="rtc-controls" style="margin-top:0.6rem">
+    <div class="rtc-ctrl">
+      <label>Chunk size (tokens): <strong id="rtc-size-val">500</strong></label>
+      <input type="range" id="rtc-size" min="100" max="2000" step="50" value="500" oninput="rtcRun()">
+    </div>
+    <div class="rtc-ctrl">
+      <label>Overlap (tokens): <strong id="rtc-ovr-val">50</strong></label>
+      <input type="range" id="rtc-ovr" min="0" max="200" step="10" value="50" oninput="rtcRun()">
+    </div>
+    <div class="rtc-ctrl">
+      <label for="rtc-strat">Strategy</label>
+      <select id="rtc-strat" onchange="rtcRun()">
+        <option value="recursive-char" selected>recursive-char</option>
+        <option value="sentence">sentence</option>
+        <option value="paragraph">paragraph</option>
+        <option value="semantic">semantic</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="meta" id="rtc-stats"></div>
+  <div class="button-row" style="margin-top:0.5rem">
+    <button class="secondary" onclick="rtcCopyJson(this)">Copy as JSON array</button>
+    <button class="secondary" onclick="rtcExportJsonl(this)">⬇ Export as JSONL</button>
+  </div>
+  <div id="rtc-chunks" class="rtc-chunks" style="margin-top:0.7rem"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Načo to slúži?</h2>
+<p>RAG (Retrieval-Augmented Generation) a vyhľadávanie založené na embeddingoch oba závisia od rozdelenia korpusu na <em>chunky</em>: malé kúsky, ktoré sú jednotlivo embednuté a uložené vo vector DB. Rozdelenie sa deje pred akoukoľvek AI mašinériou, ale kvalita tvojho retrievalu na tom potichu závisí viac, než si väčšina uvedomuje. Príliš malé chunky strácajú kontext; príliš veľké rozriedia relevanciu; chunky rozdelené uprostred vety zle retrievujú, lebo embedding pristane v zvláštnom sémantickom bode. Tento nástroj je rýchle ihrisko v prehliadači na experimentovanie s veľkosťou chunku, overlapom a stratégiou pred tým, než pipeline zafixuješ.</p>
+
+<h3>Štyri stratégie</h3>
+<ul>
+  <li><strong>recursive-char</strong> (predvolené). Pokúsi sa rozdeliť najprv na odsekoch, potom nových riadkoch, potom hraniciach viet (<code>. </code>), potom medzerách. Každý kúsok sa hltavo zabalí do rozpočtu veľkosti. Spadne na tvrdé delenie po znakoch len ak nič iné nesedí. Predvolené v LangChain, LlamaIndex a väčšine produkčných RAG stackov; rozumné východisko pre takmer každý prózový korpus.</li>
+  <li><strong>sentence</strong>. Delí na hraniciach viet a nikdy vnútri vety — aj keď je veta kratšia než rozpočet, ostane celá. Lepšie ako recursive-char keď budú chunky citované ako dôkaz (QA, citácie), lebo žiadny chunk nekončí uprostred myšlienky. Veľkosti chunkov variabilnejšie, lebo dĺžky viet sú.</li>
+  <li><strong>paragraph</strong>. Spracúva každý odsek ako jednotku. Dva susedné krátke odseky môžu byť zabalené spolu, ale dlhý odsek nikdy nie je rozdelený. Užitočné pre dokumentáciu, KB články a dobre formátované long-form, kde každý odsek je súdržná myšlienka.</li>
+  <li><strong>semantic</strong>. Pridáva detekciu nadpisov nad paragraph: riadky začínajúce <code>#</code>, <code>##</code> atď., alebo krátke veľkomi-písmenkové riadky, sú spracované ako začiatok novej sekcie. Dobré pre technickú dokumentáciu, kde hranice sekcií zaberajú viac než vizuálny odsadenie.</li>
+</ul>
+
+<h3>Overlap — prečo a koľko</h3>
+<ul>
+  <li><strong>Prečo.</strong> Ak relevantný úsek padne presne na hranicu medzi dvoma chunkmi, oba retrievujú zle, lebo každý má len polovicu. Overlap skopíruje posledných N tokenov predchádzajúceho chunku na začiatok ďalšieho, dáva obom šancu zachytiť úsek.</li>
+  <li><strong>Koľko.</strong> 10–20% veľkosti chunku ako pravidlo. Pre 500-tokenové chunky 50–100 tokenov overlapu. Predvolené tu je 50, v praxi funguje dobre.</li>
+  <li><strong>Trade-off.</strong> Viac overlapu = viac celkových embeddingov (viac storage, viac nákladov, pomalší build indexu, viac kandidátov retrievalu). Nechoď nad 30% bez konkrétneho dôvodu; zbytočne míňaš peniaze bez veľkého zlepšenia retrievalu.</li>
+</ul>
+
+<h3>Odhad tokenov</h3>
+<ul>
+  <li><strong>Je to heuristika.</strong> znaky / 3.8 pre angličtinu-podobný text a 1 token na znak CJK. ±5–10% pre prózu, horšie pre code-heavy alebo štruktúrovaný text.</li>
+  <li><strong>Prečo nie skutočný tokenizer?</strong> tiktoken je ~1 MB WASM — príliš ťažký len pre sizing. Ak má tvoj downstream model tvrdý limit tokenov na chunky (niektoré majú, napr. cohere/embed-v3 je capnutý na 512), stavaj s bezpečnostnou rezervou alebo spusti skutočný tokenizer v pipeline.</li>
+  <li><strong>Pre sizing je to fajn.</strong> Presný počet tokenov na chunk veľa neznamená pre kvalitu RAG — embedding model príliš veľké vstupy aj tak skráti. Čo sa počíta je konzistencia: rovnaká heuristika pre chunking aj pre budgetovanie downstream promptov.</li>
+</ul>
+
+<h3>Časté pasce</h3>
+<ul>
+  <li><strong>Štruktúrované dáta (JSON, CSV) nechunkuj textovým chunkerom.</strong> Hranice padnú doprostred záznamov a embeddingy stratia zmysel. Najprv rozdeľ na hraniciach záznamov, alebo použi tool-špecifický RAG prístup.</li>
+  <li><strong>Kód nechunkuj prózovým chunkerom.</strong> Pre retrieval kódu sú dôležité hranice funkcií, nie počty znakov. Existujú chunkery založené na tree-sitter.</li>
+  <li><strong>Whitespace a BOM.</strong> Vložený text môže niesť skryté whitespace, ktoré skresľuje odhad tokenov. Trimni a normalizuj pred vložením, ak na tom záleží.</li>
+  <li><strong>Súkromie.</strong> Všetko beží v prehliadači. Dokumenty vložené sem nikdy neopustia stránku; môžeš to používať na dôverný alebo PII obsahujúci materiál tak isto, ako by si použil lokálny skript.</li>
+</ul>
+<div class="related"><span class="meta">Súvisiace nástroje:</span> <a href="/sk/token-counter/">Počítadlo tokenov</a> <a href="/sk/chat-thread-viewer/">Prehliadač chat threadov</a> <a href="/sk/system-prompt-linter/">Linter systémového promptu</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/sk/privacy/">Súkromie</a> · <a href="/sk/how-we-handle-your-data/">Spracovanie údajov</a> · <a href="/sk/affiliate-disclosure/">Affiliate zverejnenie</a> · <a href="/sk/companion-tools/">Doplnkové nástroje</a> · <a href="/sk/about/">O nás</a> · <a href="/sk/contact/">Kontakt</a> · <a href="/sk/for-schools/">Pre školy</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.rtc-controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.9rem;align-items:end}
+.rtc-ctrl{display:flex;flex-direction:column;gap:0.25rem}
+.rtc-ctrl input[type=range]{width:100%}
+.rtc-ctrl select{padding:0.4rem 0.6rem}
+.rtc-chunks{display:flex;flex-direction:column;gap:0.55rem;max-height:560px;overflow-y:auto}
+.rtc-chunk{border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.7rem;background:var(--bg-elev)}
+.rtc-chunk-head{display:flex;justify-content:space-between;align-items:baseline;font-size:0.78rem;color:var(--text-muted);margin-bottom:0.3rem}
+.rtc-chunk-head strong{color:var(--accent);font-family:ui-monospace,monospace}
+.rtc-chunk-body{white-space:pre-wrap;font-size:0.86rem;line-height:1.5;word-break:break-word}
+.rtc-chunk-overlap{color:var(--text-muted);font-style:italic}
+.rtc-stat{display:inline-block;margin-right:1rem}
+.rtc-stat strong{color:var(--text)}
+@media (max-width:780px){
+  .rtc-controls{grid-template-columns:1fr}
+}
+</style>
+<script>
+let rtcChunks = [];
+const RTC_CJK_RE = /[぀-ヿ㐀-䶿一-鿿가-힯]/g;
+function rtcEsc(s){ return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function rtcEstTokens(s){
+  if (!s) return 0;
+  const cjk = (s.match(RTC_CJK_RE) || []).length;
+  const len = s.length;
+  return Math.max(1, Math.ceil((len - cjk) / 3.8 + cjk));
+}
+function rtcCharsForTokens(n, sample){
+  // Approximate inverse: how many chars correspond to n tokens?
+  // Calibrate per-text using actual ratio when sample provided.
+  if (sample && sample.length > 0){
+    const t = rtcEstTokens(sample);
+    if (t > 0) return Math.max(1, Math.round(n * sample.length / t));
+  }
+  return Math.max(1, Math.round(n * 3.8));
+}
+function rtcSplitRecursive(text, maxToks){
+  // Try paragraphs, then lines, then ". ", then " ", recursively packing pieces.
+  const SEPS = ['\n\n', '\n', '. ', ' '];
+  function splitOne(s, depth){
+    if (rtcEstTokens(s) <= maxToks) return [s];
+    if (depth >= SEPS.length){
+      // Hard split by characters
+      const charsPer = rtcCharsForTokens(maxToks, s);
+      const out = [];
+      for (let i = 0; i < s.length; i += charsPer){
+        out.push(s.slice(i, i + charsPer));
+      }
+      return out;
+    }
+    const sep = SEPS[depth];
+    const parts = s.split(sep);
+    if (parts.length === 1) return splitOne(s, depth + 1);
+    // Pack greedily
+    const packed = [];
+    let buf = '';
+    for (const p of parts){
+      const cand = buf ? buf + sep + p : p;
+      if (rtcEstTokens(cand) <= maxToks){
+        buf = cand;
+      } else {
+        if (buf) packed.push(buf);
+        if (rtcEstTokens(p) > maxToks){
+          // Recurse with the next separator
+          const sub = splitOne(p, depth + 1);
+          packed.push(...sub);
+          buf = '';
+        } else {
+          buf = p;
+        }
+      }
+    }
+    if (buf) packed.push(buf);
+    return packed;
+  }
+  return splitOne(text, 0);
+}
+function rtcSplitSentence(text, maxToks){
+  // Split on sentence boundaries, then pack.
+  const sentences = text.match(/[^.!?]+[.!?]+\s*|[^.!?]+$/g) || [text];
+  const out = [];
+  let buf = '';
+  for (const s of sentences){
+    const trim = s;
+    if (rtcEstTokens(trim) > maxToks){
+      if (buf){ out.push(buf); buf = ''; }
+      // Sub-split the long sentence with recursive
+      const sub = rtcSplitRecursive(trim, maxToks);
+      out.push(...sub);
+      continue;
+    }
+    const cand = buf ? buf + trim : trim;
+    if (rtcEstTokens(cand) <= maxToks){
+      buf = cand;
+    } else {
+      if (buf) out.push(buf);
+      buf = trim;
+    }
+  }
+  if (buf) out.push(buf);
+  return out;
+}
+function rtcSplitParagraph(text, maxToks){
+  const paras = text.split(/\n{2,}/);
+  const out = [];
+  let buf = '';
+  for (const p of paras){
+    if (rtcEstTokens(p) > maxToks){
+      if (buf){ out.push(buf); buf = ''; }
+      // sub-split
+      const sub = rtcSplitRecursive(p, maxToks);
+      out.push(...sub);
+      continue;
+    }
+    const cand = buf ? buf + '\n\n' + p : p;
+    if (rtcEstTokens(cand) <= maxToks){
+      buf = cand;
+    } else {
+      if (buf) out.push(buf);
+      buf = p;
+    }
+  }
+  if (buf) out.push(buf);
+  return out;
+}
+function rtcSplitSemantic(text, maxToks){
+  // Break on \n\n AND on heading-like lines: lines starting with #, ##, ###, or ALL-CAPS short lines
+  const lines = text.split('\n');
+  const blocks = [];
+  let buf = [];
+  function isHeading(line){
+    const t = line.trim();
+    if (!t) return false;
+    if (/^#{1,6}\s/.test(t)) return true;
+    if (t.length <= 80 && /^[A-Z0-9 .,'\-:&]+$/.test(t) && /[A-Z]/.test(t) && t.split(/\s+/).length >= 1) return true;
+    return false;
+  }
+  for (let i = 0; i < lines.length; i++){
+    const line = lines[i];
+    if (line.trim() === ''){
+      if (buf.length){ blocks.push(buf.join('\n')); buf = []; }
+      continue;
+    }
+    if (isHeading(line) && buf.length){
+      blocks.push(buf.join('\n'));
+      buf = [line];
+      continue;
+    }
+    buf.push(line);
+  }
+  if (buf.length) blocks.push(buf.join('\n'));
+  // Pack semantic blocks like paragraphs
+  const out = [];
+  let cur = '';
+  for (const b of blocks){
+    if (rtcEstTokens(b) > maxToks){
+      if (cur){ out.push(cur); cur = ''; }
+      out.push(...rtcSplitRecursive(b, maxToks));
+      continue;
+    }
+    const cand = cur ? cur + '\n\n' + b : b;
+    if (rtcEstTokens(cand) <= maxToks){
+      cur = cand;
+    } else {
+      if (cur) out.push(cur);
+      cur = b;
+    }
+  }
+  if (cur) out.push(cur);
+  return out;
+}
+function rtcApplyOverlap(chunks, overlapToks){
+  if (overlapToks <= 0 || chunks.length <= 1) return chunks.map(c => ({ body: c, overlap: '' }));
+  const out = [{ body: chunks[0], overlap: '' }];
+  for (let i = 1; i < chunks.length; i++){
+    const prev = chunks[i - 1];
+    const overlapChars = rtcCharsForTokens(overlapToks, prev);
+    const tail = prev.length > overlapChars ? prev.slice(prev.length - overlapChars) : prev;
+    out.push({ body: chunks[i], overlap: tail });
+  }
+  return out;
+}
+function rtcRun(){
+  const text = document.getElementById('rtc-input').value;
+  const size = parseInt(document.getElementById('rtc-size').value, 10);
+  const ovr = parseInt(document.getElementById('rtc-ovr').value, 10);
+  const strat = document.getElementById('rtc-strat').value;
+  document.getElementById('rtc-size-val').textContent = size;
+  document.getElementById('rtc-ovr-val').textContent = ovr;
+  if (!text.trim()){
+    rtcChunks = [];
+    document.getElementById('rtc-stats').innerHTML = '';
+    document.getElementById('rtc-chunks').innerHTML = '<div style="color:var(--text-muted);padding:0.5rem">Paste text above to chunk it.</div>';
+    return;
+  }
+  let raw;
+  if (strat === 'sentence') raw = rtcSplitSentence(text, size);
+  else if (strat === 'paragraph') raw = rtcSplitParagraph(text, size);
+  else if (strat === 'semantic') raw = rtcSplitSemantic(text, size);
+  else raw = rtcSplitRecursive(text, size);
+  raw = raw.filter(c => c && c.trim().length > 0);
+  rtcChunks = rtcApplyOverlap(raw, ovr);
+  // Stats
+  const total = rtcChunks.length;
+  const totalToks = rtcChunks.reduce((s, c) => s + rtcEstTokens(c.body), 0);
+  const avg = total ? Math.round(totalToks / total) : 0;
+  const stats = document.getElementById('rtc-stats');
+  stats.innerHTML =
+    '<span class="rtc-stat"><strong>' + total + '</strong> chunks</span>' +
+    '<span class="rtc-stat">avg <strong>' + avg + '</strong> tokens/chunk</span>' +
+    '<span class="rtc-stat">total ~<strong>' + totalToks.toLocaleString() + '</strong> tokens</span>' +
+    '<span class="rtc-stat"><strong>' + strat + '</strong></span>';
+  // Render
+  const container = document.getElementById('rtc-chunks');
+  container.innerHTML = rtcChunks.map((c, i) => {
+    const toks = rtcEstTokens(c.body);
+    const chars = c.body.length;
+    const overlapBlock = c.overlap ? '<div class="rtc-chunk-overlap">↺ overlap: ' + rtcEsc(c.overlap) + '</div>' : '';
+    return '<div class="rtc-chunk">' +
+      '<div class="rtc-chunk-head"><strong>chunk #' + i + '</strong><span>~' + toks + ' tokens · ' + chars + ' chars</span></div>' +
+      overlapBlock +
+      '<div class="rtc-chunk-body">' + rtcEsc(c.body) + '</div>' +
+    '</div>';
+  }).join('');
+}
+function rtcCopyJson(btn){
+  if (!rtcChunks.length) return;
+  const arr = rtcChunks.map((c, i) => ({
+    index: i,
+    tokens: rtcEstTokens(c.body),
+    chars: c.body.length,
+    overlap: c.overlap || '',
+    text: c.body
+  }));
+  const json = JSON.stringify(arr, null, 2);
+  navigator.clipboard.writeText(json).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied';
+    setTimeout(() => btn.textContent = orig, 1400);
+  });
+}
+function rtcExportJsonl(btn){
+  if (!rtcChunks.length) return;
+  const lines = rtcChunks.map((c, i) => JSON.stringify({
+    index: i,
+    tokens: rtcEstTokens(c.body),
+    chars: c.body.length,
+    overlap: c.overlap || '',
+    text: c.body
+  }));
+  const blob = new Blob([lines.join('\n')], {type:'application/x-ndjson'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'rag-chunks.jsonl';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const orig = btn.textContent;
+  btn.textContent = '✓ Downloaded';
+  setTimeout(() => btn.textContent = orig, 1400);
+}
+document.addEventListener('DOMContentLoaded', rtcRun);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>

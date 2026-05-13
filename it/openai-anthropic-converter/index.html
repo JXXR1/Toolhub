@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertitore OpenAI ⇄ Anthropic — Toolhub</title>
+  <meta name="description" content="Convertitore gratuito nel browser tra OpenAI Chat Completions e Anthropic Messages API. Copre le principali differenze di formato: posizione del system message (campo top-level su Anthropic, role:'system' su OpenAI), formato dei tool-call (tool_calls/tool_call_id vs tool_use/tool_result), blocchi di contenuto immagine, struttura multi-turno. Utile quando si migrano prompt tra provider. JS puro.">
+  <meta property="og:title" content="Convertitore OpenAI ⇄ Anthropic — Toolhub">
+  <meta property="og:description" content="Convertitore gratuito nel browser tra OpenAI Chat Completions e Anthropic Messages API. Copre le principali differenze di formato: posizione del system message (campo top-level su Anthropic, role:'system' su OpenAI), formato dei tool-call (tool_calls/tool_call_id vs tool_use/tool_result), blocchi di contenuto immagine, struttura multi-turno. Utile quando si migrano prompt tra provider. JS puro.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/it/openai-anthropic-converter/">
+  <meta property="og:image" content="https://toolhub.software/og-images/openai-anthropic-converter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/openai-anthropic-converter.png">
+  <link rel="canonical" href="https://toolhub.software/it/openai-anthropic-converter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/openai-anthropic-converter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/openai-anthropic-converter/">
+  <meta property="og:locale" content="it_IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/it/openai-anthropic-converter/#tool",
+        "name": "Convertitore OpenAI ⇄ Anthropic",
+        "description": "Convertitore gratuito nel browser tra OpenAI Chat Completions e Anthropic Messages API. Copre le principali differenze di formato: posizione del system message (campo top-level su Anthropic, role:'system' su OpenAI), formato dei tool-call (tool_calls/tool_call_id vs tool_use/tool_result), blocchi di contenuto immagine, struttura multi-turno. Utile quando si migrano prompt tra provider. JS puro.",
+        "url": "https://toolhub.software/it/openai-anthropic-converter/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Ai",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "it",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["openai", "anthropic", "claude", "converter", "messages", "api", "format", "tool-calling"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tutti gli strumenti", "item": "https://toolhub.software/it/"},
+          {"@type": "ListItem", "position": 2, "name": "Convertitore OpenAI ⇄ Anthropic", "item": "https://toolhub.software/it/openai-anthropic-converter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A cosa serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'API Chat Completions di OpenAI e la Messages API di Anthropic permettono entrambe conversazioni multi-turno, ma strutturano il JSON in modo abbastanza diverso da impedire ai prompt e alle trace di tool-call di transitare puliti quando cambi provider. Le differenze sono piccole (posizione del system message, tool-call vs tool-use, forma dei blocchi immagine, role: 'tool' vs tool_result nel content) ma ognuna è una tana di coniglio da 10 minuti quando sei sotto deadline. Questo convertitore fa la traduzione: incolli una conversazione OpenAI e ottieni la versione Anthropic (o viceversa)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa viene tradotto",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "System messages. OpenAI: messaggio normale con role: \"system\" . Anthropic: campo system top-level sul request. Spostiamo e concateniamo se ne hai più di uno. Tool-call (lato assistant). OpenAI: tool_calls: [{id, type:'function', function:{name, arguments:'JSON-string'}}] . Anthropic: blocco tool_use dentro content con {id, name, input} (oggetto parsato, non stringa). Parsiamo gli arguments escapati di OpenAI in input strutturato; il senso opposto ri-serializza. Tool result. OpenAI: messaggio separato con role: \"tool\" , tool_call_id , content . Anthropic: blocco tool_result nel content del prossimo messaggio user con tool_use_id . Messaggi tool consecutivi di OpenAI vengono coalesced in un singolo user Anthropic con più tool_result . Immagini. OpenAI: {type:'image_url', image_url:{url}} . Anthropic: {type:'image', source:{type:'base64',media_type,data}} o URL-source. Rileviamo URL data: e convertiamo; URL semplici passano come URL-source. Testo semplice. OpenAI usa stringa; Anthropic accetta stringa o array [{type:'text', text}] a un elemento. Usiamo ciò che è più semplice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa non viene tradotto",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eventi di streaming. Gestiamo JSON di request/response, non gli stream SSE. Se hai un dump di stream, ricostruisci prima il messaggio finale. Campi provider-specifici. logprobs di OpenAI, stop_sequences di Anthropic, parametri di sampling — stanno al top-level del request, non dentro i messaggi. Hint cache-control. Il cache_control: {type:'ephemeral'} di Anthropic non ha equivalente OpenAI. Sopravvive a OpenAI → Anthropic (nessuna sorgente), ma viene scartato in Anthropic → OpenAI. Definizioni di tool. Lo schema dei tuoi tool (campo tools del request) sta fuori dall'array messages. Formato diverso tra provider — converti separatamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trappole comuni",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escaping arguments OpenAI. arguments di OpenAI è una stringa JSON-encoded, non oggetto parsato. Se è malformato (raro, capita con modelli piccoli), lo mettiamo in _raw dentro input Anthropic invece di lanciare. System top-level Anthropic. In OpenAI → Anthropic il risultato è {system, messages} . Se vuoi solo l'array, usa .messages — ma ricordati di attaccare system al request separatamente. Alternanza stretta. Anthropic esige user/assistant in alternanza stretta (dopo il system opzionale). Il convertitore preserva in generale; se la sorgente OpenAI ha due user consecutivi, anche l'output Anthropic — e l'API rifiuterà. Mergeli prima. Multi-modal in OpenAI. Un messaggio user OpenAI con immagini usa un content array invece di stringa. Lo gestiamo; assicurati solo che il tuo input parsi come JSON. Privacy. Niente lascia la pagina. Conversione in JS puro; nessuna API key, nessuna chiamata di rete."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Convertitore OpenAI ⇄ Anthropic",
+  "description": "Converti array di messages tra OpenAI Chat Completions e Anthropic Messages API. Gestisce system message, tool call, blocchi immagine, multi-turno. Nel browser, senza API key.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Incolla il messages",
+      "text": "Metti il messages nel campo Input."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Clicca Converti",
+      "text": "Premi il pulsante Converti per eseguire lo strumento."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copia il risultato",
+      "text": "Premi Copia per copiare l'Output."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/it/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Lingua</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/openai-anthropic-converter/'; else location.href='/openai-anthropic-converter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" selected="selected">🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Installa Toolhub come app sul tuo dispositivo — funziona offline, senza app store" aria-label="Installa Toolhub come app sul tuo dispositivo — funziona offline, senza app store">Installa app</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambia tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/it/">Tutti gli strumenti</a> / Convertitore OpenAI ⇄ Anthropic</div>
+    <h1>Convertitore OpenAI ⇄ Anthropic</h1>
+    <p class="tagline">Converti array di messages tra OpenAI Chat Completions e Anthropic Messages API. Gestisce system message, tool call, blocchi immagine, multi-turno. Nel browser, senza API key.</p>
+    
+<div class="tool-card">
+  <div class="oac-dir">
+    <label style="display:inline-flex;align-items:center;gap:0.4rem;cursor:pointer">
+      <input type="radio" name="oac-dir" value="o2a" checked onchange="oacConvert()"> OpenAI → Anthropic
+    </label>
+    <label style="display:inline-flex;align-items:center;gap:0.4rem;cursor:pointer">
+      <input type="radio" name="oac-dir" value="a2o" onchange="oacConvert()"> Anthropic → OpenAI
+    </label>
+    <button class="secondary" onclick="oacSwap()">⇅ Swap direction</button>
+  </div>
+</div>
+<div class="tool-card oac-pair">
+  <div class="oac-col">
+    <label for="oac-input" id="oac-input-label">Source (OpenAI Chat Completions)</label>
+    <textarea id="oac-input" oninput="oacConvert()" spellcheck="false" placeholder='[{"role":"system","content":"You are helpful."},{"role":"user","content":"Hi"}]'>[
+  {"role": "system", "content": "You are a helpful weather assistant."},
+  {"role": "user", "content": "What is the weather in Paris?"},
+  {"role": "assistant", "content": null, "tool_calls": [
+    {"id": "call_1", "type": "function", "function": {"name": "get_weather", "arguments": "{\"city\": \"Paris\"}"}}
+  ]},
+  {"role": "tool", "tool_call_id": "call_1", "content": "{\"temp_c\": 14, \"condition\": \"cloudy\"}"},
+  {"role": "assistant", "content": "It's currently 14°C and cloudy in Paris."}
+]</textarea>
+  </div>
+  <div class="oac-col">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <label id="oac-output-label">Target (Anthropic Messages API)</label>
+      <button class="secondary" id="oac-copy" onclick="oacCopy(this)">Copia</button>
+    </div>
+    <textarea id="oac-output" readonly spellcheck="false"></textarea>
+  </div>
+</div>
+<div class="meta" id="oac-stats" style="margin-top:0.5rem"></div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>A cosa serve?</h2>
+<p>L'API Chat Completions di OpenAI e la Messages API di Anthropic permettono entrambe conversazioni multi-turno, ma strutturano il JSON in modo abbastanza diverso da impedire ai prompt e alle trace di tool-call di transitare puliti quando cambi provider. Le differenze sono piccole (posizione del system message, tool-call vs tool-use, forma dei blocchi immagine, role: 'tool' vs <code>tool_result</code> nel content) ma ognuna è una tana di coniglio da 10 minuti quando sei sotto deadline. Questo convertitore fa la traduzione: incolli una conversazione OpenAI e ottieni la versione Anthropic (o viceversa).</p>
+
+<h3>Cosa viene tradotto</h3>
+<ul>
+  <li><strong>System messages.</strong> OpenAI: messaggio normale con <code>role: "system"</code>. Anthropic: campo <code>system</code> top-level sul request. Spostiamo e concateniamo se ne hai più di uno.</li>
+  <li><strong>Tool-call (lato assistant).</strong> OpenAI: <code>tool_calls: [{id, type:'function', function:{name, arguments:'JSON-string'}}]</code>. Anthropic: blocco <code>tool_use</code> dentro <code>content</code> con <code>{id, name, input}</code> (oggetto parsato, non stringa). Parsiamo gli arguments escapati di OpenAI in <code>input</code> strutturato; il senso opposto ri-serializza.</li>
+  <li><strong>Tool result.</strong> OpenAI: messaggio separato con <code>role: "tool"</code>, <code>tool_call_id</code>, <code>content</code>. Anthropic: blocco <code>tool_result</code> nel content del prossimo messaggio <em>user</em> con <code>tool_use_id</code>. Messaggi <code>tool</code> consecutivi di OpenAI vengono coalesced in un singolo user Anthropic con più <code>tool_result</code>.</li>
+  <li><strong>Immagini.</strong> OpenAI: <code>{type:'image_url', image_url:{url}}</code>. Anthropic: <code>{type:'image', source:{type:'base64',media_type,data}}</code> o URL-source. Rileviamo URL <code>data:</code> e convertiamo; URL semplici passano come URL-source.</li>
+  <li><strong>Testo semplice.</strong> OpenAI usa stringa; Anthropic accetta stringa <em>o</em> array <code>[{type:'text', text}]</code> a un elemento. Usiamo ciò che è più semplice.</li>
+</ul>
+
+<h3>Cosa non viene tradotto</h3>
+<ul>
+  <li><strong>Eventi di streaming.</strong> Gestiamo JSON di request/response, non gli stream SSE. Se hai un dump di stream, ricostruisci prima il messaggio finale.</li>
+  <li><strong>Campi provider-specifici.</strong> <code>logprobs</code> di OpenAI, <code>stop_sequences</code> di Anthropic, parametri di sampling — stanno al top-level del request, non dentro i messaggi.</li>
+  <li><strong>Hint cache-control.</strong> Il <code>cache_control: {type:'ephemeral'}</code> di Anthropic non ha equivalente OpenAI. Sopravvive a OpenAI → Anthropic (nessuna sorgente), ma viene scartato in Anthropic → OpenAI.</li>
+  <li><strong>Definizioni di tool.</strong> Lo <em>schema</em> dei tuoi tool (campo <code>tools</code> del request) sta fuori dall'array messages. Formato diverso tra provider — converti separatamente.</li>
+</ul>
+
+<h3>Trappole comuni</h3>
+<ul>
+  <li><strong>Escaping arguments OpenAI.</strong> <code>arguments</code> di OpenAI è una stringa JSON-encoded, non oggetto parsato. Se è malformato (raro, capita con modelli piccoli), lo mettiamo in <code>_raw</code> dentro <code>input</code> Anthropic invece di lanciare.</li>
+  <li><strong>System top-level Anthropic.</strong> In OpenAI → Anthropic il risultato è <code>{system, messages}</code>. Se vuoi solo l'array, usa <code>.messages</code> — ma ricordati di attaccare <code>system</code> al request separatamente.</li>
+  <li><strong>Alternanza stretta.</strong> Anthropic esige user/assistant in alternanza stretta (dopo il system opzionale). Il convertitore preserva in generale; se la sorgente OpenAI ha due user consecutivi, anche l'output Anthropic — e l'API rifiuterà. Mergeli prima.</li>
+  <li><strong>Multi-modal in OpenAI.</strong> Un messaggio user OpenAI con immagini usa un <em>content array</em> invece di stringa. Lo gestiamo; assicurati solo che il tuo input parsi come JSON.</li>
+  <li><strong>Privacy.</strong> Niente lascia la pagina. Conversione in JS puro; nessuna API key, nessuna chiamata di rete.</li>
+</ul>
+<div class="related"><span class="meta">Strumenti correlati:</span> <a href="/it/chat-thread-viewer/">Visualizzatore Thread di Chat</a> <a href="/it/jsonl-viewer/">Visualizzatore JSONL</a> <a href="/it/system-prompt-linter/">Linter System Prompt</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/it/privacy/">Privacy</a> · <a href="/it/how-we-handle-your-data/">Trattamento dei dati</a> · <a href="/it/affiliate-disclosure/">Divulgazione affiliati</a> · <a href="/it/companion-tools/">Strumenti complementari</a> · <a href="/it/about/">Chi siamo</a> · <a href="/it/contact/">Contatti</a> · <a href="/it/for-schools/">Per le scuole</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.oac-dir{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.oac-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.oac-col{display:flex;flex-direction:column;gap:0.35rem}
+.oac-col textarea{min-height:340px;font-family:ui-monospace,monospace;font-size:0.85rem}
+.oac-err{color:#ef4444;font-weight:600}
+.oac-warn{color:#f59e0b}
+.oac-ok{color:#22c55e}
+@media (max-width:780px){
+  .oac-pair{grid-template-columns:1fr}
+}
+</style>
+<script>
+function oacDir(){
+  const r = document.querySelector('input[name="oac-dir"]:checked');
+  return r ? r.value : 'o2a';
+}
+function oacOpenaiToAnthropic(msgs){
+  // Extract system into top-level, transform the rest.
+  let systemText = '';
+  const out = [];
+  // First pass: merge stray adjacent "tool" messages into a single user tool_result content array
+  for (let i = 0; i < msgs.length; i++){
+    const m = msgs[i];
+    if (!m || typeof m !== 'object') continue;
+    if (m.role === 'system'){
+      // Concatenate; Anthropic allows a single system string
+      const t = typeof m.content === 'string' ? m.content : (Array.isArray(m.content) ? m.content.map(c => c && c.text ? c.text : '').join('\n') : String(m.content ?? ''));
+      systemText = systemText ? systemText + '\n\n' + t : t;
+      continue;
+    }
+    if (m.role === 'tool'){
+      // Becomes user.content[].tool_result. Coalesce consecutive tool messages.
+      const block = { type: 'tool_result', tool_use_id: m.tool_call_id || '', content: m.content == null ? '' : m.content };
+      const prev = out[out.length - 1];
+      if (prev && prev.role === 'user' && Array.isArray(prev.content) && prev._fromTool){
+        prev.content.push(block);
+      } else {
+        out.push({ role: 'user', content: [block], _fromTool: true });
+      }
+      continue;
+    }
+    if (m.role === 'assistant'){
+      const blocks = [];
+      // text content (may be null when only tool_calls are present)
+      if (typeof m.content === 'string' && m.content){
+        blocks.push({ type: 'text', text: m.content });
+      } else if (Array.isArray(m.content)){
+        for (const c of m.content){
+          if (typeof c === 'string') blocks.push({ type: 'text', text: c });
+          else if (c && c.type === 'text') blocks.push({ type: 'text', text: c.text || '' });
+          else if (c) blocks.push(c);
+        }
+      }
+      if (Array.isArray(m.tool_calls)){
+        for (const tc of m.tool_calls){
+          let input = {};
+          const args = tc.function && tc.function.arguments;
+          if (typeof args === 'string'){
+            try { input = JSON.parse(args); } catch(_) { input = { _raw: args }; }
+          } else if (args && typeof args === 'object'){
+            input = args;
+          }
+          blocks.push({ type: 'tool_use', id: tc.id || '', name: (tc.function && tc.function.name) || tc.name || '', input });
+        }
+      }
+      out.push({ role: 'assistant', content: blocks.length ? blocks : '' });
+      continue;
+    }
+    if (m.role === 'user'){
+      if (typeof m.content === 'string'){
+        out.push({ role: 'user', content: m.content });
+      } else if (Array.isArray(m.content)){
+        const blocks = [];
+        for (const c of m.content){
+          if (typeof c === 'string'){ blocks.push({ type: 'text', text: c }); continue; }
+          if (!c || typeof c !== 'object'){ continue; }
+          if (c.type === 'text'){ blocks.push({ type: 'text', text: c.text || '' }); continue; }
+          if (c.type === 'image_url'){
+            const url = c.image_url && c.image_url.url || '';
+            if (url.startsWith('data:')){
+              const mm = url.match(/^data:([^;]+);base64,(.*)$/);
+              if (mm){
+                blocks.push({ type: 'image', source: { type: 'base64', media_type: mm[1], data: mm[2] } });
+              } else {
+                blocks.push({ type: 'image', source: { type: 'url', url } });
+              }
+            } else if (url){
+              blocks.push({ type: 'image', source: { type: 'url', url } });
+            }
+            continue;
+          }
+          blocks.push(c);
+        }
+        out.push({ role: 'user', content: blocks });
+      } else {
+        out.push({ role: 'user', content: m.content == null ? '' : String(m.content) });
+      }
+      continue;
+    }
+    // Unknown role — pass through
+    out.push(m);
+  }
+  // Strip our internal marker
+  out.forEach(m => { if (m._fromTool) delete m._fromTool; });
+  return { system: systemText, messages: out };
+}
+function oacAnthropicToOpenai(payload){
+  // payload is either {system, messages} or [messages…]
+  let system = '';
+  let msgs;
+  if (Array.isArray(payload)){
+    msgs = payload;
+  } else if (payload && Array.isArray(payload.messages)){
+    msgs = payload.messages;
+    if (typeof payload.system === 'string') system = payload.system;
+    else if (Array.isArray(payload.system)) system = payload.system.map(b => b && b.text ? b.text : '').join('\n');
+  } else {
+    throw new Error('Expected an array of messages or an object {system, messages}.');
+  }
+  const out = [];
+  if (system) out.push({ role: 'system', content: system });
+  for (const m of msgs){
+    if (!m || typeof m !== 'object') continue;
+    if (m.role === 'assistant'){
+      let text = '';
+      const toolCalls = [];
+      if (typeof m.content === 'string'){
+        text = m.content;
+      } else if (Array.isArray(m.content)){
+        for (const block of m.content){
+          if (!block || typeof block !== 'object'){ if (typeof block === 'string') text += block; continue; }
+          if (block.type === 'text') text += (text ? '' : '') + (block.text || '');
+          else if (block.type === 'tool_use'){
+            toolCalls.push({
+              id: block.id || '',
+              type: 'function',
+              function: { name: block.name || '', arguments: JSON.stringify(block.input ?? {}) }
+            });
+          }
+        }
+      }
+      const o = { role: 'assistant', content: text || null };
+      if (toolCalls.length) o.tool_calls = toolCalls;
+      out.push(o);
+      continue;
+    }
+    if (m.role === 'user'){
+      // Could contain tool_result blocks — those become role:'tool' messages in OpenAI
+      if (Array.isArray(m.content)){
+        const textParts = [];
+        const imageParts = [];
+        for (const block of m.content){
+          if (!block || typeof block !== 'object'){ if (typeof block === 'string') textParts.push(block); continue; }
+          if (block.type === 'text') textParts.push(block.text || '');
+          else if (block.type === 'tool_result'){
+            const content = typeof block.content === 'string' ? block.content : JSON.stringify(block.content ?? '');
+            out.push({ role: 'tool', tool_call_id: block.tool_use_id || '', content });
+          } else if (block.type === 'image'){
+            const src = block.source || {};
+            let url = '';
+            if (src.type === 'base64') url = 'data:' + (src.media_type || 'image/png') + ';base64,' + (src.data || '');
+            else if (src.type === 'url') url = src.url || '';
+            else if (src.url) url = src.url;
+            if (url) imageParts.push({ type: 'image_url', image_url: { url } });
+          }
+        }
+        if (textParts.length || imageParts.length){
+          if (imageParts.length){
+            const blocks = [];
+            if (textParts.length) blocks.push({ type: 'text', text: textParts.join('\n') });
+            blocks.push(...imageParts);
+            out.push({ role: 'user', content: blocks });
+          } else {
+            out.push({ role: 'user', content: textParts.join('\n') });
+          }
+        }
+      } else if (typeof m.content === 'string'){
+        out.push({ role: 'user', content: m.content });
+      }
+      continue;
+    }
+    if (m.role === 'system'){
+      // System message inside the array (unusual for Anthropic but harmless)
+      out.push({ role: 'system', content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) });
+      continue;
+    }
+    out.push(m);
+  }
+  return out;
+}
+function oacUpdateLabels(){
+  const dir = oacDir();
+  const inLbl = document.getElementById('oac-input-label');
+  const outLbl = document.getElementById('oac-output-label');
+  if (dir === 'o2a'){
+    inLbl.textContent = 'Source (OpenAI Chat Completions)';
+    outLbl.textContent = 'Target (Anthropic Messages API)';
+  } else {
+    inLbl.textContent = 'Source (Anthropic Messages API)';
+    outLbl.textContent = 'Target (OpenAI Chat Completions)';
+  }
+}
+function oacConvert(){
+  oacUpdateLabels();
+  const raw = document.getElementById('oac-input').value.trim();
+  const outEl = document.getElementById('oac-output');
+  const stats = document.getElementById('oac-stats');
+  if (!raw){ outEl.value = ''; stats.innerHTML = ''; return; }
+  let parsed;
+  try { parsed = JSON.parse(raw); }
+  catch(e){ outEl.value = ''; stats.innerHTML = '<span class="oac-err">Invalid JSON: ' + e.message + '</span>'; return; }
+  try {
+    if (oacDir() === 'o2a'){
+      let arr = parsed;
+      if (!Array.isArray(arr)){
+        if (arr && Array.isArray(arr.messages)) arr = arr.messages;
+        else throw new Error('Expected an array of OpenAI messages, or {messages: [...]}.');
+      }
+      const result = oacOpenaiToAnthropic(arr);
+      outEl.value = JSON.stringify(result, null, 2);
+      stats.innerHTML = '<span class="oac-ok">✓ Converted</span> · ' + result.messages.length + ' messages · system: ' + (result.system ? '"' + result.system.slice(0, 50) + (result.system.length > 50 ? '…' : '') + '"' : '(none)');
+    } else {
+      const result = oacAnthropicToOpenai(parsed);
+      outEl.value = JSON.stringify(result, null, 2);
+      const sysMsgs = result.filter(m => m.role === 'system').length;
+      stats.innerHTML = '<span class="oac-ok">✓ Converted</span> · ' + result.length + ' messages' + (sysMsgs ? ' (incl. ' + sysMsgs + ' system)' : '');
+    }
+  } catch(e){
+    outEl.value = '';
+    stats.innerHTML = '<span class="oac-err">✗ ' + (e.message || String(e)) + '</span>';
+  }
+}
+function oacSwap(){
+  const inEl = document.getElementById('oac-input');
+  const outEl = document.getElementById('oac-output');
+  const radios = document.querySelectorAll('input[name="oac-dir"]');
+  const wasO2A = oacDir() === 'o2a';
+  radios.forEach(r => r.checked = (r.value === (wasO2A ? 'a2o' : 'o2a')));
+  // Move output into input and re-run
+  inEl.value = outEl.value || inEl.value;
+  oacConvert();
+}
+function oacCopy(btn){
+  const v = document.getElementById('oac-output').value;
+  if (!v) return;
+  navigator.clipboard.writeText(v).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓';
+    setTimeout(() => btn.textContent = orig, 1400);
+  });
+}
+document.addEventListener('DOMContentLoaded', oacConvert);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
