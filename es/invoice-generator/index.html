@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Facturas — Toolhub</title>
+  <meta name="description" content="Generador de facturas gratuito en el navegador. Introduce los datos de tu empresa (de), del cliente (para), líneas (descripción / cantidad / precio) — la herramienta calcula subtotales, IVA (elige país + tipo) y total. Salida como markdown o HTML listo para imprimir — guarda como PDF desde el diálogo de impresión del navegador. Sin subida, sin registro, sin terceros. Guarda los datos de tu empresa en el fragmento de URL para no reescribirlos la próxima vez.">
+  <meta property="og:title" content="Generador de Facturas — Toolhub">
+  <meta property="og:description" content="Generador de facturas gratuito en el navegador. Introduce los datos de tu empresa (de), del cliente (para), líneas (descripción / cantidad / precio) — la herramienta calcula subtotales, IVA (elige país + tipo) y total. Salida como markdown o HTML listo para imprimir — guarda como PDF desde el diálogo de impresión del navegador. Sin subida, sin registro, sin terceros. Guarda los datos de tu empresa en el fragmento de URL para no reescribirlos la próxima vez.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/es/invoice-generator/">
+  <meta property="og:image" content="https://toolhub.software/og-images/invoice-generator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/invoice-generator.png">
+  <link rel="canonical" href="https://toolhub.software/es/invoice-generator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/">
+  <meta property="og:locale" content="es_ES">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/es/invoice-generator/#tool",
+        "name": "Generador de Facturas",
+        "description": "Generador de facturas gratuito en el navegador. Introduce los datos de tu empresa (de), del cliente (para), líneas (descripción / cantidad / precio) — la herramienta calcula subtotales, IVA (elige país + tipo) y total. Salida como markdown o HTML listo para imprimir — guarda como PDF desde el diálogo de impresión del navegador. Sin subida, sin registro, sin terceros. Guarda los datos de tu empresa en el fragmento de URL para no reescribirlos la próxima vez.",
+        "url": "https://toolhub.software/es/invoice-generator/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Text Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "es",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["invoice", "billing", "freelance", "small-business", "vat", "pdf"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Todas las herramientas", "item": "https://toolhub.software/es/"},
+          {"@type": "ListItem", "position": 2, "name": "Generador de Facturas", "item": "https://toolhub.software/es/invoice-generator/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Por qué existe",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Como freelance o autónomo, a veces necesitas emitir una factura limpia — sin levantar una suscripción SaaS. Esta herramienta produce una factura con markdown + HTML imprimible, todo en el navegador. Guarda como PDF con el diálogo de impresión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cómo usarla",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rellena De / Para. Número, fechas, divisa. Añade líneas. Elige país para cargar IVA estándar o introduce tipo personalizado. \"Guardar URL\" — tus datos quedan en el fragmento. \"Imprimir / Guardar como PDF\" → en el diálogo elige \"Guardar como PDF\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IVA — léelo primero",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tu país de establecimiento manda. El destino (nacional, UE B2B, UE B2C, no-UE) cambia las reglas. El tipo de servicio cambia el tipo aplicable. Reverse-charge en B2B-UE — factura al 0 % con la mención obligatoria. OSS sobre 10 000 € anuales para B2C-UE."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qué se guarda en la URL",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bloques De/Para, divisa, IVA, notas. Los fragmentos no viajan al servidor, pero quien tenga la URL ve los datos. Marca tú; no compartas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Errores comunes",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Numeración correlativa sin saltos. Guarda PDF y fuente. Si la moneda no es la de cobro, especifícalo. Recargos por mora deben aparecer en la factura. En B2B-UE, ambos NIF-IVA son obligatorios."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Generador de Facturas",
+  "description": "Genera una factura limpia en markdown + HTML listo para imprimir. Rellena el formulario, ve la vista previa, guarda como PDF desde el navegador. Sin subida, sin registro.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Elige las opciones",
+      "text": "Selecciona las opciones de factura que necesitas."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Haz clic en Generar",
+      "text": "Pulsa Generar para producir un nuevo factura."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copia el resultado",
+      "text": "Pulsa Copiar para copiar el factura generado."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/es/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Idioma</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/invoice-generator/'; else location.href='/invoice-generator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" selected="selected">🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Instala Toolhub como app en tu dispositivo — funciona sin conexión, sin tienda de apps" aria-label="Instala Toolhub como app en tu dispositivo — funciona sin conexión, sin tienda de apps">Instalar app</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/es/">Todas las herramientas</a> / Generador de Facturas</div>
+    <h1>Generador de Facturas</h1>
+    <p class="tagline">Genera una factura limpia en markdown + HTML listo para imprimir. Rellena el formulario, ve la vista previa, guarda como PDF desde el navegador. Sin subida, sin registro.</p>
+    
+<div class="inv-grid">
+  <div class="tool-card">
+    <h3 style="margin-top:0">From (your business)</h3>
+    <label>Name / company</label>
+    <input type="text" id="inv-from-name" oninput="invRun()" value="Your Name">
+    <label>Address</label>
+    <textarea id="inv-from-addr" rows="3" oninput="invRun()">123 Example Street
+12345 City
+Country</textarea>
+    <div class="row-2col">
+      <div>
+        <label>VAT/Tax ID</label>
+        <input type="text" id="inv-from-vat" oninput="invRun()" placeholder="optional">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" id="inv-from-email" oninput="invRun()" placeholder="you@example.com">
+      </div>
+    </div>
+  </div>
+  <div class="tool-card">
+    <h3 style="margin-top:0">To (client)</h3>
+    <label>Name / company</label>
+    <input type="text" id="inv-to-name" oninput="invRun()" value="Client Co.">
+    <label>Address</label>
+    <textarea id="inv-to-addr" rows="3" oninput="invRun()">456 Client Avenue
+67890 Their City
+Their Country</textarea>
+    <div class="row-2col">
+      <div>
+        <label>VAT/Tax ID</label>
+        <input type="text" id="inv-to-vat" oninput="invRun()" placeholder="optional">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" id="inv-to-email" oninput="invRun()" placeholder="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="inv-meta-grid">
+    <div>
+      <label>Invoice number</label>
+      <input type="text" id="inv-number" oninput="invRun()" value="2025-001">
+    </div>
+    <div>
+      <label>Issue date</label>
+      <input type="date" id="inv-issue" oninput="invRun()">
+    </div>
+    <div>
+      <label>Due date</label>
+      <input type="date" id="inv-due" oninput="invRun()">
+    </div>
+    <div>
+      <label>Currency</label>
+      <select id="inv-currency" onchange="invRun()">
+        <option value="EUR">EUR (€)</option>
+        <option value="USD">USD ($)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="JPY">JPY (¥)</option>
+        <option value="CHF">CHF</option>
+        <option value="CAD">CAD ($)</option>
+        <option value="AUD">AUD ($)</option>
+        <option value="SEK">SEK (kr)</option>
+        <option value="PLN">PLN (zł)</option>
+        <option value="CZK">CZK (Kč)</option>
+        <option value="HUF">HUF (Ft)</option>
+        <option value="INR">INR (₹)</option>
+        <option value="BRL">BRL (R$)</option>
+        <option value="MXN">MXN ($)</option>
+        <option value="SGD">SGD ($)</option>
+        <option value="HKD">HKD ($)</option>
+        <option value="ZAR">ZAR (R)</option>
+        <option value="TRY">TRY (₺)</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="tool-card">
+  <label>Line items</label>
+  <table class="inv-items" id="inv-items">
+    <thead>
+      <tr>
+        <th style="width:55%">Description</th>
+        <th>Qty</th>
+        <th>Unit price</th>
+        <th>Line total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div class="button-row" style="margin-top:0.5rem">
+    <button type="button" class="secondary" onclick="invAddRow()">+ Add line item</button>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>VAT country</label>
+      <select id="inv-vat-country" onchange="invVatCountry()">
+        <option value="">— none / not applicable —</option>
+        <option value="AT">Austria (AT)</option>
+        <option value="BE">Belgium (BE)</option>
+        <option value="BG">Bulgaria (BG)</option>
+        <option value="HR">Croatia (HR)</option>
+        <option value="CY">Cyprus (CY)</option>
+        <option value="CZ">Czech Republic (CZ)</option>
+        <option value="DK">Denmark (DK)</option>
+        <option value="EE">Estonia (EE)</option>
+        <option value="FI">Finland (FI)</option>
+        <option value="FR">France (FR)</option>
+        <option value="DE">Germany (DE)</option>
+        <option value="GR">Greece (GR)</option>
+        <option value="HU">Hungary (HU)</option>
+        <option value="IE">Ireland (IE)</option>
+        <option value="IT">Italy (IT)</option>
+        <option value="LV">Latvia (LV)</option>
+        <option value="LT">Lithuania (LT)</option>
+        <option value="LU">Luxembourg (LU)</option>
+        <option value="MT">Malta (MT)</option>
+        <option value="NL">Netherlands (NL)</option>
+        <option value="PL">Poland (PL)</option>
+        <option value="PT">Portugal (PT)</option>
+        <option value="RO">Romania (RO)</option>
+        <option value="SK">Slovakia (SK)</option>
+        <option value="SI">Slovenia (SI)</option>
+        <option value="ES">Spain (ES)</option>
+        <option value="SE">Sweden (SE)</option>
+        <option value="GB">United Kingdom (GB)</option>
+        <option value="CH">Switzerland (CH)</option>
+        <option value="NO">Norway (NO)</option>
+        <option value="CUSTOM">Custom rate…</option>
+      </select>
+    </div>
+    <div>
+      <label>VAT rate (%)</label>
+      <input type="number" id="inv-vat-rate" step="0.1" min="0" max="100" value="0" oninput="invRun()">
+    </div>
+  </div>
+  <label style="margin-top:0.7rem">Notes / payment terms</label>
+  <textarea id="inv-notes" rows="3" oninput="invRun()">Payment due within 30 days. Bank transfer preferred.</textarea>
+</div>
+
+<div class="tool-card">
+  <div class="button-row">
+    <button type="button" onclick="invPrint()">🖨️ Print / Save as PDF</button>
+    <button type="button" class="secondary" onclick="invSaveState()">🔗 Save state in URL</button>
+    <button type="button" class="secondary" onclick="copyOutput('inv-md', this)">Copy markdown</button>
+  </div>
+</div>
+
+<div class="inv-grid">
+  <div class="tool-card">
+    <label>Markdown</label>
+    <pre class="output" id="inv-md" style="white-space:pre-wrap;font-size:0.82rem;max-height:520px;overflow:auto"></pre>
+  </div>
+  <div class="tool-card">
+    <label>Print preview</label>
+    <div id="inv-html" class="inv-preview"></div>
+  </div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Por qué existe</h2>
+<p>Como freelance o autónomo, a veces necesitas emitir una factura limpia — sin levantar una suscripción SaaS. Esta herramienta produce una factura con markdown + HTML imprimible, todo en el navegador. Guarda como PDF con el diálogo de impresión.</p>
+<h2>Cómo usarla</h2>
+<ol>
+<li>Rellena De / Para.</li>
+<li>Número, fechas, divisa.</li>
+<li>Añade líneas.</li>
+<li>Elige país para cargar IVA estándar o introduce tipo personalizado.</li>
+<li>"Guardar URL" — tus datos quedan en el fragmento.</li>
+<li>"Imprimir / Guardar como PDF" → en el diálogo elige "Guardar como PDF".</li>
+</ol>
+<h2>IVA — léelo primero</h2>
+<ul>
+<li>Tu país de establecimiento manda.</li>
+<li>El destino (nacional, UE B2B, UE B2C, no-UE) cambia las reglas.</li>
+<li>El tipo de servicio cambia el tipo aplicable.</li>
+<li>Reverse-charge en B2B-UE — factura al 0 % con la mención obligatoria.</li>
+<li>OSS sobre 10 000 € anuales para B2C-UE.</li>
+</ul>
+<h2>Qué se guarda en la URL</h2>
+<p>Bloques De/Para, divisa, IVA, notas. Los fragmentos no viajan al servidor, pero quien tenga la URL ve los datos. Marca tú; no compartas.</p>
+<h2>Errores comunes</h2>
+<ul>
+<li>Numeración correlativa sin saltos.</li>
+<li>Guarda PDF y fuente.</li>
+<li>Si la moneda no es la de cobro, especifícalo.</li>
+<li>Recargos por mora deben aparecer en la factura.</li>
+<li>En B2B-UE, ambos NIF-IVA son obligatorios.</li>
+</ul>
+<div class="related"><span class="meta">Herramientas relacionadas:</span> <a href="/es/vat-calculator/">Calculadora de IVA</a> <a href="/es/currency-converter/">Conversor de Divisas</a> <a href="/es/markdown-to-pdf/">Markdown a PDF</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/es/privacy/">Privacidad</a> · <a href="/es/how-we-handle-your-data/">Tratamiento de datos</a> · <a href="/es/affiliate-disclosure/">Divulgación de afiliados</a> · <a href="/es/companion-tools/">Herramientas complementarias</a> · <a href="/es/about/">Acerca de</a> · <a href="/es/contact/">Contacto</a> · <a href="/es/for-schools/">Para escuelas</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.inv-grid input, .inv-grid textarea, .inv-grid select{width:100%;box-sizing:border-box}
+.inv-meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.7rem}
+.inv-items{width:100%;border-collapse:collapse;margin-top:0.5rem}
+.inv-items th, .inv-items td{padding:0.4rem;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.inv-items th{background:var(--bg);font-size:0.85rem;color:var(--text-muted)}
+.inv-items input{font-size:0.9rem;padding:0.4rem;width:100%;box-sizing:border-box}
+.inv-items td.num{text-align:right;font-family:ui-monospace,monospace}
+.inv-items .inv-del{background:transparent;color:var(--text-muted);border:1px solid var(--border);padding:0.3rem 0.5rem;font-size:0.85rem;cursor:pointer;border-radius:4px}
+.inv-preview{background:#fff;color:#111;padding:1.4rem 1.2rem;border-radius:8px;border:1px solid var(--border);font-family:system-ui,sans-serif;font-size:0.88rem;line-height:1.5;max-height:520px;overflow:auto}
+.inv-preview h1{margin:0 0 0.4rem;font-size:1.6rem;color:#111}
+.inv-preview h2{margin:1.2rem 0 0.3rem;font-size:1.05rem;color:#333}
+.inv-preview .inv-row{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.inv-preview .inv-row > div{flex:1;white-space:pre-line}
+.inv-preview table{width:100%;border-collapse:collapse;margin:0.5rem 0}
+.inv-preview th, .inv-preview td{padding:0.4rem 0.6rem;border-bottom:1px solid #ddd;text-align:left}
+.inv-preview th{background:#f6f6f6}
+.inv-preview td.num, .inv-preview th.num{text-align:right;font-variant-numeric:tabular-nums}
+.inv-preview .inv-totals{margin-left:auto;width:auto;max-width:280px;margin-top:0.6rem}
+.inv-preview .inv-totals td{border:none;padding:0.2rem 0.4rem}
+.inv-preview .inv-totals tr.inv-grand td{border-top:2px solid #333;font-weight:700;font-size:1.05rem}
+.inv-preview .inv-notes{margin-top:1rem;padding:0.6rem 0.8rem;background:#f8f8f8;border-radius:4px;white-space:pre-line;font-size:0.85rem}
+@media(max-width:760px){.inv-grid{grid-template-columns:1fr}}
+@media print{
+  body > *:not(.inv-print-host){display:none !important;}
+  .inv-print-host, .inv-print-host *{display:revert !important;}
+  .inv-print-host{position:absolute;inset:0;background:white;color:black;padding:2rem;font-family:system-ui,sans-serif}
+  .inv-print-host .inv-row{display:flex;justify-content:space-between;gap:2rem}
+  .inv-print-host table{width:100%;border-collapse:collapse;margin:1rem 0}
+  .inv-print-host th, .inv-print-host td{padding:0.45rem 0.6rem;border-bottom:1px solid #ccc;text-align:left}
+  .inv-print-host th.num, .inv-print-host td.num{text-align:right}
+  .inv-print-host .inv-totals{margin-left:auto;max-width:300px}
+  .inv-print-host .inv-totals td{border:none}
+  .inv-print-host .inv-totals .inv-grand td{border-top:2px solid #333;font-weight:700}
+  .inv-print-host .inv-notes{margin-top:1.2rem;padding:0.7rem;background:#f3f3f3;white-space:pre-line}
+}
+</style>
+<script>
+const INV_CURSYM = {EUR:'€',USD:'$',GBP:'£',JPY:'¥',CHF:'CHF ',CAD:'CA$',AUD:'A$',SEK:'kr ',PLN:'zł ',CZK:'Kč ',HUF:'Ft ',INR:'₹',BRL:'R$',MXN:'MX$',SGD:'S$',HKD:'HK$',ZAR:'R ',TRY:'₺'};
+// Reasonable default VAT rates (standard rate) — user can override.
+const INV_VAT_DEFAULTS = {AT:20,BE:21,BG:20,HR:25,CY:19,CZ:21,DK:25,EE:24,FI:25.5,FR:20,DE:19,GR:24,HU:27,IE:23,IT:22,LV:21,LT:21,LU:17,MT:18,NL:21,PL:23,PT:23,RO:19,SK:23,SI:22,ES:21,SE:25,GB:20,CH:8.1,NO:25};
+
+function invFmtCur(n, cur){
+  const sym = INV_CURSYM[cur] || (cur + ' ');
+  if(!isFinite(n)) return sym + '0.00';
+  return sym + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+function invAddRow(desc, qty, price){
+  const tbody = document.querySelector('#inv-items tbody');
+  const tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td><input type="text" class="inv-desc" value="' + (desc || 'Service') + '" oninput="invRun()"></td>' +
+    '<td><input type="number" class="inv-qty" step="0.01" min="0" value="' + (qty || '1') + '" oninput="invRun()"></td>' +
+    '<td><input type="number" class="inv-price" step="0.01" min="0" value="' + (price || '100') + '" oninput="invRun()"></td>' +
+    '<td class="num inv-total">—</td>' +
+    '<td><button type="button" class="inv-del" onclick="this.closest(\'tr\').remove(); invRun();">×</button></td>';
+  tbody.appendChild(tr);
+  invRun();
+}
+function invVatCountry(){
+  const c = document.getElementById('inv-vat-country').value;
+  if(c && c !== 'CUSTOM' && INV_VAT_DEFAULTS[c] !== undefined){
+    document.getElementById('inv-vat-rate').value = INV_VAT_DEFAULTS[c];
+  } else if(c === ''){
+    document.getElementById('inv-vat-rate').value = 0;
+  }
+  invRun();
+}
+function invCollect(){
+  const cur = document.getElementById('inv-currency').value;
+  const items = [];
+  let subtotal = 0;
+  document.querySelectorAll('#inv-items tbody tr').forEach(function(tr){
+    const desc = tr.querySelector('.inv-desc').value;
+    const qty = parseFloat(tr.querySelector('.inv-qty').value) || 0;
+    const price = parseFloat(tr.querySelector('.inv-price').value) || 0;
+    const total = qty * price;
+    subtotal += total;
+    tr.querySelector('.inv-total').textContent = invFmtCur(total, cur);
+    items.push({desc:desc, qty:qty, price:price, total:total});
+  });
+  const vatRate = parseFloat(document.getElementById('inv-vat-rate').value) || 0;
+  const vatAmt = subtotal * vatRate / 100;
+  const grand = subtotal + vatAmt;
+  return {
+    cur:cur,
+    from:{
+      name: document.getElementById('inv-from-name').value,
+      addr: document.getElementById('inv-from-addr').value,
+      vat: document.getElementById('inv-from-vat').value,
+      email: document.getElementById('inv-from-email').value,
+    },
+    to:{
+      name: document.getElementById('inv-to-name').value,
+      addr: document.getElementById('inv-to-addr').value,
+      vat: document.getElementById('inv-to-vat').value,
+      email: document.getElementById('inv-to-email').value,
+    },
+    number: document.getElementById('inv-number').value,
+    issue: document.getElementById('inv-issue').value,
+    due: document.getElementById('inv-due').value,
+    vatCountry: document.getElementById('inv-vat-country').value,
+    vatRate: vatRate,
+    items: items,
+    subtotal: subtotal,
+    vatAmt: vatAmt,
+    grand: grand,
+    notes: document.getElementById('inv-notes').value,
+  };
+}
+function invEsc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function invRenderMd(d){
+  const lines = [];
+  lines.push('# Invoice ' + d.number);
+  lines.push('');
+  lines.push('| From | To |');
+  lines.push('| --- | --- |');
+  const fromBlock = [d.from.name, d.from.addr.replace(/\n/g,'<br>'), d.from.vat ? 'VAT: ' + d.from.vat : '', d.from.email].filter(Boolean).join('<br>');
+  const toBlock = [d.to.name, d.to.addr.replace(/\n/g,'<br>'), d.to.vat ? 'VAT: ' + d.to.vat : '', d.to.email].filter(Boolean).join('<br>');
+  lines.push('| ' + fromBlock + ' | ' + toBlock + ' |');
+  lines.push('');
+  lines.push('**Invoice number:** ' + d.number + '  ');
+  if(d.issue) lines.push('**Issue date:** ' + d.issue + '  ');
+  if(d.due)   lines.push('**Due date:** ' + d.due + '  ');
+  lines.push('**Currency:** ' + d.cur);
+  lines.push('');
+  lines.push('## Items');
+  lines.push('');
+  lines.push('| # | Description | Qty | Unit price | Total |');
+  lines.push('| ---: | --- | ---: | ---: | ---: |');
+  d.items.forEach(function(it, i){
+    lines.push('| ' + (i+1) + ' | ' + it.desc + ' | ' + it.qty + ' | ' + invFmtCur(it.price, d.cur) + ' | ' + invFmtCur(it.total, d.cur) + ' |');
+  });
+  lines.push('');
+  lines.push('**Subtotal:** ' + invFmtCur(d.subtotal, d.cur));
+  if(d.vatRate > 0){
+    const lbl = d.vatCountry && d.vatCountry !== 'CUSTOM' ? ('VAT (' + d.vatCountry + ' @ ' + d.vatRate + '%)') : ('VAT @ ' + d.vatRate + '%');
+    lines.push('**' + lbl + ':** ' + invFmtCur(d.vatAmt, d.cur));
+  }
+  lines.push('**Total:** **' + invFmtCur(d.grand, d.cur) + '**');
+  if(d.notes && d.notes.trim()){
+    lines.push('');
+    lines.push('---');
+    lines.push('');
+    lines.push(d.notes);
+  }
+  return lines.join('\n');
+}
+function invRenderHtml(d){
+  const rows = d.items.map(function(it, i){
+    return '<tr><td>' + (i+1) + '</td><td>' + invEsc(it.desc) + '</td>' +
+      '<td class="num">' + it.qty + '</td>' +
+      '<td class="num">' + invFmtCur(it.price, d.cur) + '</td>' +
+      '<td class="num">' + invFmtCur(it.total, d.cur) + '</td></tr>';
+  }).join('');
+  const vatRow = d.vatRate > 0 ? (
+    '<tr><td>VAT' + (d.vatCountry && d.vatCountry !== 'CUSTOM' ? ' (' + invEsc(d.vatCountry) + ')' : '') + ' @ ' + d.vatRate + '%</td>' +
+    '<td class="num">' + invFmtCur(d.vatAmt, d.cur) + '</td></tr>'
+  ) : '';
+  return (
+    '<h1>Invoice ' + invEsc(d.number) + '</h1>' +
+    '<div class="inv-row">' +
+      '<div><strong>From</strong>\n' + invEsc(d.from.name) + '\n' + invEsc(d.from.addr) + (d.from.vat ? '\nVAT: ' + invEsc(d.from.vat) : '') + (d.from.email ? '\n' + invEsc(d.from.email) : '') + '</div>' +
+      '<div><strong>To</strong>\n' + invEsc(d.to.name) + '\n' + invEsc(d.to.addr) + (d.to.vat ? '\nVAT: ' + invEsc(d.to.vat) : '') + (d.to.email ? '\n' + invEsc(d.to.email) : '') + '</div>' +
+    '</div>' +
+    '<div class="inv-row">' +
+      '<div><strong>Invoice #</strong> ' + invEsc(d.number) + (d.issue ? '\n<strong>Issue date:</strong> ' + invEsc(d.issue) : '') + (d.due ? '\n<strong>Due date:</strong> ' + invEsc(d.due) : '') + '\n<strong>Currency:</strong> ' + invEsc(d.cur) + '</div>' +
+    '</div>' +
+    '<h2>Items</h2>' +
+    '<table><thead><tr><th>#</th><th>Description</th><th class="num">Qty</th><th class="num">Unit price</th><th class="num">Total</th></tr></thead>' +
+    '<tbody>' + rows + '</tbody></table>' +
+    '<table class="inv-totals">' +
+      '<tr><td>Subtotal</td><td class="num">' + invFmtCur(d.subtotal, d.cur) + '</td></tr>' +
+      vatRow +
+      '<tr class="inv-grand"><td>Total</td><td class="num">' + invFmtCur(d.grand, d.cur) + '</td></tr>' +
+    '</table>' +
+    (d.notes && d.notes.trim() ? '<div class="inv-notes">' + invEsc(d.notes) + '</div>' : '')
+  );
+}
+function invRun(){
+  const d = invCollect();
+  document.getElementById('inv-md').textContent = invRenderMd(d);
+  document.getElementById('inv-html').innerHTML = invRenderHtml(d);
+}
+function invPrint(){
+  const d = invCollect();
+  // Build a print-only host so we can keep the editor UI intact
+  let host = document.querySelector('.inv-print-host');
+  if(host) host.remove();
+  host = document.createElement('div');
+  host.className = 'inv-print-host';
+  host.innerHTML = invRenderHtml(d);
+  document.body.appendChild(host);
+  window.print();
+  setTimeout(function(){ host.remove(); }, 200);
+}
+function invSaveState(){
+  const d = invCollect();
+  // Save only the durable bits: business info + recurring fields. NOT line items.
+  const persisted = {
+    from: d.from, to: d.to, cur: d.cur, vatCountry: d.vatCountry, vatRate: d.vatRate, notes: d.notes
+  };
+  const json = JSON.stringify(persisted);
+  const b64 = btoa(unescape(encodeURIComponent(json)));
+  const url = location.origin + location.pathname + '#inv=' + b64;
+  history.replaceState(null, '', url);
+  navigator.clipboard.writeText(url).then(function(){
+    alert('Saved. URL copied to clipboard — bookmark it to keep your business info.');
+  }, function(){
+    prompt('Copy this URL to keep your business info:', url);
+  });
+}
+function invLoadState(){
+  const m = location.hash.match(/inv=([^&]+)/);
+  if(!m) return;
+  try{
+    const json = decodeURIComponent(escape(atob(m[1])));
+    const s = JSON.parse(json);
+    if(s.from){
+      document.getElementById('inv-from-name').value = s.from.name || '';
+      document.getElementById('inv-from-addr').value = s.from.addr || '';
+      document.getElementById('inv-from-vat').value = s.from.vat || '';
+      document.getElementById('inv-from-email').value = s.from.email || '';
+    }
+    if(s.to){
+      document.getElementById('inv-to-name').value = s.to.name || '';
+      document.getElementById('inv-to-addr').value = s.to.addr || '';
+      document.getElementById('inv-to-vat').value = s.to.vat || '';
+      document.getElementById('inv-to-email').value = s.to.email || '';
+    }
+    if(s.cur) document.getElementById('inv-currency').value = s.cur;
+    if(s.vatCountry) document.getElementById('inv-vat-country').value = s.vatCountry;
+    if(typeof s.vatRate === 'number') document.getElementById('inv-vat-rate').value = s.vatRate;
+    if(typeof s.notes === 'string') document.getElementById('inv-notes').value = s.notes;
+  }catch(e){ /* ignore bad fragment */ }
+}
+function invInit(){
+  // Default dates: today, +30 days
+  const today = new Date();
+  const due = new Date(today.getTime() + 30*86400000);
+  function fmt(dt){ return dt.toISOString().slice(0,10); }
+  document.getElementById('inv-issue').value = fmt(today);
+  document.getElementById('inv-due').value = fmt(due);
+  invLoadState();
+  // Seed three demo line items
+  invAddRow('Consulting (April)', 8, 95);
+  invAddRow('Project setup',      1, 250);
+  invAddRow('Documentation',      3, 60);
+}
+document.addEventListener('DOMContentLoaded', invInit);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>

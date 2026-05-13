@@ -29701,4 +29701,994 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/readability-checker/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/readability-checker/"/>
   </url>
+  <url>
+    <loc>https://toolhub.software/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/currency-converter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/currency-converter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/invoice-generator/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/invoice-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/invoice-generator/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/de/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/es/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/fr/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/it/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pt/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/pl/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/ja/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/nl/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/tr/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/id/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/vi/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/hi/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/sk/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
+  <url>
+    <loc>https://toolhub.software/cs/expense-splitter/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/"/>
+  </url>
 </urlset>

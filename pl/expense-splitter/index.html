@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dzielnik Wydatków — Toolhub</title>
+  <meta name="description" content="Darmowy dzielnik wydatków w przeglądarce. Dodawaj wydatki (kto zapłacił, kwota, kto winien), zdefiniuj grupę, dostań saldo per osoba + rozliczenie z minimalną liczbą przelewów ('Alice winna Bobowi X €'). Obsługuje nierówne podziały (jedna osoba winna więcej itp.) i wiele walut (jedna na grupę; bez konwersji). Dla wyjazdów, mieszkań współdzielonych, kolacji grupowych.">
+  <meta property="og:title" content="Dzielnik Wydatków — Toolhub">
+  <meta property="og:description" content="Darmowy dzielnik wydatków w przeglądarce. Dodawaj wydatki (kto zapłacił, kwota, kto winien), zdefiniuj grupę, dostań saldo per osoba + rozliczenie z minimalną liczbą przelewów ('Alice winna Bobowi X €'). Obsługuje nierówne podziały (jedna osoba winna więcej itp.) i wiele walut (jedna na grupę; bez konwersji). Dla wyjazdów, mieszkań współdzielonych, kolacji grupowych.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/pl/expense-splitter/">
+  <meta property="og:image" content="https://toolhub.software/og-images/expense-splitter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-images/expense-splitter.png">
+  <link rel="canonical" href="https://toolhub.software/pl/expense-splitter/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/expense-splitter/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/expense-splitter/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/expense-splitter/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/expense-splitter/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/expense-splitter/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/expense-splitter/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/expense-splitter/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/expense-splitter/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/expense-splitter/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/expense-splitter/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/expense-splitter/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/expense-splitter/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/expense-splitter/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/expense-splitter/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/expense-splitter/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/expense-splitter/">
+  <meta property="og:locale" content="pl_PL">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/pl/expense-splitter/#tool",
+        "name": "Dzielnik Wydatków",
+        "description": "Darmowy dzielnik wydatków w przeglądarce. Dodawaj wydatki (kto zapłacił, kwota, kto winien), zdefiniuj grupę, dostań saldo per osoba + rozliczenie z minimalną liczbą przelewów ('Alice winna Bobowi X €'). Obsługuje nierówne podziały (jedna osoba winna więcej itp.) i wiele walut (jedna na grupę; bez konwersji). Dla wyjazdów, mieszkań współdzielonych, kolacji grupowych.",
+        "url": "https://toolhub.software/pl/expense-splitter/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Math Tools",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "pl",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["split", "expense", "bill", "group", "share", "even", "uneven", "travel"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Wszystkie narzędzia", "item": "https://toolhub.software/pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Dzielnik Wydatków", "item": "https://toolhub.software/pl/expense-splitter/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do czego to służy",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kalkulator typu „pojechaliśmy na weekend i kto teraz komu wisi“. Członkowie, wydatki (kto zapłacił, na kogo idzie), saldo netto i minimalne przelewy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak używać",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dodaj członków. Dodaj wydatek: kto zapłacił, kwota, podział (równy / % / kwoty stałe). Czytaj salda — dodatnie = ma dostać, ujemne = winien. Rozlicz się (n osób → maks. n−1 przelewów). „Zapisz URL“ by dzielić się stanem z grupą."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Algorytm",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prawdziwy problem minimum transakcji jest NP-trudny. Używamy zachłannego: największy dłużnik płaci największemu wierzycielowi. Optymalne w praktyce."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waluty",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jedna grupa = jedna waluta. Wyjazd z mieszanymi walutami — przelicz każdy wydatek po kursie z dnia, zanim go wpiszesz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Udostępnianie",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fragment URL nie idzie na serwer, ale kto ma link, widzi wszystko. Wrzuć do prywatnego chatu wyjazdu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Częste pułapki",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "„Kto zapłacił“ ≠ „komu to przypisać“. Równy podział: odhacz osoby nieuczestniczące w tej pozycji. Płatności gotówkowe między dwoma osobami: rejestruj jako osobny wydatek lub wcale. Odświeżenie strony kasuje wszystko — najpierw zapisz URL."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Dzielnik Wydatków",
+  "description": "Podziel wydatek grupowy po równo lub własnymi udziałami (procenty lub kwoty stałe). Wynik: kwoty per osoba + instrukcje przelewu ('A wisi B X €').",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Wpisz swoje wartości",
+      "text": "Wpisz dane wspólny wydatek, których potrzebuje narzędzie."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Odczytaj wynik",
+      "text": "Wynik wspólny wydatek aktualizuje się natychmiast — bez przycisku."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Użyj lub skopiuj wynik",
+      "text": "Naciśnij Kopiuj, jeśli potrzebujesz wartości wspólny wydatek gdzie indziej."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/pl/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Język</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/expense-splitter/'; else location.href='/expense-splitter/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" selected="selected">🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Zainstaluj Toolhub jako aplikację — działa offline, bez sklepu z aplikacjami" aria-label="Zainstaluj Toolhub jako aplikację — działa offline, bez sklepu z aplikacjami">Zainstaluj aplikację</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Przełącz motyw">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <div class="breadcrumb"><a href="/pl/">Wszystkie narzędzia</a> / Dzielnik Wydatków</div>
+    <h1>Dzielnik Wydatków</h1>
+    <p class="tagline">Podziel wydatek grupowy po równo lub własnymi udziałami (procenty lub kwoty stałe). Wynik: kwoty per osoba + instrukcje przelewu ('A wisi B X €').</p>
+    
+<div class="tool-card">
+  <div class="row-2col">
+    <div>
+      <label>Group name (optional)</label>
+      <input type="text" id="es-group" value="Weekend trip" oninput="esRun()">
+    </div>
+    <div>
+      <label>Currency</label>
+      <select id="es-cur" onchange="esRun()">
+        <option value="€">€ EUR</option>
+        <option value="$">$ USD</option>
+        <option value="£">£ GBP</option>
+        <option value="¥">¥ JPY</option>
+        <option value="CHF ">CHF</option>
+        <option value="kr ">SEK / NOK / DKK kr</option>
+        <option value="zł ">PLN zł</option>
+        <option value="Kč ">CZK Kč</option>
+        <option value="₹">₹ INR</option>
+        <option value="₺">₺ TRY</option>
+        <option value="R$">R$ BRL</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="tool-card">
+  <label>Members</label>
+  <div class="es-members" id="es-members"></div>
+  <div class="button-row" style="margin-top:0.5rem">
+    <input type="text" id="es-new-name" placeholder="Add member name" style="max-width:200px" onkeydown="if(event.key==='Enter'){esAddMember();event.preventDefault();}">
+    <button type="button" class="secondary" onclick="esAddMember()">+ Add member</button>
+  </div>
+</div>
+
+<div class="tool-card">
+  <label>Expenses</label>
+  <div id="es-expenses"></div>
+  <div class="button-row" style="margin-top:0.5rem">
+    <button type="button" class="secondary" onclick="esAddExpense()">+ Add expense</button>
+    <button type="button" class="secondary" onclick="esSaveState()">🔗 Save state in URL</button>
+  </div>
+</div>
+
+<div class="tool-card">
+  <label>Per-person balance</label>
+  <div id="es-balances" class="es-balances"></div>
+</div>
+
+<div class="tool-card">
+  <label>Settlement — minimum transfers</label>
+  <div id="es-settlement" class="es-settlement"></div>
+  <div class="meta" style="margin-top:0.4rem;color:var(--text-muted);font-size:0.82rem">
+    Greedy algorithm: largest debtor pays largest creditor until everyone clears.
+    This is usually optimal but not always provably minimum for adversarial cases.
+  </div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Do czego to służy</h2>
+<p>Kalkulator typu „pojechaliśmy na weekend i kto teraz komu wisi“. Członkowie, wydatki (kto zapłacił, na kogo idzie), saldo netto i minimalne przelewy.</p>
+<h2>Jak używać</h2>
+<ol>
+<li>Dodaj członków.</li>
+<li>Dodaj wydatek: kto zapłacił, kwota, podział (równy / % / kwoty stałe).</li>
+<li>Czytaj salda — dodatnie = ma dostać, ujemne = winien.</li>
+<li>Rozlicz się (n osób → maks. n−1 przelewów).</li>
+<li>„Zapisz URL“ by dzielić się stanem z grupą.</li>
+</ol>
+<h2>Algorytm</h2>
+<p>Prawdziwy problem minimum transakcji jest NP-trudny. Używamy zachłannego: największy dłużnik płaci największemu wierzycielowi. Optymalne w praktyce.</p>
+<h2>Waluty</h2>
+<p>Jedna grupa = jedna waluta. Wyjazd z mieszanymi walutami — przelicz każdy wydatek po kursie z dnia, zanim go wpiszesz.</p>
+<h2>Udostępnianie</h2>
+<p>Fragment URL nie idzie na serwer, ale kto ma link, widzi wszystko. Wrzuć do prywatnego chatu wyjazdu.</p>
+<h2>Częste pułapki</h2>
+<ul>
+<li>„Kto zapłacił“ ≠ „komu to przypisać“.</li>
+<li>Równy podział: odhacz osoby nieuczestniczące w tej pozycji.</li>
+<li>Płatności gotówkowe między dwoma osobami: rejestruj jako osobny wydatek lub wcale.</li>
+<li>Odświeżenie strony kasuje wszystko — najpierw zapisz URL.</li>
+</ul>
+<div class="related"><span class="meta">Powiązane narzędzia:</span> <a href="/pl/tip-split-calculator/">Kalkulator Napiwku i Podziału Rachunku</a> <a href="/pl/currency-converter/">Przelicznik Walut</a> <a href="/pl/percentage-calculator/">Kalkulator Procentów</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/pl/privacy/">Prywatność</a> · <a href="/pl/how-we-handle-your-data/">Obsługa danych</a> · <a href="/pl/affiliate-disclosure/">Ujawnienie partnerów</a> · <a href="/pl/companion-tools/">Narzędzia uzupełniające</a> · <a href="/pl/about/">O nas</a> · <a href="/pl/contact/">Kontakt</a> · <a href="/pl/for-schools/">Dla szkół</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.es-members{display:flex;gap:0.5rem;flex-wrap:wrap}
+.es-mem-chip{background:var(--bg-elev);border:1px solid var(--border);padding:0.35rem 0.4rem 0.35rem 0.65rem;border-radius:999px;display:inline-flex;align-items:center;gap:0.3rem;font-size:0.92rem}
+.es-mem-chip .es-mem-del{background:transparent;border:none;color:var(--text-muted);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 0.15rem}
+.es-mem-chip .es-mem-del:hover{color:#e11d48}
+.es-exp{border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;margin-bottom:0.6rem;background:var(--bg-elev)}
+.es-exp-head{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
+.es-exp-head input.es-desc{flex:1 1 200px;min-width:140px}
+.es-exp-head input.es-amt{width:120px;text-align:right;font-family:ui-monospace,monospace}
+.es-exp-head select.es-payer, .es-exp-head select.es-mode{padding:0.4rem}
+.es-exp-head .es-exp-del{background:transparent;color:var(--text-muted);border:1px solid var(--border);padding:0.3rem 0.55rem;font-size:0.9rem;cursor:pointer;border-radius:4px}
+.es-exp-split{margin-top:0.6rem;padding-top:0.5rem;border-top:1px dashed var(--border)}
+.es-exp-split label.es-share{display:inline-flex;align-items:center;gap:0.4rem;margin:0.2rem 0.7rem 0.2rem 0;font-size:0.9rem}
+.es-exp-split label.es-share input[type=number]{width:80px;font-family:ui-monospace,monospace;font-size:0.9rem;padding:0.3rem}
+.es-exp-split label.es-share input[type=checkbox]{width:auto}
+.es-balances{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.5rem}
+.es-bal{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.8rem;font-family:ui-monospace,monospace}
+.es-bal-name{font-weight:600;margin-bottom:0.2rem}
+.es-bal-pos{color:#059669}
+.es-bal-neg{color:#dc2626}
+.es-bal-zero{color:var(--text-muted)}
+.es-settlement{font-family:ui-monospace,monospace}
+.es-pay{padding:0.4rem 0.6rem;border-left:3px solid var(--accent);margin-bottom:0.35rem;background:var(--bg-elev);border-radius:4px}
+.es-zero-msg{padding:0.5rem;color:var(--text-muted);font-style:italic;font-family:system-ui,sans-serif}
+.es-warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:0.5rem 0.7rem;border-radius:4px;font-size:0.88rem;margin-bottom:0.5rem;font-family:system-ui,sans-serif}
+:root[data-theme="dark"] .es-warn{background:#3b1d0d;border-color:#7c2d12;color:#fed7aa}
+</style>
+<script>
+let ES_STATE = {
+  members: ['Alice', 'Bob', 'Charlie'],
+  expenses: []  // {id, desc, payer, amount, mode:'equal'|'percent'|'fixed', participants:Set, shares:{name:number}}
+};
+let ES_NEXT_ID = 1;
+
+function esCur(){ return document.getElementById('es-cur').value; }
+function esFmt(n){
+  const sym = esCur();
+  if(!isFinite(n)) return sym + '0.00';
+  return sym + (n >= 0 ? '' : '−') + Math.abs(n).toFixed(2);
+}
+function esRenderMembers(){
+  const host = document.getElementById('es-members');
+  host.innerHTML = '';
+  ES_STATE.members.forEach(function(name, i){
+    const chip = document.createElement('span');
+    chip.className = 'es-mem-chip';
+    const span = document.createElement('span');
+    span.textContent = name;
+    chip.appendChild(span);
+    const del = document.createElement('button');
+    del.className = 'es-mem-del';
+    del.type = 'button';
+    del.textContent = '×';
+    del.title = 'Remove member';
+    del.onclick = function(){ esRemoveMember(i); };
+    chip.appendChild(del);
+    host.appendChild(chip);
+  });
+}
+function esAddMember(){
+  const inp = document.getElementById('es-new-name');
+  const name = (inp.value || '').trim();
+  if(!name) return;
+  if(ES_STATE.members.indexOf(name) >= 0){ inp.value=''; return; }
+  ES_STATE.members.push(name);
+  inp.value = '';
+  // Add new member to all expenses' default participants
+  ES_STATE.expenses.forEach(function(e){
+    e.participants[name] = true;
+    if(e.mode === 'percent' || e.mode === 'fixed') e.shares[name] = 0;
+  });
+  esRender();
+}
+function esRemoveMember(i){
+  const name = ES_STATE.members[i];
+  ES_STATE.members.splice(i, 1);
+  // Strip from expenses
+  ES_STATE.expenses.forEach(function(e){
+    delete e.participants[name];
+    delete e.shares[name];
+    if(e.payer === name) e.payer = ES_STATE.members[0] || '';
+  });
+  esRender();
+}
+function esAddExpense(){
+  if(ES_STATE.members.length === 0){ alert('Add members first.'); return; }
+  const participants = {};
+  ES_STATE.members.forEach(function(n){ participants[n] = true; });
+  const shares = {};
+  ES_STATE.members.forEach(function(n){ shares[n] = 0; });
+  ES_STATE.expenses.push({
+    id: ES_NEXT_ID++,
+    desc: 'Expense ' + ES_STATE.expenses.length,
+    payer: ES_STATE.members[0],
+    amount: 50,
+    mode: 'equal',
+    participants: participants,
+    shares: shares
+  });
+  esRender();
+}
+function esRemoveExpense(id){
+  ES_STATE.expenses = ES_STATE.expenses.filter(function(e){ return e.id !== id; });
+  esRender();
+}
+function esRenderExpenses(){
+  const host = document.getElementById('es-expenses');
+  host.innerHTML = '';
+  if(ES_STATE.expenses.length === 0){
+    host.innerHTML = '<div class="es-zero-msg">No expenses yet. Click "Add expense" to start.</div>';
+    return;
+  }
+  ES_STATE.expenses.forEach(function(e){
+    const row = document.createElement('div');
+    row.className = 'es-exp';
+    let payerOpts = ES_STATE.members.map(function(n){
+      return '<option value="' + n + '"' + (n === e.payer ? ' selected' : '') + '>' + n + '</option>';
+    }).join('');
+    row.innerHTML =
+      '<div class="es-exp-head">' +
+        '<input type="text" class="es-desc" value="' + e.desc.replace(/"/g, '&quot;') + '" placeholder="Description">' +
+        '<select class="es-payer">' + payerOpts + '</select>' +
+        '<span class="meta" style="font-size:0.85rem">paid</span>' +
+        '<input type="number" class="es-amt" step="0.01" min="0" value="' + e.amount + '">' +
+        '<select class="es-mode">' +
+          '<option value="equal"' + (e.mode==='equal'?' selected':'') + '>Equal split</option>' +
+          '<option value="percent"' + (e.mode==='percent'?' selected':'') + '>% shares</option>' +
+          '<option value="fixed"' + (e.mode==='fixed'?' selected':'') + '>Fixed amounts</option>' +
+        '</select>' +
+        '<button type="button" class="es-exp-del">×</button>' +
+      '</div>' +
+      '<div class="es-exp-split"></div>';
+    // Bind handlers
+    row.querySelector('.es-desc').oninput = function(ev){ e.desc = ev.target.value; esCompute(); };
+    row.querySelector('.es-payer').onchange = function(ev){ e.payer = ev.target.value; esCompute(); };
+    row.querySelector('.es-amt').oninput = function(ev){ e.amount = parseFloat(ev.target.value) || 0; esCompute(); };
+    row.querySelector('.es-mode').onchange = function(ev){ e.mode = ev.target.value; esRender(); };
+    row.querySelector('.es-exp-del').onclick = function(){ esRemoveExpense(e.id); };
+    // Split detail
+    const split = row.querySelector('.es-exp-split');
+    if(e.mode === 'equal'){
+      ES_STATE.members.forEach(function(n){
+        const lbl = document.createElement('label');
+        lbl.className = 'es-share';
+        lbl.innerHTML = '<input type="checkbox"' + (e.participants[n] ? ' checked' : '') + '> ' + n;
+        const cb = lbl.querySelector('input');
+        cb.onchange = function(){ e.participants[n] = cb.checked; esCompute(); };
+        split.appendChild(lbl);
+      });
+    } else {
+      const note = document.createElement('div');
+      note.className = 'meta';
+      note.style.cssText = 'font-size:0.82rem;color:var(--text-muted);margin-bottom:0.3rem';
+      note.textContent = e.mode === 'percent' ? 'Shares as % of expense (should sum to 100)' : 'Shares as fixed amounts (should sum to the expense)';
+      split.appendChild(note);
+      ES_STATE.members.forEach(function(n){
+        const lbl = document.createElement('label');
+        lbl.className = 'es-share';
+        const val = e.shares[n] !== undefined ? e.shares[n] : 0;
+        lbl.innerHTML = n + ' <input type="number" step="0.01" min="0" value="' + val + '">';
+        const inp = lbl.querySelector('input');
+        inp.oninput = function(){ e.shares[n] = parseFloat(inp.value) || 0; esCompute(); };
+        split.appendChild(lbl);
+      });
+    }
+    host.appendChild(row);
+  });
+}
+function esCompute(){
+  const balances = {};
+  ES_STATE.members.forEach(function(n){ balances[n] = 0; });
+  const warnings = [];
+  ES_STATE.expenses.forEach(function(e){
+    const amt = e.amount;
+    if(amt <= 0) return;
+    if(!balances.hasOwnProperty(e.payer)) return;
+    balances[e.payer] += amt;
+    if(e.mode === 'equal'){
+      const parts = ES_STATE.members.filter(function(n){ return e.participants[n]; });
+      if(parts.length === 0){ warnings.push('"' + e.desc + '" has no participants — skipped.'); return; }
+      const each = amt / parts.length;
+      parts.forEach(function(n){ balances[n] -= each; });
+    } else if(e.mode === 'percent'){
+      let totalPct = 0;
+      ES_STATE.members.forEach(function(n){ totalPct += e.shares[n] || 0; });
+      if(totalPct <= 0){ warnings.push('"' + e.desc + '" has zero total percent — skipped.'); return; }
+      if(Math.abs(totalPct - 100) > 0.5) warnings.push('"' + e.desc + '" percentages sum to ' + totalPct.toFixed(1) + '% (not 100). Splitting proportionally anyway.');
+      ES_STATE.members.forEach(function(n){
+        const pct = e.shares[n] || 0;
+        balances[n] -= amt * pct / totalPct;
+      });
+    } else if(e.mode === 'fixed'){
+      let totalFx = 0;
+      ES_STATE.members.forEach(function(n){ totalFx += e.shares[n] || 0; });
+      if(totalFx <= 0){ warnings.push('"' + e.desc + '" has zero total fixed shares — skipped.'); return; }
+      if(Math.abs(totalFx - amt) > 0.01) warnings.push('"' + e.desc + '" fixed shares sum to ' + totalFx.toFixed(2) + ' but expense is ' + amt.toFixed(2) + '. Splitting proportionally.');
+      ES_STATE.members.forEach(function(n){
+        const fx = e.shares[n] || 0;
+        balances[n] -= amt * fx / totalFx;
+      });
+    }
+  });
+  esShowBalances(balances, warnings);
+  esShowSettlement(balances);
+}
+function esShowBalances(balances, warnings){
+  const host = document.getElementById('es-balances');
+  host.innerHTML = '';
+  warnings.forEach(function(w){
+    const div = document.createElement('div');
+    div.className = 'es-warn';
+    div.textContent = '⚠ ' + w;
+    host.appendChild(div);
+  });
+  if(ES_STATE.members.length === 0){
+    const div = document.createElement('div');
+    div.className = 'es-zero-msg';
+    div.textContent = 'Add members above to see balances.';
+    host.appendChild(div);
+    return;
+  }
+  ES_STATE.members.forEach(function(n){
+    const bal = balances[n];
+    const cls = Math.abs(bal) < 0.005 ? 'es-bal-zero' : (bal > 0 ? 'es-bal-pos' : 'es-bal-neg');
+    const note = Math.abs(bal) < 0.005 ? 'settled' : (bal > 0 ? 'is owed' : 'owes');
+    const div = document.createElement('div');
+    div.className = 'es-bal';
+    div.innerHTML = '<div class="es-bal-name">' + n + '</div><div class="' + cls + '">' + esFmt(bal) + ' (' + note + ')</div>';
+    host.appendChild(div);
+  });
+}
+// Greedy settlement: match largest creditor with largest debtor, transfer min(abs).
+// Not guaranteed minimum for adversarial cases (the true minimum-transactions problem
+// is NP-hard) but optimal for almost all real-world group settlements.
+function esSettle(balances){
+  const eps = 0.005;
+  const creditors = [];
+  const debtors = [];
+  ES_STATE.members.forEach(function(n){
+    const v = balances[n];
+    if(v > eps) creditors.push({name:n, amt:v});
+    else if(v < -eps) debtors.push({name:n, amt:-v});
+  });
+  creditors.sort(function(a,b){ return b.amt - a.amt; });
+  debtors.sort(function(a,b){ return b.amt - a.amt; });
+  const transfers = [];
+  let ci = 0, di = 0;
+  while(ci < creditors.length && di < debtors.length){
+    const pay = Math.min(creditors[ci].amt, debtors[di].amt);
+    transfers.push({from: debtors[di].name, to: creditors[ci].name, amt: pay});
+    creditors[ci].amt -= pay;
+    debtors[di].amt -= pay;
+    if(creditors[ci].amt < eps) ci++;
+    if(debtors[di].amt < eps) di++;
+  }
+  return transfers;
+}
+function esShowSettlement(balances){
+  const host = document.getElementById('es-settlement');
+  host.innerHTML = '';
+  if(ES_STATE.expenses.length === 0){
+    host.innerHTML = '<div class="es-zero-msg">Add expenses to compute the settlement.</div>';
+    return;
+  }
+  const transfers = esSettle(balances);
+  if(transfers.length === 0){
+    host.innerHTML = '<div class="es-zero-msg">Everyone is even. No transfers needed.</div>';
+    return;
+  }
+  transfers.forEach(function(t){
+    const div = document.createElement('div');
+    div.className = 'es-pay';
+    div.textContent = t.from + ' → ' + t.to + ': ' + esCur() + t.amt.toFixed(2);
+    host.appendChild(div);
+  });
+}
+function esRender(){
+  esRenderMembers();
+  esRenderExpenses();
+  esCompute();
+}
+function esRun(){
+  // Currency changed: just recompute display (balances depend on currency for display only)
+  esCompute();
+}
+function esSaveState(){
+  const persisted = {
+    group: document.getElementById('es-group').value,
+    cur: document.getElementById('es-cur').value,
+    members: ES_STATE.members,
+    expenses: ES_STATE.expenses.map(function(e){
+      return {desc:e.desc, payer:e.payer, amount:e.amount, mode:e.mode, participants:e.participants, shares:e.shares};
+    })
+  };
+  const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(persisted))));
+  const url = location.origin + location.pathname + '#es=' + b64;
+  history.replaceState(null, '', url);
+  navigator.clipboard.writeText(url).then(function(){
+    alert('Saved. URL copied to clipboard — share it with your group.');
+  }, function(){
+    prompt('Copy this URL:', url);
+  });
+}
+function esLoadState(){
+  const m = location.hash.match(/es=([^&]+)/);
+  if(!m) return false;
+  try{
+    const s = JSON.parse(decodeURIComponent(escape(atob(m[1]))));
+    if(s.group) document.getElementById('es-group').value = s.group;
+    if(s.cur) document.getElementById('es-cur').value = s.cur;
+    if(Array.isArray(s.members)) ES_STATE.members = s.members.slice();
+    if(Array.isArray(s.expenses)){
+      ES_STATE.expenses = s.expenses.map(function(e){
+        return {id:ES_NEXT_ID++, desc:e.desc, payer:e.payer, amount:e.amount, mode:e.mode, participants:e.participants||{}, shares:e.shares||{}};
+      });
+    }
+    return true;
+  }catch(err){ return false; }
+}
+function esInit(){
+  if(!esLoadState()){
+    // Default demo state
+    ES_STATE.expenses = [
+      {id: ES_NEXT_ID++, desc:'Hotel', payer:'Alice', amount:240, mode:'equal',
+       participants:{Alice:true,Bob:true,Charlie:true}, shares:{Alice:0,Bob:0,Charlie:0}},
+      {id: ES_NEXT_ID++, desc:'Dinner', payer:'Bob', amount:90, mode:'equal',
+       participants:{Alice:true,Bob:true,Charlie:true}, shares:{Alice:0,Bob:0,Charlie:0}},
+    ];
+  }
+  esRender();
+}
+document.addEventListener('DOMContentLoaded', esInit);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
