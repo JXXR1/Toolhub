@@ -60,6 +60,17 @@ bin/gen-og-images           # regenerate all 88 + the base image
 bin/gen-og-images --only <slug>
 ```
 
+## Browser extension
+
+A companion Manifest V3 extension lives in [`extension/`](./extension/).
+Right-click selected text in any tab → "Open in Toolhub" → auto-detects
+the content type (JWT, JSON, CIDR, base64, URL-encoded, HTML, Markdown)
+and opens the matching tool with the payload pre-filled via URL fragment.
+
+Zero telemetry, no host permissions, only requests `contextMenus`. Load
+unpacked from `extension/` in `chrome://extensions/` to try it; see
+[`extension/README.md`](./extension/README.md) for store submission steps.
+
 ## Tool manifest schema
 
 ```python

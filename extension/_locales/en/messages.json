@@ -1,0 +1,21 @@
+{
+  "extName": {
+    "message": "Toolhub: open in",
+    "description": "Extension name shown in browser UI"
+  },
+  "extDescription": {
+    "message": "Right-click any text — JSON, base64, JWT, CIDR — to open in the matching Toolhub tool. All data stays in your browser (URL fragment, never sent to server).",
+    "description": "Extension store description"
+  },
+  "ctxMenuFormat": {
+    "message": "Open in Toolhub: $TOOL$",
+    "description": "Context menu label when content type is detected",
+    "placeholders": {
+      "TOOL": {"content": "$1"}
+    }
+  },
+  "ctxMenuFallback": {
+    "message": "Open in Toolhub",
+    "description": "Context menu label when content type is unknown"
+  }
+}
