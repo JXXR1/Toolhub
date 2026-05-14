@@ -106,6 +106,12 @@ function sgRun(){
   meta.textContent = `${slug.length} characters · ${words.length} words${strip?' (after stop-word removal)':''}`;
 }
 document.addEventListener('DOMContentLoaded', sgRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('sg-input');
+  if (!input) return;
+  input.value = e.detail.data;
+  sgRun();
+});
 </script>
 """,
     "help": {

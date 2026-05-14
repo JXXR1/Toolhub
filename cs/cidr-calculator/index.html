@@ -463,6 +463,12 @@ function cidrRun(){
   out.textContent = lines.join('\n');
 }
 document.addEventListener('DOMContentLoaded', cidrRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('cidr-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  cidrRun();
+});
 </script>
 
   <script>
@@ -499,6 +505,25 @@ document.addEventListener('DOMContentLoaded', cidrRun);
       s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
       s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
       document.body.appendChild(s);
+    })();
+  </script>
+  <script>
+    (function() {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      var m = hash.substring(1).match(/(?:^|&)data=([^&]+)/);
+      if (!m) return;
+      var raw;
+      try { raw = decodeURIComponent(m[1]); }
+      catch (e) { console.warn('toolhub: bad hash payload'); return; }
+      function dispatch() {
+        document.dispatchEvent(new CustomEvent('toolhub:prefill', { detail: { data: raw } }));
+      }
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(dispatch, 50);
+      } else {
+        window.addEventListener('DOMContentLoaded', function() { setTimeout(dispatch, 50); });
+      }
     })();
   </script>
 </body>

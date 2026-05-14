@@ -88,6 +88,12 @@ function b64Run(){
   } catch(e){ out.classList.add('error'); out.textContent = '✗ ' + (e.message || e); meta.textContent = ''; }
 }
 document.addEventListener('DOMContentLoaded', b64Run);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('b64-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  b64Run();
+});
 </script>
 """,
     "help": {

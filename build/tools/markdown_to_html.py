@@ -178,6 +178,12 @@ function mdRun(){
   document.getElementById('md-out').textContent = html;
 }
 document.addEventListener('DOMContentLoaded', mdRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('md-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  mdRun();
+});
 </script>
 """,
     "help": {

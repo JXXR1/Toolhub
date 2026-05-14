@@ -70,6 +70,12 @@ function urlRun(){
   } catch(e){ out.classList.add('error'); out.textContent = '✗ ' + e.message; }
 }
 document.addEventListener('DOMContentLoaded', urlRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('url-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  urlRun();
+});
 </script>
 """,
     "help": {

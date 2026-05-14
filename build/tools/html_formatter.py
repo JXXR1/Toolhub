@@ -260,6 +260,12 @@ function hfRun(){
   }
 }
 document.addEventListener('DOMContentLoaded', hfRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('hf-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  hfRun();
+});
 </script>
 """,
     "help": {

@@ -67,6 +67,12 @@ async function hRun(){
   document.getElementById('h-sha512').textContent = s512;
 }
 document.addEventListener('DOMContentLoaded', hRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('h-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  hRun();
+});
 </script>
 """,
     "help": {

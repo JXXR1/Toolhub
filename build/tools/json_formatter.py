@@ -127,6 +127,12 @@ function jfValidate(){
     jfShowOk('✓ Valid JSON', 'top-level: ' + t + ' · ' + sz + ' chars minified');
   } catch(e){ jfShowError(e, raw); }
 }
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('json-input');
+  if (!input) return;
+  input.value = e.detail.data;
+  jfFormat(2);
+});
 </script>
 """,
     "help": {

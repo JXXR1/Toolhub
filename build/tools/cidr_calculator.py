@@ -110,6 +110,12 @@ function cidrRun(){
   out.textContent = lines.join('\\n');
 }
 document.addEventListener('DOMContentLoaded', cidrRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('cidr-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  cidrRun();
+});
 </script>
 """,
     "help": {

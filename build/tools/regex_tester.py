@@ -151,6 +151,12 @@ function reRun(){
   }
 }
 document.addEventListener('DOMContentLoaded', reRun);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('re-input');
+  if (!input) return;
+  input.value = e.detail.data;
+  reRun();
+});
 </script>
 """,
     "help": {

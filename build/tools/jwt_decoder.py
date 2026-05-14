@@ -134,6 +134,12 @@ function jwtDecode(){
   sum.textContent = parts2.join(' · ');
 }
 document.addEventListener('DOMContentLoaded', jwtDecode);
+document.addEventListener('toolhub:prefill', function(e) {
+  var input = document.getElementById('jwt-in');
+  if (!input) return;
+  input.value = e.detail.data;
+  jwtDecode();
+});
 </script>
 """,
     "help": {
