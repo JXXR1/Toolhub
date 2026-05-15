@@ -237,7 +237,7 @@
   </footer>
 
   <script>
-                                                                                                                                                                        const TOOLS = [
+                                                                                                                                                                            const TOOLS = [
       {"slug": "ascii-table", "name": "ASCII テーブル", "desc": "ASCII 0–127 の完全リファレンス。10 進・16 進・2 進・文字・HTML エンティティを表示。フィルタ可能。", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
       {"slug": "base64-encoder", "name": "Base64 エンコーダー / デコーダー", "desc": "テキストを Base64 にエンコード、または Base64 をテキストにデコード。UTF-8 対応で base64url バリアントもサポート。", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
       {"slug": "base64-to-image", "name": "Base64 から画像へ", "desc": "Base64 画像や data URI をファイルに戻すデコーダー。文字列を貼り付け、プレビューしてダウンロード。image-to-Base64 ツールの逆方向。", "icon": "🔓", "cat": "encoding", "tags": ["base64", "data-uri", "decode", "image", "convert"]},
@@ -250,6 +250,7 @@
       {"slug": "color-converter", "name": "カラー変換ツール", "desc": "任意の色を hex、RGB、HSL、OKLCH の間で相互変換。ライブプレビューとワンクリックコピー。", "icon": "🎨", "cat": "design", "tags": ["color", "hex", "rgb", "hsl", "oklch", "convert", "css"]},
       {"slug": "color-palette-extractor", "name": "カラーパレット抽出ツール", "desc": "任意の画像から主要色をブラウザ内で抽出。5〜8 個のスウォッチと HEX コード、コピー＆ペーストできる CSS 変数。ファイルは端末から出ません。", "icon": "🎨", "cat": "media", "tags": ["color", "palette", "extractor", "image", "design", "swatch", "dominant", "k-means"]},
       {"slug": "color-picker", "name": "カラーピッカー", "desc": "色を選ぶと HEX、RGB、RGBA、HSL、HSLA、HSV、CMYK で即座に表示。不透明度を調整して任意の値をコピー。", "icon": "🎨", "cat": "design", "tags": ["color", "picker", "hex", "rgb", "hsl", "hsv", "cmyk", "palette"]},
+      {"slug": "compound-interest-calculator", "name": "複利計算機", "desc": "貯蓄や投資の複利成長を計算。元本、利率、期間、積立額・頻度を設定。最終残高、総利息、年次内訳、成長チャート。", "icon": "💹", "cat": "finance", "tags": ["compound", "interest", "savings", "investment", "growth", "calculator", "personal-finance"]},
       {"slug": "credit-card-validator", "name": "クレジットカード検証ツール", "desc": "Luhn チェックでカード番号を検証し、ブランドを検出。ローカル動作で、番号は送信されません。", "icon": "💳", "cat": "validation", "tags": ["credit card", "validate", "luhn", "visa", "mastercard", "amex", "discover"]},
       {"slug": "cron-builder", "name": "cron 式ビルダー", "desc": "cron 式をビジュアルに構築 — 分・時・日・月・曜日 — して、次の 5 回の発火時刻をプレビュー。", "icon": "⏱", "cat": "developer", "tags": ["cron", "schedule", "builder", "crontab", "next run"]},
       {"slug": "cron-parser", "name": "cron 式パーサー", "desc": "cron 式をパースし、次の 10 回の発火時刻を表示。標準 5 フィールドの crontab。", "icon": "🕒", "cat": "developer", "tags": ["cron", "schedule", "crontab", "next run", "expression"]},
@@ -295,6 +296,7 @@
       {"slug": "markup-margin-calculator", "name": "原価掛け率・粗利率計算機", "desc": "原価から販売価格を決める。原価／マークアップ％／粗利率％／販売価格のうち 2 つを入力すると、残り 2 つと粗利が算出されます。ブラウザのみ。", "icon": "📈", "cat": "math", "tags": ["markup", "margin", "calculator", "pricing", "retail", "business", "profit", "cost"]},
       {"slug": "mime-type-lookup", "name": "MIME タイプ検索", "desc": "拡張子やタイプから MIME タイプを検索。image・video・audio・application・text・font の約 120 種を収録。", "icon": "📎", "cat": "developer", "tags": ["mime", "type", "extension", "content-type", "file", "media"]},
       {"slug": "mortgage-affordability-calculator", "name": "住宅ローン支払能力計算機", "desc": "いくらの家を買えるか？ 収入 + 月々の負債 + 頭金 + 金利 → 28/36 DTI ルールに基づく最大購入額。", "icon": "🏡", "cat": "math", "tags": ["mortgage", "affordability", "home", "house", "calculator", "income", "dti", "down payment"]},
+      {"slug": "mortgage-refi-comparison", "name": "住宅ローン借り換え比較", "desc": "現行ローンと借り換えオファーを比較。損益分岐点、月々返済額の差、生涯節約額。諸費用も考慮。", "icon": "🔄", "cat": "finance", "tags": ["mortgage", "refi", "refinance", "comparison", "break-even", "loan", "home"]},
       {"slug": "number-base-converter", "name": "進数変換ツール", "desc": "2 進・8 進・10 進・16 進、および 2〜36 の任意の基数を相互変換。", "icon": "0b", "cat": "developer", "tags": ["binary", "hex", "octal", "decimal", "base", "convert", "number"]},
       {"slug": "og-tag-preview", "name": "OG タグプレビュー", "desc": "OG メタタグを貼るか、タイトル／説明／画像を入力すると、Twitter/X、Facebook、LinkedIn、Discord のシェアカードを確認できます。", "icon": "🪟", "cat": "design", "tags": ["og", "open graph", "twitter", "facebook", "linkedin", "discord", "preview", "social"]},
       {"slug": "openai-anthropic-converter", "name": "OpenAI ⇄ Anthropic コンバーター", "desc": "メッセージ配列を OpenAI Chat Completions と Anthropic Messages API のあいだで相互変換。system メッセージ・ツール呼び出し・画像ブロック・マルチターンに対応。ブラウザ完結、API キー不要。", "icon": "🔁", "cat": "ai", "tags": ["openai", "anthropic", "claude", "converter", "messages", "api", "format", "tool-calling"]},
@@ -309,6 +311,7 @@
       {"slug": "regex-cheatsheet", "name": "正規表現チートシート", "desc": "クイックリファレンス：アンカー、文字クラス、量指定子、グループ、後読み／先読み、フラグ。クリックでコピー。", "icon": "📖", "cat": "developer", "tags": ["regex", "cheatsheet", "reference", "pattern", "anchors", "groups", "lookaround"]},
       {"slug": "regex-llm-output", "name": "正規表現 LLM 出力抽出ツール", "desc": "雑な LLM 応答から構造化データ（JSON・コードブロック・key-value）を抽出。よくあるテンプレートから選ぶか、独自の正規表現を書く。ライブプレビュー付き。", "icon": "🪝", "cat": "ai", "tags": ["regex", "llm", "extract", "parse", "output", "ai", "structured", "code-fence", "markdown"]},
       {"slug": "regex-tester", "name": "正規表現テスター", "desc": "JavaScript の正規表現をライブテスト。マッチ、キャプチャグループ、置換結果を入力に応じて表示。", "icon": ".*", "cat": "developer", "tags": ["regex", "regular expression", "test", "match", "replace", "javascript"]},
+      {"slug": "retirement-projection", "name": "リタイアメント・プロジェクション", "desc": "リタイアメント貯蓄を予測：現在残高、年間積立、期待利回り、インフレ、目標年。実質（インフレ調整後）と名目残高を表示。複数シナリオでストレステスト。", "icon": "🌅", "cat": "finance", "tags": ["retirement", "projection", "401k", "pension", "savings", "fire", "planning"]},
       {"slug": "rubric-generator", "name": "評価ルーブリック生成ツール", "desc": "評価基準とパフォーマンスレベルから印刷可能なルーブリック（Markdown ＋ HTML プレビュー ＋ 印刷ビュー）を作成。授業の評価設計を行う先生向け。", "icon": "📋", "cat": "text", "tags": ["rubric", "education", "teacher", "school", "grading", "assessment", "markdown"]},
       {"slug": "slug-generator", "name": "スラグ生成ツール", "desc": "任意のタイトルからクリーンな URL スラグを生成。アクセントを翻字し、句読点を取り除き、ハイフンで連結。", "icon": "/-", "cat": "text", "tags": ["slug", "url", "seo", "kebab", "permalink", "transliterate"]},
       {"slug": "sql-formatter", "name": "SQL フォーマッター", "desc": "SQL をきちんとインデントして整形、または 1 行に圧縮。ANSI / MySQL / Postgres の方言に対応。", "icon": "🗄", "cat": "developer", "tags": ["sql", "format", "beautify", "minify", "indent", "mysql", "postgres", "ansi"]},

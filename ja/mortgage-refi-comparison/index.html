@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://plausible.io" crossorigin>
+  <link rel="dns-prefetch" href="https://plausible.io">
+  <title>住宅ローン借り換え比較 — Toolhub</title>
+  <meta name="description" content="無料の住宅ローン借り換え比較ツール。現行ローン（残高、金利、残期間、現在の月々返済額）と借り換えオファー（新金利、新期間、諸費用、ポイント）を入力すると、月々返済額の差、損益分岐月（借り換えの節約が諸費用を上回る月）、ローン期間全体の節約額、並べた償却比較が表示されます。金利変動時の借り換え判断に有用。すべてブラウザ内で完結、紹介手数料なし。">
+  <meta property="og:title" content="住宅ローン借り換え比較 — Toolhub">
+  <meta property="og:description" content="無料の住宅ローン借り換え比較ツール。現行ローン（残高、金利、残期間、現在の月々返済額）と借り換えオファー（新金利、新期間、諸費用、ポイント）を入力すると、月々返済額の差、損益分岐月（借り換えの節約が諸費用を上回る月）、ローン期間全体の節約額、並べた償却比較が表示されます。金利変動時の借り換え判断に有用。すべてブラウザ内で完結、紹介手数料なし。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/ja/mortgage-refi-comparison/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/ja/mortgage-refi-comparison/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/mortgage-refi-comparison/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/mortgage-refi-comparison/">
+  <meta property="og:locale" content="ja_JP">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/ja/mortgage-refi-comparison/#tool",
+        "name": "住宅ローン借り換え比較",
+        "description": "無料の住宅ローン借り換え比較ツール。現行ローン（残高、金利、残期間、現在の月々返済額）と借り換えオファー（新金利、新期間、諸費用、ポイント）を入力すると、月々返済額の差、損益分岐月（借り換えの節約が諸費用を上回る月）、ローン期間全体の節約額、並べた償却比較が表示されます。金利変動時の借り換え判断に有用。すべてブラウザ内で完結、紹介手数料なし。",
+        "url": "https://toolhub.software/ja/mortgage-refi-comparison/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Finance",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["mortgage", "refi", "refinance", "comparison", "break-even", "loan", "home"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "すべてのツール", "item": "https://toolhub.software/ja/"},
+          {"@type": "ListItem", "position": 2, "name": "住宅ローン借り換え比較", "item": "https://toolhub.software/ja/mortgage-refi-comparison/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "用途",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "金利が下がると、銀行は借り換えを勧めてきます。新しいローンで既存ローンを完済し、低い金利に乗り換える話です。一見お得ですが、諸費用と償却スケジュールの再スタートが計算を複雑にします。本ツールは「ローン期間全体で得をするか？」、そして「得になるのは何ヶ月後か？」に答えます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "損益分岐点",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "諸費用 ÷ 月々の節約額 ＝ 損益分岐月。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "よくある注意点",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "抵当権設定費用と司法書士報酬 ：日本では新規借り入れと同様の登記費用がかかります。 団信 ：再加入が必要な場合があり、年齢や健康状態によっては不可。 事務手数料 ：定額型と定率型（融資額の 1–2.2%）。 固定 vs 変動 ：固定から変動への乗り換えは金利見通しへの賭け。 残存期間で借り換える こと。30 年から 30 年にすると総額は逆に増える可能性があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "組み合わせ",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "loan-calculator ── 月次償却表。 compound-interest-calculator ── 節約分を運用する場合。"
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "住宅ローン借り換え比較",
+  "description": "現行ローンと借り換えオファーを比較。損益分岐点、月々返済額の差、生涯節約額。諸費用も考慮。",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "値を入力",
+      "text": "ツールが必要とする refinance comparison の入力を打ち込みます。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "計算結果を確認",
+      "text": "refinance comparison の結果はその場で更新されます — ボタン不要です。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "結果を使うかコピー",
+      "text": "他の場所で refinance comparison の値が必要なら コピー を押します。"
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/ja/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">言語</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/mortgage-refi-comparison/'; else location.href='/mortgage-refi-comparison/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" selected="selected">🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhubをアプリとしてインストール — オフラインで動作、ストア不要" aria-label="Toolhubをアプリとしてインストール — オフラインで動作、ストア不要">アプリをインストール</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="テーマを切り替え" aria-label="テーマを切り替え">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <nav class="breadcrumb" aria-label="パンくずリスト"><a href="/ja/">すべてのツール</a> / 住宅ローン借り換え比較</nav>
+    <h1>住宅ローン借り換え比較</h1>
+    <p class="tagline">現行ローンと借り換えオファーを比較。損益分岐点、月々返済額の差、生涯節約額。諸費用も考慮。</p>
+    
+<div class="tool-card">
+  <div class="rf-disclaimer">Doesn't account for prepayment penalties on your existing loan, mortgage tax deductions, or changes to your effective tax rate. Use as a first-pass comparison, not as financial advice.</div>
+  <h3 style="margin:0 0 0.5rem 0;font-size:0.95rem">Current mortgage</h3>
+  <div class="row-2col">
+    <div>
+      <label>Balance remaining</label>
+      <input type="number" id="rf-cur-bal" step="any" min="0" value="280000" oninput="rfRun()">
+    </div>
+    <div>
+      <label>Current rate (annual %)</label>
+      <input type="number" id="rf-cur-rate" step="0.01" min="0" value="6.75" oninput="rfRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Years remaining</label>
+      <input type="number" id="rf-cur-years" step="1" min="1" max="40" value="25" oninput="rfRun()">
+    </div>
+    <div>
+      <label>Currency symbol</label>
+      <input type="text" id="rf-cur" maxlength="4" value="$" oninput="rfRun()">
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <h3 style="margin:0 0 0.5rem 0;font-size:0.95rem">Refinance offer</h3>
+  <div class="row-2col">
+    <div>
+      <label>New rate (annual %)</label>
+      <input type="number" id="rf-new-rate" step="0.01" min="0" value="5.25" oninput="rfRun()">
+    </div>
+    <div>
+      <label>New term (years)</label>
+      <input type="number" id="rf-new-years" step="1" min="1" max="40" value="25" oninput="rfRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Closing costs</label>
+      <input type="number" id="rf-closing" step="any" min="0" value="4500" oninput="rfRun()">
+    </div>
+    <div>
+      <label>Discount points (1 pt = 1% of new principal)</label>
+      <input type="number" id="rf-points" step="0.125" min="0" value="0" oninput="rfRun()">
+    </div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>結果</label>
+  <div id="rf-out" class="output"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>用途</h2>
+<p>金利が下がると、銀行は借り換えを勧めてきます。新しいローンで既存ローンを完済し、低い金利に乗り換える話です。一見お得ですが、諸費用と償却スケジュールの再スタートが計算を複雑にします。本ツールは「ローン期間全体で得をするか？」、そして「得になるのは何ヶ月後か？」に答えます。</p>
+<h3>損益分岐点</h3>
+<p>諸費用 ÷ 月々の節約額 ＝ 損益分岐月。</p>
+<h3>よくある注意点</h3>
+<ul>
+<li><strong>抵当権設定費用と司法書士報酬</strong>：日本では新規借り入れと同様の登記費用がかかります。</li>
+<li><strong>団信</strong>：再加入が必要な場合があり、年齢や健康状態によっては不可。</li>
+<li><strong>事務手数料</strong>：定額型と定率型（融資額の 1–2.2%）。</li>
+<li><strong>固定 vs 変動</strong>：固定から変動への乗り換えは金利見通しへの賭け。</li>
+<li><strong>残存期間で借り換える</strong>こと。30 年から 30 年にすると総額は逆に増える可能性があります。</li>
+</ul>
+<h3>組み合わせ</h3>
+<ul>
+<li><strong>loan-calculator</strong> ── 月次償却表。</li>
+<li><strong>compound-interest-calculator</strong> ── 節約分を運用する場合。</li>
+</ul>
+<div class="related"><span class="meta">関連ツール:</span> <a href="/ja/loan-calculator/">ローン計算機</a> <a href="/ja/mortgage-affordability-calculator/">住宅ローン支払能力計算機</a> <a href="/ja/compound-interest-calculator/">複利計算機</a> <a href="/ja/retirement-projection/">リタイアメント・プロジェクション</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/ja/privacy/">プライバシー</a> · <a href="/ja/how-we-handle-your-data/">データの取り扱い</a> · <a href="/ja/affiliate-disclosure/">アフィリエイト開示</a> · <a href="/ja/companion-tools/">コンパニオンツール</a> · <a href="/ja/about/">概要</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/for-schools/">学校向け</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.rf-disclaimer{background:var(--bg-elev);border-left:3px solid #c97a4a;padding:0.5rem 0.8rem;border-radius:0 6px 6px 0;font-size:0.78rem;color:var(--text-muted);margin-bottom:0.8rem;line-height:1.4}
+.rf-verdict{padding:1rem 1.2rem;border-radius:8px;text-align:center;margin-bottom:0.8rem;font-weight:600;line-height:1.35}
+.rf-verdict.good{background:#1d6b34;color:#fff}
+.rf-verdict.bad{background:#8a3a2f;color:#fff}
+.rf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.6rem;margin-bottom:0.8rem}
+.rf-stat{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.85rem}
+.rf-stat .rf-num{font-family:ui-monospace,monospace;font-size:1.1rem;font-weight:600;color:var(--accent);word-break:break-all}
+.rf-stat .rf-num.neg{color:#c97a4a}
+.rf-stat .rf-lbl{font-size:0.74rem;color:var(--text-muted);margin-top:0.15rem}
+.rf-side{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.5rem}
+.rf-side > div{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.85rem}
+.rf-side h4{margin:0 0 0.4rem 0;font-size:0.85rem;color:var(--text-muted)}
+.rf-side table{width:100%;border-collapse:collapse;font-family:ui-monospace,monospace;font-size:0.75rem}
+.rf-side th,.rf-side td{padding:0.22rem 0.3rem;text-align:right;border-bottom:1px solid var(--border)}
+.rf-side th:first-child,.rf-side td:first-child{text-align:left;color:var(--text-muted)}
+.rf-side th{color:var(--text-muted);font-weight:600}
+@media(max-width:560px){.rf-side{grid-template-columns:1fr}}
+</style>
+<script>
+function rfFmt(n, cur){
+  if(!isFinite(n)) return '—';
+  const neg = n < 0;
+  const v = Math.round(Math.abs(n));
+  return (neg ? '−' : '') + cur + v.toLocaleString('en-US');
+}
+function rfMonthlyPayment(principal, monthlyRate, months){
+  if(principal <= 0 || months <= 0) return 0;
+  if(monthlyRate === 0) return principal / months;
+  const pow = Math.pow(1 + monthlyRate, months);
+  return principal * (monthlyRate * pow) / (pow - 1);
+}
+function rfAmortize(principal, monthlyRate, months){
+  const rows = [];
+  let bal = principal;
+  const payment = rfMonthlyPayment(principal, monthlyRate, months);
+  let totalInterest = 0;
+  for(let m = 1; m <= months; m++){
+    const interest = bal * monthlyRate;
+    let principalPart = payment - interest;
+    if(principalPart > bal) principalPart = bal;
+    bal -= principalPart;
+    if(bal < 0.005) bal = 0;
+    totalInterest += interest;
+    rows.push({month: m, payment, principal: principalPart, interest, balance: bal});
+  }
+  return { rows, payment, totalInterest };
+}
+function rfBreakdownAt(rows, yr){
+  const m = Math.min(rows.length, yr * 12);
+  return rows[m - 1] || rows[rows.length - 1];
+}
+function rfRun(){
+  const curBal = parseFloat(document.getElementById('rf-cur-bal').value) || 0;
+  const curRate = parseFloat(document.getElementById('rf-cur-rate').value) || 0;
+  const curYears = Math.max(1, parseFloat(document.getElementById('rf-cur-years').value) || 0);
+  const newRate = parseFloat(document.getElementById('rf-new-rate').value) || 0;
+  const newYears = Math.max(1, parseFloat(document.getElementById('rf-new-years').value) || 0);
+  const closing = parseFloat(document.getElementById('rf-closing').value) || 0;
+  const points = parseFloat(document.getElementById('rf-points').value) || 0;
+  const cur = document.getElementById('rf-cur').value || '';
+  const out = document.getElementById('rf-out');
+  if(curBal <= 0){ out.textContent = '上に入力すると結果が表示されます。'; return; }
+  const curMonths = Math.round(curYears * 12);
+  const newMonths = Math.round(newYears * 12);
+  const curMRate = (curRate / 100) / 12;
+  const newMRate = (newRate / 100) / 12;
+  const curAmort = rfAmortize(curBal, curMRate, curMonths);
+  // Refinance: assume the closing costs are paid out of pocket (not rolled in).
+  // Points are paid up front and equal points% of new principal.
+  const pointsCost = (points / 100) * curBal;
+  const upfront = closing + pointsCost;
+  const newAmort = rfAmortize(curBal, newMRate, newMonths);
+  const monthlyDiff = curAmort.payment - newAmort.payment;  // positive = refi saves
+  // Break-even: cumulative monthly savings >= upfront cost.
+  let breakEvenMonth = null;
+  if(monthlyDiff > 0){
+    breakEvenMonth = Math.ceil(upfront / monthlyDiff);
+  }
+  // Lifetime cost comparison: total payments over respective terms + upfront on refi.
+  const curTotalPaid = curAmort.payment * curMonths;
+  const newTotalPaid = newAmort.payment * newMonths + upfront;
+  const lifetimeSavings = curTotalPaid - newTotalPaid;
+  const refiGood = lifetimeSavings > 0 && breakEvenMonth !== null && breakEvenMonth <= newMonths;
+  // Verdict
+  let verdictHtml;
+  if(refiGood){
+    const yearsLeft = Math.max(0, newMonths - breakEvenMonth);
+    const yearsLeftTxt = (yearsLeft / 12).toFixed(1);
+    verdictHtml = `<div class="rf-verdict good">Refi saves ${rfFmt(lifetimeSavings, cur)} over the life of the loan. Break-even at month ${breakEvenMonth} (${(breakEvenMonth/12).toFixed(1)}y) — you stay net-positive for ${yearsLeftTxt} years after that.</div>`;
+  } else if(lifetimeSavings <= 0){
+    verdictHtml = `<div class="rf-verdict bad">Refi costs ${rfFmt(-lifetimeSavings, cur)} more than keeping the current loan. Closing costs + new schedule outweigh the rate drop.</div>`;
+  } else {
+    verdictHtml = `<div class="rf-verdict bad">Refi never breaks even within the new term. Monthly payment is higher, or savings are too small to recover closing costs.</div>`;
+  }
+  // Side-by-side amortization peek: first 5 years + final 5 years.
+  function previewRows(rows, months){
+    const headerMonths = [12, 24, 36, 48, 60];
+    const tailStart = Math.max(60, months - 60);
+    const tailMonths = [];
+    for(let m = tailStart + 12; m <= months; m += 12){ tailMonths.push(m); }
+    const all = [...headerMonths.filter(m => m <= months), ...tailMonths.filter(m => !headerMonths.includes(m))];
+    return all.map(m => rows[m-1]).filter(Boolean);
+  }
+  const curPrev = previewRows(curAmort.rows, curMonths);
+  const newPrev = previewRows(newAmort.rows, newMonths);
+  function tableHtml(prev, label){
+    return `
+      <h4>${label}</h4>
+      <table>
+        <thead><tr><th>Year</th><th>Payment</th><th>Interest</th><th>Balance</th></tr></thead>
+        <tbody>${prev.map(r => `<tr><td>${Math.round(r.month/12)}y</td><td>${rfFmt(r.payment, cur)}</td><td>${rfFmt(r.interest, cur)}</td><td>${rfFmt(r.balance, cur)}</td></tr>`).join('')}</tbody>
+      </table>
+    `;
+  }
+  out.innerHTML = `
+    ${verdictHtml}
+    <div class="rf-grid">
+      <div class="rf-stat"><div class="rf-num">${rfFmt(curAmort.payment, cur)}</div><div class="rf-lbl">Current monthly</div></div>
+      <div class="rf-stat"><div class="rf-num">${rfFmt(newAmort.payment, cur)}</div><div class="rf-lbl">New monthly</div></div>
+      <div class="rf-stat"><div class="rf-num ${monthlyDiff < 0 ? 'neg' : ''}">${monthlyDiff >= 0 ? '−' : '+'}${rfFmt(Math.abs(monthlyDiff), cur).replace('−','')}/mo</div><div class="rf-lbl">Monthly difference</div></div>
+      <div class="rf-stat"><div class="rf-num">${breakEvenMonth ? 'Month ' + breakEvenMonth : '—'}</div><div class="rf-lbl">Break-even point</div></div>
+      <div class="rf-stat"><div class="rf-num">${rfFmt(curAmort.totalInterest, cur)}</div><div class="rf-lbl">Current total interest</div></div>
+      <div class="rf-stat"><div class="rf-num">${rfFmt(newAmort.totalInterest + upfront, cur)}</div><div class="rf-lbl">Refi total interest + costs</div></div>
+      <div class="rf-stat"><div class="rf-num ${lifetimeSavings < 0 ? 'neg' : ''}">${rfFmt(lifetimeSavings, cur)}</div><div class="rf-lbl">Lifetime savings</div></div>
+      <div class="rf-stat"><div class="rf-num">${rfFmt(upfront, cur)}</div><div class="rf-lbl">Upfront cost (closing + points)</div></div>
+    </div>
+    <div class="rf-side">
+      <div>${tableHtml(curPrev, 'Current mortgage')}</div>
+      <div>${tableHtml(newPrev, 'Refi mortgage')}</div>
+    </div>
+  `;
+}
+document.addEventListener('DOMContentLoaded', rfRun);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+  <script>
+    (function() {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      var m = hash.substring(1).match(/(?:^|&)data=([^&]+)/);
+      if (!m) return;
+      var raw;
+      try { raw = decodeURIComponent(m[1]); }
+      catch (e) { console.warn('toolhub: bad hash payload'); return; }
+      function dispatch() {
+        document.dispatchEvent(new CustomEvent('toolhub:prefill', { detail: { data: raw } }));
+      }
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(dispatch, 50);
+      } else {
+        window.addEventListener('DOMContentLoaded', function() { setTimeout(dispatch, 50); });
+      }
+    })();
+  </script>
+</body>
+</html>

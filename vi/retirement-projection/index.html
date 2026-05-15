@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://plausible.io" crossorigin>
+  <link rel="dns-prefetch" href="https://plausible.io">
+  <title>Dự báo Hưu Trí — Toolhub</title>
+  <meta name="description" content="Công cụ dự báo tiết kiệm hưu trí miễn phí. Nhập tuổi hiện tại, tiết kiệm hiện tại, đóng góp hàng năm, % đóng góp của chủ lao động, lợi suất kỳ vọng %, lạm phát %, tuổi nghỉ hưu mục tiêu và mức rút hàng năm mục tiêu. Xem số dư dự báo khi nghỉ hưu (danh nghĩa + điều chỉnh lạm phát), số năm tiền dùng được ở mức rút mục tiêu, và bảng theo từng năm. Kiểm tra với các kịch bản lợi suất thấp/trung bình/cao. Hữu ích cho kế hoạch FIRE, dự báo quỹ hưu trí tự nguyện, hoặc toán hưu trí thông thường. Chỉ trình duyệt — không đăng ký, không phải lời khuyên đầu tư.">
+  <meta property="og:title" content="Dự báo Hưu Trí — Toolhub">
+  <meta property="og:description" content="Công cụ dự báo tiết kiệm hưu trí miễn phí. Nhập tuổi hiện tại, tiết kiệm hiện tại, đóng góp hàng năm, % đóng góp của chủ lao động, lợi suất kỳ vọng %, lạm phát %, tuổi nghỉ hưu mục tiêu và mức rút hàng năm mục tiêu. Xem số dư dự báo khi nghỉ hưu (danh nghĩa + điều chỉnh lạm phát), số năm tiền dùng được ở mức rút mục tiêu, và bảng theo từng năm. Kiểm tra với các kịch bản lợi suất thấp/trung bình/cao. Hữu ích cho kế hoạch FIRE, dự báo quỹ hưu trí tự nguyện, hoặc toán hưu trí thông thường. Chỉ trình duyệt — không đăng ký, không phải lời khuyên đầu tư.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/vi/retirement-projection/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/vi/retirement-projection/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/retirement-projection/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/retirement-projection/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/retirement-projection/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/retirement-projection/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/retirement-projection/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/retirement-projection/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/retirement-projection/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/retirement-projection/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/retirement-projection/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/retirement-projection/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/retirement-projection/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/retirement-projection/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/retirement-projection/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/retirement-projection/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/retirement-projection/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/retirement-projection/">
+  <meta property="og:locale" content="vi_VN">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/vi/retirement-projection/#tool",
+        "name": "Dự báo Hưu Trí",
+        "description": "Công cụ dự báo tiết kiệm hưu trí miễn phí. Nhập tuổi hiện tại, tiết kiệm hiện tại, đóng góp hàng năm, % đóng góp của chủ lao động, lợi suất kỳ vọng %, lạm phát %, tuổi nghỉ hưu mục tiêu và mức rút hàng năm mục tiêu. Xem số dư dự báo khi nghỉ hưu (danh nghĩa + điều chỉnh lạm phát), số năm tiền dùng được ở mức rút mục tiêu, và bảng theo từng năm. Kiểm tra với các kịch bản lợi suất thấp/trung bình/cao. Hữu ích cho kế hoạch FIRE, dự báo quỹ hưu trí tự nguyện, hoặc toán hưu trí thông thường. Chỉ trình duyệt — không đăng ký, không phải lời khuyên đầu tư.",
+        "url": "https://toolhub.software/vi/retirement-projection/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Finance",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "vi",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["retirement", "projection", "401k", "pension", "savings", "fire", "planning"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tất cả công cụ", "item": "https://toolhub.software/vi/"},
+          {"@type": "ListItem", "position": 2, "name": "Dự báo Hưu Trí", "item": "https://toolhub.software/vi/retirement-projection/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Công cụ này để làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hưu trí là một trong những quyết định tài chính lớn nhất — và được định trước nhiều năm bằng vài con số: bao nhiêu tiết kiệm, lợi suất bao nhiêu, có bao lâu để tăng trưởng. Công cụ này dự báo các đầu vào đến tuổi nghỉ hưu mục tiêu, rồi tính ngược: số dư hình thành sẽ dùng được bao nhiêu năm ở mức rút mục tiêu. Hiển thị cả số dư danh nghĩa và số dư thực (đã điều chỉnh lạm phát)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Toán",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Giai đoạn tích lũy: số dư × (1 + lợi suất) + đóng góp hàng năm . Giá trị thực: danh nghĩa ÷ (1 + lạm phát)^số năm ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lưu ý thường gặp",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rủi ro chuỗi lợi suất : cùng lợi suất bình quân nhưng thời điểm khác nhau cho kết quả rất khác. Không mô hình hóa. Lạm phát không ổn định. Việt Nam: thập niên 80 siêu lạm phát, 2010s ổn định 3–7%. Lợi suất danh nghĩa vs thực. Sau lạm phát và phí, 4–5% thực thực tế hơn 10% danh nghĩa. Rút tiền có thể chịu thuế. Quỹ hưu trí tự nguyện và bảo hiểm hưu trí có quy định riêng — tính số ròng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Đi cùng",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "compound-interest-calculator — chỉ lãi kép. mortgage-refi-comparison — đầu tư vs. trả nợ vay mua nhà. Không phải lời khuyên đầu tư. Công cụ này chỉ tính số học. Cho quyết định thực tế hãy gặp chuyên gia tư vấn tài chính."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Dự báo Hưu Trí",
+  "description": "Dự báo tiền hưu trí: số dư hiện tại, đóng góp hàng năm, lợi suất kỳ vọng, lạm phát, năm mục tiêu. Số dư thực (đã điều chỉnh lạm phát) và danh nghĩa. Kiểm tra với nhiều kịch bản.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Nhập các giá trị của bạn",
+      "text": "Gõ dữ liệu retirement projection mà công cụ cần."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Đọc kết quả tính toán",
+      "text": "Kết quả retirement projection cập nhật tức thì — không cần nút."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Dùng hoặc sao chép kết quả",
+      "text": "Bấm Sao chép nếu bạn cần giá trị retirement projection ở nơi khác."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/vi/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Ngôn ngữ</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/retirement-projection/'; else location.href='/retirement-projection/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" selected="selected">🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Cài Toolhub như một ứng dụng trên thiết bị của bạn — hoạt động offline, không cần app store" aria-label="Cài Toolhub như một ứng dụng trên thiết bị của bạn — hoạt động offline, không cần app store">Cài ứng dụng</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện" aria-label="Đổi giao diện">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Đường dẫn"><a href="/vi/">Tất cả công cụ</a> / Dự báo Hưu Trí</nav>
+    <h1>Dự báo Hưu Trí</h1>
+    <p class="tagline">Dự báo tiền hưu trí: số dư hiện tại, đóng góp hàng năm, lợi suất kỳ vọng, lạm phát, năm mục tiêu. Số dư thực (đã điều chỉnh lạm phát) và danh nghĩa. Kiểm tra với nhiều kịch bản.</p>
+    
+<div class="tool-card">
+  <div class="rp-disclaimer"><strong>Projections, not guarantees.</strong> Real returns vary, sequence-of-returns risk is real, inflation can spike. Use this for ballpark planning, not as investment advice.</div>
+  <div class="row-2col">
+    <div>
+      <label>Current age</label>
+      <input type="number" id="rp-age" step="1" min="18" max="90" value="35" oninput="rpRun()">
+    </div>
+    <div>
+      <label>Target retirement age</label>
+      <input type="number" id="rp-ret-age" step="1" min="40" max="100" value="65" oninput="rpRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Current savings</label>
+      <input type="number" id="rp-balance" step="any" min="0" value="50000" oninput="rpRun()">
+    </div>
+    <div>
+      <label>Annual contribution</label>
+      <input type="number" id="rp-contrib" step="any" min="0" value="12000" oninput="rpRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Employer match (% of contribution)</label>
+      <input type="number" id="rp-match" step="1" min="0" max="200" value="50" oninput="rpRun()">
+    </div>
+    <div>
+      <label>Expected return (annual %, nominal)</label>
+      <input type="number" id="rp-return" step="0.1" min="0" value="7" oninput="rpRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Inflation (annual %)</label>
+      <input type="number" id="rp-inflation" step="0.1" min="0" value="2.5" oninput="rpRun()">
+    </div>
+    <div>
+      <label>Target annual withdrawal (today's money)</label>
+      <input type="number" id="rp-withdraw" step="any" min="0" value="40000" oninput="rpRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Currency symbol</label>
+      <input type="text" id="rp-cur" maxlength="4" value="$" oninput="rpRun()">
+    </div>
+    <div></div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Kết quả</label>
+  <div id="rp-out" class="output"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Công cụ này để làm gì?</h2>
+<p>Hưu trí là một trong những quyết định tài chính lớn nhất — và được định trước nhiều năm bằng vài con số: bao nhiêu tiết kiệm, lợi suất bao nhiêu, có bao lâu để tăng trưởng. Công cụ này dự báo các đầu vào đến tuổi nghỉ hưu mục tiêu, rồi tính ngược: số dư hình thành sẽ dùng được bao nhiêu năm ở mức rút mục tiêu. Hiển thị cả số dư danh nghĩa và số dư thực (đã điều chỉnh lạm phát).</p>
+<h3>Toán</h3>
+<p>Giai đoạn tích lũy: <code>số dư × (1 + lợi suất) + đóng góp hàng năm</code>. Giá trị thực: <code>danh nghĩa ÷ (1 + lạm phát)^số năm</code>.</p>
+<h3>Lưu ý thường gặp</h3>
+<ul>
+<li><strong>Rủi ro chuỗi lợi suất</strong>: cùng lợi suất bình quân nhưng thời điểm khác nhau cho kết quả rất khác. Không mô hình hóa.</li>
+<li><strong>Lạm phát không ổn định.</strong> Việt Nam: thập niên 80 siêu lạm phát, 2010s ổn định 3–7%.</li>
+<li><strong>Lợi suất danh nghĩa vs thực.</strong> Sau lạm phát và phí, 4–5% thực thực tế hơn 10% danh nghĩa.</li>
+<li><strong>Rút tiền có thể chịu thuế.</strong> Quỹ hưu trí tự nguyện và bảo hiểm hưu trí có quy định riêng — tính số ròng.</li>
+</ul>
+<h3>Đi cùng</h3>
+<ul>
+<li><strong>compound-interest-calculator</strong> — chỉ lãi kép.</li>
+<li><strong>mortgage-refi-comparison</strong> — đầu tư vs. trả nợ vay mua nhà.</li>
+</ul>
+<p style="margin-top:1rem;font-size:0.85rem;color:var(--text-muted)"><strong>Không phải lời khuyên đầu tư.</strong> Công cụ này chỉ tính số học. Cho quyết định thực tế hãy gặp chuyên gia tư vấn tài chính.</p>
+<div class="related"><span class="meta">Công cụ liên quan:</span> <a href="/vi/compound-interest-calculator/">Máy tính Lãi Kép</a> <a href="/vi/mortgage-refi-comparison/">So sánh Tái Cấp Vốn Vay Mua Nhà</a> <a href="/vi/loan-calculator/">Máy tính Khoản vay</a> <a href="/vi/currency-converter/">Bộ Chuyển Đổi Tiền Tệ</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/vi/privacy/">Quyền riêng tư</a> · <a href="/vi/how-we-handle-your-data/">Xử lý dữ liệu</a> · <a href="/vi/affiliate-disclosure/">Tiết lộ affiliate</a> · <a href="/vi/companion-tools/">Công cụ bổ sung</a> · <a href="/vi/about/">Giới thiệu</a> · <a href="/vi/contact/">Liên hệ</a> · <a href="/vi/for-schools/">Dành cho trường học</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.rp-disclaimer{background:#8a3a2f;color:#fff;padding:0.7rem 0.9rem;border-radius:8px;font-size:0.82rem;margin-bottom:0.8rem;line-height:1.45}
+.rp-hero{background:var(--accent);color:#fff;padding:1rem 1.2rem;border-radius:8px;text-align:center;margin-bottom:0.8rem}
+.rp-hero .rp-big{font-family:ui-monospace,monospace;font-size:1.8rem;font-weight:700;line-height:1.1}
+.rp-hero .rp-sub{font-size:0.82rem;opacity:0.9;margin-top:0.25rem}
+.rp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.6rem;margin-bottom:0.8rem}
+.rp-stat{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.85rem}
+.rp-stat .rp-num{font-family:ui-monospace,monospace;font-size:1.1rem;font-weight:600;color:var(--accent);word-break:break-all}
+.rp-stat .rp-lbl{font-size:0.74rem;color:var(--text-muted);margin-top:0.15rem}
+.rp-scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-bottom:0.8rem}
+.rp-scen{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.7rem;text-align:center}
+.rp-scen.med{border-color:var(--accent);border-width:2px}
+.rp-scen .rp-stitle{font-size:0.75rem;color:var(--text-muted);margin-bottom:0.25rem}
+.rp-scen .rp-sval{font-family:ui-monospace,monospace;font-size:1rem;font-weight:600;color:var(--accent)}
+.rp-scen .rp-sreal{font-size:0.72rem;color:var(--text-muted);margin-top:0.15rem}
+.rp-chart-wrap{background:var(--bg-elev);border:1px solid var(--border);border-radius:6px;padding:0.6rem;margin-bottom:0.8rem}
+.rp-chart-wrap svg{display:block;width:100%;height:auto}
+.rp-chart-legend{display:flex;gap:1rem;font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem;flex-wrap:wrap}
+.rp-chart-legend span::before{content:'';display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:0.4rem;vertical-align:middle}
+.rp-chart-legend .rp-l-n::before{background:var(--accent)}
+.rp-chart-legend .rp-l-r::before{background:#5a9ec9}
+.rp-tab{width:100%;border-collapse:collapse;font-family:ui-monospace,monospace;font-size:0.78rem}
+.rp-tab th,.rp-tab td{padding:0.3rem 0.45rem;border-bottom:1px solid var(--border);text-align:right}
+.rp-tab th{color:var(--text-muted);font-weight:600;background:var(--bg-elev);position:sticky;top:0;cursor:pointer;user-select:none}
+.rp-tab th:first-child,.rp-tab td:first-child{text-align:left;color:var(--text-muted)}
+.rp-tab th.sorted::after{content:' ↓';color:var(--accent)}
+.rp-tab-wrap{max-height:340px;overflow:auto;border:1px solid var(--border);border-radius:6px}
+@media(max-width:560px){.rp-scenarios{grid-template-columns:1fr}}
+</style>
+<script>
+const RP_STATE = { rows: [], sortBy: 'year', sortDir: 'asc' };
+function rpFmt(n, cur){
+  if(!isFinite(n)) return '—';
+  return cur + Math.round(n).toLocaleString('en-US');
+}
+function rpAccumulate(start, contribTotal, annualRate, years){
+  let bal = start;
+  const rows = [];
+  for(let y = 1; y <= years; y++){
+    const yearStart = bal;
+    // End-of-year contribution convention, with interest applied on starting
+    // balance during the year.
+    const interest = bal * annualRate;
+    bal += interest + contribTotal;
+    rows.push({year: y, start: yearStart, contribution: contribTotal, interest, end: bal});
+  }
+  return { rows, finalBalance: bal };
+}
+function rpDeplete(start, annualWithdraw, annualRate, inflation, withdrawTodayMoney){
+  // Walk year-by-year post-retirement.
+  // Withdrawal grows with inflation if user gave it in today's money.
+  // Here `annualWithdraw` is already the nominal first-year withdrawal in retirement-year money.
+  let bal = start;
+  let y = 0;
+  let wd = annualWithdraw;
+  while(bal > 0 && y < 80){
+    y++;
+    const interest = bal * annualRate;
+    bal += interest - wd;
+    if(bal <= 0){ return y; }
+    wd *= (1 + inflation);
+  }
+  return y >= 80 ? Infinity : y;
+}
+function rpChart(rows, cur, inflation){
+  if(!rows.length) return '';
+  const W = 600, H = 200, padL = 40, padR = 8, padT = 8, padB = 22;
+  const maxBal = Math.max(...rows.map(r => r.end), 1);
+  const xs = (i) => padL + (i / rows.length) * (W - padL - padR);
+  const ys = (v) => H - padB - (v / maxBal) * (H - padT - padB);
+  const ptsNom = ['M ' + xs(0) + ' ' + ys(rows[0].start)];
+  const ptsReal = ['M ' + xs(0) + ' ' + ys(rows[0].start)];
+  rows.forEach((r, i) => {
+    ptsNom.push('L ' + xs(i+1) + ' ' + ys(r.end));
+    const real = r.end / Math.pow(1 + inflation, r.year);
+    ptsReal.push('L ' + xs(i+1) + ' ' + ys(real));
+  });
+  const ticks = [0, Math.floor(rows.length/2), rows.length];
+  const tickLabels = ticks.map(t => `<text x="${xs(t)}" y="${H-6}" text-anchor="middle" fill="var(--text-muted)" font-size="10">+${t}y</text>`).join('');
+  const yLabels = [0, maxBal/2, maxBal].map(v => `<text x="${padL-4}" y="${ys(v)+3}" text-anchor="end" fill="var(--text-muted)" font-size="10">${cur}${Math.round(v).toLocaleString('en-US')}</text>`).join('');
+  return `
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Retirement projection chart">
+      <rect x="${padL}" y="${padT}" width="${W-padL-padR}" height="${H-padT-padB}" fill="transparent" stroke="var(--border)"/>
+      <path d="${ptsNom.join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <path d="${ptsReal.join(' ')}" fill="none" stroke="#5a9ec9" stroke-width="1.5" stroke-dasharray="4,3"/>
+      ${tickLabels}
+      ${yLabels}
+    </svg>
+    <div class="rp-chart-legend">
+      <span class="rp-l-n">Nominal balance</span>
+      <span class="rp-l-r">Real (inflation-adjusted, today's $)</span>
+    </div>
+  `;
+}
+function rpSortRows(rows, sortBy, dir){
+  const cmp = (a, b) => {
+    const va = a[sortBy], vb = b[sortBy];
+    return dir === 'asc' ? va - vb : vb - va;
+  };
+  return rows.slice().sort(cmp);
+}
+function rpRenderTable(cur){
+  const host = document.getElementById('rp-tab-host');
+  if(!host) return;
+  const rows = rpSortRows(RP_STATE.rows, RP_STATE.sortBy, RP_STATE.sortDir);
+  const sortMark = (k) => RP_STATE.sortBy === k ? ' class="sorted"' : '';
+  const body = rows.map(r => `<tr><td>${r.year}</td><td>${r.age}</td><td>${rpFmt(r.start, cur)}</td><td>${rpFmt(r.contribution, cur)}</td><td>${rpFmt(r.interest, cur)}</td><td>${rpFmt(r.end, cur)}</td><td>${rpFmt(r.real, cur)}</td></tr>`).join('');
+  host.innerHTML = `
+    <table class="rp-tab">
+      <thead><tr>
+        <th${sortMark('year')} onclick="rpSort('year')">Year</th>
+        <th${sortMark('age')} onclick="rpSort('age')">Age</th>
+        <th${sortMark('start')} onclick="rpSort('start')">Start</th>
+        <th${sortMark('contribution')} onclick="rpSort('contribution')">Contribution</th>
+        <th${sortMark('interest')} onclick="rpSort('interest')">Returns</th>
+        <th${sortMark('end')} onclick="rpSort('end')">End (nominal)</th>
+        <th${sortMark('real')} onclick="rpSort('real')">End (real)</th>
+      </tr></thead>
+      <tbody>${body}</tbody>
+    </table>
+  `;
+}
+function rpSort(col){
+  if(RP_STATE.sortBy === col){
+    RP_STATE.sortDir = RP_STATE.sortDir === 'asc' ? 'desc' : 'asc';
+  } else {
+    RP_STATE.sortBy = col;
+    RP_STATE.sortDir = col === 'year' || col === 'age' ? 'asc' : 'desc';
+  }
+  rpRenderTable(document.getElementById('rp-cur').value || '');
+}
+function rpRun(){
+  const age = parseInt(document.getElementById('rp-age').value, 10) || 35;
+  const retAge = parseInt(document.getElementById('rp-ret-age').value, 10) || 65;
+  const startBal = parseFloat(document.getElementById('rp-balance').value) || 0;
+  const annContrib = parseFloat(document.getElementById('rp-contrib').value) || 0;
+  const matchPct = parseFloat(document.getElementById('rp-match').value) || 0;
+  const retRate = parseFloat(document.getElementById('rp-return').value) || 0;
+  const infl = parseFloat(document.getElementById('rp-inflation').value) || 0;
+  const wdTodayMoney = parseFloat(document.getElementById('rp-withdraw').value) || 0;
+  const cur = document.getElementById('rp-cur').value || '';
+  const out = document.getElementById('rp-out');
+  if(retAge <= age){ out.textContent = 'Nhập dữ liệu ở trên để xem kết quả.'; return; }
+  const years = retAge - age;
+  const contribTotal = annContrib * (1 + matchPct / 100);
+  const r = retRate / 100;
+  const i = infl / 100;
+  const acc = rpAccumulate(startBal, contribTotal, r, years);
+  const finalNominal = acc.finalBalance;
+  const finalReal = finalNominal / Math.pow(1 + i, years);
+  // Build table rows incl. age & real balance
+  RP_STATE.rows = acc.rows.map(row => ({
+    ...row,
+    age: age + row.year,
+    real: row.end / Math.pow(1 + i, row.year),
+  }));
+  // Year-1-of-retirement withdrawal grown by inflation from today's money
+  const firstWithdraw = wdTodayMoney * Math.pow(1 + i, years);
+  const yearsLast = wdTodayMoney > 0 ? rpDeplete(finalNominal, firstWithdraw, r, i, true) : Infinity;
+  const yearsLastTxt = yearsLast === Infinity ? 'Indefinitely' : `${yearsLast} years`;
+  // Stress scenarios
+  const low = rpAccumulate(startBal, contribTotal, Math.max(0, r - 0.02), years).finalBalance;
+  const high = rpAccumulate(startBal, contribTotal, r + 0.02, years).finalBalance;
+  const lowReal = low / Math.pow(1 + i, years);
+  const highReal = high / Math.pow(1 + i, years);
+  const totalContrib = contribTotal * years;
+  const totalGrowth = finalNominal - startBal - totalContrib;
+  out.innerHTML = `
+    <div class="rp-hero">
+      <div class="rp-big">${rpFmt(finalNominal, cur)}</div>
+      <div class="rp-sub">Projected balance at age ${retAge} (nominal). Real value in today's money: ${rpFmt(finalReal, cur)}.</div>
+    </div>
+    <div class="rp-grid">
+      <div class="rp-stat"><div class="rp-num">${rpFmt(totalContrib, cur)}</div><div class="rp-lbl">Total contributions (with match)</div></div>
+      <div class="rp-stat"><div class="rp-num">${rpFmt(totalGrowth, cur)}</div><div class="rp-lbl">Total growth (returns)</div></div>
+      <div class="rp-stat"><div class="rp-num">${yearsLastTxt}</div><div class="rp-lbl">Lasts at target withdrawal</div></div>
+      <div class="rp-stat"><div class="rp-num">${rpFmt(firstWithdraw, cur)}</div><div class="rp-lbl">Year-1 withdrawal (nominal)</div></div>
+    </div>
+    <h4 style="margin:0.4rem 0;font-size:0.9rem;color:var(--text-muted)">Stress-test by return scenario</h4>
+    <div class="rp-scenarios">
+      <div class="rp-scen"><div class="rp-stitle">Low (${(retRate-2).toFixed(1)}%)</div><div class="rp-sval">${rpFmt(low, cur)}</div><div class="rp-sreal">Real: ${rpFmt(lowReal, cur)}</div></div>
+      <div class="rp-scen med"><div class="rp-stitle">Expected (${retRate.toFixed(1)}%)</div><div class="rp-sval">${rpFmt(finalNominal, cur)}</div><div class="rp-sreal">Real: ${rpFmt(finalReal, cur)}</div></div>
+      <div class="rp-scen"><div class="rp-stitle">High (${(retRate+2).toFixed(1)}%)</div><div class="rp-sval">${rpFmt(high, cur)}</div><div class="rp-sreal">Real: ${rpFmt(highReal, cur)}</div></div>
+    </div>
+    <div class="rp-chart-wrap">${rpChart(acc.rows, cur, i)}</div>
+    <div><strong>Year-by-year projection</strong> <span style="color:var(--text-muted);font-size:0.78rem">(click headers to sort)</span></div>
+    <div class="rp-tab-wrap" id="rp-tab-host" style="margin-top:0.4rem"></div>
+  `;
+  rpRenderTable(cur);
+}
+document.addEventListener('DOMContentLoaded', rpRun);
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+  <script>
+    (function() {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      var m = hash.substring(1).match(/(?:^|&)data=([^&]+)/);
+      if (!m) return;
+      var raw;
+      try { raw = decodeURIComponent(m[1]); }
+      catch (e) { console.warn('toolhub: bad hash payload'); return; }
+      function dispatch() {
+        document.dispatchEvent(new CustomEvent('toolhub:prefill', { detail: { data: raw } }));
+      }
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(dispatch, 50);
+      } else {
+        window.addEventListener('DOMContentLoaded', function() { setTimeout(dispatch, 50); });
+      }
+    })();
+  </script>
+</body>
+</html>
