@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://plausible.io" crossorigin>
+  <link rel="dns-prefetch" href="https://plausible.io">
+  <title>ROI（投資収益率）計算機 — Toolhub</title>
+  <meta name="description" content="ブラウザ完結の無料 ROI 計算ツール。元本、最終評価額、保有期間を入力するだけで、トータル ROI %、年率 CAGR、損益、倍率が分かります。最大 3 件のシナリオを並べて比較できます（同じ期間内での ETF vs. 不動産 vs. 暗号資産など）。手数料と配当はオプション。計算はすべてブラウザ内で完結 — アップロード不要、登録不要。">
+  <meta property="og:title" content="ROI（投資収益率）計算機 — Toolhub">
+  <meta property="og:description" content="ブラウザ完結の無料 ROI 計算ツール。元本、最終評価額、保有期間を入力するだけで、トータル ROI %、年率 CAGR、損益、倍率が分かります。最大 3 件のシナリオを並べて比較できます（同じ期間内での ETF vs. 不動産 vs. 暗号資産など）。手数料と配当はオプション。計算はすべてブラウザ内で完結 — アップロード不要、登録不要。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/ja/roi-calculator/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/ja/roi-calculator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/roi-calculator/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/roi-calculator/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/roi-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/roi-calculator/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/roi-calculator/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/roi-calculator/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/roi-calculator/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/roi-calculator/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/roi-calculator/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/roi-calculator/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/roi-calculator/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/roi-calculator/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/roi-calculator/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/roi-calculator/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/roi-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/roi-calculator/">
+  <meta property="og:locale" content="ja_JP">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/ja/roi-calculator/#tool",
+        "name": "ROI（投資収益率）計算機",
+        "description": "ブラウザ完結の無料 ROI 計算ツール。元本、最終評価額、保有期間を入力するだけで、トータル ROI %、年率 CAGR、損益、倍率が分かります。最大 3 件のシナリオを並べて比較できます（同じ期間内での ETF vs. 不動産 vs. 暗号資産など）。手数料と配当はオプション。計算はすべてブラウザ内で完結 — アップロード不要、登録不要。",
+        "url": "https://toolhub.software/ja/roi-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Finance",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["roi", "return", "investment", "cagr", "annualized", "calculator", "personal-finance"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "すべてのツール", "item": "https://toolhub.software/ja/"},
+          {"@type": "ListItem", "position": 2, "name": "ROI（投資収益率）計算機", "item": "https://toolhub.software/ja/roi-calculator/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "用途",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ROI（投資収益率）は「儲かったか、いくら儲かったか」を表す共通言語です。ただし生の数字は誤解しやすく、「10 年で 50%」と「半年で 50%」は別物です。本ツールは 累計 ROI と 年率 CAGR の両方を表示し、保有期間の異なる投資を公平に比較できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "計算式",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ROI = (最終 − 初期 − 手数料 + 配当) / 初期 × 100 CAGR = (最終 / 初期)^(1/年数) − 1"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "よくある注意点",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "短期保有は年率を膨らませる。 3 ヶ月で 10% → 年率 ~46%（統計的裏付けなし）。 手数料は静かに削る。 信託報酬 1% × 30 年 ≈ 最終残高の約 20%。 税金未控除。 NISA・iDeCo の枠外では譲渡益・配当に約 20% 課税。 インフレ未控除。 名目 6%・インフレ 3% → 実質 3%。 不動産 ROI は複雑。 固定資産税、維持費、保険、空室、仲介手数料 — 全部「手数料」に含めること。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "組み合わせ",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "compound-interest-calculator ── ROI を将来へ投影。 inflation-calculator ── 名目 ROI を実質 ROI に変換。"
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "ROI（投資収益率）計算機",
+  "description": "あらゆる保有資産の ROI と年率 CAGR を計算。最大 3 件の投資を横並びで比較：株式、不動産、暗号資産など買値と売値があるものすべて。",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "値を入力",
+      "text": "ツールが必要とする return on investment の入力を打ち込みます。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "計算結果を確認",
+      "text": "return on investment の結果はその場で更新されます — ボタン不要です。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "結果を使うかコピー",
+      "text": "他の場所で return on investment の値が必要なら コピー を押します。"
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/ja/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">言語</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/roi-calculator/'; else location.href='/roi-calculator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" selected="selected">🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" >🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhubをアプリとしてインストール — オフラインで動作、ストア不要" aria-label="Toolhubをアプリとしてインストール — オフラインで動作、ストア不要">アプリをインストール</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="テーマを切り替え" aria-label="テーマを切り替え">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <nav class="breadcrumb" aria-label="パンくずリスト"><a href="/ja/">すべてのツール</a> / ROI（投資収益率）計算機</nav>
+    <h1>ROI（投資収益率）計算機</h1>
+    <p class="tagline">あらゆる保有資産の ROI と年率 CAGR を計算。最大 3 件の投資を横並びで比較：株式、不動産、暗号資産など買値と売値があるものすべて。</p>
+    
+<div class="tool-card">
+  <div class="roi-disclaimer">Past returns are not guarantees. Annualised figures assume reinvestment of nothing; treat as a back-of-envelope number, not an investment plan.</div>
+  <div class="row-2col">
+    <div>
+      <label>Currency symbol</label>
+      <input type="text" id="roi-cur" maxlength="4" value="$" oninput="roiRun()">
+    </div>
+    <div>
+      <label>Sync with URL</label>
+      <select id="roi-sync" onchange="roiRun()">
+        <option value="off" selected>Off</option>
+        <option value="on">Save state in URL fragment</option>
+      </select>
+    </div>
+  </div>
+  <div id="roi-scenarios"></div>
+  <div style="margin-top:0.7rem">
+    <button type="button" id="roi-add" onclick="roiAdd()" class="roi-add-btn">+ Add scenario</button>
+  </div>
+</div>
+<div class="tool-card">
+  <label>結果</label>
+  <div id="roi-out" class="output"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>用途</h2>
+<p>ROI（投資収益率）は「儲かったか、いくら儲かったか」を表す共通言語です。ただし生の数字は誤解しやすく、「10 年で 50%」と「半年で 50%」は別物です。本ツールは <strong>累計 ROI</strong> と <strong>年率 CAGR</strong> の両方を表示し、保有期間の異なる投資を公平に比較できます。</p>
+<h3>計算式</h3>
+<pre>ROI = (最終 − 初期 − 手数料 + 配当) / 初期 × 100
+CAGR = (最終 / 初期)^(1/年数) − 1</pre>
+<h3>よくある注意点</h3>
+<ul>
+<li><strong>短期保有は年率を膨らませる。</strong> 3 ヶ月で 10% → 年率 ~46%（統計的裏付けなし）。</li>
+<li><strong>手数料は静かに削る。</strong> 信託報酬 1% × 30 年 ≈ 最終残高の約 20%。</li>
+<li><strong>税金未控除。</strong> NISA・iDeCo の枠外では譲渡益・配当に約 20% 課税。</li>
+<li><strong>インフレ未控除。</strong> 名目 6%・インフレ 3% → 実質 3%。</li>
+<li><strong>不動産 ROI は複雑。</strong> 固定資産税、維持費、保険、空室、仲介手数料 — 全部「手数料」に含めること。</li>
+</ul>
+<h3>組み合わせ</h3>
+<ul>
+<li><strong>compound-interest-calculator</strong> ── ROI を将来へ投影。</li>
+<li><strong>inflation-calculator</strong> ── 名目 ROI を実質 ROI に変換。</li>
+</ul>
+<div class="related"><span class="meta">関連ツール:</span> <a href="/ja/compound-interest-calculator/">複利計算機</a> <a href="/ja/inflation-calculator/">インフレ計算機</a> <a href="/ja/retirement-projection/">リタイアメント・プロジェクション</a> <a href="/ja/currency-converter/">通貨換算ツール</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/ja/privacy/">プライバシー</a> · <a href="/ja/how-we-handle-your-data/">データの取り扱い</a> · <a href="/ja/affiliate-disclosure/">アフィリエイト開示</a> · <a href="/ja/companion-tools/">コンパニオンツール</a> · <a href="/ja/about/">概要</a> · <a href="/ja/contact/">お問い合わせ</a> · <a href="/ja/for-schools/">学校向け</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.roi-disclaimer{background:var(--bg-elev);border-left:3px solid #c97a4a;padding:0.5rem 0.8rem;border-radius:0 6px 6px 0;font-size:0.78rem;color:var(--text-muted);margin-bottom:0.8rem;line-height:1.4}
+.roi-scen{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.85rem;margin-top:0.6rem;position:relative}
+.roi-scen .roi-rm{position:absolute;top:0.5rem;right:0.6rem;background:transparent;border:none;color:var(--text-muted);font-size:0.78rem;cursor:pointer;padding:0.2rem 0.4rem}
+.roi-scen .roi-rm:hover{color:#c97a4a}
+.roi-scen h4{margin:0 0 0.5rem 0;font-size:0.88rem}
+.roi-add-btn{background:var(--bg-elev);border:1px dashed var(--border);color:var(--accent);padding:0.5rem 0.9rem;border-radius:6px;cursor:pointer;font-size:0.85rem;width:100%}
+.roi-add-btn:hover{background:var(--accent);color:#fff}
+.roi-add-btn:disabled{opacity:0.4;cursor:not-allowed}
+.roi-out-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem;margin-bottom:0.8rem}
+.roi-out-card{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.75rem 0.85rem}
+.roi-out-card h5{margin:0 0 0.35rem 0;font-size:0.85rem;color:var(--accent)}
+.roi-out-card .roi-mult{font-family:ui-monospace,monospace;font-size:1.5rem;font-weight:700;line-height:1.1;color:var(--accent)}
+.roi-out-card .roi-mult.neg{color:#c97a4a}
+.roi-out-card .roi-row{display:flex;justify-content:space-between;font-size:0.78rem;margin-top:0.3rem;font-family:ui-monospace,monospace}
+.roi-out-card .roi-row span:first-child{color:var(--text-muted)}
+.roi-out-card .roi-row span:last-child{color:var(--text)}
+.roi-out-card .roi-flag{display:inline-block;margin-top:0.4rem;font-size:0.7rem;background:#8a3a2f;color:#fff;padding:0.1rem 0.4rem;border-radius:3px}
+.roi-cmp-tab{width:100%;border-collapse:collapse;font-family:ui-monospace,monospace;font-size:0.78rem;margin-top:0.4rem}
+.roi-cmp-tab th,.roi-cmp-tab td{padding:0.4rem 0.5rem;border-bottom:1px solid var(--border);text-align:right}
+.roi-cmp-tab th{color:var(--text-muted);font-weight:600;background:var(--bg-elev)}
+.roi-cmp-tab th:first-child,.roi-cmp-tab td:first-child{text-align:left;color:var(--text-muted)}
+.roi-chart-wrap{background:var(--bg-elev);border:1px solid var(--border);border-radius:6px;padding:0.6rem;margin-top:0.6rem}
+.roi-chart-wrap svg{display:block;width:100%;height:auto}
+.roi-chart-bar{transition:opacity 0.15s}
+.roi-chart-bar:hover{opacity:0.85}
+</style>
+<script>
+const ROI_MAX = 3;
+const ROI_DEFAULTS = [
+  {label: 'S&P 500 ETF', initial: 10000, final: 18500, years: 5, months: 0, fees: 25, dividends: 800},
+  {label: 'Rental property', initial: 50000, final: 72000, years: 5, months: 0, fees: 4500, dividends: 9000},
+  {label: '', initial: 0, final: 0, years: 0, months: 0, fees: 0, dividends: 0},
+];
+let ROI_COUNT = 2;
+
+function roiFmt(n, cur){
+  if(!isFinite(n)) return '—';
+  const neg = n < 0;
+  const v = Math.round(Math.abs(n));
+  return (neg ? '−' : '') + cur + v.toLocaleString('en-US');
+}
+function roiPct(n){
+  if(!isFinite(n)) return '—';
+  return (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
+}
+function roiBuildRow(i){
+  const d = ROI_DEFAULTS[i] || ROI_DEFAULTS[2];
+  return `
+    <div class="roi-scen" id="roi-s${i}">
+      ${i > 0 ? `<button type="button" class="roi-rm" onclick="roiRemove(${i})" aria-label="Remove scenario">✕ Remove</button>` : ''}
+      <h4>Scenario ${i+1}</h4>
+      <label>Label</label>
+      <input type="text" id="roi-label-${i}" value="${d.label.replace(/"/g,'&quot;')}" placeholder="e.g. VOO, condo, BTC" oninput="roiRun()">
+      <div class="row-2col" style="margin-top:0.5rem">
+        <div><label>Initial investment</label><input type="number" id="roi-initial-${i}" step="any" min="0" value="${d.initial}" oninput="roiRun()"></div>
+        <div><label>Final value</label><input type="number" id="roi-final-${i}" step="any" min="0" value="${d.final}" oninput="roiRun()"></div>
+      </div>
+      <div class="row-2col" style="margin-top:0.5rem">
+        <div><label>Time held — years</label><input type="number" id="roi-years-${i}" step="1" min="0" max="100" value="${d.years}" oninput="roiRun()"></div>
+        <div><label>+ Months</label><input type="number" id="roi-months-${i}" step="1" min="0" max="11" value="${d.months}" oninput="roiRun()"></div>
+      </div>
+      <div class="row-2col" style="margin-top:0.5rem">
+        <div><label>Fees / costs (optional)</label><input type="number" id="roi-fees-${i}" step="any" min="0" value="${d.fees}" oninput="roiRun()"></div>
+        <div><label>Dividends / income (optional)</label><input type="number" id="roi-divs-${i}" step="any" min="0" value="${d.dividends}" oninput="roiRun()"></div>
+      </div>
+    </div>
+  `;
+}
+function roiRender(){
+  const host = document.getElementById('roi-scenarios');
+  let html = '';
+  for(let i = 0; i < ROI_COUNT; i++) html += roiBuildRow(i);
+  host.innerHTML = html;
+  document.getElementById('roi-add').disabled = ROI_COUNT >= ROI_MAX;
+}
+function roiAdd(){
+  if(ROI_COUNT >= ROI_MAX) return;
+  ROI_COUNT++;
+  roiRender();
+  roiRun();
+}
+function roiRemove(i){
+  if(ROI_COUNT <= 1 || i === 0) return;
+  // Shift down: copy values from i+1..ROI_COUNT-1 into i..ROI_COUNT-2
+  const fields = ['label','initial','final','years','months','fees','divs'];
+  for(let j = i; j < ROI_COUNT - 1; j++){
+    for(const f of fields){
+      const src = document.getElementById(`roi-${f}-${j+1}`);
+      const dst = document.getElementById(`roi-${f}-${j}`);
+      if(src && dst) dst.value = src.value;
+    }
+  }
+  ROI_COUNT--;
+  // Re-read current values into defaults so re-render preserves state
+  for(let k = 0; k < ROI_COUNT; k++){
+    ROI_DEFAULTS[k] = {
+      label: document.getElementById('roi-label-'+k).value,
+      initial: parseFloat(document.getElementById('roi-initial-'+k).value) || 0,
+      final: parseFloat(document.getElementById('roi-final-'+k).value) || 0,
+      years: parseInt(document.getElementById('roi-years-'+k).value, 10) || 0,
+      months: parseInt(document.getElementById('roi-months-'+k).value, 10) || 0,
+      fees: parseFloat(document.getElementById('roi-fees-'+k).value) || 0,
+      dividends: parseFloat(document.getElementById('roi-divs-'+k).value) || 0,
+    };
+  }
+  roiRender();
+  roiRun();
+}
+function roiReadScen(i){
+  const lbl = document.getElementById('roi-label-'+i).value || ('Scenario ' + (i+1));
+  const initial = parseFloat(document.getElementById('roi-initial-'+i).value) || 0;
+  const final_ = parseFloat(document.getElementById('roi-final-'+i).value) || 0;
+  const years = Math.max(0, parseInt(document.getElementById('roi-years-'+i).value, 10) || 0);
+  const months = Math.max(0, parseInt(document.getElementById('roi-months-'+i).value, 10) || 0);
+  const fees = parseFloat(document.getElementById('roi-fees-'+i).value) || 0;
+  const divs = parseFloat(document.getElementById('roi-divs-'+i).value) || 0;
+  const t = years + months / 12;
+  return { label: lbl, initial, final: final_, t, years, months, fees, divs, filled: initial > 0 && final_ > 0 && t > 0 };
+}
+function roiCalc(s){
+  if(!s.filled) return null;
+  const netProfit = s.final - s.initial - s.fees;
+  const netProfitWithDivs = netProfit + s.divs;
+  const totalReturnPct = (netProfit / s.initial) * 100;
+  const totalReturnIncDivsPct = (netProfitWithDivs / s.initial) * 100;
+  // CAGR uses appreciation only (price return); annualised total return uses
+  // (1+roi)^(1/t) for the inc-dividends number.
+  const baseRatio = s.final / s.initial;
+  const baseRatioInc = (s.initial + netProfitWithDivs) / s.initial;
+  let cagr = NaN, cagrInc = NaN;
+  if(baseRatio > 0 && s.t > 0) cagr = (Math.pow(baseRatio, 1/s.t) - 1) * 100;
+  if(baseRatioInc > 0 && s.t > 0) cagrInc = (Math.pow(baseRatioInc, 1/s.t) - 1) * 100;
+  const multiplier = s.initial > 0 ? (s.final + s.divs - s.fees) / s.initial : 0;
+  const subYear = s.t < 1;
+  return { netProfit, netProfitWithDivs, totalReturnPct, totalReturnIncDivsPct, cagr, cagrInc, multiplier, subYear };
+}
+function roiSyncUrl(){
+  const sync = document.getElementById('roi-sync').value;
+  if(sync !== 'on'){ if(location.hash) history.replaceState(null, '', location.pathname); return; }
+  const p = new URLSearchParams();
+  p.set('n', ROI_COUNT);
+  p.set('cur', document.getElementById('roi-cur').value);
+  for(let i = 0; i < ROI_COUNT; i++){
+    ['label','initial','final','years','months','fees','divs'].forEach(f => {
+      p.set(f+i, document.getElementById('roi-'+f+'-'+i).value);
+    });
+  }
+  history.replaceState(null, '', '#' + p.toString());
+}
+function roiReadUrl(){
+  if(!location.hash) return;
+  const p = new URLSearchParams(location.hash.slice(1));
+  const n = parseInt(p.get('n'), 10);
+  if(n >= 1 && n <= ROI_MAX) ROI_COUNT = n;
+  for(let i = 0; i < ROI_COUNT; i++){
+    ROI_DEFAULTS[i] = ROI_DEFAULTS[i] || ROI_DEFAULTS[2];
+    if(p.has('label'+i)) ROI_DEFAULTS[i].label = p.get('label'+i);
+    if(p.has('initial'+i)) ROI_DEFAULTS[i].initial = parseFloat(p.get('initial'+i)) || 0;
+    if(p.has('final'+i)) ROI_DEFAULTS[i].final = parseFloat(p.get('final'+i)) || 0;
+    if(p.has('years'+i)) ROI_DEFAULTS[i].years = parseInt(p.get('years'+i), 10) || 0;
+    if(p.has('months'+i)) ROI_DEFAULTS[i].months = parseInt(p.get('months'+i), 10) || 0;
+    if(p.has('fees'+i)) ROI_DEFAULTS[i].fees = parseFloat(p.get('fees'+i)) || 0;
+    if(p.has('divs'+i)) ROI_DEFAULTS[i].dividends = parseFloat(p.get('divs'+i)) || 0;
+  }
+  document.getElementById('roi-sync').value = 'on';
+  if(p.has('cur')) document.getElementById('roi-cur').value = p.get('cur');
+}
+function roiChart(scens, cur){
+  const filled = scens.filter(s => s.calc);
+  if(filled.length < 2) return '';
+  const W = 600, H = 180, padL = 110, padR = 50, padT = 14, padB = 22;
+  const bars = filled.length;
+  const barH = (H - padT - padB) / bars - 6;
+  // Use inc-dividends CAGR for the comparison bar
+  const vals = filled.map(s => isFinite(s.calc.cagrInc) ? s.calc.cagrInc : 0);
+  const minV = Math.min(0, ...vals);
+  const maxV = Math.max(0, ...vals);
+  const span = (maxV - minV) || 1;
+  const xZero = padL + (-minV / span) * (W - padL - padR);
+  const xV = v => padL + ((v - minV) / span) * (W - padL - padR);
+  const rects = filled.map((s, i) => {
+    const v = isFinite(s.calc.cagrInc) ? s.calc.cagrInc : 0;
+    const y = padT + i * (barH + 6);
+    const x1 = Math.min(xZero, xV(v));
+    const x2 = Math.max(xZero, xV(v));
+    const w = Math.max(2, x2 - x1);
+    const color = v >= 0 ? 'var(--accent)' : '#c97a4a';
+    return `
+      <rect class="roi-chart-bar" x="${x1}" y="${y}" width="${w}" height="${barH}" fill="${color}" rx="2"/>
+      <text x="${padL - 6}" y="${y + barH/2 + 3}" text-anchor="end" fill="var(--text)" font-size="10">${s.label.length > 16 ? s.label.slice(0,14)+'…' : s.label}</text>
+      <text x="${x2 + 4}" y="${y + barH/2 + 3}" fill="var(--text-muted)" font-size="10">${v.toFixed(1)}%</text>
+    `;
+  }).join('');
+  // Zero line
+  const zeroLine = `<line x1="${xZero}" y1="${padT-2}" x2="${xZero}" y2="${H-padB+2}" stroke="var(--border)" stroke-width="1"/>`;
+  const axisLabel = `<text x="${padL}" y="${H-6}" fill="var(--text-muted)" font-size="10">Annualised CAGR (incl. dividends), %</text>`;
+  return `<div class="roi-chart-wrap"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="CAGR comparison chart">
+    ${zeroLine}${rects}${axisLabel}
+  </svg></div>`;
+}
+function roiRun(){
+  const cur = document.getElementById('roi-cur').value || '';
+  const out = document.getElementById('roi-out');
+  const scens = [];
+  for(let i = 0; i < ROI_COUNT; i++){
+    const s = roiReadScen(i);
+    s.calc = roiCalc(s);
+    scens.push(s);
+  }
+  const anyFilled = scens.some(s => s.calc);
+  if(!anyFilled){ out.textContent = '上に入力すると結果が表示されます。'; roiSyncUrl(); return; }
+  const cards = scens.map((s, i) => {
+    if(!s.calc) return `<div class="roi-out-card"><h5>${s.label}</h5><div style="color:var(--text-muted);font-size:0.8rem">Enter initial, final, and time to compute.</div></div>`;
+    const c = s.calc;
+    const cls = c.totalReturnIncDivsPct >= 0 ? '' : 'neg';
+    const flagHtml = c.subYear ? '<span class="roi-flag">CAGR is annualised projection (held under 1 year)</span>' : '';
+    return `
+      <div class="roi-out-card">
+        <h5>${s.label}</h5>
+        <div class="roi-mult ${cls}">${c.multiplier.toFixed(2)}×</div>
+        <div class="roi-row"><span>Total ROI</span><span>${roiPct(c.totalReturnPct)}</span></div>
+        <div class="roi-row"><span>+ dividends/income</span><span>${roiPct(c.totalReturnIncDivsPct)}</span></div>
+        <div class="roi-row"><span>Annualised CAGR</span><span>${isFinite(c.cagr) ? c.cagr.toFixed(2)+'%' : '—'}</span></div>
+        <div class="roi-row"><span>CAGR incl. divs</span><span>${isFinite(c.cagrInc) ? c.cagrInc.toFixed(2)+'%' : '—'}</span></div>
+        <div class="roi-row"><span>Net profit</span><span>${roiFmt(c.netProfit, cur)}</span></div>
+        <div class="roi-row"><span>+ dividends</span><span>${roiFmt(c.netProfitWithDivs, cur)}</span></div>
+        ${flagHtml}
+      </div>
+    `;
+  }).join('');
+  // Comparison table when 2+ filled
+  const filled = scens.filter(s => s.calc);
+  let cmpHtml = '';
+  if(filled.length >= 2){
+    const rows = filled.map(s => `
+      <tr>
+        <td>${s.label}</td>
+        <td>${roiFmt(s.initial, cur)}</td>
+        <td>${roiFmt(s.final, cur)}</td>
+        <td>${s.t.toFixed(2)}y</td>
+        <td>${roiPct(s.calc.totalReturnIncDivsPct)}</td>
+        <td>${isFinite(s.calc.cagrInc) ? s.calc.cagrInc.toFixed(2)+'%' : '—'}</td>
+        <td>${s.calc.multiplier.toFixed(2)}×</td>
+      </tr>
+    `).join('');
+    // Pick the winner by CAGR (incl divs)
+    const winnerIdx = filled.reduce((bestI, s, i, arr) => (isFinite(s.calc.cagrInc) && s.calc.cagrInc > (isFinite(arr[bestI].calc.cagrInc) ? arr[bestI].calc.cagrInc : -Infinity)) ? i : bestI, 0);
+    const winner = filled[winnerIdx];
+    const winnerLine = isFinite(winner.calc.cagrInc) ? `<p style="margin:0.6rem 0 0.3rem 0;font-size:0.85rem"><strong>${winner.label}</strong> wins on annualised CAGR at <strong>${winner.calc.cagrInc.toFixed(2)}%/yr</strong>. Compare the multiplier too — short holding periods can flatter the percent figure.</p>` : '';
+    cmpHtml = `
+      <h4 style="margin:0.8rem 0 0.3rem 0;font-size:0.9rem;color:var(--text-muted)">Side-by-side</h4>
+      <table class="roi-cmp-tab">
+        <thead><tr><th>Scenario</th><th>In</th><th>Out</th><th>Time</th><th>Total ROI</th><th>CAGR</th><th>Mult.</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      ${winnerLine}
+      ${roiChart(scens, cur)}
+    `;
+  }
+  out.innerHTML = `<div class="roi-out-grid">${cards}</div>${cmpHtml}`;
+  roiSyncUrl();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  roiReadUrl();
+  roiRender();
+  roiRun();
+});
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+  <script>
+    (function() {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      var m = hash.substring(1).match(/(?:^|&)data=([^&]+)/);
+      if (!m) return;
+      var raw;
+      try { raw = decodeURIComponent(m[1]); }
+      catch (e) { console.warn('toolhub: bad hash payload'); return; }
+      function dispatch() {
+        document.dispatchEvent(new CustomEvent('toolhub:prefill', { detail: { data: raw } }));
+      }
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(dispatch, 50);
+      } else {
+        window.addEventListener('DOMContentLoaded', function() { setTimeout(dispatch, 50); });
+      }
+    })();
+  </script>
+</body>
+</html>

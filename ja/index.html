@@ -237,7 +237,7 @@
   </footer>
 
   <script>
-                                                                                                                                                                            const TOOLS = [
+                                                                                                                                                                                const TOOLS = [
       {"slug": "ascii-table", "name": "ASCII テーブル", "desc": "ASCII 0–127 の完全リファレンス。10 進・16 進・2 進・文字・HTML エンティティを表示。フィルタ可能。", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
       {"slug": "base64-encoder", "name": "Base64 エンコーダー / デコーダー", "desc": "テキストを Base64 にエンコード、または Base64 をテキストにデコード。UTF-8 対応で base64url バリアントもサポート。", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
       {"slug": "base64-to-image", "name": "Base64 から画像へ", "desc": "Base64 画像や data URI をファイルに戻すデコーダー。文字列を貼り付け、プレビューしてダウンロード。image-to-Base64 ツールの逆方向。", "icon": "🔓", "cat": "encoding", "tags": ["base64", "data-uri", "decode", "image", "convert"]},
@@ -261,6 +261,7 @@
       {"slug": "currency-converter", "name": "通貨換算ツール", "desc": "既知の基準日のリファレンスレートで 50 種以上の通貨を換算。ライブ API なし、トラッキングなし — フリーランスの見積もり概算に便利。請求前に必ず実勢レートと照合してください。", "icon": "💱", "cat": "math", "tags": ["currency", "converter", "exchange", "rate", "eur", "usd", "forex", "freelance"]},
       {"slug": "damage-calculator", "name": "ダメージ計算機", "desc": "RPG 戦闘ダメージ式テスター。攻撃 vs 防御、クリ率、耐性、倍率、防御貫通。期待ダメージ範囲＋クリ込み平均＋DPS。バランス調整向け。", "icon": "⚔️", "cat": "gaming", "tags": ["damage", "calculator", "combat", "rpg", "formula", "crit", "game-dev", "balance"]},
       {"slug": "date-calculator", "name": "日付計算機", "desc": "2 つの日付の差・日付に対する日／週／月／年の加減・年齢を年・月・日で算出。", "icon": "📅", "cat": "datetime", "tags": ["date", "calculator", "duration", "between", "add", "subtract", "age", "weekday"]},
+      {"slug": "debt-payoff-planner", "name": "返済プランナー", "desc": "複数の負債を効率よく返済する計画を立てる。雪だるま方式（残高小から）か雪崩方式（金利高から）を選択。完済までの期間、総利息、月次スケジュール。", "icon": "🏦", "cat": "finance", "tags": ["debt", "payoff", "snowball", "avalanche", "credit-card", "loan", "calculator", "personal-finance"]},
       {"slug": "dice-roller", "name": "ダイスローラー", "desc": "標準 D&D 記法でダイスをロール — 2d6+3、1d20、4d6 keep highest 3 など。暗号論的に安全な RNG。", "icon": "🎲", "cat": "utility", "tags": ["dice", "roll", "d20", "rpg", "dnd", "random", "tabletop", "notation"]},
       {"slug": "email-validator", "name": "メールアドレス検証ツール", "desc": "メールアドレスが構文的に有効か（RFC 5322 準拠）を確認。ローカル部・ドメイン・よくある落とし穴も解析。", "icon": "✉", "cat": "validation", "tags": ["email", "validate", "rfc", "syntax", "mx", "domain"]},
       {"slug": "emoji-picker", "name": "絵文字ピッカー", "desc": "名前とキーワードで検索できる絵文字パレット。クリックでコピー。カテゴリ：スマイリー、動物、食べ物、旅行、オブジェクト、記号、国旗。", "icon": "😀", "cat": "text", "tags": ["emoji", "picker", "search", "copy", "unicode", "smiley", "symbol"]},
@@ -278,6 +279,7 @@
       {"slug": "image-convert", "name": "画像フォーマット変換", "desc": "PNG・JPG・WebP の相互変換をブラウザ内で実行。画像を選び、出力形式を指定してダウンロード。アップロードもサーバーも不要です。", "icon": "🔄", "cat": "media", "tags": ["image", "convert", "png", "jpg", "jpeg", "webp", "format", "transform"]},
       {"slug": "image-resize", "name": "画像リサイズ", "desc": "ブラウザだけで画像を任意の幅・高さにリサイズ。アスペクト比を固定でき、SNS 用サイズへの縮小も即ダウンロード。アップロード不要。", "icon": "📐", "cat": "media", "tags": ["image", "resize", "scale", "dimensions", "width", "height", "crop"]},
       {"slug": "image-to-base64", "name": "画像から Base64 へ", "desc": "任意の画像を Base64 データ URI に変換し、HTML・CSS・Markdown へインライン挿入。ファイルはブラウザ内のみ。", "icon": "🖼️", "cat": "encoding", "tags": ["image", "base64", "data-uri", "convert", "embed"]},
+      {"slug": "inflation-calculator", "name": "インフレ計算機", "desc": "インフレが購買力をどれだけ削るかを可視化。金額 + 年数 + インフレ率 → 今日（または将来）の実質価値。昇給・退職資金・貯蓄目標に。", "icon": "📉", "cat": "finance", "tags": ["inflation", "purchasing-power", "real-value", "cpi", "calculator", "personal-finance"]},
       {"slug": "invoice-generator", "name": "請求書ジェネレーター", "desc": "Markdown + 印刷向け HTML できれいな請求書を生成。フォームを埋め、ライブプレビューを見て、ブラウザの印刷から PDF 保存。アップロードなし、登録不要。", "icon": "🧾", "cat": "text", "tags": ["invoice", "billing", "freelance", "small-business", "vat", "pdf"]},
       {"slug": "js-minifier", "name": "JavaScript ミニファイア", "desc": "高速で構造的な JavaScript ミニファイ — コメント除去、空白圧縮、空行削除。ビフォア／アフターのサイズと節約率を表示。", "icon": "{}", "cat": "developer", "tags": ["javascript", "js", "minify", "compress", "optimize"]},
       {"slug": "json-diff", "name": "JSON 差分", "desc": "2 つの JSON ドキュメントの構造的差分 — 追加・削除・変更されたキーと値の変化を並べて表示。", "icon": "{}±", "cat": "developer", "tags": ["json", "diff", "compare", "structural", "delta", "merge"]},
@@ -312,6 +314,7 @@
       {"slug": "regex-llm-output", "name": "正規表現 LLM 出力抽出ツール", "desc": "雑な LLM 応答から構造化データ（JSON・コードブロック・key-value）を抽出。よくあるテンプレートから選ぶか、独自の正規表現を書く。ライブプレビュー付き。", "icon": "🪝", "cat": "ai", "tags": ["regex", "llm", "extract", "parse", "output", "ai", "structured", "code-fence", "markdown"]},
       {"slug": "regex-tester", "name": "正規表現テスター", "desc": "JavaScript の正規表現をライブテスト。マッチ、キャプチャグループ、置換結果を入力に応じて表示。", "icon": ".*", "cat": "developer", "tags": ["regex", "regular expression", "test", "match", "replace", "javascript"]},
       {"slug": "retirement-projection", "name": "リタイアメント・プロジェクション", "desc": "リタイアメント貯蓄を予測：現在残高、年間積立、期待利回り、インフレ、目標年。実質（インフレ調整後）と名目残高を表示。複数シナリオでストレステスト。", "icon": "🌅", "cat": "finance", "tags": ["retirement", "projection", "401k", "pension", "savings", "fire", "planning"]},
+      {"slug": "roi-calculator", "name": "ROI（投資収益率）計算機", "desc": "あらゆる保有資産の ROI と年率 CAGR を計算。最大 3 件の投資を横並びで比較：株式、不動産、暗号資産など買値と売値があるものすべて。", "icon": "📈", "cat": "finance", "tags": ["roi", "return", "investment", "cagr", "annualized", "calculator", "personal-finance"]},
       {"slug": "rubric-generator", "name": "評価ルーブリック生成ツール", "desc": "評価基準とパフォーマンスレベルから印刷可能なルーブリック（Markdown ＋ HTML プレビュー ＋ 印刷ビュー）を作成。授業の評価設計を行う先生向け。", "icon": "📋", "cat": "text", "tags": ["rubric", "education", "teacher", "school", "grading", "assessment", "markdown"]},
       {"slug": "slug-generator", "name": "スラグ生成ツール", "desc": "任意のタイトルからクリーンな URL スラグを生成。アクセントを翻字し、句読点を取り除き、ハイフンで連結。", "icon": "/-", "cat": "text", "tags": ["slug", "url", "seo", "kebab", "permalink", "transliterate"]},
       {"slug": "sql-formatter", "name": "SQL フォーマッター", "desc": "SQL をきちんとインデントして整形、または 1 行に圧縮。ANSI / MySQL / Postgres の方言に対応。", "icon": "🗄", "cat": "developer", "tags": ["sql", "format", "beautify", "minify", "indent", "mysql", "postgres", "ansi"]},

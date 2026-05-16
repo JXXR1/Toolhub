@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://plausible.io" crossorigin>
+  <link rel="dns-prefetch" href="https://plausible.io">
+  <title>Enflasyon Hesaplayıcı — Toolhub</title>
+  <meta name="description" content="Tarayıcıda ücretsiz enflasyon hesaplayıcı. Başlangıç tutarı, başlangıç ve bitiş yılı (veya yıl sayısı) ve yıllık enflasyon oranı (varsayılan %3 — veya kendi ülkenin gerçek oranı) gir. Bugünkü (veya gelecekteki) eşdeğer alım gücünü, kümülatif enflasyonu %, ve yıl yıl erozyon tablosunu gör. Yön değiştirilebilir: «bugün 100 TL 10 yıl sonra ne kadar» VEYA «2010'da 100 TL bugün ne kadar». Tüm hesaplama tarayıcıda — devlet API'si yok, oranı sen kontrol ediyorsun.">
+  <meta property="og:title" content="Enflasyon Hesaplayıcı — Toolhub">
+  <meta property="og:description" content="Tarayıcıda ücretsiz enflasyon hesaplayıcı. Başlangıç tutarı, başlangıç ve bitiş yılı (veya yıl sayısı) ve yıllık enflasyon oranı (varsayılan %3 — veya kendi ülkenin gerçek oranı) gir. Bugünkü (veya gelecekteki) eşdeğer alım gücünü, kümülatif enflasyonu %, ve yıl yıl erozyon tablosunu gör. Yön değiştirilebilir: «bugün 100 TL 10 yıl sonra ne kadar» VEYA «2010'da 100 TL bugün ne kadar». Tüm hesaplama tarayıcıda — devlet API'si yok, oranı sen kontrol ediyorsun.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolhub.software/tr/inflation-calculator/">
+  <meta property="og:image" content="https://toolhub.software/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toolhub.software/og-image.png">
+  <link rel="canonical" href="https://toolhub.software/tr/inflation-calculator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#58a6ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="alternate" hreflang="en" href="https://toolhub.software/inflation-calculator/">
+  <link rel="alternate" hreflang="de" href="https://toolhub.software/de/inflation-calculator/">
+  <link rel="alternate" hreflang="es" href="https://toolhub.software/es/inflation-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://toolhub.software/fr/inflation-calculator/">
+  <link rel="alternate" hreflang="it" href="https://toolhub.software/it/inflation-calculator/">
+  <link rel="alternate" hreflang="pt" href="https://toolhub.software/pt/inflation-calculator/">
+  <link rel="alternate" hreflang="pl" href="https://toolhub.software/pl/inflation-calculator/">
+  <link rel="alternate" hreflang="ja" href="https://toolhub.software/ja/inflation-calculator/">
+  <link rel="alternate" hreflang="nl" href="https://toolhub.software/nl/inflation-calculator/">
+  <link rel="alternate" hreflang="tr" href="https://toolhub.software/tr/inflation-calculator/">
+  <link rel="alternate" hreflang="id" href="https://toolhub.software/id/inflation-calculator/">
+  <link rel="alternate" hreflang="vi" href="https://toolhub.software/vi/inflation-calculator/">
+  <link rel="alternate" hreflang="hi" href="https://toolhub.software/hi/inflation-calculator/">
+  <link rel="alternate" hreflang="sk" href="https://toolhub.software/sk/inflation-calculator/">
+  <link rel="alternate" hreflang="cs" href="https://toolhub.software/cs/inflation-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://toolhub.software/inflation-calculator/">
+  <meta property="og:locale" content="tr_TR">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["SoftwareApplication", "WebApplication"],
+        "@id": "https://toolhub.software/tr/inflation-calculator/#tool",
+        "name": "Enflasyon Hesaplayıcı",
+        "description": "Tarayıcıda ücretsiz enflasyon hesaplayıcı. Başlangıç tutarı, başlangıç ve bitiş yılı (veya yıl sayısı) ve yıllık enflasyon oranı (varsayılan %3 — veya kendi ülkenin gerçek oranı) gir. Bugünkü (veya gelecekteki) eşdeğer alım gücünü, kümülatif enflasyonu %, ve yıl yıl erozyon tablosunu gör. Yön değiştirilebilir: «bugün 100 TL 10 yıl sonra ne kadar» VEYA «2010'da 100 TL bugün ne kadar». Tüm hesaplama tarayıcıda — devlet API'si yok, oranı sen kontrol ediyorsun.",
+        "url": "https://toolhub.software/tr/inflation-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "applicationSubCategory": "Finance",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "tr",
+        "isAccessibleForFree": true,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["inflation", "purchasing-power", "real-value", "cpi", "calculator", "personal-finance"],
+        "creator": {"@id": "https://toolhub.software#publisher"},
+        "publisher": {"@id": "https://toolhub.software#publisher"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://toolhub.software#publisher",
+        "name": "Toolhub",
+        "url": "https://toolhub.software",
+        "sameAs": ["https://github.com/EveHetz/Toolhub"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Tüm araçlar", "item": "https://toolhub.software/tr/"},
+          {"@type": "ListItem", "position": 2, "name": "Enflasyon Hesaplayıcı", "item": "https://toolhub.software/tr/inflation-calculator/"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enflasyon, faiz getirmeyen her liranın üzerine eklenen sessiz vergidir. Zamlar her zaman yetişmez; hesaptaki nakit reel olarak erir; bugünkü TL ile koyduğun emeklilik hedefi yerinde durmak için bile her yıl büyümek zorundadır. Bu araç bu erozyona somut bir sayı verir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Formüller",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gelecek fiyat = bugün × (1+r)^t Bugünkü paranın reel değeri = tutar / (1+r)^t Kümülatif enflasyon = (1+r)^t − 1"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "72 Kuralı",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fiyatlar yaklaşık her 72 / enflasyon % yılda bir ikiye katlanır. %3 → 24 yıl; %7 → 10 yıl; %30 → ~2,4 yıl."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi oranı kullanmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TR son yıllar : TÜFE 2022–2024'te %40–%85 bandında dalgalandı. TCMB hedefi : orta vade %5, ancak son yıllarda çok üzerinde. Kişisel enflasyon sepete bağlı — kira ve gıda genellikle manşet TÜFE'nin üzerinde."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Eşleşir",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "compound-interest-calculator — birikimin enflasyonu geçiyor mu? retirement-projection — enflasyona göre düzeltilmiş hedef."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Enflasyon Hesaplayıcı",
+  "description": "Enflasyonun alım gücünü nasıl erittiğini gör. Tutar + yıl + enflasyon oranı → bugünkü (veya gelecekteki) reel değer. Zam, emeklilik hedefi, birikim için faydalı.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Değerlerini gir",
+      "text": "Aracın ihtiyaç duyduğu inflation-adjusted value girişlerini yaz."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Hesaplamayı oku",
+      "text": "inflation-adjusted value sonucu anında güncellenir — düğmeye gerek yok."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sonucu kullan veya kopyala",
+      "text": "inflation-adjusted value değerini başka bir yerde lazım edersen Kopyala düğmesine bas."
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --text-muted: #a5b1bd; --accent: #58a6ff;
+      --accent-hover: #79c0ff; --green: #3fb950; --red: #f85149;
+      --card-hover: #1c2129; --code-bg: #0a0d12;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8fa; --surface: #ffffff; --border: #d0d7de;
+      --text: #1f2328; --text-muted: #656d76; --accent: #0969da;
+      --accent-hover: #0550ae; --green: #1a7f37; --red: #cf222e;
+      --card-hover: #f3f4f6; --code-bg: #f6f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .header { padding: 1.25rem 1.5rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .header-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-select, .theme-toggle, .install-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+    .install-btn { min-width: 100px; min-height: 36px; visibility: hidden; font-weight: 500; }
+    .install-btn.visible { visibility: visible; }
+    .install-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text); overflow-wrap: anywhere; }
+    .tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; overflow-wrap: anywhere; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.4rem; font-weight: 500; }
+    textarea, input[type=text], input[type=number], input[type=password], input[type=url], select { width: 100%; padding: 0.65rem 0.8rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.95rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+    button { background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: background 0.15s; }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    button.secondary:hover { background: var(--card-hover); }
+    .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .output { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; font-family: ui-monospace, monospace; font-size: 0.92rem; min-height: 1.6em; word-break: break-all; white-space: pre-wrap; color: var(--text); }
+    .output.error { color: var(--red); border-color: var(--red); }
+    .output.success { color: var(--green); border-color: var(--green); }
+    .output-row { display: flex; align-items: center; gap: 0.5rem; }
+    .output-row .output { flex: 1; }
+    .copy-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
+    .meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; }
+    .help h2 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .help h3 { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; color: var(--text); }
+    .help p, .help li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .help ul, .help ol { padding-left: 1.25rem; }
+    .related { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .related a { padding: 0.3rem 0.7rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; font-size: 0.8rem; color: var(--text-muted); text-decoration: underline; }
+    .related a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .footer a { color: var(--text-muted); margin: 0 0.5rem; text-decoration: underline; }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); font-size: 0.75rem; }
+    @keyframes flash { 0% { background: var(--green); color: #fff; } 100% { background: var(--accent); color: #fff; } }
+    .copy-btn.copied { animation: flash 0.6s; }
+    @media (max-width: 768px) {
+      .container { padding: 1rem; }
+      .header { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .tagline { font-size: 0.95rem; }
+      .row-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      *, *::before, *::after { max-width: 100%; }
+      .container { padding: 0.75rem; }
+      .header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      .logo { font-size: 1.2rem; }
+      .lang-select, .theme-toggle, .install-btn { padding: 0.55rem 0.7rem; font-size: 0.9rem; min-height: 44px; }
+      button { padding: 0.7rem 1rem; min-height: 44px; font-size: 1rem; }
+      textarea, input[type=text], input[type=number], input[type=password], input[type=url], input[type=email], select { padding: 0.7rem 0.8rem; font-size: 1rem; min-height: 44px; }
+      .tool-card { padding: 1rem; }
+      h1 { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+      pre, pre.output, .output { font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      .button-row { gap: 0.4rem; }
+      .button-row button { flex: 0 0 auto; }
+    }
+    @media (max-width: 380px) {
+      .header { flex-wrap: wrap; }
+      .header-actions { width: 100%; justify-content: flex-end; gap: 0.4rem; }
+      .lang-select { font-size: 0.82rem; padding: 0.45rem 0.55rem; }
+      .install-btn { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    }
+    /* Inlined from /js/monetize.css */
+    .ad-slot { margin: 1.5rem 0; padding: 0.5rem; border: 1px dashed var(--border, #30363d); border-radius: 8px; background: var(--surface, #161b22); min-height: 100px; }
+    .ad-slot:empty, .ad-slot[data-rendered="1"]:empty { display: none; }
+    .ad-slot .ad-label { font-size: 0.7rem; color: var(--text-muted, #a5b1bd); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; margin-bottom: 0.4rem; opacity: 0.7; }
+    #toolhub-consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999; background: var(--surface, #161b22); color: var(--text, #e6edf3); border: 1px solid var(--border, #30363d); border-radius: 10px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); padding: 1rem 1.25rem; max-width: 760px; margin: 0 auto; }
+    .toolhub-consent-inner { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .toolhub-consent-msg { flex: 1 1 280px; margin: 0; font-size: 0.88rem; color: var(--text-muted, #a5b1bd); line-height: 1.55; }
+    .toolhub-consent-learn { color: var(--accent, #58a6ff); margin-left: 0.5rem; white-space: nowrap; }
+    .toolhub-consent-actions { display: flex; gap: 0.5rem; }
+    .toolhub-consent-btn { padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border, #30363d); background: transparent; color: var(--text, #e6edf3); }
+    .toolhub-consent-btn.toolhub-consent-accept { background: var(--accent, #58a6ff); border-color: var(--accent, #58a6ff); color: #fff; }
+    .toolhub-consent-btn:hover { opacity: 0.9; }
+    [data-toolhub-footer-extras]:empty { display: none; }
+    [data-toolhub-footer-extras] { margin-top: 0.4rem; font-size: 0.85rem; color: var(--text-muted, #a5b1bd); }
+    [data-toolhub-footer-extras] a { margin: 0 0.5rem; }
+    .ad-slot .ad-placeholder { font-size: 0.85rem; color: var(--text-muted, #a5b1bd); text-align: center; padding: 1.25rem 0.5rem; font-style: italic; letter-spacing: 0.02em; }
+    #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
+    @keyframes toolhub-fade-in { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: none; } }
+    .support-callout { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; font-size: 0.82rem; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; animation: toolhub-fade-in 0.3s ease-out; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .support-callout a { color: var(--text-muted); text-decoration: underline; }
+    .support-callout a:hover { color: var(--accent); text-decoration: none; }
+    .support-callout-dismiss { background: transparent; color: var(--text-muted); border: 0; padding: 0 0.3rem; font-size: 1rem; cursor: pointer; margin-left: auto; line-height: 1; min-height: 0; }
+    .support-callout-dismiss:hover { background: transparent; color: var(--text); }
+    .companion-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1rem 0; }
+    .companion-tool h3 { margin-bottom: 0.5rem; }
+    .companion-tool h3 a { color: var(--accent); text-decoration: none; }
+    .companion-tool h3 a:hover { text-decoration: underline; }
+    .companion-tool .tagline { font-size: 1rem; margin-bottom: 0.75rem; }
+    .companion-tool .meta { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+    .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
+  </style>
+  <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Toolhub monetization config.
+       deploy_env gates AdSense behaviour so test/sandbox traffic can never
+       accidentally hit a live AdSense account:
+         "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
+                        adsbygoogle.js is NEVER loaded. Ad slots render as
+                        placeholder boxes and a small SANDBOX badge is shown.
+                        Empty / unset AdSense IDs are harmless here.
+         "production" — real AdSense IDs filled in, ready for live traffic.
+                        adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
+                        (16 digits) AND at least one slot ID must be set,
+                        otherwise the build script refuses to ship and the
+                        runtime falls back to placeholders.
+       To go live: fill the IDs below and flip deploy_env to "production".
+       Default is "sandbox" so an unconfigured deploy can never accidentally
+       run as production. */
+    window.TOOLHUB_CONFIG = {
+      deploy_env: "sandbox",
+      adsenseClientId: "",
+      adSlotIds: { content: "", footer: "", indexTop: "", indexBottom: "" },
+      cloudflareAnalyticsToken: "",
+      digitalOceanRef: "https://m.do.co/c/05c01e8aec67",
+      githubSponsorsUrl: "https://github.com/sponsors/JXXR1",
+      buyMeACoffeeUrl: "https://www.buymeacoffee.com/Tool_hub"
+    };
+  </script>
+  <script defer src="/js/monetize.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/tr/" class="logo"><span>Tool</span>hub</a>
+    <div class="header-actions">
+      <label for="lang-select" class="visually-hidden">Dil</label>
+      <select id="lang-select" class="lang-select" onchange="if(this.value)location.href='/'+this.value+'/inflation-calculator/'; else location.href='/inflation-calculator/'">
+        <option value="" >🇬🇧 EN</option>
+        <option value="de" >🇩🇪 DE</option>
+        <option value="es" >🇪🇸 ES</option>
+        <option value="fr" >🇫🇷 FR</option>
+        <option value="it" >🇮🇹 IT</option>
+        <option value="pt" >🇧🇷 PT</option>
+        <option value="pl" >🇵🇱 PL</option>
+        <option value="ja" >🇯🇵 JA</option>
+        <option value="nl" >🇳🇱 NL</option>
+        <option value="tr" selected="selected">🇹🇷 TR</option>
+        <option value="id" >🇮🇩 ID</option>
+        <option value="vi" >🇻🇳 VI</option>
+        <option value="hi" >🇮🇳 HI</option>
+        <option value="sk" >🇸🇰 SK</option>
+        <option value="cs" >🇨🇿 CS</option>
+      </select>
+      <button class="install-btn" id="installBtn" type="button" title="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez" aria-label="Toolhub'ı cihazına uygulama olarak yükle — çevrimdışı çalışır, uygulama mağazası gerekmez">Uygulamayı yükle</button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Temayı değiştir" aria-label="Temayı değiştir">🌙</button>
+    </div>
+  </header>
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Konum izi"><a href="/tr/">Tüm araçlar</a> / Enflasyon Hesaplayıcı</nav>
+    <h1>Enflasyon Hesaplayıcı</h1>
+    <p class="tagline">Enflasyonun alım gücünü nasıl erittiğini gör. Tutar + yıl + enflasyon oranı → bugünkü (veya gelecekteki) reel değer. Zam, emeklilik hedefi, birikim için faydalı.</p>
+    
+<div class="tool-card">
+  <div class="inf-disclaimer">Inflation rates vary by country and year. This tool uses a single assumed rate — for precise historical figures, consult your national statistics office (BLS, ONS, Eurostat, etc).</div>
+  <div class="row-2col">
+    <div>
+      <label>Direction</label>
+      <select id="inf-dir" onchange="infRun()">
+        <option value="future" selected>Today → Future (forecast)</option>
+        <option value="past">Past → Today (historical look-back)</option>
+      </select>
+    </div>
+    <div>
+      <label>Currency symbol</label>
+      <input type="text" id="inf-cur" maxlength="4" value="$" oninput="infRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Amount</label>
+      <input type="number" id="inf-amount" step="any" min="0" value="1000" oninput="infRun()">
+    </div>
+    <div>
+      <label>Years</label>
+      <input type="number" id="inf-years" step="1" min="1" max="100" value="20" oninput="infRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Inflation preset</label>
+      <select id="inf-preset" onchange="infPreset()">
+        <option value="2.5">Conservative — 2.5%</option>
+        <option value="3" selected>Long-term avg — 3%</option>
+        <option value="5">High-inflation era — 5%</option>
+        <option value="7">Recent (2022-era) — 7%</option>
+        <option value="">Custom</option>
+      </select>
+    </div>
+    <div>
+      <label>Annual inflation rate (%)</label>
+      <input type="number" id="inf-rate" step="0.01" min="0" value="3" oninput="infCustom(); infRun()">
+    </div>
+  </div>
+  <div class="row-2col" style="margin-top:0.7rem">
+    <div>
+      <label>Sync with URL</label>
+      <select id="inf-sync" onchange="infRun()">
+        <option value="off" selected>Off</option>
+        <option value="on">Save state in URL fragment</option>
+      </select>
+    </div>
+    <div></div>
+  </div>
+</div>
+<div class="tool-card">
+  <label>Sonuç</label>
+  <div id="inf-out" class="output"></div>
+</div>
+
+    <div class="support-callout" hidden></div>
+    <div class="ad-slot" data-slot="content"></div>
+    <div class="help">
+<h2>Bu ne işe yarar?</h2>
+<p>Enflasyon, faiz getirmeyen her liranın üzerine eklenen sessiz vergidir. Zamlar her zaman yetişmez; hesaptaki nakit reel olarak erir; bugünkü TL ile koyduğun emeklilik hedefi yerinde durmak için bile her yıl büyümek zorundadır. Bu araç bu erozyona somut bir sayı verir.</p>
+<h3>Formüller</h3>
+<pre>Gelecek fiyat = bugün × (1+r)^t
+Bugünkü paranın reel değeri = tutar / (1+r)^t
+Kümülatif enflasyon = (1+r)^t − 1</pre>
+<h3>72 Kuralı</h3>
+<p>Fiyatlar yaklaşık her <code>72 / enflasyon %</code> yılda bir ikiye katlanır. %3 → 24 yıl; %7 → 10 yıl; %30 → ~2,4 yıl.</p>
+<h3>Hangi oranı kullanmalı?</h3>
+<ul>
+<li><strong>TR son yıllar</strong>: TÜFE 2022–2024'te %40–%85 bandında dalgalandı.</li>
+<li><strong>TCMB hedefi</strong>: orta vade %5, ancak son yıllarda çok üzerinde.</li>
+<li><strong>Kişisel enflasyon</strong> sepete bağlı — kira ve gıda genellikle manşet TÜFE'nin üzerinde.</li>
+</ul>
+<h3>Eşleşir</h3>
+<ul>
+<li><strong>compound-interest-calculator</strong> — birikimin enflasyonu geçiyor mu?</li>
+<li><strong>retirement-projection</strong> — enflasyona göre düzeltilmiş hedef.</li>
+</ul>
+<div class="related"><span class="meta">İlgili araçlar:</span> <a href="/tr/compound-interest-calculator/">Bileşik Faiz Hesaplayıcı</a> <a href="/tr/retirement-projection/">Emeklilik Projeksiyonu</a> <a href="/tr/roi-calculator/">ROI Hesaplayıcı</a> <a href="/tr/currency-converter/">Döviz Çevirici</a></div></div>
+    <div class="ad-slot" data-slot="footer"></div>
+  </main>
+  <footer class="footer">
+    <p>© 2026 toolhub.software</p>
+    <p><a href="/tr/privacy/">Gizlilik</a> · <a href="/tr/how-we-handle-your-data/">Veri işleme</a> · <a href="/tr/affiliate-disclosure/">Affiliate bildirimi</a> · <a href="/tr/companion-tools/">Tamamlayıcı araçlar</a> · <a href="/tr/about/">Hakkında</a> · <a href="/tr/contact/">İletişim</a> · <a href="/tr/for-schools/">Okullar için</a> · <a href="https://github.com/EveHetz/Toolhub">GitHub</a></p>
+    <p data-toolhub-footer-extras></p>
+  </footer>
+  <script>
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='light'?'dark':'light';
+      d.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelector('.theme-toggle').textContent=next==='light'?'🌙':'☀️';
+    }
+    (function(){
+      const saved=localStorage.getItem('theme')||'dark';
+      if(saved==='light'){document.documentElement.setAttribute('data-theme','light');document.querySelector('.theme-toggle').textContent='🌙';}
+    })();
+    function copyOutput(id, btn){
+      const el=document.getElementById(id);
+      const t=el.textContent||el.value||'';
+      navigator.clipboard.writeText(t).then(()=>{
+        btn.classList.add('copied');
+        setTimeout(()=>btn.classList.remove('copied'),700);
+      });
+    }
+  </script>
+  
+<style>
+.inf-disclaimer{background:var(--bg-elev);border-left:3px solid #c97a4a;padding:0.5rem 0.8rem;border-radius:0 6px 6px 0;font-size:0.78rem;color:var(--text-muted);margin-bottom:0.8rem;line-height:1.4}
+.inf-hero{background:var(--accent);color:#fff;padding:1rem 1.2rem;border-radius:8px;text-align:center;margin-bottom:0.8rem}
+.inf-hero .inf-big{font-family:ui-monospace,monospace;font-size:1.8rem;font-weight:700;line-height:1.1}
+.inf-hero .inf-sub{font-size:0.82rem;opacity:0.9;margin-top:0.3rem;line-height:1.35}
+.inf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0.6rem;margin-bottom:0.8rem}
+.inf-stat{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.85rem}
+.inf-stat .inf-num{font-family:ui-monospace,monospace;font-size:1.1rem;font-weight:600;color:var(--accent);word-break:break-all}
+.inf-stat .inf-num.neg{color:#c97a4a}
+.inf-stat .inf-lbl{font-size:0.74rem;color:var(--text-muted);margin-top:0.15rem}
+.inf-chart-wrap{background:var(--bg-elev);border:1px solid var(--border);border-radius:6px;padding:0.6rem;margin-bottom:0.8rem}
+.inf-chart-wrap svg{display:block;width:100%;height:auto}
+.inf-chart-legend{display:flex;gap:1rem;font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem;flex-wrap:wrap}
+.inf-chart-legend span::before{content:'';display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:0.4rem;vertical-align:middle}
+.inf-chart-legend .inf-l-v::before{background:var(--accent)}
+.inf-chart-legend .inf-l-b::before{background:#888}
+.inf-tab{width:100%;border-collapse:collapse;font-family:ui-monospace,monospace;font-size:0.78rem}
+.inf-tab th,.inf-tab td{padding:0.3rem 0.45rem;border-bottom:1px solid var(--border);text-align:right}
+.inf-tab th{color:var(--text-muted);font-weight:600;background:var(--bg-elev);position:sticky;top:0}
+.inf-tab th:first-child,.inf-tab td:first-child{text-align:left;color:var(--text-muted)}
+.inf-tab-wrap{max-height:340px;overflow:auto;border:1px solid var(--border);border-radius:6px}
+</style>
+<script>
+function infFmt(n, cur){
+  if(!isFinite(n)) return '—';
+  return cur + Math.round(n).toLocaleString('en-US');
+}
+function infFmt2(n, cur){
+  if(!isFinite(n)) return '—';
+  return cur + (Math.round(n * 100) / 100).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function infCustom(){
+  // If the rate is edited directly, dropdown should switch to "Custom"
+  const r = document.getElementById('inf-rate').value;
+  const sel = document.getElementById('inf-preset');
+  const exists = Array.from(sel.options).some(o => o.value === String(parseFloat(r)));
+  sel.value = exists ? String(parseFloat(r)) : '';
+}
+function infPreset(){
+  const v = document.getElementById('inf-preset').value;
+  if(v !== ''){
+    document.getElementById('inf-rate').value = v;
+    infRun();
+  }
+}
+function infCompute(amount, years, rate, dir){
+  // dir = 'future': today's amount → future nominal cost of same basket
+  //   future_cost = amount × (1+r)^t  (you'd need this much nominal $ in the future)
+  //   real_value  = amount / (1+r)^t  (what today's amount buys in tomorrow's money,
+  //                                    expressed in today's purchasing power) — wait, simpler:
+  //   For "Today → Future", the user is asking "how much will the same basket cost",
+  //   and conversely "what is the real value of today's $ at that point" — we report both.
+  // dir = 'past': past amount → today's equivalent purchasing power
+  //   today_equivalent = amount × (1+r)^t
+  const rows = [];
+  const factor = Math.pow(1 + rate, years);
+  for(let y = 0; y <= years; y++){
+    const f = Math.pow(1 + rate, y);
+    if(dir === 'future'){
+      // Each future year: nominal cost of the same basket (rises);
+      //                   real value of original $ (falls)
+      rows.push({
+        year: y,
+        nominalCost: amount * f,
+        realValue: amount / f,
+        cumInflation: (f - 1) * 100,
+      });
+    } else {
+      // dir === 'past': year 0 = past year; year `years` = today.
+      // Show how the same basket's price grows from past → today.
+      rows.push({
+        year: y,
+        nominalCost: amount * f,
+        realValue: amount * f / factor, // expressed in today's money as fraction of growth
+        cumInflation: (f - 1) * 100,
+      });
+    }
+  }
+  return rows;
+}
+function infChart(rows, cur, dir, amount){
+  if(rows.length < 2) return '';
+  const W = 600, H = 200, padL = 50, padR = 8, padT = 12, padB = 22;
+  // For 'future': plot real value (purchasing power decline) of today's $
+  // For 'past':   plot nominal cost growth (basket price)
+  const series = dir === 'future' ? rows.map(r => r.realValue) : rows.map(r => r.nominalCost);
+  const maxV = Math.max(...series, amount);
+  const minV = 0;
+  const xs = i => padL + (i / (rows.length - 1)) * (W - padL - padR);
+  const ys = v => H - padB - ((v - minV) / (maxV - minV || 1)) * (H - padT - padB);
+  const pts = ['M ' + xs(0) + ' ' + ys(series[0])];
+  series.forEach((v, i) => { if(i > 0) pts.push('L ' + xs(i) + ' ' + ys(v)); });
+  // Baseline = original amount (for "future" the today value reference; for "past" the past value)
+  const baseY = ys(amount);
+  const baseLine = `<line x1="${padL}" y1="${baseY}" x2="${W-padR}" y2="${baseY}" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>`;
+  // Fill under line
+  const fill = pts.join(' ') + ` L ${xs(rows.length-1)} ${ys(0)} L ${xs(0)} ${ys(0)} Z`;
+  // Axis ticks
+  const ticks = [0, Math.floor((rows.length-1)/2), rows.length - 1];
+  const tickLabels = ticks.map(t => `<text x="${xs(t)}" y="${H-6}" text-anchor="middle" fill="var(--text-muted)" font-size="10">${dir === 'future' ? '+' + t + 'y' : 'y' + t}</text>`).join('');
+  const yLabels = [maxV, maxV/2, 0].map(v => `<text x="${padL-4}" y="${ys(v)+3}" text-anchor="end" fill="var(--text-muted)" font-size="10">${cur}${Math.round(v).toLocaleString('en-US')}</text>`).join('');
+  const lineLabel = dir === 'future' ? 'Real value of today\'s ' + cur + Math.round(amount).toLocaleString('en-US') : 'Cost of same basket';
+  return `
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Inflation chart">
+      <rect x="${padL}" y="${padT}" width="${W-padL-padR}" height="${H-padT-padB}" fill="transparent" stroke="var(--border)"/>
+      <path d="${fill}" fill="var(--accent)" opacity="0.2"/>
+      <path d="${pts.join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      ${baseLine}
+      ${tickLabels}
+      ${yLabels}
+    </svg>
+    <div class="inf-chart-legend">
+      <span class="inf-l-v">${lineLabel}</span>
+      <span class="inf-l-b">Original amount</span>
+    </div>
+  `;
+}
+function infSyncUrl(){
+  const sync = document.getElementById('inf-sync').value;
+  if(sync !== 'on'){ if(location.hash) history.replaceState(null, '', location.pathname); return; }
+  const p = new URLSearchParams();
+  ['inf-dir','inf-amount','inf-years','inf-rate','inf-cur'].forEach(id => p.set(id, document.getElementById(id).value));
+  history.replaceState(null, '', '#' + p.toString());
+}
+function infReadUrl(){
+  if(!location.hash) return;
+  const p = new URLSearchParams(location.hash.slice(1));
+  ['inf-dir','inf-amount','inf-years','inf-rate','inf-cur'].forEach(id => {
+    if(p.has(id)){ const el = document.getElementById(id); if(el) el.value = p.get(id); }
+  });
+  infCustom();
+  document.getElementById('inf-sync').value = 'on';
+}
+function infRun(){
+  const dir = document.getElementById('inf-dir').value;
+  const amount = parseFloat(document.getElementById('inf-amount').value) || 0;
+  const years = Math.max(1, parseInt(document.getElementById('inf-years').value, 10) || 0);
+  const ratePct = parseFloat(document.getElementById('inf-rate').value) || 0;
+  const rate = ratePct / 100;
+  const cur = document.getElementById('inf-cur').value || '';
+  const out = document.getElementById('inf-out');
+  if(amount <= 0){ out.textContent = 'Sonucu görmek için yukarıya giriş yap.'; return; }
+  const rows = infCompute(amount, years, rate, dir);
+  const final = rows[rows.length - 1];
+  const cumInflationPct = final.cumInflation;
+  let heroBig, heroSub, plLabel, plValue, plClass;
+  if(dir === 'future'){
+    // Future: today's amount loses purchasing power; same basket costs more
+    const realToday = final.realValue;
+    const lossPct = ((amount - realToday) / amount) * 100;
+    heroBig = infFmt(realToday, cur);
+    heroSub = `Real purchasing power of ${infFmt(amount, cur)} in ${years} years at ${ratePct}% annual inflation. Same basket will cost ${infFmt(final.nominalCost, cur)} then.`;
+    plLabel = 'Purchasing-power loss';
+    plValue = '−' + lossPct.toFixed(1) + '%';
+    plClass = 'neg';
+  } else {
+    // Past: amount from N years ago is worth more today (in nominal)
+    const todayEquiv = final.nominalCost;
+    heroBig = infFmt(todayEquiv, cur);
+    heroSub = `${infFmt(amount, cur)} from ${years} years ago, in today's money at ${ratePct}% annual inflation. The same basket cost the same back then.`;
+    plLabel = 'Nominal growth';
+    plValue = '+' + cumInflationPct.toFixed(1) + '%';
+    plClass = '';
+  }
+  // Table
+  const tableRows = rows.map(r => {
+    const yLbl = dir === 'future' ? ('+' + r.year + 'y') : ('y' + r.year);
+    return `<tr><td>${yLbl}</td><td>${infFmt2(r.nominalCost, cur)}</td><td>${infFmt2(r.realValue, cur)}</td><td>${r.cumInflation.toFixed(2)}%</td></tr>`;
+  }).join('');
+  out.innerHTML = `
+    <div class="inf-hero">
+      <div class="inf-big">${heroBig}</div>
+      <div class="inf-sub">${heroSub}</div>
+    </div>
+    <div class="inf-grid">
+      <div class="inf-stat"><div class="inf-num">${cumInflationPct.toFixed(1)}%</div><div class="inf-lbl">Cumulative inflation</div></div>
+      <div class="inf-stat"><div class="inf-num ${plClass}">${plValue}</div><div class="inf-lbl">${plLabel}</div></div>
+      <div class="inf-stat"><div class="inf-num">${(Math.pow(1 + rate, 1) - 1) * 100 === 0 ? '—' : (Math.log(2) / Math.log(1 + rate)).toFixed(1) + ' yrs'}</div><div class="inf-lbl">Time for prices to double</div></div>
+      <div class="inf-stat"><div class="inf-num">${ratePct}%</div><div class="inf-lbl">Annual rate (your input)</div></div>
+    </div>
+    <div class="inf-chart-wrap">${infChart(rows, cur, dir, amount)}</div>
+    <div><strong>Year-by-year</strong></div>
+    <div class="inf-tab-wrap" style="margin-top:0.4rem">
+      <table class="inf-tab">
+        <thead><tr><th>Year</th><th>Basket cost</th><th>${dir === 'future' ? "Real value of today's " + cur : "Value (today's " + cur + ")"}</th><th>Cum. inflation</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+  `;
+  infSyncUrl();
+}
+document.addEventListener('DOMContentLoaded', () => { infReadUrl(); infRun(); });
+</script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    (function(){
+      let deferred = null;
+      const btn = document.getElementById('installBtn');
+      if (!btn) return;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferred = e;
+        btn.classList.add('visible');
+      });
+      btn.addEventListener('click', async () => {
+        if (!deferred) return;
+        deferred.prompt();
+        try { await deferred.userChoice; } catch(_){}
+        deferred = null;
+        btn.classList.remove('visible');
+      });
+      window.addEventListener('appinstalled', () => { btn.classList.remove('visible'); });
+    })();
+  </script>
+  <script>
+    (function() {
+      var t = window.TOOLHUB_CONFIG && window.TOOLHUB_CONFIG.cloudflareAnalyticsToken;
+      if (!t || !/^[a-f0-9]{32,}$/i.test(t)) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: t }));
+      document.body.appendChild(s);
+    })();
+  </script>
+  <script>
+    (function() {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      var m = hash.substring(1).match(/(?:^|&)data=([^&]+)/);
+      if (!m) return;
+      var raw;
+      try { raw = decodeURIComponent(m[1]); }
+      catch (e) { console.warn('toolhub: bad hash payload'); return; }
+      function dispatch() {
+        document.dispatchEvent(new CustomEvent('toolhub:prefill', { detail: { data: raw } }));
+      }
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(dispatch, 50);
+      } else {
+        window.addEventListener('DOMContentLoaded', function() { setTimeout(dispatch, 50); });
+      }
+    })();
+  </script>
+</body>
+</html>
