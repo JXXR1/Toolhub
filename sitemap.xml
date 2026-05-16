@@ -35657,4 +35657,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/articles/json-errors/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/articles/json-errors/"/>
   </url>
+  <url>
+    <loc>https://toolhub.software/articles/image-format-comparison/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolhub.software/articles/image-format-comparison/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://toolhub.software/articles/image-format-comparison/"/>
+  </url>
 </urlset>
