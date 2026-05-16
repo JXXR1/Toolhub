@@ -1,0 +1,108 @@
+name: IndexNow ping on push
+
+# Fires on every push to main. Diffs the new commit against the previous one,
+# extracts changed/added index.html paths, converts them to canonical URLs,
+# and POSTs them to the IndexNow API (covers Bing, Yandex, Seznam, Naver,
+# Yep, and any future engine that respects the protocol).
+#
+# Waits 4 minutes after push for GitHub Pages to deploy before pinging,
+# so the search engines fetch the up-to-date content.
+#
+# Key + key file at /cd69fc7106820deb231a1d73c715e445.txt — committed to
+# the repo root so the bots can verify ownership when they crawl.
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # need HEAD~1 for diff
+
+      - name: Wait for GitHub Pages deploy
+        run: sleep 240  # 4 min — typical Pages deploy is 1-3 min
+
+      - name: Collect changed URLs and ping IndexNow
+        env:
+          INDEXNOW_KEY: cd69fc7106820deb231a1d73c715e445
+          INDEXNOW_HOST: toolhub.software
+        run: |
+          set -euo pipefail
+
+          # Find added/modified index.html files in the latest commit
+          CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD | grep '/index\.html$\|^index\.html$' || true)
+
+          if [ -z "$CHANGED" ]; then
+            echo "No index.html changes in this push — nothing to ping."
+            exit 0
+          fi
+
+          # Convert each file path to a canonical URL.
+          #   index.html              -> https://toolhub.software/
+          #   foo/index.html          -> https://toolhub.software/foo/
+          #   de/foo/index.html       -> https://toolhub.software/de/foo/
+          #   articles/x/index.html   -> https://toolhub.software/articles/x/
+          URLS_JSON=$(echo "$CHANGED" | python3 -c '
+          import json, sys
+          base = "https://toolhub.software"
+          urls = []
+          for line in sys.stdin:
+              p = line.strip()
+              if not p:
+                  continue
+              # strip trailing "index.html"
+              if p.endswith("/index.html"):
+                  p = p[:-len("index.html")]
+              elif p == "index.html":
+                  p = ""
+              urls.append(f"{base}/{p}")
+          # IndexNow accepts up to 10,000 URLs per POST; toolhub batches
+          # rarely exceed ~1600, but cap defensively.
+          urls = urls[:10000]
+          print(json.dumps(urls))
+          ')
+
+          URL_COUNT=$(echo "$URLS_JSON" | python3 -c 'import json,sys; print(len(json.load(sys.stdin)))')
+          echo "Pinging IndexNow with $URL_COUNT URLs..."
+
+          # Build the IndexNow request body
+          BODY=$(python3 -c "
+          import json, os, sys
+          urls = json.loads('''$URLS_JSON''')
+          body = {
+              'host':        os.environ['INDEXNOW_HOST'],
+              'key':         os.environ['INDEXNOW_KEY'],
+              'keyLocation': f\"https://{os.environ['INDEXNOW_HOST']}/{os.environ['INDEXNOW_KEY']}.txt\",
+              'urlList':     urls,
+          }
+          print(json.dumps(body))
+          ")
+
+          # POST to IndexNow (Bing's endpoint; auto-distributes to Yandex+others)
+          HTTP_CODE=$(curl -s -o /tmp/indexnow-response.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$BODY")
+
+          echo "HTTP status: $HTTP_CODE"
+          echo "Response body:"
+          cat /tmp/indexnow-response.txt || true
+          echo ""
+
+          # 200 = accepted; 202 = accepted (will be processed)
+          # 400 = bad request; 403 = key file not found at expected location
+          # 422 = URLs don't match host; 429 = rate limit
+          case "$HTTP_CODE" in
+            200|202)
+              echo "✓ IndexNow accepted $URL_COUNT URLs."
+              ;;
+            *)
+              echo "✗ IndexNow returned $HTTP_CODE — investigate. Non-fatal (workflow exits clean)."
+              ;;
+          esac
