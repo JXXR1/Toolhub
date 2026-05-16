@@ -151,6 +151,12 @@
     #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <!-- AdSense loader: ALWAYS present so Google's reviewer can verify site
+       ownership. Loading alone does NOT serve ads — ad rendering requires
+       either Auto-ads opt-in in console OR Manual <ins class="adsbygoogle">
+       slots from monetize.js (gated by deploy_env). Toolhub uses Manual only. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7632777524243165" crossorigin="anonymous"></script>
+
   <script>
     /* Toolhub monetization config — fill in once you have the IDs.
        Empty values keep ads OFF and the consent banner SUPPRESSED. */
@@ -237,7 +243,7 @@
   </footer>
 
   <script>
-                                                                                                                                const TOOLS = [
+                                                                                                                                        const TOOLS = [
       {"slug": "ascii-table", "name": "Tabel ASCII", "desc": "Referensi ASCII lengkap 0–127 dengan desimal, hex, biner, karakter, dan entity HTML. Bisa difilter.", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
       {"slug": "base64-encoder", "name": "Base64 Encoder / Decoder", "desc": "Encode teks ke Base64 atau decode Base64 kembali ke teks. Aman untuk UTF-8 dengan dukungan varian base64url.", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
       {"slug": "base64-to-image", "name": "Base64 ke gambar", "desc": "Dekode gambar Base64 atau data URI kembali menjadi file. Tempel string-nya, lihat preview, unduh. Kebalikan dari tool gambar-ke-Base64 kami.", "icon": "🔓", "cat": "encoding", "tags": ["base64", "data-uri", "decode", "image", "convert"]},

@@ -151,6 +151,12 @@
     #toolhub-sandbox-badge { position: fixed; right: 0.75rem; bottom: 0.75rem; z-index: 9998; background: var(--accent, #58a6ff); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.55rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); pointer-events: none; user-select: none; opacity: 0.92; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <!-- AdSense loader: ALWAYS present so Google's reviewer can verify site
+       ownership. Loading alone does NOT serve ads — ad rendering requires
+       either Auto-ads opt-in in console OR Manual <ins class="adsbygoogle">
+       slots from monetize.js (gated by deploy_env). Toolhub uses Manual only. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7632777524243165" crossorigin="anonymous"></script>
+
   <script>
     /* Toolhub monetization config — fill in once you have the IDs.
        Empty values keep ads OFF and the consent banner SUPPRESSED. */
@@ -237,7 +243,7 @@
   </footer>
 
   <script>
-                                                                                                                                                                                        const TOOLS = [
+                                                                                                                                                                                                const TOOLS = [
       {"slug": "ascii-table", "name": "Tabela ASCII", "desc": "Pełna referencja ASCII 0–127 z wartościami dec, hex, bin, znakiem i encją HTML. Z filtrem.", "icon": "🔤", "cat": "developer", "tags": ["ascii", "table", "character", "encoding", "hex", "binary", "control", "html"]},
       {"slug": "base64-encoder", "name": "Encoder / Decoder Base64", "desc": "Koduj tekst do Base64 albo dekoduj Base64 z powrotem na tekst. Bezpieczny dla UTF-8, wariant base64url.", "icon": "🔄", "cat": "encoding", "tags": ["base64", "encode", "decode", "data-uri"]},
       {"slug": "base64-to-image", "name": "Base64 do obrazka", "desc": "Zdekoduj obrazek Base64 albo data URI z powrotem do pliku. Wklej string, podgląd, pobierz. Odwrotność naszego narzędzia obrazek-do-Base64.", "icon": "🔓", "cat": "encoding", "tags": ["base64", "data-uri", "decode", "image", "convert"]},

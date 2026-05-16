@@ -266,14 +266,24 @@
     .companion-tool .version { font-size: 0.78rem; color: var(--text-muted); font-weight: normal; margin-left: 0.4rem; }
   </style>
   <script defer data-domain="toolhub.software" src="https://plausible.io/js/script.js"></script>
+  <!-- AdSense loader: ALWAYS present so Google's reviewer can verify site
+       ownership during the application review window. Loading this script
+       alone does NOT serve ads — ad rendering still requires either
+       (a) explicit Auto-ads opt-in in the AdSense console, OR
+       (b) Manual <ins class="adsbygoogle"> slots rendered by monetize.js,
+       which remain gated by deploy_env. Toolhub uses path (b): Manual only. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7632777524243165" crossorigin="anonymous"></script>
   <script>
     /* Toolhub monetization config.
-       deploy_env gates AdSense behaviour so test/sandbox traffic can never
-       accidentally hit a live AdSense account:
+       deploy_env gates AdSense AD-SLOT RENDERING so test/sandbox traffic can
+       never accidentally hit a live AdSense account:
          "sandbox"    — local dev, pre-DNS, pre-AdSense-approval, staging.
-                        adsbygoogle.js is NEVER loaded. Ad slots render as
-                        placeholder boxes and a small SANDBOX badge is shown.
-                        Empty / unset AdSense IDs are harmless here.
+                        Manual ad slots render as placeholder boxes and a
+                        small SANDBOX badge is shown. Empty / unset AdSense
+                        IDs are harmless here. NOTE: the adsbygoogle.js
+                        LOADER above is still served (Google reviewer needs
+                        it for verification), but no ads actually render
+                        because monetize.js skips slot injection in sandbox.
          "production" — real AdSense IDs filled in, ready for live traffic.
                         adsenseClientId must match ca-pub-NNNNNNNNNNNNNNNN
                         (16 digits) AND at least one slot ID must be set,
